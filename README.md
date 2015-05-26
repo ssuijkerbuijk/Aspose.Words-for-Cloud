@@ -1,7 +1,7 @@
 # Aspose.Words for Cloud Repository
 This repository contains examples and SDKs for [Aspose.Words for Cloud](http://www.aspose.com/cloud/word-api.aspx).
 
-## Why SDKs
+## Why SDKs?
 Aspose.Words for Cloud is implemented as a REST API. If you use SDK, it hides the REST API calls and lets you use Aspose.Words features in a native way for your preferred language.
 
 <p align="center">
