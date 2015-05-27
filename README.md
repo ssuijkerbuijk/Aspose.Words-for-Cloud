@@ -1,4 +1,4 @@
-# Aspose.Words for Cloud Repository
+# Aspose.Words for Cloud
 This repository contains examples and SDKs for [Aspose.Words for Cloud](http://www.aspose.com/cloud/word-api.aspx).
 
 ## Why SDKs?
