@@ -14,3 +14,11 @@ Directory | Description
 --------- | -----------
 [Java SDK](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs/Aspose.Words_Cloud_SDK_for_Java)  |  Aspose.Words Cloud SDK for Java.
 [PHP SDK](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs/Aspose.Words_Cloud_SDK_for_PHP)  | Aspose.Words Cloud SDK for PHP.
+
+## Resources
+
++ **Website:** [www.aspose.com](http://www.aspose.com)
++ **Product Home:** [Aspose.Words for Cloud](http://www.aspose.com/cloud/word-api.aspx)
++ **Documentation:** [Aspose.Words for Cloud Documentation](http://www.aspose.com/docs/display/wordscloud/Home)
++ **Forum:** [Aspose.Words for Cloud Forum](http://www.aspose.com/community/forums/aspose.words-product-family/75/showforum.aspx)
++ **Blog:** [Aspose.Words for Cloud Blog](http://www.aspose.com/blogs/aspose-products/aspose-words-product-family.html)
