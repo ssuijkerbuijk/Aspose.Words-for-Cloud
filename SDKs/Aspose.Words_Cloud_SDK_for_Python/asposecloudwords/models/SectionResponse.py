@@ -13,7 +13,7 @@ class SectionResponse(object):
         """
         self.swaggerTypes = {
             'Section': 'Section',
-            'Code': 'str',
+            'Code': 'int',
             'Status': 'str'
 
         }

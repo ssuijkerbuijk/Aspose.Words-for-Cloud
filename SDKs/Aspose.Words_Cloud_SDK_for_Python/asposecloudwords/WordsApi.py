@@ -49,25 +49,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'bookmarkName' in allParams and allParams['bookmarkName']:
+        if 'bookmarkName' in allParams and allParams['bookmarkName'] is not None:
             resourcePath = resourcePath.replace("{" + "bookmarkName" + "}" , str(allParams['bookmarkName']))
         else:
             resourcePath = re.sub("[&?]bookmarkName.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -131,19 +131,19 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -213,31 +213,31 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'bookmarkName' in allParams and allParams['bookmarkName']:
+        if 'bookmarkName' in allParams and allParams['bookmarkName'] is not None:
             resourcePath = resourcePath.replace("{" + "bookmarkName" + "}" , str(allParams['bookmarkName']))
         else:
             resourcePath = re.sub("[&?]bookmarkName.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -301,19 +301,19 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -381,31 +381,31 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'format' in allParams and allParams['format']:
+        if 'format' in allParams and allParams['format'] is not None:
             resourcePath = resourcePath.replace("{" + "format" + "}" , str(allParams['format']))
         else:
             resourcePath = re.sub("[&?]format.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'outPath' in allParams and allParams['outPath']:
+        if 'outPath' in allParams and allParams['outPath'] is not None:
             resourcePath = resourcePath.replace("{" + "outPath" + "}" , str(allParams['outPath']))
         else:
             resourcePath = re.sub("[&?]outPath.*?(?=&|\\?|$)", "", resourcePath)
@@ -473,25 +473,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -565,43 +565,43 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'cleanup' in allParams and allParams['cleanup']:
+        if 'cleanup' in allParams and allParams['cleanup'] is not None:
             resourcePath = resourcePath.replace("{" + "cleanup" + "}" , str(allParams['cleanup']))
         else:
             resourcePath = re.sub("[&?]cleanup.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'useWholeParagraphAsRegion' in allParams and allParams['useWholeParagraphAsRegion']:
+        if 'useWholeParagraphAsRegion' in allParams and allParams['useWholeParagraphAsRegion'] is not None:
             resourcePath = resourcePath.replace("{" + "useWholeParagraphAsRegion" + "}" , str(allParams['useWholeParagraphAsRegion']))
         else:
             resourcePath = re.sub("[&?]useWholeParagraphAsRegion.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'withRegions' in allParams and allParams['withRegions']:
+        if 'withRegions' in allParams and allParams['withRegions'] is not None:
             resourcePath = resourcePath.replace("{" + "withRegions" + "}" , str(allParams['withRegions']))
         else:
             resourcePath = re.sub("[&?]withRegions.*?(?=&|\\?|$)", "", resourcePath)
@@ -669,25 +669,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -720,11 +720,12 @@ class WordsApi(object):
 
         
 
-    def PostLoadWebDocument(self, **kwargs):
+    def PostLoadWebDocument(self, body, **kwargs):
         """Load new document from web into the file with any supported format of data.
         Args:
             
-
+        body (LoadWebDocumentData): The property with new value. (required)
+        
         Returns: SaveResponse
         """
 
@@ -750,7 +751,7 @@ class WordsApi(object):
         headerParams = {}
         formParams = {}
         files = { }
-        bodyParam = None
+        bodyParam = body
 
         headerParams['Accept'] = 'application/xml,application/json'
         headerParams['Content-Type'] = 'application/json'
@@ -831,7 +832,7 @@ class WordsApi(object):
 
             format (str): Format to split. (optional)
 
-            from (int): Start page. (optional)
+            ffrom (int): Start page. (optional)
 
             to (int): End page. (optional)
 
@@ -846,7 +847,7 @@ class WordsApi(object):
         Returns: SplitDocumentResponse
         """
 
-        allParams = dict.fromkeys(['name', 'format', 'from', 'to', 'zipOutput', 'storage', 'folder'])
+        allParams = dict.fromkeys(['name', 'format', 'ffrom', 'to', 'zipOutput', 'storage', 'folder'])
 
         params = locals()
         for (key, val) in params['kwargs'].iteritems():
@@ -863,43 +864,43 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'format' in allParams and allParams['format']:
+        if 'format' in allParams and allParams['format'] is not None:
             resourcePath = resourcePath.replace("{" + "format" + "}" , str(allParams['format']))
         else:
             resourcePath = re.sub("[&?]format.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'from' in allParams and allParams['from']:
-            resourcePath = resourcePath.replace("{" + "from" + "}" , str(allParams['from']))
+        if 'ffrom' in allParams and allParams['ffrom'] is not None:
+            resourcePath = resourcePath.replace("{" + "from" + "}" , str(allParams['ffrom']))
         else:
             resourcePath = re.sub("[&?]from.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'to' in allParams and allParams['to']:
+        if 'to' in allParams and allParams['to'] is not None:
             resourcePath = resourcePath.replace("{" + "to" + "}" , str(allParams['to']))
         else:
             resourcePath = re.sub("[&?]to.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'zipOutput' in allParams and allParams['zipOutput']:
+        if 'zipOutput' in allParams and allParams['zipOutput'] is not None:
             resourcePath = resourcePath.replace("{" + "zipOutput" + "}" , str(allParams['zipOutput']))
         else:
             resourcePath = re.sub("[&?]zipOutput.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -963,13 +964,13 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'format' in allParams and allParams['format']:
+        if 'format' in allParams and allParams['format'] is not None:
             resourcePath = resourcePath.replace("{" + "format" + "}" , str(allParams['format']))
         else:
             resourcePath = re.sub("[&?]format.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'outPath' in allParams and allParams['outPath']:
+        if 'outPath' in allParams and allParams['outPath'] is not None:
             resourcePath = resourcePath.replace("{" + "outPath" + "}" , str(allParams['outPath']))
         else:
             resourcePath = re.sub("[&?]outPath.*?(?=&|\\?|$)", "", resourcePath)
@@ -1029,7 +1030,7 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'useNonMergeFields' in allParams and allParams['useNonMergeFields']:
+        if 'useNonMergeFields' in allParams and allParams['useNonMergeFields'] is not None:
             resourcePath = resourcePath.replace("{" + "useNonMergeFields" + "}" , str(allParams['useNonMergeFields']))
         else:
             resourcePath = re.sub("[&?]useNonMergeFields.*?(?=&|\\?|$)", "", resourcePath)
@@ -1093,13 +1094,13 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'withRegions' in allParams and allParams['withRegions']:
+        if 'withRegions' in allParams and allParams['withRegions'] is not None:
             resourcePath = resourcePath.replace("{" + "withRegions" + "}" , str(allParams['withRegions']))
         else:
             resourcePath = re.sub("[&?]withRegions.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'cleanup' in allParams and allParams['cleanup']:
+        if 'cleanup' in allParams and allParams['cleanup'] is not None:
             resourcePath = resourcePath.replace("{" + "cleanup" + "}" , str(allParams['cleanup']))
         else:
             resourcePath = re.sub("[&?]cleanup.*?(?=&|\\?|$)", "", resourcePath)
@@ -1165,19 +1166,19 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'cleanup' in allParams and allParams['cleanup']:
+        if 'cleanup' in allParams and allParams['cleanup'] is not None:
             resourcePath = resourcePath.replace("{" + "cleanup" + "}" , str(allParams['cleanup']))
         else:
             resourcePath = re.sub("[&?]cleanup.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'useWholeParagraphAsRegion' in allParams and allParams['useWholeParagraphAsRegion']:
+        if 'useWholeParagraphAsRegion' in allParams and allParams['useWholeParagraphAsRegion'] is not None:
             resourcePath = resourcePath.replace("{" + "useWholeParagraphAsRegion" + "}" , str(allParams['useWholeParagraphAsRegion']))
         else:
             resourcePath = re.sub("[&?]useWholeParagraphAsRegion.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'withRegions' in allParams and allParams['withRegions']:
+        if 'withRegions' in allParams and allParams['withRegions'] is not None:
             resourcePath = resourcePath.replace("{" + "withRegions" + "}" , str(allParams['withRegions']))
         else:
             resourcePath = re.sub("[&?]withRegions.*?(?=&|\\?|$)", "", resourcePath)
@@ -1241,19 +1242,19 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -1319,25 +1320,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -1405,31 +1406,31 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'propertyName' in allParams and allParams['propertyName']:
+        if 'propertyName' in allParams and allParams['propertyName'] is not None:
             resourcePath = resourcePath.replace("{" + "propertyName" + "}" , str(allParams['propertyName']))
         else:
             resourcePath = re.sub("[&?]propertyName.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -1493,19 +1494,19 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -1571,25 +1572,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'propertyName' in allParams and allParams['propertyName']:
+        if 'propertyName' in allParams and allParams['propertyName'] is not None:
             resourcePath = resourcePath.replace("{" + "propertyName" + "}" , str(allParams['propertyName']))
         else:
             resourcePath = re.sub("[&?]propertyName.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -1659,31 +1660,31 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'propertyName' in allParams and allParams['propertyName']:
+        if 'propertyName' in allParams and allParams['propertyName'] is not None:
             resourcePath = resourcePath.replace("{" + "propertyName" + "}" , str(allParams['propertyName']))
         else:
             resourcePath = re.sub("[&?]propertyName.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -1751,25 +1752,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -1833,19 +1834,19 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -1913,25 +1914,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -1999,25 +2000,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -2083,19 +2084,19 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -2197,127 +2198,127 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'resultFile' in allParams and allParams['resultFile']:
+        if 'resultFile' in allParams and allParams['resultFile'] is not None:
             resourcePath = resourcePath.replace("{" + "resultFile" + "}" , str(allParams['resultFile']))
         else:
             resourcePath = re.sub("[&?]resultFile.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'useAntiAliasing' in allParams and allParams['useAntiAliasing']:
+        if 'useAntiAliasing' in allParams and allParams['useAntiAliasing'] is not None:
             resourcePath = resourcePath.replace("{" + "useAntiAliasing" + "}" , str(allParams['useAntiAliasing']))
         else:
             resourcePath = re.sub("[&?]useAntiAliasing.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'useHighQualityRendering' in allParams and allParams['useHighQualityRendering']:
+        if 'useHighQualityRendering' in allParams and allParams['useHighQualityRendering'] is not None:
             resourcePath = resourcePath.replace("{" + "useHighQualityRendering" + "}" , str(allParams['useHighQualityRendering']))
         else:
             resourcePath = re.sub("[&?]useHighQualityRendering.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'imageBrightness' in allParams and allParams['imageBrightness']:
+        if 'imageBrightness' in allParams and allParams['imageBrightness'] is not None:
             resourcePath = resourcePath.replace("{" + "imageBrightness" + "}" , str(allParams['imageBrightness']))
         else:
             resourcePath = re.sub("[&?]imageBrightness.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'imageColorMode' in allParams and allParams['imageColorMode']:
+        if 'imageColorMode' in allParams and allParams['imageColorMode'] is not None:
             resourcePath = resourcePath.replace("{" + "imageColorMode" + "}" , str(allParams['imageColorMode']))
         else:
             resourcePath = re.sub("[&?]imageColorMode.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'imageContrast' in allParams and allParams['imageContrast']:
+        if 'imageContrast' in allParams and allParams['imageContrast'] is not None:
             resourcePath = resourcePath.replace("{" + "imageContrast" + "}" , str(allParams['imageContrast']))
         else:
             resourcePath = re.sub("[&?]imageContrast.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'numeralFormat' in allParams and allParams['numeralFormat']:
+        if 'numeralFormat' in allParams and allParams['numeralFormat'] is not None:
             resourcePath = resourcePath.replace("{" + "numeralFormat" + "}" , str(allParams['numeralFormat']))
         else:
             resourcePath = re.sub("[&?]numeralFormat.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'pageCount' in allParams and allParams['pageCount']:
+        if 'pageCount' in allParams and allParams['pageCount'] is not None:
             resourcePath = resourcePath.replace("{" + "pageCount" + "}" , str(allParams['pageCount']))
         else:
             resourcePath = re.sub("[&?]pageCount.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'pageIndex' in allParams and allParams['pageIndex']:
+        if 'pageIndex' in allParams and allParams['pageIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "pageIndex" + "}" , str(allParams['pageIndex']))
         else:
             resourcePath = re.sub("[&?]pageIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'paperColor' in allParams and allParams['paperColor']:
+        if 'paperColor' in allParams and allParams['paperColor'] is not None:
             resourcePath = resourcePath.replace("{" + "paperColor" + "}" , str(allParams['paperColor']))
         else:
             resourcePath = re.sub("[&?]paperColor.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'pixelFormat' in allParams and allParams['pixelFormat']:
+        if 'pixelFormat' in allParams and allParams['pixelFormat'] is not None:
             resourcePath = resourcePath.replace("{" + "pixelFormat" + "}" , str(allParams['pixelFormat']))
         else:
             resourcePath = re.sub("[&?]pixelFormat.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'resolution' in allParams and allParams['resolution']:
+        if 'resolution' in allParams and allParams['resolution'] is not None:
             resourcePath = resourcePath.replace("{" + "resolution" + "}" , str(allParams['resolution']))
         else:
             resourcePath = re.sub("[&?]resolution.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'scale' in allParams and allParams['scale']:
+        if 'scale' in allParams and allParams['scale'] is not None:
             resourcePath = resourcePath.replace("{" + "scale" + "}" , str(allParams['scale']))
         else:
             resourcePath = re.sub("[&?]scale.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'tiffCompression' in allParams and allParams['tiffCompression']:
+        if 'tiffCompression' in allParams and allParams['tiffCompression'] is not None:
             resourcePath = resourcePath.replace("{" + "tiffCompression" + "}" , str(allParams['tiffCompression']))
         else:
             resourcePath = re.sub("[&?]tiffCompression.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'dmlRenderingMode' in allParams and allParams['dmlRenderingMode']:
+        if 'dmlRenderingMode' in allParams and allParams['dmlRenderingMode'] is not None:
             resourcePath = resourcePath.replace("{" + "dmlRenderingMode" + "}" , str(allParams['dmlRenderingMode']))
         else:
             resourcePath = re.sub("[&?]dmlRenderingMode.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'dmlEffectsRenderingMode' in allParams and allParams['dmlEffectsRenderingMode']:
+        if 'dmlEffectsRenderingMode' in allParams and allParams['dmlEffectsRenderingMode'] is not None:
             resourcePath = resourcePath.replace("{" + "dmlEffectsRenderingMode" + "}" , str(allParams['dmlEffectsRenderingMode']))
         else:
             resourcePath = re.sub("[&?]dmlEffectsRenderingMode.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'tiffBinarizationMethod' in allParams and allParams['tiffBinarizationMethod']:
+        if 'tiffBinarizationMethod' in allParams and allParams['tiffBinarizationMethod'] is not None:
             resourcePath = resourcePath.replace("{" + "tiffBinarizationMethod" + "}" , str(allParams['tiffBinarizationMethod']))
         else:
             resourcePath = re.sub("[&?]tiffBinarizationMethod.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'zipOutput' in allParams and allParams['zipOutput']:
+        if 'zipOutput' in allParams and allParams['zipOutput'] is not None:
             resourcePath = resourcePath.replace("{" + "zipOutput" + "}" , str(allParams['zipOutput']))
         else:
             resourcePath = re.sub("[&?]zipOutput.*?(?=&|\\?|$)", "", resourcePath)
@@ -2381,19 +2382,19 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -2459,25 +2460,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -2549,37 +2550,37 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'rotationAngle' in allParams and allParams['rotationAngle']:
+        if 'rotationAngle' in allParams and allParams['rotationAngle'] is not None:
             resourcePath = resourcePath.replace("{" + "rotationAngle" + "}" , str(allParams['rotationAngle']))
         else:
             resourcePath = re.sub("[&?]rotationAngle.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'image' in allParams and allParams['image']:
+        if 'image' in allParams and allParams['image'] is not None:
             resourcePath = resourcePath.replace("{" + "image" + "}" , str(allParams['image']))
         else:
             resourcePath = re.sub("[&?]image.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -2651,37 +2652,37 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'text' in allParams and allParams['text']:
+        if 'text' in allParams and allParams['text'] is not None:
             resourcePath = resourcePath.replace("{" + "text" + "}" , str(allParams['text']))
         else:
             resourcePath = re.sub("[&?]text.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'rotationAngle' in allParams and allParams['rotationAngle']:
+        if 'rotationAngle' in allParams and allParams['rotationAngle'] is not None:
             resourcePath = resourcePath.replace("{" + "rotationAngle" + "}" , str(allParams['rotationAngle']))
         else:
             resourcePath = re.sub("[&?]rotationAngle.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -2747,25 +2748,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'objectIndex' in allParams and allParams['objectIndex']:
+        if 'objectIndex' in allParams and allParams['objectIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "objectIndex" + "}" , str(allParams['objectIndex']))
         else:
             resourcePath = re.sub("[&?]objectIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -2833,31 +2834,31 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'objectIndex' in allParams and allParams['objectIndex']:
+        if 'objectIndex' in allParams and allParams['objectIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "objectIndex" + "}" , str(allParams['objectIndex']))
         else:
             resourcePath = re.sub("[&?]objectIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'format' in allParams and allParams['format']:
+        if 'format' in allParams and allParams['format'] is not None:
             resourcePath = resourcePath.replace("{" + "format" + "}" , str(allParams['format']))
         else:
             resourcePath = re.sub("[&?]format.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -2923,25 +2924,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'objectIndex' in allParams and allParams['objectIndex']:
+        if 'objectIndex' in allParams and allParams['objectIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "objectIndex" + "}" , str(allParams['objectIndex']))
         else:
             resourcePath = re.sub("[&?]objectIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -3007,25 +3008,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'objectIndex' in allParams and allParams['objectIndex']:
+        if 'objectIndex' in allParams and allParams['objectIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "objectIndex" + "}" , str(allParams['objectIndex']))
         else:
             resourcePath = re.sub("[&?]objectIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -3089,19 +3090,19 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -3173,43 +3174,43 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'sectionIndex' in allParams and allParams['sectionIndex']:
+        if 'sectionIndex' in allParams and allParams['sectionIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "sectionIndex" + "}" , str(allParams['sectionIndex']))
         else:
             resourcePath = re.sub("[&?]sectionIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'paragraphIndex' in allParams and allParams['paragraphIndex']:
+        if 'paragraphIndex' in allParams and allParams['paragraphIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "paragraphIndex" + "}" , str(allParams['paragraphIndex']))
         else:
             resourcePath = re.sub("[&?]paragraphIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'formfieldIndex' in allParams and allParams['formfieldIndex']:
+        if 'formfieldIndex' in allParams and allParams['formfieldIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "formfieldIndex" + "}" , str(allParams['formfieldIndex']))
         else:
             resourcePath = re.sub("[&?]formfieldIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'destFileName' in allParams and allParams['destFileName']:
+        if 'destFileName' in allParams and allParams['destFileName'] is not None:
             resourcePath = resourcePath.replace("{" + "destFileName" + "}" , str(allParams['destFileName']))
         else:
             resourcePath = re.sub("[&?]destFileName.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -3279,37 +3280,37 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'sectionIndex' in allParams and allParams['sectionIndex']:
+        if 'sectionIndex' in allParams and allParams['sectionIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "sectionIndex" + "}" , str(allParams['sectionIndex']))
         else:
             resourcePath = re.sub("[&?]sectionIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'paragraphIndex' in allParams and allParams['paragraphIndex']:
+        if 'paragraphIndex' in allParams and allParams['paragraphIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "paragraphIndex" + "}" , str(allParams['paragraphIndex']))
         else:
             resourcePath = re.sub("[&?]paragraphIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'formfieldIndex' in allParams and allParams['formfieldIndex']:
+        if 'formfieldIndex' in allParams and allParams['formfieldIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "formfieldIndex" + "}" , str(allParams['formfieldIndex']))
         else:
             resourcePath = re.sub("[&?]formfieldIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -3383,43 +3384,43 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'sectionIndex' in allParams and allParams['sectionIndex']:
+        if 'sectionIndex' in allParams and allParams['sectionIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "sectionIndex" + "}" , str(allParams['sectionIndex']))
         else:
             resourcePath = re.sub("[&?]sectionIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'paragraphIndex' in allParams and allParams['paragraphIndex']:
+        if 'paragraphIndex' in allParams and allParams['paragraphIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "paragraphIndex" + "}" , str(allParams['paragraphIndex']))
         else:
             resourcePath = re.sub("[&?]paragraphIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'formfieldIndex' in allParams and allParams['formfieldIndex']:
+        if 'formfieldIndex' in allParams and allParams['formfieldIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "formfieldIndex" + "}" , str(allParams['formfieldIndex']))
         else:
             resourcePath = re.sub("[&?]formfieldIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'destFileName' in allParams and allParams['destFileName']:
+        if 'destFileName' in allParams and allParams['destFileName'] is not None:
             resourcePath = resourcePath.replace("{" + "destFileName" + "}" , str(allParams['destFileName']))
         else:
             resourcePath = re.sub("[&?]destFileName.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -3493,43 +3494,43 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'sectionIndex' in allParams and allParams['sectionIndex']:
+        if 'sectionIndex' in allParams and allParams['sectionIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "sectionIndex" + "}" , str(allParams['sectionIndex']))
         else:
             resourcePath = re.sub("[&?]sectionIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'paragraphIndex' in allParams and allParams['paragraphIndex']:
+        if 'paragraphIndex' in allParams and allParams['paragraphIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "paragraphIndex" + "}" , str(allParams['paragraphIndex']))
         else:
             resourcePath = re.sub("[&?]paragraphIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'insertBeforeNode' in allParams and allParams['insertBeforeNode']:
+        if 'insertBeforeNode' in allParams and allParams['insertBeforeNode'] is not None:
             resourcePath = resourcePath.replace("{" + "insertBeforeNode" + "}" , str(allParams['insertBeforeNode']))
         else:
             resourcePath = re.sub("[&?]insertBeforeNode.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'destFileName' in allParams and allParams['destFileName']:
+        if 'destFileName' in allParams and allParams['destFileName'] is not None:
             resourcePath = resourcePath.replace("{" + "destFileName" + "}" , str(allParams['destFileName']))
         else:
             resourcePath = re.sub("[&?]destFileName.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -3597,31 +3598,31 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'headersFootersTypes' in allParams and allParams['headersFootersTypes']:
+        if 'headersFootersTypes' in allParams and allParams['headersFootersTypes'] is not None:
             resourcePath = resourcePath.replace("{" + "headersFootersTypes" + "}" , str(allParams['headersFootersTypes']))
         else:
             resourcePath = re.sub("[&?]headersFootersTypes.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -3687,25 +3688,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'hyperlinkIndex' in allParams and allParams['hyperlinkIndex']:
+        if 'hyperlinkIndex' in allParams and allParams['hyperlinkIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "hyperlinkIndex" + "}" , str(allParams['hyperlinkIndex']))
         else:
             resourcePath = re.sub("[&?]hyperlinkIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -3769,19 +3770,19 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -3845,19 +3846,19 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -3923,25 +3924,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'useNonMergeFields' in allParams and allParams['useNonMergeFields']:
+        if 'useNonMergeFields' in allParams and allParams['useNonMergeFields'] is not None:
             resourcePath = resourcePath.replace("{" + "useNonMergeFields" + "}" , str(allParams['useNonMergeFields']))
         else:
             resourcePath = re.sub("[&?]useNonMergeFields.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -4017,49 +4018,49 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'withRegions' in allParams and allParams['withRegions']:
+        if 'withRegions' in allParams and allParams['withRegions'] is not None:
             resourcePath = resourcePath.replace("{" + "withRegions" + "}" , str(allParams['withRegions']))
         else:
             resourcePath = re.sub("[&?]withRegions.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'mailMergeDataFile' in allParams and allParams['mailMergeDataFile']:
+        if 'mailMergeDataFile' in allParams and allParams['mailMergeDataFile'] is not None:
             resourcePath = resourcePath.replace("{" + "mailMergeDataFile" + "}" , str(allParams['mailMergeDataFile']))
         else:
             resourcePath = re.sub("[&?]mailMergeDataFile.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'cleanup' in allParams and allParams['cleanup']:
+        if 'cleanup' in allParams and allParams['cleanup'] is not None:
             resourcePath = resourcePath.replace("{" + "cleanup" + "}" , str(allParams['cleanup']))
         else:
             resourcePath = re.sub("[&?]cleanup.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'useWholeParagraphAsRegion' in allParams and allParams['useWholeParagraphAsRegion']:
+        if 'useWholeParagraphAsRegion' in allParams and allParams['useWholeParagraphAsRegion'] is not None:
             resourcePath = resourcePath.replace("{" + "useWholeParagraphAsRegion" + "}" , str(allParams['useWholeParagraphAsRegion']))
         else:
             resourcePath = re.sub("[&?]useWholeParagraphAsRegion.*?(?=&|\\?|$)", "", resourcePath)
@@ -4125,25 +4126,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'index' in allParams and allParams['index']:
+        if 'index' in allParams and allParams['index'] is not None:
             resourcePath = resourcePath.replace("{" + "index" + "}" , str(allParams['index']))
         else:
             resourcePath = re.sub("[&?]index.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -4209,25 +4210,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'index' in allParams and allParams['index']:
+        if 'index' in allParams and allParams['index'] is not None:
             resourcePath = resourcePath.replace("{" + "index" + "}" , str(allParams['index']))
         else:
             resourcePath = re.sub("[&?]index.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -4295,31 +4296,31 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'index' in allParams and allParams['index']:
+        if 'index' in allParams and allParams['index'] is not None:
             resourcePath = resourcePath.replace("{" + "index" + "}" , str(allParams['index']))
         else:
             resourcePath = re.sub("[&?]index.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'runIndex' in allParams and allParams['runIndex']:
+        if 'runIndex' in allParams and allParams['runIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "runIndex" + "}" , str(allParams['runIndex']))
         else:
             resourcePath = re.sub("[&?]runIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -4387,31 +4388,31 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'index' in allParams and allParams['index']:
+        if 'index' in allParams and allParams['index'] is not None:
             resourcePath = resourcePath.replace("{" + "index" + "}" , str(allParams['index']))
         else:
             resourcePath = re.sub("[&?]index.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'runIndex' in allParams and allParams['runIndex']:
+        if 'runIndex' in allParams and allParams['runIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "runIndex" + "}" , str(allParams['runIndex']))
         else:
             resourcePath = re.sub("[&?]runIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -4475,19 +4476,19 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -4559,37 +4560,37 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'index' in allParams and allParams['index']:
+        if 'index' in allParams and allParams['index'] is not None:
             resourcePath = resourcePath.replace("{" + "index" + "}" , str(allParams['index']))
         else:
             resourcePath = re.sub("[&?]index.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'runIndex' in allParams and allParams['runIndex']:
+        if 'runIndex' in allParams and allParams['runIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "runIndex" + "}" , str(allParams['runIndex']))
         else:
             resourcePath = re.sub("[&?]runIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
@@ -4655,25 +4656,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -4739,25 +4740,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -4823,25 +4824,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'sectionIndex' in allParams and allParams['sectionIndex']:
+        if 'sectionIndex' in allParams and allParams['sectionIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "sectionIndex" + "}" , str(allParams['sectionIndex']))
         else:
             resourcePath = re.sub("[&?]sectionIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -4909,31 +4910,31 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'sectionIndex' in allParams and allParams['sectionIndex']:
+        if 'sectionIndex' in allParams and allParams['sectionIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "sectionIndex" + "}" , str(allParams['sectionIndex']))
         else:
             resourcePath = re.sub("[&?]sectionIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'paragraphIndex' in allParams and allParams['paragraphIndex']:
+        if 'paragraphIndex' in allParams and allParams['paragraphIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "paragraphIndex" + "}" , str(allParams['paragraphIndex']))
         else:
             resourcePath = re.sub("[&?]paragraphIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -4999,25 +5000,26 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
-        
+            
+        print "resourcePath" + resourcePath
 
-        if 'sectionIndex' in allParams and allParams['sectionIndex']:
+        if 'sectionIndex' in allParams and allParams['sectionIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "sectionIndex" + "}" , str(allParams['sectionIndex']))
         else:
             resourcePath = re.sub("[&?]sectionIndex.*?(?=&|\\?|$)", "", resourcePath)
         
-
-        if 'storage' in allParams and allParams['storage']:
+        print "resourcePath" + resourcePath
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -5083,25 +5085,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'sectionIndex' in allParams and allParams['sectionIndex']:
+        if 'sectionIndex' in allParams and allParams['sectionIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "sectionIndex" + "}" , str(allParams['sectionIndex']))
         else:
             resourcePath = re.sub("[&?]sectionIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -5165,19 +5167,19 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -5247,31 +5249,31 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'sectionIndex' in allParams and allParams['sectionIndex']:
+        if 'sectionIndex' in allParams and allParams['sectionIndex'] is not None:
             resourcePath = resourcePath.replace("{" + "sectionIndex" + "}" , str(allParams['sectionIndex']))
         else:
             resourcePath = re.sub("[&?]sectionIndex.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
@@ -5335,19 +5337,19 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -5415,25 +5417,25 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -5505,37 +5507,37 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'rotationAngle' in allParams and allParams['rotationAngle']:
+        if 'rotationAngle' in allParams and allParams['rotationAngle'] is not None:
             resourcePath = resourcePath.replace("{" + "rotationAngle" + "}" , str(allParams['rotationAngle']))
         else:
             resourcePath = re.sub("[&?]rotationAngle.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'image' in allParams and allParams['image']:
+        if 'image' in allParams and allParams['image'] is not None:
             resourcePath = resourcePath.replace("{" + "image" + "}" , str(allParams['image']))
         else:
             resourcePath = re.sub("[&?]image.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
@@ -5607,37 +5609,37 @@ class WordsApi(object):
     
         resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}")
 
-        if 'name' in allParams and allParams['name']:
+        if 'name' in allParams and allParams['name'] is not None:
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'text' in allParams and allParams['text']:
+        if 'text' in allParams and allParams['text'] is not None:
             resourcePath = resourcePath.replace("{" + "text" + "}" , str(allParams['text']))
         else:
             resourcePath = re.sub("[&?]text.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'rotationAngle' in allParams and allParams['rotationAngle']:
+        if 'rotationAngle' in allParams and allParams['rotationAngle'] is not None:
             resourcePath = resourcePath.replace("{" + "rotationAngle" + "}" , str(allParams['rotationAngle']))
         else:
             resourcePath = re.sub("[&?]rotationAngle.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'filename' in allParams and allParams['filename']:
+        if 'filename' in allParams and allParams['filename'] is not None:
             resourcePath = resourcePath.replace("{" + "filename" + "}" , str(allParams['filename']))
         else:
             resourcePath = re.sub("[&?]filename.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'storage' in allParams and allParams['storage']:
+        if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
             resourcePath = re.sub("[&?]storage.*?(?=&|\\?|$)", "", resourcePath)
         
 
-        if 'folder' in allParams and allParams['folder']:
+        if 'folder' in allParams and allParams['folder'] is not None:
             resourcePath = resourcePath.replace("{" + "folder" + "}" , str(allParams['folder']))
         else:
             resourcePath = re.sub("[&?]folder.*?(?=&|\\?|$)", "", resourcePath)
