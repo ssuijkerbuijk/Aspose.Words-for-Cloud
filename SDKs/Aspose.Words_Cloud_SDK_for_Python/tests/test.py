@@ -1,6 +1,7 @@
 import unittest
 import os.path
 import json
+import inspect
 
 import asposecloudwords
 from asposecloudwords.ApiClient import ApiClient
@@ -30,6 +31,12 @@ from asposecloudwords.models import RevisionsModificationResponse
 from asposecloudwords.models import Font
 from asposecloudwords.models import FontResponse
 from asposecloudwords.models import ParagraphLinkCollectionResponse
+from asposecloudwords.models import RunResponse
+from asposecloudwords.models import ParagraphResponse
+from asposecloudwords.models import HyperlinksResponse
+from asposecloudwords.models import HyperlinkResponse
+from asposecloudwords.models import SaaSposeResponse
+from asposecloudwords.models import DrawingObjectsResponse
 
 import asposecloudstorage
 from asposecloudstorage.StorageApi import StorageApi
@@ -260,6 +267,25 @@ class TestAsposeCloudWords(unittest.TestCase):
             print "Mesage: " + ex.message
             raise ex
 
+    def testPostInsertDocumentWatermarkText(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            watermarkText = WatermarkText.WatermarkText()
+            watermarkText.Text = "Welcome Aspose"
+            watermarkText.RotationAngle = '45'
+
+            response = self.wordsApi.PostInsertDocumentWatermarkText('SampleWordDocument.docx',watermarkText)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,DocumentResponse.DocumentResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
     def testPostInsertWatermarkImage(self):
         try:
             response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
@@ -269,6 +295,25 @@ class TestAsposeCloudWords(unittest.TestCase):
             watermarkText.RotationAngle = '45'
 
             response = self.wordsApi.PostInsertWatermarkImage('SampleWordDocument.docx','./data/aspose-words.png')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,DocumentResponse.DocumentResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testPostInsertDocumentWatermarkImage(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            watermarkText = WatermarkText.WatermarkText()
+            watermarkText.Text = "Welcome Aspose"
+            watermarkText.RotationAngle = '45'
+
+            response = self.wordsApi.PostInsertDocumentWatermarkImage('SampleWordDocument.docx','./data/aspose-words.png')
 
             self.assertEqual(response.Status,'OK')
             self.assertIsInstance(response,DocumentResponse.DocumentResponse)
@@ -443,3 +488,180 @@ class TestAsposeCloudWords(unittest.TestCase):
             print "Mesage: " + ex.message
             raise ex
 
+    def testGetDocumentParagraphRunFont(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetDocumentParagraphRunFont('SampleWordDocument.docx',0,0)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,FontResponse.FontResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetDocumentParagraphRun(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetDocumentParagraphRun('SampleWordDocument.docx',0,0)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,RunResponse.RunResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetDocumentParagraph(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetDocumentParagraph('SampleWordDocument.docx',1)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,ParagraphResponse.ParagraphResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetDocumentHyperlinks(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetDocumentHyperlinks('SampleWordDocument.docx')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,HyperlinksResponse.HyperlinksResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetDocumentHyperlinkByIndex(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetDocumentHyperlinkByIndex('SampleWordDocument.docx',0)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,HyperlinkResponse.HyperlinkResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testDeleteHeadersFooters(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.DeleteHeadersFooters('SampleWordDocument.docx')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,SaaSposeResponse.SaaSposeResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetDocumentDrawingObjects(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetDocumentDrawingObjects('SampleWordDocument.docx')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,DrawingObjectsResponse.DrawingObjectsResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetDocumentDrawingObjectOleData(self):
+        try:
+            response = self.storageApi.PutCreate('sample_EmbeddedOLE.docx','./data/sample_EmbeddedOLE.docx')
+
+            response = self.wordsApi.GetDocumentDrawingObjectOleData('sample_EmbeddedOLE.docx',0)
+
+            print inspect.getmembers(response)
+
+            self.assertEqual(response.Status,'OK')
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetDocumentDrawingObjectImageData(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetDocumentDrawingObjectImageData('SampleWordDocument.docx',1)
+
+            self.assertEqual(response.Status,'OK')
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetDocumentDrawingObjectByIndexWithFormat(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetDocumentDrawingObjectByIndexWithFormat('SampleWordDocument.docx',1,'jpg')
+
+            self.assertEqual(response.Status,'OK')
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetDocumentDrawingObjectByIndex(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetDocumentDrawingObjectByIndex('SampleWordDocument.docx',1)
+
+            self.assertEqual(response.Status,'OK')
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testDeleteDocumentWatermark(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.DeleteDocumentWatermark('SampleWordDocument.docx')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,DocumentResponse.DocumentResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
