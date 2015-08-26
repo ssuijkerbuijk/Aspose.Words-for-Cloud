@@ -37,6 +37,13 @@ from asposecloudwords.models import HyperlinksResponse
 from asposecloudwords.models import HyperlinkResponse
 from asposecloudwords.models import SaaSposeResponse
 from asposecloudwords.models import DrawingObjectsResponse
+from asposecloudwords.models import StatDataResponse
+from asposecloudwords.models import TiffSaveOptionsData
+from asposecloudwords.models import ProtectionDataResponse
+from asposecloudwords.models import ProtectionRequest
+from asposecloudwords.models import DocumentPropertiesResponse
+from asposecloudwords.models import DocumentPropertyResponse
+from asposecloudwords.models import DocumentProperty
 
 import asposecloudstorage
 from asposecloudstorage.StorageApi import StorageApi
@@ -665,6 +672,207 @@ class TestAsposeCloudWords(unittest.TestCase):
 
             self.assertEqual(response.Status,'OK')
             self.assertIsInstance(response,DocumentResponse.DocumentResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetDocumentStatistics(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetDocumentStatistics('SampleWordDocument.docx')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,StatDataResponse.StatDataResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testPutDocumentSaveAsTiff(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            tiffSaveOptions = TiffSaveOptionsData.TiffSaveOptionsData()
+            tiffSaveOptions.FileName = 'SampleWordDocument.tiff'
+            tiffSaveOptions.SaveFormat = 'tiff'
+
+            response = self.wordsApi.PutDocumentSaveAsTiff('SampleWordDocument.docx',tiffSaveOptions)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,SaveResponse.SaveResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testPostDocumentSaveAs(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            saveOptions = SaveOptionsData.SaveOptionsData()
+            saveOptions.FileName = 'SampleWordDocument.pdf'
+            saveOptions.SaveFormat = 'pdf'
+
+            response = self.wordsApi.PostDocumentSaveAs('SampleWordDocument.docx',saveOptions)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,SaveResponse.SaveResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testPutProtectDocument(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            protectionData = ProtectionRequest.ProtectionRequest()
+            protectionData.Password = 'hello123'
+
+            response = self.wordsApi.PutProtectDocument('SampleWordDocument.docx',protectionData)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,ProtectionDataResponse.ProtectionDataResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testPostChangeDocumentProtection(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            protectionData = ProtectionRequest.ProtectionRequest()
+            protectionData.Password = 'hello123'
+
+            response = self.wordsApi.PutProtectDocument('SampleWordDocument.docx',protectionData)
+
+            protectionData_new = ProtectionRequest.ProtectionRequest()
+            protectionData_new.NewPassword = "Hello223"
+
+            response = self.wordsApi.PostChangeDocumentProtection('SampleWordDocument.docx',protectionData_new)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,ProtectionDataResponse.ProtectionDataResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetDocumentProtection(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetDocumentProtection('SampleWordDocument.docx')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,ProtectionDataResponse.ProtectionDataResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testDeleteUnprotectDocument(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            protectionData = ProtectionRequest.ProtectionRequest()
+            protectionData.Password = 'hello123'
+
+            response = self.wordsApi.PutProtectDocument('SampleWordDocument.docx',protectionData)
+
+            protectionData.Password = None
+
+            response = self.wordsApi.DeleteUnprotectDocument('SampleWordDocument.docx',protectionData)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,ProtectionDataResponse.ProtectionDataResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetDocumentProperties(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetDocumentProperties('SampleWordDocument.docx')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,DocumentPropertiesResponse.DocumentPropertiesResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetDocumentProperty(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetDocumentProperty('SampleWordDocument.docx','Author')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,DocumentPropertyResponse.DocumentPropertyResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testPutUpdateDocumentProperty(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            property = DocumentProperty.DocumentProperty()
+            property.Name = 'Author'
+            property.Value = 'Assad'
+
+            response = self.wordsApi.PutUpdateDocumentProperty('SampleWordDocument.docx','Author',property)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,DocumentPropertyResponse.DocumentPropertyResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testDeleteDocumentProperty(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            property = DocumentProperty.DocumentProperty()
+            property.Name = 'Provider'
+            property.Value = 'Assad'
+
+            response = self.wordsApi.PutUpdateDocumentProperty('SampleWordDocument.docx','Provider',property)
+
+            response = self.wordsApi.DeleteDocumentProperty('SampleWordDocument.docx','Provider')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,SaaSposeResponse.SaaSposeResponse)
 
         except ApiException as ex:
             print "Exception"
