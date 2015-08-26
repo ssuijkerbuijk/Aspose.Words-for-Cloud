@@ -16,9 +16,24 @@ from asposecloudwords.models import PageNumber
 from asposecloudwords.models import LoadWebDocumentData
 from asposecloudwords.models import SaveOptionsData
 from asposecloudwords.models import SaveResponse
+from asposecloudwords.models import SplitDocumentResponse
+from asposecloudwords.models import ResponseMessage
+from asposecloudwords.models import WatermarkText
+from asposecloudwords.models import ReplaceTextRequest
+from asposecloudwords.models import ReplaceTextResponse
+from asposecloudwords.models import TextItemsResponse
+from asposecloudwords.models import SectionLinkCollectionResponse
+from asposecloudwords.models import SectionPageSetupResponse
+from asposecloudwords.models import SectionResponse
+from asposecloudwords.models import PageSetup
+from asposecloudwords.models import RevisionsModificationResponse
+from asposecloudwords.models import Font
+from asposecloudwords.models import FontResponse
+from asposecloudwords.models import ParagraphLinkCollectionResponse
 
 import asposecloudstorage
 from asposecloudstorage.StorageApi import StorageApi
+from asposecloudstorage.models import ResponseMessage as StorageResponseMessage
 
 
 class TestAsposeCloudWords(unittest.TestCase):
@@ -89,6 +104,7 @@ class TestAsposeCloudWords(unittest.TestCase):
     def testGetDocument(self):
 
         try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
             response = self.wordsApi.GetDocument('SampleWordDocument.docx')
 
             self.assertIsInstance(response,BookmarksResponse.BookmarksResponse)
@@ -103,6 +119,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentWithFormat(self):
         try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
             response = self.wordsApi.GetDocumentWithFormat('SampleWordDocument.docx','pdf')
 
             self.assertEqual(response.Status,'OK')
@@ -192,7 +209,237 @@ class TestAsposeCloudWords(unittest.TestCase):
             print "Mesage: " + ex.message
             raise ex
 
+    def testPostSplitDocument(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.wordsApi.PostSplitDocument('SampleWordDocument.docx',format='text',ffrom=1,to=2,zipOutput=False)
 
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,SplitDocumentResponse.SplitDocumentResponse)
 
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
 
+    def testPutConvertDocument(self):
+        try:
+            response = self.wordsApi.PutConvertDocument('./data/SampleWordDocument.docx',format='pdf')
+
+            self.assertEqual(response.Status,'OK')
+
+            with open("./output/" + 'SampleWordDocument.pdf', 'wb') as f:
+                for chunk in response.InputStream:
+                    f.write(chunk)
+
+            self.assertTrue(True, os.path.exists("./output/" + 'SampleWordDocument.pdf'))
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testPostInsertWatermarkText(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            watermarkText = WatermarkText.WatermarkText()
+            watermarkText.Text = "Welcome Aspose"
+            watermarkText.RotationAngle = '45'
+
+            response = self.wordsApi.PostInsertWatermarkText('SampleWordDocument.docx',watermarkText)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,DocumentResponse.DocumentResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testPostInsertWatermarkImage(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            watermarkText = WatermarkText.WatermarkText()
+            watermarkText.Text = "Welcome Aspose"
+            watermarkText.RotationAngle = '45'
+
+            response = self.wordsApi.PostInsertWatermarkImage('SampleWordDocument.docx','./data/aspose-words.png')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,DocumentResponse.DocumentResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testPostReplaceText(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            replaceText = ReplaceTextRequest.ReplaceTextRequest()
+            replaceText.OldValue = 'Times New Roman'
+            replaceText.NewValue = 'Arial Black'
+
+            response = self.wordsApi.PostReplaceText('SampleWordDocument.docx',replaceText)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,ReplaceTextResponse.ReplaceTextResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetDocumentTextItems(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetDocumentTextItems('SampleWordDocument.docx')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,TextItemsResponse.TextItemsResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetSections(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetSections('SampleWordDocument.docx')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,SectionLinkCollectionResponse.SectionLinkCollectionResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetSectionPageSetup(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetSectionPageSetup('SampleWordDocument.docx',0)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,SectionPageSetupResponse.SectionPageSetupResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetSection(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetSection('SampleWordDocument.docx',0)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,SectionResponse.SectionResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testUpdateSectionPageSetup(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            pageSetup = PageSetup.PageSetup()
+            pageSetup.RtlGutter = True
+            pageSetup.LeftMargin = 10.0
+            pageSetup.Orientation = 'Landscape'
+            pageSetup.PaperSize = 'A5'
+
+            response = self.wordsApi.UpdateSectionPageSetup('SampleWordDocument.docx',0,pageSetup)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,SectionPageSetupResponse.SectionPageSetupResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testRejectAllRevisions(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.RejectAllRevisions('SampleWordDocument.docx')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,RevisionsModificationResponse.RevisionsModificationResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testAcceptAllRevisions(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.AcceptAllRevisions('SampleWordDocument.docx')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,RevisionsModificationResponse.RevisionsModificationResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testPostDocumentParagraphRunFont(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            font = Font.Font()
+            font.Name = "Arial"
+            font.Bold = True
+
+            response = self.wordsApi.PostDocumentParagraphRunFont('SampleWordDocument.docx',0,0,font)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,FontResponse.FontResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testGetDocumentParagraphs(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetDocumentParagraphs('SampleWordDocument.docx')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,ParagraphLinkCollectionResponse.ParagraphLinkCollectionResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
 
