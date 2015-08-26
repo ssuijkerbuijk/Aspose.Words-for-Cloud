@@ -281,7 +281,7 @@ class WordsApi(object):
 
             
 
-        Returns: ResponseMessage
+        Returns: DocumentResponse
         """
 
         allParams = dict.fromkeys(['name', 'storage', 'folder'])
@@ -326,7 +326,7 @@ class WordsApi(object):
         files = { }
         bodyParam = None
 
-        headerParams['Accept'] = 'application/xml,application/octet-stream'
+        headerParams['Accept'] = 'application/json'
         headerParams['Content-Type'] = 'application/json'
 
         postData = (formParams if formParams else bodyParam)
@@ -335,7 +335,7 @@ class WordsApi(object):
 
         try:
             if response.status_code in [200,201,202]:
-                responseObject = self.apiClient.pre_deserialize(response.content, 'ResponseMessage', response.headers['content-type'])
+                responseObject = self.apiClient.pre_deserialize(response.content, 'DocumentResponse', response.headers['content-type'])
                 return responseObject
             else:
                 raise ApiException(response.status_code,response.content)
@@ -2728,7 +2728,7 @@ class WordsApi(object):
 
             
 
-        Returns: ResponseMessage
+        Returns: DrawingObjectResponse
         """
 
         allParams = dict.fromkeys(['name', 'objectIndex', 'storage', 'folder'])
@@ -2779,7 +2779,7 @@ class WordsApi(object):
         files = { }
         bodyParam = None
 
-        headerParams['Accept'] = 'application/xml,application/octet-stream'
+        headerParams['Accept'] = 'application/json'
         headerParams['Content-Type'] = 'application/json'
 
         postData = (formParams if formParams else bodyParam)
@@ -2788,7 +2788,7 @@ class WordsApi(object):
 
         try:
             if response.status_code in [200,201,202]:
-                responseObject = self.apiClient.pre_deserialize(response.content, 'ResponseMessage', response.headers['content-type'])
+                responseObject = self.apiClient.pre_deserialize(response.content, 'DrawingObjectResponse', response.headers['content-type'])
                 return responseObject
             else:
                 raise ApiException(response.status_code,response.content)
