@@ -44,6 +44,7 @@ from asposecloudwords.models import ProtectionRequest
 from asposecloudwords.models import DocumentPropertiesResponse
 from asposecloudwords.models import DocumentPropertyResponse
 from asposecloudwords.models import DocumentProperty
+from asposecloudwords.models import FieldNamesResponse
 
 import asposecloudstorage
 from asposecloudstorage.StorageApi import StorageApi
@@ -840,6 +841,21 @@ class TestAsposeCloudWords(unittest.TestCase):
             print "Mesage: " + ex.message
             raise ex
 
+    def testGetDocumentFieldNames(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.GetDocumentFieldNames('SampleWordDocument.docx')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,FieldNamesResponse.FieldNamesResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
     def testPutUpdateDocumentProperty(self):
         try:
             response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
@@ -870,6 +886,51 @@ class TestAsposeCloudWords(unittest.TestCase):
             response = self.wordsApi.PutUpdateDocumentProperty('SampleWordDocument.docx','Provider',property)
 
             response = self.wordsApi.DeleteDocumentProperty('SampleWordDocument.docx','Provider')
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,SaaSposeResponse.SaaSposeResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testDeleteSectionParagraphFields(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.DeleteSectionParagraphFields('SampleWordDocument.docx',0,0)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,SaaSposeResponse.SaaSposeResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testDeleteSectionFields(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.DeleteSectionFields('SampleWordDocument.docx',0)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,SaaSposeResponse.SaaSposeResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testDeleteParagraphFields(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.DeleteParagraphFields('SampleWordDocument.docx',0)
 
             self.assertEqual(response.Status,'OK')
             self.assertIsInstance(response,SaaSposeResponse.SaaSposeResponse)
