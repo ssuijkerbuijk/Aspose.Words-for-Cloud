@@ -114,7 +114,7 @@ class TestAsposeCloudWords(unittest.TestCase):
             response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
             response = self.wordsApi.GetDocument('SampleWordDocument.docx')
 
-            self.assertIsInstance(response,BookmarksResponse.BookmarksResponse)
+            self.assertIsInstance(response,DocumentResponse.DocumentResponse)
             self.assertEqual(response.Status,'OK')
 
         except ApiException as ex:
@@ -654,6 +654,12 @@ class TestAsposeCloudWords(unittest.TestCase):
     def testDeleteDocumentWatermark(self):
         try:
             response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            watermarkText = WatermarkText.WatermarkText()
+            watermarkText.Text = "Welcome Aspose"
+            watermarkText.RotationAngle = '45'
+
+            response = self.wordsApi.PostInsertWatermarkText('SampleWordDocument.docx',watermarkText)
 
             response = self.wordsApi.DeleteDocumentWatermark('SampleWordDocument.docx')
 

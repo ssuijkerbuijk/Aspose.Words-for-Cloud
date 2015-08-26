@@ -12,7 +12,7 @@ class Paragraph(object):
           attributeMap (dict): The key is attribute name and the value is json key in definition.
         """
         self.swaggerTypes = {
-            'ChildNodes': 'list[object]',
+            'ChildNodes': 'list[Paragraph]',
             'NodeId': 'str',
             'link': 'Link'
 
@@ -21,7 +21,7 @@ class Paragraph(object):
         self.attributeMap = {
             'ChildNodes': 'ChildNodes','NodeId': 'NodeId','link': 'link'}       
 
-        self.ChildNodes = None # list[object]
+        self.ChildNodes = None # list[ParagraphNode]
         self.NodeId = None # str
         self.link = None # Link
         
