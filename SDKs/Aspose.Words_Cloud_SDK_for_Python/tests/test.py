@@ -45,6 +45,8 @@ from asposecloudwords.models import DocumentPropertiesResponse
 from asposecloudwords.models import DocumentPropertyResponse
 from asposecloudwords.models import DocumentProperty
 from asposecloudwords.models import FieldNamesResponse
+from asposecloudwords.models import FormField
+from asposecloudwords.models import FormFieldResponse
 
 import asposecloudstorage
 from asposecloudstorage.StorageApi import StorageApi
@@ -931,6 +933,21 @@ class TestAsposeCloudWords(unittest.TestCase):
             response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
 
             response = self.wordsApi.DeleteParagraphFields('SampleWordDocument.docx',0)
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,SaaSposeResponse.SaaSposeResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testDeleteDocumentMacros(self):
+        try:
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+
+            response = self.wordsApi.DeleteDocumentMacros('SampleWordDocument.docx')
 
             self.assertEqual(response.Status,'OK')
             self.assertIsInstance(response,SaaSposeResponse.SaaSposeResponse)
