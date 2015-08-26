@@ -14,6 +14,7 @@ class LoadWebDocumentData(object):
         self.swaggerTypes = {
             'LoadingDocumentUrl': 'str',
             'SaveOptions': 'SaveOptionsData'
+
         }
 
         self.attributeMap = {
