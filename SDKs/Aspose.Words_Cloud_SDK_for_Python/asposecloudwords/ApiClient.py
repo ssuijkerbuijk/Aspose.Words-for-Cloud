@@ -154,8 +154,6 @@ class ApiClient(object):
                     headers['Content-length'] = str(len(data))
                 else:
                     data = urllib.urlencode(postData)
-            elif files:
-                headers['Content-type'] = 'multipart/form-data; boundary={0}'.format(self.boundary)
         else:
             raise Exception('Method ' + method + ' is not recognized.')
 
@@ -168,12 +166,12 @@ class ApiClient(object):
                 response = requests.get(url, headers=headers, stream=stream, files=files)
         elif method == 'PUT':
             if 'file' in files and files['file'] and len(files) == 1:
-                response = requests.put(url,files['file'], stream=stream)
+                response = requests.put(url,data=files['file'], stream=stream)
             else:
                 response = requests.put(url,data,headers=headers, stream=stream, files=files)
         elif method == 'POST':
             if 'file' in files and files['file'] and len(files) == 1:
-                response = requests.post(url,files['file'], stream=stream)
+                response = requests.post(url,data=files['file'], stream=stream)
             else:            
                 response = requests.post(url,data,headers=headers, stream=stream, files=files)
         elif method == 'DELETE':

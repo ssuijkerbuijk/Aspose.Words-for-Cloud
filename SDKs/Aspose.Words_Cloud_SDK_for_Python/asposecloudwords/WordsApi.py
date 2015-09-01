@@ -1063,7 +1063,7 @@ class WordsApi(object):
 
         
 
-    def PutExecuteMailMergeOnline(self, withRegions, file, **kwargs):
+    def PutExecuteMailMergeOnline(self, withRegions, file, data, **kwargs):
         """Execute document mail merge online.
         Args:
             withRegions (bool): With regions flag. (required)
@@ -1071,13 +1071,14 @@ class WordsApi(object):
             cleanup (str): Clean up options. (optional)
 
             file (File):  (required)
-
+            
+            data (File):  (required)
             
 
         Returns: ResponseMessage
         """
 
-        allParams = dict.fromkeys(['withRegions', 'cleanup', 'file'])
+        allParams = dict.fromkeys(['withRegions', 'cleanup', 'file', 'data'])
 
         params = locals()
         for (key, val) in params['kwargs'].iteritems():
@@ -1110,11 +1111,14 @@ class WordsApi(object):
         queryParams = {}
         headerParams = {}
         formParams = {}
-        files = { 'file':open(file, 'rb')}
+        files = [
+                ('file', (os.path.basename(file), open(file, 'rb'), 'application/octet-stream')),
+                ('data', (os.path.basename(data), open(data, 'rb'), 'application/xml'))
+            ]
         bodyParam = None
 
         headerParams['Accept'] = 'application/xml,application/octet-stream'
-        headerParams['Content-Type'] = 'multipart/form-data'
+        headerParams['Content-Type'] = None
 
         postData = (formParams if formParams else bodyParam)
 

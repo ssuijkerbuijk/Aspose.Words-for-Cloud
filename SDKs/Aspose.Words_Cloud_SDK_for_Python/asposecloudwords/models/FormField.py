@@ -22,12 +22,15 @@ class FormField(object):
             'EntryMacro': 'str',
             'ExitMacro': 'str',
             'NodeId': 'str',
-            'link': 'Link'
+            'link': 'Link',            
+            'TextInputFormat': 'str',
+            'TextInputType': 'str',
+            'TextInputDefault': 'str'
 
         }
 
         self.attributeMap = {
-            'Name': 'Name','Enabled': 'Enabled','StatusText': 'StatusText','OwnStatus': 'OwnStatus','HelpText': 'HelpText','OwnHelp': 'OwnHelp','CalculateOnExit': 'CalculateOnExit','EntryMacro': 'EntryMacro','ExitMacro': 'ExitMacro','NodeId': 'NodeId','link': 'link'}       
+            'Name': 'Name','Enabled': 'Enabled','StatusText': 'StatusText','OwnStatus': 'OwnStatus','HelpText': 'HelpText','OwnHelp': 'OwnHelp','CalculateOnExit': 'CalculateOnExit','EntryMacro': 'EntryMacro','ExitMacro': 'ExitMacro','NodeId': 'NodeId','link': 'link', 'TextInputFormat' : 'TextInputFormat', 'TextInputType' : 'TextInputType', 'TextInputDefault' : 'TextInputDefault'}       
 
         self.Name = None # str
         self.Enabled = None # bool
@@ -40,4 +43,6 @@ class FormField(object):
         self.ExitMacro = None # str
         self.NodeId = None # str
         self.link = None # Link
-        
+        self.TextInputFormat = None # str
+        self.TextInputType = None # str
+        self.TextInputDefault = None # str
