@@ -2,6 +2,7 @@ import unittest
 import os.path
 import json
 import inspect
+import requests
 
 import asposecloudwords
 from asposecloudwords.ApiClient import ApiClient
@@ -951,6 +952,42 @@ class TestAsposeCloudWords(unittest.TestCase):
 
             self.assertEqual(response.Status,'OK')
             self.assertIsInstance(response,SaaSposeResponse.SaaSposeResponse)
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testPutExecuteMailMergeOnline(self):
+        try:
+            response = self.wordsApi.PutExecuteMailMergeOnline(False,'./data/SampleExecuteTemplate.doc','./data/SampleExecuteTemplateData.txt')
+
+            self.assertEqual(response.Status,'OK')
+
+            with open("./output/" + 'SampleExecuteTemplateMerged.doc', 'wb') as f:
+                for chunk in response.InputStream:
+                    f.write(chunk)
+
+
+            self.assertTrue(True, os.path.exists("./output/" + 'SampleExecuteTemplateMerged.doc'))
+
+        except ApiException as ex:
+            print "Exception"
+            print "Code: " + str(ex.code)
+            print "Mesage: " + ex.message
+            raise ex
+
+    def testPostDocumentExecuteMailMerge(self):
+        try:
+            response = self.storageApi.PutCreate('aspose-words.png','./data/aspose-words.png')
+            response = self.storageApi.PutCreate('SampleMailMergeTemplateImage.doc','./data/SampleMailMergeTemplateImage.doc')
+            response = self.wordsApi.PostDocumentExecuteMailMerge('SampleMailMergeTemplateImage.doc',False,'./data/SampleMailMergeTemplateImageData.txt')
+
+
+
+            self.assertEqual(response.Status,'OK')
+            self.assertIsInstance(response,DocumentResponse.DocumentResponse)
 
         except ApiException as ex:
             print "Exception"
