@@ -3,7 +3,7 @@ __author__ = 'farooq.sheikh'
 from setuptools import setup, find_packages
 
 setup(
-    name = 'asposecloudwords',
+    name = 'asposewordscloud',
     packages = find_packages(),
     version = '1.0',
     description = 'Aspose.Words Cloud SDK for Python allows you to use Aspose.Words APIs in your Python applications',
