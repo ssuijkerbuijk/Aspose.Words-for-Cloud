@@ -4,54 +4,54 @@ import json
 import inspect
 import requests
 
-import asposecloudwords
-from asposecloudwords.ApiClient import ApiClient
-from asposecloudwords.WordsApi import WordsApi
-from asposecloudwords.ApiClient import ApiException
-from asposecloudwords.models import BookmarksResponse
-from asposecloudwords.models import BookmarkResponse
-from asposecloudwords.models import BookmarkData
-from asposecloudwords.models import DocumentEntryList
-from asposecloudwords.models import DocumentEntry
-from asposecloudwords.models import DocumentResponse
-from asposecloudwords.models import PageNumber
-from asposecloudwords.models import LoadWebDocumentData
-from asposecloudwords.models import SaveOptionsData
-from asposecloudwords.models import SaveResponse
-from asposecloudwords.models import SplitDocumentResponse
-from asposecloudwords.models import ResponseMessage
-from asposecloudwords.models import WatermarkText
-from asposecloudwords.models import ReplaceTextRequest
-from asposecloudwords.models import ReplaceTextResponse
-from asposecloudwords.models import TextItemsResponse
-from asposecloudwords.models import SectionLinkCollectionResponse
-from asposecloudwords.models import SectionPageSetupResponse
-from asposecloudwords.models import SectionResponse
-from asposecloudwords.models import PageSetup
-from asposecloudwords.models import RevisionsModificationResponse
-from asposecloudwords.models import Font
-from asposecloudwords.models import FontResponse
-from asposecloudwords.models import ParagraphLinkCollectionResponse
-from asposecloudwords.models import RunResponse
-from asposecloudwords.models import ParagraphResponse
-from asposecloudwords.models import HyperlinksResponse
-from asposecloudwords.models import HyperlinkResponse
-from asposecloudwords.models import SaaSposeResponse
-from asposecloudwords.models import DrawingObjectsResponse
-from asposecloudwords.models import StatDataResponse
-from asposecloudwords.models import TiffSaveOptionsData
-from asposecloudwords.models import ProtectionDataResponse
-from asposecloudwords.models import ProtectionRequest
-from asposecloudwords.models import DocumentPropertiesResponse
-from asposecloudwords.models import DocumentPropertyResponse
-from asposecloudwords.models import DocumentProperty
-from asposecloudwords.models import FieldNamesResponse
-from asposecloudwords.models import FormField
-from asposecloudwords.models import FormFieldResponse
+import asposewordscloud
+from asposewordscloud.ApiClient import ApiClient
+from asposewordscloud.WordsApi import WordsApi
+from asposewordscloud.ApiClient import ApiException
+from asposewordscloud.models import BookmarksResponse
+from asposewordscloud.models import BookmarkResponse
+from asposewordscloud.models import BookmarkData
+from asposewordscloud.models import DocumentEntryList
+from asposewordscloud.models import DocumentEntry
+from asposewordscloud.models import DocumentResponse
+from asposewordscloud.models import PageNumber
+from asposewordscloud.models import LoadWebDocumentData
+from asposewordscloud.models import SaveOptionsData
+from asposewordscloud.models import SaveResponse
+from asposewordscloud.models import SplitDocumentResponse
+from asposewordscloud.models import ResponseMessage
+from asposewordscloud.models import WatermarkText
+from asposewordscloud.models import ReplaceTextRequest
+from asposewordscloud.models import ReplaceTextResponse
+from asposewordscloud.models import TextItemsResponse
+from asposewordscloud.models import SectionLinkCollectionResponse
+from asposewordscloud.models import SectionPageSetupResponse
+from asposewordscloud.models import SectionResponse
+from asposewordscloud.models import PageSetup
+from asposewordscloud.models import RevisionsModificationResponse
+from asposewordscloud.models import Font
+from asposewordscloud.models import FontResponse
+from asposewordscloud.models import ParagraphLinkCollectionResponse
+from asposewordscloud.models import RunResponse
+from asposewordscloud.models import ParagraphResponse
+from asposewordscloud.models import HyperlinksResponse
+from asposewordscloud.models import HyperlinkResponse
+from asposewordscloud.models import SaaSposeResponse
+from asposewordscloud.models import DrawingObjectsResponse
+from asposewordscloud.models import StatDataResponse
+from asposewordscloud.models import TiffSaveOptionsData
+from asposewordscloud.models import ProtectionDataResponse
+from asposewordscloud.models import ProtectionRequest
+from asposewordscloud.models import DocumentPropertiesResponse
+from asposewordscloud.models import DocumentPropertyResponse
+from asposewordscloud.models import DocumentProperty
+from asposewordscloud.models import FieldNamesResponse
+from asposewordscloud.models import FormField
+from asposewordscloud.models import FormFieldResponse
 
-import asposecloudstorage
-from asposecloudstorage.StorageApi import StorageApi
-from asposecloudstorage.models import ResponseMessage as StorageResponseMessage
+import asposestoragecloud
+from asposestoragecloud.StorageApi import StorageApi
+from asposestoragecloud.models import ResponseMessage as StorageResponseMessage
 
 
 class TestAsposeCloudWords(unittest.TestCase):
@@ -61,7 +61,7 @@ class TestAsposeCloudWords(unittest.TestCase):
         with open('setup.json') as json_file:
             data = json.load(json_file)
 
-        self.storageApiClient = asposecloudstorage.ApiClient.ApiClient(apiKey=str(data['app_key']),appSid=str(data['app_sid']),debug=True,apiServer=str(data['product_uri']))
+        self.storageApiClient = asposestoragecloud.ApiClient.ApiClient(apiKey=str(data['app_key']),appSid=str(data['app_sid']),debug=True,apiServer=str(data['product_uri']))
         self.storageApi = StorageApi(self.storageApiClient)
 
         self.apiClient = ApiClient(apiKey=str(data['app_key']),appSid=str(data['app_sid']),debug=True,apiServer=str(data['product_uri']))
