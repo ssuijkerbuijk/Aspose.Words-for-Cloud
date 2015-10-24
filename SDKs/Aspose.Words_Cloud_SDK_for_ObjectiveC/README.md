@@ -5,7 +5,7 @@ This SDK allows you to work with Aspose.Words for Cloud APIs in your iOS app qui
 
 [CocoaPods](http://cocoapods.org) is the recommended way to add Aspose-Words-SDK to your project.
 
-1. Add a pod entry for Aspose-Words-SDK to your Podfile `pod 'Aspose-Words-SDK'`
+1. Add a pod entry for Aspose-Words-SDK to your Podfile `pod 'AsposeWordsCloud'`
 2. Install the pod(s) by running `pod install`.
 3. Include Aspose-Words-SDK wherever you need it with `#import "ASPWordsApi.h"`.
 
