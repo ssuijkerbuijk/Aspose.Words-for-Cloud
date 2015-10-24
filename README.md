@@ -15,7 +15,7 @@ Directory | Description
 [Java SDK](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs/Aspose.Words_Cloud_SDK_for_Java)  |  Aspose.Words Cloud SDK for Java.
 [PHP SDK](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs/Aspose.Words_Cloud_SDK_for_PHP)  | Aspose.Words Cloud SDK for PHP.
 [Python SDK](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs/Aspose.Words_Cloud_SDK_for_Python) | Aspose.Words Cloud SDK for Python.
-[Objective C SDK](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs/Aspose.Words_Cloud_SDK_for_ObjectiveC) | Aspose.Words Cloud SDK for Objective C. 
+[Objective C SDK](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs/Aspose.Words_Cloud_SDK_for_ObjectiveC) | Aspose.Words Cloud SDK for Objective C 
 [Plugins](Plugins)  | Standalone Plugins that will demonstrate one or multiple features on Aspose.Words for Cloud
 
 ## Resources
