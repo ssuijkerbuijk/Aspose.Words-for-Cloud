@@ -16,4 +16,4 @@ Aspose-Words-SDK includes a suite of unit tests within the [Aspose.Words_Cloud_S
 Your feedback is very important to us. Please email us all your queries and feedback at marketplace@aspose.com.
 
 ## License
-Aspose-Words-SDK is available under the MIT license. See the [LICENSE](https://github.com/asposewords/Aspose_Words_Cloud/blob/master/SDKs/Aspose.Words_Cloud_SDK_for_ObjectiveC/LICENSEc) file for more info.
+Aspose-Words-SDK is available under the MIT license. See the [LICENSE](https://github.com/asposewords/Aspose_Words_Cloud/blob/master/SDKs/Aspose.Words_Cloud_SDK_for_ObjectiveC/LICENSE) file for more info.
