@@ -7,166 +7,166 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301C23C71BF9D87900B29A32 /* ASPApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C23BE1BF9D87900B29A32 /* ASPApiClient.m */; };
+		301C23C81BF9D87900B29A32 /* ASPConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C23C01BF9D87900B29A32 /* ASPConfiguration.m */; };
+		301C23C91BF9D87900B29A32 /* ASPJSONRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C23C21BF9D87900B29A32 /* ASPJSONRequestSerializer.m */; };
+		301C23CA1BF9D87900B29A32 /* ASPJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C23C41BF9D87900B29A32 /* ASPJSONResponseSerializer.m */; };
+		301C23CB1BF9D87900B29A32 /* ASPQueryParamCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C23C61BF9D87900B29A32 /* ASPQueryParamCollection.m */; };
+		301C23D61BF9DC4600B29A32 /* ASPBaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C23D31BF9DC4600B29A32 /* ASPBaseResponse.m */; };
+		301C23D71BF9DC4600B29A32 /* ASPObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C23D51BF9DC4600B29A32 /* ASPObject.m */; };
 		30D394E01BDB63DC0075E99B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D394DF1BDB63DC0075E99B /* main.m */; };
 		30D394E31BDB63DC0075E99B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D394E21BDB63DC0075E99B /* AppDelegate.m */; };
 		30D394E61BDB63DC0075E99B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D394E51BDB63DC0075E99B /* ViewController.m */; };
 		30D394E91BDB63DC0075E99B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D394E71BDB63DC0075E99B /* Main.storyboard */; };
 		30D394EB1BDB63DC0075E99B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D394EA1BDB63DC0075E99B /* Assets.xcassets */; };
 		30D394EE1BDB63DC0075E99B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D394EC1BDB63DC0075E99B /* LaunchScreen.storyboard */; };
-		30D395D81BDB660A0075E99B /* ASPStorageApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395061BDB660A0075E99B /* ASPStorageApi.m */; settings = {ASSET_TAGS = (); }; };
-		30D395D91BDB660A0075E99B /* ASPDiscUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395091BDB660A0075E99B /* ASPDiscUsage.m */; settings = {ASSET_TAGS = (); }; };
-		30D395DA1BDB660A0075E99B /* ASPDiscUsageResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3950B1BDB660A0075E99B /* ASPDiscUsageResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D395DB1BDB660A0075E99B /* ASPFileExist.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3950D1BDB660A0075E99B /* ASPFileExist.m */; settings = {ASSET_TAGS = (); }; };
-		30D395DC1BDB660A0075E99B /* ASPFileExistResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3950F1BDB660A0075E99B /* ASPFileExistResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D395DD1BDB660A0075E99B /* ASPFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395111BDB660A0075E99B /* ASPFileResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D395DE1BDB660A0075E99B /* ASPFileVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395131BDB660A0075E99B /* ASPFileVersion.m */; settings = {ASSET_TAGS = (); }; };
-		30D395DF1BDB660A0075E99B /* ASPFileVersionsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395151BDB660A0075E99B /* ASPFileVersionsResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D395E01BDB660A0075E99B /* ASPFolderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395171BDB660A0075E99B /* ASPFolderResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D395E11BDB660A0075E99B /* ASPStorageExistResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395191BDB660A0075E99B /* ASPStorageExistResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D395E21BDB660A0075E99B /* ASPWordsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3951D1BDB660A0075E99B /* ASPWordsApi.m */; settings = {ASSET_TAGS = (); }; };
-		30D395E31BDB660A0075E99B /* ASPApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395201BDB660A0075E99B /* ASPApiClient.m */; settings = {ASSET_TAGS = (); }; };
-		30D395E41BDB660A0075E99B /* ASPConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395221BDB660A0075E99B /* ASPConfiguration.m */; settings = {ASSET_TAGS = (); }; };
-		30D395E51BDB660A0075E99B /* ASPJSONRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395241BDB660A0075E99B /* ASPJSONRequestSerializer.m */; settings = {ASSET_TAGS = (); }; };
-		30D395E61BDB660A0075E99B /* ASPJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395261BDB660A0075E99B /* ASPJSONResponseSerializer.m */; settings = {ASSET_TAGS = (); }; };
-		30D395E71BDB660A0075E99B /* ASPQueryParamCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395281BDB660A0075E99B /* ASPQueryParamCollection.m */; settings = {ASSET_TAGS = (); }; };
-		30D395E81BDB660A0075E99B /* ASPBaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3952B1BDB660A0075E99B /* ASPBaseResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D395E91BDB660A0075E99B /* ASPBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3952D1BDB660A0075E99B /* ASPBookmark.m */; settings = {ASSET_TAGS = (); }; };
-		30D395EA1BDB660A0075E99B /* ASPBookmarkData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3952F1BDB660A0075E99B /* ASPBookmarkData.m */; settings = {ASSET_TAGS = (); }; };
-		30D395EB1BDB660A0075E99B /* ASPBookmarkResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395311BDB660A0075E99B /* ASPBookmarkResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D395EC1BDB660A0075E99B /* ASPBookmarks.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395331BDB660A0075E99B /* ASPBookmarks.m */; settings = {ASSET_TAGS = (); }; };
-		30D395ED1BDB660A0075E99B /* ASPBookmarksResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395351BDB660A0075E99B /* ASPBookmarksResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D395EE1BDB660A0075E99B /* ASPBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395371BDB660A0075E99B /* ASPBorder.m */; settings = {ASSET_TAGS = (); }; };
-		30D395EF1BDB660A0075E99B /* ASPColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395391BDB660A0075E99B /* ASPColor.m */; settings = {ASSET_TAGS = (); }; };
-		30D395F01BDB660A0075E99B /* ASPComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3953B1BDB660A0075E99B /* ASPComment.m */; settings = {ASSET_TAGS = (); }; };
-		30D395F11BDB660A0075E99B /* ASPCommentResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3953D1BDB660A0075E99B /* ASPCommentResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D395F21BDB660A0075E99B /* ASPCommentsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3953F1BDB660A0075E99B /* ASPCommentsCollection.m */; settings = {ASSET_TAGS = (); }; };
-		30D395F31BDB660A0075E99B /* ASPCommentsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395411BDB660A0075E99B /* ASPCommentsResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D395F41BDB660A0075E99B /* ASPDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395431BDB660A0075E99B /* ASPDocument.m */; settings = {ASSET_TAGS = (); }; };
-		30D395F51BDB660A0075E99B /* ASPDocumentEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395451BDB660A0075E99B /* ASPDocumentEntry.m */; settings = {ASSET_TAGS = (); }; };
-		30D395F61BDB660A0075E99B /* ASPDocumentEntryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395471BDB660A0075E99B /* ASPDocumentEntryList.m */; settings = {ASSET_TAGS = (); }; };
-		30D395F71BDB660A0075E99B /* ASPDocumentPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395491BDB660A0075E99B /* ASPDocumentPosition.m */; settings = {ASSET_TAGS = (); }; };
-		30D395F81BDB660A0075E99B /* ASPDocumentProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3954B1BDB660A0075E99B /* ASPDocumentProperties.m */; settings = {ASSET_TAGS = (); }; };
-		30D395F91BDB660A0075E99B /* ASPDocumentPropertiesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3954D1BDB660A0075E99B /* ASPDocumentPropertiesResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D395FA1BDB660A0075E99B /* ASPDocumentProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3954F1BDB660A0075E99B /* ASPDocumentProperty.m */; settings = {ASSET_TAGS = (); }; };
-		30D395FB1BDB660A0075E99B /* ASPDocumentPropertyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395511BDB660A0075E99B /* ASPDocumentPropertyResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D395FC1BDB660A0075E99B /* ASPDocumentResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395531BDB660A0075E99B /* ASPDocumentResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D395FD1BDB660A0075E99B /* ASPDocumentStatData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395551BDB660A0075E99B /* ASPDocumentStatData.m */; settings = {ASSET_TAGS = (); }; };
-		30D395FE1BDB660A0075E99B /* ASPDrawingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395571BDB660A0075E99B /* ASPDrawingObject.m */; settings = {ASSET_TAGS = (); }; };
-		30D395FF1BDB660A0075E99B /* ASPDrawingObjectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395591BDB660A0075E99B /* ASPDrawingObjectResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D396001BDB660A0075E99B /* ASPDrawingObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3955B1BDB660A0075E99B /* ASPDrawingObjects.m */; settings = {ASSET_TAGS = (); }; };
-		30D396011BDB660A0075E99B /* ASPDrawingObjectsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3955D1BDB660A0075E99B /* ASPDrawingObjectsResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D396021BDB660A0075E99B /* ASPField.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3955F1BDB660A0075E99B /* ASPField.m */; settings = {ASSET_TAGS = (); }; };
-		30D396031BDB660A0075E99B /* ASPFieldNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395611BDB660A0075E99B /* ASPFieldNames.m */; settings = {ASSET_TAGS = (); }; };
-		30D396041BDB660A0075E99B /* ASPFieldNamesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395631BDB660A0075E99B /* ASPFieldNamesResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D396051BDB660A0075E99B /* ASPFieldResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395651BDB660A0075E99B /* ASPFieldResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D396061BDB660A0075E99B /* ASPFieldType.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395671BDB660A0075E99B /* ASPFieldType.m */; settings = {ASSET_TAGS = (); }; };
-		30D396071BDB660A0075E99B /* ASPFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395691BDB660A0075E99B /* ASPFont.m */; settings = {ASSET_TAGS = (); }; };
-		30D396081BDB660A0075E99B /* ASPFontResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3956B1BDB660A0075E99B /* ASPFontResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D396091BDB660A0075E99B /* ASPFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3956D1BDB660A0075E99B /* ASPFormField.m */; settings = {ASSET_TAGS = (); }; };
-		30D3960A1BDB660A0075E99B /* ASPFormFieldResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3956F1BDB660A0075E99B /* ASPFormFieldResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D3960B1BDB660A0075E99B /* ASPHyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395711BDB660A0075E99B /* ASPHyperlink.m */; settings = {ASSET_TAGS = (); }; };
-		30D3960C1BDB660A0075E99B /* ASPHyperlinkResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395731BDB660A0075E99B /* ASPHyperlinkResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D3960D1BDB660A0075E99B /* ASPHyperlinks.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395751BDB660A0075E99B /* ASPHyperlinks.m */; settings = {ASSET_TAGS = (); }; };
-		30D3960E1BDB660A0075E99B /* ASPHyperlinksResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395771BDB660A0075E99B /* ASPHyperlinksResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D3960F1BDB660A0075E99B /* ASPLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395791BDB660A0075E99B /* ASPLink.m */; settings = {ASSET_TAGS = (); }; };
-		30D396101BDB660A0075E99B /* ASPLinkElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3957B1BDB660A0075E99B /* ASPLinkElement.m */; settings = {ASSET_TAGS = (); }; };
-		30D396111BDB660A0075E99B /* ASPLoadWebDocumentData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3957D1BDB660A0075E99B /* ASPLoadWebDocumentData.m */; settings = {ASSET_TAGS = (); }; };
-		30D396121BDB660A0075E99B /* ASPMetafileRenderingOptionsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3957F1BDB660A0075E99B /* ASPMetafileRenderingOptionsData.m */; settings = {ASSET_TAGS = (); }; };
-		30D396131BDB660A0075E99B /* ASPModificationOperationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395811BDB660A0075E99B /* ASPModificationOperationResult.m */; settings = {ASSET_TAGS = (); }; };
-		30D396141BDB660A0075E99B /* ASPNodeLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395831BDB660A0075E99B /* ASPNodeLink.m */; settings = {ASSET_TAGS = (); }; };
-		30D396151BDB660A0075E99B /* ASPObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395851BDB660A0075E99B /* ASPObject.m */; settings = {ASSET_TAGS = (); }; };
-		30D396161BDB660A0075E99B /* ASPPageNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395871BDB660A0075E99B /* ASPPageNumber.m */; settings = {ASSET_TAGS = (); }; };
-		30D396171BDB660A0075E99B /* ASPPageSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395891BDB660A0075E99B /* ASPPageSetup.m */; settings = {ASSET_TAGS = (); }; };
-		30D396181BDB660A0075E99B /* ASPPageStatData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3958B1BDB660A0075E99B /* ASPPageStatData.m */; settings = {ASSET_TAGS = (); }; };
-		30D396191BDB660A0075E99B /* ASPParagraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3958D1BDB660A0075E99B /* ASPParagraph.m */; settings = {ASSET_TAGS = (); }; };
-		30D3961A1BDB660A0075E99B /* ASPParagraphLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3958F1BDB660A0075E99B /* ASPParagraphLink.m */; settings = {ASSET_TAGS = (); }; };
-		30D3961B1BDB660A0075E99B /* ASPParagraphLinkCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395911BDB660A0075E99B /* ASPParagraphLinkCollection.m */; settings = {ASSET_TAGS = (); }; };
-		30D3961C1BDB660A0075E99B /* ASPParagraphLinkCollectionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395931BDB660A0075E99B /* ASPParagraphLinkCollectionResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D3961D1BDB660A0075E99B /* ASPParagraphResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395951BDB660A0075E99B /* ASPParagraphResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D3961E1BDB660A0075E99B /* ASPProtectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395971BDB660A0075E99B /* ASPProtectionData.m */; settings = {ASSET_TAGS = (); }; };
-		30D3961F1BDB660A0075E99B /* ASPProtectionDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395991BDB660A0075E99B /* ASPProtectionDataResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D396201BDB660A0075E99B /* ASPProtectionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3959B1BDB660A0075E99B /* ASPProtectionRequest.m */; settings = {ASSET_TAGS = (); }; };
-		30D396211BDB660A0075E99B /* ASPRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3959D1BDB660A0075E99B /* ASPRectangle.m */; settings = {ASSET_TAGS = (); }; };
-		30D396221BDB660A0075E99B /* ASPReplaceTextRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3959F1BDB660A0075E99B /* ASPReplaceTextRequest.m */; settings = {ASSET_TAGS = (); }; };
-		30D396231BDB660A0075E99B /* ASPReplaceTextResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395A11BDB660A0075E99B /* ASPReplaceTextResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D396241BDB660A0075E99B /* ASPResponseMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395A31BDB660A0075E99B /* ASPResponseMessage.m */; settings = {ASSET_TAGS = (); }; };
-		30D396251BDB660A0075E99B /* ASPRevisionsModificationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395A51BDB660A0075E99B /* ASPRevisionsModificationResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D396261BDB660A0075E99B /* ASPRun.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395A71BDB660A0075E99B /* ASPRun.m */; settings = {ASSET_TAGS = (); }; };
-		30D396271BDB660A0075E99B /* ASPRunResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395A91BDB660A0075E99B /* ASPRunResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D396281BDB660A0075E99B /* ASPSaveOptionsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395AB1BDB660A0075E99B /* ASPSaveOptionsData.m */; settings = {ASSET_TAGS = (); }; };
-		30D396291BDB660A0075E99B /* ASPSaveResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395AD1BDB660A0075E99B /* ASPSaveResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D3962A1BDB660A0075E99B /* ASPSaveResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395AF1BDB660A0075E99B /* ASPSaveResult.m */; settings = {ASSET_TAGS = (); }; };
-		30D3962B1BDB660A0075E99B /* ASPSearchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395B11BDB660A0075E99B /* ASPSearchResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D3962C1BDB660A0075E99B /* ASPSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395B31BDB660A0075E99B /* ASPSearchResult.m */; settings = {ASSET_TAGS = (); }; };
-		30D3962D1BDB660A0075E99B /* ASPSearchResultsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395B51BDB660A0075E99B /* ASPSearchResultsCollection.m */; settings = {ASSET_TAGS = (); }; };
-		30D3962E1BDB660A0075E99B /* ASPSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395B71BDB660A0075E99B /* ASPSection.m */; settings = {ASSET_TAGS = (); }; };
-		30D3962F1BDB660A0075E99B /* ASPSectionLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395B91BDB660A0075E99B /* ASPSectionLink.m */; settings = {ASSET_TAGS = (); }; };
-		30D396301BDB660A0075E99B /* ASPSectionLinkCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395BB1BDB660A0075E99B /* ASPSectionLinkCollection.m */; settings = {ASSET_TAGS = (); }; };
-		30D396311BDB660A0075E99B /* ASPSectionLinkCollectionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395BD1BDB660A0075E99B /* ASPSectionLinkCollectionResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D396321BDB660A0075E99B /* ASPSectionPageSetupResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395BF1BDB660A0075E99B /* ASPSectionPageSetupResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D396331BDB660A0075E99B /* ASPSectionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395C11BDB660A0075E99B /* ASPSectionResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D396341BDB660A0075E99B /* ASPSplitDocumentResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395C31BDB660A0075E99B /* ASPSplitDocumentResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D396351BDB660A0075E99B /* ASPSplitDocumentResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395C51BDB660A0075E99B /* ASPSplitDocumentResult.m */; settings = {ASSET_TAGS = (); }; };
-		30D396361BDB660A0075E99B /* ASPStatDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395C71BDB660A0075E99B /* ASPStatDataResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D396371BDB660A0075E99B /* ASPStoryChildNodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395C91BDB660A0075E99B /* ASPStoryChildNodes.m */; settings = {ASSET_TAGS = (); }; };
-		30D396381BDB660A0075E99B /* ASPSystemObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395CB1BDB660A0075E99B /* ASPSystemObject.m */; settings = {ASSET_TAGS = (); }; };
-		30D396391BDB660A0075E99B /* ASPTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395CD1BDB660A0075E99B /* ASPTextItem.m */; settings = {ASSET_TAGS = (); }; };
-		30D3963A1BDB660A0075E99B /* ASPTextItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395CF1BDB660A0075E99B /* ASPTextItems.m */; settings = {ASSET_TAGS = (); }; };
-		30D3963B1BDB660A0075E99B /* ASPTextItemsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395D11BDB660A0075E99B /* ASPTextItemsResponse.m */; settings = {ASSET_TAGS = (); }; };
-		30D3963C1BDB660A0075E99B /* ASPTiffSaveOptionsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395D31BDB660A0075E99B /* ASPTiffSaveOptionsData.m */; settings = {ASSET_TAGS = (); }; };
-		30D3963D1BDB660A0075E99B /* ASPWatermarkText.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395D51BDB660A0075E99B /* ASPWatermarkText.m */; settings = {ASSET_TAGS = (); }; };
-		30D3963E1BDB660A0075E99B /* JSONValueTransformer+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395D71BDB660A0075E99B /* JSONValueTransformer+ISO8601.m */; settings = {ASSET_TAGS = (); }; };
-		30D3965B1BDB66200075E99B /* AppendWordDocumentsExample-TestFile-Destination.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D396401BDB66200075E99B /* AppendWordDocumentsExample-TestFile-Destination.doc */; settings = {ASSET_TAGS = (); }; };
-		30D3965C1BDB66200075E99B /* AppendWordDocumentsExample-TestFile-Source.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D396411BDB66200075E99B /* AppendWordDocumentsExample-TestFile-Source.doc */; settings = {ASSET_TAGS = (); }; };
-		30D3965D1BDB66200075E99B /* aspose-cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 30D396421BDB66200075E99B /* aspose-cloud.png */; settings = {ASSET_TAGS = (); }; };
-		30D3965E1BDB66200075E99B /* Customers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D396431BDB66200075E99B /* Customers.txt */; settings = {ASSET_TAGS = (); }; };
-		30D3965F1BDB66200075E99B /* FormFilled.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396441BDB66200075E99B /* FormFilled.docx */; settings = {ASSET_TAGS = (); }; };
-		30D396601BDB66200075E99B /* header-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30D396451BDB66200075E99B /* header-logo.png */; settings = {ASSET_TAGS = (); }; };
-		30D396611BDB66200075E99B /* Sample_EmbeddedOLE.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396461BDB66200075E99B /* Sample_EmbeddedOLE.docx */; settings = {ASSET_TAGS = (); }; };
-		30D396621BDB66200075E99B /* SampleAppendDoc.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396471BDB66200075E99B /* SampleAppendDoc.docx */; settings = {ASSET_TAGS = (); }; };
-		30D396631BDB66200075E99B /* SampleAppendDoc2.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396481BDB66200075E99B /* SampleAppendDoc2.docx */; settings = {ASSET_TAGS = (); }; };
-		30D396641BDB66200075E99B /* SampleBlankWatermarkDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396491BDB66200075E99B /* SampleBlankWatermarkDocument.docx */; settings = {ASSET_TAGS = (); }; };
-		30D396651BDB66200075E99B /* SampleBlankWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964A1BDB66200075E99B /* SampleBlankWordDocument.docx */; settings = {ASSET_TAGS = (); }; };
-		30D396661BDB66200075E99B /* SampleExecuteTemplate.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964B1BDB66200075E99B /* SampleExecuteTemplate.doc */; settings = {ASSET_TAGS = (); }; };
-		30D396671BDB66200075E99B /* SampleExecuteTemplate.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964C1BDB66200075E99B /* SampleExecuteTemplate.docx */; settings = {ASSET_TAGS = (); }; };
-		30D396681BDB66200075E99B /* SampleExecuteTemplateData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964D1BDB66200075E99B /* SampleExecuteTemplateData.txt */; settings = {ASSET_TAGS = (); }; };
-		30D396691BDB66200075E99B /* SampleHeaderFooterWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964E1BDB66200075E99B /* SampleHeaderFooterWordDocument.docx */; settings = {ASSET_TAGS = (); }; };
-		30D3966A1BDB66200075E99B /* SampleInvoiceTemplate.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964F1BDB66200075E99B /* SampleInvoiceTemplate.doc */; settings = {ASSET_TAGS = (); }; };
-		30D3966B1BDB66200075E99B /* SampleInvoiceTemplateData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D396501BDB66200075E99B /* SampleInvoiceTemplateData.txt */; settings = {ASSET_TAGS = (); }; };
-		30D3966C1BDB66200075E99B /* SampleMailMergeTemplate.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396511BDB66200075E99B /* SampleMailMergeTemplate.docx */; settings = {ASSET_TAGS = (); }; };
-		30D3966D1BDB66200075E99B /* SampleMailMergeTemplateData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D396521BDB66200075E99B /* SampleMailMergeTemplateData.txt */; settings = {ASSET_TAGS = (); }; };
-		30D3966E1BDB66200075E99B /* SampleMailMergeTemplateImage.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D396531BDB66200075E99B /* SampleMailMergeTemplateImage.doc */; settings = {ASSET_TAGS = (); }; };
-		30D3966F1BDB66200075E99B /* SampleMailMergeTemplateImageData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D396541BDB66200075E99B /* SampleMailMergeTemplateImageData.txt */; settings = {ASSET_TAGS = (); }; };
-		30D396701BDB66200075E99B /* SampleOlePdfData.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396551BDB66200075E99B /* SampleOlePdfData.docx */; settings = {ASSET_TAGS = (); }; };
-		30D396711BDB66200075E99B /* SampleProtectedBlankWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396561BDB66200075E99B /* SampleProtectedBlankWordDocument.docx */; settings = {ASSET_TAGS = (); }; };
-		30D396721BDB66200075E99B /* SampleWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396571BDB66200075E99B /* SampleWordDocument.docx */; settings = {ASSET_TAGS = (); }; };
-		30D396731BDB66200075E99B /* WordFormatConverterExampleTest.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D396581BDB66200075E99B /* WordFormatConverterExampleTest.doc */; settings = {ASSET_TAGS = (); }; };
-		30D396741BDB66200075E99B /* ASPWordsApiTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3965A1BDB66200075E99B /* ASPWordsApiTestCase.m */; settings = {ASSET_TAGS = (); }; };
-		30D396751BDB662C0075E99B /* AppendWordDocumentsExample-TestFile-Destination.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D396401BDB66200075E99B /* AppendWordDocumentsExample-TestFile-Destination.doc */; settings = {ASSET_TAGS = (); }; };
-		30D396761BDB662C0075E99B /* AppendWordDocumentsExample-TestFile-Source.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D396411BDB66200075E99B /* AppendWordDocumentsExample-TestFile-Source.doc */; settings = {ASSET_TAGS = (); }; };
-		30D396771BDB662C0075E99B /* aspose-cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 30D396421BDB66200075E99B /* aspose-cloud.png */; settings = {ASSET_TAGS = (); }; };
-		30D396781BDB662C0075E99B /* Customers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D396431BDB66200075E99B /* Customers.txt */; settings = {ASSET_TAGS = (); }; };
-		30D396791BDB662C0075E99B /* FormFilled.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396441BDB66200075E99B /* FormFilled.docx */; settings = {ASSET_TAGS = (); }; };
-		30D3967A1BDB662C0075E99B /* header-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30D396451BDB66200075E99B /* header-logo.png */; settings = {ASSET_TAGS = (); }; };
-		30D3967B1BDB662C0075E99B /* Sample_EmbeddedOLE.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396461BDB66200075E99B /* Sample_EmbeddedOLE.docx */; settings = {ASSET_TAGS = (); }; };
-		30D3967C1BDB662C0075E99B /* SampleAppendDoc.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396471BDB66200075E99B /* SampleAppendDoc.docx */; settings = {ASSET_TAGS = (); }; };
-		30D3967D1BDB662C0075E99B /* SampleAppendDoc2.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396481BDB66200075E99B /* SampleAppendDoc2.docx */; settings = {ASSET_TAGS = (); }; };
-		30D3967E1BDB662C0075E99B /* SampleBlankWatermarkDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396491BDB66200075E99B /* SampleBlankWatermarkDocument.docx */; settings = {ASSET_TAGS = (); }; };
-		30D3967F1BDB662C0075E99B /* SampleBlankWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964A1BDB66200075E99B /* SampleBlankWordDocument.docx */; settings = {ASSET_TAGS = (); }; };
-		30D396801BDB662C0075E99B /* SampleExecuteTemplate.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964B1BDB66200075E99B /* SampleExecuteTemplate.doc */; settings = {ASSET_TAGS = (); }; };
-		30D396811BDB662C0075E99B /* SampleExecuteTemplate.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964C1BDB66200075E99B /* SampleExecuteTemplate.docx */; settings = {ASSET_TAGS = (); }; };
-		30D396821BDB662C0075E99B /* SampleExecuteTemplateData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964D1BDB66200075E99B /* SampleExecuteTemplateData.txt */; settings = {ASSET_TAGS = (); }; };
-		30D396831BDB662C0075E99B /* SampleHeaderFooterWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964E1BDB66200075E99B /* SampleHeaderFooterWordDocument.docx */; settings = {ASSET_TAGS = (); }; };
-		30D396841BDB662C0075E99B /* SampleInvoiceTemplate.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964F1BDB66200075E99B /* SampleInvoiceTemplate.doc */; settings = {ASSET_TAGS = (); }; };
-		30D396851BDB662C0075E99B /* SampleInvoiceTemplateData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D396501BDB66200075E99B /* SampleInvoiceTemplateData.txt */; settings = {ASSET_TAGS = (); }; };
-		30D396861BDB662C0075E99B /* SampleMailMergeTemplate.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396511BDB66200075E99B /* SampleMailMergeTemplate.docx */; settings = {ASSET_TAGS = (); }; };
-		30D396871BDB662C0075E99B /* SampleMailMergeTemplateData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D396521BDB66200075E99B /* SampleMailMergeTemplateData.txt */; settings = {ASSET_TAGS = (); }; };
-		30D396881BDB662C0075E99B /* SampleMailMergeTemplateImage.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D396531BDB66200075E99B /* SampleMailMergeTemplateImage.doc */; settings = {ASSET_TAGS = (); }; };
-		30D396891BDB662C0075E99B /* SampleMailMergeTemplateImageData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D396541BDB66200075E99B /* SampleMailMergeTemplateImageData.txt */; settings = {ASSET_TAGS = (); }; };
-		30D3968A1BDB662C0075E99B /* SampleOlePdfData.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396551BDB66200075E99B /* SampleOlePdfData.docx */; settings = {ASSET_TAGS = (); }; };
-		30D3968B1BDB662C0075E99B /* SampleProtectedBlankWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396561BDB66200075E99B /* SampleProtectedBlankWordDocument.docx */; settings = {ASSET_TAGS = (); }; };
-		30D3968C1BDB662C0075E99B /* SampleWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396571BDB66200075E99B /* SampleWordDocument.docx */; settings = {ASSET_TAGS = (); }; };
-		30D3968D1BDB662C0075E99B /* WordFormatConverterExampleTest.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D396581BDB66200075E99B /* WordFormatConverterExampleTest.doc */; settings = {ASSET_TAGS = (); }; };
+		30D395D81BDB660A0075E99B /* ASPStorageApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395061BDB660A0075E99B /* ASPStorageApi.m */; };
+		30D395D91BDB660A0075E99B /* ASPDiscUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395091BDB660A0075E99B /* ASPDiscUsage.m */; };
+		30D395DA1BDB660A0075E99B /* ASPDiscUsageResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3950B1BDB660A0075E99B /* ASPDiscUsageResponse.m */; };
+		30D395DB1BDB660A0075E99B /* ASPFileExist.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3950D1BDB660A0075E99B /* ASPFileExist.m */; };
+		30D395DC1BDB660A0075E99B /* ASPFileExistResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3950F1BDB660A0075E99B /* ASPFileExistResponse.m */; };
+		30D395DD1BDB660A0075E99B /* ASPFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395111BDB660A0075E99B /* ASPFileResponse.m */; };
+		30D395DE1BDB660A0075E99B /* ASPFileVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395131BDB660A0075E99B /* ASPFileVersion.m */; };
+		30D395DF1BDB660A0075E99B /* ASPFileVersionsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395151BDB660A0075E99B /* ASPFileVersionsResponse.m */; };
+		30D395E01BDB660A0075E99B /* ASPFolderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395171BDB660A0075E99B /* ASPFolderResponse.m */; };
+		30D395E11BDB660A0075E99B /* ASPStorageExistResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395191BDB660A0075E99B /* ASPStorageExistResponse.m */; };
+		30D395E21BDB660A0075E99B /* ASPWordsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3951D1BDB660A0075E99B /* ASPWordsApi.m */; };
+		30D395E91BDB660A0075E99B /* ASPBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3952D1BDB660A0075E99B /* ASPBookmark.m */; };
+		30D395EA1BDB660A0075E99B /* ASPBookmarkData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3952F1BDB660A0075E99B /* ASPBookmarkData.m */; };
+		30D395EB1BDB660A0075E99B /* ASPBookmarkResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395311BDB660A0075E99B /* ASPBookmarkResponse.m */; };
+		30D395EC1BDB660A0075E99B /* ASPBookmarks.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395331BDB660A0075E99B /* ASPBookmarks.m */; };
+		30D395ED1BDB660A0075E99B /* ASPBookmarksResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395351BDB660A0075E99B /* ASPBookmarksResponse.m */; };
+		30D395EE1BDB660A0075E99B /* ASPBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395371BDB660A0075E99B /* ASPBorder.m */; };
+		30D395EF1BDB660A0075E99B /* ASPColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395391BDB660A0075E99B /* ASPColor.m */; };
+		30D395F01BDB660A0075E99B /* ASPComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3953B1BDB660A0075E99B /* ASPComment.m */; };
+		30D395F11BDB660A0075E99B /* ASPCommentResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3953D1BDB660A0075E99B /* ASPCommentResponse.m */; };
+		30D395F21BDB660A0075E99B /* ASPCommentsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3953F1BDB660A0075E99B /* ASPCommentsCollection.m */; };
+		30D395F31BDB660A0075E99B /* ASPCommentsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395411BDB660A0075E99B /* ASPCommentsResponse.m */; };
+		30D395F41BDB660A0075E99B /* ASPDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395431BDB660A0075E99B /* ASPDocument.m */; };
+		30D395F51BDB660A0075E99B /* ASPDocumentEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395451BDB660A0075E99B /* ASPDocumentEntry.m */; };
+		30D395F61BDB660A0075E99B /* ASPDocumentEntryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395471BDB660A0075E99B /* ASPDocumentEntryList.m */; };
+		30D395F71BDB660A0075E99B /* ASPDocumentPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395491BDB660A0075E99B /* ASPDocumentPosition.m */; };
+		30D395F81BDB660A0075E99B /* ASPDocumentProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3954B1BDB660A0075E99B /* ASPDocumentProperties.m */; };
+		30D395F91BDB660A0075E99B /* ASPDocumentPropertiesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3954D1BDB660A0075E99B /* ASPDocumentPropertiesResponse.m */; };
+		30D395FA1BDB660A0075E99B /* ASPDocumentProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3954F1BDB660A0075E99B /* ASPDocumentProperty.m */; };
+		30D395FB1BDB660A0075E99B /* ASPDocumentPropertyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395511BDB660A0075E99B /* ASPDocumentPropertyResponse.m */; };
+		30D395FC1BDB660A0075E99B /* ASPDocumentResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395531BDB660A0075E99B /* ASPDocumentResponse.m */; };
+		30D395FD1BDB660A0075E99B /* ASPDocumentStatData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395551BDB660A0075E99B /* ASPDocumentStatData.m */; };
+		30D395FE1BDB660A0075E99B /* ASPDrawingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395571BDB660A0075E99B /* ASPDrawingObject.m */; };
+		30D395FF1BDB660A0075E99B /* ASPDrawingObjectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395591BDB660A0075E99B /* ASPDrawingObjectResponse.m */; };
+		30D396001BDB660A0075E99B /* ASPDrawingObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3955B1BDB660A0075E99B /* ASPDrawingObjects.m */; };
+		30D396011BDB660A0075E99B /* ASPDrawingObjectsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3955D1BDB660A0075E99B /* ASPDrawingObjectsResponse.m */; };
+		30D396021BDB660A0075E99B /* ASPField.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3955F1BDB660A0075E99B /* ASPField.m */; };
+		30D396031BDB660A0075E99B /* ASPFieldNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395611BDB660A0075E99B /* ASPFieldNames.m */; };
+		30D396041BDB660A0075E99B /* ASPFieldNamesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395631BDB660A0075E99B /* ASPFieldNamesResponse.m */; };
+		30D396051BDB660A0075E99B /* ASPFieldResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395651BDB660A0075E99B /* ASPFieldResponse.m */; };
+		30D396061BDB660A0075E99B /* ASPFieldType.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395671BDB660A0075E99B /* ASPFieldType.m */; };
+		30D396071BDB660A0075E99B /* ASPFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395691BDB660A0075E99B /* ASPFont.m */; };
+		30D396081BDB660A0075E99B /* ASPFontResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3956B1BDB660A0075E99B /* ASPFontResponse.m */; };
+		30D396091BDB660A0075E99B /* ASPFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3956D1BDB660A0075E99B /* ASPFormField.m */; };
+		30D3960A1BDB660A0075E99B /* ASPFormFieldResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3956F1BDB660A0075E99B /* ASPFormFieldResponse.m */; };
+		30D3960B1BDB660A0075E99B /* ASPHyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395711BDB660A0075E99B /* ASPHyperlink.m */; };
+		30D3960C1BDB660A0075E99B /* ASPHyperlinkResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395731BDB660A0075E99B /* ASPHyperlinkResponse.m */; };
+		30D3960D1BDB660A0075E99B /* ASPHyperlinks.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395751BDB660A0075E99B /* ASPHyperlinks.m */; };
+		30D3960E1BDB660A0075E99B /* ASPHyperlinksResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395771BDB660A0075E99B /* ASPHyperlinksResponse.m */; };
+		30D3960F1BDB660A0075E99B /* ASPLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395791BDB660A0075E99B /* ASPLink.m */; };
+		30D396101BDB660A0075E99B /* ASPLinkElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3957B1BDB660A0075E99B /* ASPLinkElement.m */; };
+		30D396111BDB660A0075E99B /* ASPLoadWebDocumentData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3957D1BDB660A0075E99B /* ASPLoadWebDocumentData.m */; };
+		30D396121BDB660A0075E99B /* ASPMetafileRenderingOptionsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3957F1BDB660A0075E99B /* ASPMetafileRenderingOptionsData.m */; };
+		30D396131BDB660A0075E99B /* ASPModificationOperationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395811BDB660A0075E99B /* ASPModificationOperationResult.m */; };
+		30D396141BDB660A0075E99B /* ASPNodeLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395831BDB660A0075E99B /* ASPNodeLink.m */; };
+		30D396161BDB660A0075E99B /* ASPPageNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395871BDB660A0075E99B /* ASPPageNumber.m */; };
+		30D396171BDB660A0075E99B /* ASPPageSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395891BDB660A0075E99B /* ASPPageSetup.m */; };
+		30D396181BDB660A0075E99B /* ASPPageStatData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3958B1BDB660A0075E99B /* ASPPageStatData.m */; };
+		30D396191BDB660A0075E99B /* ASPParagraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3958D1BDB660A0075E99B /* ASPParagraph.m */; };
+		30D3961A1BDB660A0075E99B /* ASPParagraphLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3958F1BDB660A0075E99B /* ASPParagraphLink.m */; };
+		30D3961B1BDB660A0075E99B /* ASPParagraphLinkCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395911BDB660A0075E99B /* ASPParagraphLinkCollection.m */; };
+		30D3961C1BDB660A0075E99B /* ASPParagraphLinkCollectionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395931BDB660A0075E99B /* ASPParagraphLinkCollectionResponse.m */; };
+		30D3961D1BDB660A0075E99B /* ASPParagraphResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395951BDB660A0075E99B /* ASPParagraphResponse.m */; };
+		30D3961E1BDB660A0075E99B /* ASPProtectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395971BDB660A0075E99B /* ASPProtectionData.m */; };
+		30D3961F1BDB660A0075E99B /* ASPProtectionDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395991BDB660A0075E99B /* ASPProtectionDataResponse.m */; };
+		30D396201BDB660A0075E99B /* ASPProtectionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3959B1BDB660A0075E99B /* ASPProtectionRequest.m */; };
+		30D396211BDB660A0075E99B /* ASPRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3959D1BDB660A0075E99B /* ASPRectangle.m */; };
+		30D396221BDB660A0075E99B /* ASPReplaceTextRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3959F1BDB660A0075E99B /* ASPReplaceTextRequest.m */; };
+		30D396231BDB660A0075E99B /* ASPReplaceTextResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395A11BDB660A0075E99B /* ASPReplaceTextResponse.m */; };
+		30D396241BDB660A0075E99B /* ASPResponseMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395A31BDB660A0075E99B /* ASPResponseMessage.m */; };
+		30D396251BDB660A0075E99B /* ASPRevisionsModificationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395A51BDB660A0075E99B /* ASPRevisionsModificationResponse.m */; };
+		30D396261BDB660A0075E99B /* ASPRun.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395A71BDB660A0075E99B /* ASPRun.m */; };
+		30D396271BDB660A0075E99B /* ASPRunResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395A91BDB660A0075E99B /* ASPRunResponse.m */; };
+		30D396281BDB660A0075E99B /* ASPSaveOptionsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395AB1BDB660A0075E99B /* ASPSaveOptionsData.m */; };
+		30D396291BDB660A0075E99B /* ASPSaveResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395AD1BDB660A0075E99B /* ASPSaveResponse.m */; };
+		30D3962A1BDB660A0075E99B /* ASPSaveResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395AF1BDB660A0075E99B /* ASPSaveResult.m */; };
+		30D3962B1BDB660A0075E99B /* ASPSearchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395B11BDB660A0075E99B /* ASPSearchResponse.m */; };
+		30D3962C1BDB660A0075E99B /* ASPSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395B31BDB660A0075E99B /* ASPSearchResult.m */; };
+		30D3962D1BDB660A0075E99B /* ASPSearchResultsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395B51BDB660A0075E99B /* ASPSearchResultsCollection.m */; };
+		30D3962E1BDB660A0075E99B /* ASPSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395B71BDB660A0075E99B /* ASPSection.m */; };
+		30D3962F1BDB660A0075E99B /* ASPSectionLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395B91BDB660A0075E99B /* ASPSectionLink.m */; };
+		30D396301BDB660A0075E99B /* ASPSectionLinkCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395BB1BDB660A0075E99B /* ASPSectionLinkCollection.m */; };
+		30D396311BDB660A0075E99B /* ASPSectionLinkCollectionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395BD1BDB660A0075E99B /* ASPSectionLinkCollectionResponse.m */; };
+		30D396321BDB660A0075E99B /* ASPSectionPageSetupResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395BF1BDB660A0075E99B /* ASPSectionPageSetupResponse.m */; };
+		30D396331BDB660A0075E99B /* ASPSectionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395C11BDB660A0075E99B /* ASPSectionResponse.m */; };
+		30D396341BDB660A0075E99B /* ASPSplitDocumentResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395C31BDB660A0075E99B /* ASPSplitDocumentResponse.m */; };
+		30D396351BDB660A0075E99B /* ASPSplitDocumentResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395C51BDB660A0075E99B /* ASPSplitDocumentResult.m */; };
+		30D396361BDB660A0075E99B /* ASPStatDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395C71BDB660A0075E99B /* ASPStatDataResponse.m */; };
+		30D396371BDB660A0075E99B /* ASPStoryChildNodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395C91BDB660A0075E99B /* ASPStoryChildNodes.m */; };
+		30D396381BDB660A0075E99B /* ASPSystemObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395CB1BDB660A0075E99B /* ASPSystemObject.m */; };
+		30D396391BDB660A0075E99B /* ASPTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395CD1BDB660A0075E99B /* ASPTextItem.m */; };
+		30D3963A1BDB660A0075E99B /* ASPTextItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395CF1BDB660A0075E99B /* ASPTextItems.m */; };
+		30D3963B1BDB660A0075E99B /* ASPTextItemsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395D11BDB660A0075E99B /* ASPTextItemsResponse.m */; };
+		30D3963C1BDB660A0075E99B /* ASPTiffSaveOptionsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395D31BDB660A0075E99B /* ASPTiffSaveOptionsData.m */; };
+		30D3963D1BDB660A0075E99B /* ASPWatermarkText.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395D51BDB660A0075E99B /* ASPWatermarkText.m */; };
+		30D3963E1BDB660A0075E99B /* JSONValueTransformer+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395D71BDB660A0075E99B /* JSONValueTransformer+ISO8601.m */; };
+		30D3965B1BDB66200075E99B /* AppendWordDocumentsExample-TestFile-Destination.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D396401BDB66200075E99B /* AppendWordDocumentsExample-TestFile-Destination.doc */; };
+		30D3965C1BDB66200075E99B /* AppendWordDocumentsExample-TestFile-Source.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D396411BDB66200075E99B /* AppendWordDocumentsExample-TestFile-Source.doc */; };
+		30D3965D1BDB66200075E99B /* aspose-cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 30D396421BDB66200075E99B /* aspose-cloud.png */; };
+		30D3965E1BDB66200075E99B /* Customers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D396431BDB66200075E99B /* Customers.txt */; };
+		30D3965F1BDB66200075E99B /* FormFilled.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396441BDB66200075E99B /* FormFilled.docx */; };
+		30D396601BDB66200075E99B /* header-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30D396451BDB66200075E99B /* header-logo.png */; };
+		30D396611BDB66200075E99B /* Sample_EmbeddedOLE.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396461BDB66200075E99B /* Sample_EmbeddedOLE.docx */; };
+		30D396621BDB66200075E99B /* SampleAppendDoc.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396471BDB66200075E99B /* SampleAppendDoc.docx */; };
+		30D396631BDB66200075E99B /* SampleAppendDoc2.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396481BDB66200075E99B /* SampleAppendDoc2.docx */; };
+		30D396641BDB66200075E99B /* SampleBlankWatermarkDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396491BDB66200075E99B /* SampleBlankWatermarkDocument.docx */; };
+		30D396651BDB66200075E99B /* SampleBlankWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964A1BDB66200075E99B /* SampleBlankWordDocument.docx */; };
+		30D396661BDB66200075E99B /* SampleExecuteTemplate.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964B1BDB66200075E99B /* SampleExecuteTemplate.doc */; };
+		30D396671BDB66200075E99B /* SampleExecuteTemplate.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964C1BDB66200075E99B /* SampleExecuteTemplate.docx */; };
+		30D396681BDB66200075E99B /* SampleExecuteTemplateData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964D1BDB66200075E99B /* SampleExecuteTemplateData.txt */; };
+		30D396691BDB66200075E99B /* SampleHeaderFooterWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964E1BDB66200075E99B /* SampleHeaderFooterWordDocument.docx */; };
+		30D3966A1BDB66200075E99B /* SampleInvoiceTemplate.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964F1BDB66200075E99B /* SampleInvoiceTemplate.doc */; };
+		30D3966B1BDB66200075E99B /* SampleInvoiceTemplateData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D396501BDB66200075E99B /* SampleInvoiceTemplateData.txt */; };
+		30D3966C1BDB66200075E99B /* SampleMailMergeTemplate.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396511BDB66200075E99B /* SampleMailMergeTemplate.docx */; };
+		30D3966D1BDB66200075E99B /* SampleMailMergeTemplateData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D396521BDB66200075E99B /* SampleMailMergeTemplateData.txt */; };
+		30D3966E1BDB66200075E99B /* SampleMailMergeTemplateImage.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D396531BDB66200075E99B /* SampleMailMergeTemplateImage.doc */; };
+		30D3966F1BDB66200075E99B /* SampleMailMergeTemplateImageData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D396541BDB66200075E99B /* SampleMailMergeTemplateImageData.txt */; };
+		30D396701BDB66200075E99B /* SampleOlePdfData.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396551BDB66200075E99B /* SampleOlePdfData.docx */; };
+		30D396711BDB66200075E99B /* SampleProtectedBlankWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396561BDB66200075E99B /* SampleProtectedBlankWordDocument.docx */; };
+		30D396721BDB66200075E99B /* SampleWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396571BDB66200075E99B /* SampleWordDocument.docx */; };
+		30D396731BDB66200075E99B /* WordFormatConverterExampleTest.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D396581BDB66200075E99B /* WordFormatConverterExampleTest.doc */; };
+		30D396741BDB66200075E99B /* ASPWordsApiTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3965A1BDB66200075E99B /* ASPWordsApiTestCase.m */; };
+		30D396751BDB662C0075E99B /* AppendWordDocumentsExample-TestFile-Destination.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D396401BDB66200075E99B /* AppendWordDocumentsExample-TestFile-Destination.doc */; };
+		30D396761BDB662C0075E99B /* AppendWordDocumentsExample-TestFile-Source.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D396411BDB66200075E99B /* AppendWordDocumentsExample-TestFile-Source.doc */; };
+		30D396771BDB662C0075E99B /* aspose-cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 30D396421BDB66200075E99B /* aspose-cloud.png */; };
+		30D396781BDB662C0075E99B /* Customers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D396431BDB66200075E99B /* Customers.txt */; };
+		30D396791BDB662C0075E99B /* FormFilled.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396441BDB66200075E99B /* FormFilled.docx */; };
+		30D3967A1BDB662C0075E99B /* header-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30D396451BDB66200075E99B /* header-logo.png */; };
+		30D3967B1BDB662C0075E99B /* Sample_EmbeddedOLE.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396461BDB66200075E99B /* Sample_EmbeddedOLE.docx */; };
+		30D3967C1BDB662C0075E99B /* SampleAppendDoc.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396471BDB66200075E99B /* SampleAppendDoc.docx */; };
+		30D3967D1BDB662C0075E99B /* SampleAppendDoc2.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396481BDB66200075E99B /* SampleAppendDoc2.docx */; };
+		30D3967E1BDB662C0075E99B /* SampleBlankWatermarkDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396491BDB66200075E99B /* SampleBlankWatermarkDocument.docx */; };
+		30D3967F1BDB662C0075E99B /* SampleBlankWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964A1BDB66200075E99B /* SampleBlankWordDocument.docx */; };
+		30D396801BDB662C0075E99B /* SampleExecuteTemplate.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964B1BDB66200075E99B /* SampleExecuteTemplate.doc */; };
+		30D396811BDB662C0075E99B /* SampleExecuteTemplate.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964C1BDB66200075E99B /* SampleExecuteTemplate.docx */; };
+		30D396821BDB662C0075E99B /* SampleExecuteTemplateData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964D1BDB66200075E99B /* SampleExecuteTemplateData.txt */; };
+		30D396831BDB662C0075E99B /* SampleHeaderFooterWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964E1BDB66200075E99B /* SampleHeaderFooterWordDocument.docx */; };
+		30D396841BDB662C0075E99B /* SampleInvoiceTemplate.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D3964F1BDB66200075E99B /* SampleInvoiceTemplate.doc */; };
+		30D396851BDB662C0075E99B /* SampleInvoiceTemplateData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D396501BDB66200075E99B /* SampleInvoiceTemplateData.txt */; };
+		30D396861BDB662C0075E99B /* SampleMailMergeTemplate.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396511BDB66200075E99B /* SampleMailMergeTemplate.docx */; };
+		30D396871BDB662C0075E99B /* SampleMailMergeTemplateData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D396521BDB66200075E99B /* SampleMailMergeTemplateData.txt */; };
+		30D396881BDB662C0075E99B /* SampleMailMergeTemplateImage.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D396531BDB66200075E99B /* SampleMailMergeTemplateImage.doc */; };
+		30D396891BDB662C0075E99B /* SampleMailMergeTemplateImageData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30D396541BDB66200075E99B /* SampleMailMergeTemplateImageData.txt */; };
+		30D3968A1BDB662C0075E99B /* SampleOlePdfData.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396551BDB66200075E99B /* SampleOlePdfData.docx */; };
+		30D3968B1BDB662C0075E99B /* SampleProtectedBlankWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396561BDB66200075E99B /* SampleProtectedBlankWordDocument.docx */; };
+		30D3968C1BDB662C0075E99B /* SampleWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 30D396571BDB66200075E99B /* SampleWordDocument.docx */; };
+		30D3968D1BDB662C0075E99B /* WordFormatConverterExampleTest.doc in Resources */ = {isa = PBXBuildFile; fileRef = 30D396581BDB66200075E99B /* WordFormatConverterExampleTest.doc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +180,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		301C23BD1BF9D87900B29A32 /* ASPApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPApiClient.h; sourceTree = "<group>"; };
+		301C23BE1BF9D87900B29A32 /* ASPApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPApiClient.m; sourceTree = "<group>"; };
+		301C23BF1BF9D87900B29A32 /* ASPConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPConfiguration.h; sourceTree = "<group>"; };
+		301C23C01BF9D87900B29A32 /* ASPConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPConfiguration.m; sourceTree = "<group>"; };
+		301C23C11BF9D87900B29A32 /* ASPJSONRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPJSONRequestSerializer.h; sourceTree = "<group>"; };
+		301C23C21BF9D87900B29A32 /* ASPJSONRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPJSONRequestSerializer.m; sourceTree = "<group>"; };
+		301C23C31BF9D87900B29A32 /* ASPJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPJSONResponseSerializer.h; sourceTree = "<group>"; };
+		301C23C41BF9D87900B29A32 /* ASPJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPJSONResponseSerializer.m; sourceTree = "<group>"; };
+		301C23C51BF9D87900B29A32 /* ASPQueryParamCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPQueryParamCollection.h; sourceTree = "<group>"; };
+		301C23C61BF9D87900B29A32 /* ASPQueryParamCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPQueryParamCollection.m; sourceTree = "<group>"; };
+		301C23D21BF9DC4600B29A32 /* ASPBaseResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPBaseResponse.h; sourceTree = "<group>"; };
+		301C23D31BF9DC4600B29A32 /* ASPBaseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPBaseResponse.m; sourceTree = "<group>"; };
+		301C23D41BF9DC4600B29A32 /* ASPObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPObject.h; sourceTree = "<group>"; };
+		301C23D51BF9DC4600B29A32 /* ASPObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPObject.m; sourceTree = "<group>"; };
 		30D394DB1BDB63DC0075E99B /* Aspose.Words_Cloud_SDK_for_ObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aspose.Words_Cloud_SDK_for_ObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D394DF1BDB63DC0075E99B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		30D394E11BDB63DC0075E99B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -214,18 +228,6 @@
 		30D395191BDB660A0075E99B /* ASPStorageExistResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPStorageExistResponse.m; sourceTree = "<group>"; };
 		30D3951C1BDB660A0075E99B /* ASPWordsApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPWordsApi.h; sourceTree = "<group>"; };
 		30D3951D1BDB660A0075E99B /* ASPWordsApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPWordsApi.m; sourceTree = "<group>"; };
-		30D3951F1BDB660A0075E99B /* ASPApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPApiClient.h; sourceTree = "<group>"; };
-		30D395201BDB660A0075E99B /* ASPApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPApiClient.m; sourceTree = "<group>"; };
-		30D395211BDB660A0075E99B /* ASPConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPConfiguration.h; sourceTree = "<group>"; };
-		30D395221BDB660A0075E99B /* ASPConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPConfiguration.m; sourceTree = "<group>"; };
-		30D395231BDB660A0075E99B /* ASPJSONRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPJSONRequestSerializer.h; sourceTree = "<group>"; };
-		30D395241BDB660A0075E99B /* ASPJSONRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPJSONRequestSerializer.m; sourceTree = "<group>"; };
-		30D395251BDB660A0075E99B /* ASPJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPJSONResponseSerializer.h; sourceTree = "<group>"; };
-		30D395261BDB660A0075E99B /* ASPJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPJSONResponseSerializer.m; sourceTree = "<group>"; };
-		30D395271BDB660A0075E99B /* ASPQueryParamCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPQueryParamCollection.h; sourceTree = "<group>"; };
-		30D395281BDB660A0075E99B /* ASPQueryParamCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPQueryParamCollection.m; sourceTree = "<group>"; };
-		30D3952A1BDB660A0075E99B /* ASPBaseResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPBaseResponse.h; sourceTree = "<group>"; };
-		30D3952B1BDB660A0075E99B /* ASPBaseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPBaseResponse.m; sourceTree = "<group>"; };
 		30D3952C1BDB660A0075E99B /* ASPBookmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPBookmark.h; sourceTree = "<group>"; };
 		30D3952D1BDB660A0075E99B /* ASPBookmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPBookmark.m; sourceTree = "<group>"; };
 		30D3952E1BDB660A0075E99B /* ASPBookmarkData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPBookmarkData.h; sourceTree = "<group>"; };
@@ -314,8 +316,6 @@
 		30D395811BDB660A0075E99B /* ASPModificationOperationResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPModificationOperationResult.m; sourceTree = "<group>"; };
 		30D395821BDB660A0075E99B /* ASPNodeLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPNodeLink.h; sourceTree = "<group>"; };
 		30D395831BDB660A0075E99B /* ASPNodeLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPNodeLink.m; sourceTree = "<group>"; };
-		30D395841BDB660A0075E99B /* ASPObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPObject.h; sourceTree = "<group>"; };
-		30D395851BDB660A0075E99B /* ASPObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPObject.m; sourceTree = "<group>"; };
 		30D395861BDB660A0075E99B /* ASPPageNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPPageNumber.h; sourceTree = "<group>"; };
 		30D395871BDB660A0075E99B /* ASPPageNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPPageNumber.m; sourceTree = "<group>"; };
 		30D395881BDB660A0075E99B /* ASPPageSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPPageSetup.h; sourceTree = "<group>"; };
@@ -444,6 +444,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		301C23BC1BF9D87900B29A32 /* client */ = {
+			isa = PBXGroup;
+			children = (
+				301C23BD1BF9D87900B29A32 /* ASPApiClient.h */,
+				301C23BE1BF9D87900B29A32 /* ASPApiClient.m */,
+				301C23BF1BF9D87900B29A32 /* ASPConfiguration.h */,
+				301C23C01BF9D87900B29A32 /* ASPConfiguration.m */,
+				301C23C11BF9D87900B29A32 /* ASPJSONRequestSerializer.h */,
+				301C23C21BF9D87900B29A32 /* ASPJSONRequestSerializer.m */,
+				301C23C31BF9D87900B29A32 /* ASPJSONResponseSerializer.h */,
+				301C23C41BF9D87900B29A32 /* ASPJSONResponseSerializer.m */,
+				301C23C51BF9D87900B29A32 /* ASPQueryParamCollection.h */,
+				301C23C61BF9D87900B29A32 /* ASPQueryParamCollection.m */,
+			);
+			path = client;
+			sourceTree = "<group>";
+		};
 		30D394D21BDB63DC0075E99B = {
 			isa = PBXGroup;
 			children = (
@@ -502,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				30D395041BDB660A0075E99B /* api */,
+				301C23BC1BF9D87900B29A32 /* client */,
 				30D395071BDB660A0075E99B /* model */,
 			);
 			path = storage;
@@ -519,6 +537,10 @@
 		30D395071BDB660A0075E99B /* model */ = {
 			isa = PBXGroup;
 			children = (
+				301C23D21BF9DC4600B29A32 /* ASPBaseResponse.h */,
+				301C23D31BF9DC4600B29A32 /* ASPBaseResponse.m */,
+				301C23D41BF9DC4600B29A32 /* ASPObject.h */,
+				301C23D51BF9DC4600B29A32 /* ASPObject.m */,
 				30D395081BDB660A0075E99B /* ASPDiscUsage.h */,
 				30D395091BDB660A0075E99B /* ASPDiscUsage.m */,
 				30D3950A1BDB660A0075E99B /* ASPDiscUsageResponse.h */,
@@ -545,7 +567,6 @@
 			isa = PBXGroup;
 			children = (
 				30D3951B1BDB660A0075E99B /* api */,
-				30D3951E1BDB660A0075E99B /* client */,
 				30D395291BDB660A0075E99B /* model */,
 			);
 			path = words;
@@ -560,28 +581,9 @@
 			path = api;
 			sourceTree = "<group>";
 		};
-		30D3951E1BDB660A0075E99B /* client */ = {
-			isa = PBXGroup;
-			children = (
-				30D3951F1BDB660A0075E99B /* ASPApiClient.h */,
-				30D395201BDB660A0075E99B /* ASPApiClient.m */,
-				30D395211BDB660A0075E99B /* ASPConfiguration.h */,
-				30D395221BDB660A0075E99B /* ASPConfiguration.m */,
-				30D395231BDB660A0075E99B /* ASPJSONRequestSerializer.h */,
-				30D395241BDB660A0075E99B /* ASPJSONRequestSerializer.m */,
-				30D395251BDB660A0075E99B /* ASPJSONResponseSerializer.h */,
-				30D395261BDB660A0075E99B /* ASPJSONResponseSerializer.m */,
-				30D395271BDB660A0075E99B /* ASPQueryParamCollection.h */,
-				30D395281BDB660A0075E99B /* ASPQueryParamCollection.m */,
-			);
-			path = client;
-			sourceTree = "<group>";
-		};
 		30D395291BDB660A0075E99B /* model */ = {
 			isa = PBXGroup;
 			children = (
-				30D3952A1BDB660A0075E99B /* ASPBaseResponse.h */,
-				30D3952B1BDB660A0075E99B /* ASPBaseResponse.m */,
 				30D3952C1BDB660A0075E99B /* ASPBookmark.h */,
 				30D3952D1BDB660A0075E99B /* ASPBookmark.m */,
 				30D3952E1BDB660A0075E99B /* ASPBookmarkData.h */,
@@ -670,8 +672,6 @@
 				30D395811BDB660A0075E99B /* ASPModificationOperationResult.m */,
 				30D395821BDB660A0075E99B /* ASPNodeLink.h */,
 				30D395831BDB660A0075E99B /* ASPNodeLink.m */,
-				30D395841BDB660A0075E99B /* ASPObject.h */,
-				30D395851BDB660A0075E99B /* ASPObject.m */,
 				30D395861BDB660A0075E99B /* ASPPageNumber.h */,
 				30D395871BDB660A0075E99B /* ASPPageNumber.m */,
 				30D395881BDB660A0075E99B /* ASPPageSetup.h */,
@@ -952,6 +952,7 @@
 				30D395F61BDB660A0075E99B /* ASPDocumentEntryList.m in Sources */,
 				30D395DB1BDB660A0075E99B /* ASPFileExist.m in Sources */,
 				30D3960D1BDB660A0075E99B /* ASPHyperlinks.m in Sources */,
+				301C23C91BF9D87900B29A32 /* ASPJSONRequestSerializer.m in Sources */,
 				30D395F71BDB660A0075E99B /* ASPDocumentPosition.m in Sources */,
 				30D395E91BDB660A0075E99B /* ASPBookmark.m in Sources */,
 				30D3960B1BDB660A0075E99B /* ASPHyperlink.m in Sources */,
@@ -966,18 +967,18 @@
 				30D3960A1BDB660A0075E99B /* ASPFormFieldResponse.m in Sources */,
 				30D396271BDB660A0075E99B /* ASPRunResponse.m in Sources */,
 				30D396191BDB660A0075E99B /* ASPParagraph.m in Sources */,
+				301C23D71BF9DC4600B29A32 /* ASPObject.m in Sources */,
+				301C23C81BF9D87900B29A32 /* ASPConfiguration.m in Sources */,
 				30D395F51BDB660A0075E99B /* ASPDocumentEntry.m in Sources */,
 				30D396361BDB660A0075E99B /* ASPStatDataResponse.m in Sources */,
 				30D395E11BDB660A0075E99B /* ASPStorageExistResponse.m in Sources */,
 				30D396251BDB660A0075E99B /* ASPRevisionsModificationResponse.m in Sources */,
-				30D395E51BDB660A0075E99B /* ASPJSONRequestSerializer.m in Sources */,
 				30D396301BDB660A0075E99B /* ASPSectionLinkCollection.m in Sources */,
 				30D395F01BDB660A0075E99B /* ASPComment.m in Sources */,
 				30D396291BDB660A0075E99B /* ASPSaveResponse.m in Sources */,
 				30D3962F1BDB660A0075E99B /* ASPSectionLink.m in Sources */,
 				30D394E61BDB63DC0075E99B /* ViewController.m in Sources */,
 				30D395D81BDB660A0075E99B /* ASPStorageApi.m in Sources */,
-				30D395E61BDB660A0075E99B /* ASPJSONResponseSerializer.m in Sources */,
 				30D3962D1BDB660A0075E99B /* ASPSearchResultsCollection.m in Sources */,
 				30D396351BDB660A0075E99B /* ASPSplitDocumentResult.m in Sources */,
 				30D3961B1BDB660A0075E99B /* ASPParagraphLinkCollection.m in Sources */,
@@ -995,23 +996,21 @@
 				30D395FC1BDB660A0075E99B /* ASPDocumentResponse.m in Sources */,
 				30D396121BDB660A0075E99B /* ASPMetafileRenderingOptionsData.m in Sources */,
 				30D395D91BDB660A0075E99B /* ASPDiscUsage.m in Sources */,
-				30D395E31BDB660A0075E99B /* ASPApiClient.m in Sources */,
 				30D395EF1BDB660A0075E99B /* ASPColor.m in Sources */,
 				30D396321BDB660A0075E99B /* ASPSectionPageSetupResponse.m in Sources */,
 				30D396371BDB660A0075E99B /* ASPStoryChildNodes.m in Sources */,
 				30D395F81BDB660A0075E99B /* ASPDocumentProperties.m in Sources */,
 				30D396111BDB660A0075E99B /* ASPLoadWebDocumentData.m in Sources */,
-				30D395E41BDB660A0075E99B /* ASPConfiguration.m in Sources */,
-				30D396151BDB660A0075E99B /* ASPObject.m in Sources */,
 				30D396381BDB660A0075E99B /* ASPSystemObject.m in Sources */,
 				30D396141BDB660A0075E99B /* ASPNodeLink.m in Sources */,
-				30D395E71BDB660A0075E99B /* ASPQueryParamCollection.m in Sources */,
 				30D396341BDB660A0075E99B /* ASPSplitDocumentResponse.m in Sources */,
 				30D395EA1BDB660A0075E99B /* ASPBookmarkData.m in Sources */,
 				30D394E31BDB63DC0075E99B /* AppDelegate.m in Sources */,
 				30D395EE1BDB660A0075E99B /* ASPBorder.m in Sources */,
 				30D396391BDB660A0075E99B /* ASPTextItem.m in Sources */,
+				301C23CB1BF9D87900B29A32 /* ASPQueryParamCollection.m in Sources */,
 				30D396041BDB660A0075E99B /* ASPFieldNamesResponse.m in Sources */,
+				301C23C71BF9D87900B29A32 /* ASPApiClient.m in Sources */,
 				30D395FE1BDB660A0075E99B /* ASPDrawingObject.m in Sources */,
 				30D3963D1BDB660A0075E99B /* ASPWatermarkText.m in Sources */,
 				30D395DF1BDB660A0075E99B /* ASPFileVersionsResponse.m in Sources */,
@@ -1033,6 +1032,7 @@
 				30D396071BDB660A0075E99B /* ASPFont.m in Sources */,
 				30D395ED1BDB660A0075E99B /* ASPBookmarksResponse.m in Sources */,
 				30D395F21BDB660A0075E99B /* ASPCommentsCollection.m in Sources */,
+				301C23D61BF9DC4600B29A32 /* ASPBaseResponse.m in Sources */,
 				30D396311BDB660A0075E99B /* ASPSectionLinkCollectionResponse.m in Sources */,
 				30D396221BDB660A0075E99B /* ASPReplaceTextRequest.m in Sources */,
 				30D3961C1BDB660A0075E99B /* ASPParagraphLinkCollectionResponse.m in Sources */,
@@ -1045,9 +1045,9 @@
 				30D395F11BDB660A0075E99B /* ASPCommentResponse.m in Sources */,
 				30D395DD1BDB660A0075E99B /* ASPFileResponse.m in Sources */,
 				30D396181BDB660A0075E99B /* ASPPageStatData.m in Sources */,
-				30D395E81BDB660A0075E99B /* ASPBaseResponse.m in Sources */,
 				30D395FD1BDB660A0075E99B /* ASPDocumentStatData.m in Sources */,
 				30D395EC1BDB660A0075E99B /* ASPBookmarks.m in Sources */,
+				301C23CA1BF9D87900B29A32 /* ASPJSONResponseSerializer.m in Sources */,
 				30D395E21BDB660A0075E99B /* ASPWordsApi.m in Sources */,
 				30D396011BDB660A0075E99B /* ASPDrawingObjectsResponse.m in Sources */,
 				30D3960E1BDB660A0075E99B /* ASPHyperlinksResponse.m in Sources */,
