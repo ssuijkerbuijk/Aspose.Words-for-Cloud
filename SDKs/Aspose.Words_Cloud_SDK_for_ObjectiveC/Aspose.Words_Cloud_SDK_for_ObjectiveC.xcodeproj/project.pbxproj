@@ -7,29 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		301C23C71BF9D87900B29A32 /* ASPApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C23BE1BF9D87900B29A32 /* ASPApiClient.m */; };
-		301C23C81BF9D87900B29A32 /* ASPConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C23C01BF9D87900B29A32 /* ASPConfiguration.m */; };
-		301C23C91BF9D87900B29A32 /* ASPJSONRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C23C21BF9D87900B29A32 /* ASPJSONRequestSerializer.m */; };
-		301C23CA1BF9D87900B29A32 /* ASPJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C23C41BF9D87900B29A32 /* ASPJSONResponseSerializer.m */; };
-		301C23CB1BF9D87900B29A32 /* ASPQueryParamCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C23C61BF9D87900B29A32 /* ASPQueryParamCollection.m */; };
-		301C23D61BF9DC4600B29A32 /* ASPBaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C23D31BF9DC4600B29A32 /* ASPBaseResponse.m */; };
-		301C23D71BF9DC4600B29A32 /* ASPObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C23D51BF9DC4600B29A32 /* ASPObject.m */; };
 		30D394E01BDB63DC0075E99B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D394DF1BDB63DC0075E99B /* main.m */; };
 		30D394E31BDB63DC0075E99B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D394E21BDB63DC0075E99B /* AppDelegate.m */; };
 		30D394E61BDB63DC0075E99B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D394E51BDB63DC0075E99B /* ViewController.m */; };
 		30D394E91BDB63DC0075E99B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D394E71BDB63DC0075E99B /* Main.storyboard */; };
 		30D394EB1BDB63DC0075E99B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D394EA1BDB63DC0075E99B /* Assets.xcassets */; };
 		30D394EE1BDB63DC0075E99B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D394EC1BDB63DC0075E99B /* LaunchScreen.storyboard */; };
-		30D395D81BDB660A0075E99B /* ASPStorageApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395061BDB660A0075E99B /* ASPStorageApi.m */; };
-		30D395D91BDB660A0075E99B /* ASPDiscUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395091BDB660A0075E99B /* ASPDiscUsage.m */; };
-		30D395DA1BDB660A0075E99B /* ASPDiscUsageResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3950B1BDB660A0075E99B /* ASPDiscUsageResponse.m */; };
-		30D395DB1BDB660A0075E99B /* ASPFileExist.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3950D1BDB660A0075E99B /* ASPFileExist.m */; };
-		30D395DC1BDB660A0075E99B /* ASPFileExistResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3950F1BDB660A0075E99B /* ASPFileExistResponse.m */; };
-		30D395DD1BDB660A0075E99B /* ASPFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395111BDB660A0075E99B /* ASPFileResponse.m */; };
-		30D395DE1BDB660A0075E99B /* ASPFileVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395131BDB660A0075E99B /* ASPFileVersion.m */; };
-		30D395DF1BDB660A0075E99B /* ASPFileVersionsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395151BDB660A0075E99B /* ASPFileVersionsResponse.m */; };
-		30D395E01BDB660A0075E99B /* ASPFolderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395171BDB660A0075E99B /* ASPFolderResponse.m */; };
-		30D395E11BDB660A0075E99B /* ASPStorageExistResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D395191BDB660A0075E99B /* ASPStorageExistResponse.m */; };
 		30D395E21BDB660A0075E99B /* ASPWordsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3951D1BDB660A0075E99B /* ASPWordsApi.m */; };
 		30D395E91BDB660A0075E99B /* ASPBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3952D1BDB660A0075E99B /* ASPBookmark.m */; };
 		30D395EA1BDB660A0075E99B /* ASPBookmarkData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D3952F1BDB660A0075E99B /* ASPBookmarkData.m */; };
@@ -180,20 +163,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		301C23BD1BF9D87900B29A32 /* ASPApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPApiClient.h; sourceTree = "<group>"; };
-		301C23BE1BF9D87900B29A32 /* ASPApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPApiClient.m; sourceTree = "<group>"; };
-		301C23BF1BF9D87900B29A32 /* ASPConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPConfiguration.h; sourceTree = "<group>"; };
-		301C23C01BF9D87900B29A32 /* ASPConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPConfiguration.m; sourceTree = "<group>"; };
-		301C23C11BF9D87900B29A32 /* ASPJSONRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPJSONRequestSerializer.h; sourceTree = "<group>"; };
-		301C23C21BF9D87900B29A32 /* ASPJSONRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPJSONRequestSerializer.m; sourceTree = "<group>"; };
-		301C23C31BF9D87900B29A32 /* ASPJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPJSONResponseSerializer.h; sourceTree = "<group>"; };
-		301C23C41BF9D87900B29A32 /* ASPJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPJSONResponseSerializer.m; sourceTree = "<group>"; };
-		301C23C51BF9D87900B29A32 /* ASPQueryParamCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPQueryParamCollection.h; sourceTree = "<group>"; };
-		301C23C61BF9D87900B29A32 /* ASPQueryParamCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPQueryParamCollection.m; sourceTree = "<group>"; };
-		301C23D21BF9DC4600B29A32 /* ASPBaseResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPBaseResponse.h; sourceTree = "<group>"; };
-		301C23D31BF9DC4600B29A32 /* ASPBaseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPBaseResponse.m; sourceTree = "<group>"; };
-		301C23D41BF9DC4600B29A32 /* ASPObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPObject.h; sourceTree = "<group>"; };
-		301C23D51BF9DC4600B29A32 /* ASPObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPObject.m; sourceTree = "<group>"; };
 		30D394DB1BDB63DC0075E99B /* Aspose.Words_Cloud_SDK_for_ObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aspose.Words_Cloud_SDK_for_ObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D394DF1BDB63DC0075E99B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		30D394E11BDB63DC0075E99B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -206,26 +175,6 @@
 		30D394EF1BDB63DC0075E99B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30D394F41BDB63DC0075E99B /* Aspose.Words_Cloud_SDK_for_ObjectiveCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Aspose.Words_Cloud_SDK_for_ObjectiveCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D394FA1BDB63DC0075E99B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		30D395051BDB660A0075E99B /* ASPStorageApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPStorageApi.h; sourceTree = "<group>"; };
-		30D395061BDB660A0075E99B /* ASPStorageApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPStorageApi.m; sourceTree = "<group>"; };
-		30D395081BDB660A0075E99B /* ASPDiscUsage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPDiscUsage.h; sourceTree = "<group>"; };
-		30D395091BDB660A0075E99B /* ASPDiscUsage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPDiscUsage.m; sourceTree = "<group>"; };
-		30D3950A1BDB660A0075E99B /* ASPDiscUsageResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPDiscUsageResponse.h; sourceTree = "<group>"; };
-		30D3950B1BDB660A0075E99B /* ASPDiscUsageResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPDiscUsageResponse.m; sourceTree = "<group>"; };
-		30D3950C1BDB660A0075E99B /* ASPFileExist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPFileExist.h; sourceTree = "<group>"; };
-		30D3950D1BDB660A0075E99B /* ASPFileExist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPFileExist.m; sourceTree = "<group>"; };
-		30D3950E1BDB660A0075E99B /* ASPFileExistResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPFileExistResponse.h; sourceTree = "<group>"; };
-		30D3950F1BDB660A0075E99B /* ASPFileExistResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPFileExistResponse.m; sourceTree = "<group>"; };
-		30D395101BDB660A0075E99B /* ASPFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPFileResponse.h; sourceTree = "<group>"; };
-		30D395111BDB660A0075E99B /* ASPFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPFileResponse.m; sourceTree = "<group>"; };
-		30D395121BDB660A0075E99B /* ASPFileVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPFileVersion.h; sourceTree = "<group>"; };
-		30D395131BDB660A0075E99B /* ASPFileVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPFileVersion.m; sourceTree = "<group>"; };
-		30D395141BDB660A0075E99B /* ASPFileVersionsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPFileVersionsResponse.h; sourceTree = "<group>"; };
-		30D395151BDB660A0075E99B /* ASPFileVersionsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPFileVersionsResponse.m; sourceTree = "<group>"; };
-		30D395161BDB660A0075E99B /* ASPFolderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPFolderResponse.h; sourceTree = "<group>"; };
-		30D395171BDB660A0075E99B /* ASPFolderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPFolderResponse.m; sourceTree = "<group>"; };
-		30D395181BDB660A0075E99B /* ASPStorageExistResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPStorageExistResponse.h; sourceTree = "<group>"; };
-		30D395191BDB660A0075E99B /* ASPStorageExistResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPStorageExistResponse.m; sourceTree = "<group>"; };
 		30D3951C1BDB660A0075E99B /* ASPWordsApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPWordsApi.h; sourceTree = "<group>"; };
 		30D3951D1BDB660A0075E99B /* ASPWordsApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPWordsApi.m; sourceTree = "<group>"; };
 		30D3952C1BDB660A0075E99B /* ASPBookmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPBookmark.h; sourceTree = "<group>"; };
@@ -444,23 +393,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		301C23BC1BF9D87900B29A32 /* client */ = {
-			isa = PBXGroup;
-			children = (
-				301C23BD1BF9D87900B29A32 /* ASPApiClient.h */,
-				301C23BE1BF9D87900B29A32 /* ASPApiClient.m */,
-				301C23BF1BF9D87900B29A32 /* ASPConfiguration.h */,
-				301C23C01BF9D87900B29A32 /* ASPConfiguration.m */,
-				301C23C11BF9D87900B29A32 /* ASPJSONRequestSerializer.h */,
-				301C23C21BF9D87900B29A32 /* ASPJSONRequestSerializer.m */,
-				301C23C31BF9D87900B29A32 /* ASPJSONResponseSerializer.h */,
-				301C23C41BF9D87900B29A32 /* ASPJSONResponseSerializer.m */,
-				301C23C51BF9D87900B29A32 /* ASPQueryParamCollection.h */,
-				301C23C61BF9D87900B29A32 /* ASPQueryParamCollection.m */,
-			);
-			path = client;
-			sourceTree = "<group>";
-		};
 		30D394D21BDB63DC0075E99B = {
 			isa = PBXGroup;
 			children = (
@@ -482,7 +414,6 @@
 		30D394DD1BDB63DC0075E99B /* Aspose.Words_Cloud_SDK_for_ObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
-				30D395031BDB660A0075E99B /* storage */,
 				30D3951A1BDB660A0075E99B /* words */,
 				30D394E11BDB63DC0075E99B /* AppDelegate.h */,
 				30D394E21BDB63DC0075E99B /* AppDelegate.m */,
@@ -513,54 +444,6 @@
 				30D394FA1BDB63DC0075E99B /* Info.plist */,
 			);
 			path = Aspose.Words_Cloud_SDK_for_ObjectiveCTests;
-			sourceTree = "<group>";
-		};
-		30D395031BDB660A0075E99B /* storage */ = {
-			isa = PBXGroup;
-			children = (
-				30D395041BDB660A0075E99B /* api */,
-				301C23BC1BF9D87900B29A32 /* client */,
-				30D395071BDB660A0075E99B /* model */,
-			);
-			path = storage;
-			sourceTree = "<group>";
-		};
-		30D395041BDB660A0075E99B /* api */ = {
-			isa = PBXGroup;
-			children = (
-				30D395051BDB660A0075E99B /* ASPStorageApi.h */,
-				30D395061BDB660A0075E99B /* ASPStorageApi.m */,
-			);
-			path = api;
-			sourceTree = "<group>";
-		};
-		30D395071BDB660A0075E99B /* model */ = {
-			isa = PBXGroup;
-			children = (
-				301C23D21BF9DC4600B29A32 /* ASPBaseResponse.h */,
-				301C23D31BF9DC4600B29A32 /* ASPBaseResponse.m */,
-				301C23D41BF9DC4600B29A32 /* ASPObject.h */,
-				301C23D51BF9DC4600B29A32 /* ASPObject.m */,
-				30D395081BDB660A0075E99B /* ASPDiscUsage.h */,
-				30D395091BDB660A0075E99B /* ASPDiscUsage.m */,
-				30D3950A1BDB660A0075E99B /* ASPDiscUsageResponse.h */,
-				30D3950B1BDB660A0075E99B /* ASPDiscUsageResponse.m */,
-				30D3950C1BDB660A0075E99B /* ASPFileExist.h */,
-				30D3950D1BDB660A0075E99B /* ASPFileExist.m */,
-				30D3950E1BDB660A0075E99B /* ASPFileExistResponse.h */,
-				30D3950F1BDB660A0075E99B /* ASPFileExistResponse.m */,
-				30D395101BDB660A0075E99B /* ASPFileResponse.h */,
-				30D395111BDB660A0075E99B /* ASPFileResponse.m */,
-				30D395121BDB660A0075E99B /* ASPFileVersion.h */,
-				30D395131BDB660A0075E99B /* ASPFileVersion.m */,
-				30D395141BDB660A0075E99B /* ASPFileVersionsResponse.h */,
-				30D395151BDB660A0075E99B /* ASPFileVersionsResponse.m */,
-				30D395161BDB660A0075E99B /* ASPFolderResponse.h */,
-				30D395171BDB660A0075E99B /* ASPFolderResponse.m */,
-				30D395181BDB660A0075E99B /* ASPStorageExistResponse.h */,
-				30D395191BDB660A0075E99B /* ASPStorageExistResponse.m */,
-			);
-			path = model;
 			sourceTree = "<group>";
 		};
 		30D3951A1BDB660A0075E99B /* words */ = {
@@ -950,35 +833,27 @@
 			files = (
 				30D3961D1BDB660A0075E99B /* ASPParagraphResponse.m in Sources */,
 				30D395F61BDB660A0075E99B /* ASPDocumentEntryList.m in Sources */,
-				30D395DB1BDB660A0075E99B /* ASPFileExist.m in Sources */,
 				30D3960D1BDB660A0075E99B /* ASPHyperlinks.m in Sources */,
-				301C23C91BF9D87900B29A32 /* ASPJSONRequestSerializer.m in Sources */,
 				30D395F71BDB660A0075E99B /* ASPDocumentPosition.m in Sources */,
 				30D395E91BDB660A0075E99B /* ASPBookmark.m in Sources */,
 				30D3960B1BDB660A0075E99B /* ASPHyperlink.m in Sources */,
 				30D395FA1BDB660A0075E99B /* ASPDocumentProperty.m in Sources */,
 				30D396091BDB660A0075E99B /* ASPFormField.m in Sources */,
-				30D395DC1BDB660A0075E99B /* ASPFileExistResponse.m in Sources */,
 				30D3963B1BDB660A0075E99B /* ASPTextItemsResponse.m in Sources */,
 				30D3963A1BDB660A0075E99B /* ASPTextItems.m in Sources */,
 				30D3962A1BDB660A0075E99B /* ASPSaveResult.m in Sources */,
 				30D3961A1BDB660A0075E99B /* ASPParagraphLink.m in Sources */,
-				30D395DA1BDB660A0075E99B /* ASPDiscUsageResponse.m in Sources */,
 				30D3960A1BDB660A0075E99B /* ASPFormFieldResponse.m in Sources */,
 				30D396271BDB660A0075E99B /* ASPRunResponse.m in Sources */,
 				30D396191BDB660A0075E99B /* ASPParagraph.m in Sources */,
-				301C23D71BF9DC4600B29A32 /* ASPObject.m in Sources */,
-				301C23C81BF9D87900B29A32 /* ASPConfiguration.m in Sources */,
 				30D395F51BDB660A0075E99B /* ASPDocumentEntry.m in Sources */,
 				30D396361BDB660A0075E99B /* ASPStatDataResponse.m in Sources */,
-				30D395E11BDB660A0075E99B /* ASPStorageExistResponse.m in Sources */,
 				30D396251BDB660A0075E99B /* ASPRevisionsModificationResponse.m in Sources */,
 				30D396301BDB660A0075E99B /* ASPSectionLinkCollection.m in Sources */,
 				30D395F01BDB660A0075E99B /* ASPComment.m in Sources */,
 				30D396291BDB660A0075E99B /* ASPSaveResponse.m in Sources */,
 				30D3962F1BDB660A0075E99B /* ASPSectionLink.m in Sources */,
 				30D394E61BDB63DC0075E99B /* ViewController.m in Sources */,
-				30D395D81BDB660A0075E99B /* ASPStorageApi.m in Sources */,
 				30D3962D1BDB660A0075E99B /* ASPSearchResultsCollection.m in Sources */,
 				30D396351BDB660A0075E99B /* ASPSplitDocumentResult.m in Sources */,
 				30D3961B1BDB660A0075E99B /* ASPParagraphLinkCollection.m in Sources */,
@@ -990,12 +865,10 @@
 				30D396171BDB660A0075E99B /* ASPPageSetup.m in Sources */,
 				30D396021BDB660A0075E99B /* ASPField.m in Sources */,
 				30D396211BDB660A0075E99B /* ASPRectangle.m in Sources */,
-				30D395DE1BDB660A0075E99B /* ASPFileVersion.m in Sources */,
 				30D395F41BDB660A0075E99B /* ASPDocument.m in Sources */,
 				30D395FB1BDB660A0075E99B /* ASPDocumentPropertyResponse.m in Sources */,
 				30D395FC1BDB660A0075E99B /* ASPDocumentResponse.m in Sources */,
 				30D396121BDB660A0075E99B /* ASPMetafileRenderingOptionsData.m in Sources */,
-				30D395D91BDB660A0075E99B /* ASPDiscUsage.m in Sources */,
 				30D395EF1BDB660A0075E99B /* ASPColor.m in Sources */,
 				30D396321BDB660A0075E99B /* ASPSectionPageSetupResponse.m in Sources */,
 				30D396371BDB660A0075E99B /* ASPStoryChildNodes.m in Sources */,
@@ -1008,13 +881,9 @@
 				30D394E31BDB63DC0075E99B /* AppDelegate.m in Sources */,
 				30D395EE1BDB660A0075E99B /* ASPBorder.m in Sources */,
 				30D396391BDB660A0075E99B /* ASPTextItem.m in Sources */,
-				301C23CB1BF9D87900B29A32 /* ASPQueryParamCollection.m in Sources */,
 				30D396041BDB660A0075E99B /* ASPFieldNamesResponse.m in Sources */,
-				301C23C71BF9D87900B29A32 /* ASPApiClient.m in Sources */,
 				30D395FE1BDB660A0075E99B /* ASPDrawingObject.m in Sources */,
 				30D3963D1BDB660A0075E99B /* ASPWatermarkText.m in Sources */,
-				30D395DF1BDB660A0075E99B /* ASPFileVersionsResponse.m in Sources */,
-				30D395E01BDB660A0075E99B /* ASPFolderResponse.m in Sources */,
 				30D3961E1BDB660A0075E99B /* ASPProtectionData.m in Sources */,
 				30D395FF1BDB660A0075E99B /* ASPDrawingObjectResponse.m in Sources */,
 				30D396101BDB660A0075E99B /* ASPLinkElement.m in Sources */,
@@ -1032,7 +901,6 @@
 				30D396071BDB660A0075E99B /* ASPFont.m in Sources */,
 				30D395ED1BDB660A0075E99B /* ASPBookmarksResponse.m in Sources */,
 				30D395F21BDB660A0075E99B /* ASPCommentsCollection.m in Sources */,
-				301C23D61BF9DC4600B29A32 /* ASPBaseResponse.m in Sources */,
 				30D396311BDB660A0075E99B /* ASPSectionLinkCollectionResponse.m in Sources */,
 				30D396221BDB660A0075E99B /* ASPReplaceTextRequest.m in Sources */,
 				30D3961C1BDB660A0075E99B /* ASPParagraphLinkCollectionResponse.m in Sources */,
@@ -1043,11 +911,9 @@
 				30D396031BDB660A0075E99B /* ASPFieldNames.m in Sources */,
 				30D3961F1BDB660A0075E99B /* ASPProtectionDataResponse.m in Sources */,
 				30D395F11BDB660A0075E99B /* ASPCommentResponse.m in Sources */,
-				30D395DD1BDB660A0075E99B /* ASPFileResponse.m in Sources */,
 				30D396181BDB660A0075E99B /* ASPPageStatData.m in Sources */,
 				30D395FD1BDB660A0075E99B /* ASPDocumentStatData.m in Sources */,
 				30D395EC1BDB660A0075E99B /* ASPBookmarks.m in Sources */,
-				301C23CA1BF9D87900B29A32 /* ASPJSONResponseSerializer.m in Sources */,
 				30D395E21BDB660A0075E99B /* ASPWordsApi.m in Sources */,
 				30D396011BDB660A0075E99B /* ASPDrawingObjectsResponse.m in Sources */,
 				30D3960E1BDB660A0075E99B /* ASPHyperlinksResponse.m in Sources */,
@@ -1131,7 +997,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1169,7 +1035,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
