@@ -12,10 +12,11 @@ Aspose.Words for Cloud is implemented as a REST API. If you use SDK, it hides th
 
 Directory | Description
 --------- | -----------
-[Java SDK](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs/Aspose.Words_Cloud_SDK_for_Java)  |  Aspose.Words Cloud SDK for Java.
-[PHP SDK](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs/Aspose.Words_Cloud_SDK_for_PHP)  | Aspose.Words Cloud SDK for PHP.
-[Python SDK](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs/Aspose.Words_Cloud_SDK_for_Python) | Aspose.Words Cloud SDK for Python.
-[Objective C SDK](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs/Aspose.Words_Cloud_SDK_for_ObjectiveC) | Aspose.Words Cloud SDK for Objective C. 
+[Java SDK](SDKs/Aspose.Words_Cloud_SDK_for_Java)  |  Aspose.Words Cloud SDK for Java.
+[PHP SDK](SDKs/Aspose.Words_Cloud_SDK_for_PHP)  | Aspose.Words Cloud SDK for PHP.
+[Python SDK](SDKs/Aspose.Words_Cloud_SDK_for_Python) | Aspose.Words Cloud SDK for Python.
+[Node.js SDK](SDKs/Aspose.Words_Cloud_SDK_for_NodeJS) | Aspose.Words Cloud SDK for Node.js.
+[Objective C SDK](SDKs/Aspose.Words_Cloud_SDK_for_ObjectiveC) | Aspose.Words Cloud SDK for Objective C. 
 [Plugins](Plugins)  | Standalone Plugins that will demonstrate one or multiple features on Aspose.Words for Cloud
 
 ## Resources
