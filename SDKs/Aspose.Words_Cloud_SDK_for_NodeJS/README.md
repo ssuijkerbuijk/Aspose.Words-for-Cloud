@@ -1,6 +1,6 @@
 # Aspose.Words Cloud SDK for Node.js
 
-This repository contains Aspose.Words Cloud SDK for Node.js source code. This SDK allows you to work with Aspose.Words Cloud REST APIs in your NodeJS applications quickly and easily. 
+This repository contains Aspose.Words Cloud SDK for Node.js source code. This SDK allows you to work with Aspose.Words Cloud REST APIs in your Node.js applications quickly and easily. 
 
 ## How to use the SDK?
 
@@ -8,16 +8,18 @@ The complete source code is available in this repository folder. For more detail
 
 ## Quick SDK Tutorial
 ```javascript
+var fs = require('fs');
+var assert = require('assert');
 var StorageApi =require("asposestoragecloud")
 var WordsApi =require("asposewordscloud")
 
-var AppSID = 'XXX';
-var AppKey = 'XXX';
-
+var AppSID = 'XXX'; //sepcify App SID
+var AppKey = 'XXX'; //sepcify App Key
 var config = {'appSid':AppSID,'apiKey':AppKey};
+var data_path = '../data/';
 
 try {
-//Instantiate Aspose.Words API SDK
+//Instantiate Aspose.Storage API SDK
 var storageApi = new StorageApi(config);
 
 //Instantiate Aspose.Words API SDK
