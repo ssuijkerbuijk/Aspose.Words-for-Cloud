@@ -6,8 +6,8 @@ namespace CSharp
 {
     class Common
     {
-        public static string APP_SID = "33b5bad5-beb7-4cb9-88fc-dce6b6aff909";
-        public static string APP_KEY = "b3f2961c598bc3c888de602786c17272";
+        public static string APP_SID = "";
+        public static string APP_KEY = "";
         public static string FOLDER = "";
         public static string STORAGE = "";
 

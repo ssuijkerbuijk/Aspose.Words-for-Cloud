@@ -71,8 +71,8 @@ namespace WordsTest
         ///</summary>
         public TestWordsApi()
         {
-            target = new WordsApi("xxx", "xxx", "http://api.aspose.com/v1.1");
-            storageApi = new StorageApi("xxx", "xxx", "http://api.aspose.com/v1.1");
+            target = new WordsApi("xxxx", "xxx", "http://api.aspose.com/v1.1");
+            storageApi = new StorageApi("xxxx", "xxx", "http://api.aspose.com/v1.1");
 
         }
 
