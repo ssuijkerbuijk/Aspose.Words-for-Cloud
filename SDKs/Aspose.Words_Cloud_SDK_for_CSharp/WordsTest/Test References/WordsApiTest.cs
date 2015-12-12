@@ -428,10 +428,6 @@ namespace WordsTest
         [TestMethod()]
         public void TestGetDocumentBookmarks()
         {
-
-
-
-
             string name = "test_multi_pages.docx";
             string storage = null;
             string folder = null;
@@ -441,9 +437,7 @@ namespace WordsTest
             actual = target.GetDocumentBookmarks(name, storage, folder);
 
             Assert.AreEqual(actual.Code, "200");
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.BookmarkResponse(), actual.GetType());
-        
-            
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.BookmarksResponse(), actual.GetType());              
         }
 
         /// <summary>
@@ -518,7 +512,7 @@ namespace WordsTest
         [TestMethod()]
         public void TestGetDocumentDrawingObjectOleData()
         {
-            string name = "test_multi_pages.docx";
+            string name = "sample_EmbeddedOLE.docx";
             int objectIndex = 0; 
             string storage = null;
             string folder = null;
@@ -638,8 +632,8 @@ namespace WordsTest
         public void TestGetDocumentParagraphRun()
         {
             string name = "test_multi_pages.docx";
-            int index = 0; // TODO: Initialize to an appropriate value
-            int runIndex = 0; // TODO: Initialize to an appropriate value
+            int index = 0; 
+            int runIndex = 0; 
             string storage = null;
             string folder = null;
 
@@ -647,8 +641,8 @@ namespace WordsTest
 
             Com.Aspose.Words.Model.RunResponse actual;
             actual = target.GetDocumentParagraphRun(name, index, runIndex, storage, folder);
-            
-            Assert.AreEqual(actual, "");
+
+            Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.RunResponse(), actual.GetType()); 
 
             
@@ -1095,7 +1089,7 @@ namespace WordsTest
         {
             string name = "TestExecuteTemplate.doc";
             string cleanup = null;
-            string filename = "TestExecuteResult.doc";
+            string destFileName = "TestExecuteResult.doc";
             string storage = null;
             string folder = null;
             bool useWholeParagraphAsRegion = false; // TODO: Initialize to an appropriate value
@@ -1104,7 +1098,7 @@ namespace WordsTest
 
              storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
             Com.Aspose.Words.Model.DocumentResponse actual;
-            actual = target.PostExecuteTemplate(name, cleanup, filename, storage, folder, useWholeParagraphAsRegion, withRegions, file);
+            actual = target.PostExecuteTemplate(name, cleanup, destFileName, storage, folder, useWholeParagraphAsRegion, withRegions, file);
             
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType()); 
@@ -1309,10 +1303,16 @@ namespace WordsTest
         public void TestPostLoadWebDocument()
         {
             Com.Aspose.Words.Model.LoadWebDocumentData body = new Com.Aspose.Words.Model.LoadWebDocumentData();
-            body.LoadingDocumentUrl = "http://google.com";
             var soptions = new Com.Aspose.Words.Model.SaveOptionsData();
             soptions.FileName = "google.doc";
             soptions.SaveFormat = "doc";
+            soptions.ColorMode = "1";
+            soptions.DmlEffectsRenderingMode = "1";
+            soptions.DmlRenderingMode = "1";
+            soptions.UpdateSdtContent = false;
+            soptions.ZipOutput = false;
+
+            body.LoadingDocumentUrl = "http://google.com";
             body.SaveOptions = soptions;
 
             Com.Aspose.Words.Model.SaveResponse actual;
@@ -1483,8 +1483,8 @@ namespace WordsTest
             Com.Aspose.Words.Model.ResponseMessage actual;
             actual = target.PutConvertDocument(format, outPath, replaceResourcesHostTo, file);
 
-            Assert.AreEqual(actual, null);
-            //Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DrawingObjectsResponse(), actual.GetType()); 
+            Assert.AreEqual(actual.Code, 200);
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType()); 
             
         }
 
@@ -1552,13 +1552,14 @@ namespace WordsTest
         {
             bool withRegions = false;
             string cleanup = null;
-            byte[] file = System.IO.File.ReadAllBytes("\\temp\\resources\\SampleMailMergeTemplate.docx");
-            byte[] data = System.IO.File.ReadAllBytes("\\temp\\resources\\SampleMailMergeTemplateData.txt");
-            
-            Com.Aspose.Words.Model.ResponseMessage actual;
-            actual = target.PutExecuteMailMergeOnline(withRegions, cleanup, file);
+            byte[] file = System.IO.File.ReadAllBytes("\\temp\\resources\\SampleExecuteTemplate.docx");
+            byte[] data = System.IO.File.ReadAllBytes("\\temp\\resources\\SampleExecuteTemplateData.txt");
 
-            Assert.AreEqual(actual.Code, "200");
+                        
+            Com.Aspose.Words.Model.ResponseMessage actual;
+            actual = target.PutExecuteMailMergeOnline(withRegions, cleanup, file, data);
+
+            Assert.AreEqual(actual.Code, 200);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType()); 
             
         }
@@ -1573,12 +1574,12 @@ namespace WordsTest
             bool useWholeParagraphAsRegion = false;
             bool withRegions = false; 
             byte[] file = System.IO.File.ReadAllBytes("\\temp\\resources\\SampleMailMergeTemplate.docx");
+            byte[] data = System.IO.File.ReadAllBytes("\\temp\\resources\\SampleExecuteTemplateData.txt");
 
             Com.Aspose.Words.Model.ResponseMessage actual;
-            actual = target.PutExecuteTemplateOnline(cleanup, useWholeParagraphAsRegion, withRegions, file);
+            actual = target.PutExecuteTemplateOnline(cleanup, useWholeParagraphAsRegion, withRegions, file, data);
 
-
-            Assert.AreEqual(actual.Code, "200");
+            Assert.AreEqual(actual.Code, 200);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType()); 
             
         }

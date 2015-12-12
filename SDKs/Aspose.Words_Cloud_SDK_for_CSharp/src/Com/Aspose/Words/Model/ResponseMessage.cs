@@ -13,7 +13,7 @@ namespace Com.Aspose.Words.Model
     public class ResponseMessage
     {
         public ResponseMessage() { }
-        public ResponseMessage(byte[] ResponseStream, int Code=200, String Status="Ok" )
+        public ResponseMessage(byte[] ResponseStream, int Code=200, String Status="OK" )
         {
             this.Code = Code;
             this.Status = Status;

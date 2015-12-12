@@ -202,7 +202,7 @@
 		}
         try {
           if (typeof(BookmarkResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (BookmarkResponse) ApiInvoker.deserialize(response, typeof(BookmarkResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, body, headerParams, formParams);
@@ -395,7 +395,7 @@
 		}
         try {
           if (typeof(DocumentResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (DocumentResponse) ApiInvoker.deserialize(response, typeof(DocumentResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, body, headerParams, formParams);
@@ -478,7 +478,11 @@
 		}
         if (file != null){
          if(file is byte[]) {
-           formParams.Add("file", file);
+		 
+			 var docFile = new FileInfo();
+             docFile.file = file;
+             docFile.MimeType = "application/octet-stream";
+             formParams.Add("file", docFile);
          } else {
            //string paramStr = (file is DateTime) ? ((DateTime)(object)file).ToString("u") : Convert.ToString(file);
 		    string paramStr = Convert.ToString(file);
@@ -487,7 +491,7 @@
 		}
         try {
           if (typeof(DocumentResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (DocumentResponse) ApiInvoker.deserialize(response, typeof(DocumentResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
@@ -552,7 +556,7 @@
 		}
         try {
           if (typeof(DocumentResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (DocumentResponse) ApiInvoker.deserialize(response, typeof(DocumentResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, body, headerParams, formParams);
@@ -576,7 +580,8 @@
       ///  
       /// </summary>
       /// <returns></returns>
-      public SaveResponse PostLoadWebDocument (Com.Aspose.Words.Model.LoadWebDocumentData body) {
+      public SaveResponse PostLoadWebDocument (Com.Aspose.Words.Model.LoadWebDocumentData body) 
+      {
         // create path and map variables
         var ResourcePath = "/words/loadWebDocument/?appSid={appSid}".Replace("{format}","json");
 		ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
@@ -594,7 +599,7 @@
 
         try {
           if (typeof(SaveResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, body, headerParams, formParams);
             return (SaveResponse) ApiInvoker.deserialize(response, typeof(SaveResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, body, headerParams, formParams);
@@ -648,7 +653,7 @@
         }
         try {
           if (typeof(ResponseMessage) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (ResponseMessage) ApiInvoker.deserialize(response, typeof(ResponseMessage));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
@@ -679,7 +684,7 @@
       /// <param name="storage"></param>
       /// <param name="folder"></param>
       /// <returns></returns>
-      public SplitDocumentResponse PostSplitDocument (string name, string format, int from, int to, bool zipOutput, string storage, string folder) {
+      public SplitDocumentResponse PostSplitDocument (string name, string format, int? from, int? to, bool? zipOutput, string storage, string folder) {
         // create path and map variables
         var ResourcePath = "/words/{name}/split/?appSid={appSid}&amp;toFormat={toFormat}&amp;from={from}&amp;to={to}&amp;zipOutput={zipOutput}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
 		ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
@@ -730,7 +735,7 @@
 		}
         try {
           if (typeof(SplitDocumentResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (SplitDocumentResponse) ApiInvoker.deserialize(response, typeof(SplitDocumentResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
@@ -787,22 +792,30 @@
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "replaceResourcesHostTo" + "}", apiInvoker.ToPathValue(replaceResourcesHostTo)); 
 		}
-        if (file != null){
-         if(file is byte[]) {
-           formParams.Add("file", file);
-         } else {
-           //string paramStr = (file is DateTime) ? ((DateTime)(object)file).ToString("u") : Convert.ToString(file);
-		    string paramStr = Convert.ToString(file);
-           formParams.Add("file", paramStr);
-         }
-		}
+        if (file != null)
+        {
+            if (file is byte[])
+            {
+                var docFile = new FileInfo();
+                docFile.file = file;
+                docFile.MimeType = "application/octet-stream";
+                formParams.Add("file", docFile);
+            }
+            else
+            {
+                //string paramStr = (file is DateTime) ? ((DateTime)(object)file).ToString("u") : Convert.ToString(file);
+                string paramStr = Convert.ToString(file);
+                formParams.Add("file", paramStr);
+            }
+        }
         try {
           if (typeof(ResponseMessage) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams);
             return (ResponseMessage) ApiInvoker.deserialize(response, typeof(ResponseMessage));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams);
             if(response != null){
+                System.Diagnostics.Debug.WriteLine("response:"+response);
                return (ResponseMessage) ApiInvoker.deserialize(response, typeof(ResponseMessage));
             }
             else {
@@ -840,7 +853,7 @@
 		}
         try {
           if (typeof(FieldNamesResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams);
             return (FieldNamesResponse) ApiInvoker.deserialize(response, typeof(FieldNamesResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams);
@@ -867,7 +880,7 @@
       /// <param name="cleanup"></param>
       /// <param name="file"></param>
       /// <returns></returns>
-      public ResponseMessage PutExecuteMailMergeOnline (bool withRegions, string cleanup, byte[] file) {
+      public ResponseMessage PutExecuteMailMergeOnline (bool withRegions, string cleanup, byte[] file, byte[] data) {
         // create path and map variables
         var ResourcePath = "/words/executeMailMerge/?withRegions={withRegions}&amp;appSid={appSid}&amp;cleanup={cleanup}".Replace("{format}","json");
 		ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
@@ -878,7 +891,8 @@
         var formParams = new Dictionary<String, object>();
 
         // verify required params are set
-        if (withRegions == null || file == null ) {
+        if (withRegions == null || file == null || data == null)
+        {
            throw new ApiException(400, "missing required params");
         }
         if (withRegions == null){
@@ -891,9 +905,19 @@
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "cleanup" + "}", apiInvoker.ToPathValue(cleanup)); 
 		}
-        if (file != null){
+        if (file != null && data != null)
+        {
          if(file is byte[]) {
-           formParams.Add("file", file);
+			 var docFile = new FileInfo();
+             docFile.file = file;
+             docFile.MimeType = "application/octet-stream";
+             var dataFile = new FileInfo();
+             dataFile.file = data;
+             dataFile.MimeType = "application/xml";
+
+             formParams.Add("file", docFile);
+             formParams.Add("data", dataFile);
+
          } else {
            //string paramStr = (file is DateTime) ? ((DateTime)(object)file).ToString("u") : Convert.ToString(file);
 		    string paramStr = Convert.ToString(file);
@@ -902,7 +926,7 @@
 		}
         try {
           if (typeof(ResponseMessage) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams);
             return (ResponseMessage) ApiInvoker.deserialize(response, typeof(ResponseMessage));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams);
@@ -930,7 +954,7 @@
       /// <param name="withRegions"></param>
       /// <param name="file"></param>
       /// <returns></returns>
-      public ResponseMessage PutExecuteTemplateOnline (string cleanup, bool useWholeParagraphAsRegion, bool withRegions, byte[] file) {
+      public ResponseMessage PutExecuteTemplateOnline (string cleanup, bool useWholeParagraphAsRegion, bool withRegions, byte[] file, byte[] data) {
         // create path and map variables
         var ResourcePath = "/words/executeTemplate/?appSid={appSid}&amp;cleanup={cleanup}&amp;useWholeParagraphAsRegion={useWholeParagraphAsRegion}&amp;withRegions={withRegions}".Replace("{format}","json");
 		ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
@@ -959,18 +983,31 @@
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "withRegions" + "}", apiInvoker.ToPathValue(withRegions)); 
 		}
-        if (file != null){
-         if(file is byte[]) {
-           formParams.Add("file", file);
-         } else {
-           //string paramStr = (file is DateTime) ? ((DateTime)(object)file).ToString("u") : Convert.ToString(file);
-		    string paramStr = Convert.ToString(file);
-           formParams.Add("file", paramStr);
-         }
-		}
+        if (file != null && data != null)
+        {
+            if (file is byte[])
+            {
+                var docFile = new FileInfo();
+                docFile.file = file;
+                docFile.MimeType = "application/octet-stream";
+                var dataFile = new FileInfo();
+                dataFile.file = data;
+                dataFile.MimeType = "application/xml";
+
+                formParams.Add("file", docFile);
+                formParams.Add("data", dataFile);
+
+            }
+            else
+            {
+                //string paramStr = (file is DateTime) ? ((DateTime)(object)file).ToString("u") : Convert.ToString(file);
+                string paramStr = Convert.ToString(file);
+                formParams.Add("file", paramStr);
+            }
+        }
         try {
           if (typeof(ResponseMessage) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams);
             return (ResponseMessage) ApiInvoker.deserialize(response, typeof(ResponseMessage));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams);
@@ -1040,7 +1077,7 @@
 		}
         try {
           if (typeof(SaaSposeResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
             return (SaaSposeResponse) ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
@@ -1233,7 +1270,7 @@
 		}
         try {
           if (typeof(CommentResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (CommentResponse) ApiInvoker.deserialize(response, typeof(CommentResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, body, headerParams, formParams);
@@ -1298,7 +1335,7 @@
 		}
         try {
           if (typeof(CommentResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams);
             return (CommentResponse) ApiInvoker.deserialize(response, typeof(CommentResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, body, headerParams, formParams);
@@ -1356,7 +1393,7 @@
 		}
         try {
           if (typeof(SaaSposeResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
             return (SaaSposeResponse) ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
@@ -1420,7 +1457,7 @@
 		}
         try {
           if (typeof(SaaSposeResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
             return (SaaSposeResponse) ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
@@ -1484,7 +1521,7 @@
 		}
         try {
           if (typeof(SaaSposeResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
             return (SaaSposeResponse) ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
@@ -1554,7 +1591,7 @@
 		}
         try {
           if (typeof(SaaSposeResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
             return (SaaSposeResponse) ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
@@ -1713,7 +1750,7 @@
 		}
         try {
           if (typeof(FieldResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (FieldResponse) ApiInvoker.deserialize(response, typeof(FieldResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, body, headerParams, formParams);
@@ -1777,7 +1814,7 @@
 		}
         try {
           if (typeof(DocumentResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (DocumentResponse) ApiInvoker.deserialize(response, typeof(DocumentResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
@@ -1860,7 +1897,7 @@
 		}
         try {
           if (typeof(FieldResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams);
             return (FieldResponse) ApiInvoker.deserialize(response, typeof(FieldResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, body, headerParams, formParams);
@@ -1930,7 +1967,7 @@
 		}
         try {
           if (typeof(SaaSposeResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
             return (SaaSposeResponse) ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
@@ -2123,7 +2160,7 @@
 		}
         try {
           if (typeof(DocumentPropertyResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams);
             return (DocumentPropertyResponse) ApiInvoker.deserialize(response, typeof(DocumentPropertyResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, body, headerParams, formParams);
@@ -2188,7 +2225,7 @@
 		}
         try {
           if (typeof(ProtectionDataResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
             return (ProtectionDataResponse) ApiInvoker.deserialize(response, typeof(ProtectionDataResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, body, headerParams, formParams);
@@ -2311,7 +2348,7 @@
 		}
         try {
           if (typeof(ProtectionDataResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (ProtectionDataResponse) ApiInvoker.deserialize(response, typeof(ProtectionDataResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, body, headerParams, formParams);
@@ -2376,7 +2413,7 @@
 		}
         try {
           if (typeof(ProtectionDataResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams);
             return (ProtectionDataResponse) ApiInvoker.deserialize(response, typeof(ProtectionDataResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, body, headerParams, formParams);
@@ -2435,7 +2472,7 @@
 		}
         try {
           if (typeof(SaveResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (SaveResponse) ApiInvoker.deserialize(response, typeof(SaveResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, body, headerParams, formParams);
@@ -2481,7 +2518,7 @@
       /// <param name="zipOutput"></param>
       /// <param name="body"></param>
       /// <returns></returns>
-      public SaveResponse PutDocumentSaveAsTiff (string name, string resultFile, bool useAntiAliasing, bool useHighQualityRendering, float? imageBrightness, string imageColorMode, float? imageContrast, string numeralFormat, int? pageCount, int? pageIndex, string paperColor, string pixelFormat, float? resolution, float? scale, string tiffCompression, string dmlRenderingMode, string dmlEffectsRenderingMode, string tiffBinarizationMethod, string storage, string folder, bool zipOutput, TiffSaveOptionsData body) {
+      public SaveResponse PutDocumentSaveAsTiff (string name, string resultFile, bool useAntiAliasing, bool useHighQualityRendering, float imageBrightness, string imageColorMode, float imageContrast, string numeralFormat, int pageCount, int pageIndex, string paperColor, string pixelFormat, float resolution, float scale, string tiffCompression, string dmlRenderingMode, string dmlEffectsRenderingMode, string tiffBinarizationMethod, string storage, string folder, bool zipOutput, TiffSaveOptionsData body) {
         // create path and map variables
         var ResourcePath = "/words/{name}/SaveAs/tiff/?appSid={appSid}&amp;resultFile={resultFile}&amp;useAntiAliasing={useAntiAliasing}&amp;useHighQualityRendering={useHighQualityRendering}&amp;imageBrightness={imageBrightness}&amp;imageColorMode={imageColorMode}&amp;imageContrast={imageContrast}&amp;numeralFormat={numeralFormat}&amp;pageCount={pageCount}&amp;pageIndex={pageIndex}&amp;paperColor={paperColor}&amp;pixelFormat={pixelFormat}&amp;resolution={resolution}&amp;scale={scale}&amp;tiffCompression={tiffCompression}&amp;dmlRenderingMode={dmlRenderingMode}&amp;dmlEffectsRenderingMode={dmlEffectsRenderingMode}&amp;tiffBinarizationMethod={tiffBinarizationMethod}&amp;storage={storage}&amp;folder={folder}&amp;zipOutput={zipOutput}".Replace("{format}","json");
 		ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
@@ -2602,7 +2639,7 @@
 		}
         try {
           if (typeof(SaveResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams);
             return (SaveResponse) ApiInvoker.deserialize(response, typeof(SaveResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, body, headerParams, formParams);
@@ -2742,7 +2779,7 @@
 		}
         try {
           if (typeof(DocumentResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
             return (DocumentResponse) ApiInvoker.deserialize(response, typeof(DocumentResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
@@ -2819,7 +2856,11 @@
 		}
         if (file != null){
          if(file is byte[]) {
-           formParams.Add("file", file);
+		 
+			 var docFile = new FileInfo();
+             docFile.file = file;
+             docFile.MimeType = "application/octet-stream";
+             formParams.Add("file", docFile);
          } else {
            //string paramStr = (file is DateTime) ? ((DateTime)(object)file).ToString("u") : Convert.ToString(file);
 		    string paramStr = Convert.ToString(file);
@@ -2828,7 +2869,7 @@
 		}
         try {
           if (typeof(DocumentResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (DocumentResponse) ApiInvoker.deserialize(response, typeof(DocumentResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
@@ -2905,7 +2946,7 @@
 		}
         try {
           if (typeof(DocumentResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (DocumentResponse) ApiInvoker.deserialize(response, typeof(DocumentResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, body, headerParams, formParams);
@@ -3307,7 +3348,7 @@
 		}
         try {
           if (typeof(SaaSposeResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
             return (SaaSposeResponse) ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
@@ -3466,7 +3507,7 @@
 		}
         try {
           if (typeof(FormFieldResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (FormFieldResponse) ApiInvoker.deserialize(response, typeof(FormFieldResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, body, headerParams, formParams);
@@ -3549,7 +3590,7 @@
 		}
         try {
           if (typeof(FormFieldResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams);
             return (FormFieldResponse) ApiInvoker.deserialize(response, typeof(FormFieldResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, body, headerParams, formParams);
@@ -3619,7 +3660,7 @@
 		}
         try {
           if (typeof(SaaSposeResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
             return (SaaSposeResponse) ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
@@ -3799,7 +3840,7 @@
 		}
         try {
           if (typeof(SaaSposeResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
             return (SaaSposeResponse) ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
@@ -3952,7 +3993,11 @@
 		}
         if (file != null){
          if(file is byte[]) {
-           formParams.Add("file", file);
+		 
+			 var docFile = new FileInfo();
+             docFile.file = file;
+             docFile.MimeType = "application/octet-stream";
+             formParams.Add("file", docFile);
          } else {
            //string paramStr = (file is DateTime) ? ((DateTime)(object)file).ToString("u") : Convert.ToString(file);
 		    string paramStr = Convert.ToString(file);
@@ -3961,7 +4006,7 @@
 		}
         try {
           if (typeof(DocumentResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (DocumentResponse) ApiInvoker.deserialize(response, typeof(DocumentResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
@@ -4173,7 +4218,7 @@
                return (FontResponse) ApiInvoker.deserialize(response, typeof(FontResponse));
             }
             else {
-              return null;  
+              return null;
             }
           }
         } catch (ApiException ex) {
@@ -4300,7 +4345,7 @@
 		}
         try {
           if (typeof(FontResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (FontResponse) ApiInvoker.deserialize(response, typeof(FontResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, body, headerParams, formParams);
@@ -4364,7 +4409,7 @@
 		}
         try {
           if (typeof(RevisionsModificationResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (RevisionsModificationResponse) ApiInvoker.deserialize(response, typeof(RevisionsModificationResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
@@ -4428,7 +4473,7 @@
 		}
         try {
           if (typeof(RevisionsModificationResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (RevisionsModificationResponse) ApiInvoker.deserialize(response, typeof(RevisionsModificationResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
@@ -4749,7 +4794,7 @@
 		}
         try {
           if (typeof(SectionPageSetupResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (SectionPageSetupResponse) ApiInvoker.deserialize(response, typeof(SectionPageSetupResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, body, headerParams, formParams);
@@ -4872,7 +4917,7 @@
 		}
         try {
           if (typeof(ReplaceTextResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (ReplaceTextResponse) ApiInvoker.deserialize(response, typeof(ReplaceTextResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, body, headerParams, formParams);
@@ -4949,7 +4994,11 @@
 		}
         if (file != null){
          if(file is byte[]) {
-           formParams.Add("file", file);
+		 
+			 var docFile = new FileInfo();
+             docFile.file = file;
+             docFile.MimeType = "application/octet-stream";
+             formParams.Add("file", docFile);
          } else {
            //string paramStr = (file is DateTime) ? ((DateTime)(object)file).ToString("u") : Convert.ToString(file);
 		    string paramStr = Convert.ToString(file);
@@ -4958,7 +5007,7 @@
 		}
         try {
           if (typeof(DocumentResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (DocumentResponse) ApiInvoker.deserialize(response, typeof(DocumentResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
@@ -5035,7 +5084,7 @@
 		}
         try {
           if (typeof(DocumentResponse) == typeof(ResponseMessage)) {
-            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+            var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
             return (DocumentResponse) ApiInvoker.deserialize(response, typeof(DocumentResponse));
           } else {
             var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, body, headerParams, formParams);
