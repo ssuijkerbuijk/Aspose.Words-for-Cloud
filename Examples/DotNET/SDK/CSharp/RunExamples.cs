@@ -120,7 +120,7 @@ namespace CSharp
             //// =====================================================
             //// =====================================================
 
-            ProtectDocument.Run();
+            //ProtectDocument.Run();
             //UnprotectDocument.Run();
             //ModifyProtection.Run();
 
@@ -130,7 +130,7 @@ namespace CSharp
             //// =====================================================
             //// =====================================================
 
-            //RemoveHeaderAndFooter.Run();
+            RemoveHeaderAndFooter.Run();
             //GetAllSections.Run();
 
             //// =====================================================
