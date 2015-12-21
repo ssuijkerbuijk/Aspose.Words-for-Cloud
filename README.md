@@ -1,6 +1,6 @@
 ##Aspose.Words for Cloud
 
-This package contains [Examples](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/Examples/DotNET/SDK) and Showcase projects for [Aspose.Words for Cloud] http://www.aspose.com/community/files/75/cloud-apis/wordscloud/default.aspx) and will help you write your own applications.https://github.com/asposewords/Aspose_Words_Cloud/tree/master/Examples/DotNET/SDK
+This package contains [Examples](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/Examples/DotNET/SDK) and Showcase projects for [Aspose.Words for Cloud|http://www.aspose.com/community/files/75/cloud-apis/wordscloud/default.aspx] .
 
 spose.Words for Cloud's platform independent document manipulation API is a true REST API that can be used with any language: .NET, Java, PHP, Ruby, Rails, Python, jQuery and many more. You can use it with any platform — web, desktop, mobile, and cloud.
 
