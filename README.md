@@ -16,6 +16,8 @@ Directory | Description
 --------- | -----------
 [Examples](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/Examples/DotNET/SDK)  | A collection of .NET examples that help you learn how to product features
 [Plugins](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/Plugins)  | Standalone Plugins that will demonstrate one or multiple features on Aspose.Words for Cloud
+[SDKs](https://github.com/asposeforcloud)  | A collection of Aspose Cloud SDKs. You can view the code and modify it as you like.
+
 ## Resources
 
 + **Website:** [www.aspose.com](http://www.aspose.com)
