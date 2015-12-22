@@ -17,5 +17,5 @@ Directory | Description
 [Python SDK](SDKs/Aspose.Words_Cloud_SDK_for_Python) | Aspose.Words Cloud SDK for Python.
 [Node.js SDK](SDKs/Aspose.Words_Cloud_SDK_for_NodeJS) | Aspose.Words Cloud SDK for Node.js.
 [Objective C SDK](SDKs/Aspose.Words_Cloud_SDK_for_ObjectiveC) | Aspose.Words Cloud SDK for Objective C. 
-[Plugins](Plugins)  | Standalone Plugins that will demonstrate one or multiple features on Aspose.Words for Cloud
+
 
