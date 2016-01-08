@@ -1,5 +1,5 @@
 # Aspose.Words Cloud SDK For Ruby
-This SDK lets you use [Aspose Cloud Word APIs](http://api.aspose.com/v1.1/swagger/ui/index) in your web apps.
+This SDK lets you use [Aspose Cloud Word APIs](http://www.aspose.com/cloud/word-api.aspx) in your web apps.
 
 ## Installing
 You can simply install AsposeWordsCloud with gem:
