@@ -9,8 +9,8 @@ class WordsTests < Minitest::Test
 	include AsposeStorageCloud
 	
 	def setup
-        #Get App key and App SID from https://cloud.aspose.com
-        AsposeApp.app_key_and_sid("", "")
+        	#Get App key and App SID from https://cloud.aspose.com
+        	AsposeApp.app_key_and_sid("", "")
 		@words_api = WordsApi.new
 	end
 
@@ -18,36 +18,36 @@ class WordsTests < Minitest::Test
 	end
 
 	def upload_file(file_name)
-        @storage_api = StorageApi.new
+        	@storage_api = StorageApi.new
 		response = @storage_api.put_create(file_name, File.open("data/" << file_name,"r") { |io| io.read } )
 		assert(response, message="Failed to upload {file_name} file.")
 	end
 
 	def test_put_convert_document
-        file_name = "SampleWordDocument.docx"
-        convert_to_format = "pdf"
-        response = @words_api.put_convert_document(File.open("data/" << file_name,"r") { |io| io.read }, {format: convert_to_format})
+        	file_name = "SampleWordDocument.docx"
+        	convert_to_format = "pdf"
+        	response = @words_api.put_convert_document(File.open("data/" << file_name,"r") { |io| io.read }, {format: convert_to_format})
 	 	assert(response, message="Failed to convert document from request content to {convert_to_format} format.")
 	end
 
 	def test_put_execute_mail_merge_online
-        file_name = "SampleMailMergeTemplate.docx"
-        data_file_name = "SampleMailMergeTemplateData.txt"
-        with_regions = false
+        	file_name = "SampleMailMergeTemplate.docx"
+        	data_file_name = "SampleMailMergeTemplateData.txt"
+        	with_regions = false
 
-        file = File.open("data/" << file_name,"r") { |io| io.read }
-        data = File.open("data/" << data_file_name,"r") { |io| io.read }
-        response = @words_api.put_execute_mail_merge_online(with_regions, file, data)
+        	file = File.open("data/" << file_name,"r") { |io| io.read }
+        	data = File.open("data/" << data_file_name,"r") { |io| io.read }
+        	response = @words_api.put_execute_mail_merge_online(with_regions, file, data)
 	 	assert(response, message="Failed to execute document mail merge online.")
 	end	
 
 	def test_put_execute_template_online
 		file_name = "SampleExecuteTemplate.doc"
-        data_file_name = "SampleExecuteTemplateData.txt"
+        	data_file_name = "SampleExecuteTemplateData.txt"
 
-        file = File.open("data/" << file_name,"r") { |io| io.read }
-        data = File.open("data/" << data_file_name,"r") { |io| io.read }
-        response = @words_api.put_execute_template_online(file, data)
+		file = File.open("data/" << file_name,"r") { |io| io.read }
+        	data = File.open("data/" << data_file_name,"r") { |io| io.read }
+        	response = @words_api.put_execute_template_online(file, data)
 	 	assert(response, message="Failed to populate document template with data online.")
 	end
     
@@ -61,7 +61,7 @@ class WordsTests < Minitest::Test
 
 		load_web_document_data.save_options = save_options
 
-        response = @words_api.post_load_web_document(load_web_document_data)
+        	response = @words_api.post_load_web_document(load_web_document_data)
 	 	assert(response, message="Failed to load new document from web into the file with any supported format of data")
 	end
 
@@ -71,8 +71,8 @@ class WordsTests < Minitest::Test
 	end
 
 	def test_post_run_task
-        file_name = "SampleWordDocument.docx"
-        response = @words_api.post_run_task(File.open("data/" << file_name,"r") { |io| io.read })
+        	file_name = "SampleWordDocument.docx"
+        	response = @words_api.post_run_task(File.open("data/" << file_name,"r") { |io| io.read })
 	 	assert(response, message="Failed to run tasks")
 	end
 
