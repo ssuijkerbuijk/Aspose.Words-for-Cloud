@@ -712,7 +712,7 @@ class WordsTests < Minitest::Test
 		assert(response, message="Failed to remove form field from document")
 	end
 
-	def test_post_split_documentpost_split_document
+	def test_post_split_document
 		file_name = "SampleWordDocument.docx"
 		upload_file(file_name)
 
