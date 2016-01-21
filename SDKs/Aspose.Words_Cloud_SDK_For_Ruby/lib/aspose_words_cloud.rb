@@ -1,5 +1,4 @@
 require 'aspose_storage_cloud'
-require "filemagic"
 
 # Common files
 require_relative 'aspose_words_cloud/api_client'
