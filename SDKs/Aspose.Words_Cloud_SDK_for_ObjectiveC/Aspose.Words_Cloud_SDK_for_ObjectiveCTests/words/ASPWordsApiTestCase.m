@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "ASPWordsApi.h"
 #import "ASPStorageApi.h"
+#import "AppDelegate.h"
 
 @interface ASPWordsApiTestCase : XCTestCase
 @property(nonatomic, strong) ASPWordsApi *wordsApi;
@@ -20,6 +21,8 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     self.wordsApi = [[ASPWordsApi alloc] init];
+    //Get App key and App SID from https://cloud.aspose.com
+    [ASPApiClient setAppKey:ASPAppKey andAppSID:ASPAppSID];
 }
 
 - (void)tearDown {
