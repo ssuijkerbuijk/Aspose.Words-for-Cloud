@@ -12,10 +12,10 @@ Aspose.Words for Cloud is implemented as a REST API. If you use SDK, it hides th
 
 Directory | Description
 --------- | -----------
-[Java SDK](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs/Aspose.Words_Cloud_SDK_for_Java)  |  Aspose.Words Cloud SDK for Java.
-[PHP SDK](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs/Aspose.Words_Cloud_SDK_for_PHP)  | Aspose.Words Cloud SDK for PHP.
-[Python SDK](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs/Aspose.Words_Cloud_SDK_for_Python) | Aspose.Words Cloud SDK for Python.
-[Node.js SDK](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs/Aspose.Words_Cloud_SDK_for_NodeJS) | Aspose.Words Cloud SDK for Node.js.
-[Objective C SDK](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs/Aspose.Words_Cloud_SDK_for_ObjectiveC) | Aspose.Words Cloud SDK for Objective C. 
-
+[Java SDK](Aspose.Words_Cloud_SDK_for_Java)  |  Aspose.Words Cloud SDK for Java.
+[PHP SDK](Aspose.Words_Cloud_SDK_for_PHP)  | Aspose.Words Cloud SDK for PHP.
+[Python SDK](Aspose.Words_Cloud_SDK_for_Python) | Aspose.Words Cloud SDK for Python.
+[Node.js SDK](Aspose.Words_Cloud_SDK_for_NodeJS) | Aspose.Words Cloud SDK for Node.js.
+[Objective C SDK](Aspose.Words_Cloud_SDK_for_ObjectiveC) | Aspose.Words Cloud SDK for Objective C. 
+[Perl SDK](Aspose.Words-Cloud-SDK-for-Perl) | Aspose.Words Cloud SDK for Perl.
 
