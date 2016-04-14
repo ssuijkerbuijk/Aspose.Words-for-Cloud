@@ -13,6 +13,7 @@ Aspose.Words for Cloud is implemented as a REST API. If you use SDK, it hides th
 Directory | Description
 --------- | -----------
 [Java SDK](Aspose.Words_Cloud_SDK_for_Java)  |  Aspose.Words Cloud SDK for Java.
+[Android SDK](Aspose.Words-Cloud-SDK-for-Android) | Aspose.Words Cloud SDK for Android.
 [PHP SDK](Aspose.Words_Cloud_SDK_for_PHP)  | Aspose.Words Cloud SDK for PHP.
 [Python SDK](Aspose.Words_Cloud_SDK_for_Python) | Aspose.Words Cloud SDK for Python.
 [Node.js SDK](Aspose.Words_Cloud_SDK_for_NodeJS) | Aspose.Words Cloud SDK for Node.js.
