@@ -1,28 +1,26 @@
 ##Aspose.Words for Cloud
 
-This package contains [Examples](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/Examples/DotNET/SDK) and Showcase projects for [Aspose.Words for Cloud](http://www.aspose.com/community/files/75/cloud-apis/wordscloud/default.aspx) and will help you write your own applications.
+[Aspose.Words for Cloud](http://www.aspose.com/products/words/cloud) is a REST API to create, manipulate, convert and render Word documents in the cloud by performing a wide variety of document operations you can wish to perform on a document in the cloud.
 
-Aspose.Words for Cloud's platform independent document manipulation API is a true REST API that can be used with any language: .NET, Java, PHP, Ruby, Rails, Python, jQuery and many more. You can use it with any platform — web, desktop, mobile, and cloud.
+This repository contains [Examples](Examples), [Plugins](Plugins) and [SDKs](SDKs) for [Aspose.Words for Cloud](http://www.aspose.com/products/words/cloud) to help you learn and write your own applications.
 
-With Aspose.Words for Cloud you can modify and convert documents on the cloud. It supports DOC, DOCX, OOXML, RTF, HTML, OpenDocument, PDF, XPS, EPUB and many other formats.
 
 <p align="center">
-
-  <a title="Download complete Aspose.Words for Cloud source code" href=" https://github.com/asposewords/Aspose_Words_Cloud/archive/master.zip ">
+  <a title="Download complete Aspose.Words for Cloud source code" href="https://github.com/aspose-words/Aspose.Words-for-Cloud/archive/master.zip">
+	<img src="http://i.imgur.com/hwNhrGZ.png" />
   </a>
 </p>
 
 Directory | Description
 --------- | -----------
-[Examples](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/Examples/DotNET/SDK)  | A collection of .NET examples that help you learn how to product features
-[Plugins](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/Plugins)  | Standalone Plugins that will demonstrate one or multiple features on Aspose.Words for Cloud
-[SDKs](https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs)  | A collection of Aspose Cloud SDKs. You can view the code and modify it as you like.
+[Examples](Examples)  | A collection of .NET examples that help you learn and explore the API features
+[Plugins](Plugins)  | Standalone Plugins that will demonstrate one or multiple features on Aspose.Words for Cloud
+[SDKs](SDKs)  | A collection of Aspose Cloud SDKs. You can view the code and modify it as you like.
 
 ## Resources
-
 + **Website:** [www.aspose.com](http://www.aspose.com)
-+ **Product Home:** [Aspose.Words for Cloud](http://www.aspose.com/cloud/total-api.aspx)
-+ **Download:** [Download Aspose.Words for Cloud](http://www.aspose.com/cloud/word-api.aspx)
++ **Product Home:** [Aspose.Words for Cloud](http://www.aspose.com/products/words/cloud)
++ **Download:** [Download Aspose.Words for Cloud](http://www.aspose.com/downloads/words/cloud)
 + **Documentation:** [Aspose.Words for Cloud Documentation](http://www.aspose.com/docs/display/wordscloud/Home)
-+ **Forum:** [Aspose.Words for Cloud Forum]( http://www.aspose.com/community/forums/aspose.words-product-family/75/showforum.aspx)
++ **Forum:** [Aspose.Words for Cloud Forum](http://www.aspose.com/community/forums/aspose.words-product-family/75/showforum.aspx)
 + **Blog:** [Aspose.Words for Cloud Blog](http://www.aspose.com/blogs/aspose-products/aspose-words-product-family.html)
