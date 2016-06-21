@@ -15,7 +15,7 @@ Directory | Description
 --------- | -----------
 [Examples](Examples)  | A collection of .NET examples that help you learn and explore the API features
 [Plugins](Plugins)  | Standalone Plugins that will demonstrate one or multiple features on Aspose.Words for Cloud
-[SDKs](SDKs)  | A collection of Aspose Cloud SDKs. You can view the code and modify it as you like.
+[SDKs](SDKs)  | A collection of SDKs that help you call and use Aspose Cloud API features in your applications
 
 ## Resources
 + **Website:** [www.aspose.com](http://www.aspose.com)
