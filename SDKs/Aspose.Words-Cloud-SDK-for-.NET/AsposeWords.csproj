@@ -6,7 +6,7 @@
     <ProjectGuid>{13284D1A-8B08-469A-A58B-5C94B92C68E7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
-    <AssemblyName>Aspose.Words_Cloud</AssemblyName>
+    <AssemblyName>Aspose.Words-Cloud</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
