@@ -1,10 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsposeWords", "AsposeWords.csproj", "{13284D1A-8B08-469A-A58B-5C94B92C68E7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordsTest", "WordsTest\WordsTest.csproj", "{FCFE1F60-DB73-4F3F-853A-FBADCC5E994B}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3F819FEC-1513-4B86-9C36-716C78DF9A9A}"
 	ProjectSection(SolutionItems) = preProject
 		AsposeWords1.vsmdi = AsposeWords1.vsmdi
@@ -12,10 +8,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsposeWords", "AsposeWords.csproj", "{13284D1A-8B08-469A-A58B-5C94B92C68E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordsTest", "WordsTest\WordsTest.csproj", "{FCFE1F60-DB73-4F3F-853A-FBADCC5E994B}"
+EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = AsposeWords1.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
