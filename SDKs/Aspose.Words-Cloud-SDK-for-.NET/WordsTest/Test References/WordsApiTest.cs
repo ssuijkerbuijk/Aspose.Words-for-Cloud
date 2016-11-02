@@ -71,8 +71,8 @@ namespace WordsTest
         ///</summary>
         public TestWordsApi()
         {
-            target = new WordsApi("xxx", "xxx", "http://api.aspose.com/v1.1");
-            storageApi = new StorageApi("xxx", "xxx", "http://api.aspose.com/v1.1");
+            target = new WordsApi("xxxx", "xxxx", "http://api.aspose.com/v1.1");
+            storageApi = new StorageApi("xxxx", "xxxx", "http://api.aspose.com/v1.1");
 
         }
 
@@ -83,7 +83,7 @@ namespace WordsTest
         public void TestAcceptAllRevisions()
         {
 
-            string name = "test_multi_pages.docx";
+            string name = "test_multi_pages.doc";
             string filename = "Test2.docx";
             string storage = null;
             string folder = null;
@@ -104,7 +104,7 @@ namespace WordsTest
         [TestMethod()]
         public void TestDeleteComment()
         {
-            string name = "test_multi_pages.docx";
+            string name = "test_multi_pages.doc";
             int commentIndex = 1; 
             string storage = null;
             string folder = null;
@@ -124,7 +124,7 @@ namespace WordsTest
         [TestMethod()]
         public void TestDeleteDocumentFields()
         {
-            string name = "test_multi_pages.docx";
+            string name = "test_multi_pages.doc";
             string storage = null;
             string folder = null;
 
@@ -144,7 +144,7 @@ namespace WordsTest
         [TestMethod()]
         public void TestDeleteDocumentMacros()
         {
-            string name = "test_multi_pages.docx";
+            string name = "test_multi_pages.doc";
             string storage = null;
             string folder = null;
 
@@ -164,9 +164,9 @@ namespace WordsTest
         [TestMethod()]
         public void TestDeleteDocumentProperty()
         {
-            string name = "test_multi_pages.docx";
+            string name = "test_multi_pages.doc";
             string propertyName = "AsposeAuthor";
-            string filename = "test_multi_pages.docx";
+            string filename = "test_multi_pages.doc";
             string storage = null;
             string folder = null;
 
@@ -193,7 +193,7 @@ namespace WordsTest
         [TestMethod()]
         public void TestDeleteDocumentWatermark()
         {
-            string name = "test_multi_pages.docx";
+            string name = "test_multi_pages.doc";
             string filename = "test.docx";
             string storage = null;
             string folder = null;
