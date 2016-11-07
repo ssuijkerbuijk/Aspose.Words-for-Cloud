@@ -51,7 +51,7 @@ import com.aspose.words.model.WatermarkText;
 import com.sun.jersey.multipart.FormDataMultiPart;
 
 public class WordsApi {
-  String basePath = "http://api.aspose.com/v1.1";
+  String basePath = "http://api.aspose.cloud/v1.1";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
   ApiInvokerResponse response = null;
 
