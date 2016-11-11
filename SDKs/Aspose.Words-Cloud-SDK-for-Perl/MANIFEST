@@ -120,3 +120,6 @@ t/data/SampleMailMergeTemplateImageData.txt
 t/data/SampleProtectedBlankWordDocument.docx
 t/data/SampleWordDocument.docx
 t/data/testfile.txt
+Makefile.PL
+META.yml
+META.json
