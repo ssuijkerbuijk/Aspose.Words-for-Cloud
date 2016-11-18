@@ -42,7 +42,7 @@ end
 Aspose Words SDK includes a suite of unit tests within the [test](https://github.com/asposewords/Aspose_Words_Cloud/blob/master/SDKs/Aspose.Words_Cloud_SDK_For_Ruby/test/words_tests.rb) subdirectory. These Unit Tests also serves as examples of how to use the Aspose Cells SDK.
 
 ## Contact
-Your feedback is very important to us. Please email us all your queries and feedback at marketplace@aspose.com.
+Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://href.li/?https://www.aspose.com/community/forums/).
 
-## License
-Aspose Words SDK is available under the MIT license. See the [LICENSE](https://github.com/asposewords/Aspose_Words_Cloud/blob/master/SDKs/Aspose.Words_Cloud_SDK_For_Ruby/LICENSE) file for more info.
+
+
