@@ -9,13 +9,15 @@ This folder contains SDKs for [Aspose.Words for Cloud](http://www.aspose.com/clo
 
 Directory | Description
 --------- | -----------
+[.NET SDK](Aspose.Words-Cloud-SDK-for-.NET) | Aspose.Words Cloud SDK for .NET.
 [Java SDK](Aspose.Words-Cloud-SDK-for-Java)  |  Aspose.Words Cloud SDK for Java.
-[Android SDK](Aspose.Words-Cloud-SDK-for-Android) | Aspose.Words Cloud SDK for Android.
 [PHP SDK](Aspose.Words-Cloud-SDK-for-PHP)  | Aspose.Words Cloud SDK for PHP.
+[Ruby SDK](Aspose.Words-Cloud-SDK-for-Ruby) | Aspose.Words Cloud SDK for Ruby.
 [Python SDK](Aspose.Words-Cloud-SDK-for-Python) | Aspose.Words Cloud SDK for Python.
 [Node.js SDK](Aspose.Words-Cloud-SDK-for-NodeJS) | Aspose.Words Cloud SDK for Node.js.
+[Android SDK](Aspose.Words-Cloud-SDK-for-Android) | Aspose.Words Cloud SDK for Android.
 [Objective C SDK](Aspose.Words-Cloud-SDK-for-ObjectiveC) | Aspose.Words Cloud SDK for Objective C. 
 [Perl SDK](Aspose.Words-Cloud-SDK-for-Perl) | Aspose.Words Cloud SDK for Perl.
-[.NET SDK](Aspose.Words-Cloud-SDK-for-.NET) | Aspose.Words Cloud SDK for .NET.
-[Ruby SDK](Aspose.Words-Cloud-SDK-for-Ruby) | Aspose.Words Cloud SDK for Ruby.
+
+
 
