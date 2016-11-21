@@ -9,4 +9,9 @@ This repository contains Aspose.Words Cloud SDK for Python source code. This SDK
 </p>
 
 ##How to use the SDK?
-The complete source code is available in this repository folder. For more details, please visit our [documentation website](http://www.aspose.com/docs/display/wordscloud/How+to+Setup+Aspose.Words+Cloud+SDK+for+Python).
+The complete source code is available in this repository folder. For more details, please visit our [documentation website](http://www.aspose.com/docs/display/wordscloud/Available+SDKs).
+
+##Contact Us
+Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://www.aspose.com/community/forums/).
+
+

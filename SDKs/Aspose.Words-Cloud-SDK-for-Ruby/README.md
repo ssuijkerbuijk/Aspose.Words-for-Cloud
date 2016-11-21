@@ -42,7 +42,7 @@ end
 Aspose Words SDK includes a suite of unit tests within the [test](https://github.com/asposewords/Aspose_Words_Cloud/blob/master/SDKs/Aspose.Words_Cloud_SDK_For_Ruby/test/words_tests.rb) subdirectory. These Unit Tests also serves as examples of how to use the Aspose Cells SDK.
 
 ## Contact
-Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://href.li/?https://www.aspose.com/community/forums/).
+Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://www.aspose.com/community/forums/).
 
 
 

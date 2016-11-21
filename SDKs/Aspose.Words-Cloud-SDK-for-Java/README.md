@@ -10,3 +10,6 @@ This repository contains Aspose.Words Cloud SDK for Java source code. This SDK a
 
 ##How to use the SDK?
 The complete source code is available in this repository folder, you can either directly use it in your project or use Maven. For more details, please visit our [documentation website](http://www.aspose.com/docs/display/wordscloud/How+to+Setup+Aspose.Words+Cloud+SDK+for+Java).
+
+##Contact Us
+Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://www.aspose.com/community/forums/).
