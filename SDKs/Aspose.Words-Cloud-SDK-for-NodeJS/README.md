@@ -4,7 +4,7 @@ This repository contains Aspose.Words Cloud SDK for Node.js source code. This SD
 
 ## How to use the SDK?
 
-The complete source code is available in this repository folder. For more details, please visit our [documentation website](http://www.aspose.com/docs/display/wordscloud/How+to+Setup+Aspose.Words+Cloud+SDK+for+Node.js).
+The complete source code is available in this repository folder. For more details, please visit our [documentation website](http://www.aspose.com/docs/display/wordscloud/Available+SDKs).
 
 ## Quick SDK Tutorial
 ```javascript
