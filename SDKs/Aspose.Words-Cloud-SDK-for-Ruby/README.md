@@ -2,7 +2,7 @@
 This SDK lets you use [Aspose Cloud Word APIs](http://www.aspose.com/cloud/word-api.aspx) in your web apps.
 
 ##How to Use the SDK?
-The complete source code is available in this repository folder, you can either directly use it in your project or use Maven. For more details, please visit our [documentation website](http://www.aspose.com/docs/display/wordscloud/Available+SDKs).
+The complete source code is available in this repository folder, you can either directly use it in your project or use RubyGems. For more details, please visit our [documentation website](http://www.aspose.com/docs/display/wordscloud/Available+SDKs).
 
 ## Usage
 APIs of this SDK can be called as follows:
