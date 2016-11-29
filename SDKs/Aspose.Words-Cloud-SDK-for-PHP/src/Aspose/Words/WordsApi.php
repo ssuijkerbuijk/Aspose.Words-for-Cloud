@@ -3,7 +3,7 @@
 namespace Aspose\Words;
 
 use Aspose\Words\ApiException as Exception;
-use Aspose\Words\ApiClient;
+use Aspose\Words\APIClient;
 
 class WordsApi {
 
