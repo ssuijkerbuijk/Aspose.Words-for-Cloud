@@ -59,7 +59,7 @@
     <Compile Include="Bookmark\ReadBookmarkByName.cs" />
     <Compile Include="Bookmark\GetAllBookmarks.cs" />
     <Compile Include="Common.cs" />
-    <Compile Include="Document-Properties\GetParticularDocumentProperty - Copy.cs" />
+    <Compile Include="Document-Properties\GetParticularDocumentProperty.cs" />
     <Compile Include="Document-Properties\SetSingleProperty.cs" />
     <Compile Include="Document-Properties\RemoveParticularDocumentProperty.cs" />
     <Compile Include="Document-Properties\GetAllDocumentProperties.cs" />
