@@ -16,6 +16,7 @@ class Protection
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
+  # Change document protection.
   def change_document_protection
     file_name = "SampleWordDocument.docx"
     #upload_file(file_name)

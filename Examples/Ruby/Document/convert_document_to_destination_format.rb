@@ -16,20 +16,18 @@ class WorkingWithDocument
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def post_load_web_document 
-    load_web_document_data = LoadWebDocumentData.new
-    load_web_document_data.loading_document_url = "http://google.com"
+  # Convert document to destination format with detailed settings and save result to storage.
+  def convert_document_to_destination_format
+    file_name = "SampleWordDocument.docx"
+    upload_file(file_name)
 
     save_options = SaveOptionsData.new
-    save_options.save_format = "doc"
-    save_options.file_name = "google.doc"
-
-    load_web_document_data.save_options = save_options
-
-    response = @words_api.post_load_web_document(load_web_document_data)
+    save_options.save_format = "pdf"
+    save_options.file_name = "SampleWordDocument.pdf"
+    response = @words_api.post_document_save_as(file_name, save_options)
   end
 
 end
 
 workingWithDocument = WorkingWithDocument.new()
-puts workingWithDocument.post_load_web_document
+puts workingWithDocument.convert_document_to_destination_format

@@ -16,6 +16,7 @@ class WorkingWithFields
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
+  # Update (reevaluate) fields in document.
   def update_document_fields
     file_name = "SampleWordDocument.docx"
     upload_file(file_name)

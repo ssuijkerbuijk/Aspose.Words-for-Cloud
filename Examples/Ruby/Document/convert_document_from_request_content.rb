@@ -1,6 +1,6 @@
 require 'aspose_words_cloud'
 
-class Bookmarks
+class WorkingWithDocument
 
   include AsposeWordsCloud
   include AsposeStorageCloud
@@ -12,19 +12,18 @@ class Bookmarks
   end
 
   def upload_file(file_name)
-    @storage_api = StorageApi.new 
+    @storage_api = StorageApi.new
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def get_document_bookmark_by_name
+  # Convert document from request content to format specified.
+  def convert_document_from_request_content
     file_name = "SampleWordDocument.docx"
-    upload_file(file_name)
-
-    bookmark_name = "aspose"
-    response = @words_api.get_document_bookmark_by_name(file_name, bookmark_name)
+    convert_to_format = "pdf"
+    response = @words_api.put_convert_document(File.open("../data/" << file_name,"r") { |io| io.read }, {format: convert_to_format})
   end
 
 end
 
-bookmarks = Bookmarks.new()
-puts bookmarks.get_document_bookmark_by_name
+workingWithDocument = WorkingWithDocument.new()
+puts workingWithDocument.convert_document_from_request_content

@@ -16,6 +16,7 @@ class Fields
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
+  # Add form field to paragraph, returns added form field's data.
   def add_form_field_to_paragraph
     file_name = "FormFilled.docx"
     upload_file(file_name)

@@ -16,6 +16,7 @@ class WorkingWithText
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
+  # Replace document text.
   def replace_text
     file_name = "SampleWordDocument.docx"
     upload_file(file_name)

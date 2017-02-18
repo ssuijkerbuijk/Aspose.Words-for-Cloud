@@ -16,6 +16,7 @@ class WorkingWithSections
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
+  # Return a list of sections that are contained in the document.
   def get_sections
     file_name = "SampleWordDocument.docx"
     upload_file(file_name)

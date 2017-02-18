@@ -1,6 +1,6 @@
 require 'aspose_words_cloud'
 
-class Hyperlinks
+class Comments
 
   include AsposeWordsCloud
   include AsposeStorageCloud
@@ -8,7 +8,7 @@ class Hyperlinks
   def initialize
     #Get App key and App SID from https://cloud.aspose.com
     AsposeApp.app_key_and_sid("APP_KEY", "APP_SID")
-    @words_api = WordsApi.new  
+    @words_api = WordsApi.new
   end
 
   def upload_file(file_name)
@@ -16,15 +16,14 @@ class Hyperlinks
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def get_document_hyperlink_by_index
+  def get_comments_from_document
     file_name = "SampleWordDocument.docx"
     upload_file(file_name)
 
-    hyperlink_index = 0
-    response = @words_api.get_document_hyperlink_by_index(file_name, hyperlink_index)
+    response = @words_api.get_comments(file_name)
   end
 
 end
 
-hyperlinks = Hyperlinks.new()
-puts hyperlinks.get_document_hyperlink_by_index
+comments = Comments.new()
+puts comments.get_comments_from_document

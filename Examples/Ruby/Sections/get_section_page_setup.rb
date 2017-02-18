@@ -16,6 +16,7 @@ class WorkingWithPageSetup
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
+  # Get page setup of section.
   def get_section_page_setup
     file_name = "SampleWordDocument.docx"
     upload_file(file_name)

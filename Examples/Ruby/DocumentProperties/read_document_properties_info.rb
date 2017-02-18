@@ -1,6 +1,6 @@
 require 'aspose_words_cloud'
 
-class WorkingWithDocument
+class WorkingWithDocumentProperties
 
   include AsposeWordsCloud
   include AsposeStorageCloud
@@ -8,7 +8,7 @@ class WorkingWithDocument
   def initialize
     #Get App key and App SID from https://cloud.aspose.com
     AsposeApp.app_key_and_sid("APP_KEY", "APP_SID")
-    @words_api = WordsApi.new  
+    @words_api = WordsApi.new
   end
 
   def upload_file(file_name)
@@ -16,17 +16,15 @@ class WorkingWithDocument
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def post_document_save_as
+  # Read document properties info.
+  def read_document_properties_info
     file_name = "SampleWordDocument.docx"
     upload_file(file_name)
 
-    save_options = SaveOptionsData.new
-    save_options.save_format = "pdf"
-    save_options.file_name = "SampleWordDocument.pdf"
-    response = @words_api.post_document_save_as(file_name, save_options)
+    response = @words_api.get_document_properties(file_name)
   end
 
 end
 
-workingWithDocument = WorkingWithDocument.new()
-puts workingWithDocument.post_document_save_as
+workingWithDocumentProperties = WorkingWithDocumentProperties.new()
+puts workingWithDocumentProperties.read_document_properties_info

@@ -1,6 +1,6 @@
 require 'aspose_words_cloud'
 
-class WorkingWithText
+class WorkingWithDocument
 
   include AsposeWordsCloud
   include AsposeStorageCloud
@@ -16,13 +16,14 @@ class WorkingWithText
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def get_document_text_items
+  def read_document_statistics
     file_name = "SampleWordDocument.docx"
     upload_file(file_name)
-    response = @words_api.get_document_text_items(file_name)
+
+    response = @words_api.get_document_statistics(file_name, {include_comments: true, include_footnotes: true, include_text_in_shapes: true})
   end
 
 end
 
-workingWithText = WorkingWithText.new()
-puts workingWithText.get_document_text_items
+workingWithDocument = WorkingWithDocument.new()
+puts workingWithDocument.read_document_statistics

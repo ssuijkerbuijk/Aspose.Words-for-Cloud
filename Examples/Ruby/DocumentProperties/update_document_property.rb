@@ -16,7 +16,7 @@ class WorkingWithDocumentProperties
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def update_document_property
+  def add_new_or_update_existing_document_property
     file_name = "SampleWordDocument.docx"
     upload_file(file_name)
 
@@ -31,4 +31,4 @@ class WorkingWithDocumentProperties
 end
 
 workingWithDocumentProperties = WorkingWithDocumentProperties.new()
-puts workingWithDocumentProperties.update_document_property
+puts workingWithDocumentProperties.add_new_or_update_existing_document_property

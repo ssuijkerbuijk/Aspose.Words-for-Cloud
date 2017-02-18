@@ -16,6 +16,7 @@ class Watermark
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
+  # Delete watermark (for deleting last watermark from the document).
   def delete_document_watermark
     file_name = "SampleBlankWatermarkDocument.docx"
     upload_file(file_name)

@@ -1,6 +1,6 @@
 require 'aspose_words_cloud'
 
-class WorkingWithDocument
+class Protection
 
   include AsposeWordsCloud
   include AsposeStorageCloud
@@ -16,14 +16,15 @@ class WorkingWithDocument
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def accept_all_revisions
+  # Read document protection common info.
+  def read_document_protection_common_info
     file_name = "SampleWordDocument.docx"
     upload_file(file_name)
 
-    response = @words_api.accept_all_revisions(file_name)
+    response = @words_api.get_document_protection(file_name)
   end
 
 end
 
-workingWithDocument = WorkingWithDocument.new()
-puts workingWithDocument.accept_all_revisions
+protection = Protection.new()
+puts protection.read_document_protection_common_info

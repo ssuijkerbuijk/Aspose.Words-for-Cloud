@@ -16,7 +16,7 @@ class WorkingWithDocument
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def post_append_document
+  def append_a_document
     file_name = "SampleWordDocument.docx"
     upload_file(file_name)
     append_doc_1_file_name = "SampleAppendDoc.docx"
@@ -41,4 +41,4 @@ class WorkingWithDocument
 end
 
 workingWithDocument = WorkingWithDocument.new()
-puts workingWithDocument.post_append_document
+puts workingWithDocument.append_a_document

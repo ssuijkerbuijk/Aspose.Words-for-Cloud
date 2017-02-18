@@ -1,6 +1,6 @@
 require 'aspose_words_cloud'
 
-class Bookmarks
+class Fields
 
   include AsposeWordsCloud
   include AsposeStorageCloud
@@ -16,14 +16,15 @@ class Bookmarks
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def get_document_bookmarks
+  # Read document field names.
+  def read_document_field_names
     file_name = "SampleWordDocument.docx"
     upload_file(file_name)
 
-    response = @words_api.get_document_bookmarks(file_name)
+    response = @words_api.get_document_field_names(file_name)
   end
 
 end
 
-bookmarks = Bookmarks.new()
-puts bookmarks.get_document_bookmarks
+fields = Fields.new()
+puts fields.read_document_field_names

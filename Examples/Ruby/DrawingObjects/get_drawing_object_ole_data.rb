@@ -1,6 +1,6 @@
 require 'aspose_words_cloud'
 
-class Protection
+class DrawingObjects
 
   include AsposeWordsCloud
   include AsposeStorageCloud
@@ -8,7 +8,7 @@ class Protection
   def initialize
     #Get App key and App SID from https://cloud.aspose.com
     AsposeApp.app_key_and_sid("APP_KEY", "APP_SID")
-    @words_api = WordsApi.new  
+    @words_api = WordsApi.new
   end
 
   def upload_file(file_name)
@@ -16,14 +16,16 @@ class Protection
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def get_document_protection
-    file_name = "SampleWordDocument.docx"
+  # Get drawing object OLE data.
+  def get_drawing_object_ole_data
+    file_name = "Sample_EmbeddedOLE.docx"
     upload_file(file_name)
 
-    response = @words_api.get_document_protection(file_name)
+    object_index = 0
+    response = @words_api.get_document_drawing_object_ole_data(file_name, object_index)
   end
 
 end
 
-protection = Protection.new()
-puts protection.get_document_protection
+drawingObjects = DrawingObjects.new()
+puts drawingObjects.get_drawing_object_ole_data

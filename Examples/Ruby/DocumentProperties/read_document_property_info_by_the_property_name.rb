@@ -1,6 +1,6 @@
 require 'aspose_words_cloud'
 
-class Comments
+class WorkingWithDocumentProperties
 
   include AsposeWordsCloud
   include AsposeStorageCloud
@@ -16,14 +16,15 @@ class Comments
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def get_comments
+  def read_document_property_info_by_the_property_name
     file_name = "SampleWordDocument.docx"
     upload_file(file_name)
 
-    response = @words_api.get_comments(file_name)
+    property_name = "Author"
+    response = @words_api.get_document_property(file_name, property_name)
   end
 
 end
 
-comments = Comments.new()
-puts comments.get_comments
+workingWithDocumentProperties = WorkingWithDocumentProperties.new()
+puts workingWithDocumentProperties.read_document_property_info_by_the_property_name

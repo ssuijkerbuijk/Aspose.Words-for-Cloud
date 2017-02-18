@@ -1,6 +1,6 @@
 require 'aspose_words_cloud'
 
-class Fields
+class WorkingWithSections
 
   include AsposeWordsCloud
   include AsposeStorageCloud
@@ -16,18 +16,16 @@ class Fields
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def post_insert_page_numbers
+  # Get document section by index.
+  def get_document_section_by_index
     file_name = "SampleWordDocument.docx"
-    #upload_file(file_name)
+    upload_file(file_name)
 
-    page_number = PageNumber.new
-    page_number.format = "{PAGE} of {NUMPAGES}"
-    page_number.alignment = "center"
-
-    response = @words_api.post_insert_page_numbers(file_name, page_number)
+    section_index = 0
+    response = @words_api.get_section(file_name, section_index)
   end
 
 end
 
-fields = Fields.new()
-puts fields.post_insert_page_numbers
+workingWithSections = WorkingWithSections.new()
+puts workingWithSections.get_document_section_by_index

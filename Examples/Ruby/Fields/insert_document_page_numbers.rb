@@ -1,6 +1,6 @@
 require 'aspose_words_cloud'
 
-class Hyperlinks
+class Fields
 
   include AsposeWordsCloud
   include AsposeStorageCloud
@@ -16,14 +16,19 @@ class Hyperlinks
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def get_document_hyperlinks
+  # Insert document page numbers.
+  def insert_document_page_numbers
     file_name = "SampleWordDocument.docx"
-    upload_file(file_name)
+    #upload_file(file_name)
 
-    response = @words_api.get_document_hyperlinks(file_name)
+    page_number = PageNumber.new
+    page_number.format = "{PAGE} of {NUMPAGES}"
+    page_number.alignment = "center"
+
+    response = @words_api.post_insert_page_numbers(file_name, page_number)
   end
 
 end
 
-hyperlinks = Hyperlinks.new()
-puts hyperlinks.get_document_hyperlinks
+fields = Fields.new()
+puts fields.insert_document_page_numbers

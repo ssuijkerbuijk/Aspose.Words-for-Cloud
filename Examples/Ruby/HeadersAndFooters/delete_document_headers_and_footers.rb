@@ -1,6 +1,6 @@
 require 'aspose_words_cloud'
 
-class WorkingWithDocument
+class WorkingWithHeadersAndFooters
 
   include AsposeWordsCloud
   include AsposeStorageCloud
@@ -16,14 +16,15 @@ class WorkingWithDocument
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
-  def get_document_statistics
+  # Delete document headers and footers.
+  def delete_document_headers_and_footers
     file_name = "SampleWordDocument.docx"
     upload_file(file_name)
 
-    response = @words_api.get_document_statistics(file_name, {include_comments: true, include_footnotes: true, include_text_in_shapes: true})
+    response = @words_api.delete_headers_footers(file_name)
   end
 
 end
 
-workingWithDocument = WorkingWithDocument.new()
-puts workingWithDocument.get_document_statistics
+workingWithHeadersAndFooters = WorkingWithHeadersAndFooters.new()
+puts workingWithHeadersAndFooters.delete_document_headers_and_footers

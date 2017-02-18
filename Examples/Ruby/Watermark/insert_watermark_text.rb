@@ -16,6 +16,7 @@ class Watermark
     response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
   end
 
+  # Insert document watermark text.
   def insert_watermark_text
     file_name = "SampleWordDocument.docx"
     upload_file(file_name)
