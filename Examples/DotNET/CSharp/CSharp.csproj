@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35037D12-9310-44EA-A0DC-E645C59C85E8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aspose.Words.Cloud.Examples.CSharp</RootNamespace>
+    <AssemblyName>Aspose.Words.Cloud.Examples.CSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Storage-Cloud, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Storage-Cloud.1.0.7\lib\Aspose.Storage-Cloud.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Aspose.Words-Cloud, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Words-Cloud.1.0.5\lib\Aspose.Words-Cloud.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bookmark\UpdateBookmarkText.cs" />
+    <Compile Include="Bookmark\ReadBookmarkByName.cs" />
+    <Compile Include="Bookmark\GetAllBookmarks.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Document-Properties\GetParticularDocumentProperty.cs" />
+    <Compile Include="Document-Properties\SetSingleProperty.cs" />
+    <Compile Include="Document-Properties\RemoveParticularDocumentProperty.cs" />
+    <Compile Include="Document-Properties\GetAllDocumentProperties.cs" />
+    <Compile Include="Document\ConvertToAnyFormat.cs" />
+    <Compile Include="Document\ConvertWebPages.cs" />
+    <Compile Include="Document\RejectAllTrackingChanges.cs" />
+    <Compile Include="Document\AcceptAllTrackingChanges.cs" />
+    <Compile Include="Document\GetWordAndParagraphCount.cs" />
+    <Compile Include="Document\ConvertToImagesUsingThirdPartyStorage.cs" />
+    <Compile Include="Document\ConvertToImages.cs" />
+    <Compile Include="Document\ConvertToOtherFormatWithOutStorage.cs" />
+    <Compile Include="Document\AppendDocuments.cs" />
+    <Compile Include="Document\SplitResources\SplitSpecificPagesToNewPDFs.cs" />
+    <Compile Include="Document\SplitResources\SplitSpecificPagesToAnyFormat.cs" />
+    <Compile Include="Document\SplitResources\SplitPagesToNewPDFs.cs" />
+    <Compile Include="Drawing\GetOLEData.cs" />
+    <Compile Include="Drawing\GetAllDrawingObject.cs" />
+    <Compile Include="Drawing\ReadingImageData.cs" />
+    <Compile Include="Fields\GetMergeFieldNames.cs" />
+    <Compile Include="Fields\InsertPageNumberFieldUsingThirdPartyStorage.cs" />
+    <Compile Include="Fields\InsertPageNumberField.cs" />
+    <Compile Include="Fields\ParagraphLevel\AddFormFields.cs" />
+    <Compile Include="Fields\UpdateFields.cs" />
+    <Compile Include="Hyperlink\GetParticularHyperlink.cs" />
+    <Compile Include="Mail-Merge\ExecuteTemplateUsingThirdPartyStorage.cs" />
+    <Compile Include="Mail-Merge\ExecuteTemplate.cs" />
+    <Compile Include="Mail-Merge\ExecuteWithoutRegionsUsingThirdPartyStorage.cs" />
+    <Compile Include="Mail-Merge\ExecuteWithoutRegions.cs" />
+    <Compile Include="Mail-Merge\ExecuteWithRegionsUsingThirdPartyStorage.cs" />
+    <Compile Include="Mail-Merge\InsertDynamicImages.cs" />
+    <Compile Include="Mail-Merge\ExecuteWithRegions.cs" />
+    <Compile Include="Mail-Merge\WithoutRegionsWithoutCloudStorage.cs" />
+    <Compile Include="Page-Setup\UpdatePageSetup.cs" />
+    <Compile Include="Page-Setup\ExtractPageSetupInformation.cs" />
+    <Compile Include="Paragraph\UpdateFontOfRun.cs" />
+    <Compile Include="Paragraph\GetFontOfRun.cs" />
+    <Compile Include="Paragraph\GetSpecificRunOfParagraph.cs" />
+    <Compile Include="Paragraph\GetParagraph.cs" />
+    <Compile Include="Paragraph\GetListOfParagraphs.cs" />
+    <Compile Include="Protection\ModifyProtection.cs" />
+    <Compile Include="Protection\RemoveProtection.cs" />
+    <Compile Include="RunExamples.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Section\GetSpecificSection.cs" />
+    <Compile Include="Section\Header-and-Footer\RemoveHeaderAndFooter.cs" />
+    <Compile Include="Section\GetAllSections.cs" />
+    <Compile Include="Text\GetTextItems.cs" />
+    <Compile Include="Text\ReplaceTextUsingThirdPartyStorage.cs" />
+    <Compile Include="Text\ReplaceText.cs" />
+    <Compile Include="Watermark\AddWatermarkImage.cs" />
+    <Compile Include="Watermark\AddWatermarkText.cs" />
+    <Compile Include="Watermark\RemoveWatermark.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Hyperlink\ReadAllHyperlinks.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
