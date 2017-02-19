@@ -13,14 +13,14 @@ class WorkingWithDocument
 
   def upload_file(file_name)
     @storage_api = StorageApi.new
-    response = @storage_api.put_create(file_name, File.open("../data/" << file_name,"r") { |io| io.read } )
+    response = @storage_api.put_create(file_name, File.open("../../../data/" << file_name,"r") { |io| io.read } )
   end
 
   # Convert document from request content to format specified.
   def convert_document_from_request_content
     file_name = "SampleWordDocument.docx"
     convert_to_format = "pdf"
-    response = @words_api.put_convert_document(File.open("../data/" << file_name,"r") { |io| io.read }, {format: convert_to_format})
+    response = @words_api.put_convert_document(File.open("../../../data/" << file_name,"r") { |io| io.read }, {format: convert_to_format})
   end
 
 end
