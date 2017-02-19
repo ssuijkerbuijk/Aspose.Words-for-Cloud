@@ -16,7 +16,7 @@ module AsposeWordsCloud
     # @option opts [String] :out_path Path for saving operation result to the local storage.
     # @option opts [String] :replace_resources_host_to Controls wherefrom Aspose.Words loads external resource when importing a document from HTML or MHTML.
     # @return [File]
-    def put_convert_document(file, opts = {})
+    def convert_document(file, opts = {})
       if Configuration.debugging
         Configuration.logger.debug "Calling API: WordsApi#put_convert_document ..."
       end
