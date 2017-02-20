@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class MailMerge
@@ -30,3 +31,4 @@ end
 
 mailMerge = MailMerge.new()
 puts mailMerge.populate_document_template_with_data_online
+#ExEnd:

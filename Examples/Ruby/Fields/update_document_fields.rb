@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class WorkingWithFields
@@ -28,3 +29,4 @@ end
 
 workingWithFields = WorkingWithFields.new()
 puts workingWithFields.update_document_fields
+#ExEnd:

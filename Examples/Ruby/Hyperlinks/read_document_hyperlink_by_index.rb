@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class Hyperlinks
@@ -29,3 +30,4 @@ end
 
 hyperlinks = Hyperlinks.new()
 puts hyperlinks.read_document_hyperlink_by_index
+#ExEnd:

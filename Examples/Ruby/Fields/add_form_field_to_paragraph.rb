@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class Fields
@@ -35,3 +36,4 @@ end
 
 fields = Fields.new()
 puts fields.add_form_field_to_paragraph
+#ExEnd:

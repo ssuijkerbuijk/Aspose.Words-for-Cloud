@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class WorkingWithText
@@ -27,3 +28,4 @@ end
 
 workingWithText = WorkingWithText.new()
 puts workingWithText.read_document_text_items
+#ExEnd:

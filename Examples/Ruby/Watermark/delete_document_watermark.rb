@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class Watermark
@@ -28,3 +29,4 @@ end
 
 watermark = Watermark.new()
 puts watermark.delete_document_watermark
+#ExEnd:

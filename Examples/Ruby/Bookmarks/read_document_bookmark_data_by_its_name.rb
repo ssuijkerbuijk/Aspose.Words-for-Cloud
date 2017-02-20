@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class Bookmarks
@@ -29,3 +30,4 @@ end
 
 bookmarks = Bookmarks.new()
 puts bookmarks.read_document_bookmark_data_by_its_name
+#ExEnd:

@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class WorkingWithDocument
@@ -27,3 +28,4 @@ end
 
 workingWithDocument = WorkingWithDocument.new()
 puts workingWithDocument.accept_all_revisions_in_document
+#ExEnd:

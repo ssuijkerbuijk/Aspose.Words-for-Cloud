@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class Fields
@@ -28,3 +29,4 @@ end
 
 fields = Fields.new()
 puts fields.read_document_field_names
+#ExEnd:

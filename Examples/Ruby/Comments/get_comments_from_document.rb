@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class Comments
@@ -27,3 +28,4 @@ end
 
 comments = Comments.new()
 puts comments.get_comments_from_document
+#ExEnd:

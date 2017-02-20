@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class WorkingWithSections
@@ -28,3 +29,4 @@ end
 
 workingWithSections = WorkingWithSections.new()
 puts workingWithSections.get_sections
+#ExEnd:

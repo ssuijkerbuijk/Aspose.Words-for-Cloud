@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class WorkingWithDocument
@@ -42,3 +43,4 @@ end
 
 workingWithDocument = WorkingWithDocument.new()
 puts workingWithDocument.append_a_document
+#ExEnd:

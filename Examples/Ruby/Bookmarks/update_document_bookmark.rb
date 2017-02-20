@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class Bookmarks
@@ -33,3 +34,4 @@ end
 
 bookmarks = Bookmarks.new()
 puts bookmarks.update_document_bookmark
+#ExEnd:

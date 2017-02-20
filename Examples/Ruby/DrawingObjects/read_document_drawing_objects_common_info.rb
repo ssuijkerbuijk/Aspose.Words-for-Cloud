@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class DrawingObjects
@@ -28,3 +29,4 @@ end
 
 drawingObjects = DrawingObjects.new()
 puts drawingObjects.read_document_drawing_objects_common_info
+#ExEnd:

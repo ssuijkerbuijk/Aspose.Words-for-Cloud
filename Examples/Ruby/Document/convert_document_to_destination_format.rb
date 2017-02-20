@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class WorkingWithDocument
@@ -31,3 +32,4 @@ end
 
 workingWithDocument = WorkingWithDocument.new()
 puts workingWithDocument.convert_document_to_destination_format
+#ExEnd:

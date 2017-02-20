@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class WorkingWithPageSetup
@@ -29,3 +30,4 @@ end
 
 workingWithPageSetup = WorkingWithPageSetup.new()
 puts workingWithPageSetup.get_section_page_setup
+#ExEnd:

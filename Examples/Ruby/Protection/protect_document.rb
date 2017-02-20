@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class Protection
@@ -31,3 +32,4 @@ end
 
 protection = Protection.new()
 puts protection.protect_document
+#ExEnd:

@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class WorkingWithParagraphs
@@ -29,3 +30,4 @@ end
 
 workingWithParagraphs = WorkingWithParagraphs.new()
 puts workingWithParagraphs.get_document_paragraph
+#ExEnd:

@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class WorkingWithDocumentProperties
@@ -32,3 +33,4 @@ end
 
 workingWithDocumentProperties = WorkingWithDocumentProperties.new()
 puts workingWithDocumentProperties.add_new_or_update_existing_document_property
+#ExEnd:

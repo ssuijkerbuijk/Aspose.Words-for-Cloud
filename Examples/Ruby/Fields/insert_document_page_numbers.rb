@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class Fields
@@ -32,3 +33,4 @@ end
 
 fields = Fields.new()
 puts fields.insert_document_page_numbers
+#ExEnd:

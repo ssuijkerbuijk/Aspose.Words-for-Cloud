@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class WorkingWithParagraphs
@@ -34,3 +35,4 @@ end
 
 workingWithParagraphs = WorkingWithParagraphs.new()
 puts workingWithParagraphs.post_document_paragraph_run_font
+#ExEnd:

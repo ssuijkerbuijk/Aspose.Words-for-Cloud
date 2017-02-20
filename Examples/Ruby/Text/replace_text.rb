@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class WorkingWithText
@@ -32,3 +33,4 @@ end
 
 workingWithText = WorkingWithText.new()
 puts workingWithText.replace_text
+#ExEnd:

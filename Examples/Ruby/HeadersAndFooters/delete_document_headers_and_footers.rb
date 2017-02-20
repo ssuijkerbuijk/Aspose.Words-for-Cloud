@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class WorkingWithHeadersAndFooters
@@ -28,3 +29,4 @@ end
 
 workingWithHeadersAndFooters = WorkingWithHeadersAndFooters.new()
 puts workingWithHeadersAndFooters.delete_document_headers_and_footers
+#ExEnd:

@@ -1,3 +1,4 @@
+#ExStart:
 require 'aspose_words_cloud'
 
 class WorkingWithSplitResource
@@ -27,3 +28,4 @@ end
 
 workingWithSplitResource = WorkingWithSplitResource.new()
 puts workingWithSplitResource.split_specific_pages_to_new_pdfs
+#ExEnd:
