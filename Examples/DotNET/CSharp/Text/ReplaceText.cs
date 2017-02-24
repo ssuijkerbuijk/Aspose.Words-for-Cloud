@@ -26,11 +26,11 @@ namespace Text
                 // Upload the file
                 storageApi.PutCreate(fileName, "", "", System.IO.File.ReadAllBytes(Common.GetDataDir() + fileName));
                 // Invoke Aspose.Words Cloud SDK API to replace text 
-                TextItemsResponse apiResponse = wordsApi.GetDocumentTextItems(fileName, storage, folder);
+                Com.Aspose.Words.Model.ReplaceTextResponse apiResponse = wordsApi.PostReplaceText(fileName, fileName, storage, folder, body);
 
                 if (apiResponse != null && apiResponse.Status.Equals("OK"))
                 {
-                    Console.WriteLine("Document has been updated successfully");
+                    Console.WriteLine("Text replaced successfully");
                     Console.ReadKey();
                 }
             }
