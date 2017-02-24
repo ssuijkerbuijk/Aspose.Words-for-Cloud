@@ -1,7 +1,7 @@
 <Fields>
-	<Img>header-logo.png</Img>
+	<Img>aspose-words.png</Img>
 	<SenderName>Aspose.com</SenderName>
-	<RecipientName>Steve Jobs</RecipientName>
+	<RecipientName>Farooq Sheikh</RecipientName>
 	<FaxNumber>123456789</FaxNumber>
 	<PhoneNumber></PhoneNumber>
 	<Subject>Hello</Subject>
