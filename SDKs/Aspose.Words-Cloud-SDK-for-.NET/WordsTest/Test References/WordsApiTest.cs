@@ -88,7 +88,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.RevisionsModificationResponse actual;
             actual = target.AcceptAllRevisions(name, filename, storage, folder);
@@ -109,7 +109,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
             string fileName = "test_multi_pages.docx";
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SaaSposeResponse actual;
             actual = target.DeleteComment(name, commentIndex, storage, folder, fileName);
@@ -128,7 +128,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SaaSposeResponse actual;
             actual = target.DeleteDocumentFields(name, storage, folder);
@@ -148,7 +148,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SaaSposeResponse actual;
             actual = target.DeleteDocumentMacros(name, storage, folder);
@@ -175,7 +175,7 @@ namespace WordsTest
             body.Value = "Imran Anwar";
             body.BuiltIn = false;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             //setting a property
             target.PutUpdateDocumentProperty(name, propertyName, filename, storage, folder, body);
 
@@ -198,7 +198,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.DeleteDocumentWatermark(name, filename, storage, folder);
@@ -222,7 +222,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.SaaSposeResponse actual;
             actual = target.DeleteFormField(name, sectionIndex, paragraphIndex, formfieldIndex, destFileName, storage, folder);
@@ -244,7 +244,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SaaSposeResponse actual;
             actual = target.DeleteHeadersFooters(name, headersFootersTypes, filename, storage, folder);
@@ -265,7 +265,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SaaSposeResponse actual;
             actual = target.DeleteParagraphFields(name, index, storage, folder);
@@ -286,7 +286,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SaaSposeResponse actual;
             actual = target.DeleteSectionFields(name, sectionIndex, storage, folder);
@@ -308,7 +308,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SaaSposeResponse actual;
             actual = target.DeleteSectionParagraphFields(name, sectionIndex, paragraphIndex, storage, folder);
@@ -332,7 +332,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.ProtectionRequest body = new Com.Aspose.Words.Model.ProtectionRequest();
             body.Password = "aspose";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.ProtectionDataResponse actual;
             actual = target.DeleteUnprotectDocument(name, filename, storage, folder, body);
@@ -353,7 +353,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.CommentResponse actual;
             actual = target.GetComment(name, commentIndex, storage, folder);
@@ -373,7 +373,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.CommentsResponse actual;
             actual = target.GetComments(name, storage, folder);
@@ -392,7 +392,7 @@ namespace WordsTest
             string name = "test_multi_pages.docx";
             string storage = null;
             string folder = null;
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.ResponseMessage actual;
             actual = target.GetDocument(name, storage, folder);
@@ -413,7 +413,7 @@ namespace WordsTest
             string bookmarkName = "aspose";
             string storage = null;
             string folder = null;
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.BookmarkResponse actual;
             actual = target.GetDocumentBookmarkByName(name, bookmarkName, storage, folder);
@@ -431,7 +431,7 @@ namespace WordsTest
             string name = "test_multi_pages.docx";
             string storage = null;
             string folder = null;
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.BookmarksResponse actual;
             actual = target.GetDocumentBookmarks(name, storage, folder);
@@ -451,7 +451,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.ResponseMessage actual;
             actual = target.GetDocumentDrawingObjectByIndex(name, objectIndex, storage, folder);
@@ -476,7 +476,7 @@ namespace WordsTest
             string format = "png";
             string storage = null;
             string folder = null;
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.ResponseMessage actual;
             actual = target.GetDocumentDrawingObjectByIndexWithFormat(name, objectIndex, format, storage, folder);
@@ -496,7 +496,7 @@ namespace WordsTest
             int objectIndex = 0;
             string storage = null;
             string folder = null;
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.ResponseMessage actual;
             actual = target.GetDocumentDrawingObjectImageData(name, objectIndex, storage, folder);
@@ -516,7 +516,7 @@ namespace WordsTest
             int objectIndex = 0; 
             string storage = null;
             string folder = null;
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.ResponseMessage actual;
             actual = target.GetDocumentDrawingObjectOleData(name, objectIndex, storage, folder);
@@ -536,7 +536,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.DrawingObjectsResponse actual;
             actual = target.GetDocumentDrawingObjects(name, storage, folder);
 
@@ -555,7 +555,7 @@ namespace WordsTest
             bool useNonMergeFields = false;
             string storage = null;
             string folder = null;
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.FieldNamesResponse actual;
             actual = target.GetDocumentFieldNames(name, useNonMergeFields, storage, folder);
@@ -574,7 +574,7 @@ namespace WordsTest
             int hyperlinkIndex = 0;
             string storage = null;
             string folder = null;
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.HyperlinkResponse actual;
             actual = target.GetDocumentHyperlinkByIndex(name, hyperlinkIndex, storage, folder);
             
@@ -593,7 +593,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.HyperlinksResponse actual;
             actual = target.GetDocumentHyperlinks(name, storage, folder);
@@ -614,7 +614,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.ParagraphResponse actual;
             actual = target.GetDocumentParagraph(name, index, storage, folder);
@@ -637,7 +637,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.RunResponse actual;
             actual = target.GetDocumentParagraphRun(name, index, runIndex, storage, folder);
@@ -660,7 +660,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.FontResponse actual;
             actual = target.GetDocumentParagraphRunFont(name, index, runIndex, storage, folder);
@@ -680,7 +680,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.ParagraphLinkCollectionResponse actual;
             actual = target.GetDocumentParagraphs(name, storage, folder);
@@ -699,7 +699,7 @@ namespace WordsTest
             string name = "test_multi_pages.docx";
             string storage = null;
             string folder = null;
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.DocumentPropertiesResponse actual;
             actual = target.GetDocumentProperties(name, storage, folder);
             Assert.AreEqual(actual.Code, "200");
@@ -717,7 +717,7 @@ namespace WordsTest
             string propertyName = "Author";
             string storage = null;
             string folder = null;
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.DocumentPropertyResponse actual;
             actual = target.GetDocumentProperty(name, propertyName, storage, folder);
 
@@ -736,7 +736,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.ProtectionDataResponse actual;
             actual = target.GetDocumentProtection(name, storage, folder);
@@ -759,7 +759,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.StatDataResponse actual;
             actual = target.GetDocumentStatistics(name, includeComments, includeFootnotes, includeTextInShapes, storage, folder);
@@ -778,7 +778,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.TextItemsResponse actual;
             actual = target.GetDocumentTextItems(name, storage, folder);
@@ -800,7 +800,7 @@ namespace WordsTest
             string folder = null;
             string outPath = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.ResponseMessage actual;
             actual = target.GetDocumentWithFormat(name, format, storage, folder, outPath);
@@ -823,7 +823,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.FieldResponse actual;
             actual = target.GetField(name, sectionIndex, paragraphIndex, fieldIndex, storage, folder);
@@ -846,7 +846,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.FormFieldResponse actual;
             actual = target.GetFormField(name, sectionIndex, paragraphIndex, formfieldIndex, storage, folder);
@@ -867,7 +867,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SectionResponse actual;
             actual = target.GetSection(name, sectionIndex, storage, folder);
@@ -888,7 +888,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SectionPageSetupResponse actual;
             actual = target.GetSectionPageSetup(name, sectionIndex, storage, folder);
@@ -908,7 +908,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SectionLinkCollectionResponse actual;
             actual = target.GetSections(name, storage, folder);
@@ -937,7 +937,7 @@ namespace WordsTest
             docEntries.Add(docEntry);
             body.DocumentEntries = docEntries;            
 
-             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.PostAppendDocument(name, filename, storage, folder, body);
 
@@ -959,7 +959,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.ProtectionRequest body = new Com.Aspose.Words.Model.ProtectionRequest();
             body.NewPassword = "";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.ProtectionDataResponse actual;
             actual = target.PostChangeDocumentProtection(name, filename, storage, folder, body);
@@ -999,7 +999,7 @@ namespace WordsTest
             body.Author = "Imran Anwar";
             body.Text = "A new Comment";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.CommentResponse actual;
             actual = target.PostComment(name, commentIndex, fileName, storage, folder, body);
@@ -1023,9 +1023,9 @@ namespace WordsTest
             string storage = null;
             string folder = null;
             bool useWholeParagraphAsRegion = false;
-            byte[] file = System.IO.File.ReadAllBytes("\\temp\\resources\\" + "SampleMailMergeTemplateData.txt");
+            byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + "SampleMailMergeTemplateData.txt");
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.PostDocumentExecuteMailMerge(name, withRegions, mailMergeDataFile, cleanup, filename, storage, folder, useWholeParagraphAsRegion, file);
 
@@ -1049,7 +1049,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.Font body = new Com.Aspose.Words.Model.Font();
             body.Bold = true;
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.FontResponse actual;
             actual = target.PostDocumentParagraphRunFont(name, index, runIndex, storage, folder, filename, body);
@@ -1072,7 +1072,7 @@ namespace WordsTest
             body.SaveFormat = "pdf";
             body.FileName = "output.pdf";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.SaveResponse actual;
             actual = target.PostDocumentSaveAs(name, storage, folder, body);
 
@@ -1094,9 +1094,9 @@ namespace WordsTest
             string folder = null;
             bool useWholeParagraphAsRegion = false; // TODO: Initialize to an appropriate value
             bool withRegions = false; // TODO: Initialize to an appropriate value
-            byte[] file = System.IO.File.ReadAllBytes("\\temp\\resources\\" + "TestExecuteTemplateData.txt");
+            byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + "TestExecuteTemplateData.txt");
 
-             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.PostExecuteTemplate(name, cleanup, destFileName, storage, folder, useWholeParagraphAsRegion, withRegions, file);
             
@@ -1126,7 +1126,7 @@ namespace WordsTest
             body.NodeId = "0.0.3";
             body.link = lnk;
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.FieldResponse actual;
             actual = target.PostField(name, sectionIndex, paragraphIndex, fieldIndex, destFileName, storage, folder, body);
@@ -1164,7 +1164,7 @@ namespace WordsTest
 
 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.FormFieldResponse actual;
             actual = target.PostFormField(name, sectionIndex, paragraphIndex, formfieldIndex, destFileName, storage, folder, body);
@@ -1186,8 +1186,8 @@ namespace WordsTest
             string image = "aspose-cloud.png";
             string storage = null;
             string folder = null;
-            byte[] file = System.IO.File.ReadAllBytes("\\temp\\resources\\" + image);
-             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + image);
+             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.PostInsertDocumentWatermarkImage(name, filename, rotationAngle, image, storage, folder, file);
             
@@ -1212,7 +1212,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.WatermarkText body = new Com.Aspose.Words.Model.WatermarkText();
             body.Text = "The watermark of Aspose";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.PostInsertDocumentWatermarkText(name, filename, text, rotationAngle, storage, folder, body);
@@ -1236,7 +1236,7 @@ namespace WordsTest
             body.Alignment = "center";
             body.Format = "{PAGE} of {NUMPAGES}";
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.PostInsertPageNumbers(name, filename, storage, folder, body);
             
@@ -1257,9 +1257,9 @@ namespace WordsTest
             string image = "aspose-cloud.png";
             string storage = null;
             string folder = null;
-            byte[] file = System.IO.File.ReadAllBytes("\\temp\\resources\\" + image);
+            byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + image);
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.PostInsertWatermarkImage(name, filename, rotationAngle, image, storage, folder, file);
@@ -1286,7 +1286,7 @@ namespace WordsTest
             body.Text = "This is the text";
             body.RotationAngle = 90.0f;
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.PostInsertWatermarkText(name, text, rotationAngle, filename, storage, folder, body);
@@ -1337,7 +1337,7 @@ namespace WordsTest
             body.OldValue = "aspose";
             body.NewValue = "aspose new";
 
-             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.ReplaceTextResponse actual;
             actual = target.PostReplaceText(name, filename, storage, folder, body);
@@ -1354,7 +1354,7 @@ namespace WordsTest
         public void TestPostRunTask()
         {
             string name = "test_multi_pages.docx";
-            byte[] file = System.IO.File.ReadAllBytes("\\temp\\resources\\" + name);
+            byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + name);
             Com.Aspose.Words.Model.ResponseMessage actual;
             actual = target.PostRunTask(file);
 
@@ -1377,7 +1377,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SplitDocumentResponse actual;
             actual = target.PostSplitDocument(name, format, from, to, zipOutput, storage, folder);
@@ -1402,7 +1402,7 @@ namespace WordsTest
             body.Name = "aspose";
             body.Text = "This will be the text for Aspose";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.BookmarkResponse actual;
             actual = target.PostUpdateDocumentBookmark(name, bookmarkName, filename, storage, folder, body);
@@ -1422,7 +1422,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.PostUpdateDocumentFields(name, filename, storage, folder);
@@ -1460,7 +1460,7 @@ namespace WordsTest
             body.Author = "Imran Anwar";
             body.Text = "A new Comment";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.CommentResponse actual;
             actual = target.PutComment(name, fileName, storage, folder, body);
@@ -1478,7 +1478,7 @@ namespace WordsTest
             string format = "pdf";
             string outPath = null;
             string replaceResourcesHostTo = "new_pdf.pdf";
-            byte[] file = System.IO.File.ReadAllBytes("\\temp\\resources\\test_uploadfile.docx"); 
+            byte[] file = System.IO.File.ReadAllBytes( Common.GetDataDir()  + "test_uploadfile.docx"); 
             
             Com.Aspose.Words.Model.ResponseMessage actual;
             actual = target.PutConvertDocument(format, outPath, replaceResourcesHostTo, file);
@@ -1535,7 +1535,7 @@ namespace WordsTest
             body.FileName = "abc.tiff";
             body.SaveFormat = "tiff";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.SaveResponse actual;
             actual = target.PutDocumentSaveAsTiff(name, resultFile, useAntiAliasing, useHighQualityRendering, imageBrightness, imageColorMode, imageContrast, numeralFormat, pageCount, pageIndex, paperColor, pixelFormat, resolution, scale, tiffCompression, dmlRenderingMode, dmlEffectsRenderingMode, tiffBinarizationMethod, storage, folder, zipOutput, body);
 
@@ -1552,8 +1552,8 @@ namespace WordsTest
         {
             bool withRegions = false;
             string cleanup = null;
-            byte[] file = System.IO.File.ReadAllBytes("\\temp\\resources\\SampleExecuteTemplate.docx");
-            byte[] data = System.IO.File.ReadAllBytes("\\temp\\resources\\SampleExecuteTemplateData.txt");
+            byte[] file = System.IO.File.ReadAllBytes( Common.GetDataDir() + "SampleExecuteTemplate.docx");
+            byte[] data = System.IO.File.ReadAllBytes( Common.GetDataDir() + "SampleExecuteTemplateData.txt");
 
                         
             Com.Aspose.Words.Model.ResponseMessage actual;
@@ -1573,8 +1573,8 @@ namespace WordsTest
             string cleanup = null;
             bool useWholeParagraphAsRegion = false;
             bool withRegions = false; 
-            byte[] file = System.IO.File.ReadAllBytes("\\temp\\resources\\SampleMailMergeTemplate.docx");
-            byte[] data = System.IO.File.ReadAllBytes("\\temp\\resources\\SampleExecuteTemplateData.txt");
+            byte[] file = System.IO.File.ReadAllBytes( Common.GetDataDir() + "SampleMailMergeTemplate.docx");
+            byte[] data = System.IO.File.ReadAllBytes( Common.GetDataDir() + "SampleExecuteTemplateData.txt");
 
             Com.Aspose.Words.Model.ResponseMessage actual;
             actual = target.PutExecuteTemplateOnline(cleanup, useWholeParagraphAsRegion, withRegions, file, data);
@@ -1606,7 +1606,7 @@ namespace WordsTest
             body.NodeId = "0.0.3";
             body.link = lnk;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.FieldResponse actual;
             actual = target.PutField(name, sectionIndex, paragraphIndex, insertBeforeNode, destFileName, storage, folder, body);
@@ -1643,7 +1643,7 @@ namespace WordsTest
             body.TextInputDefault = "";
             body.TextInputFormat = "UPPERCASE";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.FormFieldResponse actual;
             actual = target.PutFormField(name, sectionIndex, paragraphIndex, insertBeforeNode, destFileName, storage, folder, body);
 
@@ -1664,7 +1664,7 @@ namespace WordsTest
             string folder = null;
             Com.Aspose.Words.Model.ProtectionRequest body = new Com.Aspose.Words.Model.ProtectionRequest(); 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.ProtectionDataResponse actual;
             actual = target.PutProtectDocument(name, filename, storage, folder, body);
@@ -1689,7 +1689,7 @@ namespace WordsTest
             body.Name = "Author";
             body.Value = "Imran Anwar";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.DocumentPropertyResponse actual;
             actual = target.PutUpdateDocumentProperty(name, propertyName, filename, storage, folder, body);
@@ -1709,7 +1709,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.RevisionsModificationResponse actual;
             actual = target.RejectAllRevisions(name, filename, storage, folder);
@@ -1730,7 +1730,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.SearchResponse actual;
             actual = target.Search(name, pattern, storage, folder);
@@ -1758,7 +1758,7 @@ namespace WordsTest
             body.Orientation = "Landscape";
             body.PaperSize = "A5";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes("\\temp\\resources\\" + name));
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.SectionPageSetupResponse actual;
             actual = target.UpdateSectionPageSetup(name, sectionIndex, storage, folder, filename, body);

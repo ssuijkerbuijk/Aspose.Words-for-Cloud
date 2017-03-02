@@ -60,7 +60,7 @@ if (not defined $AsposeWordsCloud::Configuration::api_key or $AsposeWordsCloud::
 	$AsposeStorageCloud::Configuration::api_key = $AsposeWordsCloud::Configuration::api_key;
 }
 
-my $data_path = './data/';
+my $data_path = '../../../Data/';
 
 if (not -d $data_path){
 	done_testing();
