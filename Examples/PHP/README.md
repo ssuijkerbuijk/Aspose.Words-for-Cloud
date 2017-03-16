@@ -1,13 +1,12 @@
 ## Aspose.Words for Cloud PHP SDK Examples
-
-This directory contains examples for Aspose.Words for Cloud PHP SDK.
+This directory contains examples for [Aspose.Words for Cloud PHP SDK](https://github.com/aspose-words/Aspose.Words-for-Cloud/tree/master/SDKs/Aspose.Words-Cloud-SDK-for-PHP).
 
 ### How to Run the Examples
 1. Get App Key and SID.
 Log into https://cloud.aspose.com/ and get your App Key and SID. For details please check this article
 [Create New App and Get App Key and SID](https://docs.asposeptyltd.com/display/totalcloud/Create+New+App+and+Get+App+Key+and+SID).
-2. Edit [Utils](https://github.com/aspose-words/Aspose.Words-for-Cloud/blob/master/Examples/PHP/Utils.php) class and paste App Key and SID in apiKey and appSID const variables respectively.
-3. Install Aspose.Words for Cloud SDK by launching your command line and and run 
+2. Edit [Utils.php](https://github.com/aspose-words/Aspose.Words-for-Cloud/blob/master/Examples/PHP/Utils.php) class and set values of const variables apiKey and appSID.
+3. Install Aspose.Words for Cloud SDK by launching your command line in the [root directory](https://github.com/aspose-words/Aspose.Words-for-Cloud/tree/master/Examples/PHP) and and run 
 ```ruby
 composer install --no-dev
 ```
