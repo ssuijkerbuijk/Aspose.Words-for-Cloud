@@ -14,5 +14,8 @@ composer install --no-dev
 4. Each class is a standalone example of Aspose.Words APIs. Run any example by 
 ```ruby
 php className
-e.g. php GetDocumentBookmarkByName.php
+```
+e.g. 
+```ruby
+php GetDocumentBookmarkByName.php
 ```
