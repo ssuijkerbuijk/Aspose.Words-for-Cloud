@@ -2,7 +2,7 @@
 
 This directory contains examples for Aspose.Words for Cloud PHP SDK.
 
-#### How to Run the Examples
+### How to Run the Examples
 1. Get App Key and SID.
 Log into https://cloud.aspose.com/ and get your App Key and SID. For details please check this article
 [Create New App and Get App Key and SID](https://docs.asposeptyltd.com/display/totalcloud/Create+New+App+and+Get+App+Key+and+SID).
