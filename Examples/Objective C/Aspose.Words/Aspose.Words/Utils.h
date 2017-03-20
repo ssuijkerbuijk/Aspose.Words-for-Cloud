@@ -12,5 +12,6 @@
 
 + (void)setAppKeyAndAppSID;
 + (void)uploadFile:(NSString *) fileName;
++ (void)downloadFile:(NSString *) fileName;
 
 @end

@@ -32,4 +32,15 @@
                            }];
 }
 
++ (void)downloadFile:(NSString *) fileName {
+    
+    ASPStorageApi *storageApi = [[ASPStorageApi alloc] init];
+    [storageApi getDownloadWithCompletionBlock:fileName
+                                     versionId:nil
+                                       storage:nil
+                             completionHandler:^(NSURL *output, NSError *error) {
+                                 NSLog(@"%@", output);
+                             }];
+}
+
 @end

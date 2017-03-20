@@ -132,7 +132,7 @@
                                                  storage:nil
                                                   folder:nil
                                        completionHandler:^(ASPSaveResponse *output, NSError *error) {
-                                           NSLog(@"%@", output);
+                                           [Utils downloadFile:@"SampleWordDocument.pdf"];
                                        }];
 }
 
