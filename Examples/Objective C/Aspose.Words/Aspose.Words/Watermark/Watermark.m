@@ -21,6 +21,7 @@
 }
 
 - (void)deleteDocumentWatermark {
+//ExStart:DeleteDocumentWatermark
     
     NSString *fileName = @"SampleBlankWatermarkDocument.docx";
     [Utils uploadFile:fileName];
@@ -32,9 +33,11 @@
                                             completionHandler:^(ASPDocumentResponse *output, NSError *error) {
                                                 NSLog(@"%@", output);
                                             }];
+//ExEnd:DeleteDocumentWatermark
 }
 
 - (void)postInsertDocumentWatermarkImage {
+//ExStart:PostInsertDocumentWatermarkImage
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -50,9 +53,11 @@
                                                      completionHandler:^(ASPDocumentResponse *output, NSError *error) {
                                                          NSLog(@"%@", output);
                                                      }];
+//ExEnd:PostInsertDocumentWatermarkImage
 }
 
 - (void)postInsertDocumentWatermarkText {
+//ExStart:PostInsertDocumentWatermarkText
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -71,6 +76,7 @@
                                                     completionHandler:^(ASPDocumentResponse *output, NSError *error) {
                                                         NSLog(@"%@", output);
                                                     }];
+//ExEnd:PostInsertDocumentWatermarkText
 }
 
 @end

@@ -21,6 +21,7 @@
 }
 
 - (void)testAcceptAllRevisions {
+//ExStart:TestAcceptAllRevisions
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -32,9 +33,11 @@
                                        completionHandler:^(ASPRevisionsModificationResponse *output, NSError *error) {
                                            NSLog(@"%@", output);
                                        }];
+//ExEnd:TestAcceptAllRevisions
 }
 
 - (void)deleteDocumentMacros {
+//ExStart:DeleteDocumentMacros
     
     NSString *fileName = @"Test.docx";
     [Utils uploadFile:fileName];
@@ -45,9 +48,11 @@
                                          completionHandler:^(ASPBaseResponse *output, NSError *error) {
                                              NSLog(@"%@", output);
                                          }];
+//ExEnd:DeleteDocumentMacros
 }
 
 - (void)getDocument {
+//ExStart:GetDocument
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -58,9 +63,11 @@
                                 completionHandler:^(ASPDocumentResponse *output, NSError *error) {
                                     NSLog(@"%@", output);
                                 }];
+//ExEnd:GetDocument
 }
 
 - (void)getDocumentStatistics {
+//ExStart:GetDocumentStatistics
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -74,9 +81,11 @@
                                           completionHandler:^(ASPStatDataResponse *output, NSError *error) {
                                               NSLog(@"%@", output);
                                           }];
+//ExEnd:GetDocumentStatistics
 }
 
 - (void)getDocumentWithFormat {
+//ExStart:GetDocumentWithFormat
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -89,9 +98,11 @@
                                           completionHandler:^(NSURL *output, NSError *error) {
                                               NSLog(@"%@", output);
                                           }];
+//ExEnd:GetDocumentWithFormat
 }
 
 - (void)postAppendDocument {
+//ExStart:PostAppendDocument
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -116,9 +127,11 @@
                                        completionHandler:^(ASPDocumentResponse *output, NSError *error) {
                                            NSLog(@"%@", output);
                                        }];
+//ExEnd:PostAppendDocument
 }
 
 - (void)postDocumentSaveAs {
+//ExStart:PostDocumentSaveAs
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -132,11 +145,13 @@
                                                  storage:nil
                                                   folder:nil
                                        completionHandler:^(ASPSaveResponse *output, NSError *error) {
-                                           [Utils downloadFile:@"SampleWordDocument.pdf"];
+                                           NSLog(@"%@", output);
                                        }];
+//ExEnd:PostDocumentSaveAs
 }
 
 - (void)postLoadWebDocument {
+//ExStart:PostLoadWebDocument
     
     ASPLoadWebDocumentData *loadWebDocumentData = [[ASPLoadWebDocumentData alloc] init];
     loadWebDocumentData.loadingDocumentUrl = @"http://google.com";
@@ -150,18 +165,22 @@
     [self.wordsApi postLoadWebDocumentWithCompletionBlock:loadWebDocumentData completionHandler:^(ASPSaveResponse *output, NSError *error) {
         NSLog(@"%@", output);
     }];
+//ExEnd:PostLoadWebDocument
 }
 
 - (void)postRunTask {
+//ExStart:PostRunTask
     
     NSURL *pathToFile = [[NSBundle mainBundle] URLForResource:@"SampleWordDocument" withExtension:@"docx"];
     
     [self.wordsApi postRunTaskWithCompletionBlock:pathToFile completionHandler:^(ASPResponseMessage *output, NSError *error) {
         NSLog(@"%@", output);
     }];
+//ExEnd:PostRunTask
 }
 
 - (void)putConvertDocument {
+//ExStart:PutConvertDocument
     NSURL *pathToFile = [[NSBundle mainBundle] URLForResource:@"SampleWordDocument" withExtension:@"docx"];
     
     [self.wordsApi putConvertDocumentWithCompletionBlock:pathToFile
@@ -171,9 +190,11 @@
                                        completionHandler:^(NSURL *output, NSError *error) {
                                            NSLog(@"%@", output);
                                        }];
+//ExEnd:PutConvertDocument
 }
 
 - (void)putDocumentSaveAsTiff {
+//ExStart:PutDocumentSaveAsTiff
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -207,9 +228,11 @@
                                           completionHandler:^(ASPSaveResponse *output, NSError *error) {
                                               NSLog(@"%@", output);
                                           }];
+//ExEnd:PutDocumentSaveAsTiff
 }
 
 - (void)testRejectAllRevisions {
+//ExStart:TestRejectAllRevisions
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -221,6 +244,7 @@
                                        completionHandler:^(ASPRevisionsModificationResponse *output, NSError *error) {
                                            NSLog(@"%@", output);
                                        }];
+//ExEnd:TestRejectAllRevisions
 }
 
 @end

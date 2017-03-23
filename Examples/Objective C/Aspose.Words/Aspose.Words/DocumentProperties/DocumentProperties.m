@@ -21,6 +21,7 @@
 }
 
 - (void)deleteDocumentProperty {
+//ExStart:DeleteDocumentProperty
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -33,9 +34,11 @@
                                            completionHandler:^(ASPBaseResponse *output, NSError *error) {
                                                NSLog(@"%@", output);
                                            }];
+//ExEnd:DeleteDocumentProperty
 }
 
 - (void)getDocumentProperties {
+//ExStart:GetDocumentProperties
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -46,9 +49,11 @@
                                           completionHandler:^(ASPDocumentPropertiesResponse *output, NSError *error) {
                                               NSLog(@"%@", output);
                                           }];
+//ExEnd:GetDocumentProperties
 }
 
 - (void)getDocumentProperty {
+//ExStart:GetDocumentProperty
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -60,9 +65,11 @@
                                         completionHandler:^(ASPDocumentPropertyResponse *output, NSError *error) {
                                             NSLog(@"%@", output);
                                         }];
+//ExEnd:GetDocumentProperty
 }
 
 - (void)putUpdateDocumentProperty {
+//ExStart:PutUpdateDocumentProperty
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -80,6 +87,7 @@
                                               completionHandler:^(ASPDocumentPropertyResponse *output, NSError *error) {
                                                   NSLog(@"%@", output);
                                               }];
+//ExEnd:PutUpdateDocumentProperty
 }
 
 @end

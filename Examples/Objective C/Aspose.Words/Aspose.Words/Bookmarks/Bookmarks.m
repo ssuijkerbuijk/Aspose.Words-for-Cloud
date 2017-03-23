@@ -21,6 +21,7 @@
 }
 
 - (void)getDocumentBookmarkByName {
+//ExStart:GetDocumentBookmarkByName
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -32,9 +33,11 @@
                                               completionHandler:^(ASPBookmarkResponse *output, NSError *error) {
                                                   NSLog(@"%@", output);
                                               }];
+//ExEnd:GetDocumentBookmarkByName
 }
 
 - (void)getDocumentBookmarks {
+//ExStart:GetDocumentBookmarks
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -45,9 +48,11 @@
                                          completionHandler:^(ASPBookmarksResponse *output, NSError *error) {
                                              NSLog(@"%@", output);
                                          }];
+//ExEnd:GetDocumentBookmarks
 }
 
 - (void)postUpdateDocumentBookmark {
+//ExStart:PostUpdateDocumentBookmark
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -65,6 +70,7 @@
                                                completionHandler:^(ASPBookmarkResponse *output, NSError *error) {
                                                    NSLog(@"%@", output);
                                                }];
+//ExEnd:PostUpdateDocumentBookmark
 }
 
 

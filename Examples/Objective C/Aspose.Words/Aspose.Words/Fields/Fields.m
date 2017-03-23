@@ -21,6 +21,7 @@
 }
 
 - (void)deleteDocumentFields {
+//ExStart:DeleteDocumentFields
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -31,9 +32,11 @@
                                          completionHandler:^(ASPBaseResponse *output, NSError *error) {
                                              NSLog(@"%@", output);
                                          }];
+//ExEnd:DeleteDocumentFields
 }
 
 - (void)deleteFormField {
+//ExStart:DeleteFormField
     
     NSString *fileName = @"FormFilled.docx";
     [Utils uploadFile:fileName];
@@ -48,9 +51,11 @@
                                     completionHandler:^(ASPBaseResponse *output, NSError *error) {
                                         NSLog(@"%@", output);
                                     }];
+//ExEnd:DeleteFormField
 }
 
 - (void)deleteSectionFields {
+//ExStart:DeleteSectionFields
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -62,9 +67,11 @@
                                         completionHandler:^(ASPBaseResponse *output, NSError *error) {
                                             NSLog(@"%@", output);
                                         }];
+//ExEnd:DeleteSectionFields
 }
 
 - (void)getFormField {
+//ExStart:GetFormField
     
     NSString *fileName = @"FormFilled.docx";
     [Utils uploadFile:fileName];
@@ -78,9 +85,11 @@
                                  completionHandler:^(ASPFormFieldResponse *output, NSError *error) {
                                      NSLog(@"%@", output);
                                  }];
+//ExEnd:GetFormField
 }
 
 - (void)postFormField {
+//ExStart:PostFormField
     
     NSString *fileName = @"FormFilled.docx";
     [Utils uploadFile:fileName];
@@ -101,9 +110,11 @@
                                   completionHandler:^(ASPFormFieldResponse *output, NSError *error) {
                                       NSLog(@"%@", output);
                                   }];
+//ExEnd:PostFormField
 }
 
 - (void)postInsertPageNumbers {
+//ExStart:PostInsertPageNumbers
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -120,9 +131,11 @@
                                           completionHandler:^(ASPDocumentResponse *output, NSError *error) {
                                               NSLog(@"%@", output);
                                           }];
+//ExEnd:PostInsertPageNumbers
 }
 
 - (void)postUpdateDocumentFields {
+//ExStart:PostUpdateDocumentFields
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -134,9 +147,11 @@
                                              completionHandler:^(ASPDocumentResponse *output, NSError *error) {
                                                  NSLog(@"%@", output);
                                              }];
+//ExEnd:PostUpdateDocumentFields
 }
 
 - (void)putFormField {
+//ExStart:PutFormField
     
     NSString *fileName = @"FormFilled.docx";
     [Utils uploadFile:fileName];
@@ -157,6 +172,7 @@
                                  completionHandler:^(ASPFormFieldResponse *output, NSError *error) {
                                      NSLog(@"%@", output);
                                  }];
+//ExEnd:PutFormField
 }
 
 @end

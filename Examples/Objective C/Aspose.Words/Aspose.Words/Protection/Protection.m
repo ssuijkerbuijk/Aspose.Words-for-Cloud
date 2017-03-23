@@ -21,6 +21,7 @@
 }
 
 - (void)deleteUnprotectDocument {
+//ExStart:DeleteUnprotectDocument
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -36,9 +37,11 @@
                                             completionHandler:^(ASPProtectionDataResponse *output, NSError *error) {
                                                 NSLog(@"%@", output);
                                             }];
+//ExEnd:DeleteUnprotectDocument
 }
 
 - (void)getDocumentProtection {
+//ExStart:GetDocumentProtection
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -49,9 +52,11 @@
                                           completionHandler:^(ASPProtectionDataResponse *output, NSError *error) {
                                               NSLog(@"%@", output);
                                           }];
+//ExEnd:GetDocumentProtection
 }
 
 - (void)postChangeDocumentProtection {
+//ExStart:PostChangeDocumentProtection
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -68,9 +73,11 @@
                                                  completionHandler:^(ASPProtectionDataResponse *output, NSError *error) {
                                                      NSLog(@"%@", output);
                                                  }];
+//ExEnd:PostChangeDocumentProtection
 }
 
 - (void)putProtectDocument {
+//ExStart:PutProtectDocument
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -87,6 +94,7 @@
                                        completionHandler:^(ASPProtectionDataResponse *output, NSError *error) {
                                            NSLog(@"%@", output);
                                        }];
+//ExEnd:PutProtectDocument
 }
 
 

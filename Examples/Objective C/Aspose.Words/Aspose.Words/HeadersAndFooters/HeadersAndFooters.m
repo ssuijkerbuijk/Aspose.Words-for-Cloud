@@ -21,6 +21,7 @@
 }
 
 - (void)deleteHeadersFooters {
+//ExStart:DeleteHeadersFooters
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -33,6 +34,7 @@
                                          completionHandler:^(ASPBaseResponse *output, NSError *error) {
                                              NSLog(@"%@", output);
                                          }];
+//ExEnd:DeleteHeadersFooters
 }
 
 @end

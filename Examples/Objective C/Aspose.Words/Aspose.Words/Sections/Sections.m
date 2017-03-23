@@ -21,6 +21,7 @@
 }
 
 - (void)getSection {
+//ExStart:GetSection
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -32,9 +33,11 @@
                                completionHandler:^(ASPSectionResponse *output, NSError *error) {
                                    NSLog(@"%@", output);
                                }];
+//ExEnd:GetSection
 }
 
 - (void)getSectionPageSetup {
+//ExStart:GetSectionPageSetup
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -46,9 +49,11 @@
                                         completionHandler:^(ASPSectionPageSetupResponse *output, NSError *error) {
                                             NSLog(@"%@", output);
                                         }];
+//ExEnd:GetSectionPageSetup
 }
 
 - (void)getSections {
+//ExStart:GetSections
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -59,9 +64,11 @@
                                 completionHandler:^(ASPSectionLinkCollectionResponse *output, NSError *error) {
                                     NSLog(@"%@", output);
                                 }];
+//ExEnd:GetSections
 }
 
 - (void)testUpdateSectionPageSetup {
+//ExStart:TestUpdateSectionPageSetup
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -81,6 +88,7 @@
                                            completionHandler:^(ASPSectionPageSetupResponse *output, NSError *error) {
                                                NSLog(@"%@", output);
                                            }];
+//ExEnd:TestUpdateSectionPageSetup
 }
 
 @end

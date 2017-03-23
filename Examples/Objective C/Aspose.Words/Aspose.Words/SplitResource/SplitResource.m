@@ -21,6 +21,7 @@
 }
 
 - (void)splitAllPagesToNewPdfs {
+//ExStart:SplitAllPagesToNewPdfs
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -35,9 +36,11 @@
                                       completionHandler:^(ASPSplitDocumentResponse *output, NSError *error) {
                                           NSLog(@"%@", output);
                                       }];
+//ExEnd:SplitAllPagesToNewPdfs
 }
 
 - (void)splitSpecificPagesToAnySupportedFormat {
+//ExStart:SplitSpecificPagesToAnySupportedFormat
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -52,9 +55,11 @@
                                       completionHandler:^(ASPSplitDocumentResponse *output, NSError *error) {
                                           NSLog(@"%@", output);
                                       }];
+//ExEnd:SplitSpecificPagesToAnySupportedFormat
 }
 
 - (void)splitSpecificPagesToNewPdfs {
+//ExStart:SplitSpecificPagesToNewPdfs
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -69,6 +74,7 @@
                                       completionHandler:^(ASPSplitDocumentResponse *output, NSError *error) {
                                           NSLog(@"%@", output);
                                       }];
+//ExEnd:SplitSpecificPagesToNewPdfs
 }
 
 @end

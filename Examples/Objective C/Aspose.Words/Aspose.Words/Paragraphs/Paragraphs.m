@@ -21,6 +21,7 @@
 }
 
 - (void)deleteParagraphFields {
+//ExStart:DeleteParagraphFields
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -32,9 +33,11 @@
                                           completionHandler:^(ASPBaseResponse *output, NSError *error) {
                                               NSLog(@"%@", output);
                                           }];
+//ExEnd:DeleteParagraphFields
 }
 
 - (void)getDocumentParagraph {
+//ExStart:GetDocumentParagraph
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -46,9 +49,11 @@
                                          completionHandler:^(ASPParagraphResponse *output, NSError *error) {
                                              NSLog(@"%@", output);
                                          }];
+//ExEnd:GetDocumentParagraph
 }
 
 - (void)getDocumentParagraphRun {
+//ExStart:GetDocumentParagraphRun
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -61,9 +66,11 @@
                                             completionHandler:^(ASPRunResponse *output, NSError *error) {
                                                 NSLog(@"%@", output);
                                             }];
+//ExEnd:GetDocumentParagraphRun
 }
 
 - (void)getDocumentParagraphRunFont {
+//ExStart:GetDocumentParagraphRunFont
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -76,9 +83,11 @@
                                                 completionHandler:^(ASPFontResponse *output, NSError *error) {
                                                     NSLog(@"%@", output);
                                                 }];
+//ExEnd:GetDocumentParagraphRunFont
 }
 
 - (void)getDocumentParagraphs {
+//ExStart:GetDocumentParagraphs
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -89,9 +98,11 @@
                                           completionHandler:^(ASPParagraphLinkCollectionResponse *output, NSError *error) {
                                               NSLog(@"%@", output);
                                           }];
+//ExEnd:GetDocumentParagraphs
 }
 
 - (void)postDocumentParagraphRunFont {
+//ExStart:PostDocumentParagraphRunFont
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -110,6 +121,7 @@
                                                  completionHandler:^(ASPFontResponse *output, NSError *error) {
                                                      NSLog(@"%@", output);
                                                  }];
+//ExEnd:PostDocumentParagraphRunFont
 }
 
 

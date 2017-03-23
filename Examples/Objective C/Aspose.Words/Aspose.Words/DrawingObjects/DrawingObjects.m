@@ -21,6 +21,7 @@
 }
 
 - (void)getDocumentDrawingObjectByIndex {
+//ExStart:GetDocumentDrawingObjectByIndex
     
     NSString *fileName = @"OLE.docx";
     [Utils uploadFile:fileName];
@@ -32,9 +33,11 @@
                                                     completionHandler:^(ASPDrawingObjectResponse *output, NSError *error) {
                                                         NSLog(@"%@", output);
                                                     }];
+//ExEnd:GetDocumentDrawingObjectByIndex
 }
 
 - (void)getDocumentDrawingObjectByIndexWithFormat {
+//ExStart:GetDocumentDrawingObjectByIndexWithFormat
     
     NSString *fileName = @"OLE.docx";
     [Utils uploadFile:fileName];
@@ -47,9 +50,11 @@
                                                               completionHandler:^(NSURL *output, NSError *error) {
                                                                   NSLog(@"%@", output);
                                                               }];
+//ExEnd:GetDocumentDrawingObjectByIndexWithFormat
 }
 
 - (void)getDocumentDrawingObjectImageData {
+//ExStart:GetDocumentDrawingObjectImageData
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -61,9 +66,11 @@
                                                       completionHandler:^(NSURL *output, NSError *error) {
                                                           NSLog(@"%@", output);
                                                       }];
+//ExEnd:GetDocumentDrawingObjectImageData
 }
 
 - (void)getDocumentDrawingObjectOleData {
+//ExStart:GetDocumentDrawingObjectOleData
     
     NSString *fileName = @"Sample_EmbeddedOLE.docx";
     [Utils uploadFile:fileName];
@@ -75,9 +82,11 @@
                                                     completionHandler:^(NSURL *output, NSError *error) {
                                                         NSLog(@"%@", output);
                                                     }];
+//ExEnd:GetDocumentDrawingObjectOleData
 }
 
 - (void)getDocumentDrawingObjects {
+//ExStart:GetDocumentDrawingObjects
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -88,6 +97,7 @@
                                               completionHandler:^(ASPDrawingObjectsResponse *output, NSError *error) {
                                                   NSLog(@"%@", output);
                                               }];
+//ExEnd:GetDocumentDrawingObjects
 }
 
 

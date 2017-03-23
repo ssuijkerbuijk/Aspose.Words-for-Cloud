@@ -21,6 +21,7 @@
 }
 
 - (void)getDocumentTextItems {
+//ExStart:GetDocumentTextItems
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -31,9 +32,11 @@
                                          completionHandler:^(ASPTextItemsResponse *output, NSError *error) {
                                              NSLog(@"%@", output);
                                          }];
+//ExEnd:GetDocumentTextItems
 }
 
 - (void)postReplaceText {
+//ExStart:PostReplaceText
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -52,6 +55,7 @@
                                     completionHandler:^(ASPReplaceTextResponse *output, NSError *error) {
                                         NSLog(@"%@", output);
                                     }];
+//ExEnd:PostReplaceText
 }
 
 @end

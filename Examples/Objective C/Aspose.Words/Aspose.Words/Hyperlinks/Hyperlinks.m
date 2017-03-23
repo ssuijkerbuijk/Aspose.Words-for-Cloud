@@ -21,6 +21,7 @@
 }
 
 - (void)getDocumentHyperlinkByIndex {
+//ExStart:GetDocumentHyperlinkByIndex
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -32,9 +33,11 @@
                                                 completionHandler:^(ASPHyperlinkResponse *output, NSError *error) {
                                                     NSLog(@"%@", output);
                                                 }];
+//ExEnd:GetDocumentHyperlinkByIndex
 }
 
 - (void)getDocumentHyperlinks {
+//ExStart:GetDocumentHyperlinks
     
     NSString *fileName = @"SampleWordDocument.docx";
     [Utils uploadFile:fileName];
@@ -45,6 +48,7 @@
                                           completionHandler:^(ASPHyperlinksResponse *output, NSError *error) {
                                               NSLog(@"%@", output);
                                           }];
+//ExEnd:GetDocumentHyperlinks
 }
 
 @end

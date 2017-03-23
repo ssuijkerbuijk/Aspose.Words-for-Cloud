@@ -21,6 +21,7 @@
 }
 
 - (void)postExecuteTemplate {
+//ExStart:PostExecuteTemplate
     
     NSString *fileName = @"SampleExecuteTemplate.doc";
     [Utils uploadFile:fileName];
@@ -38,9 +39,11 @@
                                         completionHandler:^(ASPDocumentResponse *output, NSError *error) {
                                             NSLog(@"%@", output);
                                         }];
+//ExEnd:PostExecuteTemplate
 }
 
 - (void)postDocumentExecuteMailMerge {
+//ExStart:PostDocumentExecuteMailMerge
     
     NSString *fileName = @"SampleMailMergeTemplateImage.doc";
     [Utils uploadFile:fileName];
@@ -59,9 +62,11 @@
                                                  completionHandler:^(ASPDocumentResponse *output, NSError *error) {
                                                      NSLog(@"%@", output);
                                                  }];
+//ExEnd:PostDocumentExecuteMailMerge
 }
 
 - (void)putExecuteMailMergeOnline {
+//ExStart:PutExecuteMailMergeOnline
     
     NSURL *pathToFile = [[NSBundle mainBundle] URLForResource:@"SampleMailMergeTemplate" withExtension:@"docx"];
     NSURL *pathToDataFile = [[NSBundle mainBundle] URLForResource:@"SampleMailMergeTemplateData" withExtension:@"txt"];
@@ -84,9 +89,11 @@
                                               completionHandler:^(NSURL *output, NSError *error) {
                                                   NSLog(@"%@", output);
                                               }];
+//ExEnd:PutExecuteMailMergeOnline
 }
 
 - (void)putExecuteTemplateOnline {
+//ExStart:PutExecuteTemplateOnline
     
     NSURL *pathToFile = [[NSBundle mainBundle] URLForResource:@"SampleExecuteTemplate" withExtension:@"doc"];
     NSURL *pathToDataFile = [[NSBundle mainBundle] URLForResource:@"SampleExecuteTemplateData" withExtension:@"txt"];
@@ -99,6 +106,7 @@
                                              completionHandler:^(NSURL *output, NSError *error) {
                                                  NSLog(@"%@", output);
                                              }];
+//ExEnd:PutExecuteTemplateOnline
 }
 
 @end
