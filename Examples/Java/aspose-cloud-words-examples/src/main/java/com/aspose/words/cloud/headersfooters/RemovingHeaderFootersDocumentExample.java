@@ -30,7 +30,8 @@ public class RemovingHeaderFootersDocumentExample {
 			String headersFootersTypes = null;
 			String storage = null;
 			String folder = null;
-
+			String revisionDateTime="2017-02-20";
+			String revisionAuthor="Mateen";
 			// upload input file to aspose cloud storage
 			storageApi.PutCreate(fileName, "", "",
 					new File(RemovingHeaderFootersDocumentExample.class.getResource("/" + fileName).toURI()));
@@ -38,7 +39,7 @@ public class RemovingHeaderFootersDocumentExample {
 			// invoke Aspose.Words Cloud SDK API to remove all headers and
 			// footers from a word document
 			SaaSposeResponse apiResponse = wordsApi.DeleteHeadersFooters(fileName, headersFootersTypes, destFileName,
-					storage, folder);
+					storage, folder,revisionAuthor,revisionDateTime);
 
 			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 
