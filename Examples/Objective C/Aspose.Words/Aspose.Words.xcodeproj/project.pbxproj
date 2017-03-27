@@ -1,0 +1,715 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3003EABA1E7B9AC100E999DA /* Fields.m in Sources */ = {isa = PBXBuildFile; fileRef = 3003EAB91E7B9AC100E999DA /* Fields.m */; };
+		3003EABD1E7B9E4A00E999DA /* HeadersAndFooters.m in Sources */ = {isa = PBXBuildFile; fileRef = 3003EABC1E7B9E4A00E999DA /* HeadersAndFooters.m */; };
+		3003EAC01E7B9F0E00E999DA /* Hyperlinks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3003EABF1E7B9F0E00E999DA /* Hyperlinks.m */; };
+		3003EAC31E7BA01F00E999DA /* MailMerge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3003EAC21E7BA01F00E999DA /* MailMerge.m */; };
+		3003EAC61E7BA26000E999DA /* Paragraphs.m in Sources */ = {isa = PBXBuildFile; fileRef = 3003EAC51E7BA26000E999DA /* Paragraphs.m */; };
+		3003EAC91E7BA4CC00E999DA /* Protection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3003EAC81E7BA4CC00E999DA /* Protection.m */; };
+		3003EACC1E7BA84800E999DA /* Sections.m in Sources */ = {isa = PBXBuildFile; fileRef = 3003EACB1E7BA84800E999DA /* Sections.m */; };
+		3003EACF1E7BA9FA00E999DA /* SplitResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3003EACE1E7BA9FA00E999DA /* SplitResource.m */; };
+		3003EAD21E7BAA1E00E999DA /* Watermark.m in Sources */ = {isa = PBXBuildFile; fileRef = 3003EAD11E7BAA1E00E999DA /* Watermark.m */; };
+		3003EAD51E7BAA3100E999DA /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 3003EAD41E7BAA3100E999DA /* Text.m */; };
+		3003EB071E7BB4DB00E999DA /* AppendWordDocumentsExample-TestFile-Destination.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAD61E7BB4DB00E999DA /* AppendWordDocumentsExample-TestFile-Destination.doc */; };
+		3003EB081E7BB4DB00E999DA /* AppendWordDocumentsExample-TestFile-Source.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAD71E7BB4DB00E999DA /* AppendWordDocumentsExample-TestFile-Source.doc */; };
+		3003EB091E7BB4DB00E999DA /* Aspose Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAD81E7BB4DB00E999DA /* Aspose Logo.png */; };
+		3003EB0A1E7BB4DB00E999DA /* aspose-cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAD91E7BB4DB00E999DA /* aspose-cloud.png */; };
+		3003EB0B1E7BB4DB00E999DA /* Customers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3003EADA1E7BB4DB00E999DA /* Customers.txt */; };
+		3003EB0C1E7BB4DB00E999DA /* doc-sample-hyperlink.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EADB1E7BB4DB00E999DA /* doc-sample-hyperlink.doc */; };
+		3003EB0D1E7BB4DB00E999DA /* doc-sample-protect.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EADC1E7BB4DB00E999DA /* doc-sample-protect.doc */; };
+		3003EB0E1E7BB4DB00E999DA /* doc-sample-unprotect.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EADD1E7BB4DB00E999DA /* doc-sample-unprotect.doc */; };
+		3003EB0F1E7BB4DB00E999DA /* doc-sample-watermark.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EADE1E7BB4DB00E999DA /* doc-sample-watermark.doc */; };
+		3003EB101E7BB4DB00E999DA /* doc-sample.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EADF1E7BB4DB00E999DA /* doc-sample.doc */; };
+		3003EB111E7BB4DB00E999DA /* doc-sample1.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAE01E7BB4DB00E999DA /* doc-sample1.doc */; };
+		3003EB121E7BB4DB00E999DA /* doc-sample2.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAE11E7BB4DB00E999DA /* doc-sample2.doc */; };
+		3003EB131E7BB4DB00E999DA /* doc-sample3.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAE21E7BB4DB00E999DA /* doc-sample3.doc */; };
+		3003EB141E7BB4DB00E999DA /* FormFilled.docx in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAE31E7BB4DB00E999DA /* FormFilled.docx */; };
+		3003EB151E7BB4DB00E999DA /* google-sample.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAE41E7BB4DB00E999DA /* google-sample.xml */; };
+		3003EB161E7BB4DB00E999DA /* header-footer.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAE51E7BB4DB00E999DA /* header-footer.doc */; };
+		3003EB171E7BB4DB00E999DA /* header-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAE61E7BB4DB00E999DA /* header-logo.png */; };
+		3003EB181E7BB4DB00E999DA /* imagefile.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAE71E7BB4DB00E999DA /* imagefile.doc */; };
+		3003EB191E7BB4DB00E999DA /* Invoice Template.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAE81E7BB4DB00E999DA /* Invoice Template.doc */; };
+		3003EB1A1E7BB4DB00E999DA /* Orders.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAE91E7BB4DB00E999DA /* Orders.xml */; };
+		3003EB1B1E7BB4DB00E999DA /* sample_EmbeddedOLE.docx in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAEA1E7BB4DB00E999DA /* sample_EmbeddedOLE.docx */; };
+		3003EB1C1E7BB4DB00E999DA /* SampleAppendDoc.docx in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAEB1E7BB4DB00E999DA /* SampleAppendDoc.docx */; };
+		3003EB1D1E7BB4DB00E999DA /* SampleAppendDoc2.docx in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAEC1E7BB4DB00E999DA /* SampleAppendDoc2.docx */; };
+		3003EB1E1E7BB4DB00E999DA /* SampleBlankWatermarkDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAED1E7BB4DB00E999DA /* SampleBlankWatermarkDocument.docx */; };
+		3003EB1F1E7BB4DB00E999DA /* SampleBlankWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAEE1E7BB4DB00E999DA /* SampleBlankWordDocument.docx */; };
+		3003EB201E7BB4DB00E999DA /* SampleExecuteTemplate.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAEF1E7BB4DB00E999DA /* SampleExecuteTemplate.doc */; };
+		3003EB211E7BB4DB00E999DA /* SampleExecuteTemplate.docx in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAF01E7BB4DB00E999DA /* SampleExecuteTemplate.docx */; };
+		3003EB221E7BB4DB00E999DA /* SampleExecuteTemplateData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAF11E7BB4DB00E999DA /* SampleExecuteTemplateData.txt */; };
+		3003EB231E7BB4DB00E999DA /* SampleHeaderFooterWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAF21E7BB4DB00E999DA /* SampleHeaderFooterWordDocument.docx */; };
+		3003EB241E7BB4DB00E999DA /* SampleInvoiceTemplate.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAF31E7BB4DB00E999DA /* SampleInvoiceTemplate.doc */; };
+		3003EB251E7BB4DB00E999DA /* SampleInvoiceTemplateData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAF41E7BB4DB00E999DA /* SampleInvoiceTemplateData.txt */; };
+		3003EB261E7BB4DB00E999DA /* SampleMailMergeTemplate.docx in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAF51E7BB4DB00E999DA /* SampleMailMergeTemplate.docx */; };
+		3003EB271E7BB4DB00E999DA /* SampleMailMergeTemplateData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAF61E7BB4DB00E999DA /* SampleMailMergeTemplateData.txt */; };
+		3003EB281E7BB4DB00E999DA /* SampleMailMergeTemplateImage.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAF71E7BB4DB00E999DA /* SampleMailMergeTemplateImage.doc */; };
+		3003EB291E7BB4DB00E999DA /* SampleMailMergeTemplateImageData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAF81E7BB4DB00E999DA /* SampleMailMergeTemplateImageData.txt */; };
+		3003EB2A1E7BB4DB00E999DA /* SampleOlePdfData.docx in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAF91E7BB4DB00E999DA /* SampleOlePdfData.docx */; };
+		3003EB2B1E7BB4DB00E999DA /* SampleProtectedBlankWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAFA1E7BB4DB00E999DA /* SampleProtectedBlankWordDocument.docx */; };
+		3003EB2C1E7BB4DB00E999DA /* SampleWordDocument.docx in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAFB1E7BB4DB00E999DA /* SampleWordDocument.docx */; };
+		3003EB2D1E7BB4DB00E999DA /* test_convertlocal.docx in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAFC1E7BB4DB00E999DA /* test_convertlocal.docx */; };
+		3003EB2E1E7BB4DB00E999DA /* test_doc.docx in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAFD1E7BB4DB00E999DA /* test_doc.docx */; };
+		3003EB2F1E7BB4DB00E999DA /* test_multi_pages.docx in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAFE1E7BB4DB00E999DA /* test_multi_pages.docx */; };
+		3003EB301E7BB4DB00E999DA /* test_uploadfile.docx in Resources */ = {isa = PBXBuildFile; fileRef = 3003EAFF1E7BB4DB00E999DA /* test_uploadfile.docx */; };
+		3003EB311E7BB4DB00E999DA /* TestExecuteTemplate.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EB001E7BB4DB00E999DA /* TestExecuteTemplate.doc */; };
+		3003EB321E7BB4DB00E999DA /* TestExecuteTemplateData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3003EB011E7BB4DB00E999DA /* TestExecuteTemplateData.txt */; };
+		3003EB331E7BB4DB00E999DA /* testfile.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EB021E7BB4DB00E999DA /* testfile.doc */; };
+		3003EB341E7BB4DB00E999DA /* testfile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3003EB031E7BB4DB00E999DA /* testfile.txt */; };
+		3003EB351E7BB4DB00E999DA /* WithRegions.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EB041E7BB4DB00E999DA /* WithRegions.doc */; };
+		3003EB361E7BB4DB00E999DA /* WithRegions.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3003EB051E7BB4DB00E999DA /* WithRegions.xml */; };
+		3003EB371E7BB4DB00E999DA /* WordFormatConverterExampleTest.doc in Resources */ = {isa = PBXBuildFile; fileRef = 3003EB061E7BB4DB00E999DA /* WordFormatConverterExampleTest.doc */; };
+		309DE6671E7ABAD100D58A91 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 309DE6661E7ABAD100D58A91 /* main.m */; };
+		309DE66A1E7ABAD100D58A91 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 309DE6691E7ABAD100D58A91 /* AppDelegate.m */; };
+		309DE6701E7ABAD100D58A91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 309DE66E1E7ABAD100D58A91 /* Main.storyboard */; };
+		309DE6721E7ABAD100D58A91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 309DE6711E7ABAD100D58A91 /* Assets.xcassets */; };
+		309DE6751E7ABAD100D58A91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 309DE6731E7ABAD100D58A91 /* LaunchScreen.storyboard */; };
+		309DE67E1E7ABAFD00D58A91 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 309DE67D1E7ABAFD00D58A91 /* Utils.m */; };
+		309DE68F1E7AC3A400D58A91 /* Bookmarks.m in Sources */ = {isa = PBXBuildFile; fileRef = 309DE68E1E7AC3A400D58A91 /* Bookmarks.m */; };
+		309DE6F51E7AC73500D58A91 /* DocumentProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 309DE6F41E7AC73500D58A91 /* DocumentProperties.m */; };
+		309DE6F81E7ACDC700D58A91 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 309DE6F71E7ACDC700D58A91 /* Document.m */; };
+		309DE6FB1E7AD20200D58A91 /* DrawingObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 309DE6FA1E7AD20200D58A91 /* DrawingObjects.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3003EAB81E7B9AC100E999DA /* Fields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fields.h; path = Fields/Fields.h; sourceTree = "<group>"; };
+		3003EAB91E7B9AC100E999DA /* Fields.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Fields.m; path = Fields/Fields.m; sourceTree = "<group>"; };
+		3003EABB1E7B9E4A00E999DA /* HeadersAndFooters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeadersAndFooters.h; path = HeadersAndFooters/HeadersAndFooters.h; sourceTree = "<group>"; };
+		3003EABC1E7B9E4A00E999DA /* HeadersAndFooters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeadersAndFooters.m; path = HeadersAndFooters/HeadersAndFooters.m; sourceTree = "<group>"; };
+		3003EABE1E7B9F0E00E999DA /* Hyperlinks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hyperlinks.h; path = Hyperlinks/Hyperlinks.h; sourceTree = "<group>"; };
+		3003EABF1E7B9F0E00E999DA /* Hyperlinks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Hyperlinks.m; path = Hyperlinks/Hyperlinks.m; sourceTree = "<group>"; };
+		3003EAC11E7BA01F00E999DA /* MailMerge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailMerge.h; path = MailMerge/MailMerge.h; sourceTree = "<group>"; };
+		3003EAC21E7BA01F00E999DA /* MailMerge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MailMerge.m; path = MailMerge/MailMerge.m; sourceTree = "<group>"; };
+		3003EAC41E7BA26000E999DA /* Paragraphs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Paragraphs.h; path = Paragraphs/Paragraphs.h; sourceTree = "<group>"; };
+		3003EAC51E7BA26000E999DA /* Paragraphs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Paragraphs.m; path = Paragraphs/Paragraphs.m; sourceTree = "<group>"; };
+		3003EAC71E7BA4CC00E999DA /* Protection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Protection.h; path = Protection/Protection.h; sourceTree = "<group>"; };
+		3003EAC81E7BA4CC00E999DA /* Protection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Protection.m; path = Protection/Protection.m; sourceTree = "<group>"; };
+		3003EACA1E7BA84800E999DA /* Sections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sections.h; path = Sections/Sections.h; sourceTree = "<group>"; };
+		3003EACB1E7BA84800E999DA /* Sections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sections.m; path = Sections/Sections.m; sourceTree = "<group>"; };
+		3003EACD1E7BA9FA00E999DA /* SplitResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SplitResource.h; path = SplitResource/SplitResource.h; sourceTree = "<group>"; };
+		3003EACE1E7BA9FA00E999DA /* SplitResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SplitResource.m; path = SplitResource/SplitResource.m; sourceTree = "<group>"; };
+		3003EAD01E7BAA1E00E999DA /* Watermark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Watermark.h; path = Watermark/Watermark.h; sourceTree = "<group>"; };
+		3003EAD11E7BAA1E00E999DA /* Watermark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Watermark.m; path = Watermark/Watermark.m; sourceTree = "<group>"; };
+		3003EAD31E7BAA3100E999DA /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Text.h; path = Text/Text.h; sourceTree = "<group>"; };
+		3003EAD41E7BAA3100E999DA /* Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Text.m; path = Text/Text.m; sourceTree = "<group>"; };
+		3003EAD61E7BB4DB00E999DA /* AppendWordDocumentsExample-TestFile-Destination.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AppendWordDocumentsExample-TestFile-Destination.doc"; path = "Data/AppendWordDocumentsExample-TestFile-Destination.doc"; sourceTree = "<group>"; };
+		3003EAD71E7BB4DB00E999DA /* AppendWordDocumentsExample-TestFile-Source.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AppendWordDocumentsExample-TestFile-Source.doc"; path = "Data/AppendWordDocumentsExample-TestFile-Source.doc"; sourceTree = "<group>"; };
+		3003EAD81E7BB4DB00E999DA /* Aspose Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Aspose Logo.png"; path = "Data/Aspose Logo.png"; sourceTree = "<group>"; };
+		3003EAD91E7BB4DB00E999DA /* aspose-cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "aspose-cloud.png"; path = "Data/aspose-cloud.png"; sourceTree = "<group>"; };
+		3003EADA1E7BB4DB00E999DA /* Customers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Customers.txt; path = Data/Customers.txt; sourceTree = "<group>"; };
+		3003EADB1E7BB4DB00E999DA /* doc-sample-hyperlink.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "doc-sample-hyperlink.doc"; path = "Data/doc-sample-hyperlink.doc"; sourceTree = "<group>"; };
+		3003EADC1E7BB4DB00E999DA /* doc-sample-protect.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "doc-sample-protect.doc"; path = "Data/doc-sample-protect.doc"; sourceTree = "<group>"; };
+		3003EADD1E7BB4DB00E999DA /* doc-sample-unprotect.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "doc-sample-unprotect.doc"; path = "Data/doc-sample-unprotect.doc"; sourceTree = "<group>"; };
+		3003EADE1E7BB4DB00E999DA /* doc-sample-watermark.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "doc-sample-watermark.doc"; path = "Data/doc-sample-watermark.doc"; sourceTree = "<group>"; };
+		3003EADF1E7BB4DB00E999DA /* doc-sample.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "doc-sample.doc"; path = "Data/doc-sample.doc"; sourceTree = "<group>"; };
+		3003EAE01E7BB4DB00E999DA /* doc-sample1.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "doc-sample1.doc"; path = "Data/doc-sample1.doc"; sourceTree = "<group>"; };
+		3003EAE11E7BB4DB00E999DA /* doc-sample2.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "doc-sample2.doc"; path = "Data/doc-sample2.doc"; sourceTree = "<group>"; };
+		3003EAE21E7BB4DB00E999DA /* doc-sample3.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "doc-sample3.doc"; path = "Data/doc-sample3.doc"; sourceTree = "<group>"; };
+		3003EAE31E7BB4DB00E999DA /* FormFilled.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = FormFilled.docx; path = Data/FormFilled.docx; sourceTree = "<group>"; };
+		3003EAE41E7BB4DB00E999DA /* google-sample.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "google-sample.xml"; path = "Data/google-sample.xml"; sourceTree = "<group>"; };
+		3003EAE51E7BB4DB00E999DA /* header-footer.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "header-footer.doc"; path = "Data/header-footer.doc"; sourceTree = "<group>"; };
+		3003EAE61E7BB4DB00E999DA /* header-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "header-logo.png"; path = "Data/header-logo.png"; sourceTree = "<group>"; };
+		3003EAE71E7BB4DB00E999DA /* imagefile.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = imagefile.doc; path = Data/imagefile.doc; sourceTree = "<group>"; };
+		3003EAE81E7BB4DB00E999DA /* Invoice Template.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Invoice Template.doc"; path = "Data/Invoice Template.doc"; sourceTree = "<group>"; };
+		3003EAE91E7BB4DB00E999DA /* Orders.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Orders.xml; path = Data/Orders.xml; sourceTree = "<group>"; };
+		3003EAEA1E7BB4DB00E999DA /* sample_EmbeddedOLE.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = sample_EmbeddedOLE.docx; path = Data/sample_EmbeddedOLE.docx; sourceTree = "<group>"; };
+		3003EAEB1E7BB4DB00E999DA /* SampleAppendDoc.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = SampleAppendDoc.docx; path = Data/SampleAppendDoc.docx; sourceTree = "<group>"; };
+		3003EAEC1E7BB4DB00E999DA /* SampleAppendDoc2.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = SampleAppendDoc2.docx; path = Data/SampleAppendDoc2.docx; sourceTree = "<group>"; };
+		3003EAED1E7BB4DB00E999DA /* SampleBlankWatermarkDocument.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = SampleBlankWatermarkDocument.docx; path = Data/SampleBlankWatermarkDocument.docx; sourceTree = "<group>"; };
+		3003EAEE1E7BB4DB00E999DA /* SampleBlankWordDocument.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = SampleBlankWordDocument.docx; path = Data/SampleBlankWordDocument.docx; sourceTree = "<group>"; };
+		3003EAEF1E7BB4DB00E999DA /* SampleExecuteTemplate.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = SampleExecuteTemplate.doc; path = Data/SampleExecuteTemplate.doc; sourceTree = "<group>"; };
+		3003EAF01E7BB4DB00E999DA /* SampleExecuteTemplate.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = SampleExecuteTemplate.docx; path = Data/SampleExecuteTemplate.docx; sourceTree = "<group>"; };
+		3003EAF11E7BB4DB00E999DA /* SampleExecuteTemplateData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SampleExecuteTemplateData.txt; path = Data/SampleExecuteTemplateData.txt; sourceTree = "<group>"; };
+		3003EAF21E7BB4DB00E999DA /* SampleHeaderFooterWordDocument.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = SampleHeaderFooterWordDocument.docx; path = Data/SampleHeaderFooterWordDocument.docx; sourceTree = "<group>"; };
+		3003EAF31E7BB4DB00E999DA /* SampleInvoiceTemplate.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = SampleInvoiceTemplate.doc; path = Data/SampleInvoiceTemplate.doc; sourceTree = "<group>"; };
+		3003EAF41E7BB4DB00E999DA /* SampleInvoiceTemplateData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SampleInvoiceTemplateData.txt; path = Data/SampleInvoiceTemplateData.txt; sourceTree = "<group>"; };
+		3003EAF51E7BB4DB00E999DA /* SampleMailMergeTemplate.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = SampleMailMergeTemplate.docx; path = Data/SampleMailMergeTemplate.docx; sourceTree = "<group>"; };
+		3003EAF61E7BB4DB00E999DA /* SampleMailMergeTemplateData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SampleMailMergeTemplateData.txt; path = Data/SampleMailMergeTemplateData.txt; sourceTree = "<group>"; };
+		3003EAF71E7BB4DB00E999DA /* SampleMailMergeTemplateImage.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = SampleMailMergeTemplateImage.doc; path = Data/SampleMailMergeTemplateImage.doc; sourceTree = "<group>"; };
+		3003EAF81E7BB4DB00E999DA /* SampleMailMergeTemplateImageData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SampleMailMergeTemplateImageData.txt; path = Data/SampleMailMergeTemplateImageData.txt; sourceTree = "<group>"; };
+		3003EAF91E7BB4DB00E999DA /* SampleOlePdfData.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = SampleOlePdfData.docx; path = Data/SampleOlePdfData.docx; sourceTree = "<group>"; };
+		3003EAFA1E7BB4DB00E999DA /* SampleProtectedBlankWordDocument.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = SampleProtectedBlankWordDocument.docx; path = Data/SampleProtectedBlankWordDocument.docx; sourceTree = "<group>"; };
+		3003EAFB1E7BB4DB00E999DA /* SampleWordDocument.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = SampleWordDocument.docx; path = Data/SampleWordDocument.docx; sourceTree = "<group>"; };
+		3003EAFC1E7BB4DB00E999DA /* test_convertlocal.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = test_convertlocal.docx; path = Data/test_convertlocal.docx; sourceTree = "<group>"; };
+		3003EAFD1E7BB4DB00E999DA /* test_doc.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = test_doc.docx; path = Data/test_doc.docx; sourceTree = "<group>"; };
+		3003EAFE1E7BB4DB00E999DA /* test_multi_pages.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = test_multi_pages.docx; path = Data/test_multi_pages.docx; sourceTree = "<group>"; };
+		3003EAFF1E7BB4DB00E999DA /* test_uploadfile.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = test_uploadfile.docx; path = Data/test_uploadfile.docx; sourceTree = "<group>"; };
+		3003EB001E7BB4DB00E999DA /* TestExecuteTemplate.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = TestExecuteTemplate.doc; path = Data/TestExecuteTemplate.doc; sourceTree = "<group>"; };
+		3003EB011E7BB4DB00E999DA /* TestExecuteTemplateData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TestExecuteTemplateData.txt; path = Data/TestExecuteTemplateData.txt; sourceTree = "<group>"; };
+		3003EB021E7BB4DB00E999DA /* testfile.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = testfile.doc; path = Data/testfile.doc; sourceTree = "<group>"; };
+		3003EB031E7BB4DB00E999DA /* testfile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = testfile.txt; path = Data/testfile.txt; sourceTree = "<group>"; };
+		3003EB041E7BB4DB00E999DA /* WithRegions.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = WithRegions.doc; path = Data/WithRegions.doc; sourceTree = "<group>"; };
+		3003EB051E7BB4DB00E999DA /* WithRegions.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = WithRegions.xml; path = Data/WithRegions.xml; sourceTree = "<group>"; };
+		3003EB061E7BB4DB00E999DA /* WordFormatConverterExampleTest.doc */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordFormatConverterExampleTest.doc; path = Data/WordFormatConverterExampleTest.doc; sourceTree = "<group>"; };
+		309DE6621E7ABAD100D58A91 /* Aspose.Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aspose.Words.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		309DE6661E7ABAD100D58A91 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		309DE6681E7ABAD100D58A91 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		309DE6691E7ABAD100D58A91 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		309DE66F1E7ABAD100D58A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		309DE6711E7ABAD100D58A91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		309DE6741E7ABAD100D58A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		309DE6761E7ABAD100D58A91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		309DE67C1E7ABAFD00D58A91 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		309DE67D1E7ABAFD00D58A91 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		309DE68D1E7AC3A400D58A91 /* Bookmarks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bookmarks.h; path = Bookmarks/Bookmarks.h; sourceTree = "<group>"; };
+		309DE68E1E7AC3A400D58A91 /* Bookmarks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bookmarks.m; path = Bookmarks/Bookmarks.m; sourceTree = "<group>"; };
+		309DE6F31E7AC73500D58A91 /* DocumentProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocumentProperties.h; path = DocumentProperties/DocumentProperties.h; sourceTree = "<group>"; };
+		309DE6F41E7AC73500D58A91 /* DocumentProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocumentProperties.m; path = DocumentProperties/DocumentProperties.m; sourceTree = "<group>"; };
+		309DE6F61E7ACDC700D58A91 /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Document.h; path = Document/Document.h; sourceTree = "<group>"; };
+		309DE6F71E7ACDC700D58A91 /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Document.m; path = Document/Document.m; sourceTree = "<group>"; };
+		309DE6F91E7AD20200D58A91 /* DrawingObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawingObjects.h; path = DrawingObjects/DrawingObjects.h; sourceTree = "<group>"; };
+		309DE6FA1E7AD20200D58A91 /* DrawingObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DrawingObjects.m; path = DrawingObjects/DrawingObjects.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		309DE65F1E7ABAD100D58A91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		309DE6591E7ABAD100D58A91 = {
+			isa = PBXGroup;
+			children = (
+				309DE6641E7ABAD100D58A91 /* Aspose.Words */,
+				309DE6631E7ABAD100D58A91 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		309DE6631E7ABAD100D58A91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				309DE6621E7ABAD100D58A91 /* Aspose.Words.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		309DE6641E7ABAD100D58A91 /* Aspose.Words */ = {
+			isa = PBXGroup;
+			children = (
+				309DE6901E7AC3A900D58A91 /* Data */,
+				309DE67F1E7ABB5400D58A91 /* Bookmarks */,
+				309DE6801E7ABB5E00D58A91 /* DocumentProperties */,
+				309DE6811E7ABB6900D58A91 /* Document */,
+				309DE6821E7ABB6F00D58A91 /* DrawingObjects */,
+				309DE6831E7ABB7A00D58A91 /* Fields */,
+				309DE6841E7ABB8100D58A91 /* HeadersAndFooters */,
+				309DE6851E7ABB8C00D58A91 /* Hyperlinks */,
+				309DE6861E7ABB9700D58A91 /* MailMerge */,
+				309DE6871E7ABBA700D58A91 /* Paragraphs */,
+				309DE6881E7ABBB100D58A91 /* Protection */,
+				309DE6891E7ABBBA00D58A91 /* Sections */,
+				309DE68A1E7ABBC300D58A91 /* SplitResource */,
+				309DE68B1E7ABBCC00D58A91 /* Text */,
+				309DE68C1E7ABBD200D58A91 /* Watermark */,
+				309DE67C1E7ABAFD00D58A91 /* Utils.h */,
+				309DE67D1E7ABAFD00D58A91 /* Utils.m */,
+				309DE6681E7ABAD100D58A91 /* AppDelegate.h */,
+				309DE6691E7ABAD100D58A91 /* AppDelegate.m */,
+				309DE66E1E7ABAD100D58A91 /* Main.storyboard */,
+				309DE6711E7ABAD100D58A91 /* Assets.xcassets */,
+				309DE6731E7ABAD100D58A91 /* LaunchScreen.storyboard */,
+				309DE6761E7ABAD100D58A91 /* Info.plist */,
+				309DE6651E7ABAD100D58A91 /* Supporting Files */,
+			);
+			path = Aspose.Words;
+			sourceTree = "<group>";
+		};
+		309DE6651E7ABAD100D58A91 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				309DE6661E7ABAD100D58A91 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		309DE67F1E7ABB5400D58A91 /* Bookmarks */ = {
+			isa = PBXGroup;
+			children = (
+				309DE68D1E7AC3A400D58A91 /* Bookmarks.h */,
+				309DE68E1E7AC3A400D58A91 /* Bookmarks.m */,
+			);
+			name = Bookmarks;
+			sourceTree = "<group>";
+		};
+		309DE6801E7ABB5E00D58A91 /* DocumentProperties */ = {
+			isa = PBXGroup;
+			children = (
+				309DE6F31E7AC73500D58A91 /* DocumentProperties.h */,
+				309DE6F41E7AC73500D58A91 /* DocumentProperties.m */,
+			);
+			name = DocumentProperties;
+			sourceTree = "<group>";
+		};
+		309DE6811E7ABB6900D58A91 /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				309DE6F61E7ACDC700D58A91 /* Document.h */,
+				309DE6F71E7ACDC700D58A91 /* Document.m */,
+			);
+			name = Document;
+			sourceTree = "<group>";
+		};
+		309DE6821E7ABB6F00D58A91 /* DrawingObjects */ = {
+			isa = PBXGroup;
+			children = (
+				309DE6F91E7AD20200D58A91 /* DrawingObjects.h */,
+				309DE6FA1E7AD20200D58A91 /* DrawingObjects.m */,
+			);
+			name = DrawingObjects;
+			sourceTree = "<group>";
+		};
+		309DE6831E7ABB7A00D58A91 /* Fields */ = {
+			isa = PBXGroup;
+			children = (
+				3003EAB81E7B9AC100E999DA /* Fields.h */,
+				3003EAB91E7B9AC100E999DA /* Fields.m */,
+			);
+			name = Fields;
+			sourceTree = "<group>";
+		};
+		309DE6841E7ABB8100D58A91 /* HeadersAndFooters */ = {
+			isa = PBXGroup;
+			children = (
+				3003EABB1E7B9E4A00E999DA /* HeadersAndFooters.h */,
+				3003EABC1E7B9E4A00E999DA /* HeadersAndFooters.m */,
+			);
+			name = HeadersAndFooters;
+			sourceTree = "<group>";
+		};
+		309DE6851E7ABB8C00D58A91 /* Hyperlinks */ = {
+			isa = PBXGroup;
+			children = (
+				3003EABE1E7B9F0E00E999DA /* Hyperlinks.h */,
+				3003EABF1E7B9F0E00E999DA /* Hyperlinks.m */,
+			);
+			name = Hyperlinks;
+			sourceTree = "<group>";
+		};
+		309DE6861E7ABB9700D58A91 /* MailMerge */ = {
+			isa = PBXGroup;
+			children = (
+				3003EAC11E7BA01F00E999DA /* MailMerge.h */,
+				3003EAC21E7BA01F00E999DA /* MailMerge.m */,
+			);
+			name = MailMerge;
+			sourceTree = "<group>";
+		};
+		309DE6871E7ABBA700D58A91 /* Paragraphs */ = {
+			isa = PBXGroup;
+			children = (
+				3003EAC41E7BA26000E999DA /* Paragraphs.h */,
+				3003EAC51E7BA26000E999DA /* Paragraphs.m */,
+			);
+			name = Paragraphs;
+			sourceTree = "<group>";
+		};
+		309DE6881E7ABBB100D58A91 /* Protection */ = {
+			isa = PBXGroup;
+			children = (
+				3003EAC71E7BA4CC00E999DA /* Protection.h */,
+				3003EAC81E7BA4CC00E999DA /* Protection.m */,
+			);
+			name = Protection;
+			sourceTree = "<group>";
+		};
+		309DE6891E7ABBBA00D58A91 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				3003EACA1E7BA84800E999DA /* Sections.h */,
+				3003EACB1E7BA84800E999DA /* Sections.m */,
+			);
+			name = Sections;
+			sourceTree = "<group>";
+		};
+		309DE68A1E7ABBC300D58A91 /* SplitResource */ = {
+			isa = PBXGroup;
+			children = (
+				3003EACD1E7BA9FA00E999DA /* SplitResource.h */,
+				3003EACE1E7BA9FA00E999DA /* SplitResource.m */,
+			);
+			name = SplitResource;
+			sourceTree = "<group>";
+		};
+		309DE68B1E7ABBCC00D58A91 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				3003EAD31E7BAA3100E999DA /* Text.h */,
+				3003EAD41E7BAA3100E999DA /* Text.m */,
+			);
+			name = Text;
+			sourceTree = "<group>";
+		};
+		309DE68C1E7ABBD200D58A91 /* Watermark */ = {
+			isa = PBXGroup;
+			children = (
+				3003EAD01E7BAA1E00E999DA /* Watermark.h */,
+				3003EAD11E7BAA1E00E999DA /* Watermark.m */,
+			);
+			name = Watermark;
+			sourceTree = "<group>";
+		};
+		309DE6901E7AC3A900D58A91 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3003EAD61E7BB4DB00E999DA /* AppendWordDocumentsExample-TestFile-Destination.doc */,
+				3003EAD71E7BB4DB00E999DA /* AppendWordDocumentsExample-TestFile-Source.doc */,
+				3003EAD81E7BB4DB00E999DA /* Aspose Logo.png */,
+				3003EAD91E7BB4DB00E999DA /* aspose-cloud.png */,
+				3003EADA1E7BB4DB00E999DA /* Customers.txt */,
+				3003EADB1E7BB4DB00E999DA /* doc-sample-hyperlink.doc */,
+				3003EADC1E7BB4DB00E999DA /* doc-sample-protect.doc */,
+				3003EADD1E7BB4DB00E999DA /* doc-sample-unprotect.doc */,
+				3003EADE1E7BB4DB00E999DA /* doc-sample-watermark.doc */,
+				3003EADF1E7BB4DB00E999DA /* doc-sample.doc */,
+				3003EAE01E7BB4DB00E999DA /* doc-sample1.doc */,
+				3003EAE11E7BB4DB00E999DA /* doc-sample2.doc */,
+				3003EAE21E7BB4DB00E999DA /* doc-sample3.doc */,
+				3003EAE31E7BB4DB00E999DA /* FormFilled.docx */,
+				3003EAE41E7BB4DB00E999DA /* google-sample.xml */,
+				3003EAE51E7BB4DB00E999DA /* header-footer.doc */,
+				3003EAE61E7BB4DB00E999DA /* header-logo.png */,
+				3003EAE71E7BB4DB00E999DA /* imagefile.doc */,
+				3003EAE81E7BB4DB00E999DA /* Invoice Template.doc */,
+				3003EAE91E7BB4DB00E999DA /* Orders.xml */,
+				3003EAEA1E7BB4DB00E999DA /* sample_EmbeddedOLE.docx */,
+				3003EAEB1E7BB4DB00E999DA /* SampleAppendDoc.docx */,
+				3003EAEC1E7BB4DB00E999DA /* SampleAppendDoc2.docx */,
+				3003EAED1E7BB4DB00E999DA /* SampleBlankWatermarkDocument.docx */,
+				3003EAEE1E7BB4DB00E999DA /* SampleBlankWordDocument.docx */,
+				3003EAEF1E7BB4DB00E999DA /* SampleExecuteTemplate.doc */,
+				3003EAF01E7BB4DB00E999DA /* SampleExecuteTemplate.docx */,
+				3003EAF11E7BB4DB00E999DA /* SampleExecuteTemplateData.txt */,
+				3003EAF21E7BB4DB00E999DA /* SampleHeaderFooterWordDocument.docx */,
+				3003EAF31E7BB4DB00E999DA /* SampleInvoiceTemplate.doc */,
+				3003EAF41E7BB4DB00E999DA /* SampleInvoiceTemplateData.txt */,
+				3003EAF51E7BB4DB00E999DA /* SampleMailMergeTemplate.docx */,
+				3003EAF61E7BB4DB00E999DA /* SampleMailMergeTemplateData.txt */,
+				3003EAF71E7BB4DB00E999DA /* SampleMailMergeTemplateImage.doc */,
+				3003EAF81E7BB4DB00E999DA /* SampleMailMergeTemplateImageData.txt */,
+				3003EAF91E7BB4DB00E999DA /* SampleOlePdfData.docx */,
+				3003EAFA1E7BB4DB00E999DA /* SampleProtectedBlankWordDocument.docx */,
+				3003EAFB1E7BB4DB00E999DA /* SampleWordDocument.docx */,
+				3003EAFC1E7BB4DB00E999DA /* test_convertlocal.docx */,
+				3003EAFD1E7BB4DB00E999DA /* test_doc.docx */,
+				3003EAFE1E7BB4DB00E999DA /* test_multi_pages.docx */,
+				3003EAFF1E7BB4DB00E999DA /* test_uploadfile.docx */,
+				3003EB001E7BB4DB00E999DA /* TestExecuteTemplate.doc */,
+				3003EB011E7BB4DB00E999DA /* TestExecuteTemplateData.txt */,
+				3003EB021E7BB4DB00E999DA /* testfile.doc */,
+				3003EB031E7BB4DB00E999DA /* testfile.txt */,
+				3003EB041E7BB4DB00E999DA /* WithRegions.doc */,
+				3003EB051E7BB4DB00E999DA /* WithRegions.xml */,
+				3003EB061E7BB4DB00E999DA /* WordFormatConverterExampleTest.doc */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		309DE6611E7ABAD100D58A91 /* Aspose.Words */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 309DE6791E7ABAD100D58A91 /* Build configuration list for PBXNativeTarget "Aspose.Words" */;
+			buildPhases = (
+				309DE65E1E7ABAD100D58A91 /* Sources */,
+				309DE65F1E7ABAD100D58A91 /* Frameworks */,
+				309DE6601E7ABAD100D58A91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Aspose.Words;
+			productName = Aspose.Words;
+			productReference = 309DE6621E7ABAD100D58A91 /* Aspose.Words.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		309DE65A1E7ABAD100D58A91 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Aspose;
+				TargetAttributes = {
+					309DE6611E7ABAD100D58A91 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 309DE65D1E7ABAD100D58A91 /* Build configuration list for PBXProject "Aspose.Words" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 309DE6591E7ABAD100D58A91;
+			productRefGroup = 309DE6631E7ABAD100D58A91 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				309DE6611E7ABAD100D58A91 /* Aspose.Words */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		309DE6601E7ABAD100D58A91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3003EB331E7BB4DB00E999DA /* testfile.doc in Resources */,
+				3003EB0B1E7BB4DB00E999DA /* Customers.txt in Resources */,
+				3003EB1A1E7BB4DB00E999DA /* Orders.xml in Resources */,
+				3003EB2F1E7BB4DB00E999DA /* test_multi_pages.docx in Resources */,
+				3003EB111E7BB4DB00E999DA /* doc-sample1.doc in Resources */,
+				3003EB261E7BB4DB00E999DA /* SampleMailMergeTemplate.docx in Resources */,
+				3003EB351E7BB4DB00E999DA /* WithRegions.doc in Resources */,
+				3003EB0A1E7BB4DB00E999DA /* aspose-cloud.png in Resources */,
+				3003EB281E7BB4DB00E999DA /* SampleMailMergeTemplateImage.doc in Resources */,
+				3003EB081E7BB4DB00E999DA /* AppendWordDocumentsExample-TestFile-Source.doc in Resources */,
+				3003EB151E7BB4DB00E999DA /* google-sample.xml in Resources */,
+				3003EB171E7BB4DB00E999DA /* header-logo.png in Resources */,
+				3003EB0C1E7BB4DB00E999DA /* doc-sample-hyperlink.doc in Resources */,
+				3003EB201E7BB4DB00E999DA /* SampleExecuteTemplate.doc in Resources */,
+				3003EB341E7BB4DB00E999DA /* testfile.txt in Resources */,
+				3003EB211E7BB4DB00E999DA /* SampleExecuteTemplate.docx in Resources */,
+				3003EB0F1E7BB4DB00E999DA /* doc-sample-watermark.doc in Resources */,
+				309DE6751E7ABAD100D58A91 /* LaunchScreen.storyboard in Resources */,
+				3003EB191E7BB4DB00E999DA /* Invoice Template.doc in Resources */,
+				3003EB141E7BB4DB00E999DA /* FormFilled.docx in Resources */,
+				3003EB071E7BB4DB00E999DA /* AppendWordDocumentsExample-TestFile-Destination.doc in Resources */,
+				3003EB1E1E7BB4DB00E999DA /* SampleBlankWatermarkDocument.docx in Resources */,
+				3003EB121E7BB4DB00E999DA /* doc-sample2.doc in Resources */,
+				3003EB221E7BB4DB00E999DA /* SampleExecuteTemplateData.txt in Resources */,
+				3003EB161E7BB4DB00E999DA /* header-footer.doc in Resources */,
+				309DE6721E7ABAD100D58A91 /* Assets.xcassets in Resources */,
+				3003EB231E7BB4DB00E999DA /* SampleHeaderFooterWordDocument.docx in Resources */,
+				3003EB371E7BB4DB00E999DA /* WordFormatConverterExampleTest.doc in Resources */,
+				3003EB1F1E7BB4DB00E999DA /* SampleBlankWordDocument.docx in Resources */,
+				3003EB2B1E7BB4DB00E999DA /* SampleProtectedBlankWordDocument.docx in Resources */,
+				3003EB2C1E7BB4DB00E999DA /* SampleWordDocument.docx in Resources */,
+				3003EB101E7BB4DB00E999DA /* doc-sample.doc in Resources */,
+				3003EB2D1E7BB4DB00E999DA /* test_convertlocal.docx in Resources */,
+				3003EB1D1E7BB4DB00E999DA /* SampleAppendDoc2.docx in Resources */,
+				3003EB131E7BB4DB00E999DA /* doc-sample3.doc in Resources */,
+				3003EB181E7BB4DB00E999DA /* imagefile.doc in Resources */,
+				3003EB091E7BB4DB00E999DA /* Aspose Logo.png in Resources */,
+				3003EB241E7BB4DB00E999DA /* SampleInvoiceTemplate.doc in Resources */,
+				3003EB321E7BB4DB00E999DA /* TestExecuteTemplateData.txt in Resources */,
+				309DE6701E7ABAD100D58A91 /* Main.storyboard in Resources */,
+				3003EB301E7BB4DB00E999DA /* test_uploadfile.docx in Resources */,
+				3003EB311E7BB4DB00E999DA /* TestExecuteTemplate.doc in Resources */,
+				3003EB0D1E7BB4DB00E999DA /* doc-sample-protect.doc in Resources */,
+				3003EB361E7BB4DB00E999DA /* WithRegions.xml in Resources */,
+				3003EB291E7BB4DB00E999DA /* SampleMailMergeTemplateImageData.txt in Resources */,
+				3003EB251E7BB4DB00E999DA /* SampleInvoiceTemplateData.txt in Resources */,
+				3003EB271E7BB4DB00E999DA /* SampleMailMergeTemplateData.txt in Resources */,
+				3003EB2E1E7BB4DB00E999DA /* test_doc.docx in Resources */,
+				3003EB1C1E7BB4DB00E999DA /* SampleAppendDoc.docx in Resources */,
+				3003EB2A1E7BB4DB00E999DA /* SampleOlePdfData.docx in Resources */,
+				3003EB1B1E7BB4DB00E999DA /* sample_EmbeddedOLE.docx in Resources */,
+				3003EB0E1E7BB4DB00E999DA /* doc-sample-unprotect.doc in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		309DE65E1E7ABAD100D58A91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3003EAC61E7BA26000E999DA /* Paragraphs.m in Sources */,
+				309DE6F81E7ACDC700D58A91 /* Document.m in Sources */,
+				309DE6FB1E7AD20200D58A91 /* DrawingObjects.m in Sources */,
+				3003EAD51E7BAA3100E999DA /* Text.m in Sources */,
+				3003EACC1E7BA84800E999DA /* Sections.m in Sources */,
+				3003EAD21E7BAA1E00E999DA /* Watermark.m in Sources */,
+				3003EAC01E7B9F0E00E999DA /* Hyperlinks.m in Sources */,
+				3003EAC31E7BA01F00E999DA /* MailMerge.m in Sources */,
+				3003EABA1E7B9AC100E999DA /* Fields.m in Sources */,
+				309DE67E1E7ABAFD00D58A91 /* Utils.m in Sources */,
+				3003EABD1E7B9E4A00E999DA /* HeadersAndFooters.m in Sources */,
+				3003EACF1E7BA9FA00E999DA /* SplitResource.m in Sources */,
+				309DE66A1E7ABAD100D58A91 /* AppDelegate.m in Sources */,
+				309DE6671E7ABAD100D58A91 /* main.m in Sources */,
+				309DE6F51E7AC73500D58A91 /* DocumentProperties.m in Sources */,
+				309DE68F1E7AC3A400D58A91 /* Bookmarks.m in Sources */,
+				3003EAC91E7BA4CC00E999DA /* Protection.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		309DE66E1E7ABAD100D58A91 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				309DE66F1E7ABAD100D58A91 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		309DE6731E7ABAD100D58A91 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				309DE6741E7ABAD100D58A91 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		309DE6771E7ABAD100D58A91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		309DE6781E7ABAD100D58A91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		309DE67A1E7ABAD100D58A91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Aspose.Words/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aspose.Aspose-Words";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		309DE67B1E7ABAD100D58A91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Aspose.Words/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aspose.Aspose-Words";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		309DE65D1E7ABAD100D58A91 /* Build configuration list for PBXProject "Aspose.Words" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				309DE6771E7ABAD100D58A91 /* Debug */,
+				309DE6781E7ABAD100D58A91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		309DE6791E7ABAD100D58A91 /* Build configuration list for PBXNativeTarget "Aspose.Words" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				309DE67A1E7ABAD100D58A91 /* Debug */,
+				309DE67B1E7ABAD100D58A91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 309DE65A1E7ABAD100D58A91 /* Project object */;
+}

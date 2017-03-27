@@ -1,6 +1,7 @@
 <?php
 
 use Aspose\Words\WordsApi;
+use Aspose\Words\AsposeApp;
 
 class WordsApiTest extends PHPUnit_Framework_TestCase {
     
@@ -8,6 +9,8 @@ class WordsApiTest extends PHPUnit_Framework_TestCase {
 
     protected function setUp()
     {        
+        AsposeApp::$appSID = "";
+        AsposeApp::$apiKey = "";
         $this->words = new WordsApi();
     }
     
@@ -105,10 +108,10 @@ class WordsApiTest extends PHPUnit_Framework_TestCase {
     public function testGetDocumentDrawingObjectByIndexWithFormat()
     {       
         $result = $this->words->GetDocumentDrawingObjectByIndexWithFormat($name="OLE.docx", $objectIndex="0", $format="png", $storage = null, $folder = null);
-        $fh = fopen(getcwd(). '/Data/Output/OLE.png', 'w');
+        $fh = fopen(getcwd(). '/../../../Data/Output/OLE.png', 'w');
         fwrite($fh, $result);
         fclose($fh);
-        $this->assertFileExists(getcwd(). '/Data/Output/OLE.png');
+        $this->assertFileExists(getcwd(). '/../../../Data/Output/OLE.png');
     }
     
     public function testGetDocumentDrawingObjectImageData()
@@ -198,10 +201,10 @@ class WordsApiTest extends PHPUnit_Framework_TestCase {
     public function testGetDocumentWithFormat()
     {       
         $result = $this->words->GetDocumentWithFormat($name="Test.docx", $format="pdf", $storage = null, $folder = null, $outPath = null);        
-        $fh = fopen(getcwd(). '/Data/Output/Test.pdf', 'w');
+        $fh = fopen(getcwd(). '/../../../Data/Output/Test.pdf', 'w');
         fwrite($fh, $result);
         fclose($fh);
-        $this->assertFileExists(getcwd(). '/Data/Output/Test.pdf');
+        $this->assertFileExists(getcwd(). '/../../../Data/Output/Test.pdf');
     }
     
     public function testGetFormField()
@@ -254,7 +257,7 @@ class WordsApiTest extends PHPUnit_Framework_TestCase {
     
     public function testPostDocumentExecuteMailMerge()
     {       
-        $file = getcwd() . '/Data/Input/SampleMailMergeTemplateData.xml';
+        $file = getcwd(). '/../../../Data/Input/SampleMailMergeTemplateData.xml';
         $result = $this->words->PostDocumentExecuteMailMerge($name="SampleMailMergeTemplate.docx", $withRegions='false', $mailMergeDataFile = null, $cleanup = null, $filename = null, $storage = null, $folder = null, $useWholeParagraphAsRegion = null, $file);
         $this->assertEquals(200, $result->Code);
     }
@@ -315,7 +318,7 @@ class WordsApiTest extends PHPUnit_Framework_TestCase {
     
     public function testPostInsertDocumentWatermarkImage()
     {
-        $file = getcwd() . '/Data/Input/watermark.png';
+        $file = getcwd(). '/../../../Data/Input/watermark.png';
         $result = $this->words->PostInsertDocumentWatermarkImage($name="Test.docx", $filename = null, $rotationAngle = null, $image = null, $storage = null, $folder = null, $file);
         $this->assertEquals(200, $result->Code);
     }
@@ -397,12 +400,12 @@ XML;
     
     public function testPutConvertDocument()
     {
-        $file = getcwd() . '/Data/Input/FormFilled.docx';
+        $file = getcwd(). '/../../../Data/Input/FormFilled.docx';
         $result = $this->words->PutConvertDocument($format = "pdf", $outPath = null, $file);
-        $fh = fopen(getcwd(). '/Data/Output/FormFilled.pdf', 'w');
+        $fh = fopen(getcwd(). '/../../../Data/Output/FormFilled.pdf', 'w');
         fwrite($fh, $result);
         fclose($fh);
-        $this->assertFileExists(getcwd(). '/Data/Output/FormFilled.pdf');
+        $this->assertFileExists(getcwd(). '/../../../Data/Output/FormFilled.pdf');
     }
     
     public function testPutDocumentFieldNames()
@@ -436,15 +439,15 @@ XML;
     
     public function testPutExecuteMailMergeOnline()
     {
-        $data['file2'] = new CurlFile(getcwd() . '/Data/Input/SampleMailMergeTemplate.docx', 'application/msword');
-        $data['file1'] = new CurlFile(getcwd() . '/Data/Input/SampleMailMergeTemplateData.xml', 'text/xml');
+        $data['file2'] = new CurlFile(getcwd(). '/../../../Data/Input/SampleMailMergeTemplate.docx', 'application/msword');
+        $data['file1'] = new CurlFile(getcwd(). '/../../../Data/Input/SampleMailMergeTemplateData.xml', 'text/xml');
         $result = $this->words->PutExecuteMailMergeOnline($withRegions='false', $cleanup = null, $data);
         $this->assertEquals(200, $result->Code);
     }
     
     public function testPutExecuteTemplateOnline()
     {
-        $file = getcwd() . '/Data/Input/SampleMailMergeTemplateData.xml';
+        $file = getcwd(). '/../../../Data/Input/SampleMailMergeTemplateData.xml';
         $result = $this->words->PutExecuteTemplateOnline($cleanup = null, $useWholeParagraphAsRegion = null, $withRegions = null, $file);
         $this->assertEquals(200, $result->Code);
     }

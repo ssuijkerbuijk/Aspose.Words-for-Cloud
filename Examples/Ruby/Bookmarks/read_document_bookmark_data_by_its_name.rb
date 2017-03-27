@@ -8,8 +8,8 @@ class Bookmarks
 
   def initialize
     #Get App key and App SID from https://cloud.aspose.com
-    AsposeApp.app_key_and_sid("APP_KEY", "APP_SID")
-    @words_api = WordsApi.new  
+    AsposeApp.app_key_and_sid("", "")
+    @words_api = WordsApi.new
   end
 
   def upload_file(file_name)
