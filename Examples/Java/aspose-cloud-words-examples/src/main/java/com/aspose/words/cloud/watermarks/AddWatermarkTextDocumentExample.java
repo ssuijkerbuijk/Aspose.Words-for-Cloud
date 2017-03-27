@@ -16,52 +16,54 @@ import com.aspose.words.model.WatermarkText;
 public class AddWatermarkTextDocumentExample {
 
 	public static void main(String[] args) {
-		 try {
-             // Instantiate Aspose Storage API SDK
-             StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
+		// ExStart: AddWatermarkTextDocumentExample
 
-             // Instantiate Aspose Words API SDK
-             WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
+		try {
+			// Instantiate Aspose Storage API SDK
+			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
 
-             // set input file name
-             String fileName = "SampleWordDocument.docx";
-             String destFileName = "updated-" + fileName;
-             Double rotationAngle = 0.0;
-             String storage = "AsposeDropboxStorage";
-             String folder = null;
-             String text = "New";
-             WatermarkText body = new WatermarkText();
-             body.setText("aspose.com");
+			// Instantiate Aspose Words API SDK
+			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
 
-             //upload input file to 3rd party cloud storage
-             storageApi.PutCreate(fileName, "", storage, new File(AddWatermarkTextDocumentExample.class.getResource("/" + fileName).toURI()));
+			// set input file name
+			String fileName = "SampleWordDocument.docx";
+			String destFileName = "updated-" + fileName;
+			Double rotationAngle = 0.0;
+			String storage = "AsposeDropboxStorage";
+			String folder = null;
+			String text = "New";
+			WatermarkText body = new WatermarkText();
+			body.setText("aspose.com");
 
-             // invoke Aspose.Words Cloud SDK API to add watermark text in a word document
-              DocumentResponse apiResponse = wordsApi.PostInsertWatermarkText(fileName, text, rotationAngle, destFileName, storage, folder, body);
+			// upload input file to 3rd party cloud storage
+			storageApi.PutCreate(fileName, "", storage,
+					new File(AddWatermarkTextDocumentExample.class.getResource("/" + fileName).toURI()));
 
-             if (apiResponse != null
-                             && apiResponse.getStatus().equals("OK")) {
+			// invoke Aspose.Words Cloud SDK API to add watermark text in a word
+			// document
+			DocumentResponse apiResponse = wordsApi.PostInsertWatermarkText(fileName, text, rotationAngle, destFileName,
+					storage, folder, body);
 
-                     System.out.println("Watermark text has been added successfully");
+			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 
-                     // download updated file from 3rd party cloud storage
-                     com.aspose.storage.model.ResponseMessage storageRes = storageApi
-                                     .GetDownload(destFileName,
-                                                     null, storage);
+				System.out.println("Watermark text has been added successfully");
 
-                     InputStream responseStream = storageRes.getInputStream();
+				// download updated file from 3rd party cloud storage
+				com.aspose.storage.model.ResponseMessage storageRes = storageApi.GetDownload(destFileName, null,
+						storage);
 
-                     final Path destination = Paths.get(destFileName);
+				InputStream responseStream = storageRes.getInputStream();
 
-                     Files.copy(responseStream,destination,StandardCopyOption.REPLACE_EXISTING);
+				final Path destination = Paths.get(destFileName);
 
-             }
+				Files.copy(responseStream, destination, StandardCopyOption.REPLACE_EXISTING);
 
-     } catch (Exception e) {
-             e.printStackTrace();
-     }
+			}
 
-
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// ExEnd: AddWatermarkTextDocumentExample
 
 	}
 

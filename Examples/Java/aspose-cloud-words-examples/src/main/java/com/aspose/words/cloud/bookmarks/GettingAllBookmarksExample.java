@@ -11,6 +11,7 @@ import com.aspose.words.model.BookmarksResponse;
 public class GettingAllBookmarksExample {
 
 	public static void main(String[] args) {
+		// ExStart: GettingAllBookmarksExample
 		try {
 			// Instantiate Aspose Storage API SDK
 			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
@@ -43,6 +44,7 @@ public class GettingAllBookmarksExample {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		// ExEnd: GettingAllBookmarksExample
 
 	}
 

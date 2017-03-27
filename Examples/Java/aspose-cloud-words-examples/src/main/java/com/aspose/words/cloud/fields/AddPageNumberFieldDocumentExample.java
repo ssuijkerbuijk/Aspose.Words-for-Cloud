@@ -16,42 +16,45 @@ import com.aspose.words.model.PageNumber;
 public class AddPageNumberFieldDocumentExample {
 
 	public static void main(String[] args) {
-		 try{
-             //Instantiate Aspose Storage API SDK
-             StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID,true);
+		// ExStart: AddPageNumberFieldDocumentExample
+		try {
+			// Instantiate Aspose Storage API SDK
+			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
 
-             //Instantiate Aspose Words API SDK
-             WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID,true);
+			// Instantiate Aspose Words API SDK
+			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
 
-             //set input file name
-             String fileName = "SampleWordDocument.docx";
+			// set input file name
+			String fileName = "SampleWordDocument.docx";
 
-             String storage = null;
-             String folder = null;
+			String storage = null;
+			String folder = null;
 
-             PageNumber body = new PageNumber();
-             body.setFormat("{PAGE} of {NUMPAGES}");
-             body.setAlignment("center");
+			PageNumber body = new PageNumber();
+			body.setFormat("{PAGE} of {NUMPAGES}");
+			body.setAlignment("center");
 
-             //upload input file to aspose cloud storage
-             storageApi.PutCreate(fileName, "", "", new File(AddPageNumberFieldDocumentExample.class.getResource("/" + fileName).toURI()));
+			// upload input file to aspose cloud storage
+			storageApi.PutCreate(fileName, "", "",
+					new File(AddPageNumberFieldDocumentExample.class.getResource("/" + fileName).toURI()));
 
+			// invoke Aspose.Words Cloud SDK API to insert page number field
+			// into a word document
+			DocumentResponse apiResponse = wordsApi.PostInsertPageNumbers(fileName, fileName, storage, folder, body);
 
-             //invoke Aspose.Words Cloud SDK API to insert page number field into a word document
-             DocumentResponse apiResponse = wordsApi.PostInsertPageNumbers(fileName, fileName, storage, folder, body);
+			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
+				System.out.println("Page Number Field has been inserted successfully");
+				// download updated file from cloud storage
+				com.aspose.storage.model.ResponseMessage storageRes = storageApi.GetDownload(fileName, null, null);
+				InputStream responseStream = storageRes.getInputStream();
+				final Path destination = Paths.get("c:\\temp\\" + fileName);
+				Files.copy(responseStream, destination, StandardCopyOption.REPLACE_EXISTING);
+			}
 
-             if(apiResponse!=null && apiResponse.getStatus().equals("OK")){
-                     System.out.println("Page Number Field has been inserted successfully");
-                     //download updated file from cloud storage
-                     com.aspose.storage.model.ResponseMessage storageRes = storageApi.GetDownload(fileName, null, null);
-                     InputStream responseStream = storageRes.getInputStream();
-                     final Path destination = Paths.get("c:\\temp\\" + fileName);
-                     Files.copy(responseStream, destination, StandardCopyOption.REPLACE_EXISTING);
-             }
-
-     }catch(Exception e){
-             e.printStackTrace();
-             }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// ExEnd: AddPageNumberFieldDocumentExample
 
 	}
 

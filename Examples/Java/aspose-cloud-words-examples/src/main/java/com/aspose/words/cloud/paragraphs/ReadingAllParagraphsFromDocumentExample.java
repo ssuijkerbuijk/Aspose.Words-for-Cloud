@@ -11,40 +11,43 @@ import com.aspose.words.model.ParagraphLinkCollectionResponse;
 public class ReadingAllParagraphsFromDocumentExample {
 
 	public static void main(String[] args) {
-		 try {
-             // Instantiate Aspose Storage API SDK
-             StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
+		// ExStart: ReadingAllParagraphsFromDocumentExample
 
-             // Instantiate Aspose Words API SDK
-             WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.                                                                                 appSID, true);
+		try {
+			// Instantiate Aspose Storage API SDK
+			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
 
-             // set input file name
-             String fileName = "SampleWordDocument.docx";
-             String storage = null;
-             String folder = null;
+			// Instantiate Aspose Words API SDK
+			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
 
-             //upload input file to aspose cloud storage
-             storageApi.PutCreate(fileName, "", "", new File(ReadingAllParagraphsFromDocumentExample.class.getResource("/" + fileName).toURI()));
+			// set input file name
+			String fileName = "SampleWordDocument.docx";
+			String storage = null;
+			String folder = null;
 
-             // invoke Aspose.Words Cloud SDK API to get list of paragraphs from a word document
-             ParagraphLinkCollectionResponse apiResponse = wordsApi.GetDocumentParagraphs(fileName, storage, folder);
+			// upload input file to aspose cloud storage
+			storageApi.PutCreate(fileName, "", "",
+					new File(ReadingAllParagraphsFromDocumentExample.class.getResource("/" + fileName).toURI()));
 
-             if (apiResponse != null
-                             && apiResponse.getStatus().equals("OK")) {
+			// invoke Aspose.Words Cloud SDK API to get list of paragraphs from
+			// a word document
+			ParagraphLinkCollectionResponse apiResponse = wordsApi.GetDocumentParagraphs(fileName, storage, folder);
 
-                      ParagraphLink docProperty = apiResponse.getParagraphs().getParagraphLinkList().get(0);
+			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 
-                     //display document paragraphs info
-                     for (ParagraphLink docParagraphLink : apiResponse.getParagraphs().getParagraphLinkList())
-                     {
-                        System.out.println("Link : " + docParagraphLink.getLink());
-                        System.out.println("Text : " + docParagraphLink.getText());
-                     }
-             }
+				ParagraphLink docProperty = apiResponse.getParagraphs().getParagraphLinkList().get(0);
 
-     } catch (Exception e) {
-             e.printStackTrace();
-     }
+				// display document paragraphs info
+				for (ParagraphLink docParagraphLink : apiResponse.getParagraphs().getParagraphLinkList()) {
+					System.out.println("Link : " + docParagraphLink.getLink());
+					System.out.println("Text : " + docParagraphLink.getText());
+				}
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// ExEnd: ReadingAllParagraphsFromDocumentExample
 
 	}
 

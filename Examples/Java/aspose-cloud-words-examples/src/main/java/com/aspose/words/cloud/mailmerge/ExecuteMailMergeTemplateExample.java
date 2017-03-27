@@ -15,67 +15,58 @@ import com.aspose.words.model.DocumentResponse;
 public class ExecuteMailMergeTemplateExample {
 
 	public static void main(String[] args) {
+		// ExStart: ExecuteMailMergeTemplateExample
 		try {
-            // Instantiate Aspose Storage API SDK
-            StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
+			// Instantiate Aspose Storage API SDK
+			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
 
-            // Instantiate Aspose Words API SDK
-            WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
+			// Instantiate Aspose Words API SDK
+			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
 
-            // set input file name
-            String fileName = "SampleExecuteTemplate.docx";
+			// set input file name
+			String fileName = "SampleExecuteTemplate.docx";
 
-            String cleanup = null;
-            String destFileName = "updated-" + fileName;
-            String storage = null;
-            String folder = null;
-            Boolean useWholeParagraphAsRegion = null;
-            Boolean withRegions = null;
-            File file;
+			String cleanup = null;
+			String destFileName = "updated-" + fileName;
+			String storage = null;
+			String folder = null;
+			Boolean useWholeParagraphAsRegion = null;
+			Boolean withRegions = null;
+			File file;
 
+			// upload input file to aspose cloud storage
+			storageApi.PutCreate(fileName, "", "",
+					new File(ExecuteMailMergeTemplateExample.class.getResource("/" + fileName).toURI()));
 
+			// set input file data name
+			String fileDataName = "SampleExecuteTemplateData.txt";
 
+			file = new File(ExecuteMailMergeTemplateExample.class.getResource("/" + fileDataName).toURI());
 
-           //upload input file to aspose cloud storage
-           storageApi.PutCreate(fileName, "", "", new File(ExecuteMailMergeTemplateExample.class.getResource("/" + fileName).toURI()));
+			// invoke Aspose.Words Cloud SDK API to execute mail merge template
+			// and populate a word document from XML data
+			DocumentResponse apiResponse = wordsApi.PostExecuteTemplate(fileName, cleanup, destFileName, storage,
+					folder, useWholeParagraphAsRegion, withRegions, file);
 
-           // set input file data name
-           String fileDataName = "SampleExecuteTemplateData.txt";
+			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 
-           file = new File(ExecuteMailMergeTemplateExample.class.getResource("/" + fileDataName).toURI());
+				System.out.println("mail merge template has been executed successfully");
 
-            // invoke Aspose.Words Cloud SDK API to execute mail merge template and populate a word document from XML data
-            DocumentResponse apiResponse = wordsApi
-                            .PostExecuteTemplate(
-                                            fileName,
-                                            cleanup,
-                                            destFileName,
-                                            storage,
-                                            folder,
-                                            useWholeParagraphAsRegion,
-                                            withRegions, file);
+				// download updated file from cloud storage
+				com.aspose.storage.model.ResponseMessage storageRes = storageApi.GetDownload(destFileName, null, null);
 
-            if (apiResponse != null
-                            && apiResponse.getStatus().equals("OK")) {
+				InputStream responseStream = storageRes.getInputStream();
 
-                    System.out.println("mail merge template has been executed successfully");
+				final Path destination = Paths.get("c:\\temp\\" + destFileName);
 
-                    // download updated file from cloud storage
-                    com.aspose.storage.model.ResponseMessage storageRes = storageApi
-                                    .GetDownload(destFileName,
-                                                    null, null);
+				Files.copy(responseStream, destination, StandardCopyOption.REPLACE_EXISTING);
 
-                    InputStream responseStream = storageRes.getInputStream();
+			}
 
-                    final Path destination = Paths.get("c:\\temp\\" + destFileName);
-
-                    Files.copy(responseStream,destination,StandardCopyOption.REPLACE_EXISTING);
-
-            }
-
-    } catch (Exception e) {
-            e.printStackTrace();
-    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// ExEnd: ExecuteMailMergeTemplateExample
 
 	}
 

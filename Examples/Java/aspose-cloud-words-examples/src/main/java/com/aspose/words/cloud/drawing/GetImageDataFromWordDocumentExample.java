@@ -11,40 +11,43 @@ import com.aspose.words.model.DrawingObjectResponse;
 public class GetImageDataFromWordDocumentExample {
 
 	public static void main(String[] args) {
-		try{
-            //Instantiate Aspose Storage API SDK
-            StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID,true);
+		// ExStart: GetImageDataFromWordDocumentExample
 
-            //Instantiate Aspose Words API SDK
-            WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID,true);
+		try {
+			// Instantiate Aspose Storage API SDK
+			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
 
-            //set input file name
-            String fileName = "SampleWordDocument.docx";
-            Integer objectIndex =0;
+			// Instantiate Aspose Words API SDK
+			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
 
-            String storage = null;
-            String folder = null;
+			// set input file name
+			String fileName = "SampleWordDocument.docx";
+			Integer objectIndex = 0;
 
-            //upload input file to aspose cloud storage
-            storageApi.PutCreate(fileName, "", "", new File(GetImageDataFromWordDocumentExample.class.getResource("/" + fileName).toURI()));
+			String storage = null;
+			String folder = null;
 
-            //invoke Aspose.Words Cloud SDK API to get drawing object by index present in a word document
-             DrawingObjectResponse apiResponse = wordsApi.GetDocumentDrawingObjectByIndex(fileName, objectIndex, storage, folder);
+			// upload input file to aspose cloud storage
+			storageApi.PutCreate(fileName, "", "",
+					new File(GetImageDataFromWordDocumentExample.class.getResource("/" + fileName).toURI()));
 
-            if(apiResponse!=null && apiResponse.getStatus().equals("OK")){
+			// invoke Aspose.Words Cloud SDK API to get drawing object by index
+			// present in a word document
+			DrawingObjectResponse apiResponse = wordsApi.GetDocumentDrawingObjectByIndex(fileName, objectIndex, storage,
+					folder);
 
-                    DrawingObject drawingObject = apiResponse.getDrawingObject();
-                    //display basic drawingObject info
-                    System.out.println("Height: " + drawingObject.getHeight());
-                    System.out.println("Width: " + drawingObject.getWidth());
-                }
+			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 
+				DrawingObject drawingObject = apiResponse.getDrawingObject();
+				// display basic drawingObject info
+				System.out.println("Height: " + drawingObject.getHeight());
+				System.out.println("Width: " + drawingObject.getWidth());
+			}
 
-    }catch(Exception e){
-            e.printStackTrace();
-            }
-
-
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// ExEnd: GetImageDataFromWordDocumentExample
 
 	}
 

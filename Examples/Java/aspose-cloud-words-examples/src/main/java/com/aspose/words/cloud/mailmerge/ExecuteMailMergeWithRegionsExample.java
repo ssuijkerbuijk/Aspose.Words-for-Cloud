@@ -15,59 +15,60 @@ import com.aspose.words.model.DocumentResponse;
 public class ExecuteMailMergeWithRegionsExample {
 
 	public static void main(String[] args) {
+		// ExStart: ExecuteMailMergeWithRegionsExample
+
 		try {
-            // Instantiate Aspose Storage API SDK
-            StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
+			// Instantiate Aspose Storage API SDK
+			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
 
-            // Instantiate Aspose Words API SDK
-            WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
+			// Instantiate Aspose Words API SDK
+			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
 
-            // set input file name
-            String fileName = "SampleInvoiceTemplate.doc";
+			// set input file name
+			String fileName = "SampleInvoiceTemplate.doc";
 
-            String cleanup = null;
-            String destFileName = "updated-" + fileName;
-            String mailMergeDataFile = null;
-            String storage = null;
-            String folder = null;
-            Boolean useWholeParagraphAsRegion = false;
-            Boolean withRegions = true;
-            File file;
+			String cleanup = null;
+			String destFileName = "updated-" + fileName;
+			String mailMergeDataFile = null;
+			String storage = null;
+			String folder = null;
+			Boolean useWholeParagraphAsRegion = false;
+			Boolean withRegions = true;
+			File file;
 
-            //upload input file to aspose cloud storage
-           storageApi.PutCreate(fileName, "", "", new File(ExecuteMailMergeWithRegionsExample.class.getResource("/" + fileName).toURI()));
+			// upload input file to aspose cloud storage
+			storageApi.PutCreate(fileName, "", "",
+					new File(ExecuteMailMergeWithRegionsExample.class.getResource("/" + fileName).toURI()));
 
-           // set input file data name
-           String fileDataName = "SampleInvoiceTemplateData.txt";
+			// set input file data name
+			String fileDataName = "SampleInvoiceTemplateData.txt";
 
-           file = new File(ExecuteMailMergeWithRegionsExample.class.getResource("/" + fileDataName).toURI());
+			file = new File(ExecuteMailMergeWithRegionsExample.class.getResource("/" + fileDataName).toURI());
 
-            // invoke Aspose.Words Cloud SDK API to execute mail merge and populate a word document from XML data
-            DocumentResponse apiResponse = wordsApi
-                            .PostDocumentExecuteMailMerge(fileName, withRegions, mailMergeDataFile, cleanup, destFileName, storage, folder, useWholeParagraphAsRegion, file);
+			// invoke Aspose.Words Cloud SDK API to execute mail merge and
+			// populate a word document from XML data
+			DocumentResponse apiResponse = wordsApi.PostDocumentExecuteMailMerge(fileName, withRegions,
+					mailMergeDataFile, cleanup, destFileName, storage, folder, useWholeParagraphAsRegion, file);
 
-            if (apiResponse != null
-                            && apiResponse.getStatus().equals("OK")) {
+			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 
-                    System.out.println("mail merge template has been executed successfully");
+				System.out.println("mail merge template has been executed successfully");
 
-                    // download updated file from cloud storage
-                    com.aspose.storage.model.ResponseMessage storageRes = storageApi
-                                    .GetDownload(destFileName,
-                                                    null, null);
+				// download updated file from cloud storage
+				com.aspose.storage.model.ResponseMessage storageRes = storageApi.GetDownload(destFileName, null, null);
 
-                    InputStream responseStream = storageRes.getInputStream();
+				InputStream responseStream = storageRes.getInputStream();
 
-                    final Path destination = Paths.get("c:\\temp\\" + destFileName);
+				final Path destination = Paths.get("c:\\temp\\" + destFileName);
 
-                    Files.copy(responseStream,destination,StandardCopyOption.REPLACE_EXISTING);
+				Files.copy(responseStream, destination, StandardCopyOption.REPLACE_EXISTING);
 
-            }
+			}
 
-    } catch (Exception e) {
-            e.printStackTrace();
-    }
-
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// ExEnd: ExecuteMailMergeWithRegionsExample
 	}
 
 }

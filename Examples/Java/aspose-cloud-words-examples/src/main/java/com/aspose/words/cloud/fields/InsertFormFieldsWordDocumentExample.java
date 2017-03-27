@@ -15,70 +15,57 @@ import com.aspose.words.model.FormFieldResponse;
 public class InsertFormFieldsWordDocumentExample {
 
 	public static void main(String[] args) {
-		 try {
-             // Instantiate Aspose Storage API SDK
-             StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
+		// ExStart: InsertFormFieldsWordDocumentExample
+		try {
+			// Instantiate Aspose Storage API SDK
+			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
 
-             // Instantiate Aspose Words API SDK
-             WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
+			// Instantiate Aspose Words API SDK
+			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
 
-             // set input file name
-             String fileName = "SampleBlankWordDocument.docx";
+			// set input file name
+			String fileName = "SampleBlankWordDocument.docx";
 
-             Integer sectionIndex = 0;
-             Integer paragraphIndex = 0;
-             String insertBeforeNode = "";
-             String destFileName = "Updated-" + fileName;
-             String storage = "";
-             String folder = "";
+			Integer sectionIndex = 0;
+			Integer paragraphIndex = 0;
+			String insertBeforeNode = "";
+			String destFileName = "Updated-" + fileName;
+			String storage = "";
+			String folder = "";
 
-             String xml = "<FormFieldTextInput>"
-                             + "<Name>MyName</Name>"
-                             + "<Enabled>true</Enabled>"
-                             + "<StatusText />"
-                             + "<OwnStatus>false</OwnStatus>"
-                             + "<HelpText />"
-                             + "<OwnHelp>false</OwnHelp>"
-                             + "<CalculateOnExit>true</CalculateOnExit>"
-                             + "<EntryMacro />"
-                             + "<ExitMacro />"
-                             + "<TextInputFormat>UPPERCASE</TextInputFormat>"
-                             + "<TextInputType>Regular</TextInputType>"
-                             + "<TextInputDefault>Farooq Sheikh</TextInputDefault>"
-                             + "</FormFieldTextInput>";
+			String xml = "<FormFieldTextInput>" + "<Name>MyName</Name>" + "<Enabled>true</Enabled>" + "<StatusText />"
+					+ "<OwnStatus>false</OwnStatus>" + "<HelpText />" + "<OwnHelp>false</OwnHelp>"
+					+ "<CalculateOnExit>true</CalculateOnExit>" + "<EntryMacro />" + "<ExitMacro />"
+					+ "<TextInputFormat>UPPERCASE</TextInputFormat>" + "<TextInputType>Regular</TextInputType>"
+					+ "<TextInputDefault>Farooq Sheikh</TextInputDefault>" + "</FormFieldTextInput>";
 
-            //upload input file to aspose cloud storage
-            storageApi.PutCreate(fileName, "", "", new File(InsertFormFieldsWordDocumentExample.class.getResource("/" + fileName).toURI()));
+			// upload input file to aspose cloud storage
+			storageApi.PutCreate(fileName, "", "",
+					new File(InsertFormFieldsWordDocumentExample.class.getResource("/" + fileName).toURI()));
 
+			// invoke Aspose.Words Cloud SDK API to add field in the document
+			FormFieldResponse apiResponse = wordsApi.PutFormField(fileName, sectionIndex, paragraphIndex,
+					insertBeforeNode, destFileName, storage, folder, xml.getBytes("UTF-8"));
 
-             // invoke Aspose.Words Cloud SDK API to add field in the document
-             FormFieldResponse apiResponse = wordsApi.PutFormField(
-                             fileName, sectionIndex, paragraphIndex,
-                             insertBeforeNode, destFileName,
-                             storage, folder, xml.getBytes("UTF-8"));
+			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 
-             if (apiResponse != null
-                             && apiResponse.getStatus().equals("OK")) {
+				System.out.println("Form field has been added successfully");
 
-                     System.out.println("Form field has been added successfully");
+				// download updated file from cloud storage
+				com.aspose.storage.model.ResponseMessage storageRes = storageApi.GetDownload(destFileName, null, null);
 
-                     // download updated file from cloud storage
-                     com.aspose.storage.model.ResponseMessage storageRes = storageApi
-                                     .GetDownload(destFileName,
-                                                     null, null);
+				InputStream responseStream = storageRes.getInputStream();
 
-                     InputStream responseStream = storageRes.getInputStream();
+				final Path destination = Paths.get("c:\\temp\\" + destFileName);
 
-                     final Path destination = Paths.get("c:\\temp\\" + destFileName);
+				Files.copy(responseStream, destination, StandardCopyOption.REPLACE_EXISTING);
 
-                     Files.copy(responseStream,destination,StandardCopyOption.REPLACE_EXISTING);
+			}
 
-             }
-
-     } catch (Exception e) {
-             e.printStackTrace();
-     }
-
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// ExEnd: InsertFormFieldsWordDocumentExample
 	}
 
 }
