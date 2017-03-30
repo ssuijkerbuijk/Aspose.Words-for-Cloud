@@ -21,5 +21,6 @@
 - (void)postInsertPageNumbers;
 - (void)postUpdateDocumentFields;
 - (void)putFormField;
+- (void)getDocumentFieldNames;
 
 @end

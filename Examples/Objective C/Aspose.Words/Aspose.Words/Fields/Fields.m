@@ -175,4 +175,20 @@
 //ExEnd:PutFormField
 }
 
+- (void)getDocumentFieldNames {
+//ExStart:GetDocumentFieldNames
+    
+    NSString *fileName = @"SampleMailMergeTemplate.docx";
+    [Utils uploadFile:fileName];
+    
+    [self.wordsApi getDocumentFieldNamesWithCompletionBlock:fileName
+                                          useNonMergeFields:[NSNumber numberWithBool:NO]
+                                                    storage:nil
+                                                     folder:nil
+                                          completionHandler:^(ASPFieldNamesResponse *output, NSError *error) {
+                                              NSLog(@"%@", output);
+                                          }];
+//ExEnd:GetDocumentFieldNames
+}
+
 @end

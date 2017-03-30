@@ -131,23 +131,127 @@
 }
 
 - (void)postDocumentSaveAs {
-//ExStart:PostDocumentSaveAs
-    
-    NSString *fileName = @"SampleWordDocument.docx";
-    [Utils uploadFile:fileName];
     
     ASPSaveOptionsData *saveOptions = [[ASPSaveOptionsData alloc] init];
     saveOptions.fileName = @"SampleWordDocument.pdf";
     saveOptions.saveFormat = @"pdf";
     
-    [self.wordsApi postDocumentSaveAsWithCompletionBlock:fileName
+    [self.wordsApi postDocumentSaveAsWithCompletionBlock:@"SampleWordDocument.docx"
                                          saveOptionsData:saveOptions
                                                  storage:nil
                                                   folder:nil
                                        completionHandler:^(ASPSaveResponse *output, NSError *error) {
                                            NSLog(@"%@", output);
                                        }];
-//ExEnd:PostDocumentSaveAs
+    
+    
+    saveOptions = [[ASPSaveOptionsData alloc] init];
+    saveOptions.fileName = @"AppendWordDocumentsExample-TestFile-Destination.pdf";
+    saveOptions.saveFormat = @"pdf";
+    
+    [self.wordsApi postDocumentSaveAsWithCompletionBlock:@"AppendWordDocumentsExample-TestFile-Destination.doc"
+                                         saveOptionsData:saveOptions
+                                                 storage:nil
+                                                  folder:nil
+                                       completionHandler:^(ASPSaveResponse *output, NSError *error) {
+                                           NSLog(@"%@", output);
+                                       }];
+    
+    saveOptions = [[ASPSaveOptionsData alloc] init];
+    saveOptions.fileName = @"AppendWordDocumentsExample-TestFile-Source.pdf";
+    saveOptions.saveFormat = @"pdf";
+    
+    [self.wordsApi postDocumentSaveAsWithCompletionBlock:@"AppendWordDocumentsExample-TestFile-Source.doc"
+                                         saveOptionsData:saveOptions
+                                                 storage:nil
+                                                  folder:nil
+                                       completionHandler:^(ASPSaveResponse *output, NSError *error) {
+                                           NSLog(@"%@", output);
+                                       }];
+    
+    saveOptions = [[ASPSaveOptionsData alloc] init];
+    saveOptions.fileName = @"DHA Application Form.pdf";
+    saveOptions.saveFormat = @"pdf";
+    
+    [self.wordsApi postDocumentSaveAsWithCompletionBlock:@"DHA Application Form.docx"
+                                         saveOptionsData:saveOptions
+                                                 storage:nil
+                                                  folder:nil
+                                       completionHandler:^(ASPSaveResponse *output, NSError *error) {
+                                           NSLog(@"%@", output);
+                                       }];
+    
+    saveOptions = [[ASPSaveOptionsData alloc] init];
+    saveOptions.fileName = @"FormFilled.pdf";
+    saveOptions.saveFormat = @"pdf";
+    
+    [self.wordsApi postDocumentSaveAsWithCompletionBlock:@"FormFilled.docx"
+                                         saveOptionsData:saveOptions
+                                                 storage:nil
+                                                  folder:nil
+                                       completionHandler:^(ASPSaveResponse *output, NSError *error) {
+                                           NSLog(@"%@", output);
+                                       }];
+    
+    saveOptions = [[ASPSaveOptionsData alloc] init];
+    saveOptions.fileName = @"SampleBlankWordDocument.pdf";
+    saveOptions.saveFormat = @"pdf";
+    
+    [self.wordsApi postDocumentSaveAsWithCompletionBlock:@"SampleBlankWordDocument.docx"
+                                         saveOptionsData:saveOptions
+                                                 storage:nil
+                                                  folder:nil
+                                       completionHandler:^(ASPSaveResponse *output, NSError *error) {
+                                           NSLog(@"%@", output);
+                                       }];
+    
+    saveOptions = [[ASPSaveOptionsData alloc] init];
+    saveOptions.fileName = @"doc-sample-hyperlink.pdf";
+    saveOptions.saveFormat = @"pdf";
+    
+    [self.wordsApi postDocumentSaveAsWithCompletionBlock:@"doc-sample-hyperlink.doc"
+                                         saveOptionsData:saveOptions
+                                                 storage:nil
+                                                  folder:nil
+                                       completionHandler:^(ASPSaveResponse *output, NSError *error) {
+                                           NSLog(@"%@", output);
+                                       }];
+    
+    saveOptions = [[ASPSaveOptionsData alloc] init];
+    saveOptions.fileName = @"doc-sample-protect.pdf";
+    saveOptions.saveFormat = @"pdf";
+    
+    [self.wordsApi postDocumentSaveAsWithCompletionBlock:@"doc-sample-protect.doc"
+                                         saveOptionsData:saveOptions
+                                                 storage:nil
+                                                  folder:nil
+                                       completionHandler:^(ASPSaveResponse *output, NSError *error) {
+                                           NSLog(@"%@", output);
+                                       }];
+    
+    saveOptions = [[ASPSaveOptionsData alloc] init];
+    saveOptions.fileName = @"doc-sample-unprotect.pdf";
+    saveOptions.saveFormat = @"pdf";
+    
+    [self.wordsApi postDocumentSaveAsWithCompletionBlock:@"doc-sample-unprotect.doc"
+                                         saveOptionsData:saveOptions
+                                                 storage:nil
+                                                  folder:nil
+                                       completionHandler:^(ASPSaveResponse *output, NSError *error) {
+                                           NSLog(@"%@", output);
+                                       }];
+    
+    saveOptions = [[ASPSaveOptionsData alloc] init];
+    saveOptions.fileName = @"doc-sample-watermark.pdf";
+    saveOptions.saveFormat = @"pdf";
+    
+    [self.wordsApi postDocumentSaveAsWithCompletionBlock:@"doc-sample-watermark.doc"
+                                         saveOptionsData:saveOptions
+                                                 storage:nil
+                                                  folder:nil
+                                       completionHandler:^(ASPSaveResponse *output, NSError *error) {
+                                           NSLog(@"%@", output);
+                                       }];
 }
 
 - (void)postLoadWebDocument {

@@ -76,6 +76,7 @@
     [fields postInsertPageNumbers];
     [fields postUpdateDocumentFields];
     [fields putFormField];
+    [fields getDocumentFieldNames];
     
     HeadersAndFooters *headersAndFooters = [[HeadersAndFooters alloc] init];
     [headersAndFooters deleteHeadersFooters];
