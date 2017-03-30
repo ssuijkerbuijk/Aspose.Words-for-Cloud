@@ -10,6 +10,8 @@ import com.aspose.words.model.DocumentProperty;
 
 public class ReadingAllDocumentPropertiesExample {
 	public static void main(String[] argv) {
+		// ExStart: ReadingAllDocumentPropertiesExample
+
 		try {
 			// Instantiate Aspose Storage API SDK
 			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
@@ -42,5 +44,7 @@ public class ReadingAllDocumentPropertiesExample {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		// ExEnd: ReadingAllDocumentPropertiesExample
+
 	}
 }

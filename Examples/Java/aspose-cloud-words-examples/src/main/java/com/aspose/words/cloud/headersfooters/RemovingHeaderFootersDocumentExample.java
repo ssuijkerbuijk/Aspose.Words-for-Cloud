@@ -15,48 +15,51 @@ import com.aspose.words.model.SaaSposeResponse;
 public class RemovingHeaderFootersDocumentExample {
 
 	public static void main(String[] args) {
-		   try {
-               // Instantiate Aspose Storage API SDK
-               StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
+		// ExStart: RemovingHeaderFootersDocumentExample
+		try {
+			// Instantiate Aspose Storage API SDK
+			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
 
-               // Instantiate Aspose Words API SDK
-               WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
+			// Instantiate Aspose Words API SDK
+			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
 
-               // set input file name
-               String fileName = "SampleHeaderFooterWordDocument.docx";
+			// set input file name
+			String fileName = "SampleHeaderFooterWordDocument.docx";
 
-               String destFileName = "updated-" + fileName;
-               String headersFootersTypes = null;
-               String storage = null;
-               String folder = null;
+			String destFileName = "updated-" + fileName;
+			String headersFootersTypes = null;
+			String storage = null;
+			String folder = null;
+			String revisionDateTime="2017-02-20";
+			String revisionAuthor="Mateen";
+			// upload input file to aspose cloud storage
+			storageApi.PutCreate(fileName, "", "",
+					new File(RemovingHeaderFootersDocumentExample.class.getResource("/" + fileName).toURI()));
 
-               //upload input file to aspose cloud storage
-               storageApi.PutCreate(fileName, "", "", new File(RemovingHeaderFootersDocumentExample.class.getResource("/" + fileName).toURI()));
+			// invoke Aspose.Words Cloud SDK API to remove all headers and
+			// footers from a word document
+			SaaSposeResponse apiResponse = wordsApi.DeleteHeadersFooters(fileName, headersFootersTypes, destFileName,
+					storage, folder,revisionAuthor,revisionDateTime);
 
-               // invoke Aspose.Words Cloud SDK API to remove all headers and footers from a word document
-               SaaSposeResponse apiResponse = wordsApi.DeleteHeadersFooters(fileName, headersFootersTypes, destFileName, storage, folder);
+			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 
-               if (apiResponse != null
-                               && apiResponse.getStatus().equals("OK")) {
+				System.out.println("All headers and footers have been deleted successfully");
 
-                       System.out.println("All headers and footers have been deleted successfully");
+				// download updated file from cloud storage
+				com.aspose.storage.model.ResponseMessage storageRes = storageApi.GetDownload(destFileName, null, null);
 
-                       // download updated file from cloud storage
-                       com.aspose.storage.model.ResponseMessage storageRes = storageApi
-                                       .GetDownload(destFileName,
-                                                       null, null);
+				InputStream responseStream = storageRes.getInputStream();
 
-                       InputStream responseStream = storageRes.getInputStream();
+				final Path destination = Paths.get(destFileName);
 
-                       final Path destination = Paths.get(destFileName);
+				Files.copy(responseStream, destination, StandardCopyOption.REPLACE_EXISTING);
 
-                       Files.copy(responseStream,destination,StandardCopyOption.REPLACE_EXISTING);
+			}
 
-               }
-
-       } catch (Exception e) {
-               e.printStackTrace();
-       }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// ExEnd: RemovingHeaderFootersDocumentExample
 
 	}
 

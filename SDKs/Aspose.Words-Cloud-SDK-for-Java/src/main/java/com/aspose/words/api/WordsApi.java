@@ -495,7 +495,7 @@ try {
 	  else
 	  resourcePath = resourcePath.replaceAll("[&?]withRegions.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
-      "application/xml"};
+      "application/json"};
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
 
@@ -1529,7 +1529,7 @@ try {
 	  else
 	  resourcePath = resourcePath.replaceAll("[&?]folder.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
-      "application/xml"};
+      "application/json"};
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
 
@@ -2492,7 +2492,7 @@ try {
 	  else
 	  resourcePath = resourcePath.replaceAll("[&?]folder.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
-      "application/xml"};
+      "application/json"};
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
 
@@ -2519,7 +2519,7 @@ try {
 	* @return SaaSposeResponse
 	*/
 
-  public SaaSposeResponse DeleteHeadersFooters (String name, String headersFootersTypes, String filename, String storage, String folder) {
+  public SaaSposeResponse DeleteHeadersFooters (String name, String headersFootersTypes, String filename, String storage, String folder, String revisionAuthor ,String revisionDateTime) {
     Object postBody = null;
     // verify required params are set
     if(name == null ) {
@@ -2850,7 +2850,7 @@ try {
 	  else
 	  resourcePath = resourcePath.replaceAll("[&?]useWholeParagraphAsRegion.*?(?=&|\\?|$)", "");
     String[] contentTypes = {
-      "application/xml"};
+      "application/json"};
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
 

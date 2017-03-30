@@ -10,6 +10,7 @@ import com.aspose.words.model.DocumentResponse;
 public class UpdatingAllFieldsDocumentExample {
 
 	public static void main(String[] args) {
+		// ExStart: UpdatingAllFieldsDocumentExample
 		try {
 			// Instantiate Aspose Storage API SDK
 			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
@@ -38,6 +39,7 @@ public class UpdatingAllFieldsDocumentExample {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		// ExEnd: UpdatingAllFieldsDocumentExample
 
 	}
 

@@ -16,6 +16,7 @@ import com.aspose.words.model.SplitDocumentResponse;
 public class SplitDocumentExample {
 
 	public static void main(String... argc) {
+		// ExStart: SplitDocumentExample
 		try {
 			// Instantiate Aspose Storage API SDK
 			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
@@ -57,6 +58,7 @@ public class SplitDocumentExample {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		// ExEnd: SplitDocumentExample
 
 	}
 }

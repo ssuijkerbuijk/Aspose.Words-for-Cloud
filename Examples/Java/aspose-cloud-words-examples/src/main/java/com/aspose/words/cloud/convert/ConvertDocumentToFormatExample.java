@@ -11,15 +11,12 @@ import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
 import com.aspose.words.model.ResponseMessage;
+import com.aspose.words.model.SaveOptions;
 
-/**
- * Hello world!
- *
- */
 public class ConvertDocumentToFormatExample {
-	
-	
+
 	public static void main(String... argc) {
+		// ExStart: ConvertDocumentToFormatExample
 		try {
 			// Instantiate Aspose Storage API SDK
 			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
@@ -40,6 +37,9 @@ public class ConvertDocumentToFormatExample {
 			storageApi.PutCreate(fileName, "", "",
 					new File(ConvertDocumentToFormatExample.class.getResource("/" + fileName).toURI()));
 
+			
+			
+			
 			// invoke Aspose.Words Cloud SDK API to convert words document to
 			// required format
 			ResponseMessage apiResponse = wordsApi.GetDocumentWithFormat(fileName, format, storage, folder, outPath);
@@ -54,5 +54,6 @@ public class ConvertDocumentToFormatExample {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		// ExEnd: ConvertDocumentToFormatExample
 	}
 }

@@ -18,7 +18,7 @@ import com.aspose.words.model.DocumentResponse;
 public class AppendDocumentExample {
 
 	public static void main(String[] args) {
-
+		// ExStart: AppendDocumentExample
 		try {
 			// Instantiate Aspose Storage API SDK
 			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
@@ -64,6 +64,7 @@ public class AppendDocumentExample {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		// ExEnd: AppendDocumentExample
 
 	}
 

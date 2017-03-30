@@ -10,35 +10,40 @@ import com.aspose.words.model.SectionResponse;
 public class ReadingParticularSectionFromDocumentExample {
 
 	public static void main(String[] args) {
-		try{
-            //Instantiate Aspose Storage API SDK
-            StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID,true);
+		// ExStart: ReadingParticularSectionFromDocumentExample
 
-            //Instantiate Aspose Words API SDK
-            WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID,true);
+		try {
+			// Instantiate Aspose Storage API SDK
+			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
 
-            //set input file name
-            String fileName = "SampleWordDocument.docx";
+			// Instantiate Aspose Words API SDK
+			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
 
-            Integer sectionIndex = 0;
-            String storage = null;
-            String folder = null;
+			// set input file name
+			String fileName = "SampleWordDocument.docx";
 
-            //upload input file to aspose cloud storage
-            storageApi.PutCreate(fileName, "", "", new File(ReadingParticularSectionFromDocumentExample.class.getResource("/" + fileName).toURI()));
+			Integer sectionIndex = 0;
+			String storage = null;
+			String folder = null;
 
-            //invoke Aspose.Words Cloud SDK API to get a specific section present from a word document
-              SectionResponse apiResponse = wordsApi.GetSection(fileName, sectionIndex, storage, folder);
+			// upload input file to aspose cloud storage
+			storageApi.PutCreate(fileName, "", "",
+					new File(ReadingParticularSectionFromDocumentExample.class.getResource("/" + fileName).toURI()));
 
-            if(apiResponse!=null && apiResponse.getStatus().equals("OK")){
-                    //get section href
-                    System.out.println(apiResponse.getSection().getLink().getHref());
+			// invoke Aspose.Words Cloud SDK API to get a specific section
+			// present from a word document
+			SectionResponse apiResponse = wordsApi.GetSection(fileName, sectionIndex, storage, folder);
 
-            }
+			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
+				// get section href
+				System.out.println(apiResponse.getSection().getLink().getHref());
 
-    }catch(Exception e){
-            e.printStackTrace();
-            }
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// ExEnd: ReadingParticularSectionFromDocumentExample
 
 	}
 

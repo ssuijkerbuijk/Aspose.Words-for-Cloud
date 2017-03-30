@@ -8,37 +8,41 @@ import com.aspose.words.cloud.config.Configuration;
 import com.aspose.words.model.FieldNamesResponse;
 
 public class GetMergeFieldsFromDocumentExample {
-	public static void main(String[] argv){
-		 try{
-             //Instantiate Aspose Storage API SDK
-             StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID,true);
+	public static void main(String[] argv) {
+		// ExStart: GetMergeFieldsFromDocumentExample
+		try {
+			// Instantiate Aspose Storage API SDK
+			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
 
-             //Instantiate Aspose Words API SDK
-             WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID,true);
+			// Instantiate Aspose Words API SDK
+			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
 
-             //set input file name
-             String fileName = "SampleMailMergeTemplate.docx";
+			// set input file name
+			String fileName = "SampleMailMergeTemplate.docx";
 
-             String storage = null;
-             String folder = null;
+			String storage = null;
+			String folder = null;
 
-             //upload input file to aspose cloud storage
-             storageApi.PutCreate(fileName, "", "", new File(GetMergeFieldsFromDocumentExample.class.getResource("/" + fileName).toURI()));
+			// upload input file to aspose cloud storage
+			storageApi.PutCreate(fileName, "", "",
+					new File(GetMergeFieldsFromDocumentExample.class.getResource("/" + fileName).toURI()));
 
-             //invoke Aspose.Words Cloud SDK API to get merge field names from a word document
-              FieldNamesResponse apiResponse = wordsApi.GetDocumentFieldNames(fileName, false, storage, folder);
+			// invoke Aspose.Words Cloud SDK API to get merge field names from a
+			// word document
+			FieldNamesResponse apiResponse = wordsApi.GetDocumentFieldNames(fileName, false, storage, folder);
 
-             if(apiResponse!=null && apiResponse.getStatus().equals("OK")){
+			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 
-                     //Get all merge field names from document
-                     for( String fieldName : apiResponse.getFieldNames().getNames()){
-                             System.out.println(fieldName);
+				// Get all merge field names from document
+				for (String fieldName : apiResponse.getFieldNames().getNames()) {
+					System.out.println(fieldName);
 
-                        }
-             }
+				}
+			}
 
-     }catch(Exception e){
-             e.printStackTrace();
-             }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// ExEnd: GetMergeFieldsFromDocumentExample
 	}
 }

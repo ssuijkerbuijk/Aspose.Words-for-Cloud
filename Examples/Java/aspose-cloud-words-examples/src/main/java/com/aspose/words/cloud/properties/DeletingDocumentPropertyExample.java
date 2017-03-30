@@ -10,34 +10,39 @@ import com.aspose.words.model.SaaSposeResponse;
 public class DeletingDocumentPropertyExample {
 
 	public static void main(String[] args) {
+		// ExStart: DeletingDocumentPropertyExample
+
 		try {
-            // Instantiate Aspose Storage API SDK
-            StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
+			// Instantiate Aspose Storage API SDK
+			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
 
-            // Instantiate Aspose Words API SDK
-            WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
+			// Instantiate Aspose Words API SDK
+			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
 
-            // set input file name
-            String fileName = "SampleWordDocument.docx";
-            String propertyName = "AsposeAuthor";
-            String storage = null;
-            String folder = null;
+			// set input file name
+			String fileName = "SampleWordDocument.docx";
+			String propertyName = "AsposeAuthor";
+			String storage = null;
+			String folder = null;
 
-            //upload input file to aspose cloud storage
-            storageApi.PutCreate(fileName, "", "", new File(DeletingDocumentPropertyExample.class.getResource("/" + fileName).toURI()));
+			// upload input file to aspose cloud storage
+			storageApi.PutCreate(fileName, "", "",
+					new File(DeletingDocumentPropertyExample.class.getResource("/" + fileName).toURI()));
 
-            // invoke Aspose.Words Cloud SDK API to delete document property by given name from a word document
-            SaaSposeResponse apiResponse = wordsApi.DeleteDocumentProperty(fileName, propertyName, fileName, storage, folder);
+			// invoke Aspose.Words Cloud SDK API to delete document property by
+			// given name from a word document
+			SaaSposeResponse apiResponse = wordsApi.DeleteDocumentProperty(fileName, propertyName, fileName, storage,
+					folder);
 
-            if (apiResponse != null
-                            && apiResponse.getStatus().equals("OK")) {
+			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 
-                    System.out.println("The document property has been removed successfully");
-            }
+				System.out.println("The document property has been removed successfully");
+			}
 
-    } catch (Exception e) {
-            e.printStackTrace();
-    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// ExEnd: DeletingDocumentPropertyExample
 
 	}
 

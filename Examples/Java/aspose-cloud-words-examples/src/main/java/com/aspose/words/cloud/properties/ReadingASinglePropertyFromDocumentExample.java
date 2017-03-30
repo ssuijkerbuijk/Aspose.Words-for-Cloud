@@ -11,41 +11,44 @@ import com.aspose.words.model.DocumentPropertyResponse;
 public class ReadingASinglePropertyFromDocumentExample {
 
 	public static void main(String[] args) {
-		try{
-		// Instantiate Aspose Storage API SDK
-        StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
+		// ExStart: ReadingASinglePropertyFromDocumentExample
 
-        // Instantiate Aspose Words API SDK
-        WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
+		try {
+			// Instantiate Aspose Storage API SDK
+			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
 
-        // set input file name
-        String fileName = "SampleWordDocument.docx";
-        String propertyName = "Author";
-        String storage = null;
-        String folder = null;
+			// Instantiate Aspose Words API SDK
+			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
 
-        //upload input file to aspose cloud storage
-        storageApi.PutCreate(fileName, "", "", new File(ReadingASinglePropertyFromDocumentExample.class.getResource("/" + fileName).toURI()));
+			// set input file name
+			String fileName = "SampleWordDocument.docx";
+			String propertyName = "Author";
+			String storage = null;
+			String folder = null;
 
-        // invoke Aspose.Words Cloud SDK API to get document property by given name from a word document
-        DocumentPropertyResponse apiResponse = wordsApi.GetDocumentProperty(fileName, propertyName, storage, folder);
+			// upload input file to aspose cloud storage
+			storageApi.PutCreate(fileName, "", "",
+					new File(ReadingASinglePropertyFromDocumentExample.class.getResource("/" + fileName).toURI()));
 
-        if (apiResponse != null
-                        && apiResponse.getStatus().equals("OK")) {
+			// invoke Aspose.Words Cloud SDK API to get document property by
+			// given name from a word document
+			DocumentPropertyResponse apiResponse = wordsApi.GetDocumentProperty(fileName, propertyName, storage,
+					folder);
 
-                DocumentProperty docProperty = apiResponse.getDocumentProperty();
+			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 
-                   if(docProperty !=null){
-                           //display document property info
-                           System.out.println(docProperty.getName() + "  :  " + docProperty.getValue() );
-                   }
-        }
+				DocumentProperty docProperty = apiResponse.getDocumentProperty();
 
-} catch (Exception e) {
-        e.printStackTrace();
-}
+				if (docProperty != null) {
+					// display document property info
+					System.out.println(docProperty.getName() + "  :  " + docProperty.getValue());
+				}
+			}
 
-
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// ExEnd: ReadingASinglePropertyFromDocumentExample
 
 	}
 

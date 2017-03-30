@@ -9,42 +9,48 @@ import com.aspose.words.model.Hyperlink;
 import com.aspose.words.model.HyperlinkResponse;
 
 public class ReadingASingleHyperkFromDocumentExample {
-	
-	public static void main(String[] argv){
-		
-         try {
-                 // Instantiate Aspose Storage API SDK
-                 StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
 
-                 // Instantiate Aspose Words API SDK
-                 WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
+	public static void main(String[] argv) {
+		// ExStart: ReadingASingleHyperkFromDocumentExample
 
-                 // set input file name
-                 String fileName = "SampleWordDocument.docx";
-                 Integer hyperlinkIndex = 0;
-                 String storage = null;
-                 String folder = null;
+		try {
+			// Instantiate Aspose Storage API SDK
+			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
 
-                 //upload input file to aspose cloud storage
-                 storageApi.PutCreate(fileName, "", "", new File(ReadingASingleHyperkFromDocumentExample.class.getResource("/" + fileName).toURI()));
+			// Instantiate Aspose Words API SDK
+			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
 
-                 // invoke Aspose.Words Cloud SDK API to get a particular hyperlink in a word document
-                 HyperlinkResponse apiResponse = wordsApi.GetDocumentHyperlinkByIndex(fileName, hyperlinkIndex, storage, folder);
+			// set input file name
+			String fileName = "SampleWordDocument.docx";
+			Integer hyperlinkIndex = 0;
+			String storage = null;
+			String folder = null;
 
-                 if (apiResponse != null
-                                 && apiResponse.getStatus().equals("OK")) {
+			// upload input file to aspose cloud storage
+			storageApi.PutCreate(fileName, "", "",
+					new File(ReadingASingleHyperkFromDocumentExample.class.getResource("/" + fileName).toURI()));
 
-                         Hyperlink hyperlink = apiResponse.getHyperlink();
+			// invoke Aspose.Words Cloud SDK API to get a particular hyperlink
+			// in a word document
+			HyperlinkResponse apiResponse = wordsApi.GetDocumentHyperlinkByIndex(fileName, hyperlinkIndex, storage,
+					folder);
 
-                                 if(hyperlink !=null){
-                                         //display the hyperlink info
-                                         System.out.println("Display Text: " + hyperlink.getDisplayText() + " Value: " + hyperlink.getValue() + " link: " + hyperlink.getLink().getHref());
-                                 }
-                 }
+			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 
-         } catch (Exception e) {
-                 e.printStackTrace();
-         }
+				Hyperlink hyperlink = apiResponse.getHyperlink();
+
+				if (hyperlink != null) {
+					// display the hyperlink info
+					System.out.println("Display Text: " + hyperlink.getDisplayText() + " Value: " + hyperlink.getValue()
+							+ " link: " + hyperlink.getLink().getHref());
+				}
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// ExEnd: ReadingASingleHyperkFromDocumentExample
+
 	}
 
 }

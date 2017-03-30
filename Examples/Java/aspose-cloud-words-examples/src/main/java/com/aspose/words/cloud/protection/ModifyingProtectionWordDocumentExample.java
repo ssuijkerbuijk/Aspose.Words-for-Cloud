@@ -16,50 +16,54 @@ import com.aspose.words.model.ProtectionRequest;
 public class ModifyingProtectionWordDocumentExample {
 
 	public static void main(String[] args) {
-		  try {
-              // Instantiate Aspose Storage API SDK
-              StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
+		// ExStart: ModifyingProtectionWordDocumentExample
 
-              // Instantiate Aspose Words API SDK
-              WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
+		try {
+			// Instantiate Aspose Storage API SDK
+			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
 
-              // set input file name
-              String fileName = "SampleProtectedBlankWordDocument.docx";
-              String destFileName = fileName;
-              String storage = null;
-              String folder = null;
+			// Instantiate Aspose Words API SDK
+			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
 
-              ProtectionRequest body = new ProtectionRequest();
-              body.setPassword("aspose");
-              body.setNewPassword("");
-              body.setProtectionType("NoProtection");
+			// set input file name
+			String fileName = "SampleProtectedBlankWordDocument.docx";
+			String destFileName = fileName;
+			String storage = null;
+			String folder = null;
 
-              //upload input file to aspose cloud storage
-              storageApi.PutCreate(fileName, "", "", new File(ModifyingProtectionWordDocumentExample.class.getResource("/" + fileName).toURI()));
+			ProtectionRequest body = new ProtectionRequest();
+			body.setPassword("aspose");
+			body.setNewPassword("");
+			body.setProtectionType("NoProtection");
 
-              // invoke Aspose.Words Cloud SDK API to modify protection of a word document
-              ProtectionDataResponse apiResponse = wordsApi.PostChangeDocumentProtection(fileName, destFileName, storage, folder, body);
+			// upload input file to aspose cloud storage
+			storageApi.PutCreate(fileName, "", "",
+					new File(ModifyingProtectionWordDocumentExample.class.getResource("/" + fileName).toURI()));
 
-              if (apiResponse != null
-                              && apiResponse.getStatus().equals("OK")) {
+			// invoke Aspose.Words Cloud SDK API to modify protection of a word
+			// document
+			ProtectionDataResponse apiResponse = wordsApi.PostChangeDocumentProtection(fileName, destFileName, storage,
+					folder, body);
 
-                      System.out.println("Document protection property has been changed from protected to unprotected successfully");
+			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 
-                      // download updated file from cloud storage
-                      com.aspose.storage.model.ResponseMessage storageRes = storageApi
-                                      .GetDownload(destFileName,
-                                                      null, null);
+				System.out.println(
+						"Document protection property has been changed from protected to unprotected successfully");
 
-                      InputStream responseStream = storageRes.getInputStream();
+				// download updated file from cloud storage
+				com.aspose.storage.model.ResponseMessage storageRes = storageApi.GetDownload(destFileName, null, null);
 
-                      final Path destination = Paths.get("c:\\temp\\" + destFileName);
+				InputStream responseStream = storageRes.getInputStream();
 
-                      Files.copy(responseStream,destination,StandardCopyOption.REPLACE_EXISTING);
-              }
+				final Path destination = Paths.get("c:\\temp\\" + destFileName);
 
-      } catch (Exception e) {
-              e.printStackTrace();
-      }
+				Files.copy(responseStream, destination, StandardCopyOption.REPLACE_EXISTING);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// ExEnd: ModifyingProtectionWordDocumentExample
 
 	}
 

@@ -11,6 +11,7 @@ import com.aspose.words.model.BookmarkResponse;
 public class UpdatingBookmarkTextExample {
 
 	public static void main(String[] args) {
+		// ExStart: UpdatingBookmarkTextExample
 		try {
 			// Instantiate Aspose Storage API SDK
 			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
@@ -53,5 +54,6 @@ public class UpdatingBookmarkTextExample {
 			e.printStackTrace();
 		}
 
+		// ExEnd: UpdatingBookmarkTextExample
 	}
 }
