@@ -37,7 +37,7 @@ namespace CSharp
             //// =====================================================
             //// =====================================================
 
-            ExecuteTemplate.Run();
+            //ExecuteTemplate.Run();
             //ExecuteTemplateUsingThirdPartyStorage.Run();
             //ExecuteWithoutRegions.Run();
             //ExecuteWithoutRegionsUsingThirdPartyStorage.Run();

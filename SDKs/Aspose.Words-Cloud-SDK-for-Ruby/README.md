@@ -1,5 +1,5 @@
 # Aspose.Words Cloud SDK For Ruby
-This SDK lets you use [Aspose Cloud Word APIs](http://www.aspose.com/cloud/word-api.aspx) in your web apps.
+This SDK lets you use [Aspose Cloud Word APIs](https://www.aspose.com/products/words/cloud) in your web apps.
 
 <p align="center">
   <a title="Download complete Aspose.Words for Cloud source code" href="https://github.com/asposewords/Aspose_Words_Cloud/archive/master.zip">
@@ -8,7 +8,7 @@ This SDK lets you use [Aspose Cloud Word APIs](http://www.aspose.com/cloud/word-
 </p>
 
 ##How to Use the SDK?
-The complete source code is available in this repository folder, you can either directly use it in your project or use RubyGems. For more details, please visit our [documentation website](http://www.aspose.com/docs/display/wordscloud/Available+SDKs).
+The complete source code is available in this repository folder, you can either directly use it in your project or use RubyGems. For more details, please visit our [documentation website](https://docs.aspose.com/display/wordscloud/Available+SDKs).
 
 ## Usage
 APIs of this SDK can be called as follows:
@@ -43,7 +43,7 @@ class WordsUsage
 end
 ```
 ## Unit Tests
-Aspose Words SDK includes a suite of unit tests within the [test](https://github.com/asposewords/Aspose_Words_Cloud/blob/master/SDKs/Aspose.Words_Cloud_SDK_For_Ruby/test/words_tests.rb) subdirectory. These Unit Tests also serves as examples of how to use the Aspose Cells SDK.
+Aspose Words SDK includes a suite of unit tests within the [test](https://github.com/aspose-words/Aspose.Words-for-Cloud/blob/master/SDKs/Aspose.Words-Cloud-SDK-for-Ruby/test/words_tests.rb) subdirectory. These Unit Tests also serves as examples of how to use the Aspose Cells SDK.
 
 ##Contact Us
 Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://www.aspose.com/community/forums/).
