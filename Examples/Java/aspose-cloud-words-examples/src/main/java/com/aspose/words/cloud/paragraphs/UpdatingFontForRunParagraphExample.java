@@ -1,6 +1,5 @@
 package com.aspose.words.cloud.paragraphs;
 
-import java.io.File;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,6 +9,7 @@ import java.nio.file.StandardCopyOption;
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
+import com.aspose.words.cloud.config.Utils;
 import com.aspose.words.model.Font;
 import com.aspose.words.model.FontResponse;
 
@@ -38,9 +38,11 @@ public class UpdatingFontForRunParagraphExample {
 			body.setSize(31.0);
 			body.setName("Calibri");
 
+            Path p1=Utils.getPath(ReadingSpecificRunParagraphExample.class, fileName);
+
 			// upload input file to aspose cloud storage
 			storageApi.PutCreate(fileName, "", "",
-					new File(UpdatingFontForRunParagraphExample.class.getResource("/" + fileName).toURI()));
+					p1.toFile());
 
 			// invoke Aspose.Words Cloud SDK API to update font of a specific
 			// run of a paragraph present in a word document

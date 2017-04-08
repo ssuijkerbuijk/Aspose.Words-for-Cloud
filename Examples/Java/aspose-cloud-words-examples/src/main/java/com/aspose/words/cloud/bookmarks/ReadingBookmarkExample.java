@@ -1,10 +1,11 @@
 package com.aspose.words.cloud.bookmarks;
 
-import java.io.File;
+import java.nio.file.Path;
 
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
+import com.aspose.words.cloud.config.Utils;
 import com.aspose.words.model.BookmarkResponse;
 
 public class ReadingBookmarkExample {
@@ -23,10 +24,12 @@ public class ReadingBookmarkExample {
 			String bookmarkName = "_Toc76372689";
 			String storage = null;
 			String folder = null;
+			
+			Path path=Utils.getPath(ReadingBookmarkExample.class, fileName);
 
 			// upload input file to aspose cloud storage
 			storageApi.PutCreate(fileName, "", "",
-					new File(ReadingBookmarkExample.class.getResource("/" + fileName).toURI()));
+			      path.toFile());
 
 			// invoke Aspose.Words Cloud SDK API to get the bookmark by given
 			// name from a word document

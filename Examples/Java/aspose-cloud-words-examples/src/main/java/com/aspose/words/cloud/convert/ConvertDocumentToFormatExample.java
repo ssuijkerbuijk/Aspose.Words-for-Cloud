@@ -1,6 +1,5 @@
 package com.aspose.words.cloud.convert;
 
-import java.io.File;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,8 +9,8 @@ import java.nio.file.StandardCopyOption;
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
+import com.aspose.words.cloud.config.Utils;
 import com.aspose.words.model.ResponseMessage;
-import com.aspose.words.model.SaveOptions;
 
 public class ConvertDocumentToFormatExample {
 
@@ -32,10 +31,11 @@ public class ConvertDocumentToFormatExample {
 			String storage = "";
 			String folder = "";
 			String outPath = "";
+			
+			Path p1=Utils.getPath(AppendDocumentExample.class, fileName);
 
 			// upload file to aspose cloud storage
-			storageApi.PutCreate(fileName, "", "",
-					new File(ConvertDocumentToFormatExample.class.getResource("/" + fileName).toURI()));
+			storageApi.PutCreate(fileName, "", "",p1.toFile());
 
 			
 			

@@ -1,10 +1,11 @@
 package com.aspose.words.cloud.paragraphs;
 
-import java.io.File;
+import java.nio.file.Path;
 
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
+import com.aspose.words.cloud.config.Utils;
 import com.aspose.words.model.Font;
 import com.aspose.words.model.FontResponse;
 
@@ -26,10 +27,13 @@ public class ReadingFontInformationFromDocumentExample {
 			Integer runIndex = 0;
 			String storage = null;
 			String folder = null;
+			
+            Path p1=Utils.getPath(ReadingFontInformationFromDocumentExample.class, fileName);
+
 
 			// upload input file to aspose cloud storage
 			storageApi.PutCreate(fileName, "", "",
-					new File(ReadingFontInformationFromDocumentExample.class.getResource("/" + fileName).toURI()));
+					p1.toFile());
 
 			// invoke Aspose.Words Cloud SDK API to get a font related
 			// information of a specific run of a paragraph from a word document

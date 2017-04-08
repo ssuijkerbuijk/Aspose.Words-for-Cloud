@@ -1,10 +1,11 @@
 package com.aspose.words.cloud.paragraphs;
 
-import java.io.File;
+import java.nio.file.Path;
 
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
+import com.aspose.words.cloud.config.Utils;
 import com.aspose.words.model.ParagraphLink;
 import com.aspose.words.model.ParagraphLinkCollectionResponse;
 
@@ -24,10 +25,12 @@ public class ReadingAllParagraphsFromDocumentExample {
 			String fileName = "SampleWordDocument.docx";
 			String storage = null;
 			String folder = null;
+			
+            Path p1=Utils.getPath(ReadingAllParagraphsFromDocumentExample.class, fileName);
+
 
 			// upload input file to aspose cloud storage
-			storageApi.PutCreate(fileName, "", "",
-					new File(ReadingAllParagraphsFromDocumentExample.class.getResource("/" + fileName).toURI()));
+			storageApi.PutCreate(fileName, "", "",p1.toFile());
 
 			// invoke Aspose.Words Cloud SDK API to get list of paragraphs from
 			// a word document

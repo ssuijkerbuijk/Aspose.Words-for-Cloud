@@ -1,10 +1,12 @@
 package com.aspose.words.cloud.drawing;
 
-import java.io.File;
+import java.nio.file.Path;
 
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
+import com.aspose.words.cloud.config.Utils;
+import com.aspose.words.cloud.convert.AppendDocumentExample;
 import com.aspose.words.model.DrawingObject;
 import com.aspose.words.model.DrawingObjectResponse;
 
@@ -26,10 +28,12 @@ public class GetImageDataFromWordDocumentExample {
 
 			String storage = null;
 			String folder = null;
+			
+			Path p1=Utils.getPath(AppendDocumentExample.class, fileName);
 
 			// upload input file to aspose cloud storage
 			storageApi.PutCreate(fileName, "", "",
-					new File(GetImageDataFromWordDocumentExample.class.getResource("/" + fileName).toURI()));
+					p1.toFile());
 
 			// invoke Aspose.Words Cloud SDK API to get drawing object by index
 			// present in a word document

@@ -1,6 +1,5 @@
 package com.aspose.words.cloud.convert;
 
-import java.io.File;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,13 +9,14 @@ import java.nio.file.StandardCopyOption;
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
+import com.aspose.words.cloud.config.Utils;
 import com.aspose.words.model.Link;
 import com.aspose.words.model.SplitDocumentResponse;
 
 public class SplitDocumentExample {
 
 	public static void main(String... argc) {
-		// ExStart: SplitDocumentExample
+		// ExStart: SplitAllPagesDocumentExample
 		try {
 			// Instantiate Aspose Storage API SDK
 			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
@@ -27,15 +27,15 @@ public class SplitDocumentExample {
 			// set input file name
 			String fileName = "SampleWordDocument.docx";
 			String format = "pdf";
-			Integer from = 2;
-			Integer to = 3;
+			Integer from =null ;
+			Integer to = null;
 			Boolean zipOutput = false;
 			String storage = null;
 			String folder = null;
 
+			Path p1=Utils.getPath(AppendDocumentExample.class, fileName);
 			// upload input file to aspose cloud storage
-			storageApi.PutCreate(fileName, "", "",
-					new File(SplitDocumentExample.class.getResource("/" + fileName).toURI()));
+			storageApi.PutCreate(fileName, "", "",p1.toFile());
 
 			// invoke Aspose.Words Cloud SDK API to split word document
 			SplitDocumentResponse apiResponse = wordsApi.PostSplitDocument(fileName, format, from, to, zipOutput,
@@ -58,7 +58,7 @@ public class SplitDocumentExample {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		// ExEnd: SplitDocumentExample
+		// ExEnd: SplitAllPagesDocumentExample
 
 	}
 }

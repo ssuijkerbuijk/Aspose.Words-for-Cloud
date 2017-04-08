@@ -1,10 +1,12 @@
 package com.aspose.words.cloud.sections;
 
-import java.io.File;
+import java.nio.file.Path;
 
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
+import com.aspose.words.cloud.config.Utils;
+import com.aspose.words.cloud.properties.DeletingDocumentPropertyExample;
 import com.aspose.words.model.SectionResponse;
 
 public class ReadingParticularSectionFromDocumentExample {
@@ -25,10 +27,13 @@ public class ReadingParticularSectionFromDocumentExample {
 			Integer sectionIndex = 0;
 			String storage = null;
 			String folder = null;
+			
+            Path p1=Utils.getPath(DeletingDocumentPropertyExample.class, fileName);
+
 
 			// upload input file to aspose cloud storage
 			storageApi.PutCreate(fileName, "", "",
-					new File(ReadingParticularSectionFromDocumentExample.class.getResource("/" + fileName).toURI()));
+					p1.toFile());
 
 			// invoke Aspose.Words Cloud SDK API to get a specific section
 			// present from a word document

@@ -7,6 +7,8 @@ package com.aspose.words.api;
 import static org.junit.Assert.assertNull;
 
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +16,6 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Test;
 
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.client.ApiException;
@@ -75,23 +76,40 @@ public class WordsApiTest {
 	public WordsApiTest() {
 	}
 
+	private static Path getPath(Class example, String filename) {
+		final File f = new File(example.getProtectionDomain().getCodeSource().getLocation().getPath());
+		String path = f.getAbsolutePath();
+		int subPathIndex = path.indexOf("Examples");
+		String subPath = path.substring(0, subPathIndex) + "Data/" + filename;
+
+		Path p = Paths.get(subPath);
+		return p;
+	}
+
 	@BeforeClass
 	public static void setUpClass() {
-	        try {
-	                   wordsApi = new WordsApi("http://api.aspose.cloud/v1.1",apiKey,appSID);
-	                   storageApi = new StorageApi("http://api.aspose.cloud/v1.1",apiKey,appSID);
-	                   storageApi.PutCreate("SampleWordDocument.docx", "", "", new File(WordsApiTest.class.getResource("/test_multi_pages.docx").toURI()));
-	                   storageApi.PutCreate("test_multi_pages.docx", "", "", new File(WordsApiTest.class.getResource("/test_multi_pages.docx").toURI()));
-	                   storageApi.PutCreate("test_convertlocal.docx", "", "", new File(WordsApiTest.class.getResource("/test_convertlocal.docx").toURI()));
-	                   storageApi.PutCreate("test_doc.docx", "", "", new File(WordsApiTest.class.getResource("/test_doc.docx").toURI()));
-	                   storageApi.PutCreate("test_uploadfile.docx", "", "", new File(WordsApiTest.class.getResource("/test_uploadfile.docx").toURI()));
-	                   storageApi.PutCreate("test_multi_pages.docx", "", "", new File(WordsApiTest.class.getResource("/test_multi_pages.docx").toURI()));
-	                   storageApi.PutCreate("SampleMailMergeTemplate.docx", "", "", new File(WordsApiTest.class.getResource("/SampleMailMergeTemplate.docx").toURI()));
-	                        
-	                } catch (Exception e) {
-	                        // TODO Auto-generated catch block
-	                        e.printStackTrace();
-	                }
+		try {
+			wordsApi = new WordsApi("http://api.aspose.cloud/v1.1", apiKey, appSID);
+			storageApi = new StorageApi("http://api.aspose.cloud/v1.1", apiKey, appSID);
+			
+			Path path=getPath(WordsApi.class,"test_multi_pages.docx");
+			storageApi.PutCreate("SampleWordDocument.docx", "", "",path.toFile());
+			storageApi.PutCreate("test_multi_pages.docx", "", "",path.toFile());
+			path=getPath(WordsApi.class,"test_convertlocal.docx");
+			storageApi.PutCreate("test_convertlocal.docx", "", "",path.toFile());
+			path=getPath(WordsApi.class,"test_doc.docx");
+			storageApi.PutCreate("test_doc.docx", "", "",path.toFile());
+			path=getPath(WordsApi.class,"test_uploadfile.docx");
+			storageApi.PutCreate("test_uploadfile.docx", "", "",path.toFile());
+			path=getPath(WordsApi.class,"test_multi_pages.docx");
+			storageApi.PutCreate("test_multi_pages.docx", "", "",path.toFile());
+			path=getPath(WordsApi.class,"SampleMailMergeTemplate.docx");
+			storageApi.PutCreate("SampleMailMergeTemplate.docx", "", "",path.toFile());
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@AfterClass
@@ -109,7 +127,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentBookmarkByName method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentBookmarkByName() {
 		System.out.println("GetDocumentBookmarkByName");
 		String name = "test_multi_pages.docx";
@@ -117,10 +135,9 @@ public class WordsApiTest {
 		String storage = "";
 		String folder = "";
 		try {
-			
+
 			BookmarkResponse result = wordsApi.GetDocumentBookmarkByName(name, bookmarkName, storage, folder);
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -130,7 +147,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentBookmarks method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentBookmarks() {
 		System.out.println("GetDocumentBookmarks");
 		String name = "test_multi_pages.docx";
@@ -138,7 +155,7 @@ public class WordsApiTest {
 		String folder = "";
 		try {
 			BookmarksResponse result = wordsApi.GetDocumentBookmarks(name, storage, folder);
-		
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -148,7 +165,7 @@ public class WordsApiTest {
 	/**
 	 * Test of PostUpdateDocumentBookmark method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPostUpdateDocumentBookmark() {
 		System.out.println("PostUpdateDocumentBookmark");
 		String name = "test_multi_pages.docx";
@@ -160,8 +177,9 @@ public class WordsApiTest {
 		body.setName("aspose");
 		body.setText("This is updated Bookmark");
 		try {
-			BookmarkResponse result = wordsApi.PostUpdateDocumentBookmark(name, bookmarkName, filename, storage, folder, body);			
-			
+			BookmarkResponse result = wordsApi.PostUpdateDocumentBookmark(name, bookmarkName, filename, storage, folder,
+					body);
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -171,7 +189,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocument method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocument() {
 		System.out.println("GetDocument");
 		String name = "test_multi_pages.docx";
@@ -188,7 +206,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentWithFormat method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentWithFormat() {
 		System.out.println("GetDocumentWithFormat");
 		String name = "test_multi_pages.docx";
@@ -198,7 +216,7 @@ public class WordsApiTest {
 		String outPath = "";
 		try {
 			ResponseMessage result = wordsApi.GetDocumentWithFormat(name, format, storage, folder, outPath);
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -208,7 +226,7 @@ public class WordsApiTest {
 	/**
 	 * Test of PostAppendDocument method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPostAppendDocument() {
 		System.out.println("PostAppendDocument");
 		String name = "test_multi_pages.docx";
@@ -217,16 +235,16 @@ public class WordsApiTest {
 		String folder = "";
 		DocumentEntryList body = new DocumentEntryList();
 		List<com.aspose.words.model.DocumentEntry> docEntries = new ArrayList();
-		
+
 		com.aspose.words.model.DocumentEntry docEntry = new com.aspose.words.model.DocumentEntry();
 		docEntry.setHref("test_multi_pages.docx");
 		docEntry.setImportFormatMode("KeepSourceFormatting");
-		docEntries.add(docEntry);		
+		docEntries.add(docEntry);
 		body.setDocumentEntries(docEntries);
-		
+
 		try {
 			DocumentResponse result = wordsApi.PostAppendDocument(name, filename, storage, folder, body);
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -236,7 +254,7 @@ public class WordsApiTest {
 	/**
 	 * Test of PostExecuteTemplate method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPostExecuteTemplate() {
 		System.out.println("PostExecuteTemplate");
 		String name = "TestExecuteTemplate.doc";
@@ -246,23 +264,29 @@ public class WordsApiTest {
 		String folder = null;
 		Boolean useWholeParagraphAsRegion = null;
 		Boolean withRegions = null;
-		File file;
+
 		try {
-			file = new File(getClass().getResource("/TestExecuteTemplateData.txt").toURI());
-			storageApi.PutCreate("TestExecuteTemplate.doc", "", "", new File(getClass().getResource("/TestExecuteTemplate.doc").toURI()));
-			DocumentResponse result = wordsApi.PostExecuteTemplate(name, cleanup, filename, storage, folder, useWholeParagraphAsRegion, withRegions, file);			
 			
+			Path path=getPath(WordsApiTest.class, "TestExecuteTemplateData.txt");
+			
+			
+			
+			storageApi.PutCreate("TestExecuteTemplate.doc", "", "",
+					getPath(WordsApiTest.class, "TestExecuteTemplateData.txt").toFile());
+			DocumentResponse result = wordsApi.PostExecuteTemplate(name, cleanup, filename, storage, folder,
+					useWholeParagraphAsRegion, withRegions, path.toFile());
+
 		} catch (Exception apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
-		} 
+		}
 
 	}
 
 	/**
 	 * Test of PostInsertPageNumbers method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPostInsertPageNumbers() {
 		System.out.println("PostInsertPageNumbers");
 		String name = "test_multi_pages.docx";
@@ -283,7 +307,7 @@ public class WordsApiTest {
 	/**
 	 * Test of PostInsertWatermarkImage method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPostInsertWatermarkImage() {
 		System.out.println("PostInsertWatermarkImage");
 		String name = "test_multi_pages.docx";
@@ -292,25 +316,24 @@ public class WordsApiTest {
 		String image = "aspose-cloud.png";
 		String storage = "";
 		String folder = "";
-		File file;
 		try {
-		        
-			file = new File(getClass().getResource("/aspose-cloud.png").toURI());
-			storageApi.PutCreate("aspose-cloud.png", "", "", new File(getClass().getResource("/aspose-cloud.png").toURI()));
-			DocumentResponse result = wordsApi.PostInsertWatermarkImage(name, filename, rotationAngle, image, storage, folder, file);
+
+			
+			storageApi.PutCreate("aspose-cloud.png", "", "",
+					getPath(WordsApiTest.class, "aspose-cloud.png").toFile());
+			DocumentResponse result = wordsApi.PostInsertWatermarkImage(name, filename, rotationAngle, image, storage,
+					folder, getPath(WordsApiTest.class, "aspose-cloud.png").toFile());
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
-		} catch(java.net.URISyntaxException uriExp){
-			System.out.println("uri exp:" + uriExp.getMessage());
-		}
+		} 
 
 	}
 
 	/**
 	 * Test of PostInsertWatermarkText method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPostInsertWatermarkText() {
 		System.out.println("PostInsertWatermarkText");
 		String name = "test_multi_pages.docx";
@@ -322,7 +345,8 @@ public class WordsApiTest {
 		WatermarkText body = new WatermarkText();
 		body.setText("text");
 		try {
-			DocumentResponse result = wordsApi.PostInsertWatermarkText(name, text, rotationAngle, filename, storage, folder, body);
+			DocumentResponse result = wordsApi.PostInsertWatermarkText(name, text, rotationAngle, filename, storage,
+					folder, body);
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -332,7 +356,7 @@ public class WordsApiTest {
 	/**
 	 * Test of PostLoadWebDocument method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPostLoadWebDocument() {
 		System.out.println("PostLoadWebDocument");
 		LoadWebDocumentData loadWebDocumentData = new LoadWebDocumentData();
@@ -352,7 +376,7 @@ public class WordsApiTest {
 	/**
 	 * Test of PostSplitDocument method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPostSplitDocument() {
 		System.out.println("PostSplitDocument");
 		String name = "test_multi_pages.docx";
@@ -363,8 +387,9 @@ public class WordsApiTest {
 		String storage = "";
 		String folder = "";
 		try {
-			SplitDocumentResponse result = wordsApi.PostSplitDocument(name, format, from, to, zipOutput, storage, folder);
-			
+			SplitDocumentResponse result = wordsApi.PostSplitDocument(name, format, from, to, zipOutput, storage,
+					folder);
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -374,42 +399,17 @@ public class WordsApiTest {
 	/**
 	 * Test of PutConvertDocument method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPutConvertDocument() {
 		System.out.println("PutConvertDocument");
 		String format = "text";
 		String outPath = "";
-		File file;
 		try {
-			file = new File(getClass().getResource("/test_uploadfile.docx").toURI());
-			ResponseMessage result = wordsApi.PutConvertDocument(format, outPath, file);
 			
-			
+			Path path=getPath(WordsApi.class,"test_uploadfile.docx");
+			ResponseMessage result = wordsApi.PutConvertDocument(format, outPath, path.toFile());
+
 		} catch (ApiException apiException) {
-			System.out.println("exp:" + apiException.getMessage());
-			assertNull(apiException);
-		} catch(java.net.URISyntaxException uriExp){
-			System.out.println("uri exp:" + uriExp.getMessage());
-		}
-
-	}
-
-	/**
-	 * Test of PutExecuteMailMergeOnline method, of class WordsApi.
-	 */
-	//@Test
-	public void testPutExecuteMailMergeOnline() {
-		System.out.println("PutExecuteMailMergeOnline");
-		Boolean withRegions = false;
-		String cleanup = "yes";
-		File file;
-		File data;
-		try {
-			file = new File(getClass().getResource("/SampleMailMergeTemplate.docx").toURI());
-			data = new File(getClass().getResource("/SampleMailMergeTemplateData.txt").toURI());
-			ResponseMessage result = wordsApi.PutExecuteMailMergeOnline(withRegions, cleanup, file,data);
-			
-		} catch (Exception apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
 		} 
@@ -417,9 +417,32 @@ public class WordsApiTest {
 	}
 
 	/**
+	 * Test of PutExecuteMailMergeOnline method, of class WordsApi.
+	 */
+	// @Test
+	public void testPutExecuteMailMergeOnline() {
+		System.out.println("PutExecuteMailMergeOnline");
+		Boolean withRegions = false;
+		String cleanup = "yes";
+		try {
+			
+			Path filePath=getPath(WordsApi.class,"SampleMailMergeTemplate.docx");
+			Path dataPath=getPath(WordsApi.class,"txt");
+
+			
+			ResponseMessage result = wordsApi.PutExecuteMailMergeOnline(withRegions, cleanup, filePath.toFile(), dataPath.toFile());
+
+		} catch (Exception apiException) {
+			System.out.println("exp:" + apiException.getMessage());
+			assertNull(apiException);
+		}
+
+	}
+
+	/**
 	 * Test of PostUpdateDocumentFields method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPostUpdateDocumentFields() {
 		System.out.println("PostUpdateDocumentFields");
 		String name = "test_multi_pages.docx";
@@ -437,7 +460,7 @@ public class WordsApiTest {
 	/**
 	 * Test of DeleteDocumentProperty method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testDeleteDocumentProperty() {
 		System.out.println("DeleteDocumentProperty");
 		String name = "test_multi_pages.docx";
@@ -446,11 +469,11 @@ public class WordsApiTest {
 		String storage = "";
 		String folder = "";
 		DocumentProperty body = new DocumentProperty();
-                body.setName("AsposeAuthor");
-                body.setValue("Farooq Sheikh");
-                body.setBuiltIn(false);
+		body.setName("AsposeAuthor");
+		body.setValue("Farooq Sheikh");
+		body.setBuiltIn(false);
 		try {
-		        wordsApi.PutUpdateDocumentProperty(name, propertyName, filename, storage, folder, body);
+			wordsApi.PutUpdateDocumentProperty(name, propertyName, filename, storage, folder, body);
 			SaaSposeResponse result = wordsApi.DeleteDocumentProperty(name, propertyName, filename, storage, folder);
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
@@ -461,7 +484,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentProperties method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentProperties() {
 		System.out.println("GetDocumentProperties");
 		String name = "test_multi_pages.docx";
@@ -478,7 +501,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentProperty method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentProperty() {
 		System.out.println("GetDocumentProperty");
 		String name = "test_multi_pages.docx";
@@ -487,7 +510,7 @@ public class WordsApiTest {
 		String folder = "";
 		try {
 			DocumentPropertyResponse result = wordsApi.GetDocumentProperty(name, propertyName, storage, folder);
-		
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -497,7 +520,7 @@ public class WordsApiTest {
 	/**
 	 * Test of PutUpdateDocumentProperty method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPutUpdateDocumentProperty() {
 		System.out.println("PutUpdateDocumentProperty");
 		String name = "test_multi_pages.docx";
@@ -509,7 +532,8 @@ public class WordsApiTest {
 		body.setName("Author");
 		body.setValue("Imran Anwar");
 		try {
-			DocumentPropertyResponse result = wordsApi.PutUpdateDocumentProperty(name, propertyName, filename, storage, folder, body);
+			DocumentPropertyResponse result = wordsApi.PutUpdateDocumentProperty(name, propertyName, filename, storage,
+					folder, body);
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -519,7 +543,7 @@ public class WordsApiTest {
 	/**
 	 * Test of DeleteUnprotectDocument method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testDeleteUnprotectDocument() {
 		System.out.println("DeleteUnprotectDocument");
 		String name = "test_multi_pages.docx";
@@ -529,8 +553,11 @@ public class WordsApiTest {
 		ProtectionRequest body = new ProtectionRequest();
 		body.setPassword("aspose");
 		try {
-		       // wordsApi.PutProtectDocument(name, filename, storage, folder, body);
-			// ProtectionDataResponse result = wordsApi.DeleteUnprotectDocument(name, filename, storage, folder, body);
+			// wordsApi.PutProtectDocument(name, filename, storage, folder,
+			// body);
+			// ProtectionDataResponse result =
+			// wordsApi.DeleteUnprotectDocument(name, filename, storage, folder,
+			// body);
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -540,7 +567,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentProtection method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentProtection() {
 		System.out.println("GetDocumentProtection");
 		String name = "test_multi_pages.docx";
@@ -548,7 +575,7 @@ public class WordsApiTest {
 		String folder = "";
 		try {
 			ProtectionDataResponse result = wordsApi.GetDocumentProtection(name, storage, folder);
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -558,7 +585,7 @@ public class WordsApiTest {
 	/**
 	 * Test of PostChangeDocumentProtection method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPostChangeDocumentProtection() {
 		System.out.println("PostChangeDocumentProtection");
 		String name = "test_multi_pages.docx";
@@ -568,9 +595,9 @@ public class WordsApiTest {
 		ProtectionRequest body = new ProtectionRequest();
 		body.setNewPassword("");
 		try {
-			ProtectionDataResponse result = wordsApi.PostChangeDocumentProtection(name, filename, storage, folder, body);
-			
-			
+			ProtectionDataResponse result = wordsApi.PostChangeDocumentProtection(name, filename, storage, folder,
+					body);
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -580,7 +607,7 @@ public class WordsApiTest {
 	/**
 	 * Test of PutProtectDocument method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPutProtectDocument() {
 		System.out.println("PutProtectDocument");
 		String name = "test_multi_pages.docx";
@@ -590,7 +617,7 @@ public class WordsApiTest {
 		ProtectionRequest body = new ProtectionRequest();
 		try {
 			ProtectionDataResponse result = wordsApi.PutProtectDocument(name, filename, storage, folder, body);
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -600,24 +627,20 @@ public class WordsApiTest {
 	/**
 	 * Test of PostDocumentSaveAs method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPostDocumentSaveAs() {
 		System.out.println("PostDocumentSaveAs");
 		String name = "test_multi_pages.docx";
 		String storage = "";
 		String folder = "";
-		
-		String xml = "<PdfSaveOptions>" +
-		                    "<SaveFormat>pdf</SaveFormat>" +
-		                    "<FileName>Output.pdf</FileName>" +
-		                    "<ImageCompression>Jpeg</ImageCompression>" +
-		                    "<JpegQuality>70</JpegQuality>" +
-		                      "<TextCompression>Flate</TextCompression>" +
-		                 "</PdfSaveOptions>";
-		                    
-		try {   
+
+		String xml = "<PdfSaveOptions>" + "<SaveFormat>pdf</SaveFormat>" + "<FileName>Output.pdf</FileName>"
+				+ "<ImageCompression>Jpeg</ImageCompression>" + "<JpegQuality>70</JpegQuality>"
+				+ "<TextCompression>Flate</TextCompression>" + "</PdfSaveOptions>";
+
+		try {
 			SaveResponse result = wordsApi.PostDocumentSaveAs(name, storage, folder, xml.getBytes("UTF-8"));
-			
+
 		} catch (Exception apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -627,7 +650,7 @@ public class WordsApiTest {
 	/**
 	 * Test of PutDocumentSaveAsTiff method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPutDocumentSaveAsTiff() {
 		System.out.println("PutDocumentSaveAsTiff");
 		String name = "test_multi_pages.docx";
@@ -636,7 +659,7 @@ public class WordsApiTest {
 		Boolean useHighQualityRendering = false;
 		Float imageBrightness = null;
 		String imageColorMode = null;
-		Float imageContrast =null;
+		Float imageContrast = null;
 		String numeralFormat = null;
 		Integer pageCount = null;
 		Integer pageIndex = null;
@@ -655,7 +678,10 @@ public class WordsApiTest {
 		body.setSaveFormat("tiff");
 		body.setFileName("abc.tiff");
 		try {
-			SaveResponse result = wordsApi.PutDocumentSaveAsTiff(name, resultFile, useAntiAliasing, useHighQualityRendering, imageBrightness, imageColorMode, imageContrast, numeralFormat, pageCount, pageIndex, paperColor, pixelFormat, resolution, scale, tiffCompression, dmlRenderingMode, dmlEffectsRenderingMode, tiffBinarizationMethod, storage, folder, zipOutput, body);
+			SaveResponse result = wordsApi.PutDocumentSaveAsTiff(name, resultFile, useAntiAliasing,
+					useHighQualityRendering, imageBrightness, imageColorMode, imageContrast, numeralFormat, pageCount,
+					pageIndex, paperColor, pixelFormat, resolution, scale, tiffCompression, dmlRenderingMode,
+					dmlEffectsRenderingMode, tiffBinarizationMethod, storage, folder, zipOutput, body);
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -665,7 +691,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentStatistics method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentStatistics() {
 		System.out.println("GetDocumentStatistics");
 		String name = "test_multi_pages.docx";
@@ -673,7 +699,7 @@ public class WordsApiTest {
 		String folder = "";
 		try {
 			StatDataResponse result = wordsApi.GetDocumentStatistics(name, storage, folder);
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -683,7 +709,7 @@ public class WordsApiTest {
 	/**
 	 * Test of DeleteDocumentWatermark method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testDeleteDocumentWatermark() {
 		System.out.println("DeleteDocumentWatermark");
 		String name = "test_multi_pages.docx";
@@ -692,8 +718,7 @@ public class WordsApiTest {
 		String folder = "";
 		try {
 			DocumentResponse result = wordsApi.DeleteDocumentWatermark(name, filename, storage, folder);
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -703,7 +728,7 @@ public class WordsApiTest {
 	/**
 	 * Test of PostInsertDocumentWatermarkImage method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPostInsertDocumentWatermarkImage() {
 		System.out.println("PostInsertDocumentWatermarkImage");
 		String name = "test_multi_pages.docx";
@@ -712,27 +737,25 @@ public class WordsApiTest {
 		String image = "aspose-cloud.png";
 		String storage = null;
 		String folder = null;
-		File file;		
-		
+
 		try {
-		        storageApi.PutCreate("aspose-cloud.png", "", "", new File(getClass().getResource("/aspose-cloud.png").toURI()));
-			file = new File(getClass().getResource("/aspose-cloud.png").toURI());
-			DocumentResponse result = wordsApi.PostInsertDocumentWatermarkImage(name, filename, rotationAngle, image, storage, folder, file);
+			Path path=getPath(WordsApiTest.class, "aspose-cloud.png");
 			
-			
+			storageApi.PutCreate("aspose-cloud.png", "", "",path.toFile());
+			DocumentResponse result = wordsApi.PostInsertDocumentWatermarkImage(name, filename, rotationAngle, image,
+					storage, folder, path.toFile());
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
-		} catch(java.net.URISyntaxException uriExp){
-			System.out.println("uri exp:" + uriExp.getMessage());
-		}
-		
+		} 
+
 	}
 
 	/**
 	 * Test of PostInsertDocumentWatermarkText method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPostInsertDocumentWatermarkText() {
 		System.out.println("PostInsertDocumentWatermarkText");
 		String name = "test_multi_pages.docx";
@@ -744,7 +767,8 @@ public class WordsApiTest {
 		WatermarkText body = new WatermarkText();
 		body.setText("Aspose.com");
 		try {
-			DocumentResponse result = wordsApi.PostInsertDocumentWatermarkText(name, filename, text, rotationAngle, storage, folder, body);
+			DocumentResponse result = wordsApi.PostInsertDocumentWatermarkText(name, filename, text, rotationAngle,
+					storage, folder, body);
 
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
@@ -755,7 +779,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentDrawingObjectByIndex method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentDrawingObjectByIndex() {
 		System.out.println("GetDocumentDrawingObjectByIndex");
 		String name = "sample_EmbeddedOLE.docx";
@@ -763,9 +787,9 @@ public class WordsApiTest {
 		String storage = "";
 		String folder = "";
 		try {
-			 DrawingObjectResponse result = wordsApi.GetDocumentDrawingObjectByIndex(name, objectIndex, storage, folder);
-			 System.out.println(result.getStatus());
-			
+			DrawingObjectResponse result = wordsApi.GetDocumentDrawingObjectByIndex(name, objectIndex, storage, folder);
+			System.out.println(result.getStatus());
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -776,7 +800,7 @@ public class WordsApiTest {
 	 * Test of GetDocumentDrawingObjectByIndexWithFormat method, of class
 	 * WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentDrawingObjectByIndexWithFormat() {
 		System.out.println("GetDocumentDrawingObjectByIndexWithFormat");
 		String name = "test_multi_pages.docx";
@@ -785,10 +809,10 @@ public class WordsApiTest {
 		String storage = "";
 		String folder = "";
 		try {
-			  ResponseMessage result = wordsApi.GetDocumentDrawingObjectByIndexWithFormat(name, objectIndex, format, storage, folder);
+			ResponseMessage result = wordsApi.GetDocumentDrawingObjectByIndexWithFormat(name, objectIndex, format,
+					storage, folder);
 			System.out.println(result.getStatus());
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -798,7 +822,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentDrawingObjectImageData method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentDrawingObjectImageData() {
 		System.out.println("GetDocumentDrawingObjectImageData");
 		String name = "SampleWordDocument.docx";
@@ -808,8 +832,7 @@ public class WordsApiTest {
 		try {
 			ResponseMessage result = wordsApi.GetDocumentDrawingObjectImageData(name, objectIndex, storage, folder);
 			System.out.println(result.getMessage());
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -819,7 +842,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentDrawingObjectOleData method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentDrawingObjectOleData() {
 		System.out.println("GetDocumentDrawingObjectOleData");
 		String name = "sample_EmbeddedOLE.docx";
@@ -827,10 +850,10 @@ public class WordsApiTest {
 		String storage = "";
 		String folder = "";
 		try {
-		        storageApi.PutCreate("sample_EmbeddedOLE.docx", "", "", new File(getClass().getResource("/sample_EmbeddedOLE.docx").toURI()));
+			Path path=getPath(WordsApiTest.class, "Sample_EmbeddedOLE.docx");
+			storageApi.PutCreate("sample_EmbeddedOLE.docx", "", "",path.toFile());
 			ResponseMessage result = wordsApi.GetDocumentDrawingObjectOleData(name, objectIndex, storage, folder);
-			
-			
+
 		} catch (Exception apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -840,7 +863,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentDrawingObjects method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentDrawingObjects() {
 		System.out.println("GetDocumentDrawingObjects");
 		String name = "test_multi_pages.docx";
@@ -848,8 +871,7 @@ public class WordsApiTest {
 		String folder = "";
 		try {
 			DrawingObjectsResponse result = wordsApi.GetDocumentDrawingObjects(name, storage, folder);
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -859,7 +881,7 @@ public class WordsApiTest {
 	/**
 	 * Test of DeleteFormField method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testDeleteFormField() {
 		System.out.println("DeleteFormField");
 		String name = "FormFilled.docx";
@@ -870,10 +892,11 @@ public class WordsApiTest {
 		String storage = "";
 		String folder = "";
 		try {
-		        storageApi.PutCreate("FormFilled.docx", "", "", new File(getClass().getResource("/FormFilled.docx").toURI()));
-			SaaSposeResponse result = wordsApi.DeleteFormField(name, sectionIndex, paragraphIndex, formfieldIndex, destFileName, storage, folder);
-			
-			
+			Path path=getPath(WordsApiTest.class, "FormFilled.docx");
+			storageApi.PutCreate("FormFilled.docx", "", "",path.toFile());
+			SaaSposeResponse result = wordsApi.DeleteFormField(name, sectionIndex, paragraphIndex, formfieldIndex,
+					destFileName, storage, folder);
+
 		} catch (Exception apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -883,7 +906,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetFormField method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetFormField() {
 		System.out.println("GetFormField");
 		String name = "FormFilled.docx";
@@ -893,10 +916,13 @@ public class WordsApiTest {
 		String storage = "";
 		String folder = "";
 		try {
-		        storageApi.PutCreate("FormFilled.docx", "", "", new File(getClass().getResource("/FormFilled.docx").toURI()));
-			FormFieldResponse result = wordsApi.GetFormField(name, sectionIndex, paragraphIndex, formfieldIndex, storage, folder);
 			
-			
+			Path path=getPath(WordsApiTest.class, "FormFilled.docx");
+			storageApi.PutCreate("FormFilled.docx", "", "",
+					path.toFile());
+			FormFieldResponse result = wordsApi.GetFormField(name, sectionIndex, paragraphIndex, formfieldIndex,
+					storage, folder);
+
 		} catch (Exception apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -906,7 +932,7 @@ public class WordsApiTest {
 	/**
 	 * Test of PostFormField method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPostFormField() {
 		System.out.println("PostFormField");
 		String name = "FormFilled.docx";
@@ -918,16 +944,18 @@ public class WordsApiTest {
 		String folder = "";
 		FormField body = null;
 		try {
-		      /*  storageApi.PutCreate("FormFilled.docx", "", "", new File(getClass().getResource("/FormFilled.docx").toURI()));
-		        FormFieldResponse result = wordsApi.GetFormField(name, sectionIndex, paragraphIndex, formfieldIndex, storage, folder);
-		        if(result!=null && result.getFormField() !=null){
-		                body = result.getFormField();
-		                body.setHelpText(body.getHelpText() + "updated");
-		                FormFieldResponse result2 = wordsApi.PostFormField(name, sectionIndex, paragraphIndex, formfieldIndex, destFileName, storage, folder, body);
-		        }
-			*/
-			
-			
+			/*
+			 * storageApi.PutCreate("FormFilled.docx", "", "", new
+			 * File(getClass().getResource("/FormFilled.docx").toURI()));
+			 * FormFieldResponse result = wordsApi.GetFormField(name,
+			 * sectionIndex, paragraphIndex, formfieldIndex, storage, folder);
+			 * if(result!=null && result.getFormField() !=null){ body =
+			 * result.getFormField(); body.setHelpText(body.getHelpText() +
+			 * "updated"); FormFieldResponse result2 =
+			 * wordsApi.PostFormField(name, sectionIndex, paragraphIndex,
+			 * formfieldIndex, destFileName, storage, folder, body); }
+			 */
+
 		} catch (Exception apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -937,7 +965,7 @@ public class WordsApiTest {
 	/**
 	 * Test of PutFormField method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPutFormField() {
 		System.out.println("PutFormField");
 		String name = "test_doc.docx";
@@ -947,26 +975,17 @@ public class WordsApiTest {
 		String destFileName = "test.docx";
 		String storage = "";
 		String folder = "";
-		
-		  String xml = "<FormFieldTextInput>"
-                                  + "<Name>MyName</Name>"
-                                  + "<Enabled>true</Enabled>"
-                                  + "<StatusText />"
-                                  + "<OwnStatus>false</OwnStatus>"
-                                  + "<HelpText />"
-                                  + "<OwnHelp>false</OwnHelp>"
-                                  + "<CalculateOnExit>true</CalculateOnExit>"
-                                  + "<EntryMacro />"
-                                  + "<ExitMacro />"
-                                  + "<TextInputFormat>UPPERCASE</TextInputFormat>"
-                                  + "<TextInputType>Regular</TextInputType>"
-                                  + "<TextInputDefault>Farooq Sheikh</TextInputDefault>"
-                                  + "</FormFieldTextInput>";
-		  
+
+		String xml = "<FormFieldTextInput>" + "<Name>MyName</Name>" + "<Enabled>true</Enabled>" + "<StatusText />"
+				+ "<OwnStatus>false</OwnStatus>" + "<HelpText />" + "<OwnHelp>false</OwnHelp>"
+				+ "<CalculateOnExit>true</CalculateOnExit>" + "<EntryMacro />" + "<ExitMacro />"
+				+ "<TextInputFormat>UPPERCASE</TextInputFormat>" + "<TextInputType>Regular</TextInputType>"
+				+ "<TextInputDefault>Farooq Sheikh</TextInputDefault>" + "</FormFieldTextInput>";
+
 		try {
-			FormFieldResponse result = wordsApi.PutFormField(name, sectionIndex, paragraphIndex, insertBeforeNode, destFileName, storage, folder, xml.getBytes("UTF-8"));
-			
-			
+			FormFieldResponse result = wordsApi.PutFormField(name, sectionIndex, paragraphIndex, insertBeforeNode,
+					destFileName, storage, folder, xml.getBytes("UTF-8"));
+
 		} catch (Exception apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -976,7 +995,7 @@ public class WordsApiTest {
 	/**
 	 * Test of DeleteHeadersFooters method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testDeleteHeadersFooters() {
 		System.out.println("DeleteHeadersFooters");
 		String name = "test_multi_pages.docx";
@@ -985,12 +1004,12 @@ public class WordsApiTest {
 		String storage = "";
 		String folder = "";
 		String revisionAuthor = "Mateen Dar";
-		String revisionDateTime="2017-02-20";
+		String revisionDateTime = "2017-02-20";
 		try {
 
-			SaaSposeResponse result = wordsApi.DeleteHeadersFooters(name, headersFootersTypes, filename, storage, folder,revisionAuthor,revisionDateTime);
-			
-			
+			SaaSposeResponse result = wordsApi.DeleteHeadersFooters(name, headersFootersTypes, filename, storage,
+					folder, revisionAuthor, revisionDateTime);
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -1000,7 +1019,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentHyperlinkByIndex method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentHyperlinkByIndex() {
 		System.out.println("GetDocumentHyperlinkByIndex");
 		String name = "test_doc.docx";
@@ -1008,10 +1027,10 @@ public class WordsApiTest {
 		String storage = "";
 		String folder = "";
 		try {
-		        storageApi.PutCreate(name, "", "", new File(getClass().getResource("/test_doc.docx").toURI()));
-		        HyperlinkResponse result = wordsApi.GetDocumentHyperlinkByIndex(name, hyperlinkIndex, storage, folder);
-			
-			
+			Path path=getPath(WordsApiTest.class, "test_doc.docx");
+			storageApi.PutCreate(name, "", "", path.toFile());
+			HyperlinkResponse result = wordsApi.GetDocumentHyperlinkByIndex(name, hyperlinkIndex, storage, folder);
+
 		} catch (Exception apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -1021,7 +1040,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentHyperlinks method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentHyperlinks() {
 		System.out.println("GetDocumentHyperlinks");
 		String name = "test_multi_pages.docx";
@@ -1030,8 +1049,7 @@ public class WordsApiTest {
 		try {
 
 			HyperlinksResponse result = wordsApi.GetDocumentHyperlinks(name, storage, folder);
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -1041,7 +1059,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentFieldNames method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentFieldNames() {
 		System.out.println("GetDocumentFieldNames");
 		String name = "test_multi_pages.docx";
@@ -1051,8 +1069,7 @@ public class WordsApiTest {
 		try {
 
 			FieldNamesResponse result = wordsApi.GetDocumentFieldNames(name, useNonMergeFields, storage, folder);
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -1062,7 +1079,7 @@ public class WordsApiTest {
 	/**
 	 * Test of PostDocumentExecuteMailMerge method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPostDocumentExecuteMailMerge() {
 		System.out.println("PostDocumentExecuteMailMerge");
 		String name = "SampleMailMergeTemplate.docx";
@@ -1073,26 +1090,23 @@ public class WordsApiTest {
 		String storage = null;
 		String folder = null;
 		Boolean useWholeParagraphAsRegion = false;
-		File file;
 		try {
-			file = new File(getClass().getResource("/SampleMailMergeTemplateData.txt").toURI());	          
-			DocumentResponse result = wordsApi.PostDocumentExecuteMailMerge(name, withRegions, mailMergeDataFile, cleanup, filename, storage, folder, useWholeParagraphAsRegion, file);
+			Path path=getPath(WordsApiTest.class, "SampleMailMergeTemplateData.txt");
 			
-			
+			DocumentResponse result = wordsApi.PostDocumentExecuteMailMerge(name, withRegions, mailMergeDataFile,
+					cleanup, filename, storage, folder, useWholeParagraphAsRegion, path.toFile());
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
-		} catch(java.net.URISyntaxException uriExp){
-			System.out.println("uri exp:" + uriExp.getMessage());
-		}
-
+		} 
 
 	}
 
 	/**
 	 * Test of GetDocumentParagraph method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentParagraph() {
 		System.out.println("GetDocumentParagraph");
 		String name = "test_multi_pages.docx";
@@ -1101,8 +1115,7 @@ public class WordsApiTest {
 		String folder = "";
 		try {
 			ParagraphResponse result = wordsApi.GetDocumentParagraph(name, index, storage, folder);
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -1112,7 +1125,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentParagraphRun method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentParagraphRun() {
 		System.out.println("GetDocumentParagraphRun");
 		String name = "test_multi_pages.docx";
@@ -1123,8 +1136,7 @@ public class WordsApiTest {
 		try {
 
 			RunResponse result = wordsApi.GetDocumentParagraphRun(name, index, runIndex, storage, folder);
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -1134,7 +1146,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentParagraphRunFont method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentParagraphRunFont() {
 		System.out.println("GetDocumentParagraphRunFont");
 		String name = "test_multi_pages.docx";
@@ -1145,8 +1157,7 @@ public class WordsApiTest {
 		try {
 
 			FontResponse result = wordsApi.GetDocumentParagraphRunFont(name, index, runIndex, storage, folder);
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -1156,17 +1167,16 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentParagraphs method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentParagraphs() {
 		System.out.println("GetDocumentParagraphs");
 		String name = "test_multi_pages.docx";
 		String storage = "";
 		String folder = "";
 		try {
-			
+
 			ParagraphLinkCollectionResponse result = wordsApi.GetDocumentParagraphs(name, storage, folder);
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -1176,7 +1186,7 @@ public class WordsApiTest {
 	/**
 	 * Test of PostDocumentParagraphRunFont method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPostDocumentParagraphRunFont() {
 		System.out.println("PostDocumentParagraphRunFont");
 		String name = "test_multi_pages.docx";
@@ -1189,9 +1199,9 @@ public class WordsApiTest {
 		body.setBold(true);
 		try {
 
-			FontResponse result = wordsApi.PostDocumentParagraphRunFont(name, index, runIndex, storage, folder, filename, body);
-			
-			
+			FontResponse result = wordsApi.PostDocumentParagraphRunFont(name, index, runIndex, storage, folder,
+					filename, body);
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -1201,7 +1211,7 @@ public class WordsApiTest {
 	/**
 	 * Test of AcceptAllRevisions method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testAcceptAllRevisions() {
 		System.out.println("AcceptAllRevisions");
 		String name = "test_multi_pages.docx";
@@ -1211,8 +1221,7 @@ public class WordsApiTest {
 		try {
 
 			RevisionsModificationResponse result = wordsApi.AcceptAllRevisions(name, filename, storage, folder);
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -1222,7 +1231,7 @@ public class WordsApiTest {
 	/**
 	 * Test of RejectAllRevisions method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testRejectAllRevisions() {
 		System.out.println("RejectAllRevisions");
 		String name = "test_multi_pages.docx";
@@ -1232,8 +1241,7 @@ public class WordsApiTest {
 		try {
 
 			RevisionsModificationResponse result = wordsApi.RejectAllRevisions(name, filename, storage, folder);
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -1243,7 +1251,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetSection method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetSection() {
 		System.out.println("GetSection");
 		String name = "test_multi_pages.docx";
@@ -1253,8 +1261,7 @@ public class WordsApiTest {
 		try {
 
 			SectionResponse result = wordsApi.GetSection(name, sectionIndex, storage, folder);
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -1264,7 +1271,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetSectionPageSetup method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetSectionPageSetup() {
 		System.out.println("GetSectionPageSetup");
 		String name = "test_multi_pages.docx";
@@ -1274,8 +1281,7 @@ public class WordsApiTest {
 		try {
 
 			SectionPageSetupResponse result = wordsApi.GetSectionPageSetup(name, sectionIndex, storage, folder);
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -1285,7 +1291,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetSections method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetSections() {
 		System.out.println("GetSections");
 		String name = "test_multi_pages.docx";
@@ -1294,8 +1300,7 @@ public class WordsApiTest {
 		try {
 
 			SectionLinkCollectionResponse result = wordsApi.GetSections(name, storage, folder);
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -1305,7 +1310,7 @@ public class WordsApiTest {
 	/**
 	 * Test of UpdateSectionPageSetup method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testUpdateSectionPageSetup() {
 		System.out.println("UpdateSectionPageSetup");
 		String name = "test_multi_pages.docx";
@@ -1318,12 +1323,12 @@ public class WordsApiTest {
 		body.setLeftMargin(10.0);
 		body.setOrientation("Landscape");
 		body.setPaperSize("A5");
-		
+
 		try {
 
-			SectionPageSetupResponse result = wordsApi.UpdateSectionPageSetup(name, sectionIndex, storage, folder, filename, body);
-			
-			
+			SectionPageSetupResponse result = wordsApi.UpdateSectionPageSetup(name, sectionIndex, storage, folder,
+					filename, body);
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -1333,7 +1338,7 @@ public class WordsApiTest {
 	/**
 	 * Test of GetDocumentTextItems method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testGetDocumentTextItems() {
 		System.out.println("GetDocumentTextItems");
 		String name = "test_multi_pages.docx";
@@ -1342,8 +1347,7 @@ public class WordsApiTest {
 		try {
 
 			TextItemsResponse result = wordsApi.GetDocumentTextItems(name, storage, folder);
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);
@@ -1353,7 +1357,7 @@ public class WordsApiTest {
 	/**
 	 * Test of PostReplaceText method, of class WordsApi.
 	 */
-	//@Test
+	// @Test
 	public void testPostReplaceText() {
 		System.out.println("PostReplaceText");
 		String name = "test_multi_pages.docx";
@@ -1364,10 +1368,9 @@ public class WordsApiTest {
 		body.setOldValue("aspose");
 		body.setNewValue("aspose.com");
 		try {
-			
+
 			ReplaceTextResponse result = wordsApi.PostReplaceText(name, filename, storage, folder, body);
-			
-			
+
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
 			assertNull(apiException);

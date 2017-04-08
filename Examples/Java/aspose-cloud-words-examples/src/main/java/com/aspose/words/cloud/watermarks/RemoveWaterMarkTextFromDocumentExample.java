@@ -1,6 +1,5 @@
 package com.aspose.words.cloud.watermarks;
 
-import java.io.File;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,6 +9,7 @@ import java.nio.file.StandardCopyOption;
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
+import com.aspose.words.cloud.config.Utils;
 import com.aspose.words.model.DocumentResponse;
 
 public class RemoveWaterMarkTextFromDocumentExample {
@@ -30,9 +30,10 @@ public class RemoveWaterMarkTextFromDocumentExample {
 			String storage = null;
 			String folder = null;
 
+			Path p1=Utils.getPath(AddWaterMarkToDocumentExample.class, fileName);
 			// upload input file to aspose cloud storage
 			storageApi.PutCreate(fileName, "", "",
-					new File(RemoveWaterMarkTextFromDocumentExample.class.getResource("/" + fileName).toURI()));
+					p1.toFile());
 
 			// invoke Aspose.Words Cloud SDK API to remove watermark image from
 			// a word document

@@ -1,6 +1,5 @@
 package com.aspose.words.cloud.watermarks;
 
-import java.io.File;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,6 +9,7 @@ import java.nio.file.StandardCopyOption;
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
+import com.aspose.words.cloud.config.Utils;
 import com.aspose.words.model.DocumentResponse;
 
 public class AddWaterMarkToDocumentExample {
@@ -31,22 +31,24 @@ public class AddWaterMarkToDocumentExample {
 			String storage = "AsposeDropboxStorage";
 			String folder = null;
 			String image = "background.png";
-			File file;
 
+            Path p1=Utils.getPath(AddWaterMarkToDocumentExample.class, fileName);
+            Path p2=Utils.getPath(AddWaterMarkToDocumentExample.class, fileName);
+			
 			// upload input file to 3rd party cloud storage
 			storageApi.PutCreate(fileName, "", storage,
-					new File(AddWaterMarkToDocumentExample.class.getResource("/" + fileName).toURI()));
+					p1.toFile());
 
+			
 			// upload input file to 3rd party cloud storage
 			storageApi.PutCreate(image, "", storage,
-					new File(AddWaterMarkToDocumentExample.class.getResource("/" + image).toURI()));
+					p2.toFile());
 
-			file = new File(AddWaterMarkToDocumentExample.class.getResource("/" + image).toURI());
-
+		
 			// invoke Aspose.Words Cloud SDK API to add watermark image in a
 			// word document
 			DocumentResponse apiResponse = wordsApi.PostInsertWatermarkImage(fileName, destFileName, rotationAngle,
-					image, storage, folder, file);
+					image, storage, folder, p2.toFile());
 
 			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 

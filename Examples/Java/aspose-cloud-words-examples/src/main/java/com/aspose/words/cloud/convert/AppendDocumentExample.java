@@ -10,7 +10,9 @@ import java.util.ArrayList;
 
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
+import com.aspose.words.cloud.bookmarks.UpdatingBookmarkTextExample;
 import com.aspose.words.cloud.config.Configuration;
+import com.aspose.words.cloud.config.Utils;
 import com.aspose.words.model.DocumentEntry;
 import com.aspose.words.model.DocumentEntryList;
 import com.aspose.words.model.DocumentResponse;
@@ -40,14 +42,16 @@ public class AppendDocumentExample {
 			docEntry.setImportFormatMode("KeepSourceFormatting");
 			docEntries.add(docEntry);
 			body.setDocumentEntries(docEntries);
+			
+			Path p1=Utils.getPath(AppendDocumentExample.class, sourceFileName);
+			Path p2=Utils.getPath(AppendDocumentExample.class, destFileName);
 
 			// upload source file to aspose cloud storage
 			storageApi.PutCreate(sourceFileName, "", "",
-					new File(AppendDocumentExample.class.getResource("/" + sourceFileName).toURI()));
+					p1.toFile());
 
 			// upload destination file to aspose cloud storage
-			storageApi.PutCreate(destFileName, "", "",
-					new File(AppendDocumentExample.class.getResource("/" + destFileName).toURI()));
+			storageApi.PutCreate(destFileName, "", "",p2.toFile());
 
 			// invoke Aspose.Words Cloud SDK API to append word document
 			DocumentResponse apiResponse = wordsApi.PostAppendDocument(destFileName, null, null, null, body);

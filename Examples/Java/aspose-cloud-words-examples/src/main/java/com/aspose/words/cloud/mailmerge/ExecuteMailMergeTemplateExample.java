@@ -1,6 +1,5 @@
 package com.aspose.words.cloud.mailmerge;
 
-import java.io.File;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,6 +9,8 @@ import java.nio.file.StandardCopyOption;
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
+import com.aspose.words.cloud.config.Utils;
+import com.aspose.words.cloud.convert.AppendDocumentExample;
 import com.aspose.words.model.DocumentResponse;
 
 public class ExecuteMailMergeTemplateExample {
@@ -32,21 +33,24 @@ public class ExecuteMailMergeTemplateExample {
 			String folder = null;
 			Boolean useWholeParagraphAsRegion = null;
 			Boolean withRegions = null;
-			File file;
+			
+			Path p1=Utils.getPath(AppendDocumentExample.class, fileName);
 
 			// upload input file to aspose cloud storage
 			storageApi.PutCreate(fileName, "", "",
-					new File(ExecuteMailMergeTemplateExample.class.getResource("/" + fileName).toURI()));
+					p1.toFile());
 
 			// set input file data name
 			String fileDataName = "SampleExecuteTemplateData.txt";
+			
+			Path p2=Utils.getPath(AppendDocumentExample.class, fileDataName);
 
-			file = new File(ExecuteMailMergeTemplateExample.class.getResource("/" + fileDataName).toURI());
+			
 
 			// invoke Aspose.Words Cloud SDK API to execute mail merge template
 			// and populate a word document from XML data
 			DocumentResponse apiResponse = wordsApi.PostExecuteTemplate(fileName, cleanup, destFileName, storage,
-					folder, useWholeParagraphAsRegion, withRegions, file);
+					folder, useWholeParagraphAsRegion, withRegions, p2.toFile());
 
 			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 

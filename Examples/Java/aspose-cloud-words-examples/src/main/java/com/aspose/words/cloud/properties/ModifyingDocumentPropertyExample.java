@@ -1,10 +1,11 @@
 package com.aspose.words.cloud.properties;
 
-import java.io.File;
+import java.nio.file.Path;
 
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
+import com.aspose.words.cloud.config.Utils;
 import com.aspose.words.model.DocumentProperty;
 import com.aspose.words.model.DocumentPropertyResponse;
 
@@ -30,9 +31,11 @@ public class ModifyingDocumentPropertyExample {
 			body.setName("Author");
 			body.setValue("Farooq Sheikh");
 
+            Path p1=Utils.getPath(DeletingDocumentPropertyExample.class, fileName);
+
 			// upload input file to aspose cloud storage
 			storageApi.PutCreate(fileName, "", "",
-					new File(ModifyingDocumentPropertyExample.class.getResource("/" + fileName).toURI()));
+					p1.toFile());
 
 			// invoke Aspose.Words Cloud SDK API to update document property by
 			// given name from a word document

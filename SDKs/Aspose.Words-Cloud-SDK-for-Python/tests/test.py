@@ -72,7 +72,7 @@ class TestAsposeCloudWords(unittest.TestCase):
     def testPostUpdateDocumentBookmark(self):
 
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             bookmarkData = BookmarkData.BookmarkData()
             bookmarkData.Name = 'aspose'
@@ -92,7 +92,7 @@ class TestAsposeCloudWords(unittest.TestCase):
     def testGetDocumentBookmarkByName(self):
 
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetDocumentBookmarkByName('SampleWordDocument.docx','aspose')
 
@@ -108,7 +108,7 @@ class TestAsposeCloudWords(unittest.TestCase):
     def testGetDocumentBookmarks(self):
         
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
             response = self.wordsApi.GetDocumentBookmarks('SampleWordDocument.docx')
 
             self.assertIsInstance(response,BookmarksResponse.BookmarksResponse)
@@ -122,7 +122,7 @@ class TestAsposeCloudWords(unittest.TestCase):
     def testGetDocument(self):
 
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
             response = self.wordsApi.GetDocument('SampleWordDocument.docx')
 
             self.assertIsInstance(response,DocumentResponse.DocumentResponse)
@@ -137,7 +137,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentWithFormat(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
             response = self.wordsApi.GetDocumentWithFormat('SampleWordDocument.docx','pdf')
 
             self.assertEqual(response.Status,'OK')
@@ -158,9 +158,9 @@ class TestAsposeCloudWords(unittest.TestCase):
     def testPostAppendDocument(self):
         try:
 
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
-            response = self.storageApi.PutCreate('SampleAppendDoc.docx','./data/SampleAppendDoc.docx')
-            response = self.storageApi.PutCreate('SampleAppendDoc2.docx','./data/SampleAppendDoc2.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleAppendDoc.docx','../../../Data/SampleAppendDoc.docx')
+            response = self.storageApi.PutCreate('SampleAppendDoc2.docx','../../../Data/SampleAppendDoc2.docx')
 
 
             document1 = DocumentEntry.DocumentEntry()
@@ -187,7 +187,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testPostInsertPageNumbers(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             pagenumber = PageNumber.PageNumber()
             pagenumber.Format = '{PAGE} of {NUMPAGES}'
@@ -229,7 +229,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testPostSplitDocument(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
             response = self.wordsApi.PostSplitDocument('SampleWordDocument.docx',format='text',ffrom=1,to=2,zipOutput=False)
 
             self.assertEqual(response.Status,'OK')
@@ -243,7 +243,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testPutConvertDocument(self):
         try:
-            response = self.wordsApi.PutConvertDocument('./data/SampleWordDocument.docx',format='pdf')
+            response = self.wordsApi.PutConvertDocument('../../../Data/SampleWordDocument.docx',format='pdf')
 
             self.assertEqual(response.Status,'OK')
 
@@ -261,7 +261,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testPostInsertWatermarkText(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             watermarkText = WatermarkText.WatermarkText()
             watermarkText.Text = "Welcome Aspose"
@@ -280,7 +280,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testPostInsertDocumentWatermarkText(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             watermarkText = WatermarkText.WatermarkText()
             watermarkText.Text = "Welcome Aspose"
@@ -299,13 +299,13 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testPostInsertWatermarkImage(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             watermarkText = WatermarkText.WatermarkText()
             watermarkText.Text = "Welcome Aspose"
             watermarkText.RotationAngle = '45'
 
-            response = self.wordsApi.PostInsertWatermarkImage('SampleWordDocument.docx','./data/aspose-words.png')
+            response = self.wordsApi.PostInsertWatermarkImage('SampleWordDocument.docx','../../../Data/aspose-words.png')
 
             self.assertEqual(response.Status,'OK')
             self.assertIsInstance(response,DocumentResponse.DocumentResponse)
@@ -318,13 +318,13 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testPostInsertDocumentWatermarkImage(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             watermarkText = WatermarkText.WatermarkText()
             watermarkText.Text = "Welcome Aspose"
             watermarkText.RotationAngle = '45'
 
-            response = self.wordsApi.PostInsertDocumentWatermarkImage('SampleWordDocument.docx','./data/aspose-words.png')
+            response = self.wordsApi.PostInsertDocumentWatermarkImage('SampleWordDocument.docx','../../../Data/aspose-words.png')
 
             self.assertEqual(response.Status,'OK')
             self.assertIsInstance(response,DocumentResponse.DocumentResponse)
@@ -337,7 +337,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testPostReplaceText(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             replaceText = ReplaceTextRequest.ReplaceTextRequest()
             replaceText.OldValue = 'Times New Roman'
@@ -356,7 +356,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentTextItems(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetDocumentTextItems('SampleWordDocument.docx')
 
@@ -371,7 +371,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetSections(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetSections('SampleWordDocument.docx')
 
@@ -386,7 +386,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetSectionPageSetup(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetSectionPageSetup('SampleWordDocument.docx',0)
 
@@ -401,7 +401,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetSection(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetSection('SampleWordDocument.docx',0)
 
@@ -416,7 +416,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testUpdateSectionPageSetup(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             pageSetup = PageSetup.PageSetup()
             pageSetup.RtlGutter = True
@@ -437,7 +437,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testRejectAllRevisions(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.RejectAllRevisions('SampleWordDocument.docx')
 
@@ -452,7 +452,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testAcceptAllRevisions(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.AcceptAllRevisions('SampleWordDocument.docx')
 
@@ -467,7 +467,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testPostDocumentParagraphRunFont(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             font = Font.Font()
             font.Name = "Arial"
@@ -486,7 +486,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentParagraphs(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetDocumentParagraphs('SampleWordDocument.docx')
 
@@ -501,7 +501,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentParagraphRunFont(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetDocumentParagraphRunFont('SampleWordDocument.docx',0,0)
 
@@ -516,7 +516,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentParagraphRun(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetDocumentParagraphRun('SampleWordDocument.docx',0,0)
 
@@ -531,7 +531,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentParagraph(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetDocumentParagraph('SampleWordDocument.docx',1)
 
@@ -546,7 +546,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentHyperlinks(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetDocumentHyperlinks('SampleWordDocument.docx')
 
@@ -561,7 +561,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentHyperlinkByIndex(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetDocumentHyperlinkByIndex('SampleWordDocument.docx',0)
 
@@ -576,7 +576,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testDeleteHeadersFooters(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.DeleteHeadersFooters('SampleWordDocument.docx')
 
@@ -591,7 +591,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentDrawingObjects(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetDocumentDrawingObjects('SampleWordDocument.docx')
 
@@ -606,7 +606,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentDrawingObjectOleData(self):
         try:
-            response = self.storageApi.PutCreate('sample_EmbeddedOLE.docx','./data/sample_EmbeddedOLE.docx')
+            response = self.storageApi.PutCreate('sample_EmbeddedOLE.docx','../../../Data/sample_EmbeddedOLE.docx')
 
             response = self.wordsApi.GetDocumentDrawingObjectOleData('sample_EmbeddedOLE.docx',0)
 
@@ -622,7 +622,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentDrawingObjectImageData(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetDocumentDrawingObjectImageData('SampleWordDocument.docx',1)
 
@@ -636,7 +636,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentDrawingObjectByIndexWithFormat(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetDocumentDrawingObjectByIndexWithFormat('SampleWordDocument.docx',1,'jpg')
 
@@ -650,7 +650,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentDrawingObjectByIndex(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetDocumentDrawingObjectByIndex('SampleWordDocument.docx',1)
 
@@ -664,7 +664,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testDeleteDocumentWatermark(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             watermarkText = WatermarkText.WatermarkText()
             watermarkText.Text = "Welcome Aspose"
@@ -685,7 +685,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentStatistics(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetDocumentStatistics('SampleWordDocument.docx')
 
@@ -700,7 +700,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testPutDocumentSaveAsTiff(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             tiffSaveOptions = TiffSaveOptionsData.TiffSaveOptionsData()
             tiffSaveOptions.FileName = 'SampleWordDocument.tiff'
@@ -719,7 +719,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testPostDocumentSaveAs(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             saveOptions = SaveOptionsData.SaveOptionsData()
             saveOptions.FileName = 'SampleWordDocument.pdf'
@@ -738,7 +738,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testPutProtectDocument(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             protectionData = ProtectionRequest.ProtectionRequest()
             protectionData.Password = 'hello123'
@@ -756,7 +756,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testPostChangeDocumentProtection(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             protectionData = ProtectionRequest.ProtectionRequest()
             protectionData.Password = 'hello123'
@@ -779,7 +779,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentProtection(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetDocumentProtection('SampleWordDocument.docx')
 
@@ -794,7 +794,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testDeleteUnprotectDocument(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             protectionData = ProtectionRequest.ProtectionRequest()
             protectionData.Password = 'hello123'
@@ -816,7 +816,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentProperties(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetDocumentProperties('SampleWordDocument.docx')
 
@@ -831,7 +831,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentProperty(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetDocumentProperty('SampleWordDocument.docx','Author')
 
@@ -846,7 +846,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testGetDocumentFieldNames(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.GetDocumentFieldNames('SampleWordDocument.docx')
 
@@ -861,7 +861,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testPutUpdateDocumentProperty(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             property = DocumentProperty.DocumentProperty()
             property.Name = 'Author'
@@ -880,7 +880,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testDeleteDocumentProperty(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             property = DocumentProperty.DocumentProperty()
             property.Name = 'Provider'
@@ -901,7 +901,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testDeleteSectionParagraphFields(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.DeleteSectionParagraphFields('SampleWordDocument.docx',0,0)
 
@@ -916,7 +916,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testDeleteSectionFields(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.DeleteSectionFields('SampleWordDocument.docx',0)
 
@@ -931,7 +931,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testDeleteParagraphFields(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.DeleteParagraphFields('SampleWordDocument.docx',0)
 
@@ -946,7 +946,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testDeleteDocumentMacros(self):
         try:
-            response = self.storageApi.PutCreate('SampleWordDocument.docx','./data/SampleWordDocument.docx')
+            response = self.storageApi.PutCreate('SampleWordDocument.docx','../../../Data/SampleWordDocument.docx')
 
             response = self.wordsApi.DeleteDocumentMacros('SampleWordDocument.docx')
 
@@ -961,7 +961,7 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testPutExecuteMailMergeOnline(self):
         try:
-            response = self.wordsApi.PutExecuteMailMergeOnline(False,'./data/SampleExecuteTemplate.doc','./data/SampleExecuteTemplateData.txt')
+            response = self.wordsApi.PutExecuteMailMergeOnline(False,'../../../Data/SampleExecuteTemplate.doc','../../../Data/SampleExecuteTemplateData.txt')
 
             self.assertEqual(response.Status,'OK')
 
@@ -980,9 +980,9 @@ class TestAsposeCloudWords(unittest.TestCase):
 
     def testPostDocumentExecuteMailMerge(self):
         try:
-            response = self.storageApi.PutCreate('aspose-words.png','./data/aspose-words.png')
-            response = self.storageApi.PutCreate('SampleMailMergeTemplateImage.doc','./data/SampleMailMergeTemplateImage.doc')
-            response = self.wordsApi.PostDocumentExecuteMailMerge('SampleMailMergeTemplateImage.doc',False,'./data/SampleMailMergeTemplateImageData.txt')
+            response = self.storageApi.PutCreate('aspose-words.png','../../../Data/aspose-words.png')
+            response = self.storageApi.PutCreate('SampleMailMergeTemplateImage.doc','../../../Data/SampleMailMergeTemplateImage.doc')
+            response = self.wordsApi.PostDocumentExecuteMailMerge('SampleMailMergeTemplateImage.doc',False,'../../../Data/SampleMailMergeTemplateImageData.txt')
 
 
 

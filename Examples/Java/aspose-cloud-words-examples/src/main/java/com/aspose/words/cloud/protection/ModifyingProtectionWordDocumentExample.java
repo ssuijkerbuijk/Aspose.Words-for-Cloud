@@ -1,6 +1,5 @@
 package com.aspose.words.cloud.protection;
 
-import java.io.File;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,6 +9,8 @@ import java.nio.file.StandardCopyOption;
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
+import com.aspose.words.cloud.config.Utils;
+import com.aspose.words.cloud.properties.DeletingDocumentPropertyExample;
 import com.aspose.words.model.ProtectionDataResponse;
 import com.aspose.words.model.ProtectionRequest;
 
@@ -31,6 +32,8 @@ public class ModifyingProtectionWordDocumentExample {
 			String storage = null;
 			String folder = null;
 
+            Path p1=Utils.getPath(DeletingDocumentPropertyExample.class, fileName);
+
 			ProtectionRequest body = new ProtectionRequest();
 			body.setPassword("aspose");
 			body.setNewPassword("");
@@ -38,12 +41,18 @@ public class ModifyingProtectionWordDocumentExample {
 
 			// upload input file to aspose cloud storage
 			storageApi.PutCreate(fileName, "", "",
-					new File(ModifyingProtectionWordDocumentExample.class.getResource("/" + fileName).toURI()));
+					p1.toFile());
 
 			// invoke Aspose.Words Cloud SDK API to modify protection of a word
 			// document
 			ProtectionDataResponse apiResponse = wordsApi.PostChangeDocumentProtection(fileName, destFileName, storage,
 					folder, body);
+			
+			
+			
+			
+			
+			
 
 			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 

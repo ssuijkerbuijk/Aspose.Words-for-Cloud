@@ -1,6 +1,5 @@
 package com.aspose.words.cloud.fields;
 
-import java.io.File;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,6 +9,8 @@ import java.nio.file.StandardCopyOption;
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
+import com.aspose.words.cloud.config.Utils;
+import com.aspose.words.cloud.convert.AppendDocumentExample;
 import com.aspose.words.model.FormFieldResponse;
 
 public class InsertFormFieldsWordDocumentExample {
@@ -39,9 +40,11 @@ public class InsertFormFieldsWordDocumentExample {
 					+ "<TextInputFormat>UPPERCASE</TextInputFormat>" + "<TextInputType>Regular</TextInputType>"
 					+ "<TextInputDefault>Farooq Sheikh</TextInputDefault>" + "</FormFieldTextInput>";
 
+			Path p1=Utils.getPath(AppendDocumentExample.class, fileName);
+			
 			// upload input file to aspose cloud storage
 			storageApi.PutCreate(fileName, "", "",
-					new File(InsertFormFieldsWordDocumentExample.class.getResource("/" + fileName).toURI()));
+					p1.toFile());
 
 			// invoke Aspose.Words Cloud SDK API to add field in the document
 			FormFieldResponse apiResponse = wordsApi.PutFormField(fileName, sectionIndex, paragraphIndex,

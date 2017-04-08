@@ -1,10 +1,12 @@
 package com.aspose.words.cloud.fields;
 
-import java.io.File;
+import java.nio.file.Path;
 
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
+import com.aspose.words.cloud.config.Utils;
+import com.aspose.words.cloud.convert.AppendDocumentExample;
 import com.aspose.words.model.FieldNamesResponse;
 
 public class GetMergeFieldsFromDocumentExample {
@@ -22,10 +24,9 @@ public class GetMergeFieldsFromDocumentExample {
 
 			String storage = null;
 			String folder = null;
-
+			Path p1=Utils.getPath(AppendDocumentExample.class, fileName);
 			// upload input file to aspose cloud storage
-			storageApi.PutCreate(fileName, "", "",
-					new File(GetMergeFieldsFromDocumentExample.class.getResource("/" + fileName).toURI()));
+			storageApi.PutCreate(fileName, "", "",p1.toFile());
 
 			// invoke Aspose.Words Cloud SDK API to get merge field names from a
 			// word document

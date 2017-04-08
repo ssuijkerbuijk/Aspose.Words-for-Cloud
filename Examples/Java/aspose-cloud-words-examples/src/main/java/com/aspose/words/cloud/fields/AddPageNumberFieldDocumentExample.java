@@ -1,6 +1,5 @@
 package com.aspose.words.cloud.fields;
 
-import java.io.File;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,6 +9,8 @@ import java.nio.file.StandardCopyOption;
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
+import com.aspose.words.cloud.config.Utils;
+import com.aspose.words.cloud.convert.AppendDocumentExample;
 import com.aspose.words.model.DocumentResponse;
 import com.aspose.words.model.PageNumber;
 
@@ -33,10 +34,12 @@ public class AddPageNumberFieldDocumentExample {
 			PageNumber body = new PageNumber();
 			body.setFormat("{PAGE} of {NUMPAGES}");
 			body.setAlignment("center");
+			
+			Path p1=Utils.getPath(AppendDocumentExample.class, fileName);
 
 			// upload input file to aspose cloud storage
 			storageApi.PutCreate(fileName, "", "",
-					new File(AddPageNumberFieldDocumentExample.class.getResource("/" + fileName).toURI()));
+					p1.toFile());
 
 			// invoke Aspose.Words Cloud SDK API to insert page number field
 			// into a word document
