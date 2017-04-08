@@ -1,4 +1,4 @@
-##Aspose.Words for Cloud
+Aspose.Words for Cloud
 
 [Aspose.Words for Cloud](http://www.aspose.com/products/words/cloud) is a REST API to create, manipulate, convert and render Word documents in the cloud by performing a wide variety of document operations you can wish to perform on a document in the cloud.
 
@@ -20,7 +20,7 @@ Directory | Description
 ## Resources
 + **Website:** [www.aspose.com](http://www.aspose.com)
 + **Product Home:** [Aspose.Words for Cloud](http://www.aspose.com/products/words/cloud)
-+ **Download:** [Download Aspose.Words for Cloud](http://www.aspose.com/downloads/words/cloud)
-+ **Documentation:** [Aspose.Words for Cloud Documentation](http://www.aspose.com/docs/display/wordscloud/Home)
++ **Download:** [Download Aspose.Words for Cloud](https://downloads.aspose.com/words/cloud)
++ **Documentation:** [Aspose.Words for Cloud Documentation](https://docs.aspose.com//display/wordscloud/Home)
 + **Forum:** [Aspose.Words for Cloud Forum](http://www.aspose.com/community/forums/aspose.words-product-family/75/showforum.aspx)
-+ **Blog:** [Aspose.Words for Cloud Blog](http://www.aspose.com/blogs/aspose-products/aspose-words-product-family.html)
++ **Blog:** [Aspose.Words for Cloud Blog](https://blog.aspose.com/category/aspose-products/aspose-words-product-family/)

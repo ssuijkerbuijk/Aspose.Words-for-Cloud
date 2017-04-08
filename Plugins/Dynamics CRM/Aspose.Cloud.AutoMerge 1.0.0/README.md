@@ -2,7 +2,7 @@
 
 [![aspose Words for CloudAPIs 100 Aspose Cloud AutoMerge For Dynamics CRM](http://www.aspose.com/blogs/wp-content/uploads/2014/02/aspose-Words-for-CloudAPIs_100.png "Aspose.Words for Cloud logo")](http://www.aspose.com/blogs/wp-content/uploads/2014/02/aspose-Words-for-CloudAPIs_100.png)The Aspose AutoMerge is an open source add-on to be used with Microsoft Dynamics CRM. This add-on is capable of merging documents into one and attaching them to Letter and sending emails. Easily configure a workflow and generate documents from templates. Aspose Cloud AutoMerge can be used with CRM on-premises and CRM Online.
 
-[![free download icon aspose mp Aspose Cloud AutoMerge For Dynamics CRM](http://cdn.aspose.com/Images/marketplace/free-download-icon-aspose-mp.png "Free Download - Aspose Cloud AutoMerge")](https://asposecloudcrm.codeplex.com/releases "Free Download - Aspose Cloud AutoMerge")[![open source icon aspose mp Aspose Cloud AutoMerge For Dynamics CRM](http://cdn.aspose.com/Images/marketplace/open-source-icon-aspose-mp.png "Source Code - Aspose Cloud AutoMerge")](https://asposecloudcrm.codeplex.com/SourceControl/latest#Aspose Cloud AutoMerge/ "Source Code - Aspose Cloud AutoMerge")
+[![free download icon aspose mp Aspose Cloud AutoMerge For Dynamics CRM](http://cdn.aspose.com/Images/marketplace/free-download-icon-aspose-mp.png "Free Download - Aspose Cloud AutoMerge")](https://asposecloudcrm.codeplex.com/releases "Free Download - Aspose Cloud AutoMerge")[![open source icon aspose mp Aspose Cloud AutoMerge For Dynamics CRM](http://cdn.aspose.com/Images/marketplace/open-source-icon-aspose-mp.png "Source Code - Aspose Cloud AutoMerge")](https://asposecloudcrm.codeplex.com/SourceControl/latest#Aspose%20Cloud%20AutoMerge/ "Source Code - Aspose Cloud AutoMerge")
 
 ## Features in this Release
 
@@ -39,10 +39,10 @@ The addon is provided in the form of a solution. You can download the latest sol
 
 This section shows how Aspose Cloud AutoMerge can be used with a workflow.
 
-*   Open Settings – > Processes within CRM and hit “New”.
+*   Open Settings â€“ > Processes within CRM and hit â€œNewâ€.
 *   Enter Name and Entity and select category as Workflow. (Make sure your template is designed for the same entity you have selected.)
 *   Use the window to create your own workflow.
-*   If you want to use “Aspose Cloud AutoMerge” functionality Go to Add Step – > Aspose Cloud AutoMerge  
+*   If you want to use â€œAspose Cloud AutoMergeâ€ functionality Go to Add Step â€“ > Aspose Cloud AutoMerge  
     [![UseWorkflow4 300x162 Aspose Cloud AutoMerge For Dynamics CRM](http://www.aspose.com/blogs/wp-content/uploads/2014/12/UseWorkflow4-300x162.png "UseWorkflow4")](http://www.aspose.com/blogs/wp-content/uploads/2014/12/UseWorkflow4.png)
 
 Here you will see all available options to use with Aspose AutoMerge:
@@ -57,7 +57,7 @@ Please find full User guide [here](https://asposecloudcrm.codeplex.com/wikipage?
 
 ## Start a Free Trial Today
 
-Start a free trial today – all you need is to [sign up](https://cloud.aspose.com/SignUp) with Aspose. Once you have signed up, you are ready to try powerful file processing features offered by Aspose file format APIs.
+Start a free trial today â€“ all you need is to [sign up](https://cloud.aspose.com/SignUp) with Aspose. Once you have signed up, you are ready to try powerful file processing features offered by Aspose file format APIs.
 
 ## Customer Feedback
 
