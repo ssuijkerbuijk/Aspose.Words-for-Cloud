@@ -1,7 +1,7 @@
 package com.aspose.words.cloud.drawing;
 
 import java.io.File;
-import java.io.File;
+
 import com.aspose.storage.api.StorageApi;
 import android.content.Context;
 import com.aspose.words.api.WordsApi;

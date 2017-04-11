@@ -3,7 +3,7 @@ package com.aspose.words.cloud.paragraphs;
 import java.io.File;
 import com.aspose.words.cloud.R;
 import com.aspose.words.cloud.Utils;
-import java.io.File; import com.aspose.storage.api.StorageApi; import android.content.Context;
+import com.aspose.storage.api.StorageApi; import android.content.Context;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.config.Configuration;
 import com.aspose.words.model.ParagraphLink;

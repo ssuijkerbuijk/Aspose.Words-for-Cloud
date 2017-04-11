@@ -37,6 +37,7 @@ public class ReadingHeaderFootersIndexDocumentExample {
 
 			// invoke Aspose.Words Cloud SDK API to remove all headers and
 			// footers from a word document
+			/*
 			SaaSposeResponse apiResponse = wordsApi.DeleteHeadersFooters(fileName, headersFootersTypes, destFileName,
 					storage, folder);
 
@@ -44,10 +45,12 @@ public class ReadingHeaderFootersIndexDocumentExample {
 
 				System.out.println("All headers and footers have been deleted successfully");
 			}
+			*/
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 		// ExEnd: RemovingHeaderFootersDocumentExample
 
 	}

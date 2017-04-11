@@ -1,13 +1,9 @@
 package com.aspose.words.cloud.headersfooters;
 
 import java.io.File;
-import java.io.InputStream;
 
 
-
-
-
-import java.io.File; import com.aspose.storage.api.StorageApi; import android.content.Context;
+import com.aspose.storage.api.StorageApi; import android.content.Context;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.R;
 import com.aspose.words.cloud.Utils;
@@ -40,13 +36,14 @@ public class RemovingHeaderFootersDocumentExample {
 
 			// invoke Aspose.Words Cloud SDK API to remove all headers and
 			// footers from a word document
+			/*
 			SaaSposeResponse apiResponse = wordsApi.DeleteHeadersFooters(fileName, headersFootersTypes, destFileName,
 					storage, folder);
 
 			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 
 				System.out.println("All headers and footers have been deleted successfully");
-			}
+			}*/
 
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -5,8 +5,8 @@ android {
     buildToolsVersion "24.0.2"
     defaultConfig {
         applicationId "com.aspose.words.cloud.examples"
-        minSdkVersion 19
-        targetSdkVersion 24
+        minSdkVersion 15
+        targetSdkVersion 21
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -16,10 +16,13 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            proguardFile '/home/mateen/progaurd.txt'
+        }
     }
     dexOptions {
-        preDexLibraries false
-        incremental true
+        preDexLibraries = false
+        javaMaxHeapSize "4g"
     }
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES.txt'
@@ -43,6 +46,7 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.aspose:aspose-cloud-words:1.0.0'
-    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile(project(':aspose-cloud-words-android'))
+    compile 'com.android.support:multidex:1.0.1'
+
 }

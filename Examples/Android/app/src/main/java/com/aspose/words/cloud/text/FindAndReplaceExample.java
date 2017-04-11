@@ -6,8 +6,6 @@ import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.R;
 import com.aspose.words.cloud.Utils;
 import com.aspose.words.cloud.config.Configuration;
-import com.aspose.words.model.Bookmark;
-import com.aspose.words.model.BookmarksResponse;
 import com.aspose.words.model.ReplaceTextRequest;
 import com.aspose.words.model.ReplaceTextResponse;
 

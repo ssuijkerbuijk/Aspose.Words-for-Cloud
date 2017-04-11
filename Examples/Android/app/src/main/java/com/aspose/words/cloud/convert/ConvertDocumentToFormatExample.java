@@ -4,10 +4,7 @@ import java.io.File;
 import java.io.InputStream;
 
 
-
-
-
-import java.io.File; import com.aspose.storage.api.StorageApi; import android.content.Context;
+import com.aspose.storage.api.StorageApi; import android.content.Context;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.R;
 import com.aspose.words.cloud.Utils;
@@ -44,7 +41,7 @@ public class ConvertDocumentToFormatExample {
 			ResponseMessage apiResponse = wordsApi.GetDocumentWithFormat(fileName, format, storage, folder, outPath);
 
 			if (apiResponse != null && apiResponse.getInputStream() != null) {
-				// save api response to file
+				// save com.aspose.words.model.api response to file
 				InputStream responseStream = apiResponse.getInputStream();
 
 				Utils.copyInputStreamToFile(responseStream,input);

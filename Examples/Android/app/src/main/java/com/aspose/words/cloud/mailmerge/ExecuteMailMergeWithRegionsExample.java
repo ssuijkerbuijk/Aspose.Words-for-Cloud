@@ -1,13 +1,9 @@
 package com.aspose.words.cloud.mailmerge;
 
 import java.io.File;
-import java.io.InputStream;
 
 
-
-
-
-import java.io.File; import com.aspose.storage.api.StorageApi; import android.content.Context;
+import com.aspose.storage.api.StorageApi; import android.content.Context;
 import com.aspose.words.api.WordsApi;
 import com.aspose.words.cloud.R;
 import com.aspose.words.cloud.Utils;

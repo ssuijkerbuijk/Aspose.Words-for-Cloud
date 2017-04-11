@@ -8,7 +8,6 @@ import com.aspose.words.cloud.R;
 import com.aspose.words.cloud.Utils;
 import com.aspose.words.cloud.config.Configuration;
 import com.aspose.words.model.ProtectionDataResponse;
-import com.aspose.words.model.ProtectionRequest;
 
 import java.io.File;
 

@@ -1,1 +1,1 @@
-include ':app'
+include ':app', ':aspose-cloud-words-android', ':Aspose.Storage-Cloud-SDK-for-Android'
