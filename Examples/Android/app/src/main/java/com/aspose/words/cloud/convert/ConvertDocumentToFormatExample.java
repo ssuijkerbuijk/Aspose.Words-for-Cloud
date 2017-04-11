@@ -34,7 +34,7 @@ public class ConvertDocumentToFormatExample {
 			String folder = "";
 			String outPath = "";
 
-			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.SampleWordDocument));
+			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.docsample));
 
 			// upload file to aspose cloud storage
 			storageApi.PutCreate(fileName, "", "", input);

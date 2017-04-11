@@ -4,6 +4,8 @@ import java.io.File;
 
 import java.io.File; import com.aspose.storage.api.StorageApi; import android.content.Context;
 import com.aspose.words.api.WordsApi;
+import com.aspose.words.cloud.R;
+import com.aspose.words.cloud.Utils;
 import com.aspose.words.cloud.config.Configuration;
 import com.aspose.words.model.PageSetup;
 import com.aspose.words.model.SectionPageSetupResponse;
@@ -29,8 +31,10 @@ public class UpdatePageSectionsPageSetupExample {
 
 			// Instantiate Aspose Words API SDK
 			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
+			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.docsample));
+
 			// Upload the file
-			storageApi.PutCreate(fileName, "", storage, new File(ReadingParticularSectionFromDocumentExample.class.getResource("/" + fileName).toURI()));
+			storageApi.PutCreate(fileName, "", storage, input);
 			// Invoke Aspose.Words Cloud SDK API to update page setup
 			SectionPageSetupResponse apiResponse = wordsApi.UpdateSectionPageSetup(fileName, sectionIndex, storage,
 					folder, destFileName, body);

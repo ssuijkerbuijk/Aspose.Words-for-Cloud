@@ -32,7 +32,7 @@ public class ModifyingDocumentPropertyExample {
 			body.setName("Author");
 			body.setValue("Farooq Sheikh");
 
-			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.SampleWordDocument));
+			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.docsample));
 
 
 			// upload input file to aspose cloud storage

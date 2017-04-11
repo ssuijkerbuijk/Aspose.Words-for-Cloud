@@ -35,8 +35,8 @@ public class AddWaterMarkToDocumentExample {
 			//String image = "background.png";
 			File file;
 
-			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.SampleWordDocument));
-			File image = Utils.stream2file("background",".png", context.getResources().openRawResource(R.raw.AsposeLogo));
+			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.docsample));
+			File image = Utils.stream2file("background",".png", context.getResources().openRawResource(R.raw.asposelogo));
 
 
 			// upload input file to 3rd party cloud storage

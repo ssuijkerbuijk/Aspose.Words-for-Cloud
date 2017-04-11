@@ -23,7 +23,7 @@ public class GetProtectionWordDocumentExample {
 
 			// Instantiate Aspose Words API SDK
 			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
-			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.sampleworddocument));
+			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.docsample));
 
 
 			// set input file name

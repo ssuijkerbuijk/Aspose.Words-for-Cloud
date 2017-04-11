@@ -40,7 +40,7 @@ public class UpdatingFontForRunParagraphExample {
 			body.setSize(31.0);
 			body.setName("Calibri");
 
-			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.SampleWordDocument));
+			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.docsample));
 
 
 			// upload input file to aspose cloud storage

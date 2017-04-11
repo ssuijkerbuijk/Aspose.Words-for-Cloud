@@ -43,17 +43,16 @@ public class AppendDocumentExample {
 			docEntries.add(docEntry);
 			body.setDocumentEntries(docEntries);
 
-			File sourceFile = Utils.stream2file("AppendFile_destination","docx", context.getResources().openRawResource(R.raw.AppendWordDocumentsExample_TestFile_Destination));
-			File destinationFile = Utils.stream2file("AppendFile_source","docx", context.getResources().openRawResource(R.raw.AppendWordDocumentsExample_TestFile_Source));
+			File sourceFile = Utils.stream2file("AppendFile_destination","docx", context.getResources().openRawResource(R.raw.docsample));
+			File destinationFile = Utils.stream2file("AppendFile_source","docx", context.getResources().openRawResource(R.raw.docsample));
 
 
 			// upload source file to aspose cloud storage
 			storageApi.PutCreate(sourceFileName, "", "",
-					new File(AppendDocumentExample.class.getResource("/" + sourceFileName).toURI()));
+					sourceFile);
 
 			// upload destination file to aspose cloud storage
-			storageApi.PutCreate(destFileName, "", "",
-					new File(AppendDocumentExample.class.getResource("/" + destFileName).toURI()));
+			storageApi.PutCreate(destFileName, "", "",destinationFile);
 
 			// invoke Aspose.Words Cloud SDK API to append word document
 			DocumentResponse apiResponse = wordsApi.PostAppendDocument(destFileName, null, null, null, body);

@@ -46,12 +46,12 @@ public class ExecuteMailMergeTemplateExample {
 			// set input file data name
 			String fileDataName = "SampleExecuteTemplateData.txt";
 
-			file = new File(ExecuteMailMergeTemplateExample.class.getResource("/" + fileDataName).toURI());
+			File fileData = Utils.stream2file("SampleExecuteTemplateData","txt", context.getResources().openRawResource(R.raw.sampleexecutetemplate));
 
 			// invoke Aspose.Words Cloud SDK API to execute mail merge template
 			// and populate a word document from XML data
 			DocumentResponse apiResponse = wordsApi.PostExecuteTemplate(fileName, cleanup, destFileName, storage,
-					folder, useWholeParagraphAsRegion, withRegions, file);
+					folder, useWholeParagraphAsRegion, withRegions, fileData);
 
 			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 

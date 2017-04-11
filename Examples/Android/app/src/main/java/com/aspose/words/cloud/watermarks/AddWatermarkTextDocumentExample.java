@@ -31,13 +31,13 @@ public class AddWatermarkTextDocumentExample {
 			String fileName = "SampleWordDocument.docx";
 			String destFileName = "updated-" + fileName;
 			Double rotationAngle = 0.0;
-			String storage = "AsposeDropboxStorage";
+			String storage = "";
 			String folder = null;
 			String text = "New";
 			WatermarkText body = new WatermarkText();
 			body.setText("aspose.com");
 
-			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.SampleWordDocument));
+			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.docsample));
 
 			// upload input file to 3rd party cloud storage
 			storageApi.PutCreate(fileName, "", storage,

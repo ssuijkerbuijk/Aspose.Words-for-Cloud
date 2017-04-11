@@ -28,7 +28,7 @@ public class ExecuteMailMergeWithRegionsExample {
 
 			// set input file name
 			String fileName = "SampleInvoiceTemplate.doc";
-			File input = Utils.stream2file("SampleInvoiceTemplate","doc", context.getResources().openRawResource(R.raw.SampleInvoiceTemplate));
+			File input = Utils.stream2file("SampleInvoiceTemplate","doc", context.getResources().openRawResource(R.raw.sampleinvoicetemplate));
 
 
 			String cleanup = null;
@@ -46,7 +46,7 @@ public class ExecuteMailMergeWithRegionsExample {
 			// set input file data name
 			String fileDataName = "SampleInvoiceTemplateData.txt";
 
-			File fileData = Utils.stream2file("SampleInvoiceTemplateData","txt", context.getResources().openRawResource(R.raw.SampleInvoiceTemplateData));
+			File fileData = Utils.stream2file("SampleInvoiceTemplateData","txt", context.getResources().openRawResource(R.raw.sampleexecutetemplatedata));
 
 			// invoke Aspose.Words Cloud SDK API to execute mail merge and
 			// populate a word document from XML data

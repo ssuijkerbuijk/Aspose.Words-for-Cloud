@@ -27,7 +27,7 @@ public class InsertFormFieldsWordDocumentExample {
 
 			// set input file name
 			String fileName = "SampleBlankWordDocument.docx";
-			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.SampleWordDocument));
+			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.docsample));
 
 
 			Integer sectionIndex = 0;

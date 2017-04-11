@@ -25,7 +25,7 @@ public class ReadingAllParagraphsFromDocumentExample {
 			String fileName = "SampleWordDocument.docx";
 			String storage = null;
 			String folder = null;
-			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.SampleWordDocument));
+			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.docsample));
 
 
 			// upload input file to aspose cloud storage

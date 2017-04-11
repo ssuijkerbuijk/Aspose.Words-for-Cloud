@@ -24,7 +24,7 @@ public class ReadingHeaderFootersIndexDocumentExample {
 
 			// set input file name
 			String fileName = "SampleHeaderFooterWordDocument.docx";
-			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.sampleworddocument));
+			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.docsample));
 
 
 			String destFileName = "updated-" + fileName;

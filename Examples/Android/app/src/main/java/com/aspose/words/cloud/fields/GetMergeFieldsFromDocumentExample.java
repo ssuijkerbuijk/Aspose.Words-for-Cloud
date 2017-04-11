@@ -21,7 +21,7 @@ public class GetMergeFieldsFromDocumentExample {
 
 			// set input file name
 			String fileName = "SampleMailMergeTemplate.docx";
-			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.SampleWordDocument));
+			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.docsample));
 
 
 			String storage = null;

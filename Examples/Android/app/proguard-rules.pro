@@ -15,3 +15,10 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-keepattributes InnerClasses
+-dontoptimize
+-keepattributes EnclosingMethod
+-keep class         org.apache.commons.beanutils.** { *; }
+-keep interface     org.apache.commons.beanutils.** { *; }
+-keep enum          org.apache.commons.beanutils.** { *; }

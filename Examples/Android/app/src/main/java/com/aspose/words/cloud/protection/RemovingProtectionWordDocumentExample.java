@@ -26,7 +26,7 @@ public class RemovingProtectionWordDocumentExample {
 
 			// Instantiate Aspose Words API SDK
 			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
-			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.SampleWordDocument));
+			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.docsample));
 
 			// set input file name
 			String fileName = "SampleProtectedBlankWordDocument.docx";
