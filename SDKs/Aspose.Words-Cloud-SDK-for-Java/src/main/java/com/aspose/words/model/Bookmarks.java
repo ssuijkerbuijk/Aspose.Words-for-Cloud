@@ -1,7 +1,7 @@
 package com.aspose.words.model;
 
-import java.util.*;
-import com.aspose.words.model.Link;
+import java.util.ArrayList;
+import java.util.List;
 public class Bookmarks {
   private List<Bookmark> BookmarkList = new ArrayList<Bookmark>();
   private Link link = null;

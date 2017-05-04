@@ -28,7 +28,7 @@ public class AddWaterMarkToDocumentExample {
 			String fileName = "SampleBlankWordDocument.docx";
 			String destFileName = "updated-" + fileName;
 			Double rotationAngle = 0.0;
-			String storage = "AsposeDropboxStorage";
+			String storage = null;
 			String folder = null;
 			String image = "background.png";
 

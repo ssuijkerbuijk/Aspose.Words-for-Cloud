@@ -29,11 +29,12 @@ public class AddWatermarkTextDocumentExample {
 			String fileName = "SampleWordDocument.docx";
 			String destFileName = "updated-" + fileName;
 			Double rotationAngle = 0.0;
-			String storage = "AsposeDropboxStorage";
+			String storage = null;
 			String folder = null;
 			String text = "New";
 			WatermarkText body = new WatermarkText();
 			body.setText("aspose.com");
+			body.setRotationAngle(rotationAngle);
 
             Path p1=Utils.getPath(AddWatermarkTextDocumentExample.class, fileName);
 
@@ -43,7 +44,7 @@ public class AddWatermarkTextDocumentExample {
 
 			// invoke Aspose.Words Cloud SDK API to add watermark text in a word
 			// document
-			DocumentResponse apiResponse = wordsApi.PostInsertWatermarkText(fileName, text, rotationAngle, destFileName,
+			DocumentResponse apiResponse = wordsApi.PostInsertWatermarkText(fileName, text, null, destFileName,
 					storage, folder, body);
 
 			if (apiResponse != null && apiResponse.getStatus().equals("OK")) {

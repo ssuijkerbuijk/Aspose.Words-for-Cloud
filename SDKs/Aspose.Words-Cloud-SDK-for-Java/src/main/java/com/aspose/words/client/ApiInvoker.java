@@ -179,11 +179,13 @@ public class ApiInvoker {
 	    String signature = Sign(resourceURLBuilder.toString(), this.defaultHeaderMap.get(API_KEY));
 	
 		resourceURLBuilder.append("&signature=").append(signature);
-	
+			
 		Builder builder = client.resource(resourceURLBuilder.toString()).accept("application/json");
 		for (String key : headerParams.keySet()) {
       builder.header(key, headerParams.get(key));
     }
+		
+		System.out.println(resourceURLBuilder.toString());
 
 		for (String key : defaultHeaderMap.keySet()) {
 			if (!headerParams.containsKey(key)) {

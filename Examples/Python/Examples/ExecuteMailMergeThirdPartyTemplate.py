@@ -8,9 +8,9 @@ from asposestoragecloud.StorageApi import StorageApi
 from asposestoragecloud.StorageApi import ResponseMessage
 
 
-apiKey = "XXXXX" #sepcify App Key
-appSid = "XXXXX" #sepcify App SID
-apiServer = "http://api.aspose.com/v1.1"
+apiKey = "b125f13bf6b76ed81ee990142d841195" #sepcify App Key
+appSid = "78946fb4-3bd4-4d3e-b309-f9e2ff9ac6f9" #sepcify App SID
+apiServer = "http://api.aspose.cloud/v1.1"
 data_folder = "../../data/"
 
 #Instantiate Aspose Storage API SDK
@@ -23,7 +23,7 @@ wordsApi = WordsApi(api_client)
 #set input file name
 filename = "SampleExecuteTemplate.docx"
 destfilename = "updated-" + filename
-storage = "AsposeDropboxStorage"
+storage = ""
 
 #set input file data name
 filedataname = "SampleExecuteTemplateData.txt"
@@ -36,15 +36,15 @@ try:
     response = wordsApi.PostExecuteTemplate(name=filename, file=data_folder + filedataname, filename=destfilename, storage=storage)
 
     if response.Status == "OK":
-        print "mail merge template has been executed successfully"
+        print ("mail merge template has been executed successfully")
         #download updated document from storage server
         response = storageApi.GetDownload(Path=destfilename, storage=storage)
-        outfilename = "c:/temp/" + destfilename
+        outfilename = "./" + destfilename
         with open(outfilename, 'wb') as f:
                     for chunk in response.InputStream:
                         f.write(chunk)
 
 except ApiException as ex:
-            print "ApiException:"
-            print "Code:" + str(ex.code)
-            print "Message:" + ex.message
+            print ("ApiException:")
+            print ("Code:" + str(ex.code))
+            print ("Message:" + ex.message)
