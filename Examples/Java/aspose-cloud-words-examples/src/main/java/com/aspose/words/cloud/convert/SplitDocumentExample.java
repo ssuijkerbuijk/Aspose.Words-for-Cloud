@@ -50,7 +50,7 @@ public class SplitDocumentExample {
 					com.aspose.storage.model.ResponseMessage storageRes = storageApi.GetDownload(outputFileName, null,
 							null);
 					InputStream responseStream = storageRes.getInputStream();
-					final Path destination = Paths.get("c:\\temp\\" + outputFileName);
+					final Path destination = Paths.get("./" + outputFileName);
 					Files.copy(responseStream, destination, StandardCopyOption.REPLACE_EXISTING);
 				}
 			}

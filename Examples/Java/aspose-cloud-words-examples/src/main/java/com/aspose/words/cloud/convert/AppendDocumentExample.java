@@ -1,6 +1,5 @@
 package com.aspose.words.cloud.convert;
 
-import java.io.File;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,7 +9,6 @@ import java.util.ArrayList;
 
 import com.aspose.storage.api.StorageApi;
 import com.aspose.words.api.WordsApi;
-import com.aspose.words.cloud.bookmarks.UpdatingBookmarkTextExample;
 import com.aspose.words.cloud.config.Configuration;
 import com.aspose.words.cloud.config.Utils;
 import com.aspose.words.model.DocumentEntry;
@@ -47,8 +45,7 @@ public class AppendDocumentExample {
 			Path p2=Utils.getPath(AppendDocumentExample.class, destFileName);
 
 			// upload source file to aspose cloud storage
-			storageApi.PutCreate(sourceFileName, "", "",
-					p1.toFile());
+			storageApi.PutCreate(sourceFileName, "", "",p1.toFile());
 
 			// upload destination file to aspose cloud storage
 			storageApi.PutCreate(destFileName, "", "",p2.toFile());

@@ -44,6 +44,9 @@ public class AddWatermarkTextDocumentExample {
 
 			// invoke Aspose.Words Cloud SDK API to add watermark text in a word
 			// document
+			/*
+			 * The third argument is invalid. Will be fixed in next release.
+			 */
 			DocumentResponse apiResponse = wordsApi.PostInsertWatermarkText(fileName, text, null, destFileName,
 					storage, folder, body);
 

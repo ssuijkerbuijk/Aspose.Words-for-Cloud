@@ -64,7 +64,7 @@ public class ModifyingProtectionWordDocumentExample {
 
 				InputStream responseStream = storageRes.getInputStream();
 
-				final Path destination = Paths.get("c:\\temp\\" + destFileName);
+				final Path destination = Paths.get("./" + destFileName);
 
 				Files.copy(responseStream, destination, StandardCopyOption.REPLACE_EXISTING);
 			}

@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: asposewordscloud
+Version: 1.0.1
+Summary: Aspose.Words Cloud SDK for Python allows you to use Aspose.Words APIs in your Python applications
+Home-page: https://github.com/asposewords/Aspose_Words_Cloud/tree/master/SDKs/Aspose.Words_Cloud_SDK_for_Python
+Author: Farooq Sheikh
+Author-email: farooq.sheikh@aspose.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent

@@ -50,7 +50,7 @@ public class AddPageNumberFieldDocumentExample {
 				// download updated file from cloud storage
 				com.aspose.storage.model.ResponseMessage storageRes = storageApi.GetDownload(fileName, null, null);
 				InputStream responseStream = storageRes.getInputStream();
-				final Path destination = Paths.get("c:\\temp\\" + fileName);
+				final Path destination = Paths.get("./" + fileName);
 				Files.copy(responseStream, destination, StandardCopyOption.REPLACE_EXISTING);
 			}
 

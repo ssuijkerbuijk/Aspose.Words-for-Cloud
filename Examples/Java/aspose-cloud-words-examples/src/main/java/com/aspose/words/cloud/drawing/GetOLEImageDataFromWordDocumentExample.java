@@ -44,7 +44,7 @@ public class GetOLEImageDataFromWordDocumentExample {
 				String destFileName = "OLEDrawingObject_" + objectIndex + ".pdf";
 
 				// save the ole data
-				final Path destination = Paths.get("c:\\temp\\" + destFileName);
+				final Path destination = Paths.get("./" + destFileName);
 
 				Files.copy(apiResponse.getInputStream(), destination, StandardCopyOption.REPLACE_EXISTING);
 
