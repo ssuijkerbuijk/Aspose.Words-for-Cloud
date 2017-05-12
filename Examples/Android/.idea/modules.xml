@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android.iml" filepath="$PROJECT_DIR$/Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Aspose-Words-Cloud-SDK-for-Android/Aspose-Words-Cloud-SDK-for-Android.iml" filepath="$PROJECT_DIR$/Aspose-Words-Cloud-SDK-for-Android/Aspose-Words-Cloud-SDK-for-Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/Aspose.Storage-Cloud-SDK-for-Android/Aspose.Storage-Cloud-SDK-for-Android.iml" filepath="$PROJECT_DIR$/Aspose.Storage-Cloud-SDK-for-Android/Aspose.Storage-Cloud-SDK-for-Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/aspose-cloud-words-android/aspose-cloud-words-android.iml" filepath="$PROJECT_DIR$/aspose-cloud-words-android/aspose-cloud-words-android.iml" />
     </modules>
   </component>
 </project>

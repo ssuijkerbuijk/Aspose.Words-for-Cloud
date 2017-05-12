@@ -30,7 +30,6 @@ public class GettingAllBookmarksExample {
 
 			File input = Utils.stream2file("SampleWordDocument","docx", context.getResources().openRawResource(R.raw.docsample));
 
-
 			// upload input file to aspose cloud storage
 			storageApi.PutCreate(fileName, "", "", input);
 

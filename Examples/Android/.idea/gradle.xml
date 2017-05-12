@@ -9,17 +9,17 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Aspose-Words-Cloud-SDK-for-Android" />
             <option value="$PROJECT_DIR$/Aspose.Storage-Cloud-SDK-for-Android" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/aspose-cloud-words-android" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Aspose-Words-Cloud-SDK-for-Android" />
             <option value="$PROJECT_DIR$/Aspose.Storage-Cloud-SDK-for-Android" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/aspose-cloud-words-android" />
           </set>
         </option>
       </GradleProjectSettings>
