@@ -41,7 +41,7 @@ public class RemovingHeaderFootersDocumentExample {
             // invoke Aspose.Words Cloud SDK API to remove all headers and
             // footers from a word document
             SaaSposeResponse apiResponse = wordsApi.DeleteHeadersFooters(fileName, headersFootersTypes, destFileName,
-                    storage, folder);
+                    storage, folder,revisionAuthor,revisionDateTime);
 
             if (apiResponse != null && apiResponse.getStatus().equals("OK")) {
 

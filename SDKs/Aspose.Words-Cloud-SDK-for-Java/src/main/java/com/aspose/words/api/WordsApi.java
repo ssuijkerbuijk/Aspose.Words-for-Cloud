@@ -51,6 +51,9 @@ import com.aspose.words.model.SectionPageSetupResponse;
 import com.aspose.words.model.SectionResponse;
 import com.aspose.words.model.SplitDocumentResponse;
 import com.aspose.words.model.StatDataResponse;
+import com.aspose.words.model.TableLinkCollectionResponse;
+import com.aspose.words.model.TableObject;
+import com.aspose.words.model.TableResponse;
 import com.aspose.words.model.TextItemsResponse;
 import com.aspose.words.model.TiffSaveOptionsData;
 import com.aspose.words.model.WatermarkText;
@@ -4243,7 +4246,7 @@ public class WordsApi {
 	 */
 
 	public ReplaceTextResponse PostReplaceText(String name, String filename, String storage, String folder,
-			ReplaceTextRequest body) {
+			ReplaceTextRequest body, String revisionAuthor, String revisionDateTime) {
 		Object postBody = body;
 		// verify required params are set
 		if (name == null || body == null) {
@@ -4456,28 +4459,6 @@ public class WordsApi {
 		}
 	}
 
-	/*
-	 * / New API
-	 * 
-	 * 
-	 */
-
-	/**
-	 * GetDocumentWithFormat Export the document into the specified format.
-	 * 
-	 * @param name
-	 *            String The file name.
-	 * @param format
-	 *            String The destination format.
-	 * @param storage
-	 *            String The document storage.
-	 * @param folder
-	 *            String The document folder.
-	 * @param outPath
-	 *            String Path to save result
-	 * @return ResponseMessage
-	 */
-
 	public CommentsResponse GetComment(String name, String storage, String folder) {
 		Object postBody = null;
 		// verify required params are set
@@ -4485,7 +4466,7 @@ public class WordsApi {
 			throw new ApiException(400, "missing required params");
 		}
 		// create path and map variables
-		String resourcePath = "words/{name}/comments?appSid={appSid}&folder={folder}";
+		String resourcePath = "/words/{name}/comments?appSid={appSid}&folder={folder}";
 		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
 				.replace("toFormat={toFormat}", "format={format}");
 		// query params
@@ -4530,7 +4511,7 @@ public class WordsApi {
 			throw new ApiException(400, "missing required params");
 		}
 		// create path and map variables
-		String resourcePath = "words/{name}/comments/{commentIndex}?folder={folder}";
+		String resourcePath = "/words/{name}/comments/{commentIndex}?appSid={appSid}&folder={folder}";
 		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
 				.replace("toFormat={toFormat}", "format={format}");
 		// query params
@@ -4579,7 +4560,7 @@ public class WordsApi {
 			throw new ApiException(400, "missing required params");
 		}
 		// create path and map variables
-		String resourcePath = "words/{name}/comments/{commentIndex}?folder={folder}";
+		String resourcePath = "/words/{name}/comments/{commentIndex}?folder={folder}";
 		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
 				.replace("toFormat={toFormat}", "format={format}");
 		// query params
@@ -4625,7 +4606,7 @@ public class WordsApi {
 			throw new ApiException(400, "missing required params");
 		}
 		// create path and map variables
-		String resourcePath = "words/{name}/comments/{commentIndex}?folder={folder}&fileName={fileName}";
+		String resourcePath = "/words/{name}/comments/{commentIndex}?folder={folder}&fileName={fileName}";
 		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
 				.replace("toFormat={toFormat}", "format={format}");
 		// query params
@@ -4679,7 +4660,7 @@ public class WordsApi {
 			throw new ApiException(400, "missing required params");
 		}
 		// create path and map variables
-		String resourcePath = "words/{name}/search?pattern={pattern}&folder={folder}&appSid={appSid}";
+		String resourcePath = "/words/{name}/search?pattern={pattern}&folder={folder}&appSid={appSid}";
 		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
 				.replace("toFormat={toFormat}", "format={format}");
 		// query params
@@ -4730,7 +4711,7 @@ public class WordsApi {
 			throw new ApiException(400, "missing required params");
 		}
 		// create path and map variables
-		String resourcePath = "words/{name}/compareDocument?filename={filename}&folder={folder}&appSid={appSid}";
+		String resourcePath = "/words/{name}/compareDocument?filename={filename}&folder={folder}&appSid={appSid}";
 		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
 				.replace("toFormat={toFormat}", "format={format}");
 		// query params
@@ -4779,7 +4760,7 @@ public class WordsApi {
 		}
 		// create path and map variables
 
-		String resourcePath = "words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/footnotes/{objectIndex}?appSid={appSid}&folder={folder}&storage={storage}";
+		String resourcePath = "/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/footnotes/{objectIndex}?appSid={appSid}&folder={folder}&storage={storage}";
 		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
 				.replace("toFormat={toFormat}", "format={format}");
 		// query params
@@ -4843,7 +4824,7 @@ public class WordsApi {
 			throw new ApiException(400, "missing required params");
 		}
 		// create path and map variable
-		String resourcePath = "words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/footnotes?appSid={appSid}&folder={folder}&storage={storage}";
+		String resourcePath = "/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/footnotes?appSid={appSid}&folder={folder}&storage={storage}";
 		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
 				.replace("toFormat={toFormat}", "format={format}");
 		// query params
@@ -4906,7 +4887,7 @@ public class WordsApi {
 			throw new ApiException(400, "missing required params");
 		}
 		// create path and map variable
-		String resourcePath = "words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/footnotes/{objectIndex}?appSid={appSid}&folder={folder}&storage={storage}";
+		String resourcePath = "/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/footnotes/{objectIndex}?appSid={appSid}&folder={folder}&storage={storage}";
 		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
 				.replace("toFormat={toFormat}", "format={format}");
 		// query params
@@ -4970,7 +4951,7 @@ public class WordsApi {
 			throw new ApiException(400, "missing required params");
 		}
 		// create path and map variable
-		String resourcePath = "words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/OfficeMathObjects?appSid={appSid}&folder={folder}&storage={storage}";
+		String resourcePath = "/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/OfficeMathObjects?appSid={appSid}&folder={folder}&storage={storage}";
 		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
 				.replace("toFormat={toFormat}", "format={format}");
 		// query params
@@ -5022,6 +5003,63 @@ public class WordsApi {
 			}
 		}
 	}
+	
+	
+	public SaaSposeResponse DeleteOfficeMathObjects(String name, Integer objectIndex,
+            String storage, String folder) {
+        Object postBody = null;
+        // verify required params are set
+        if (name == null) {
+            throw new ApiException(400, "missing required params");
+        }
+        // create path and map variable
+        String resourcePath = "/words/{name}/OfficeMathObjects/{objectIndex}?appSid={appSid}&folder={folder}&storage={storage}";
+        resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
+                .replace("toFormat={toFormat}", "format={format}");
+        // query params
+        Map<String, String> queryParams = new HashMap<String, String>();
+        Map<String, String> headerParams = new HashMap<String, String>();
+        Map<String, String> formParams = new HashMap<String, String>();
+
+        if (name != null)
+            resourcePath = resourcePath.replace("{" + "name" + "}", apiInvoker.toPathValue(name));
+        else
+            resourcePath = resourcePath.replaceAll("[&?]name.*?(?=&|\\?|$)", "");
+
+        if (objectIndex != null)
+            resourcePath = resourcePath.replace("{" + "objectIndex" + "}", apiInvoker.toPathValue(objectIndex));
+        else
+            resourcePath = resourcePath.replaceAll("[&?]objectIndex.*?(?=&|\\?|$)", "");
+
+        if (storage != null)
+            resourcePath = resourcePath.replace("{" + "storage" + "}", apiInvoker.toPathValue(storage));
+        else
+            resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
+
+        if (folder != null)
+            resourcePath = resourcePath.replace("{" + "folder" + "}", apiInvoker.toPathValue(folder));
+        else
+            resourcePath = resourcePath.replaceAll("[&?]folder.*?(?=&|\\?|$)", "");
+
+        String[] contentTypes = { "application/json" };
+
+        String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+        try {
+            response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, postBody, headerParams,
+                    formParams, contentType);
+            return (SaaSposeResponse) ApiInvoker.deserialize(response, "", SaaSposeResponse.class);
+        } catch (ApiException ex) {
+            ex.printStackTrace();
+            ex.getMessage();
+            if (ex.getCode() == 404) {
+
+                throw new ApiException(404, "");
+            } else {
+                throw ex;
+            }
+        }
+    }
 
 	public OfficeMathObjectsResponse GetOfficeMathObjects(String name, String storage, String folder) {
 		Object postBody = null;
@@ -5030,7 +5068,7 @@ public class WordsApi {
 			throw new ApiException(400, "missing required params");
 		}
 		// create path and map variable
-		String resourcePath = "words/{name}/OfficeMathObjects?appSid={appSid}&folder={folder}&storage={storage}";
+		String resourcePath = "/words/{name}/OfficeMathObjects?appSid={appSid}&folder={folder}&storage={storage}";
 		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
 				.replace("toFormat={toFormat}", "format={format}");
 		// query params
@@ -5073,7 +5111,6 @@ public class WordsApi {
 		}
 	}
 
-	// http://api.aspose.cloud/v1.1/words/NewDocument.docx/sections/1/paragraphs/1/OfficeMathObjects/1/?appSid=78946fb4-3bd4-4d3e-b309-f9e2ff9ac6f9&signature=HOXBaX6EwSiCrtAVl5ga%2BmDTFug
 	public OfficeMathObjectsResponse GetOfficeMathObjects(String name, Integer sectionIndex, Integer paragraphIndex,
 			Integer objectIndex, String storage, String folder) {
 		Object postBody = null;
@@ -5082,7 +5119,7 @@ public class WordsApi {
 			throw new ApiException(400, "missing required params");
 		}
 		// create path and map variable
-		String resourcePath = "words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/OfficeMathObjects/{objectIndex}?appSid={appSid}&folder={folder}&storage={storage}";
+		String resourcePath = "/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/OfficeMathObjects/{objectIndex}?appSid={appSid}&folder={folder}&storage={storage}";
 		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
 				.replace("toFormat={toFormat}", "format={format}");
 		// query params
@@ -5140,6 +5177,9 @@ public class WordsApi {
 		}
 	}
 
+	
+	
+	
 	public OfficeMathObjectsResponse GetOfficeMathObjects(String name, Integer paragraphIndex, String storage,
 			String folder) {
 		Object postBody = null;
@@ -5148,7 +5188,7 @@ public class WordsApi {
 			throw new ApiException(400, "missing required params");
 		}
 		// create path and map variable
-		String resourcePath = "words/{name}/paragraphs/{paragraphIndex}/OfficeMathObjects?appSid={appSid}&folder={folder}&storage={storage}";
+		String resourcePath = "/words/{name}/paragraphs/{paragraphIndex}/OfficeMathObjects?appSid={appSid}&folder={folder}&storage={storage}";
 		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
 				.replace("toFormat={toFormat}", "format={format}");
 		// query params
@@ -5195,5 +5235,205 @@ public class WordsApi {
 			}
 		}
 	}
+	
+	
+	public TableLinkCollectionResponse GetTables(String name, String nodePath, String storage,String folder) {
+		Object postBody = null;
+		// verify required params are set
+		if (name == null) {
+			throw new ApiException(400, "missing required params");
+		}
+		// create path and map variable
+
+		String resourcePath = "/words/{name}/{nodePath}?appSid={appSid}&folder={folder}&storage={storage}";
+		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
+				.replace("toFormat={toFormat}", "format={format}");
+		// query params
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		Map<String, String> formParams = new HashMap<String, String>();
+
+		if (name != null)
+			resourcePath = resourcePath.replace("{" + "name" + "}", apiInvoker.toPathValue(name));
+		else
+			resourcePath = resourcePath.replaceAll("[&?]name.*?(?=&|\\?|$)", "");
+
+		if (nodePath != null)
+			resourcePath = resourcePath.replace("{" + "nodePath" + "}", apiInvoker.toPathValue(nodePath));
+		else
+			resourcePath = resourcePath.replaceAll("[&?]paragraphIndex.*?(?=&|\\?|$)", "");
+
+		if (storage != null)
+			resourcePath = resourcePath.replace("{" + "storage" + "}", apiInvoker.toPathValue(storage));
+		else
+			resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
+
+		if (folder != null)
+			resourcePath = resourcePath.replace("{" + "folder" + "}", apiInvoker.toPathValue(folder));
+		else
+			resourcePath = resourcePath.replaceAll("[&?]folder.*?(?=&|\\?|$)", "");
+
+		String[] contentTypes = { "application/json" };
+
+		String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+		try {
+			response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, postBody, headerParams,
+					formParams, contentType);
+			return (TableLinkCollectionResponse) ApiInvoker.deserialize(response, "", TableLinkCollectionResponse.class);
+		} catch (ApiException ex) {
+			ex.printStackTrace();
+			ex.getMessage();
+			if (ex.getCode() == 404) {
+
+				throw new ApiException(404, "");
+			} else {
+				throw ex;
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	public SaaSposeResponse DeleteTable(String name, String nodePath, String storage,String folder) {
+		Object postBody = null;
+		// verify required params are set
+		if (name == null) {
+			throw new ApiException(400, "missing required params");
+		}
+		// create path and map variable
+
+		String resourcePath = "/words/{name}/{nodePath}?appSid={appSid}&folder={folder}&storage={storage}";
+		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
+				.replace("toFormat={toFormat}", "format={format}");
+		// query params
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		Map<String, String> formParams = new HashMap<String, String>();
+
+		if (name != null)
+			resourcePath = resourcePath.replace("{" + "name" + "}", apiInvoker.toPathValue(name));
+		else
+			resourcePath = resourcePath.replaceAll("[&?]name.*?(?=&|\\?|$)", "");
+
+		if (nodePath != null)
+			resourcePath = resourcePath.replace("{" + "nodePath" + "}", apiInvoker.toPathValue(nodePath));
+		else
+			resourcePath = resourcePath.replaceAll("[&?]paragraphIndex.*?(?=&|\\?|$)", "");
+
+		if (storage != null)
+			resourcePath = resourcePath.replace("{" + "storage" + "}", apiInvoker.toPathValue(storage));
+		else
+			resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
+
+		if (folder != null)
+			resourcePath = resourcePath.replace("{" + "folder" + "}", apiInvoker.toPathValue(folder));
+		else
+			resourcePath = resourcePath.replaceAll("[&?]folder.*?(?=&|\\?|$)", "");
+
+		String[] contentTypes = { "application/json" };
+
+		String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+		try {
+			response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, postBody, headerParams,
+					formParams, contentType);
+			return (SaaSposeResponse) ApiInvoker.deserialize(response, "", SaaSposeResponse.class);
+		} catch (ApiException ex) {
+			ex.printStackTrace();
+			ex.getMessage();
+			if (ex.getCode() == 404) {
+
+				throw new ApiException(404, "");
+			} else {
+				throw ex;
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	public TableResponse InsertTable(String name, String storage,String folder,TableObject object) {
+		Object postBody = object;
+		// verify required params are set
+		if (name == null || object==null) {
+			throw new ApiException(400, "missing required params");
+		}
+		// create path and map variable
+
+		String resourcePath = "/words/{name}/tables?appSid={appSid}&folder={folder}&storage={storage}";
+		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
+				.replace("toFormat={toFormat}", "format={format}");
+		// query params
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		Map<String, String> formParams = new HashMap<String, String>();
+
+		if (name != null)
+			resourcePath = resourcePath.replace("{" + "name" + "}", apiInvoker.toPathValue(name));
+		else
+			resourcePath = resourcePath.replaceAll("[&?]name.*?(?=&|\\?|$)", "");
+
+		if (storage != null)
+			resourcePath = resourcePath.replace("{" + "storage" + "}", apiInvoker.toPathValue(storage));
+		else
+			resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
+
+		if (folder != null)
+			resourcePath = resourcePath.replace("{" + "folder" + "}", apiInvoker.toPathValue(folder));
+		else
+			resourcePath = resourcePath.replaceAll("[&?]folder.*?(?=&|\\?|$)", "");
+
+		String[] contentTypes = { "application/json" };
+
+		String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+		try {
+			response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, postBody, headerParams,
+					formParams, contentType);
+			return (TableResponse) ApiInvoker.deserialize(response, "", TableResponse.class);
+		} catch (ApiException ex) {
+			ex.printStackTrace();
+			ex.getMessage();
+			if (ex.getCode() == 404) {
+
+				throw new ApiException(404, "");
+			} else {
+				throw ex;
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

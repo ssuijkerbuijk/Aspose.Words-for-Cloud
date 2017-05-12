@@ -7,7 +7,6 @@ import com.google.gson.annotations.SerializedName;
 public class CommentList {
 
 	    @SerializedName("RangeStart")
-	    @Expose
 	    private RangeStart rangeStart;
 	    @SerializedName("RangeEnd")
 	    @Expose
@@ -19,16 +18,12 @@ public class CommentList {
 	    @Expose
 	    private String initial;
 	    @SerializedName("DateTime")
-	    @Expose
 	    private String dateTime;
 	    @SerializedName("Text")
-	    @Expose
 	    private String text;
 	    @SerializedName("Content")
-	    @Expose
 	    private Content content;
 	    @SerializedName("link")
-	    @Expose
 	    private Link link;
 
 	    public RangeStart getRangeStart() {

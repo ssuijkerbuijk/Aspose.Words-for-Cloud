@@ -1369,7 +1369,7 @@ public class WordsApiTest {
 		body.setNewValue("aspose.com");
 		try {
 
-			ReplaceTextResponse result = wordsApi.PostReplaceText(name, filename, storage, folder, body);
+			ReplaceTextResponse result = wordsApi.PostReplaceText(name, filename, storage, folder, body,"a","b");
 
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());
