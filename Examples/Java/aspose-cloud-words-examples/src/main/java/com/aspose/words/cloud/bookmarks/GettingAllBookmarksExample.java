@@ -8,10 +8,14 @@ import com.aspose.words.cloud.config.Configuration;
 import com.aspose.words.cloud.config.Utils;
 import com.aspose.words.model.Bookmark;
 import com.aspose.words.model.BookmarksResponse;
+import com.aspose.words.model.SaveOptions;
 
 public class GettingAllBookmarksExample {
 
 	public static void main(String[] args) {
+	    
+	 
+	    
 		// ExStart: GettingAllBookmarksExample
 		try {
 			// Instantiate Aspose Storage API SDK

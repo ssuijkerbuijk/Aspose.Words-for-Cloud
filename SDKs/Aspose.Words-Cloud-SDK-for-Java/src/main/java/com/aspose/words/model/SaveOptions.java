@@ -6,6 +6,8 @@ public class SaveOptions {
   private String DmlRenderingMode = null;
   private String DmlEffectsRenderingMode = null;
   private Boolean ZipOutput = true;
+  private Integer VerticleResolution=null;
+  private Integer HorizontalResolution=null;
   /**
 	 * getSaveFormat
 	 * Gets String
@@ -108,5 +110,21 @@ public class SaveOptions {
     sb.append("}\n");
     return sb.toString();
   }
+
+public Integer getVerticleResolution() {
+	return VerticleResolution;
+}
+
+public void setVerticleResolution(Integer verticleResolution) {
+	VerticleResolution = verticleResolution;
+}
+
+public Integer getHorizontalResolution() {
+	return HorizontalResolution;
+}
+
+public void setHorizontalResolution(Integer horizontalResolution) {
+	HorizontalResolution = horizontalResolution;
+}
 }
 

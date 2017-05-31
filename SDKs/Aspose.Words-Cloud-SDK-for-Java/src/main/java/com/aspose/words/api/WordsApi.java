@@ -44,6 +44,7 @@ import com.aspose.words.model.ResponseMessage;
 import com.aspose.words.model.RevisionsModificationResponse;
 import com.aspose.words.model.RunResponse;
 import com.aspose.words.model.SaaSposeResponse;
+import com.aspose.words.model.SaveOptions;
 import com.aspose.words.model.SaveResponse;
 import com.aspose.words.model.SearchResult;
 import com.aspose.words.model.SectionLinkCollectionResponse;

@@ -5,6 +5,7 @@ public class ReplaceTextRequest {
   private String NewValue = null;
   private Boolean IsMatchCase = null;
   private Boolean IsMatchWholeWord = null;
+  private Boolean IsOldValueRegex =null;
   /**
 	 * getOldValue
 	 * Gets String
@@ -76,7 +77,14 @@ public class ReplaceTextRequest {
   public void setIsMatchWholeWord(Boolean IsMatchWholeWord) {
     this.IsMatchWholeWord = IsMatchWholeWord;
   }
+  
+  public Boolean getIsOldValueRegex() {
+		return IsOldValueRegex;
+	}
 
+	public void setIsOldValueRegex(Boolean isOldValueRegex) {
+		IsOldValueRegex = isOldValueRegex;
+	}
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -88,5 +96,7 @@ public class ReplaceTextRequest {
     sb.append("}\n");
     return sb.toString();
   }
+
+
 }
 
