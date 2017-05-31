@@ -24,6 +24,7 @@ public class FindReplaceTextExample {
         ReplaceTextRequest body = new ReplaceTextRequest();
         body.setOldValue ("aspose");
         body.setNewValue ( "aspose.com");
+        body.setIsOldValueRegex(false);
         Path p1=Utils.getPath(FindReplaceTextExample.class, fileName);
         
         String revisionDateTime = "2017-02-20";
