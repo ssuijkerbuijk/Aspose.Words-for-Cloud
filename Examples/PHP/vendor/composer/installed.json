@@ -1,0 +1,89 @@
+[
+    {
+        "name": "aspose/storage-sdk-php",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/asposetotal/Aspose-Cloud-Storage-SDK-For-PHP.git",
+            "reference": "8357ed840fe5f31503c6119339ce641fa3153454"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/asposetotal/Aspose-Cloud-Storage-SDK-For-PHP/zipball/8357ed840fe5f31503c6119339ce641fa3153454",
+            "reference": "8357ed840fe5f31503c6119339ce641fa3153454",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.3.2"
+        },
+        "time": "2016-03-26T17:43:31+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Aspose": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "Imran Anwar",
+                "email": "imran.anwar@aspose.com"
+            }
+        ],
+        "description": "Aspose.Storage Cloud SDK for PHP lets users use Aspose Cloud Storage APIs in their PHP apps.",
+        "homepage": "https://github.com/asposetotal/Aspose_Storage_Cloud_SDK_For_PHP",
+        "keywords": [
+            "aspose",
+            "aspose cloud",
+            "php",
+            "storage"
+        ]
+    },
+    {
+        "name": "aspose/words-sdk-php",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/aspose-words/Aspose.Words-Cloud-SDK-for-PHP.git",
+            "reference": "d061382134f72305e38f83672761d26bdda93d6a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/aspose-words/Aspose.Words-Cloud-SDK-for-PHP/zipball/d061382134f72305e38f83672761d26bdda93d6a",
+            "reference": "d061382134f72305e38f83672761d26bdda93d6a",
+            "shasum": ""
+        },
+        "require": {
+            "aspose/storage-sdk-php": "1.0.*",
+            "ext-curl": "*",
+            "php": ">=5.3.2"
+        },
+        "time": "2017-02-22T07:04:30+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Aspose": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "Imran Anwar",
+                "email": "imran.anwar@aspose.com"
+            }
+        ],
+        "description": "Aspose.Words for Cloud is a Cloud API to work with Microsoft Word and OpenOffice Document files. This is the repository for Aspose.Words Cloud SDK for PHP. Using this SDK, Aspose.Words Cloud APIs can be easily used in PHP applications.",
+        "homepage": "https://github.com/asposewords/Aspose_Words_Cloud_SDK_For_PHP",
+        "keywords": [
+            "aspose",
+            "aspose cloud",
+            "php",
+            "word"
+        ]
+    }
+]
