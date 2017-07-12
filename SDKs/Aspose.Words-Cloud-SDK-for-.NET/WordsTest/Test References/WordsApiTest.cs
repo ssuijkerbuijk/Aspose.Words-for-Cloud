@@ -231,7 +231,28 @@ namespace WordsTest
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType()); 
             
         }
+        /// <summary>
+        ///A test for DeleteField
+        ///</summary>
+        [TestMethod()]
+        public void TestDeleteField()
+        {
+            string name = "GetField.docx";
+            int sectionIndex = 0;
+            int paragraphIndex = 0;
+            int fieldIndex = 0;           
+            string storage = null;
+            string folder = null;
 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            Com.Aspose.Words.Model.SaaSposeResponse actual;
+            actual = target.DeleteField(name, sectionIndex, paragraphIndex, fieldIndex,  storage, folder);
+
+            Assert.AreEqual(actual.Code, "200");
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType());
+
+        }
         /// <summary>
         ///A test for DeleteHeadersFooters
         ///</summary>
@@ -294,7 +315,26 @@ namespace WordsTest
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType());             
         }
+        /// <summary>
+        ///A test for GetRenderPage
+        ///</summary>
+        [TestMethod()]
+        public void TestGetRenderPage()
+        {
+            string name = "SampleWordDocument.docx";
+            int pageNumber = 1;
+            String format = "bmp";
+            string storage = null;
+            string folder = null;
 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            Com.Aspose.Words.Model.ResponseMessage actual;
+            actual = target.GetRenderPage(name, pageNumber, format, storage, folder);
+
+            Assert.AreEqual(actual.Code, 200);
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType());
+        }
         /// <summary>
         ///A test for DeleteSectionParagraphFields
         ///</summary>
@@ -832,7 +872,48 @@ namespace WordsTest
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FieldResponse(), actual.GetType()); 
             
         }
+        /// <summary>
+        ///A test for GetFields
+        ///</summary>
+        [TestMethod()]
+        public void TestGetFields()
+        {
+            string name = "GetField.docx";
+            int sectionIndex = 0;
+            int paragraphIndex = 0;           
+            string storage = null;
+            string folder = null;
 
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            Com.Aspose.Words.Model.ResponseMessage actual;
+            actual = target.GetFields(name, sectionIndex, paragraphIndex,  storage, folder);
+
+            Assert.AreEqual(actual.Code, 200);
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType());
+
+        }
+        /// <summary>
+        ///A test for TestGetParagraphRuns
+        ///</summary>
+        [TestMethod()]
+        public void TestGetParagraphRuns()
+        {
+            string name = "GetField.docx";
+            int sectionIndex = 0;
+            int paragraphIndex = 0;
+            string storage = null;
+            string folder = null;
+
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            Com.Aspose.Words.Model.ResponseMessage actual;
+            actual = target.GetParagraphRuns(name, sectionIndex, paragraphIndex, storage, folder);
+
+            Assert.AreEqual(actual.Code, 200);
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType());
+
+        }
         /// <summary>
         ///A test for GetFormField
         ///</summary>

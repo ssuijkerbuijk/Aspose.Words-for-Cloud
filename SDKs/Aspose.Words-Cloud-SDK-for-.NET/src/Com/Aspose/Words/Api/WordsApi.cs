@@ -97,6 +97,103 @@
       ///  
       /// </summary>
       /// <param name="name"></param>
+      /// <param name="pageNumber"></param>
+      /// <param name="format"></param>
+      /// <param name="storage"></param>
+      /// <param name="folder"></param>
+      /// <returns></returns>
+      public ResponseMessage GetRenderPage(string name, int? pageNumber, string format, string storage, string folder)
+      {
+          // create path and map variables
+          var ResourcePath = "/words/{name}/pages/{pageNumber}/render/?appSid={appSid}&amp;format={format}&amp;storage={storage}&amp;folder={folder}";
+          ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+
+          // query params
+          var queryParams = new Dictionary<String, String>();
+          var headerParams = new Dictionary<String, String>();
+          var formParams = new Dictionary<String, object>();
+
+          // verify required params are set
+          if (name == null || pageNumber == null || format == null)
+          {
+              throw new ApiException(400, "missing required params");
+          }
+          if (name == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
+          }
+          if (pageNumber == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])pageNumber=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "pageNumber" + "}", apiInvoker.ToPathValue(pageNumber));
+          }
+          if (format == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "format" + "}", apiInvoker.ToPathValue(format));
+          }
+          if (storage == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "storage" + "}", apiInvoker.ToPathValue(storage));
+          }
+          if (folder == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "folder" + "}", apiInvoker.ToPathValue(folder));
+          }
+          try
+          {
+              if (typeof(ResponseMessage) == typeof(ResponseMessage))
+              {
+                  var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+                  return (ResponseMessage)ApiInvoker.deserialize(response, typeof(ResponseMessage));
+              }
+              else
+              {
+                  var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+                  if (response != null)
+                  {
+                      return (ResponseMessage)ApiInvoker.deserialize(response, typeof(ResponseMessage));
+                  }
+                  else
+                  {
+                      return null;
+                  }
+              }
+          }
+          catch (ApiException ex)
+          {
+              if (ex.ErrorCode == 404)
+              {
+                  return null;
+              }
+              else
+              {
+                  throw ex;
+              }
+          }
+      }
+      /// <summary>
+      ///  
+      /// </summary>
+      /// <param name="name"></param>
       /// <param name="storage"></param>
       /// <param name="folder"></param>
       /// <returns></returns>
@@ -1686,6 +1783,200 @@
             throw ex;
           }
         }
+      }
+      /// <summary>
+      ///  
+      /// </summary>
+      /// <param name="name"></param>
+      /// <param name="sectionIndex"></param>
+      /// <param name="paragraphIndex"></param>      
+      /// <param name="storage"></param>
+      /// <param name="folder"></param>
+      /// <returns></returns>
+      public ResponseMessage GetFields(string name, int sectionIndex, int paragraphIndex, string storage, string folder)
+      {
+          // create path and map variables
+          var ResourcePath = "/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/fields/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}".Replace("{format}", "json");
+          ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+
+          // query params
+          var queryParams = new Dictionary<String, String>();
+          var headerParams = new Dictionary<String, String>();
+          var formParams = new Dictionary<String, object>();
+
+          // verify required params are set
+          if (name == null || sectionIndex == null || paragraphIndex == null )
+          {
+              throw new ApiException(400, "missing required params");
+          }
+          if (name == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
+          }
+          if (sectionIndex == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "sectionIndex" + "}", apiInvoker.ToPathValue(sectionIndex));
+          }
+          if (paragraphIndex == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])paragraphIndex=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "paragraphIndex" + "}", apiInvoker.ToPathValue(paragraphIndex));
+          }          
+          if (storage == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "storage" + "}", apiInvoker.ToPathValue(storage));
+          }
+          if (folder == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "folder" + "}", apiInvoker.ToPathValue(folder));
+          }
+          try
+          {
+              if (typeof(ResponseMessage) == typeof(ResponseMessage))
+              {
+                  var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+                  return (ResponseMessage)ApiInvoker.deserialize(response, typeof(ResponseMessage));
+              }
+              else
+              {
+                  var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+                  if (response != null)
+                  {
+                      return (ResponseMessage)ApiInvoker.deserialize(response, typeof(ResponseMessage));
+                  }
+                  else
+                  {
+                      return null;
+                  }
+              }
+          }
+          catch (ApiException ex)
+          {
+              if (ex.ErrorCode == 404)
+              {
+                  return null;
+              }
+              else
+              {
+                  throw ex;
+              }
+          }
+      }
+      /// <summary>
+      ///  
+      /// </summary>
+      /// <param name="name"></param>
+      /// <param name="sectionIndex"></param>
+      /// <param name="paragraphIndex"></param>      
+      /// <param name="storage"></param>
+      /// <param name="folder"></param>
+      /// <returns></returns>
+      public ResponseMessage GetParagraphRuns(string name, int sectionIndex, int paragraphIndex, string storage, string folder)
+      {
+          // create path and map variables
+          var ResourcePath = "/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/runs/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}".Replace("{format}", "json");
+          ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+
+          // query params
+          var queryParams = new Dictionary<String, String>();
+          var headerParams = new Dictionary<String, String>();
+          var formParams = new Dictionary<String, object>();
+
+          // verify required params are set
+          if (name == null || sectionIndex == null || paragraphIndex == null)
+          {
+              throw new ApiException(400, "missing required params");
+          }
+          if (name == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
+          }
+          if (sectionIndex == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "sectionIndex" + "}", apiInvoker.ToPathValue(sectionIndex));
+          }
+          if (paragraphIndex == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])paragraphIndex=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "paragraphIndex" + "}", apiInvoker.ToPathValue(paragraphIndex));
+          }
+          if (storage == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "storage" + "}", apiInvoker.ToPathValue(storage));
+          }
+          if (folder == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "folder" + "}", apiInvoker.ToPathValue(folder));
+          }
+          try
+          {
+              if (typeof(ResponseMessage) == typeof(ResponseMessage))
+              {
+                  var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+                  return (ResponseMessage)ApiInvoker.deserialize(response, typeof(ResponseMessage));
+              }
+              else
+              {
+                  var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams);
+                  if (response != null)
+                  {
+                      return (ResponseMessage)ApiInvoker.deserialize(response, typeof(ResponseMessage));
+                  }
+                  else
+                  {
+                      return null;
+                  }
+              }
+          }
+          catch (ApiException ex)
+          {
+              if (ex.ErrorCode == 404)
+              {
+                  return null;
+              }
+              else
+              {
+                  throw ex;
+              }
+          }
       }
       /// <summary>
       ///  
@@ -3367,6 +3658,112 @@
             throw ex;
           }
         }
+      }
+      /// <summary>
+      ///  
+      /// </summary>
+      /// <param name="name"></param>
+      /// <param name="sectionIndex"></param>
+      /// <param name="paragraphIndex"></param>
+      /// <param name="fieldIndex"></param>
+      /// <param name="storage"></param>
+      /// <param name="folder"></param>
+      /// <returns></returns>
+      public SaaSposeResponse DeleteField(string name, int sectionIndex, int paragraphIndex, int fieldIndex,  string storage, string folder)
+      {
+          // create path and map variables
+          var ResourcePath = "/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/fields/{fieldIndex}/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}".Replace("{format}", "json");
+          ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+
+          // query params
+          var queryParams = new Dictionary<String, String>();
+          var headerParams = new Dictionary<String, String>();
+          var formParams = new Dictionary<String, object>();
+
+          // verify required params are set
+          if (name == null || sectionIndex == null || paragraphIndex == null || fieldIndex == null)
+          {
+              throw new ApiException(400, "missing required params");
+          }
+          if (name == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
+          }
+          if (sectionIndex == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "sectionIndex" + "}", apiInvoker.ToPathValue(sectionIndex));
+          }
+          if (paragraphIndex == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])paragraphIndex=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "paragraphIndex" + "}", apiInvoker.ToPathValue(paragraphIndex));
+          }
+          if (fieldIndex == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])fieldIndex=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "fieldIndex" + "}", apiInvoker.ToPathValue(fieldIndex));
+          }         
+          if (storage == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "storage" + "}", apiInvoker.ToPathValue(storage));
+          }
+          if (folder == null)
+          {
+              ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", "");
+          }
+          else
+          {
+              ResourcePath = ResourcePath.Replace("{" + "folder" + "}", apiInvoker.ToPathValue(folder));
+          }
+          try
+          {
+              if (typeof(SaaSposeResponse) == typeof(ResponseMessage))
+              {
+                  var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
+                  return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
+              }
+              else
+              {
+                  var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
+                  if (response != null)
+                  {
+                      return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
+                  }
+                  else
+                  {
+                      return null;
+                  }
+              }
+          }
+          catch (ApiException ex)
+          {
+              if (ex.ErrorCode == 404)
+              {
+                  return null;
+              }
+              else
+              {
+                  throw ex;
+              }
+          }
       }
       /// <summary>
       ///  

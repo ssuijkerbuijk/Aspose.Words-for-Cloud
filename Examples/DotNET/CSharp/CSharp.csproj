@@ -37,7 +37,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Aspose.Words-Cloud, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.Words-Cloud.1.0.5\lib\Aspose.Words-Cloud.dll</HintPath>
+      <HintPath>..\packages\Aspose.Words-Cloud.1.0.6\lib\Aspose.Words-Cloud.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -78,10 +78,12 @@
     <Compile Include="Drawing\GetOLEData.cs" />
     <Compile Include="Drawing\GetAllDrawingObject.cs" />
     <Compile Include="Drawing\ReadingImageData.cs" />
+    <Compile Include="Fields\DeleteField.cs" />
     <Compile Include="Fields\GetMergeFieldNames.cs" />
     <Compile Include="Fields\InsertPageNumberFieldUsingThirdPartyStorage.cs" />
     <Compile Include="Fields\InsertPageNumberField.cs" />
     <Compile Include="Fields\ParagraphLevel\AddFormFields.cs" />
+    <Compile Include="Fields\GetFields.cs" />
     <Compile Include="Fields\UpdateFields.cs" />
     <Compile Include="Hyperlink\GetParticularHyperlink.cs" />
     <Compile Include="Mail-Merge\ExecuteTemplateUsingThirdPartyStorage.cs" />
@@ -92,8 +94,10 @@
     <Compile Include="Mail-Merge\InsertDynamicImages.cs" />
     <Compile Include="Mail-Merge\ExecuteWithRegions.cs" />
     <Compile Include="Mail-Merge\WithoutRegionsWithoutCloudStorage.cs" />
+    <Compile Include="Page-Setup\GetRenderPage.cs" />
     <Compile Include="Page-Setup\UpdatePageSetup.cs" />
     <Compile Include="Page-Setup\ExtractPageSetupInformation.cs" />
+    <Compile Include="Paragraph\ReadAllRuns.cs" />
     <Compile Include="Paragraph\UpdateFontOfRun.cs" />
     <Compile Include="Paragraph\GetFontOfRun.cs" />
     <Compile Include="Paragraph\GetSpecificRunOfParagraph.cs" />
