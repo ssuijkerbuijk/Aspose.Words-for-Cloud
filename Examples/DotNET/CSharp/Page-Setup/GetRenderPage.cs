@@ -28,7 +28,7 @@ namespace Page_Setup
 
                 if (apiResponse != null && apiResponse.Status.Equals("Ok"))
                 {
-                    Console.WriteLine("Renders page to specified format, Done!");
+                    Console.WriteLine("Render page to specified format, Done!");
                     Console.ReadKey();
                 }
             }

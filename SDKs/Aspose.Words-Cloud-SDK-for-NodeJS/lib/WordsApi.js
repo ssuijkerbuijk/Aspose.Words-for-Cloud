@@ -387,7 +387,240 @@ WordsApi.prototype.GetDocument = function(name, storage, folder, callback) {
 
 	return apiClient.InvokeAPI(resourcePath, method, queryParams, postData, headerParams, files, callback);
   }
+  /**
+* GetRenderPage
+* Render complex parts of a Word Document.
+*
+* @param  (String) name  -  The file name. (required) 
+* @param  (Integer) pageNumber  -  Page Number. (required) 
+* @param  (String) format  -  Format. (required) 
+* @param  (String) storage  -  Storage. (optional) 
+* @param  (String) folder  -  The document folder. (optional) 
+* @returns ResponseMessage (Map)
+*/
+WordsApi.prototype.GetRenderPage = function(name, pageNumber, format, storage, folder, callback) {
+
+    var self = this;
+	
+	if( typeof name === 'undefined' || name === null && name === ''){
+		throw new Error('missing required parameters.');
+    }   	
+		
+if( typeof pageNumber === 'undefined' || pageNumber === null && pageNumber === ''){
+		throw new Error('missing required parameters.');
+    }   
+if( typeof format === 'undefined' || format === null && format === ''){
+		throw new Error('missing required parameters.');
+    }   
+	var resourcePath = '/words/{name}/pages/{pageNumber}/render/?appSid={appSid}&amp;format={format}&amp;storage={storage}&amp;folder={folder}';
+	
+	resourcePath = resourcePath.replace(new RegExp('\\*', 'g'), "");
+	resourcePath = resourcePath.replace(new RegExp('&amp;', 'g'), '&');
+	resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}");
+	
+	
+	if(typeof name !== 'undefined' &&  name !== null && name!== ''){            
+			resourcePath = resourcePath.replace("{" + "name" + "}" , name);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]name.*?(?=&|\\?|$)', 'g'), "");
+		}
+
+if(typeof pageNumber !== 'undefined' && pageNumber !== null && pageNumber!== ''){            
+			resourcePath = resourcePath.replace("{" + "pageNumber" + "}" , pageNumber);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]pageNumber.*?(?=&|\\?|$)', 'g'), "");
+		}
+
+if(typeof format !== 'format' &&  format !== null && format!== ''){            
+			resourcePath = resourcePath.replace("{" + "format" + "}" , format);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]format.*?(?=&|\\?|$)', 'g'), "");
+		}
+	
+	if(typeof storage !== 'undefined' &&  storage !== null && storage!== ''){            
+			resourcePath = resourcePath.replace("{" + "storage" + "}" , storage);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]storage.*?(?=&|\\?|$)', 'g'), "");
+		}
+	
+	if(typeof folder !== 'undefined' &&  folder !== null && folder!== ''){            
+			resourcePath = resourcePath.replace("{" + "folder" + "}" , folder);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]folder.*?(?=&|\\?|$)', 'g'), "");
+		}
+	
+	
+	if(this.config.debug){console.log('resourcePath :: ' + resourcePath);}
+	
+    method = 'GET'
+    queryParams = {}
+    headerParams = {}
+    formParams = {}
+    files = {}
+	postData = null;
     
+	
+	headerParams['Accept'] = 'application/json'
+    headerParams['Content-Type'] = 'application/json'
+
+	return apiClient.InvokeAPI(resourcePath, method, queryParams, postData, headerParams, files, callback);
+  } 
+/**
+* GetFields
+* Get all Fields contained in a document
+*
+* @param  (String) name  -  The file name. (required) 
+* @param  (Integer) sectionIndex  -  Section Index. (required) 
+* @param  (Integer) paragraphIndex  -  (required) 
+* @param  (String) storage  -  Storage. (optional) 
+* @param  (String) folder  -  The document folder. (optional) 
+* @returns ResponseMessage (Map)
+*/
+WordsApi.prototype.GetFields = function(name, sectionIndex, paragraphIndex, storage, folder, callback) {
+
+    var self = this;
+	
+	if( typeof name === 'undefined' || name === null && name === ''){
+		throw new Error('missing required parameters.');
+    }   	
+		
+if( typeof sectionIndex === 'undefined' || sectionIndex === null && sectionIndex === ''){
+		throw new Error('missing required parameters.');
+    }   
+if( typeof paragraphIndex === 'undefined' || paragraphIndex === null && paragraphIndex === ''){
+		throw new Error('missing required parameters.');
+    }   
+	var resourcePath = '/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/fields/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}';
+	
+	resourcePath = resourcePath.replace(new RegExp('\\*', 'g'), "");
+	resourcePath = resourcePath.replace(new RegExp('&amp;', 'g'), '&');
+	resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}");
+	
+	
+	if(typeof name !== 'undefined' &&  name !== null && name!== ''){            
+			resourcePath = resourcePath.replace("{" + "name" + "}" , name);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]name.*?(?=&|\\?|$)', 'g'), "");
+		}
+
+if(typeof sectionIndex !== 'undefined' && sectionIndex !== null && sectionIndex!== ''){            
+			resourcePath = resourcePath.replace("{" + "sectionIndex" + "}" , sectionIndex);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]sectionIndex.*?(?=&|\\?|$)', 'g'), "");
+		}
+
+if(typeof paragraphIndex !== 'paragraphIndex' &&  paragraphIndex !== null && paragraphIndex!== ''){            
+			resourcePath = resourcePath.replace("{" + "paragraphIndex" + "}" , paragraphIndex);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]paragraphIndex.*?(?=&|\\?|$)', 'g'), "");
+		}
+	
+	if(typeof storage !== 'undefined' &&  storage !== null && storage!== ''){            
+			resourcePath = resourcePath.replace("{" + "storage" + "}" , storage);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]storage.*?(?=&|\\?|$)', 'g'), "");
+		}
+	
+	if(typeof folder !== 'undefined' &&  folder !== null && folder!== ''){            
+			resourcePath = resourcePath.replace("{" + "folder" + "}" , folder);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]folder.*?(?=&|\\?|$)', 'g'), "");
+		}
+	
+	
+	if(this.config.debug){console.log('resourcePath :: ' + resourcePath);}
+	
+    method = 'GET'
+    queryParams = {}
+    headerParams = {}
+    formParams = {}
+    files = {}
+	postData = null;
+    
+	
+	headerParams['Accept'] = 'application/json'
+    headerParams['Content-Type'] = 'application/json'
+
+	return apiClient.InvokeAPI(resourcePath, method, queryParams, postData, headerParams, files, callback);
+  } 
+/**
+* GetParagraphRuns
+* Reading all Runs from a Paragraph in a Word Document
+*
+* @param  (String) name  -  The file name. (required) 
+* @param  (Integer) sectionIndex  -  Section Index. (required) 
+* @param  (Integer) paragraphIndex  -  (required) 
+* @param  (String) storage  -  Storage. (optional) 
+* @param  (String) folder  -  The document folder. (optional) 
+* @returns ResponseMessage (Map)
+*/
+WordsApi.prototype.GetParagraphRuns = function(name, sectionIndex, paragraphIndex, storage, folder, callback) {
+
+    var self = this;
+	
+	if( typeof name === 'undefined' || name === null && name === ''){
+		throw new Error('missing required parameters.');
+    }   	
+		
+if( typeof sectionIndex === 'undefined' || sectionIndex === null && sectionIndex === ''){
+		throw new Error('missing required parameters.');
+    }   
+if( typeof paragraphIndex === 'undefined' || paragraphIndex === null && paragraphIndex === ''){
+		throw new Error('missing required parameters.');
+    }   
+	var resourcePath = '/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/runs/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}';
+	
+	resourcePath = resourcePath.replace(new RegExp('\\*', 'g'), "");
+	resourcePath = resourcePath.replace(new RegExp('&amp;', 'g'), '&');
+	resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}");
+	
+	
+	if(typeof name !== 'undefined' &&  name !== null && name!== ''){            
+			resourcePath = resourcePath.replace("{" + "name" + "}" , name);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]name.*?(?=&|\\?|$)', 'g'), "");
+		}
+
+if(typeof sectionIndex !== 'undefined' && sectionIndex !== null && sectionIndex!== ''){            
+			resourcePath = resourcePath.replace("{" + "sectionIndex" + "}" , sectionIndex);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]sectionIndex.*?(?=&|\\?|$)', 'g'), "");
+		}
+
+if(typeof paragraphIndex !== 'paragraphIndex' &&  paragraphIndex !== null && paragraphIndex!== ''){            
+			resourcePath = resourcePath.replace("{" + "paragraphIndex" + "}" , paragraphIndex);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]paragraphIndex.*?(?=&|\\?|$)', 'g'), "");
+		}
+	
+	if(typeof storage !== 'undefined' &&  storage !== null && storage!== ''){            
+			resourcePath = resourcePath.replace("{" + "storage" + "}" , storage);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]storage.*?(?=&|\\?|$)', 'g'), "");
+		}
+	
+	if(typeof folder !== 'undefined' &&  folder !== null && folder!== ''){            
+			resourcePath = resourcePath.replace("{" + "folder" + "}" , folder);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]folder.*?(?=&|\\?|$)', 'g'), "");
+		}
+	
+	
+	if(this.config.debug){console.log('resourcePath :: ' + resourcePath);}
+	
+    method = 'GET'
+    queryParams = {}
+    headerParams = {}
+    formParams = {}
+    files = {}
+	postData = null;
+    
+	
+	headerParams['Accept'] = 'application/json'
+    headerParams['Content-Type'] = 'application/json'
+
+	return apiClient.InvokeAPI(resourcePath, method, queryParams, postData, headerParams, files, callback);
+  }
 /**
 * GetDocumentWithFormat
 * Export the document into the specified format.
@@ -1193,7 +1426,93 @@ WordsApi.prototype.DeleteDocumentProperty = function(name, propertyName, filenam
 
 	return apiClient.InvokeAPI(resourcePath, method, queryParams, postData, headerParams, files, callback);
   }
+   /**
+* DeleteField
+* Delete a specific field from a Section or Paragraph in a Word Document
+*
+* @param  (String) name  -  The document name. (required) 
+* @param  (Integer) sectionIndex  -  (required) 
+* @param  (Integer) paragraphIndex  - (required)
+* @param  (Integer) fieldIndex  - (required) 
+* @param  (String) storage  -  Document&#39;s storage. (optional) 
+* @param  (String) folder  -  Document&#39;s folder. (optional) 
+* @returns SaaSposeResponse (Map)
+*/
+WordsApi.prototype.DeleteField = function(name, sectionIndex, paragraphIndex, fieldIndex, storage, folder, callback) {
+
+    var self = this;
+	
+	if( typeof name === 'undefined' || name === null && name === ''){
+		throw new Error('missing required parameters.');
+    } 
+	if( typeof sectionIndex === 'undefined' || sectionIndex === null && sectionIndex === ''){
+		throw new Error('missing required parameters.');
+    }    
+if( typeof paragraphIndex === 'undefined' || paragraphIndex === null && paragraphIndex === ''){
+		throw new Error('missing required parameters.');
+    }   
+if( typeof fieldIndex === 'undefined' || fieldIndex === null && fieldIndex === ''){
+		throw new Error('missing required parameters.');
+    }   	
+		
+	var resourcePath = '/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/fields/{fieldIndex}/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}';
+	
+	resourcePath = resourcePath.replace(new RegExp('\\*', 'g'), "");
+	resourcePath = resourcePath.replace(new RegExp('&amp;', 'g'), '&');
+	resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}");
+	
+	
+	if(typeof name !== 'undefined' &&  name !== null && name!== ''){            
+			resourcePath = resourcePath.replace("{" + "name" + "}" , name);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]name.*?(?=&|\\?|$)', 'g'), "");
+		}
+	
+	if(typeof sectionIndex !== 'undefined' &&  sectionIndex !== null && sectionIndex!== ''){            
+			resourcePath = resourcePath.replace("{" + "sectionIndex" + "}" , sectionIndex);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]sectionIndex.*?(?=&|\\?|$)', 'g'), "");
+		}
+	
+	if(typeof paragraphIndex !== 'undefined' &&  paragraphIndex !== null && paragraphIndex!== ''){            
+			resourcePath = resourcePath.replace("{" + "paragraphIndex" + "}" , paragraphIndex);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]paragraphIndex.*?(?=&|\\?|$)', 'g'), "");
+		}
+if(typeof fieldIndex !== 'undefined' &&  fieldIndex !== null && fieldIndex !== ''){            
+			resourcePath = resourcePath.replace("{" + "fieldIndex" + "}" , fieldIndex);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]fieldIndex.*?(?=&|\\?|$)', 'g'), "");
+		}
+	
+	if(typeof storage !== 'undefined' &&  storage !== null && storage!== ''){            
+			resourcePath = resourcePath.replace("{" + "storage" + "}" , storage);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]storage.*?(?=&|\\?|$)', 'g'), "");
+		}
+	
+	if(typeof folder !== 'undefined' &&  folder !== null && folder!== ''){            
+			resourcePath = resourcePath.replace("{" + "folder" + "}" , folder);
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]folder.*?(?=&|\\?|$)', 'g'), "");
+		}
+	
+	
+	if(this.config.debug){console.log('resourcePath :: ' + resourcePath);}
+	
+    method = 'DELETE'
+    queryParams = {}
+    headerParams = {}
+    formParams = {}
+    files = {}
+	postData = null;
     
+	
+	headerParams['Accept'] = 'application/xml,application/json'
+    headerParams['Content-Type'] = 'application/json'
+
+	return apiClient.InvokeAPI(resourcePath, method, queryParams, postData, headerParams, files, callback);
+  } 
 /**
 * GetDocumentProperty
 * Read document property info by the property name.
