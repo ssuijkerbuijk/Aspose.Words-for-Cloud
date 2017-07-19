@@ -12,7 +12,7 @@ use File::Slurp;
 use AsposeWordsCloud::ApiClient;
 use AsposeWordsCloud::Configuration;
 
-my $VERSION = '1.0.2';
+my $VERSION = '1.02';
 
 sub new {
     my $class   = shift;
