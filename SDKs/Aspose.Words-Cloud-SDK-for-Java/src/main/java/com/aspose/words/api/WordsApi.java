@@ -368,14 +368,14 @@ public class WordsApi {
 	 */
 
 	public ResponseMessage GetDocumentWithFormat(String name, String format, String storage, String folder,
-			String outPath) {
+			String outPath, String customFont) {
 		Object postBody = null;
 		// verify required params are set
 		if (name == null || format == null) {
 			throw new ApiException(400, "missing required params");
 		}
 		// create path and map variables
-		String resourcePath = "/words/{name}/?appSid={appSid}&amp;toFormat={toFormat}&amp;storage={storage}&amp;folder={folder}&amp;outPath={outPath}";
+		String resourcePath = "/words/{name}/?appSid={appSid}&amp;toFormat={toFormat}&amp;storage={storage}&amp;folder={folder}&amp;outPath={outPath}&amp;fontsLocation={customFont}";
 		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
 				.replace("toFormat={toFormat}", "format={format}");
 		// query params
@@ -387,6 +387,14 @@ public class WordsApi {
 			resourcePath = resourcePath.replace("{" + "name" + "}", apiInvoker.toPathValue(name));
 		else
 			resourcePath = resourcePath.replaceAll("[&?]name.*?(?=&|\\?|$)", "");
+		
+		if (customFont != null)
+			resourcePath = resourcePath.replace("{" + "customFont" + "}", apiInvoker.toPathValue(customFont));
+		else
+			resourcePath = resourcePath.replaceAll("[&?]name.*?(?=&|\\?|$)", "");
+		
+		
+		
 		if (format != null)
 			resourcePath = resourcePath.replace("{" + "format" + "}", apiInvoker.toPathValue(format));
 		else
@@ -406,6 +414,8 @@ public class WordsApi {
 		String[] contentTypes = { "application/json" };
 
 		String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+		
+		System.out.println(resourcePath);
 
 		try {
 			response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, postBody, headerParams,
@@ -5414,7 +5424,67 @@ public class WordsApi {
 	
 	
 	
-	
+	public ResponseMessage GetRenderPage(String name,Integer pageNumber,String format ,String storage,String folder) {
+		Object postBody = null;
+		// verify required params are set
+		if (name == null || pageNumber==null) {
+			throw new ApiException(400, "missing required params");
+		}
+		// create path and map variable
+
+		String resourcePath = "/words/{name}/pages/{pageNumber}/render?appSid={appSid}&format={format}&folder={folder}&storage={storage}";
+		resourcePath = resourcePath.replaceAll("\\*", "").replace("&amp;", "&").replace("/?", "?")
+				.replace("toFormat={toFormat}", "format={format}");
+		// query params
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		Map<String, String> formParams = new HashMap<String, String>();
+
+		if (name != null)
+			resourcePath = resourcePath.replace("{" + "name" + "}", apiInvoker.toPathValue(name));
+		else
+			resourcePath = resourcePath.replaceAll("[&?]name.*?(?=&|\\?|$)", "");
+		
+		if (pageNumber != null)
+			resourcePath = resourcePath.replace("{" + "pageNumber" + "}", apiInvoker.toPathValue(pageNumber));
+		else
+			resourcePath = resourcePath.replaceAll("[&?]pageNumber.*?(?=&|\\?|$)", "");
+		
+		if (format != null)
+			resourcePath = resourcePath.replace("{" + "format" + "}", apiInvoker.toPathValue(format));
+		else
+			resourcePath = resourcePath.replaceAll("[&?]format.*?(?=&|\\?|$)", "");
+		
+
+		if (storage != null)
+			resourcePath = resourcePath.replace("{" + "storage" + "}", apiInvoker.toPathValue(storage));
+		else
+			resourcePath = resourcePath.replaceAll("[&?]storage.*?(?=&|\\?|$)", "");
+
+		if (folder != null)
+			resourcePath = resourcePath.replace("{" + "folder" + "}", apiInvoker.toPathValue(folder));
+		else
+			resourcePath = resourcePath.replaceAll("[&?]folder.*?(?=&|\\?|$)", "");
+
+		String[] contentTypes = { "application/json" };
+
+		String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+		try {
+			response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, postBody, headerParams,
+					formParams, contentType);
+			return (ResponseMessage) ApiInvoker.deserialize(response, "", ResponseMessage.class);
+		} catch (ApiException ex) {
+			ex.printStackTrace();
+			ex.getMessage();
+			if (ex.getCode() == 404) {
+
+				throw new ApiException(404, "");
+			} else {
+				throw ex;
+			}
+		}
+	}
 	
 	
 	

@@ -215,7 +215,7 @@ public class WordsApiTest {
 		String folder = "";
 		String outPath = "";
 		try {
-			ResponseMessage result = wordsApi.GetDocumentWithFormat(name, format, storage, folder, outPath);
+			ResponseMessage result = wordsApi.GetDocumentWithFormat(name, format, storage, folder, outPath,"");
 
 		} catch (ApiException apiException) {
 			System.out.println("exp:" + apiException.getMessage());

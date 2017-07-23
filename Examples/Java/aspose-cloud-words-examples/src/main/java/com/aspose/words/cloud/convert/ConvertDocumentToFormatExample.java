@@ -18,13 +18,13 @@ public class ConvertDocumentToFormatExample {
 		// ExStart: ConvertDocumentToFormatExample
 		try {
 			// Instantiate Aspose Storage API SDK
-			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
+			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, false);
 
 			// Instantiate Aspose Words API SDK
-			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
+			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, false);
 
 			// set input file name
-			String fileName = "test_doc.docx";
+			String fileName = "SampleWordDocument.docx";
 
 			// set the desire output format
 			String format = "pdf";
@@ -32,7 +32,7 @@ public class ConvertDocumentToFormatExample {
 			String folder = "";
 			String outPath = "";
 			
-			Path p1=Utils.getPath(AppendDocumentExample.class, fileName);
+			Path p1=Utils.getPath(ConvertDocumentToFormatExample.class, fileName);
 
 			// upload file to aspose cloud storage
 			storageApi.PutCreate(fileName, "", "",p1.toFile());
@@ -42,12 +42,12 @@ public class ConvertDocumentToFormatExample {
 			
 			// invoke Aspose.Words Cloud SDK API to convert words document to
 			// required format
-			ResponseMessage apiResponse = wordsApi.GetDocumentWithFormat(fileName, format, storage, folder, outPath);
+			ResponseMessage apiResponse = wordsApi.GetDocumentWithFormat(fileName, format, storage, folder, outPath,"fonts");
 
 			if (apiResponse != null && apiResponse.getInputStream() != null) {
 				// save api response to file
 				InputStream responseStream = apiResponse.getInputStream();
-				final Path destination = Paths.get("WordFormatConverterExampleTest.pdf");
+				final Path destination = Paths.get("SampleWordDocument.pdf");
 				Files.copy(responseStream, destination, StandardCopyOption.REPLACE_EXISTING);
 			}
 
