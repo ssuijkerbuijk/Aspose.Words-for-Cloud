@@ -30,16 +30,16 @@ my $storageApi = AsposeStorageCloud::StorageApi->new();
 my $wordsApi = AsposeWordsCloud::WordsApi->new();
 
 # Set input file name
-my $name = 'SampleWordDocument.docx';
+my $name = 'GetField.docx';
 my $sectionIndex = 0;
+my $paragraphIndex = 0;
 
 # Upload file to aspose cloud storage 
 my $response = $storageApi->PutCreate(Path => $name, file => $data_path.$name);
-# Invoke Aspose.Words Cloud SDK API to get page setup properties by given section index from a word document      
-$response = $wordsApi->GetSectionPageSetup(name=> $name, sectionIndex=>$sectionIndex);
+# Invoke Aspose.Words Cloud SDK API to read all Runs from a Paragraph in a Word Document     
+$response = $wordsApi->GetParagraphRuns(name=> $name, sectionIndex=>$sectionIndex, paragraphIndex =>$paragraphIndex);
 
-if($response->{'Status'} eq 'OK'){
-	my $secPageSetup = $response->{'PageSetup'};
-	print "\nPaperSize : " . $secPageSetup->{'PaperSize'} . " Orientation: " . $secPageSetup->{'Orientation'};	
+if($response->{'Status'} eq 'OK'){	
+	print "\nRead all Runs from a Paragraph in a Word Document, Done!";	
 }
 #ExEnd:1

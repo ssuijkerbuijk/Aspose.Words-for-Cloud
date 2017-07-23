@@ -12,7 +12,7 @@ use File::Slurp;
 use AsposeWordsCloud::ApiClient;
 use AsposeWordsCloud::Configuration;
 
-my $VERSION = '1.0.1';
+my $VERSION = '1.02';
 
 sub new {
     my $class   = shift;
@@ -568,6 +568,426 @@ sub GetDocument {
 	}    
 	
 	my $_response_object = $self->{api_client}->pre_deserialize($response->content, 'DocumentResponse', $response->header('content-type'));
+    return $_response_object;
+    
+}
+#
+# GetRenderPage
+#
+# 
+# 
+# @param String $name  (required)
+# @param Integer $pageNumber  (required)
+# @param String $format  (required)
+# @param String $storage  (optional)
+# @param String $folder  (optional)
+# @return ResponseMessage
+#
+sub GetRenderPage {
+    my ($self, %args) = @_;
+
+    
+    # verify the required parameter 'name' is set
+    unless (exists $args{'name'}) {
+      croak("Missing the required parameter 'name' when calling GetRenderPage");
+    }
+    
+# verify the required parameter 'pageNumber' is set
+    unless (exists $args{'pageNumber'}) {
+      croak("Missing the required parameter 'pageNumber' when calling GetRenderPage");
+    }
+# verify the required parameter 'format' is set
+    unless (exists $args{'format'}) {
+      croak("Missing the required parameter 'format' when calling GetRenderPage");
+    }
+
+    # parse inputs
+    my $_resource_path = '/words/{name}/pages/{pageNumber}/render/?appSid={appSid}&amp;format={format}&amp;storage={storage}&amp;folder={folder}';
+    
+	$_resource_path =~ s/\Q&amp;\E/&/g;
+    $_resource_path =~ s/\Q\/?\E/?/g;
+    $_resource_path =~ s/\QtoFormat={toFormat}\E/format={format}/g;
+	$_resource_path =~ s/\Q{path}\E/{Path}/g;
+    
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # query params
+    if ( exists $args{'name'}) {        		
+		$_resource_path =~ s/\Q{name}\E/$args{'name'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]name.*?(?=&|\?|$)//g;
+	}# query params
+    if ( exists $args{'pageNumber'}) {        		
+		$_resource_path =~ s/\Q{pageNumber}\E/$args{'pageNumber'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]pageNumber.*?(?=&|\?|$)//g;
+	}# query params
+    if ( exists $args{'format'}) {        		
+		$_resource_path =~ s/\Q{format}\E/$args{'format'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]format.*?(?=&|\?|$)//g;
+	}
+# query params
+    if ( exists $args{'storage'}) {        		
+		$_resource_path =~ s/\Q{storage}\E/$args{'storage'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]storage.*?(?=&|\?|$)//g;
+	}# query params
+    if ( exists $args{'folder'}) {        		
+		$_resource_path =~ s/\Q{folder}\E/$args{'folder'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]folder.*?(?=&|\?|$)//g;
+	}
+    
+    
+    my $_body_data;
+	
+    
+    
+
+    # authentication setting, if any
+    my $auth_settings = [];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+
+	if($AsposeWordsCloud::Configuration::debug){
+		print "\nResponse Content: ".$response->content;
+	}    
+	
+	my $_response_object = $self->{api_client}->pre_deserialize($response->content, 'ResponseMessage', $response->header('content-type'));
+    return $_response_object;
+    
+}
+#
+# GetFields
+#
+# 
+# 
+# @param String $name  (required)
+# @param Integer $sectionIndex  (required)
+# @param Integer $paragraphIndex  (required)
+# @param String $storage  (optional)
+# @param String $folder  (optional)
+# @return ResponseMessage
+#
+sub GetFields {
+    my ($self, %args) = @_;
+
+    
+    # verify the required parameter 'name' is set
+    unless (exists $args{'name'}) {
+      croak("Missing the required parameter 'name' when calling GetFields");
+    }
+    
+# verify the required parameter 'sectionIndex' is set
+    unless (exists $args{'sectionIndex'}) {
+      croak("Missing the required parameter 'sectionIndex' when calling GetFields");
+    }
+# verify the required parameter 'paragraphIndex' is set
+    unless (exists $args{'paragraphIndex'}) {
+      croak("Missing the required parameter 'paragraphIndex' when calling GetFields");
+    }
+
+    # parse inputs
+    my $_resource_path = '/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/fields/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}';
+    
+	$_resource_path =~ s/\Q&amp;\E/&/g;
+    $_resource_path =~ s/\Q\/?\E/?/g;
+    $_resource_path =~ s/\QtoFormat={toFormat}\E/format={format}/g;
+	$_resource_path =~ s/\Q{path}\E/{Path}/g;
+    
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # query params
+    if ( exists $args{'name'}) {        		
+		$_resource_path =~ s/\Q{name}\E/$args{'name'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]name.*?(?=&|\?|$)//g;
+	}# query params
+    if ( exists $args{'sectionIndex'}) {        		
+		$_resource_path =~ s/\Q{sectionIndex}\E/$args{'sectionIndex'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]sectionIndex.*?(?=&|\?|$)//g;
+	}# query params
+    if ( exists $args{'paragraphIndex'}) {        		
+		$_resource_path =~ s/\Q{paragraphIndex}\E/$args{'paragraphIndex'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]paragraphIndex.*?(?=&|\?|$)//g;
+	}
+# query params
+    if ( exists $args{'storage'}) {        		
+		$_resource_path =~ s/\Q{storage}\E/$args{'storage'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]storage.*?(?=&|\?|$)//g;
+	}# query params
+    if ( exists $args{'folder'}) {        		
+		$_resource_path =~ s/\Q{folder}\E/$args{'folder'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]folder.*?(?=&|\?|$)//g;
+	}
+    
+    
+    my $_body_data;
+	
+    
+    
+
+    # authentication setting, if any
+    my $auth_settings = [];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+
+	if($AsposeWordsCloud::Configuration::debug){
+		print "\nResponse Content: ".$response->content;
+	}    
+	
+	my $_response_object = $self->{api_client}->pre_deserialize($response->content, 'ResponseMessage', $response->header('content-type'));
+    return $_response_object;
+    
+}
+#
+# DeleteField
+#
+# 
+# 
+# @param String $name  (required)
+# @param Integer $sectionIndex  (required)
+# @param Integer $paragraphIndex  (required)
+# @param Integer $fieldIndex  (required)
+# @param String $storage  (optional)
+# @param String $folder  (optional)
+# @return SaaSposeResponse 
+#
+sub DeleteField {
+    my ($self, %args) = @_;
+
+    
+    # verify the required parameter 'name' is set
+    unless (exists $args{'name'}) {
+      croak("Missing the required parameter 'name' when calling DeleteField");
+    }
+    
+# verify the required parameter 'sectionIndex' is set
+    unless (exists $args{'sectionIndex'}) {
+      croak("Missing the required parameter 'sectionIndex' when calling DeleteField");
+    }
+# verify the required parameter 'paragraphIndex' is set
+    unless (exists $args{'paragraphIndex'}) {
+      croak("Missing the required parameter 'paragraphIndex' when calling DeleteField");
+    }
+# verify the required parameter 'fieldIndex' is set
+    unless (exists $args{'fieldIndex'}) {
+      croak("Missing the required parameter 'fieldIndex' when calling DeleteField");
+    }
+    # parse inputs
+    my $_resource_path = '/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/fields/{fieldIndex}/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}';
+    
+	$_resource_path =~ s/\Q&amp;\E/&/g;
+    $_resource_path =~ s/\Q\/?\E/?/g;
+    $_resource_path =~ s/\QtoFormat={toFormat}\E/format={format}/g;
+	$_resource_path =~ s/\Q{path}\E/{Path}/g;
+    
+    my $_method = 'DELETE';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # query params
+    if ( exists $args{'name'}) {        		
+		$_resource_path =~ s/\Q{name}\E/$args{'name'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]name.*?(?=&|\?|$)//g;
+	}# query params
+    if ( exists $args{'sectionIndex'}) {        		
+		$_resource_path =~ s/\Q{sectionIndex}\E/$args{'sectionIndex'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]sectionIndex.*?(?=&|\?|$)//g;
+	}# query params
+    if ( exists $args{'paragraphIndex'}) {        		
+		$_resource_path =~ s/\Q{paragraphIndex}\E/$args{'paragraphIndex'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]paragraphIndex.*?(?=&|\?|$)//g;
+	}# query params
+    if ( exists $args{'fieldIndex'}) {        		
+		$_resource_path =~ s/\Q{fieldIndex}\E/$args{'fieldIndex'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]fieldIndex.*?(?=&|\?|$)//g;
+	}
+
+# query params
+    if ( exists $args{'storage'}) {        		
+		$_resource_path =~ s/\Q{storage}\E/$args{'storage'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]storage.*?(?=&|\?|$)//g;
+	}# query params
+    if ( exists $args{'folder'}) {        		
+		$_resource_path =~ s/\Q{folder}\E/$args{'folder'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]folder.*?(?=&|\?|$)//g;
+	}
+    
+    
+    my $_body_data;
+	
+    
+    
+
+    # authentication setting, if any
+    my $auth_settings = [];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+
+	if($AsposeWordsCloud::Configuration::debug){
+		print "\nResponse Content: ".$response->content;
+	}    
+	
+	my $_response_object = $self->{api_client}->pre_deserialize($response->content, 'SaaSposeResponse', $response->header('content-type'));
+    return $_response_object;
+    
+}
+#
+# GetParagraphRuns
+#
+# 
+# 
+# @param String $name  (required)
+# @param Integer $sectionIndex  (required)
+# @param Integer $paragraphIndex  (required)
+# @param String $storage  (optional)
+# @param String $folder  (optional)
+# @return ResponseMessage 
+#
+sub GetParagraphRuns {
+    my ($self, %args) = @_;
+
+    
+    # verify the required parameter 'name' is set
+    unless (exists $args{'name'}) {
+      croak("Missing the required parameter 'name' when calling GetParagraphRuns");
+    }
+    
+# verify the required parameter 'sectionIndex' is set
+    unless (exists $args{'sectionIndex'}) {
+      croak("Missing the required parameter 'sectionIndex' when calling GetParagraphRuns");
+    }
+# verify the required parameter 'paragraphIndex' is set
+    unless (exists $args{'paragraphIndex'}) {
+      croak("Missing the required parameter 'paragraphIndex' when calling GetParagraphRuns");
+    }
+    # parse inputs
+    my $_resource_path = '/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/runs/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}".Replace("{format}';
+    
+	$_resource_path =~ s/\Q&amp;\E/&/g;
+    $_resource_path =~ s/\Q\/?\E/?/g;
+    $_resource_path =~ s/\QtoFormat={toFormat}\E/format={format}/g;
+	$_resource_path =~ s/\Q{path}\E/{Path}/g;
+    
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # query params
+    if ( exists $args{'name'}) {        		
+		$_resource_path =~ s/\Q{name}\E/$args{'name'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]name.*?(?=&|\?|$)//g;
+	}# query params
+    if ( exists $args{'sectionIndex'}) {        		
+		$_resource_path =~ s/\Q{sectionIndex}\E/$args{'sectionIndex'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]sectionIndex.*?(?=&|\?|$)//g;
+	}# query params
+    if ( exists $args{'paragraphIndex'}) {        		
+		$_resource_path =~ s/\Q{paragraphIndex}\E/$args{'paragraphIndex'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]paragraphIndex.*?(?=&|\?|$)//g;
+	}# query params
+    if ( exists $args{'storage'}) {        		
+		$_resource_path =~ s/\Q{storage}\E/$args{'storage'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]storage.*?(?=&|\?|$)//g;
+	}# query params
+    if ( exists $args{'folder'}) {        		
+		$_resource_path =~ s/\Q{folder}\E/$args{'folder'}/g;
+    }else{
+		$_resource_path    =~ s/[?&]folder.*?(?=&|\?|$)//g;
+	}
+    
+    
+    my $_body_data;
+	
+    
+    
+
+    # authentication setting, if any
+    my $auth_settings = [];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+
+	if($AsposeWordsCloud::Configuration::debug){
+		print "\nResponse Content: ".$response->content;
+	}    
+	
+	my $_response_object = $self->{api_client}->pre_deserialize($response->content, 'ResponseMessage', $response->header('content-type'));
     return $_response_object;
     
 }

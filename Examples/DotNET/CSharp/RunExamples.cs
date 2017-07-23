@@ -37,7 +37,7 @@ namespace CSharp
             //// =====================================================
             //// =====================================================
 
-            //ExecuteTemplate.Run();
+            ExecuteTemplate.Run();
             //ExecuteTemplateUsingThirdPartyStorage.Run();
             //ExecuteWithoutRegions.Run();
             //ExecuteWithoutRegionsUsingThirdPartyStorage.Run();
@@ -64,6 +64,7 @@ namespace CSharp
 
             //ExtractPageSetupInformation.Run();
             //UpdatePageSetup.Run();
+            //GetRenderPage.Run();
 
             //// =====================================================
             //// =====================================================
@@ -76,6 +77,7 @@ namespace CSharp
             //GetParagraph.Run();
             //GetSpecificRunOfParagraph.Run();
             //UpdateFontOfRun.Run();
+            //ReadAllRuns.Run();
 
             //// =====================================================
             //// =====================================================
@@ -109,6 +111,8 @@ namespace CSharp
             //InsertPageNumberField.Run();
             //InsertPageNumberFieldUsingThirdPartyStorage.Run();
             //UpdateFields.Run();
+            //GetFields.Run();
+            //DeleteField.Run();
 
             //// ParagraphLevel
             //// =====================================================
