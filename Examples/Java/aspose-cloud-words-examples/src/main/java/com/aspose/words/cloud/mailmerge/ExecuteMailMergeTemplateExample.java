@@ -18,6 +18,7 @@ public class ExecuteMailMergeTemplateExample {
 	public static void main(String[] args) {
 		// ExStart: ExecuteMailMergeTemplateExample
 		try {
+			System.out.println("Hello");
 			// Instantiate Aspose Storage API SDK
 			StorageApi storageApi = new StorageApi(Configuration.apiKey, Configuration.appSID, true);
 
@@ -25,10 +26,10 @@ public class ExecuteMailMergeTemplateExample {
 			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
 
 			// set input file name
-			String fileName = "SampleExecuteTemplate.docx";
+			String fileName = "TestExecuteTemplate.doc";
 
 			String cleanup = null;
-			String destFileName = "updated-" + fileName;
+			String destFileName = "updated123455-" + fileName;
 			String storage = null;
 			String folder = null;
 			Boolean useWholeParagraphAsRegion = null;
@@ -41,7 +42,7 @@ public class ExecuteMailMergeTemplateExample {
 					p1.toFile());
 
 			// set input file data name
-			String fileDataName = "SampleExecuteTemplateData.txt";
+			String fileDataName = "TestExecuteTemplateData.txt";
 			
 			Path p2=Utils.getPath(AppendDocumentExample.class, fileDataName);
 

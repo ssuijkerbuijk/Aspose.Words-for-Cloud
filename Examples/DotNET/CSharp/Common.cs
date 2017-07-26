@@ -3,8 +3,8 @@ using System.IO;
 
 class Common
 {
-    public static string APP_SID = "C8CBC3A0-1DC6-473D-9FBC-D47CD85687F0";
-    public static string APP_KEY = "4a8fd1d4e29263dc8d2a9fb61ef45406";
+    public static string APP_SID = "xxxx";
+    public static string APP_KEY = "xxxx";
     public static string FOLDER = "";
     public static string STORAGE = "";
     public static string BASEPATH = "http://api.aspose.cloud/v1.1";

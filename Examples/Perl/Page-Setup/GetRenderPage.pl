@@ -12,6 +12,7 @@ use AsposeStorageCloud::Configuration;
 use AsposeWordsCloud::WordsApi;
 use AsposeWordsCloud::ApiClient;
 use AsposeWordsCloud::Configuration;
+use AsposeWordsCloud::Object::PageSetup;
 
 my $configFile = '../Config/config.json';
 my $configPropsText = read_file($configFile);
@@ -31,15 +32,14 @@ my $wordsApi = AsposeWordsCloud::WordsApi->new();
 
 # Set input file name
 my $name = 'SampleWordDocument.docx';
-my $sectionIndex = 0;
+my $pageNumber = 1;
+my $format = 'bmp';
 
-# Upload file to aspose cloud storage 
+# Upload file to aspose cloud storage
 my $response = $storageApi->PutCreate(Path => $name, file => $data_path.$name);
-# Invoke Aspose.Words Cloud SDK API to get page setup properties by given section index from a word document      
-$response = $wordsApi->GetSectionPageSetup(name=> $name, sectionIndex=>$sectionIndex);
-
-if($response->{'Status'} eq 'OK'){
-	my $secPageSetup = $response->{'PageSetup'};
-	print "\nPaperSize : " . $secPageSetup->{'PaperSize'} . " Orientation: " . $secPageSetup->{'Orientation'};	
+# Invoke Aspose.Words Cloud SDK API to render page to specified format
+$response = $wordsApi->GetRenderPage(name=> $name, pageNumber=>$pageNumber, format=>$format);
+if($response->{'Status'} eq 'OK'){	
+	print "\nRender page to specified format, Done!";
 }
 #ExEnd:1

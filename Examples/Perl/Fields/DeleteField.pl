@@ -30,16 +30,18 @@ my $storageApi = AsposeStorageCloud::StorageApi->new();
 my $wordsApi = AsposeWordsCloud::WordsApi->new();
 
 # Set input file name
-my $name = 'SampleWordDocument.docx';
+my $name = "GetField.docx";
 my $sectionIndex = 0;
+my $paragraphIndex = 0;
+my $fieldIndex = 0;
 
 # Upload file to aspose cloud storage 
 my $response = $storageApi->PutCreate(Path => $name, file => $data_path.$name);
-# Invoke Aspose.Words Cloud SDK API to get page setup properties by given section index from a word document      
-$response = $wordsApi->GetSectionPageSetup(name=> $name, sectionIndex=>$sectionIndex);
+# Invoke Aspose.Words Cloud SDK API to delete form field  
+$response = $wordsApi->DeleteField(name=> $name, sectionIndex =>$sectionIndex, paragraphIndex =>$paragraphIndex, fieldIndex =>$fieldIndex);
 
-if($response->{'Status'} eq 'OK'){
-	my $secPageSetup = $response->{'PageSetup'};
-	print "\nPaperSize : " . $secPageSetup->{'PaperSize'} . " Orientation: " . $secPageSetup->{'Orientation'};	
-}
+if($response->{'Status'} eq 'OK'){	
+    print "\nDelete a specific field from a Section or Paragraph in a Word Document, Done!";
+	}
+
 #ExEnd:1

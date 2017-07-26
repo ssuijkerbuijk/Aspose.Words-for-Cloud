@@ -26,11 +26,16 @@ namespace Mail_Merge
             {
                 // Upload the file
                 storageApi.PutCreate(fileName, "", "", System.IO.File.ReadAllBytes(Common.GetDataDir() + fileName));
+                
                 // Invoke Aspose.Words Cloud SDK API to execute mail merge temlate
                 DocumentResponse apiResponse = wordsApi.PostExecuteTemplate(fileName, cleanup, destFileName, storage, folder, useWholeParagraphAsRegion, withRegions, file);
 
                 if (apiResponse != null && apiResponse.Status.Equals("OK"))
                 {
+                    Com.Aspose.Storage.Model.ResponseMessage storageRes = storageApi.GetDownload(destFileName, null, null);
+                    System.Diagnostics.Debug.WriteLine("response:" + storageRes.ResponseStream);
+                    System.IO.File.WriteAllBytes(Common.GetDataDir() + destFileName, storageRes.ResponseStream);
+
                     Console.WriteLine("Mail merge template has been executed successfully");
                     Console.ReadKey();
                 }
