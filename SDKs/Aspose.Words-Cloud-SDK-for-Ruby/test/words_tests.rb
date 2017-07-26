@@ -852,7 +852,15 @@ class WordsTests < Minitest::Test
 
 		index = 1
 		response = @words_api.get_office_math_object(file_name, index)
-		puts response
 		assert(response, message="Failed to get OfficeMath object by index.")
+	end
+
+	def test_delete_office_math_object
+		file_name = "MathsObject.docx"
+		upload_file(file_name)
+
+		index = 1
+		response = @words_api.delete_office_math_object(file_name, index, opts = {})
+		assert(response, message="Failed to remove OfficeMath object from document.")
 	end
 end

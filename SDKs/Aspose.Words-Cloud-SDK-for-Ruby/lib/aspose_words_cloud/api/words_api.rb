@@ -4896,6 +4896,59 @@ module AsposeWordsCloud
       end
       result
     end
+
+    # Removes OfficeMath object from document.
+    # 
+    # @param name The document name.
+    # @param index Object&#39;s index.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :storage The document&#39;s storage.
+    # @option opts [String] :folder The document&#39;s folder.
+    # @return [BaseResponse]
+    def delete_office_math_object(name, index, opts = {})
+      if Configuration.debugging
+        Configuration.debugging "Calling API: WordsApi#delete_office_math_object ..."
+      end
+      
+      # verify the required parameter 'name' is set
+      fail "Missing the required parameter 'name' when calling delete_office_math_object" if name.nil?
+      
+      # verify the required parameter 'index' is set
+      fail "Missing the required parameter 'index' when calling delete_office_math_object" if index.nil?
+      
+      # resource path
+      path = "/words/{name}/OfficeMathObjects/{index}".sub('{format}','json').sub('{' + 'name' + '}', name.to_s).sub('{' + 'index' + '}', index.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'storage'] = opts[:'storage'] if opts[:'storage']
+      query_params[:'folder'] = opts[:'folder'] if opts[:'folder']
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      _header_accept = ['application/json']
+      _header_accept_result = @api_client.select_header_accept(_header_accept) and header_params['Accept'] = _header_accept_result
+
+      # HTTP header 'Content-Type'
+      _header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(_header_content_type)
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      
+
+      auth_names = []
+      result = @api_client.call_api(:DELETE, path, :query_params => query_params, :header_params => header_params, :form_params => form_params, :body => post_body, :auth_names => auth_names, :return_type => 'BaseResponse')
+      if Configuration.debugging
+        Configuration.logger.debug "API called: WordsApi#delete_office_math_object. Result: #{result.inspect}"
+      end
+      result
+    end
   end
 end
 
