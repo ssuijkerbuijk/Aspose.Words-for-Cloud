@@ -4406,6 +4406,496 @@ module AsposeWordsCloud
       end
       return result
     end
+
+    # Return a table.
+    # 
+    # @param name The document name.
+    # @param index Object&#39;s index.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :storage The document&#39;s storage.
+    # @option opts [String] :folder The document&#39;s folder.
+    # @return [TableResponse]
+    def get_table(name, index, opts = {})
+      if Configuration.debugging
+        Configuration.debugging "Calling API: WordsApi#get_table ..."
+      end
+      
+      # verify the required parameter 'name' is set
+      fail "Missing the required parameter 'name' when calling get_table" if name.nil?
+      
+      # verify the required parameter 'index' is set
+      fail "Missing the required parameter 'index' when calling get_table" if index.nil?
+      
+      # resource path
+      path = "/words/{name}/tables/{index}".sub('{format}','json').sub('{' + 'name' + '}', name.to_s).sub('{' + 'index' + '}', index.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'storage'] = opts[:'storage'] if opts[:'storage']
+      query_params[:'folder'] = opts[:'folder'] if opts[:'folder']
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      _header_accept = ['application/json']
+      _header_accept_result = @api_client.select_header_accept(_header_accept) and header_params['Accept'] = _header_accept_result
+
+      # HTTP header 'Content-Type'
+      _header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(_header_content_type)
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      
+
+      auth_names = []
+      result = @api_client.call_api(:GET, path, :query_params => query_params, :header_params => header_params, :form_params => form_params, :body => post_body, :auth_names => auth_names, :return_type => 'TableResponse')
+      if Configuration.debugging
+        Configuration.logger.debug "API called: WordsApi#get_table. Result: #{result.inspect}"
+      end
+      result
+    end
+
+    # Delete a table.
+    # 
+    # @param name The document name.
+    # @param index Object&#39;s index.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :storage The document&#39;s storage.
+    # @option opts [String] :folder The document&#39;s folder.
+    # @return [BaseResponse]
+    def delete_table(name, index, opts = {})
+      if Configuration.debugging
+        Configuration.debugging "Calling API: WordsApi#delete_table ..."
+      end
+      
+      # verify the required parameter 'name' is set
+      fail "Missing the required parameter 'name' when calling delete_table" if name.nil?
+      
+      # verify the required parameter 'index' is set
+      fail "Missing the required parameter 'index' when calling delete_table" if index.nil?
+      
+      # resource path
+      path = "/words/{name}/tables/{index}".sub('{format}','json').sub('{' + 'name' + '}', name.to_s).sub('{' + 'index' + '}', index.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'storage'] = opts[:'storage'] if opts[:'storage']
+      query_params[:'folder'] = opts[:'folder'] if opts[:'folder']
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      _header_accept = ['application/json']
+      _header_accept_result = @api_client.select_header_accept(_header_accept) and header_params['Accept'] = _header_accept_result
+
+      # HTTP header 'Content-Type'
+      _header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(_header_content_type)
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      
+
+      auth_names = []
+      result = @api_client.call_api(:DELETE, path, :query_params => query_params, :header_params => header_params, :form_params => form_params, :body => post_body, :auth_names => auth_names, :return_type => 'BaseResponse')
+      if Configuration.debugging
+        Configuration.logger.debug "API called: WordsApi#delete_table. Result: #{result.inspect}"
+      end
+      result
+    end
+
+    # Return a collection of borders.
+    # 
+    # @param name The document name.
+    # @param table_index Table index.
+    # @param row_index Row index.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :storage The document&#39;s storage.
+    # @option opts [String] :folder The document&#39;s folder.
+    # @return [BordersResponse]
+    def get_borders(name, table_index, row_index, opts = {})
+      if Configuration.debugging
+        Configuration.debugging "Calling API: WordsApi#get_borders ..."
+      end
+      
+      # verify the required parameter 'name' is set
+      fail "Missing the required parameter 'name' when calling get_borders" if name.nil?
+      
+      # verify the required parameter 'table_index' is set
+      fail "Missing the required parameter 'table_index' when calling get_borders" if table_index.nil?
+      
+      # verify the required parameter 'row_index' is set
+      fail "Missing the required parameter 'row_index' when calling get_borders" if row_index.nil?
+      
+      # resource path
+      path = "/words/{name}/tables/{tableIndex}/rows/{rowIndex}/borders".sub('{format}','json').sub('{' + 'name' + '}', name.to_s).sub('{' + 'tableIndex' + '}', table_index.to_s).sub('{' + 'rowIndex' + '}', row_index.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'storage'] = opts[:'storage'] if opts[:'storage']
+      query_params[:'folder'] = opts[:'folder'] if opts[:'folder']
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      _header_accept = ['application/json']
+      _header_accept_result = @api_client.select_header_accept(_header_accept) and header_params['Accept'] = _header_accept_result
+
+      # HTTP header 'Content-Type'
+      _header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(_header_content_type)
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      
+
+      auth_names = []
+      result = @api_client.call_api(:GET, path, :query_params => query_params, :header_params => header_params, :form_params => form_params, :body => post_body, :auth_names => auth_names, :return_type => 'BordersResponse')
+      if Configuration.debugging
+        Configuration.logger.debug "API called: WordsApi#get_borders. Result: #{result.inspect}"
+      end
+      result
+    end
+
+    # Resets borders properties to default values.
+    # 
+    # @param name The document name.
+    # @param table_index Table index.
+    # @param row_index Row index.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :storage The document&#39;s storage.
+    # @option opts [String] :folder The document&#39;s folder.
+    # @return [BordersResponse]
+    def delete_borders(name, table_index, row_index, opts = {})
+      if Configuration.debugging
+        Configuration.debugging "Calling API: WordsApi#delete_borders ..."
+      end
+      
+      # verify the required parameter 'name' is set
+      fail "Missing the required parameter 'name' when calling delete_borders" if name.nil?
+      
+      # verify the required parameter 'table_index' is set
+      fail "Missing the required parameter 'table_index' when calling delete_borders" if table_index.nil?
+      
+      # verify the required parameter 'row_index' is set
+      fail "Missing the required parameter 'row_index' when calling delete_borders" if row_index.nil?
+      
+      # resource path
+      path = "/words/{name}/tables/{tableIndex}/rows/{rowIndex}/borders".sub('{format}','json').sub('{' + 'name' + '}', name.to_s).sub('{' + 'tableIndex' + '}', table_index.to_s).sub('{' + 'rowIndex' + '}', row_index.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'storage'] = opts[:'storage'] if opts[:'storage']
+      query_params[:'folder'] = opts[:'folder'] if opts[:'folder']
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      _header_accept = ['application/json']
+      _header_accept_result = @api_client.select_header_accept(_header_accept) and header_params['Accept'] = _header_accept_result
+
+      # HTTP header 'Content-Type'
+      _header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(_header_content_type)
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      
+
+      auth_names = []
+      result = @api_client.call_api(:DELETE, path, :query_params => query_params, :header_params => header_params, :form_params => form_params, :body => post_body, :auth_names => auth_names, :return_type => 'BordersResponse')
+      if Configuration.debugging
+        Configuration.logger.debug "API called: WordsApi#delete_borders. Result: #{result.inspect}"
+      end
+      result
+    end
+
+    # Renders page to specified format.
+    # 
+    # @param name The document name.
+    # @param page_index Page index.
+    # @param format The destination format.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :storage The document&#39;s storage.
+    # @option opts [String] :folder The document&#39;s folder.
+    # @return [File]
+    def render_page(name, page_index, format, opts = {})
+      if Configuration.debugging
+        Configuration.debugging "Calling API: WordsApi#render_page ..."
+      end
+      
+      # verify the required parameter 'name' is set
+      fail "Missing the required parameter 'name' when calling render_page" if name.nil?
+      
+      # verify the required parameter 'page_index' is set
+      fail "Missing the required parameter 'page_index' when calling render_page" if page_index.nil?
+      
+      # verify the required parameter 'format' is set
+      fail "Missing the required parameter 'format' when calling render_page" if format.nil?
+      
+      # resource path
+      path = "/words/{name}/pages/{pageIndex}/render".sub('{format}','json').sub('{' + 'name' + '}', name.to_s).sub('{' + 'pageIndex' + '}', page_index.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'format'] = format
+      query_params[:'storage'] = opts[:'storage'] if opts[:'storage']
+      query_params[:'folder'] = opts[:'folder'] if opts[:'folder']
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      _header_accept = []
+      _header_accept_result = @api_client.select_header_accept(_header_accept) and header_params['Accept'] = _header_accept_result
+
+      # HTTP header 'Content-Type'
+      _header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(_header_content_type)
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      
+
+      auth_names = []
+      result = @api_client.call_api(:GET, path, :query_params => query_params, :header_params => header_params, :form_params => form_params, :body => post_body, :auth_names => auth_names, :return_type => 'File')
+      if Configuration.debugging
+        Configuration.logger.debug "API called: WordsApi#render_page. Result: #{result.inspect}"
+      end
+      result
+    end
+
+    # Read All OfficeMath objects for a particular section from a document.
+    # 
+    # @param name The document name.
+    # @param section_index Section&#39;s index.
+    # @param paragraph_index Paragraph&#39;s index.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :storage The document&#39;s storage.
+    # @option opts [String] :folder The document&#39;s folder.
+    # @return [OfficeMathObjectsResponse]
+    def get_office_math_objects_for_a_particular_section(name, section_index, paragraph_index, opts = {})
+      if Configuration.debugging
+        Configuration.debugging "Calling API: WordsApi#get_office_math_objects_for_a_particular_section ..."
+      end
+      
+      # verify the required parameter 'name' is set
+      fail "Missing the required parameter 'name' when calling get_office_math_objects_for_a_particular_section" if name.nil?
+      
+      # verify the required parameter 'section_index' is set
+      fail "Missing the required parameter 'section_index' when calling get_office_math_objects_for_a_particular_section" if section_index.nil?
+      
+      # verify the required parameter 'paragraph_index' is set
+      fail "Missing the required parameter 'paragraph_index' when calling get_office_math_objects_for_a_particular_section" if paragraph_index.nil?
+      
+      # resource path
+      path = "/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/OfficeMathObjects".sub('{format}','json').sub('{' + 'name' + '}', name.to_s).sub('{' + 'sectionIndex' + '}', section_index.to_s).sub('{' + 'paragraphIndex' + '}', paragraph_index.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'storage'] = opts[:'storage'] if opts[:'storage']
+      query_params[:'folder'] = opts[:'folder'] if opts[:'folder']
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      _header_accept = ['application/json']
+      _header_accept_result = @api_client.select_header_accept(_header_accept) and header_params['Accept'] = _header_accept_result
+
+      # HTTP header 'Content-Type'
+      _header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(_header_content_type)
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      
+
+      auth_names = []
+      result = @api_client.call_api(:GET, path, :query_params => query_params, :header_params => header_params, :form_params => form_params, :body => post_body, :auth_names => auth_names, :return_type => 'OfficeMathObjectsResponse')
+      if Configuration.debugging
+        Configuration.logger.debug "API called: WordsApi#get_office_math_objects_for_a_particular_section. Result: #{result.inspect}"
+      end
+      result
+    end
+
+    # Read All OfficeMath objects for a particular Paragraph from a document.
+    # 
+    # @param name The document name.
+    # @param paragraph_index Paragraph&#39;s index.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :storage The document&#39;s storage.
+    # @option opts [String] :folder The document&#39;s folder.
+    # @return [OfficeMathObjectsResponse]
+    def get_office_math_objects_for_a_particular_paragraph(name, paragraph_index, opts = {})
+      if Configuration.debugging
+        Configuration.debugging "Calling API: WordsApi#get_office_math_objects_for_a_particular_paragraph ..."
+      end
+      
+      # verify the required parameter 'name' is set
+      fail "Missing the required parameter 'name' when calling get_office_math_objects_for_a_particular_paragraph" if name.nil?
+      
+      # verify the required parameter 'paragraph_index' is set
+      fail "Missing the required parameter 'paragraph_index' when calling get_office_math_objects_for_a_particular_paragraph" if paragraph_index.nil?
+      
+      # resource path
+      path = "/words/{name}/paragraphs/{paragraphIndex}/OfficeMathObjects".sub('{format}','json').sub('{' + 'name' + '}', name.to_s).sub('{' + 'paragraphIndex' + '}', paragraph_index.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'storage'] = opts[:'storage'] if opts[:'storage']
+      query_params[:'folder'] = opts[:'folder'] if opts[:'folder']
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      _header_accept = ['application/json']
+      _header_accept_result = @api_client.select_header_accept(_header_accept) and header_params['Accept'] = _header_accept_result
+
+      # HTTP header 'Content-Type'
+      _header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(_header_content_type)
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      
+
+      auth_names = []
+      result = @api_client.call_api(:GET, path, :query_params => query_params, :header_params => header_params, :form_params => form_params, :body => post_body, :auth_names => auth_names, :return_type => 'OfficeMathObjectsResponse')
+      if Configuration.debugging
+        Configuration.logger.debug "API called: WordsApi#get_office_math_objects_for_a_particular_paragraph. Result: #{result.inspect}"
+      end
+      result
+    end
+
+    # Get OfficeMath objects from document.
+    # 
+    # @param name The document name.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :storage The document&#39;s storage.
+    # @option opts [String] :folder The document&#39;s folder.
+    # @return [OfficeMathObjectsResponse]
+    def get_office_math_objects(name, opts = {})
+      if Configuration.debugging
+        Configuration.debugging "Calling API: WordsApi#get_office_math_objects ..."
+      end
+      
+      # verify the required parameter 'name' is set
+      fail "Missing the required parameter 'name' when calling get_office_math_objects" if name.nil?
+      
+      # resource path
+      path = "/words/{name}/OfficeMathObjects".sub('{format}','json').sub('{' + 'name' + '}', name.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'storage'] = opts[:'storage'] if opts[:'storage']
+      query_params[:'folder'] = opts[:'folder'] if opts[:'folder']
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      _header_accept = ['application/json']
+      _header_accept_result = @api_client.select_header_accept(_header_accept) and header_params['Accept'] = _header_accept_result
+
+      # HTTP header 'Content-Type'
+      _header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(_header_content_type)
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      
+
+      auth_names = []
+      result = @api_client.call_api(:GET, path, :query_params => query_params, :header_params => header_params, :form_params => form_params, :body => post_body, :auth_names => auth_names, :return_type => 'OfficeMathObjectsResponse')
+      if Configuration.debugging
+        Configuration.logger.debug "API called: WordsApi#get_office_math_objects. Result: #{result.inspect}"
+      end
+      result
+    end
+
+    # Read OfficeMath object by index.
+    # 
+    # @param name The document name.
+    # @param index Object&#39;s index.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :storage The document&#39;s storage.
+    # @option opts [String] :folder The document&#39;s folder.
+    # @return [OfficeMathObjectResponse]
+    def get_office_math_object(name, index, opts = {})
+      if Configuration.debugging
+        Configuration.debugging "Calling API: WordsApi#get_office_math_object ..."
+      end
+      
+      # verify the required parameter 'name' is set
+      fail "Missing the required parameter 'name' when calling get_office_math_object" if name.nil?
+      
+      # verify the required parameter 'index' is set
+      fail "Missing the required parameter 'index' when calling get_office_math_object" if index.nil?
+      
+      # resource path
+      path = "/words/{name}/OfficeMathObjects/{index}".sub('{format}','json').sub('{' + 'name' + '}', name.to_s).sub('{' + 'index' + '}', index.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'storage'] = opts[:'storage'] if opts[:'storage']
+      query_params[:'folder'] = opts[:'folder'] if opts[:'folder']
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      _header_accept = ['application/json']
+      _header_accept_result = @api_client.select_header_accept(_header_accept) and header_params['Accept'] = _header_accept_result
+
+      # HTTP header 'Content-Type'
+      _header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(_header_content_type)
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      
+
+      auth_names = []
+      result = @api_client.call_api(:GET, path, :query_params => query_params, :header_params => header_params, :form_params => form_params, :body => post_body, :auth_names => auth_names, :return_type => 'OfficeMathObjectResponse')
+      if Configuration.debugging
+        Configuration.logger.debug "API called: WordsApi#get_office_math_object. Result: #{result.inspect}"
+      end
+      result
+    end
   end
 end
 

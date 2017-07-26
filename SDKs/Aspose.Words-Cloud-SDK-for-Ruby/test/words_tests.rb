@@ -10,7 +10,7 @@ class WordsTests < Minitest::Test
 	
 	def setup
         #Get App key and App SID from https://cloud.aspose.com
-        AsposeApp.app_key_and_sid("", "")
+        AsposeApp.app_key_and_sid("App_Key", "App_SID")
 		@words_api = WordsApi.new
 	end
 
@@ -769,5 +769,90 @@ class WordsTests < Minitest::Test
 		watermark_text.rotation_angle = 45
 		response = @words_api.post_insert_document_watermark_text(file_name, watermark_text)
 		assert(response, message="Failed to insert document watermark text")
+	end
+
+	def test_get_table
+		file_name = "TableDocument.doc"
+		upload_file(file_name)
+
+		index = 1
+		response = @words_api.get_table(file_name, index)
+		assert(response, message="Failed to get table.")
+	end
+
+	def test_delete_table
+		file_name = "TableDocument.doc"
+		upload_file(file_name)
+
+		index = 1
+		response = @words_api.delete_table(file_name, index)
+		assert(response, message="Failed to delete a table.")
+	end
+
+	def test_get_borders
+		file_name = "TableDocument.doc"
+		upload_file(file_name)
+
+		table_index = 1
+		row_index = 0
+		response = @words_api.get_borders(file_name, table_index, row_index)
+		assert(response, message="Failed to return a collection of borders.")
+	end
+
+	def test_delete_borders
+		file_name = "TableDocument.doc"
+		upload_file(file_name)
+
+		table_index = 1
+		row_index = 0
+		response = @words_api.get_borders(file_name, table_index, row_index)
+		assert(response, message="Failed to reset border properties to default values.")
+	end
+
+	def test_render_page
+		file_name = "SampleWordDocument.docx"
+		upload_file(file_name)
+
+		page_index = 1
+		format = "bmp"
+		response = @words_api.render_page(file_name, page_index, format, opts = {})
+		assert(response, message="Failed to renders page to specified format.")
+	end
+
+	def test_get_office_math_objects_for_a_particular_section
+		file_name = "MathsObject.docx"
+		upload_file(file_name)
+
+		section_index = 0
+		paragraph_index = 1
+		response = @words_api.get_office_math_objects_for_a_particular_section(file_name, section_index, paragraph_index, opts = {})
+		assert(response, message="Failed to read all OfficeMath objects for a particular section from a document.")
+	end
+
+	def test_get_office_math_objects_for_a_particular_paragraph
+		file_name = "MathsObject.docx"
+		upload_file(file_name)
+
+		paragraph_index = 1
+		response = @words_api.get_office_math_objects_for_a_particular_paragraph(file_name, paragraph_index)
+		assert(response, message="Failed to read All OfficeMath objects for a particular Paragraph from a document.")
+	end
+
+	def test_get_office_math_objects
+		file_name = "MathsObject.docx"
+		upload_file(file_name)
+
+		response = @words_api.get_office_math_objects(file_name)
+		assert(response, message="Failed to get OfficeMath objects from document.")
+	end
+
+	def test_get_office_math_object
+		file_name = "MathsObject.docx"
+		upload_file(file_name)
+
+		index = 1
+		response = @words_api.get_office_math_object(file_name, index)
+		puts response
+		assert(response, message="Failed to get OfficeMath object by index.")
 	end
 end

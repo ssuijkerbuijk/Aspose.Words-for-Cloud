@@ -36,14 +36,14 @@ module AsposeWordsCloud
     def call_api(http_method, path, opts = {})
       request = build_request(http_method, path, opts)
       response = request.run
-
+      
       # record as last response
       @last_response = response
 
       if Configuration.debugging
         Configuration.logger.debug "HTTP response body ~BEGIN~\n#{response.body}\n~END~\n"
       end
-
+      
       unless response.success?
         fail ApiError.new(:code => response.code,
                           :response_headers => response.headers,
