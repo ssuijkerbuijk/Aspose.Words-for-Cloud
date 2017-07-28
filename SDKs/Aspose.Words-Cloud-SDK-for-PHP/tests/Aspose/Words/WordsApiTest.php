@@ -558,7 +558,6 @@ XML;
     public function testPostRunTask()
     {   
         $result = $this->words->PostRunTask();
-        print_r($result);
         $this->assertEquals(200, $result->Code);
     }
     
@@ -734,5 +733,122 @@ XML;
         $result = $this->words->UpdateSectionPageSetup($name, $sectionIndex="0", $storage = null, $folder = null, $filename = null, $body);
         $this->assertEquals(200, $result->Code);
     }
-                         
+
+    public function testRenderPage()
+    {
+        // Upload file to Aspose Cloud Storage
+        $name = "SampleWordDocument.docx";
+        Utils::uploadFile($name);
+
+        $page_index = 1;
+        $format = "bmp";
+
+        $result = $this->words->renderPage($name, $page_index, $format, $storage=null, $folder=null);
+    }
+
+    public function testDeleteOfficeMathObject()
+    {       
+        // Upload file to Aspose Cloud Storage
+        $name = "MathsObject.docx";
+        Utils::uploadFile($name);
+        
+        $index = 1;
+
+        $result = $this->words->deleteOfficeMathObject($name, $index, $storage=null, $folder=null);
+        $this->assertEquals(200, $result->Code);
+    }
+
+    public function testGetOfficeMathObject()
+    {       
+        // Upload file to Aspose Cloud Storage
+        $name = "MathsObject.docx";
+        Utils::uploadFile($name);
+
+        $index = 1;
+        $result = $this->words->getOfficeMathObject($name, $index, $storage=null, $folder=null);
+        $this->assertEquals(200, $result->Code);
+    }
+    
+    public function testGetOfficeMathObjects()
+    {       
+        // Upload file to Aspose Cloud Storage
+        $name = "MathsObject.docx";
+        Utils::uploadFile($name);
+
+        $result = $this->words->getOfficeMathObjects($name, $storage=null, $folder=null);
+        $this->assertEquals(200, $result->Code);
+    }
+
+    public function testGetOfficeMathObjectsForAParticularParagraph()
+    {       
+        // Upload file to Aspose Cloud Storage
+        $name = "MathsObject.docx";
+        Utils::uploadFile($name);
+
+        $paragraph_index = 1;
+        $result = $this->words->getOfficeMathObjectsForAParticularParagraph($name, $paragraph_index, $storage=null, $folder=null);
+        $this->assertEquals(200, $result->Code);
+    }
+
+    public function testGetOfficeMathObjectsForAParticularSection()
+    {       
+        // Upload file to Aspose Cloud Storage
+        $name = "MathsObject.docx";
+        Utils::uploadFile($name);
+
+        $section_index = 0;
+        $paragraph_index = 1;
+        $result = $this->words->getOfficeMathObjectsForAParticularSection($name, $section_index, $paragraph_index, $storage=null, $folder=null);
+        $this->assertEquals(200, $result->Code);
+    }
+
+    public function testDeleteBorders()
+    {       
+        // Upload file to Aspose Cloud Storage
+        $name = "TableDocument.doc";
+        Utils::uploadFile($name);
+        
+        $table_index = 1;
+        $row_index = 0;        
+
+        $result = $this->words->deleteBorders($name, $table_index, $row_index, $storage=null, $folder=null);
+        $this->assertEquals(200, $result->Code);
+    }
+
+    public function testGetBorders()
+    {       
+        // Upload file to Aspose Cloud Storage
+        $name = "TableDocument.doc";
+        Utils::uploadFile($name);
+        
+        $table_index = 1;
+        $row_index = 0;        
+
+        $result = $this->words->getBorders($name, $table_index, $row_index, $storage=null, $folder=null);
+        $this->assertEquals(200, $result->Code);
+    }
+
+    public function testGetTable()
+    {       
+        // Upload file to Aspose Cloud Storage
+        $name = "TableDocument.doc";
+        Utils::uploadFile($name);
+        
+        $index = 1;
+        
+        $result = $this->words->getTable($name, $index, $storage=null, $folder=null);
+        $this->assertEquals(200, $result->Code);
+    }
+
+    public function testDeleteTable()
+    {       
+        // Upload file to Aspose Cloud Storage
+        $name = "TableDocument.doc";
+        Utils::uploadFile($name);
+        
+        $index = 1;
+        
+        $result = $this->words->deleteTable($name, $index, $storage=null, $folder=null);
+        $this->assertEquals(200, $result->Code);
+    }
 }    
