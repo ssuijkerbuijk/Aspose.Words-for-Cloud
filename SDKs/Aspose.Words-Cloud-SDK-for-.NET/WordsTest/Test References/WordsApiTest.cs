@@ -928,7 +928,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.FormFieldResponse actual;
-            actual = target.GetFormField(name, sectionIndex, paragraphIndex, formfieldIndex, storage, folder);
+            actual = target.GetFormField(name, "sections/0/paragraphs/0/formfields", formfieldIndex, storage, folder);
 
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FormFieldResponse(), actual.GetType()); 
@@ -1018,7 +1018,7 @@ namespace WordsTest
 
              storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.DocumentResponse actual;
-            actual = target.PostAppendDocument(name, filename, storage, folder, body);
+            actual = target.PostAppendDocument(name, body, filename, storage, folder);
 
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType()); 
@@ -1131,7 +1131,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.FontResponse actual;
-            actual = target.PostDocumentParagraphRunFont(name, index, runIndex, storage, folder, filename, body);
+            actual = target.PostDocumentParagraphRunFont(name, body, "paragraphs/0/runs", runIndex, filename, storage, folder);
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FontResponse(), actual.GetType()); 
             
@@ -1144,8 +1144,7 @@ namespace WordsTest
         public void TestPostDocumentSaveAs()
         {
             string name = "test_multi_pages.docx";
-            string storage = null;
-            string folder = null;
+           
             Com.Aspose.Words.Model.SaveOptionsData body = new Com.Aspose.Words.Model.SaveOptionsData();
 
             body.SaveFormat = "pdf";
@@ -1153,7 +1152,7 @@ namespace WordsTest
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.SaveResponse actual;
-            actual = target.PostDocumentSaveAs(name, storage, folder, body);
+            actual = target.PostDocumentSaveAs(name, body);
 
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaveResponse(), actual.GetType()); 
@@ -1285,16 +1284,14 @@ namespace WordsTest
             string filename = "test.docx";
             string text = "Aspose Watermark";
             double rotationAngle = 0F;
-            string storage = null;
-            string folder = null;
-
+            
             Com.Aspose.Words.Model.WatermarkText body = new Com.Aspose.Words.Model.WatermarkText();
-            body.Text = "The watermark of Aspose";
+            body.Text = "The watermark of Aspose";            
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.DocumentResponse actual;
-            actual = target.PostInsertDocumentWatermarkText(name, filename, text, rotationAngle, storage, folder, body);
+            actual = target.PostInsertDocumentWatermarkText(name, body, filename);
             
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType()); 
@@ -1317,7 +1314,7 @@ namespace WordsTest
             
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.DocumentResponse actual;
-            actual = target.PostInsertPageNumbers(name, filename, storage, folder, body);
+            actual = target.PostInsertPageNumbers(name, body, filename, storage, folder);
             
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType()); 
@@ -1616,7 +1613,26 @@ namespace WordsTest
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.SaveResponse actual;
-            actual = target.PutDocumentSaveAsTiff(name, resultFile, useAntiAliasing, useHighQualityRendering, imageBrightness, imageColorMode, imageContrast, numeralFormat, pageCount, pageIndex, paperColor, pixelFormat, resolution, scale, tiffCompression, dmlRenderingMode, dmlEffectsRenderingMode, tiffBinarizationMethod, storage, folder, zipOutput, body);
+            actual = target.PutDocumentSaveAsTiff(name, body, resultFile, 
+                useAntiAliasing: useAntiAliasing, 
+                useHighQualityRendering: useHighQualityRendering, 
+                imageBrightness: imageBrightness, 
+                imageColorMode: imageColorMode, 
+                imageContrast: imageContrast, 
+                numeralFormat: numeralFormat, 
+                pageCount: pageCount,
+                pageIndex: pageIndex,
+                paperColor: paperColor, 
+                pixelFormat: pixelFormat, 
+                resolution: resolution, 
+                scale: scale, 
+                tiffCompression: tiffCompression, 
+                dmlRenderingMode: dmlRenderingMode,
+                dmlEffectsRenderingMode: dmlEffectsRenderingMode, 
+                tiffBinarizationMethod: tiffBinarizationMethod,
+                storage: storage, 
+                folder: folder, 
+                zipOutput: zipOutput);
 
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaveResponse(), actual.GetType());
@@ -1746,7 +1762,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.ProtectionDataResponse actual;
-            actual = target.PutProtectDocument(name, filename, storage, folder, body);
+            actual = target.PutProtectDocument(name, body, filename, storage, folder);
             
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ProtectionDataResponse(), actual.GetType()); 
