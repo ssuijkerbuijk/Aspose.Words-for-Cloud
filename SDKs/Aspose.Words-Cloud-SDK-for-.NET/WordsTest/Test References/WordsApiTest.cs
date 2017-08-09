@@ -223,7 +223,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.SaaSposeResponse actual;
-            actual = target.DeleteFormField(name, sectionIndex, paragraphIndex, formfieldIndex, destFileName, storage, folder);
+            actual = target.DeleteFormField(name, "sections/0/paragraphs/0/formfields", formfieldIndex, destFileName, storage, folder);
 
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType()); 
@@ -245,7 +245,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SaaSposeResponse actual;
-            actual = target.DeleteField(name, sectionIndex, paragraphIndex, fieldIndex,  storage, folder);
+            actual = target.DeleteField(name, "sections/0/paragraphs/0/fields", fieldIndex,  storage, folder);
 
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType());
@@ -287,7 +287,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SaaSposeResponse actual;
-            actual = target.DeleteParagraphFields(name, index, storage, folder);
+            actual = target.DeleteFields(name, "paragraphs/0", storage, folder);
 
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType()); 
@@ -308,7 +308,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SaaSposeResponse actual;
-            actual = target.DeleteSectionFields(name, sectionIndex, storage, folder);
+            actual = target.DeleteFields(name, "sections/0", storage, folder);
 
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType());             
@@ -349,7 +349,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SaaSposeResponse actual;
-            actual = target.DeleteSectionParagraphFields(name, sectionIndex, paragraphIndex, storage, folder);
+            actual = target.DeleteFields(name, "sections/0/paragraphs/0", storage, folder);
 
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType()); 
@@ -373,7 +373,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.ProtectionDataResponse actual;
-            actual = target.DeleteUnprotectDocument(name, filename, storage, folder, body);
+            actual = target.DeleteUnprotectDocument(name, body, filename, storage, folder);
             
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ProtectionDataResponse(), actual.GetType()); 
@@ -492,7 +492,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.ResponseMessage actual;
-            actual = target.GetDocumentDrawingObjectByIndex(name, objectIndex, storage, folder);
+            actual = target.GetDocumentDrawingObjectByIndex(name, "d", objectIndex, storage, folder);
 
             Assert.AreNotEqual(actual, "");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType()); 
@@ -596,7 +596,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.FieldNamesResponse actual;
-            actual = target.GetDocumentFieldNames(name, useNonMergeFields, storage, folder);
+            actual = target.GetDocumentFieldNames(name, storage, folder, useNonMergeFields: useNonMergeFields);
 
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FieldNamesResponse(), actual.GetType());             
@@ -1041,7 +1041,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.ProtectionDataResponse actual;
-            actual = target.PostChangeDocumentProtection(name, filename, storage, folder, body);
+            actual = target.PostChangeDocumentProtection(name, body, filename, storage, folder);
 
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ProtectionDataResponse(), actual.GetType()); 
@@ -1068,7 +1068,7 @@ namespace WordsTest
 
             dpdto.Node = nodeLink;
             dpdto.Offset = 0;
-            nodeLink.link = lnk;
+            nodeLink.Link = lnk;
             nodeLink.NodeId = "0.0.3";
 
             body.RangeStart = dpdto;
@@ -1081,7 +1081,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.CommentResponse actual;
-            actual = target.PostComment(name, commentIndex, fileName, storage, folder, body);
+            actual = target.PostComment(name, commentIndex, body, fileName, storage, folder);
 
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.CommentResponse(), actual.GetType()); 
@@ -1419,7 +1419,7 @@ namespace WordsTest
              storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.ReplaceTextResponse actual;
-            actual = target.PostReplaceText(name, filename, storage, folder, body);
+            actual = target.PostReplaceText(name, body, filename, storage, folder);
             
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ReplaceTextResponse(), actual.GetType()); 
@@ -1771,7 +1771,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.DocumentPropertyResponse actual;
-            actual = target.PutUpdateDocumentProperty(name, propertyName, filename, storage, folder, body);
+            actual = target.PutUpdateDocumentProperty(name, propertyName, body, filename, storage, folder);
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentPropertyResponse(), actual.GetType()); 
             
