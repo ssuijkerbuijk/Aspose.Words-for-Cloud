@@ -125,13 +125,11 @@ namespace WordsTest
         public void TestDeleteDocumentFields()
         {
             string name = "test_multi_pages.doc";
-            string storage = null;
-            string folder = null;
-
+         
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SaaSposeResponse actual;
-            actual = target.DeleteDocumentFields(name, storage, folder);
+            actual = target.DeleteFields(name, string.Empty);
             
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType()); 
@@ -177,7 +175,7 @@ namespace WordsTest
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             //setting a property
-            target.PutUpdateDocumentProperty(name, propertyName, filename, storage, folder, body);
+            target.PutUpdateDocumentProperty(name, propertyName, body, filename, storage, folder);
 
             Com.Aspose.Words.Model.SaaSposeResponse actual;
             actual = target.DeleteDocumentProperty(name, propertyName, filename, storage, folder);
