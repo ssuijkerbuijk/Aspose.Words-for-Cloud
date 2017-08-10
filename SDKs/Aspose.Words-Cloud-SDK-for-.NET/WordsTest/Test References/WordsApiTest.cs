@@ -426,16 +426,17 @@ namespace WordsTest
         [TestMethod()]
         public void TestGetDocument()
         {
-            string name = "test_multi_pages.docx";
-            string storage = null;
-            string folder = null;
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            throw new NotImplementedException();
+            ////string name = "test_multi_pages.docx";
+            ////string storage = null;
+            ////string folder = null;
+            ////storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
-            Com.Aspose.Words.Model.ResponseMessage actual;
-            actual = target.GetDocument(name, storage, folder);
+            ////Com.Aspose.Words.Model.ResponseMessage actual;
+            ////actual = target.GetDocument(name, storage, folder);
 
-            Assert.AreNotEqual(actual, "");
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType()); 
+            ////Assert.AreNotEqual(actual, "");
+            ////Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType()); 
             
         }
 
@@ -502,9 +503,6 @@ namespace WordsTest
         public void TestGetDocumentDrawingObjectByIndexWithFormat()
         {
 
-
-
-
             string name = "test_multi_pages.docx";
             int objectIndex = 0;
             string format = "png";
@@ -512,11 +510,8 @@ namespace WordsTest
             string folder = null;
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            Com.Aspose.Words.Model.ResponseMessage actual;
-            actual = target.GetDocumentDrawingObjectByIndexWithFormat(name, objectIndex, format, storage, folder);
-
-            Assert.AreNotEqual(actual, "");
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType()); 
+            
+            var actual = target.RenderDrawingObject(name, format, "drawingobjects", objectIndex, storage, folder);            
             
         }
 
@@ -1209,27 +1204,26 @@ namespace WordsTest
             string folder = null;
 
             Com.Aspose.Words.Model.FormField body = new Com.Aspose.Words.Model.FormField();
-            Com.Aspose.Words.Model.Link lnk = new Com.Aspose.Words.Model.Link();
-            lnk.Href = "";
 
             body.Name = "FullName";
             body.Enabled = true;
             body.CalculateOnExit = true;
             body.StatusText = "";
-            body.link = lnk;
-            body.TextInputType = "Regular";
-            body.TextInputDefault = "";
+
+            throw new NotImplementedException();            
+            // body.TextInputType = "Regular";
+            // body.TextInputDefault = "";
 
 
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.FormFieldResponse actual;
-            actual = target.PostFormField(name, sectionIndex, paragraphIndex, formfieldIndex, destFileName, storage, folder, body);
+            actual = target.PostFormField(name, body, "sections/0/paragraphs/0/formfields", formfieldIndex, destFileName);
             
             Assert.AreEqual(actual.Code, "200");
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FormFieldResponse(), actual.GetType()); 
-            
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FormFieldResponse(), actual.GetType());
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -1399,8 +1393,7 @@ namespace WordsTest
             actual = target.PostReplaceText(name, body, filename, storage, folder);
             
             Assert.AreEqual(actual.Code, "200");
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ReplaceTextResponse(), actual.GetType()); 
-            
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ReplaceTextResponse(), actual.GetType());             
         }
 
         /// <summary>
@@ -1409,14 +1402,14 @@ namespace WordsTest
         [TestMethod()]
         public void TestPostRunTask()
         {
-            string name = "test_multi_pages.docx";
-            byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + name);
-            Com.Aspose.Words.Model.ResponseMessage actual;
-            actual = target.PostRunTask(file);
+            throw new NotImplementedException();
+            ////string name = "test_multi_pages.docx";
+            ////byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + name);
+            ////Com.Aspose.Words.Model.ResponseMessage actual;
+            ////actual = target.PostRunTask(file);
 
-            Assert.AreEqual(actual, null);
-            //Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType()); 
-            
+            ////Assert.AreEqual(actual, null);
+            //Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType());             
         }
 
         /// <summary>
@@ -1705,21 +1698,20 @@ namespace WordsTest
             string folder = null;
 
             Com.Aspose.Words.Model.FormField body = new Com.Aspose.Words.Model.FormField();
-            Com.Aspose.Words.Model.Link lnk = new Com.Aspose.Words.Model.Link();
-            lnk.Href = "";
-
+            
             body.Name = "FullName";
             body.Enabled = true;
             body.CalculateOnExit = true;
             body.StatusText = "";
-            body.link = lnk;
-            body.TextInputType = "Regular";
-            body.TextInputDefault = "";
-            body.TextInputFormat = "UPPERCASE";
+
+            throw new NotImplementedException();            
+            ////body.TextInputType = "Regular";
+            ////body.TextInputDefault = "";
+            ////body.TextInputFormat = "UPPERCASE";
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.FormFieldResponse actual;
-            actual = target.PutFormField(name, sectionIndex, paragraphIndex, insertBeforeNode, destFileName, storage, folder, body);
+            actual = target.PutFormField(name, body, "sections/0/paragraphs/0", destFileName);
 
             Assert.AreEqual(actual.Code, "200"); 
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FormFieldResponse(), actual.GetType()); 
