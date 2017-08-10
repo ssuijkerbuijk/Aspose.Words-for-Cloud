@@ -45,8 +45,8 @@ namespace Com.Aspose.Words.Api
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="outPath"></param> 
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param> 
-        /// <returns>Object</returns>            
-        public Object PutConvertDocument (string format, Stream document, string storage = null, string outPath = null, string fontsLocation = null)
+        /// <returns>Stream</returns>            
+        public Stream PutConvertDocument (string format, Stream document, string storage = null, string outPath = null, string fontsLocation = null)
         {
             // create path and map variables
             var ResourcePath = "/v{version}/words/convert?appSid={appSid}&amp;format=[format]&amp;storage=[storage]&amp;outPath=[outPath]&amp;fontsLocation=[fontsLocation]".Replace("{format}","json");
@@ -114,16 +114,16 @@ namespace Com.Aspose.Words.Api
             try 
             {
                 
-                if(typeof(Object) == typeof(Stream)) 
+                if(typeof(Stream) == typeof(Stream)) 
                 {
-                    return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as Object;
+                    return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as Stream;
                 }
                 else
                 {
                     var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
                     if(response != null)
                     {
-                        return (Object)ApiInvoker.deserialize(response, typeof(Object));
+                        return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
                     }
                     else 
                     {
@@ -668,8 +668,8 @@ namespace Com.Aspose.Words.Api
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <param name="outPath"></param> 
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param> 
-        /// <returns>Object</returns>            
-        public Object GetDocumentWithFormat (string name, string format, string storage = null, string folder = null, string loadEncoding = null, string password = null, string outPath = null, string fontsLocation = null)
+        /// <returns>Stream</returns>            
+        public Stream GetDocumentWithFormat (string name, string format, string storage = null, string folder = null, string loadEncoding = null, string password = null, string outPath = null, string fontsLocation = null)
         {
             // create path and map variables
             var ResourcePath = "/v{version}/words/{name}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;outPath=[outPath]&amp;fontsLocation=[fontsLocation]".Replace("{format}","json");
@@ -773,16 +773,16 @@ namespace Com.Aspose.Words.Api
             try 
             {
                 
-                if(typeof(Object) == typeof(Stream)) 
+                if(typeof(Stream) == typeof(Stream)) 
                 {
-                    return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Object;
+                    return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Stream;
                 }
                 else
                 {
                     var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
                     if(response != null)
                     {
-                        return (Object)ApiInvoker.deserialize(response, typeof(Object));
+                        return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
                     }
                     else 
                     {
