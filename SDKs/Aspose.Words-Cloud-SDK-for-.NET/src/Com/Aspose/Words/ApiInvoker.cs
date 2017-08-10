@@ -74,18 +74,7 @@ namespace Com.Aspose.Words
                 throw new ApiException(500, xmle.Message);
             }
       }
-        public static object deserialize(byte[] BinaryData, Type type)
-        {
-            try
-            {
-                return new ResponseMessage(BinaryData,200, "Ok");
-            }
-            catch (IOException e)
-            { 
-                throw new ApiException(500, e.Message);
-            }
-
-        }
+       
 
         private static string Sign(string url, string appKey)
         {
@@ -377,6 +366,11 @@ namespace Com.Aspose.Words
             return value.ToString();
         }
         public String ToPathValue(Double value)
+        {
+            return value.ToString();
+        }
+
+        public String ToPathValue(Double? value)
         {
             return value.ToString();
         }
