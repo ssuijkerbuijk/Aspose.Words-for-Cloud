@@ -1085,15 +1085,14 @@ namespace WordsTest
             string storage = null;
             string folder = null;
             bool useWholeParagraphAsRegion = false;
-            byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + "SampleMailMergeTemplateData.txt");
+            var data = System.IO.File.ReadAllText(Common.GetDataDir() + "SampleMailMergeTemplateData.txt");
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.DocumentResponse actual;
-            actual = target.PostDocumentExecuteMailMerge(name, withRegions, mailMergeDataFile, cleanup, filename, storage, folder, useWholeParagraphAsRegion, file);
+            actual = target.PostDocumentExecuteMailMerge(name, data, destFileName: filename, withRegions: withRegions, cleanup: cleanup, useWholeParagraphAsRegion: useWholeParagraphAsRegion);
 
             Assert.AreEqual(actual.Code, "200");
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType()); 
-            
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType());             
         }
 
         /// <summary>
@@ -1155,15 +1154,14 @@ namespace WordsTest
             string folder = null;
             bool useWholeParagraphAsRegion = false; // TODO: Initialize to an appropriate value
             bool withRegions = false; // TODO: Initialize to an appropriate value
-            byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + "TestExecuteTemplateData.txt");
+            string data = System.IO.File.ReadAllText(Common.GetDataDir() + "TestExecuteTemplateData.txt");
 
              storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.DocumentResponse actual;
-            actual = target.PostExecuteTemplate(name, cleanup, destFileName, storage, folder, useWholeParagraphAsRegion, withRegions, file);
+            actual = target.PostExecuteTemplate(name, data, cleanup: cleanup, destFileName: destFileName, useWholeParagraphAsRegion: useWholeParagraphAsRegion, withRegions: withRegions);
             
             Assert.AreEqual(actual.Code, "200");
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType()); 
-            
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType());             
         }
 
         /// <summary>
@@ -1244,16 +1242,21 @@ namespace WordsTest
             string filename = "test.docx";
             double rotationAngle = 0F;
             string image = "aspose-cloud.png";
-            string storage = null;
-            string folder = null;
-            byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + image);
-             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            Com.Aspose.Words.Model.DocumentResponse actual;
-            actual = target.PostInsertDocumentWatermarkImage(name, filename, rotationAngle, image, storage, folder, file);
-            
-            Assert.AreEqual(actual.Code, "200");
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType()); 
-            
+           
+            using (var file = System.IO.File.OpenRead(Common.GetDataDir() + image))
+            {
+                storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+                Com.Aspose.Words.Model.DocumentResponse actual;
+                actual = target.PostInsertDocumentWatermarkImage(
+                    name,
+                    file,
+                    filename,
+                    rotationAngle: rotationAngle);
+
+                Assert.AreEqual(actual.Code, "200");
+                Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType());
+            }
+
         }
 
         /// <summary>
@@ -1315,12 +1318,11 @@ namespace WordsTest
             string image = "aspose-cloud.png";
             string storage = null;
             string folder = null;
-            byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + image);
             
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.DocumentResponse actual;
-            actual = target.PostInsertWatermarkImage(name, filename, rotationAngle, image, storage, folder, file);
+            actual = target.PostInsertDocumentWatermarkImage(name, image: image, rotationAngle: rotationAngle);
             
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType()); 
@@ -1334,12 +1336,9 @@ namespace WordsTest
         public void TestPostInsertWatermarkText()
         {
             string name = "test_multi_pages.docx";
-            string text = "New";
-            double rotationAngle = 90.0F; // TODO: Initialize to an appropriate value
+                       
             string filename = "test_multi_pages.docx";
-            string storage = null;
-            string folder = null;
-
+           
             Com.Aspose.Words.Model.WatermarkText body = new Com.Aspose.Words.Model.WatermarkText();
             body.Text = "This is the text";
             body.RotationAngle = 90.0f;
@@ -1347,11 +1346,10 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.DocumentResponse actual;
-            actual = target.PostInsertWatermarkText(name, text, rotationAngle, filename, storage, folder, body);
+            actual = target.PostInsertDocumentWatermarkText(name, body, filename);
             
             Assert.AreEqual(actual.Code, "200");
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType()); 
-            
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType());             
         }
 
         /// <summary>
@@ -1438,7 +1436,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SplitDocumentResponse actual;
-            actual = target.PostSplitDocument(name, format, from, to, zipOutput, storage, folder);
+            actual = target.PostSplitDocument(name, format: format, from: from, to: to);
             
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SplitDocumentResponse(), actual.GetType()); 
@@ -1627,16 +1625,13 @@ namespace WordsTest
         {
             bool withRegions = false;
             string cleanup = null;
-            byte[] file = System.IO.File.ReadAllBytes( Common.GetDataDir() + "SampleExecuteTemplate.docx");
-            byte[] data = System.IO.File.ReadAllBytes( Common.GetDataDir() + "SampleExecuteTemplateData.txt");
-
-                        
-            Com.Aspose.Words.Model.ResponseMessage actual;
-            actual = target.PutExecuteMailMergeOnline(withRegions, cleanup, file, data);
-
-            Assert.AreEqual(actual.Code, 200);
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType()); 
-            
+            using (var file = System.IO.File.OpenRead(Common.GetDataDir() + "SampleExecuteTemplate.docx"))
+            {
+                using (var data = System.IO.File.OpenRead(Common.GetDataDir() + "SampleExecuteTemplateData.txt"))
+                {                    
+                    var actual = target.PutExecuteMailMergeOnline(file, data, withRegions, cleanup);                   
+                }
+            }
         }
 
         /// <summary>
@@ -1648,15 +1643,19 @@ namespace WordsTest
             string cleanup = null;
             bool useWholeParagraphAsRegion = false;
             bool withRegions = false; 
-            byte[] file = System.IO.File.ReadAllBytes( Common.GetDataDir() + "SampleMailMergeTemplate.docx");
-            byte[] data = System.IO.File.ReadAllBytes( Common.GetDataDir() + "SampleExecuteTemplateData.txt");
-
-            Com.Aspose.Words.Model.ResponseMessage actual;
-            actual = target.PutExecuteTemplateOnline(cleanup, useWholeParagraphAsRegion, withRegions, file, data);
-
-            Assert.AreEqual(actual.Code, 200);
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType()); 
-            
+         
+            using (var file = System.IO.File.OpenRead(Common.GetDataDir() + "SampleMailMergeTemplate.docx"))
+            {
+                using (var data = System.IO.File.OpenRead(Common.GetDataDir() + "SampleExecuteTemplateData.txt"))
+                {                    
+                    var actual = target.PutExecuteTemplateOnline(
+                        file,
+                        data,
+                        cleanup,
+                        useWholeParagraphAsRegion,
+                        withRegions);                    
+                }
+            }
         }
 
         /// <summary>
@@ -1836,7 +1835,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.SectionPageSetupResponse actual;
-            actual = target.UpdateSectionPageSetup(name, sectionIndex, storage, folder, filename, body);
+            actual = target.UpdateSectionPageSetup(name, sectionIndex, body, storage, folder, filename);
             
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SectionPageSetupResponse(), actual.GetType()); 

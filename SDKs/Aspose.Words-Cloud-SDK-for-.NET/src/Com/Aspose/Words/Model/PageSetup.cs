@@ -12,7 +12,7 @@ namespace Com.Aspose.Words.Model {
   /// <summary>
   /// 
   /// </summary>  
-  public class PageSetupDto {
+  public class PageSetup {
     
     /// <summary>
     /// Gets or Sets Bidi
@@ -201,7 +201,7 @@ namespace Com.Aspose.Words.Model {
     /// <returns>String presentation of the object</returns>
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class PageSetupDto {\n");
+      sb.Append("class PageSetup {\n");
       
       sb.Append("  Bidi: ").Append(Bidi).Append("\n");
       

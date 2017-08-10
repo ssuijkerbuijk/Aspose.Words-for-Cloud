@@ -17,7 +17,7 @@ namespace Com.Aspose.Words.Model {
     /// <summary>
     /// Gets or Sets PageSetup
     /// </summary>    
-    public PageSetupDto PageSetup { get; set; }
+    public PageSetup PageSetup { get; set; }
 
     
     /// <summary>

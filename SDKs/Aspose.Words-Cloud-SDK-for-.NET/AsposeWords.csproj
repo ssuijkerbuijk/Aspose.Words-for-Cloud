@@ -145,7 +145,7 @@
     <Compile Include="src\Com\Aspose\Words\Model\OfficeMathObjectsCollectionDto.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\OfficeMathObjectsResponse.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\PageNumber.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\PageSetupDto.cs" />
+    <Compile Include="src\Com\Aspose\Words\Model\PageSetup.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\PageStatData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\ParagraphDto.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\ParagraphInsertDto.cs" />

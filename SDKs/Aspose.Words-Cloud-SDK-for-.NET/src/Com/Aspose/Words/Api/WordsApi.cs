@@ -6113,7 +6113,7 @@ namespace Com.Aspose.Words.Api
         /// </summary>
         /// <param name="name"></param> 
         /// <param name="sectionIndex"></param> 
-        /// <param name="pageSetupDto"></param> 
+        /// <param name="pageSetup"></param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -6122,7 +6122,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>SectionPageSetupResponse</returns>            
-        public SectionPageSetupResponse UpdateSectionPageSetup (string name, int? sectionIndex, PageSetupDto pageSetupDto, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SectionPageSetupResponse UpdateSectionPageSetup (string name, int? sectionIndex, PageSetup pageSetup, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/v{version}/words/{name}/sections/{sectionIndex}/pageSetup?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
@@ -6147,10 +6147,10 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling UpdateSectionPageSetup");
             }
             
-            // verify the required parameter 'pageSetupDto' is set
-            if (pageSetupDto == null) 
+            // verify the required parameter 'pageSetup' is set
+            if (pageSetup == null) 
             {
-                throw new ApiException(400, "Missing required parameter 'pageSetupDto' when calling UpdateSectionPageSetup");
+                throw new ApiException(400, "Missing required parameter 'pageSetup' when calling UpdateSectionPageSetup");
             }
             
             
@@ -6237,7 +6237,7 @@ namespace Com.Aspose.Words.Api
             }
             
                       
-            postBody = pageSetupDto; // http body (model) parameter
+            postBody = pageSetup; // http body (model) parameter
             
             try 
             {
