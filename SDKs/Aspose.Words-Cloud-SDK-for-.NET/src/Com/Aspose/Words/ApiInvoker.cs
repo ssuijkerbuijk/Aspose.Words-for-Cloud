@@ -120,9 +120,9 @@ namespace Com.Aspose.Words
           return invokeAPIInternal(host, path, method, false, queryParams, body, headerParams, formParams) as string;
       }
 
-      public byte[] invokeBinaryAPI(string host, string path, string method, Dictionary<String, String> queryParams, object body, Dictionary<String, String> headerParams, Dictionary<String, object> formParams)
+      public object invokeBinaryAPI(string host, string path, string method, Dictionary<String, String> queryParams, object body, Dictionary<String, String> headerParams, Dictionary<String, object> formParams)
       {
-          return invokeAPIInternal(host, path, method, true, queryParams, body, headerParams, formParams) as byte[];
+          return invokeAPIInternal(host, path, method, true, queryParams, body, headerParams, formParams);
       }
 
       public static void CopyTo(Stream source, Stream destination, int bufferSize )
@@ -227,11 +227,10 @@ namespace Com.Aspose.Words
 
               if (binaryResponse)
               {
-                  using (var memoryStream = new MemoryStream())
-                  {
-                      CopyTo(webResponse.GetResponseStream(), memoryStream, 81920);
-                      return memoryStream.ToArray();
-                  }
+                  var memoryStream = new MemoryStream();
+
+                  CopyTo(webResponse.GetResponseStream(), memoryStream, 81920);
+                  return memoryStream;
               }
               else
               {

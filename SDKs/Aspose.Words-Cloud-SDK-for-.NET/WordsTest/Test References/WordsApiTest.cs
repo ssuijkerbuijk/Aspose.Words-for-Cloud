@@ -5,7 +5,7 @@ using System;
 
 namespace WordsTest
 {
-
+    using Com.Aspose.Words.Model;
 
     /// <summary>
     ///This is a test class for TestWordsApi and is intended
@@ -327,11 +327,10 @@ namespace WordsTest
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            Com.Aspose.Words.Model.ResponseMessage actual;
-            actual = target.GetRenderPage(name, pageNumber, format, storage, folder);
+            
+            target.RenderPage(name, pageNumber, format, storage, folder);
 
-            Assert.AreEqual(actual.Code, 200);
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType());
+            // TODO: check response file
         }
         /// <summary>
         ///A test for DeleteSectionParagraphFields
@@ -491,12 +490,9 @@ namespace WordsTest
             
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
-            Com.Aspose.Words.Model.ResponseMessage actual;
-            actual = target.GetDocumentDrawingObjectByIndex(name, "d", objectIndex, storage, folder);
+            DrawingObjectResponse actual = target.GetDocumentDrawingObjectByIndex(name, null, objectIndex, storage, folder);
 
-            Assert.AreNotEqual(actual, "");
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType()); 
-            
+            Assert.AreEqual(actual.Code, "200");                        
         }
 
         /// <summary>
@@ -536,11 +532,8 @@ namespace WordsTest
             string folder = null;
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            Com.Aspose.Words.Model.ResponseMessage actual;
-            actual = target.GetDocumentDrawingObjectImageData(name, objectIndex, storage, folder);
-
-        Assert.AreNotEqual(actual, "");
-        Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType()); 
+            
+            target.GetDocumentDrawingObjectImageData(name, null, objectIndex, storage, folder);        
             
         }
 
@@ -556,11 +549,8 @@ namespace WordsTest
             string folder = null;
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            Com.Aspose.Words.Model.ResponseMessage actual;
-            actual = target.GetDocumentDrawingObjectOleData(name, objectIndex, storage, folder);
-
-            Assert.AreNotEqual(actual, "");
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType()); 
+            
+            target.GetDocumentDrawingObjectOleData(name, null, objectIndex, storage, folder);
             
         }
 
@@ -655,7 +645,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.ParagraphResponse actual;
-            actual = target.GetDocumentParagraph(name, index, storage, folder);
+            actual = target.GetDocumentParagraph(name, null, index, storage, folder);
 
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ParagraphResponse(), actual.GetType()); 
@@ -678,7 +668,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.RunResponse actual;
-            actual = target.GetDocumentParagraphRun(name, index, runIndex, storage, folder);
+            actual = target.GetDocumentParagraphRun(name, "paragraphs/0", runIndex, storage, folder);
 
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.RunResponse(), actual.GetType()); 
