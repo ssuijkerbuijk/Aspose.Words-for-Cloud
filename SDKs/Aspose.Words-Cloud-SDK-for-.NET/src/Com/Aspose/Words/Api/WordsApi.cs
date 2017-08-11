@@ -69,9 +69,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -815,9 +815,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -963,9 +963,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -1102,9 +1102,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -1220,18 +1220,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (bookmarkName == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])bookmarkName=", string.Empty);
+            if (bookmarkName == null || string.IsNullOrEmpty(bookmarkName.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "bookmarkName" + "}", string.Empty);
             } 
             else 
             {
@@ -1357,18 +1357,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (bookmarkName == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])bookmarkName=", string.Empty);
+            if (bookmarkName == null || string.IsNullOrEmpty(bookmarkName.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "bookmarkName" + "}", string.Empty);
             } 
             else 
             {
@@ -1505,9 +1505,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -1626,9 +1626,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -1772,18 +1772,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (commentIndex == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])commentIndex=", string.Empty);
+            if (commentIndex == null || string.IsNullOrEmpty(commentIndex.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "commentIndex" + "}", string.Empty);
             } 
             else 
             {
@@ -1909,18 +1909,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (commentIndex == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])commentIndex=", string.Empty);
+            if (commentIndex == null || string.IsNullOrEmpty(commentIndex.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "commentIndex" + "}", string.Empty);
             } 
             else 
             {
@@ -2067,18 +2067,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (commentIndex == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])commentIndex=", string.Empty);
+            if (commentIndex == null || string.IsNullOrEmpty(commentIndex.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "commentIndex" + "}", string.Empty);
             } 
             else 
             {
@@ -2222,9 +2222,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -2343,9 +2343,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -2461,18 +2461,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (propertyName == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])propertyName=", string.Empty);
+            if (propertyName == null || string.IsNullOrEmpty(propertyName.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "propertyName" + "}", string.Empty);
             } 
             else 
             {
@@ -2598,18 +2598,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (propertyName == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])propertyName=", string.Empty);
+            if (propertyName == null || string.IsNullOrEmpty(propertyName.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "propertyName" + "}", string.Empty);
             } 
             else 
             {
@@ -2763,18 +2763,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (propertyName == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])propertyName=", string.Empty);
+            if (propertyName == null || string.IsNullOrEmpty(propertyName.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "propertyName" + "}", string.Empty);
             } 
             else 
             {
@@ -2921,18 +2921,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (propertyName == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])propertyName=", string.Empty);
+            if (propertyName == null || string.IsNullOrEmpty(propertyName.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "propertyName" + "}", string.Empty);
             } 
             else 
             {
@@ -3086,18 +3086,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (withRegions == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])withRegions=", string.Empty);
+            if (withRegions == null || string.IsNullOrEmpty(withRegions.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "withRegions" + "}", string.Empty);
             } 
             else 
             {
@@ -3253,9 +3253,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -3409,18 +3409,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (headerFooterIndex == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])headerFooterIndex=", string.Empty);
+            if (headerFooterIndex == null || string.IsNullOrEmpty(headerFooterIndex.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "headerFooterIndex" + "}", string.Empty);
             } 
             else 
             {
@@ -3547,9 +3547,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -3665,18 +3665,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (hyperlinkIndex == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])hyperlinkIndex=", string.Empty);
+            if (hyperlinkIndex == null || string.IsNullOrEmpty(hyperlinkIndex.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "hyperlinkIndex" + "}", string.Empty);
             } 
             else 
             {
@@ -3795,9 +3795,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -3937,9 +3937,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -4076,9 +4076,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -4211,18 +4211,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (pageIndex == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])pageIndex=", string.Empty);
+            if (pageIndex == null || string.IsNullOrEmpty(pageIndex.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "pageIndex" + "}", string.Empty);
             } 
             else 
             {
@@ -4349,9 +4349,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -4468,9 +4468,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -4597,9 +4597,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -4726,9 +4726,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -4857,9 +4857,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -4997,9 +4997,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -5118,9 +5118,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -5247,9 +5247,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -5404,9 +5404,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -5697,9 +5697,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -5817,9 +5817,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -5935,18 +5935,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (sectionIndex == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=", string.Empty);
+            if (sectionIndex == null || string.IsNullOrEmpty(sectionIndex.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "sectionIndex" + "}", string.Empty);
             } 
             else 
             {
@@ -6070,27 +6070,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (headerFooterIndex == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])headerFooterIndex=", string.Empty);
+            if (headerFooterIndex == null || string.IsNullOrEmpty(headerFooterIndex.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "headerFooterIndex" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "headerFooterIndex" + "}", apiInvoker.ToPathValue(headerFooterIndex));
             }
             
-            if (sectionIndex == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=", string.Empty);
+            if (sectionIndex == null || string.IsNullOrEmpty(sectionIndex.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "sectionIndex" + "}", string.Empty);
             } 
             else 
             {
@@ -6215,18 +6215,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (sectionIndex == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=", string.Empty);
+            if (sectionIndex == null || string.IsNullOrEmpty(sectionIndex.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "sectionIndex" + "}", string.Empty);
             } 
             else 
             {
@@ -6352,18 +6352,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (sectionIndex == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=", string.Empty);
+            if (sectionIndex == null || string.IsNullOrEmpty(sectionIndex.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "sectionIndex" + "}", string.Empty);
             } 
             else 
             {
@@ -6506,9 +6506,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -6674,9 +6674,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -6812,9 +6812,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -6924,9 +6924,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -7047,9 +7047,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -7191,9 +7191,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -7357,9 +7357,9 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
@@ -7503,18 +7503,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
@@ -7637,27 +7637,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -7783,27 +7783,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -7961,27 +7961,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -8115,18 +8115,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
@@ -8245,18 +8245,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
@@ -8406,27 +8406,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -8559,27 +8559,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -8733,27 +8733,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -8896,18 +8896,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
@@ -9040,18 +9040,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
@@ -9201,27 +9201,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -9361,27 +9361,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -9534,27 +9534,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -9704,27 +9704,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -9847,27 +9847,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -9998,27 +9998,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -10152,18 +10152,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
@@ -10290,18 +10290,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
@@ -10457,18 +10457,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
@@ -10618,27 +10618,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -10771,27 +10771,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -10945,27 +10945,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -11108,18 +11108,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
@@ -11245,18 +11245,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
@@ -11407,27 +11407,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -11560,27 +11560,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -11734,27 +11734,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -11897,18 +11897,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
@@ -12035,18 +12035,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
@@ -12206,27 +12206,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -12359,27 +12359,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -12533,27 +12533,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -12696,18 +12696,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
@@ -12834,18 +12834,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
@@ -13005,27 +13005,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -13151,27 +13151,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -13329,27 +13329,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -13483,18 +13483,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
@@ -13620,18 +13620,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
@@ -13782,27 +13782,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -13928,27 +13928,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -14098,27 +14098,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -14251,27 +14251,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -14430,27 +14430,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (nodePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])nodePath=", string.Empty);
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -14584,18 +14584,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (paragraphPath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])paragraphPath=", string.Empty);
+            if (paragraphPath == null || string.IsNullOrEmpty(paragraphPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "paragraphPath" + "}", string.Empty);
             } 
             else 
             {
@@ -14722,18 +14722,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (paragraphPath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])paragraphPath=", string.Empty);
+            if (paragraphPath == null || string.IsNullOrEmpty(paragraphPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "paragraphPath" + "}", string.Empty);
             } 
             else 
             {
@@ -14893,27 +14893,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (paragraphPath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])paragraphPath=", string.Empty);
+            if (paragraphPath == null || string.IsNullOrEmpty(paragraphPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "paragraphPath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "paragraphPath" + "}", apiInvoker.ToPathValue(paragraphPath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -15046,27 +15046,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (paragraphPath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])paragraphPath=", string.Empty);
+            if (paragraphPath == null || string.IsNullOrEmpty(paragraphPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "paragraphPath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "paragraphPath" + "}", apiInvoker.ToPathValue(paragraphPath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -15220,27 +15220,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (paragraphPath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])paragraphPath=", string.Empty);
+            if (paragraphPath == null || string.IsNullOrEmpty(paragraphPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "paragraphPath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "paragraphPath" + "}", apiInvoker.ToPathValue(paragraphPath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -15390,27 +15390,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (paragraphPath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])paragraphPath=", string.Empty);
+            if (paragraphPath == null || string.IsNullOrEmpty(paragraphPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "paragraphPath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "paragraphPath" + "}", apiInvoker.ToPathValue(paragraphPath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -15543,27 +15543,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (paragraphPath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])paragraphPath=", string.Empty);
+            if (paragraphPath == null || string.IsNullOrEmpty(paragraphPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "paragraphPath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "paragraphPath" + "}", apiInvoker.ToPathValue(paragraphPath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -15708,18 +15708,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (sectionPath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionPath=", string.Empty);
+            if (sectionPath == null || string.IsNullOrEmpty(sectionPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "sectionPath" + "}", string.Empty);
             } 
             else 
             {
@@ -15854,18 +15854,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (sectionPath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionPath=", string.Empty);
+            if (sectionPath == null || string.IsNullOrEmpty(sectionPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "sectionPath" + "}", string.Empty);
             } 
             else 
             {
@@ -16013,18 +16013,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (sectionPath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionPath=", string.Empty);
+            if (sectionPath == null || string.IsNullOrEmpty(sectionPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "sectionPath" + "}", string.Empty);
             } 
             else 
             {
@@ -16186,27 +16186,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (sectionPath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionPath=", string.Empty);
+            if (sectionPath == null || string.IsNullOrEmpty(sectionPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "sectionPath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "sectionPath" + "}", apiInvoker.ToPathValue(sectionPath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -16359,18 +16359,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (tablePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])tablePath=", string.Empty);
+            if (tablePath == null || string.IsNullOrEmpty(tablePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "tablePath" + "}", string.Empty);
             } 
             else 
             {
@@ -16521,27 +16521,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (tablePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])tablePath=", string.Empty);
+            if (tablePath == null || string.IsNullOrEmpty(tablePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "tablePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "tablePath" + "}", apiInvoker.ToPathValue(tablePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -16667,27 +16667,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (tablePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])tablePath=", string.Empty);
+            if (tablePath == null || string.IsNullOrEmpty(tablePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "tablePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "tablePath" + "}", apiInvoker.ToPathValue(tablePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -16837,27 +16837,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (tablePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])tablePath=", string.Empty);
+            if (tablePath == null || string.IsNullOrEmpty(tablePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "tablePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "tablePath" + "}", apiInvoker.ToPathValue(tablePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -16990,27 +16990,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (tablePath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])tablePath=", string.Empty);
+            if (tablePath == null || string.IsNullOrEmpty(tablePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "tablePath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "tablePath" + "}", apiInvoker.ToPathValue(tablePath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -17164,18 +17164,18 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (tableRowPath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])tableRowPath=", string.Empty);
+            if (tableRowPath == null || string.IsNullOrEmpty(tableRowPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "tableRowPath" + "}", string.Empty);
             } 
             else 
             {
@@ -17326,27 +17326,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (tableRowPath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])tableRowPath=", string.Empty);
+            if (tableRowPath == null || string.IsNullOrEmpty(tableRowPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "tableRowPath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "tableRowPath" + "}", apiInvoker.ToPathValue(tableRowPath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -17472,27 +17472,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (tableRowPath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])tableRowPath=", string.Empty);
+            if (tableRowPath == null || string.IsNullOrEmpty(tableRowPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "tableRowPath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "tableRowPath" + "}", apiInvoker.ToPathValue(tableRowPath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -17642,27 +17642,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (tableRowPath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])tableRowPath=", string.Empty);
+            if (tableRowPath == null || string.IsNullOrEmpty(tableRowPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "tableRowPath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "tableRowPath" + "}", apiInvoker.ToPathValue(tableRowPath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
@@ -17795,27 +17795,27 @@ namespace Com.Aspose.Words.Api
             }
             
             
-            if (name == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
             
-            if (tableRowPath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])tableRowPath=", string.Empty);
+            if (tableRowPath == null || string.IsNullOrEmpty(tableRowPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "tableRowPath" + "}", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "tableRowPath" + "}", apiInvoker.ToPathValue(tableRowPath));
             }
             
-            if (index == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])index=", string.Empty);
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
             } 
             else 
             {
