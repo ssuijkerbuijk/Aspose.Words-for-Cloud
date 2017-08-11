@@ -83,7 +83,7 @@ namespace WordsTest
         public void TestAcceptAllRevisions()
         {
 
-            string name = "test_multi_pages.doc";
+            string name = "test_multi_pages.docx";
             string filename = "Test2.docx";
             string storage = null;
             string folder = null;
@@ -104,7 +104,7 @@ namespace WordsTest
         [TestMethod()]
         public void TestDeleteComment()
         {
-            string name = "test_multi_pages.doc";
+            string name = "test_multi_pages.docx";
             int commentIndex = 1; 
             string storage = null;
             string folder = null;
@@ -124,7 +124,7 @@ namespace WordsTest
         [TestMethod()]
         public void TestDeleteDocumentFields()
         {
-            string name = "test_multi_pages.doc";
+            string name = "test_multi_pages.docx";
          
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
@@ -142,7 +142,7 @@ namespace WordsTest
         [TestMethod()]
         public void TestDeleteDocumentMacros()
         {
-            string name = "test_multi_pages.doc";
+            string name = "test_multi_pages.docx";
             string storage = null;
             string folder = null;
 
@@ -162,9 +162,9 @@ namespace WordsTest
         [TestMethod()]
         public void TestDeleteDocumentProperty()
         {
-            string name = "test_multi_pages.doc";
+            string name = "test_multi_pages.docx";
             string propertyName = "AsposeAuthor";
-            string filename = "test_multi_pages.doc";
+            string filename = "test_multi_pages.docx";
             string storage = null;
             string folder = null;
 
@@ -191,7 +191,7 @@ namespace WordsTest
         [TestMethod()]
         public void TestDeleteDocumentWatermark()
         {
-            string name = "test_multi_pages.doc";
+            string name = "test_multi_pages.docx";
             string filename = "test.docx";
             string storage = null;
             string folder = null;
