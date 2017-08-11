@@ -71,8 +71,8 @@ namespace WordsTest
         ///</summary>
         public TestWordsApi()
         {
-            target = new WordsApi("xxxx", "xxxx", "http://api.aspose.cloud/v1.1");
-            storageApi = new StorageApi("xxxx", "xxxx", "http://api.aspose.cloud/v1.1");
+            target = new WordsApi("0fbf678c5ecabdb5caca48452a736dd0", "91a2fd07-bba1-4b32-9112-abfb1fe8aebd", "http://api.aspose.cloud/v1.1");
+            storageApi = new StorageApi("0fbf678c5ecabdb5caca48452a736dd0", "91a2fd07-bba1-4b32-9112-abfb1fe8aebd", "http://api.aspose.cloud/v1.1");
 
         }
 
@@ -245,7 +245,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SaaSposeResponse actual;
-            actual = target.DeleteField(name, "sections/0/paragraphs/0/fields", fieldIndex,  storage, folder);
+            actual = target.DeleteField(name, "sections/0/paragraphs/0", fieldIndex,  storage, folder);
 
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType());

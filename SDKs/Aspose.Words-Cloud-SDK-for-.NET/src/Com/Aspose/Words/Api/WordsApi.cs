@@ -40,6 +40,117 @@ namespace Com.Aspose.Words.Api
         /// <summary>
         ///  
         /// </summary>
+        /// <param name="name"></param> 
+        /// <param name="storage">File storage, which have to be used.</param> 
+        /// <param name="folder">Original document folder.</param> 
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
+        /// <param name="password">Password for opening an encrypted document.</param> 
+        /// <returns>DocumentResponse</returns>            
+        public DocumentResponse GetDocument (string name, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        {
+            // create path and map variables
+            var ResourcePath = "/v{version}/words/{name}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+
+            // query params
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, object>();
+            object postBody = null;
+            
+            
+            // verify the required parameter 'name' is set
+            if (name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocument");
+            }
+            
+            
+            if (name == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
+            }
+            
+            
+            if (storage == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "storage" + "]", apiInvoker.ToPathValue(storage));
+            }
+            
+            if (folder == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "folder" + "]", apiInvoker.ToPathValue(folder));
+            }
+            
+            if (loadEncoding == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "loadEncoding" + "]", apiInvoker.ToPathValue(loadEncoding));
+            }
+            
+            if (password == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
+            }
+            
+                      
+            
+            try 
+            {                
+                if(typeof(DocumentResponse) == typeof(Stream)) 
+                {
+                    return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as DocumentResponse;
+                }
+                else
+                {
+                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                    if(response != null)
+                    {
+                        return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
+                    }
+                    else 
+                    {
+                        return null;
+                    }
+                }
+            } 
+            catch (ApiException ex) 
+            {
+                if(ex.ErrorCode == 404) 
+                {
+                    return null;
+                }
+                
+                throw ex;                
+            }
+        }
+
+        
+        /// <summary>
+        ///  
+        /// </summary>
         /// <param name="format"></param> 
         /// <param name="document">Converting document</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
@@ -49,8 +160,11 @@ namespace Com.Aspose.Words.Api
         public Stream PutConvertDocument (string format, Stream document, string storage = null, string outPath = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/convert?appSid={appSid}&amp;format=[format]&amp;storage=[storage]&amp;outPath=[outPath]&amp;fontsLocation=[fontsLocation]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/convert?appSid={appSid}&amp;format=[format]&amp;storage=[storage]&amp;outPath=[outPath]&amp;fontsLocation=[fontsLocation]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -75,7 +189,7 @@ namespace Com.Aspose.Words.Api
             
             if (format == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
             } 
             else 
             {
@@ -84,7 +198,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -93,7 +207,7 @@ namespace Com.Aspose.Words.Api
             
             if (outPath == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])outPath=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])outPath=\[outPath\]", string.Empty);
             } 
             else 
             {
@@ -102,7 +216,7 @@ namespace Com.Aspose.Words.Api
             
             if (fontsLocation == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=\[fontsLocation\]", string.Empty);
             } 
             else 
             {
@@ -112,8 +226,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as Stream;
@@ -146,15 +259,17 @@ namespace Com.Aspose.Words.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <param name="fileName"></param> 
-        /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder"></param> 
+        /// <param name="storage">File storage, which have to be used.</param> 
         /// <returns>DocumentResponse</returns>            
-        public DocumentResponse PutCreateDocument (string fileName = null, string storage = null, string folder = null)
+        public DocumentResponse PutCreateDocument (string folder = null, string storage = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/create?appSid={appSid}&amp;fileName=[fileName]&amp;storage=[storage]&amp;folder=[folder]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/create?appSid={appSid}&amp;folder=[folder]&amp;storage=[storage]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -165,38 +280,28 @@ namespace Com.Aspose.Words.Api
             
             
             
-            if (fileName == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fileName=", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "fileName" + "]", apiInvoker.ToPathValue(fileName));
-            }
-            
-            if (storage == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "storage" + "]", apiInvoker.ToPathValue(storage));
-            }
-            
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
                 ResourcePath = ResourcePath.Replace("[" + "folder" + "]", apiInvoker.ToPathValue(folder));
             }
             
+            if (storage == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "storage" + "]", apiInvoker.ToPathValue(storage));
+            }
+            
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as DocumentResponse;
@@ -237,8 +342,11 @@ namespace Com.Aspose.Words.Api
         public Stream PutExecuteMailMergeOnline (Stream template, Stream data, bool? withRegions = null, string cleanup = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/executeMailMerge?appSid={appSid}&amp;withRegions=[withRegions]&amp;cleanup=[cleanup]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/executeMailMerge?appSid={appSid}&amp;withRegions=[withRegions]&amp;cleanup=[cleanup]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -263,7 +371,7 @@ namespace Com.Aspose.Words.Api
             
             if (withRegions == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])withRegions=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])withRegions=\[withRegions\]", string.Empty);
             } 
             else 
             {
@@ -272,7 +380,7 @@ namespace Com.Aspose.Words.Api
             
             if (cleanup == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])cleanup=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])cleanup=\[cleanup\]", string.Empty);
             } 
             else 
             {
@@ -282,8 +390,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as Stream;
@@ -325,8 +432,11 @@ namespace Com.Aspose.Words.Api
         public Stream PutExecuteTemplateOnline (Stream template, Stream data, string cleanup = null, bool? useWholeParagraphAsRegion = null, bool? withRegions = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/executeTemplate?appSid={appSid}&amp;cleanup=[cleanup]&amp;useWholeParagraphAsRegion=[useWholeParagraphAsRegion]&amp;withRegions=[withRegions]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/executeTemplate?appSid={appSid}&amp;cleanup=[cleanup]&amp;useWholeParagraphAsRegion=[useWholeParagraphAsRegion]&amp;withRegions=[withRegions]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -351,7 +461,7 @@ namespace Com.Aspose.Words.Api
             
             if (cleanup == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])cleanup=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])cleanup=\[cleanup\]", string.Empty);
             } 
             else 
             {
@@ -360,7 +470,7 @@ namespace Com.Aspose.Words.Api
             
             if (useWholeParagraphAsRegion == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])useWholeParagraphAsRegion=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])useWholeParagraphAsRegion=\[useWholeParagraphAsRegion\]", string.Empty);
             } 
             else 
             {
@@ -369,7 +479,7 @@ namespace Com.Aspose.Words.Api
             
             if (withRegions == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])withRegions=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])withRegions=\[withRegions\]", string.Empty);
             } 
             else 
             {
@@ -379,8 +489,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as Stream;
@@ -417,8 +526,11 @@ namespace Com.Aspose.Words.Api
         public SaaSposeResponse ResetCache ()
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/fonts/cache?appSid={appSid}".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/fonts/cache?appSid={appSid}";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -432,8 +544,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
@@ -472,8 +583,11 @@ namespace Com.Aspose.Words.Api
         public SaveResponse PostLoadWebDocument (LoadWebDocumentData data, string storage = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/loadWebDocument?appSid={appSid}&amp;storage=[storage]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/loadWebDocument?appSid={appSid}&amp;storage=[storage]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -492,7 +606,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -503,8 +617,7 @@ namespace Com.Aspose.Words.Api
             postBody = data; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(SaveResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as SaveResponse;
@@ -543,8 +656,11 @@ namespace Com.Aspose.Words.Api
         public FieldNamesResponse PutDocumentFieldNames (Stream template, bool? useNonMergeFields = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/mailMergeFieldNames?appSid={appSid}&amp;useNonMergeFields=[useNonMergeFields]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/mailMergeFieldNames?appSid={appSid}&amp;useNonMergeFields=[useNonMergeFields]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -563,7 +679,7 @@ namespace Com.Aspose.Words.Api
             
             if (useNonMergeFields == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])useNonMergeFields=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])useNonMergeFields=\[useNonMergeFields\]", string.Empty);
             } 
             else 
             {
@@ -573,8 +689,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(FieldNamesResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as FieldNamesResponse;
@@ -611,8 +726,11 @@ namespace Com.Aspose.Words.Api
         public Object PostRunTask ()
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/tasks?appSid={appSid}".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/tasks?appSid={appSid}";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -626,8 +744,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(Object) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as Object;
@@ -672,8 +789,11 @@ namespace Com.Aspose.Words.Api
         public Stream GetDocumentWithFormat (string name, string format, string storage = null, string folder = null, string loadEncoding = null, string password = null, string outPath = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;outPath=[outPath]&amp;fontsLocation=[fontsLocation]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;outPath=[outPath]&amp;fontsLocation=[fontsLocation]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -707,7 +827,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -716,7 +836,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -725,7 +845,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -734,7 +854,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -743,7 +863,7 @@ namespace Com.Aspose.Words.Api
             
             if (format == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
             } 
             else 
             {
@@ -752,7 +872,7 @@ namespace Com.Aspose.Words.Api
             
             if (outPath == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])outPath=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])outPath=\[outPath\]", string.Empty);
             } 
             else 
             {
@@ -761,7 +881,7 @@ namespace Com.Aspose.Words.Api
             
             if (fontsLocation == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=\[fontsLocation\]", string.Empty);
             } 
             else 
             {
@@ -771,8 +891,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Stream;
@@ -818,8 +937,11 @@ namespace Com.Aspose.Words.Api
         public DocumentResponse PostAppendDocument (string name, DocumentEntryList documentList, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/appendDocument?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/appendDocument?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -853,7 +975,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -862,7 +984,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -871,7 +993,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -880,7 +1002,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -889,7 +1011,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -898,7 +1020,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -907,7 +1029,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -918,8 +1040,7 @@ namespace Com.Aspose.Words.Api
             postBody = documentList; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentResponse;
@@ -961,8 +1082,11 @@ namespace Com.Aspose.Words.Api
         public BookmarksResponse GetDocumentBookmarks (string name, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/bookmarks?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/bookmarks?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -990,7 +1114,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -999,7 +1123,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -1008,7 +1132,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -1017,7 +1141,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -1027,8 +1151,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(BookmarksResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as BookmarksResponse;
@@ -1071,8 +1194,11 @@ namespace Com.Aspose.Words.Api
         public BookmarkResponse GetDocumentBookmarkByName (string name, string bookmarkName, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/bookmarks/{bookmarkName}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/bookmarks/{bookmarkName}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -1115,7 +1241,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -1124,7 +1250,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -1133,7 +1259,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -1142,7 +1268,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -1152,8 +1278,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(BookmarkResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as BookmarkResponse;
@@ -1200,8 +1325,11 @@ namespace Com.Aspose.Words.Api
         public BookmarkResponse PostUpdateDocumentBookmark (string name, BookmarkData bookmarkData, string bookmarkName, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/bookmarks/{bookmarkName}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/bookmarks/{bookmarkName}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -1250,7 +1378,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -1259,7 +1387,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -1268,7 +1396,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -1277,7 +1405,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -1286,7 +1414,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -1295,7 +1423,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -1304,7 +1432,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -1315,8 +1443,7 @@ namespace Com.Aspose.Words.Api
             postBody = bookmarkData; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(BookmarkResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as BookmarkResponse;
@@ -1358,8 +1485,11 @@ namespace Com.Aspose.Words.Api
         public CommentsResponse GetComments (string name, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/comments?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/comments?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -1387,7 +1517,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -1396,7 +1526,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -1405,7 +1535,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -1414,7 +1544,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -1424,8 +1554,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(CommentsResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as CommentsResponse;
@@ -1471,8 +1600,11 @@ namespace Com.Aspose.Words.Api
         public CommentResponse PutComment (string name, CommentDto comment, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/comments?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/comments?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -1506,7 +1638,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -1515,7 +1647,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -1524,7 +1656,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -1533,7 +1665,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -1542,7 +1674,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -1551,7 +1683,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -1560,7 +1692,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -1571,8 +1703,7 @@ namespace Com.Aspose.Words.Api
             postBody = comment; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(CommentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as CommentResponse;
@@ -1615,8 +1746,11 @@ namespace Com.Aspose.Words.Api
         public CommentResponse GetComment (string name, int? commentIndex, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/comments/{commentIndex}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/comments/{commentIndex}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -1659,7 +1793,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -1668,7 +1802,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -1677,7 +1811,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -1686,7 +1820,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -1696,8 +1830,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(CommentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as CommentResponse;
@@ -1744,8 +1877,11 @@ namespace Com.Aspose.Words.Api
         public CommentResponse PostComment (string name, int? commentIndex, CommentDto comment, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/comments/{commentIndex}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/comments/{commentIndex}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -1794,7 +1930,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -1803,7 +1939,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -1812,7 +1948,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -1821,7 +1957,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -1830,7 +1966,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -1839,7 +1975,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -1848,7 +1984,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -1859,8 +1995,7 @@ namespace Com.Aspose.Words.Api
             postBody = comment; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(CommentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as CommentResponse;
@@ -1906,8 +2041,11 @@ namespace Com.Aspose.Words.Api
         public SaaSposeResponse DeleteComment (string name, int? commentIndex, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/comments/{commentIndex}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/comments/{commentIndex}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -1950,7 +2088,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -1959,7 +2097,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -1968,7 +2106,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -1977,7 +2115,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -1986,7 +2124,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -1995,7 +2133,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -2004,7 +2142,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -2014,8 +2152,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
@@ -2059,8 +2196,11 @@ namespace Com.Aspose.Words.Api
         public DocumentResponse PostCompareDocument (string name, CompareData compareData, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/compareDocument?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/compareDocument?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -2094,7 +2234,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -2103,7 +2243,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -2112,7 +2252,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -2121,7 +2261,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -2130,7 +2270,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -2141,8 +2281,7 @@ namespace Com.Aspose.Words.Api
             postBody = compareData; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentResponse;
@@ -2184,8 +2323,11 @@ namespace Com.Aspose.Words.Api
         public DocumentPropertiesResponse GetDocumentProperties (string name, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/documentProperties?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/documentProperties?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -2213,7 +2355,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -2222,7 +2364,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -2231,7 +2373,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -2240,7 +2382,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -2250,8 +2392,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(DocumentPropertiesResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as DocumentPropertiesResponse;
@@ -2294,8 +2435,11 @@ namespace Com.Aspose.Words.Api
         public DocumentPropertyResponse GetDocumentProperty (string name, string propertyName, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/documentProperties/{propertyName}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/documentProperties/{propertyName}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -2338,7 +2482,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -2347,7 +2491,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -2356,7 +2500,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -2365,7 +2509,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -2375,8 +2519,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(DocumentPropertyResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as DocumentPropertyResponse;
@@ -2423,8 +2566,11 @@ namespace Com.Aspose.Words.Api
         public DocumentPropertyResponse PutUpdateDocumentProperty (string name, string propertyName, DocumentProperty property, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/documentProperties/{propertyName}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/documentProperties/{propertyName}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -2473,7 +2619,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -2482,7 +2628,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -2491,7 +2637,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -2500,7 +2646,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -2509,7 +2655,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -2518,7 +2664,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -2527,7 +2673,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -2538,8 +2684,7 @@ namespace Com.Aspose.Words.Api
             postBody = property; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(DocumentPropertyResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as DocumentPropertyResponse;
@@ -2586,8 +2731,11 @@ namespace Com.Aspose.Words.Api
         public DocumentPropertyResponse PutUpdateDocumentProperty_1 (string name, string propertyName, DocumentProperty property, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/documentProperties/{propertyName}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/documentProperties/{propertyName}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -2636,7 +2784,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -2645,7 +2793,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -2654,7 +2802,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -2663,7 +2811,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -2672,7 +2820,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -2681,7 +2829,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -2690,7 +2838,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -2701,8 +2849,7 @@ namespace Com.Aspose.Words.Api
             postBody = property; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(DocumentPropertyResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentPropertyResponse;
@@ -2748,8 +2895,11 @@ namespace Com.Aspose.Words.Api
         public SaaSposeResponse DeleteDocumentProperty (string name, string propertyName, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/documentProperties/{propertyName}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/documentProperties/{propertyName}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -2792,7 +2942,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -2801,7 +2951,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -2810,7 +2960,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -2819,7 +2969,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -2828,7 +2978,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -2837,7 +2987,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -2846,7 +2996,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -2856,8 +3006,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
@@ -2905,8 +3054,11 @@ namespace Com.Aspose.Words.Api
         public DocumentResponse PostDocumentExecuteMailMerge (string name, string data, bool? withRegions, string storage = null, string folder = null, string loadEncoding = null, string password = null, string mailMergeDataFile = null, string cleanup = null, bool? useWholeParagraphAsRegion = null, string destFileName = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/executeMailMerge/{withRegions}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;mailMergeDataFile=[mailMergeDataFile]&amp;cleanup=[cleanup]&amp;useWholeParagraphAsRegion=[useWholeParagraphAsRegion]&amp;destFileName=[destFileName]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/executeMailMerge/{withRegions}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;mailMergeDataFile=[mailMergeDataFile]&amp;cleanup=[cleanup]&amp;useWholeParagraphAsRegion=[useWholeParagraphAsRegion]&amp;destFileName=[destFileName]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -2955,7 +3107,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -2964,7 +3116,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -2973,7 +3125,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -2982,7 +3134,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -2991,7 +3143,7 @@ namespace Com.Aspose.Words.Api
             
             if (mailMergeDataFile == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])mailMergeDataFile=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])mailMergeDataFile=\[mailMergeDataFile\]", string.Empty);
             } 
             else 
             {
@@ -3000,7 +3152,7 @@ namespace Com.Aspose.Words.Api
             
             if (cleanup == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])cleanup=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])cleanup=\[cleanup\]", string.Empty);
             } 
             else 
             {
@@ -3009,7 +3161,7 @@ namespace Com.Aspose.Words.Api
             
             if (useWholeParagraphAsRegion == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])useWholeParagraphAsRegion=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])useWholeParagraphAsRegion=\[useWholeParagraphAsRegion\]", string.Empty);
             } 
             else 
             {
@@ -3018,7 +3170,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -3028,8 +3180,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentResponse;
@@ -3076,8 +3227,11 @@ namespace Com.Aspose.Words.Api
         public DocumentResponse PostExecuteTemplate (string name, string data, string storage = null, string folder = null, string loadEncoding = null, string password = null, string cleanup = null, bool? useWholeParagraphAsRegion = null, bool? withRegions = null, string destFileName = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/executeTemplate?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;cleanup=[cleanup]&amp;useWholeParagraphAsRegion=[useWholeParagraphAsRegion]&amp;withRegions=[withRegions]&amp;destFileName=[destFileName]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/executeTemplate?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;cleanup=[cleanup]&amp;useWholeParagraphAsRegion=[useWholeParagraphAsRegion]&amp;withRegions=[withRegions]&amp;destFileName=[destFileName]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -3111,7 +3265,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -3120,7 +3274,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -3129,7 +3283,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -3138,7 +3292,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -3147,7 +3301,7 @@ namespace Com.Aspose.Words.Api
             
             if (cleanup == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])cleanup=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])cleanup=\[cleanup\]", string.Empty);
             } 
             else 
             {
@@ -3156,7 +3310,7 @@ namespace Com.Aspose.Words.Api
             
             if (useWholeParagraphAsRegion == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])useWholeParagraphAsRegion=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])useWholeParagraphAsRegion=\[useWholeParagraphAsRegion\]", string.Empty);
             } 
             else 
             {
@@ -3165,7 +3319,7 @@ namespace Com.Aspose.Words.Api
             
             if (withRegions == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])withRegions=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])withRegions=\[withRegions\]", string.Empty);
             } 
             else 
             {
@@ -3174,7 +3328,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -3184,8 +3338,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentResponse;
@@ -3230,8 +3383,11 @@ namespace Com.Aspose.Words.Api
         public HeaderFooterResponse GetHeaderFooter (string name, int? headerFooterIndex, string storage = null, string folder = null, string loadEncoding = null, string password = null, int? sectionIndex = null, string filterByType = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;sectionIndex=[sectionIndex]&amp;filterByType=[filterByType]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;sectionIndex=[sectionIndex]&amp;filterByType=[filterByType]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -3274,7 +3430,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -3283,7 +3439,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -3292,7 +3448,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -3301,7 +3457,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -3310,7 +3466,7 @@ namespace Com.Aspose.Words.Api
             
             if (sectionIndex == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=\[sectionIndex\]", string.Empty);
             } 
             else 
             {
@@ -3319,7 +3475,7 @@ namespace Com.Aspose.Words.Api
             
             if (filterByType == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])filterByType=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])filterByType=\[filterByType\]", string.Empty);
             } 
             else 
             {
@@ -3329,8 +3485,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(HeaderFooterResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as HeaderFooterResponse;
@@ -3372,8 +3527,11 @@ namespace Com.Aspose.Words.Api
         public HyperlinksResponse GetDocumentHyperlinks (string name, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/hyperlinks?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/hyperlinks?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -3401,7 +3559,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -3410,7 +3568,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -3419,7 +3577,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -3428,7 +3586,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -3438,8 +3596,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(HyperlinksResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as HyperlinksResponse;
@@ -3482,8 +3639,11 @@ namespace Com.Aspose.Words.Api
         public HyperlinkResponse GetDocumentHyperlinkByIndex (string name, int? hyperlinkIndex, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/hyperlinks/{hyperlinkIndex}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/hyperlinks/{hyperlinkIndex}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -3526,7 +3686,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -3535,7 +3695,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -3544,7 +3704,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -3553,7 +3713,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -3563,8 +3723,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(HyperlinkResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as HyperlinkResponse;
@@ -3610,8 +3769,11 @@ namespace Com.Aspose.Words.Api
         public DocumentResponse PostInsertPageNumbers (string name, PageNumber pageNumber, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/insertPageNumbers?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/insertPageNumbers?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -3645,7 +3807,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -3654,7 +3816,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -3663,7 +3825,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -3672,7 +3834,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -3681,7 +3843,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -3690,7 +3852,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -3699,7 +3861,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -3710,8 +3872,7 @@ namespace Com.Aspose.Words.Api
             postBody = pageNumber; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentResponse;
@@ -3756,8 +3917,11 @@ namespace Com.Aspose.Words.Api
         public SaaSposeResponse DeleteDocumentMacros (string name, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/macros?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/macros?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -3785,7 +3949,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -3794,7 +3958,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -3803,7 +3967,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -3812,7 +3976,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -3821,7 +3985,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -3830,7 +3994,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -3839,7 +4003,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -3849,8 +4013,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
@@ -3893,8 +4056,11 @@ namespace Com.Aspose.Words.Api
         public FieldNamesResponse GetDocumentFieldNames (string name, string storage = null, string folder = null, string loadEncoding = null, string password = null, bool? useNonMergeFields = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/mailMergeFieldNames?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;useNonMergeFields=[useNonMergeFields]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/mailMergeFieldNames?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;useNonMergeFields=[useNonMergeFields]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -3922,7 +4088,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -3931,7 +4097,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -3940,7 +4106,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -3949,7 +4115,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -3958,7 +4124,7 @@ namespace Com.Aspose.Words.Api
             
             if (useNonMergeFields == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])useNonMergeFields=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])useNonMergeFields=\[useNonMergeFields\]", string.Empty);
             } 
             else 
             {
@@ -3968,8 +4134,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(FieldNamesResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as FieldNamesResponse;
@@ -4014,8 +4179,11 @@ namespace Com.Aspose.Words.Api
         public Stream RenderPage (string name, int? pageIndex, string format, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/pages/{pageIndex}/render?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;fontsLocation=[fontsLocation]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/pages/{pageIndex}/render?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;fontsLocation=[fontsLocation]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -4064,7 +4232,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -4073,7 +4241,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -4082,7 +4250,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -4091,7 +4259,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -4100,7 +4268,7 @@ namespace Com.Aspose.Words.Api
             
             if (format == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
             } 
             else 
             {
@@ -4109,7 +4277,7 @@ namespace Com.Aspose.Words.Api
             
             if (fontsLocation == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=\[fontsLocation\]", string.Empty);
             } 
             else 
             {
@@ -4119,8 +4287,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Stream;
@@ -4162,8 +4329,11 @@ namespace Com.Aspose.Words.Api
         public ProtectionDataResponse GetDocumentProtection (string name, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/protection?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/protection?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -4191,7 +4361,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -4200,7 +4370,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -4209,7 +4379,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -4218,7 +4388,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -4228,8 +4398,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(ProtectionDataResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as ProtectionDataResponse;
@@ -4273,8 +4442,11 @@ namespace Com.Aspose.Words.Api
         public ProtectionDataResponse PutProtectDocument (string name, ProtectionRequest protectionRequest, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/protection?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/protection?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -4308,7 +4480,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -4317,7 +4489,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -4326,7 +4498,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -4335,7 +4507,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -4344,7 +4516,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -4355,8 +4527,7 @@ namespace Com.Aspose.Words.Api
             postBody = protectionRequest; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(ProtectionDataResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as ProtectionDataResponse;
@@ -4400,8 +4571,11 @@ namespace Com.Aspose.Words.Api
         public ProtectionDataResponse PostChangeDocumentProtection (string name, ProtectionRequest protectionRequest, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/protection?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/protection?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -4435,7 +4609,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -4444,7 +4618,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -4453,7 +4627,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -4462,7 +4636,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -4471,7 +4645,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -4482,8 +4656,7 @@ namespace Com.Aspose.Words.Api
             postBody = protectionRequest; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(ProtectionDataResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as ProtectionDataResponse;
@@ -4527,8 +4700,11 @@ namespace Com.Aspose.Words.Api
         public ProtectionDataResponse DeleteUnprotectDocument (string name, ProtectionRequest protectionRequest, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/protection?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/protection?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -4562,7 +4738,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -4571,7 +4747,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -4580,7 +4756,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -4589,7 +4765,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -4598,7 +4774,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -4609,8 +4785,7 @@ namespace Com.Aspose.Words.Api
             postBody = protectionRequest; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(ProtectionDataResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as ProtectionDataResponse;
@@ -4656,8 +4831,11 @@ namespace Com.Aspose.Words.Api
         public ReplaceTextResponse PostReplaceText (string name, ReplaceTextRequest replaceText, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/replaceText?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/replaceText?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -4691,7 +4869,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -4700,7 +4878,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -4709,7 +4887,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -4718,7 +4896,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -4727,7 +4905,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -4736,7 +4914,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -4745,7 +4923,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -4756,8 +4934,7 @@ namespace Com.Aspose.Words.Api
             postBody = replaceText; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(ReplaceTextResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as ReplaceTextResponse;
@@ -4800,8 +4977,11 @@ namespace Com.Aspose.Words.Api
         public RevisionsModificationResponse AcceptAllRevisions (string name, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/revisions/acceptAll?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/revisions/acceptAll?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -4829,7 +5009,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -4838,7 +5018,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -4847,7 +5027,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -4856,7 +5036,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -4865,7 +5045,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -4875,8 +5055,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(RevisionsModificationResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as RevisionsModificationResponse;
@@ -4919,8 +5098,11 @@ namespace Com.Aspose.Words.Api
         public RevisionsModificationResponse RejectAllRevisions (string name, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/revisions/rejectAll?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/revisions/rejectAll?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -4948,7 +5130,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -4957,7 +5139,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -4966,7 +5148,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -4975,7 +5157,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -4984,7 +5166,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -4994,8 +5176,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(RevisionsModificationResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as RevisionsModificationResponse;
@@ -5040,8 +5221,11 @@ namespace Com.Aspose.Words.Api
         public SaveResponse PostDocumentSaveAs (string name, SaveOptionsData saveOptionsData, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/saveAs?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/saveAs?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -5075,7 +5259,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -5084,7 +5268,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -5093,7 +5277,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -5102,7 +5286,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -5111,7 +5295,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -5120,7 +5304,7 @@ namespace Com.Aspose.Words.Api
             
             if (fontsLocation == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=\[fontsLocation\]", string.Empty);
             } 
             else 
             {
@@ -5131,8 +5315,7 @@ namespace Com.Aspose.Words.Api
             postBody = saveOptionsData; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(SaveResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as SaveResponse;
@@ -5195,8 +5378,11 @@ namespace Com.Aspose.Words.Api
         public SaveResponse PutDocumentSaveAsTiff (string name, TiffSaveOptionsData saveOptions, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string resultFile = null, bool? useAntiAliasing = null, bool? useHighQualityRendering = null, float? imageBrightness = null, string imageColorMode = null, float? imageContrast = null, string numeralFormat = null, int? pageCount = null, int? pageIndex = null, string paperColor = null, string pixelFormat = null, float? resolution = null, float? scale = null, string tiffCompression = null, string dmlRenderingMode = null, string dmlEffectsRenderingMode = null, string tiffBinarizationMethod = null, bool? zipOutput = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/saveAs/tiff?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;resultFile=[resultFile]&amp;useAntiAliasing=[useAntiAliasing]&amp;useHighQualityRendering=[useHighQualityRendering]&amp;imageBrightness=[imageBrightness]&amp;imageColorMode=[imageColorMode]&amp;imageContrast=[imageContrast]&amp;numeralFormat=[numeralFormat]&amp;pageCount=[pageCount]&amp;pageIndex=[pageIndex]&amp;paperColor=[paperColor]&amp;pixelFormat=[pixelFormat]&amp;resolution=[resolution]&amp;scale=[scale]&amp;tiffCompression=[tiffCompression]&amp;dmlRenderingMode=[dmlRenderingMode]&amp;dmlEffectsRenderingMode=[dmlEffectsRenderingMode]&amp;tiffBinarizationMethod=[tiffBinarizationMethod]&amp;zipOutput=[zipOutput]&amp;fontsLocation=[fontsLocation]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/saveAs/tiff?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;resultFile=[resultFile]&amp;useAntiAliasing=[useAntiAliasing]&amp;useHighQualityRendering=[useHighQualityRendering]&amp;imageBrightness=[imageBrightness]&amp;imageColorMode=[imageColorMode]&amp;imageContrast=[imageContrast]&amp;numeralFormat=[numeralFormat]&amp;pageCount=[pageCount]&amp;pageIndex=[pageIndex]&amp;paperColor=[paperColor]&amp;pixelFormat=[pixelFormat]&amp;resolution=[resolution]&amp;scale=[scale]&amp;tiffCompression=[tiffCompression]&amp;dmlRenderingMode=[dmlRenderingMode]&amp;dmlEffectsRenderingMode=[dmlEffectsRenderingMode]&amp;tiffBinarizationMethod=[tiffBinarizationMethod]&amp;zipOutput=[zipOutput]&amp;fontsLocation=[fontsLocation]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -5230,7 +5416,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -5239,7 +5425,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -5248,7 +5434,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -5257,7 +5443,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -5266,7 +5452,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -5275,7 +5461,7 @@ namespace Com.Aspose.Words.Api
             
             if (resultFile == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])resultFile=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])resultFile=\[resultFile\]", string.Empty);
             } 
             else 
             {
@@ -5284,7 +5470,7 @@ namespace Com.Aspose.Words.Api
             
             if (useAntiAliasing == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])useAntiAliasing=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])useAntiAliasing=\[useAntiAliasing\]", string.Empty);
             } 
             else 
             {
@@ -5293,7 +5479,7 @@ namespace Com.Aspose.Words.Api
             
             if (useHighQualityRendering == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])useHighQualityRendering=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])useHighQualityRendering=\[useHighQualityRendering\]", string.Empty);
             } 
             else 
             {
@@ -5302,7 +5488,7 @@ namespace Com.Aspose.Words.Api
             
             if (imageBrightness == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])imageBrightness=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])imageBrightness=\[imageBrightness\]", string.Empty);
             } 
             else 
             {
@@ -5311,7 +5497,7 @@ namespace Com.Aspose.Words.Api
             
             if (imageColorMode == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])imageColorMode=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])imageColorMode=\[imageColorMode\]", string.Empty);
             } 
             else 
             {
@@ -5320,7 +5506,7 @@ namespace Com.Aspose.Words.Api
             
             if (imageContrast == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])imageContrast=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])imageContrast=\[imageContrast\]", string.Empty);
             } 
             else 
             {
@@ -5329,7 +5515,7 @@ namespace Com.Aspose.Words.Api
             
             if (numeralFormat == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])numeralFormat=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])numeralFormat=\[numeralFormat\]", string.Empty);
             } 
             else 
             {
@@ -5338,7 +5524,7 @@ namespace Com.Aspose.Words.Api
             
             if (pageCount == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])pageCount=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])pageCount=\[pageCount\]", string.Empty);
             } 
             else 
             {
@@ -5347,7 +5533,7 @@ namespace Com.Aspose.Words.Api
             
             if (pageIndex == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])pageIndex=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])pageIndex=\[pageIndex\]", string.Empty);
             } 
             else 
             {
@@ -5356,7 +5542,7 @@ namespace Com.Aspose.Words.Api
             
             if (paperColor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])paperColor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])paperColor=\[paperColor\]", string.Empty);
             } 
             else 
             {
@@ -5365,7 +5551,7 @@ namespace Com.Aspose.Words.Api
             
             if (pixelFormat == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])pixelFormat=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])pixelFormat=\[pixelFormat\]", string.Empty);
             } 
             else 
             {
@@ -5374,7 +5560,7 @@ namespace Com.Aspose.Words.Api
             
             if (resolution == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])resolution=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])resolution=\[resolution\]", string.Empty);
             } 
             else 
             {
@@ -5383,7 +5569,7 @@ namespace Com.Aspose.Words.Api
             
             if (scale == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])scale=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])scale=\[scale\]", string.Empty);
             } 
             else 
             {
@@ -5392,7 +5578,7 @@ namespace Com.Aspose.Words.Api
             
             if (tiffCompression == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])tiffCompression=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])tiffCompression=\[tiffCompression\]", string.Empty);
             } 
             else 
             {
@@ -5401,7 +5587,7 @@ namespace Com.Aspose.Words.Api
             
             if (dmlRenderingMode == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])dmlRenderingMode=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])dmlRenderingMode=\[dmlRenderingMode\]", string.Empty);
             } 
             else 
             {
@@ -5410,7 +5596,7 @@ namespace Com.Aspose.Words.Api
             
             if (dmlEffectsRenderingMode == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])dmlEffectsRenderingMode=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])dmlEffectsRenderingMode=\[dmlEffectsRenderingMode\]", string.Empty);
             } 
             else 
             {
@@ -5419,7 +5605,7 @@ namespace Com.Aspose.Words.Api
             
             if (tiffBinarizationMethod == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])tiffBinarizationMethod=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])tiffBinarizationMethod=\[tiffBinarizationMethod\]", string.Empty);
             } 
             else 
             {
@@ -5428,7 +5614,7 @@ namespace Com.Aspose.Words.Api
             
             if (zipOutput == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])zipOutput=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])zipOutput=\[zipOutput\]", string.Empty);
             } 
             else 
             {
@@ -5437,7 +5623,7 @@ namespace Com.Aspose.Words.Api
             
             if (fontsLocation == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=\[fontsLocation\]", string.Empty);
             } 
             else 
             {
@@ -5448,8 +5634,7 @@ namespace Com.Aspose.Words.Api
             postBody = saveOptions; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(SaveResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as SaveResponse;
@@ -5492,8 +5677,11 @@ namespace Com.Aspose.Words.Api
         public SearchResponse Search (string name, string storage = null, string folder = null, string loadEncoding = null, string password = null, string pattern = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/search?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;pattern=[pattern]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/search?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;pattern=[pattern]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -5521,7 +5709,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -5530,7 +5718,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -5539,7 +5727,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -5548,7 +5736,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -5557,7 +5745,7 @@ namespace Com.Aspose.Words.Api
             
             if (pattern == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])pattern=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])pattern=\[pattern\]", string.Empty);
             } 
             else 
             {
@@ -5567,8 +5755,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SearchResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as SearchResponse;
@@ -5610,8 +5797,11 @@ namespace Com.Aspose.Words.Api
         public SectionLinkCollectionResponse GetSections (string name, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/sections?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/sections?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -5639,7 +5829,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -5648,7 +5838,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -5657,7 +5847,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -5666,7 +5856,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -5676,8 +5866,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SectionLinkCollectionResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as SectionLinkCollectionResponse;
@@ -5720,8 +5909,11 @@ namespace Com.Aspose.Words.Api
         public SectionResponse GetSection (string name, int? sectionIndex, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/sections/{sectionIndex}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/sections/{sectionIndex}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -5764,7 +5956,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -5773,7 +5965,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -5782,7 +5974,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -5791,7 +5983,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -5801,8 +5993,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SectionResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as SectionResponse;
@@ -5847,8 +6038,11 @@ namespace Com.Aspose.Words.Api
         public HeaderFooterResponse GetHeaderFooter_2 (string name, int? headerFooterIndex, int? sectionIndex, string storage = null, string folder = null, string loadEncoding = null, string password = null, string filterByType = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;filterByType=[filterByType]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;filterByType=[filterByType]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -5906,7 +6100,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -5915,7 +6109,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -5924,7 +6118,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -5933,7 +6127,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -5942,7 +6136,7 @@ namespace Com.Aspose.Words.Api
             
             if (filterByType == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])filterByType=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])filterByType=\[filterByType\]", string.Empty);
             } 
             else 
             {
@@ -5952,8 +6146,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(HeaderFooterResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as HeaderFooterResponse;
@@ -5996,8 +6189,11 @@ namespace Com.Aspose.Words.Api
         public SectionPageSetupResponse GetSectionPageSetup (string name, int? sectionIndex, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/sections/{sectionIndex}/pageSetup?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/sections/{sectionIndex}/pageSetup?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -6040,7 +6236,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -6049,7 +6245,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -6058,7 +6254,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -6067,7 +6263,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -6077,8 +6273,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SectionPageSetupResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as SectionPageSetupResponse;
@@ -6125,8 +6320,11 @@ namespace Com.Aspose.Words.Api
         public SectionPageSetupResponse UpdateSectionPageSetup (string name, int? sectionIndex, PageSetup pageSetup, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/sections/{sectionIndex}/pageSetup?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/sections/{sectionIndex}/pageSetup?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -6175,7 +6373,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -6184,7 +6382,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -6193,7 +6391,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -6202,7 +6400,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -6211,7 +6409,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -6220,7 +6418,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -6229,7 +6427,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -6240,8 +6438,7 @@ namespace Com.Aspose.Words.Api
             postBody = pageSetup; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(SectionPageSetupResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as SectionPageSetupResponse;
@@ -6289,8 +6486,11 @@ namespace Com.Aspose.Words.Api
         public SplitDocumentResponse PostSplitDocument (string name, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string format = null, int? from = null, int? to = null, bool? zipOutput = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/split?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;from=[from]&amp;to=[to]&amp;zipOutput=[zipOutput]&amp;fontsLocation=[fontsLocation]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/split?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;from=[from]&amp;to=[to]&amp;zipOutput=[zipOutput]&amp;fontsLocation=[fontsLocation]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -6318,7 +6518,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -6327,7 +6527,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -6336,7 +6536,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -6345,7 +6545,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -6354,7 +6554,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -6363,7 +6563,7 @@ namespace Com.Aspose.Words.Api
             
             if (format == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
             } 
             else 
             {
@@ -6372,7 +6572,7 @@ namespace Com.Aspose.Words.Api
             
             if (from == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])from=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])from=\[from\]", string.Empty);
             } 
             else 
             {
@@ -6381,7 +6581,7 @@ namespace Com.Aspose.Words.Api
             
             if (to == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])to=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])to=\[to\]", string.Empty);
             } 
             else 
             {
@@ -6390,7 +6590,7 @@ namespace Com.Aspose.Words.Api
             
             if (zipOutput == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])zipOutput=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])zipOutput=\[zipOutput\]", string.Empty);
             } 
             else 
             {
@@ -6399,7 +6599,7 @@ namespace Com.Aspose.Words.Api
             
             if (fontsLocation == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=\[fontsLocation\]", string.Empty);
             } 
             else 
             {
@@ -6409,8 +6609,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SplitDocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as SplitDocumentResponse;
@@ -6455,8 +6654,11 @@ namespace Com.Aspose.Words.Api
         public StatDataResponse GetDocumentStatistics (string name, string storage = null, string folder = null, string loadEncoding = null, string password = null, bool? includeComments = null, bool? includeFootnotes = null, bool? includeTextInShapes = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/statistics?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;includeComments=[includeComments]&amp;includeFootnotes=[includeFootnotes]&amp;includeTextInShapes=[includeTextInShapes]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/statistics?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;includeComments=[includeComments]&amp;includeFootnotes=[includeFootnotes]&amp;includeTextInShapes=[includeTextInShapes]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -6484,7 +6686,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -6493,7 +6695,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -6502,7 +6704,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -6511,7 +6713,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -6520,7 +6722,7 @@ namespace Com.Aspose.Words.Api
             
             if (includeComments == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])includeComments=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])includeComments=\[includeComments\]", string.Empty);
             } 
             else 
             {
@@ -6529,7 +6731,7 @@ namespace Com.Aspose.Words.Api
             
             if (includeFootnotes == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])includeFootnotes=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])includeFootnotes=\[includeFootnotes\]", string.Empty);
             } 
             else 
             {
@@ -6538,7 +6740,7 @@ namespace Com.Aspose.Words.Api
             
             if (includeTextInShapes == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])includeTextInShapes=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])includeTextInShapes=\[includeTextInShapes\]", string.Empty);
             } 
             else 
             {
@@ -6548,8 +6750,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(StatDataResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as StatDataResponse;
@@ -6591,8 +6792,11 @@ namespace Com.Aspose.Words.Api
         public TextItemsResponse GetDocumentTextItems (string name, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/textItems?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/textItems?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -6620,7 +6824,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -6629,7 +6833,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -6638,7 +6842,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -6647,7 +6851,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -6657,8 +6861,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(TextItemsResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as TextItemsResponse;
@@ -6701,8 +6904,11 @@ namespace Com.Aspose.Words.Api
         public DocumentResponse PostUpdateDocumentFields (string name, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/updateFields?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/updateFields?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -6730,7 +6936,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -6739,7 +6945,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -6748,7 +6954,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -6757,7 +6963,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -6766,7 +6972,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -6776,8 +6982,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentResponse;
@@ -6822,8 +7027,11 @@ namespace Com.Aspose.Words.Api
         public DocumentResponse DeleteDocumentWatermark (string name, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/watermark?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/watermark?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -6851,7 +7059,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -6860,7 +7068,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -6869,7 +7077,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -6878,7 +7086,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -6887,7 +7095,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -6896,7 +7104,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -6905,7 +7113,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -6915,8 +7123,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as DocumentResponse;
@@ -6964,8 +7171,11 @@ namespace Com.Aspose.Words.Api
         public DocumentResponse PostInsertDocumentWatermarkImage (string name, Stream imageFile = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null, double? rotationAngle = null, string image = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/watermark/insertImage?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;rotationAngle=[rotationAngle]&amp;image=[image]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/watermark/insertImage?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;rotationAngle=[rotationAngle]&amp;image=[image]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -6993,7 +7203,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -7002,7 +7212,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -7011,7 +7221,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -7020,7 +7230,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -7029,7 +7239,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -7038,7 +7248,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -7047,7 +7257,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -7056,7 +7266,7 @@ namespace Com.Aspose.Words.Api
             
             if (rotationAngle == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])rotationAngle=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])rotationAngle=\[rotationAngle\]", string.Empty);
             } 
             else 
             {
@@ -7065,7 +7275,7 @@ namespace Com.Aspose.Words.Api
             
             if (image == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])image=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])image=\[image\]", string.Empty);
             } 
             else 
             {
@@ -7075,8 +7285,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentResponse;
@@ -7122,8 +7331,11 @@ namespace Com.Aspose.Words.Api
         public DocumentResponse PostInsertDocumentWatermarkText (string name, WatermarkText watermarkText, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/watermark/insertText?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/watermark/insertText?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -7157,7 +7369,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -7166,7 +7378,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -7175,7 +7387,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -7184,7 +7396,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -7193,7 +7405,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -7202,7 +7414,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -7211,7 +7423,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -7222,8 +7434,7 @@ namespace Com.Aspose.Words.Api
             postBody = watermarkText; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentResponse;
@@ -7266,8 +7477,11 @@ namespace Com.Aspose.Words.Api
         public OfficeMathObjectsResponse GetOfficeMathObjects (string name, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/OfficeMathObjects?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/OfficeMathObjects?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -7310,7 +7524,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -7319,7 +7533,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -7328,7 +7542,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -7337,7 +7551,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -7347,8 +7561,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(OfficeMathObjectsResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as OfficeMathObjectsResponse;
@@ -7392,8 +7605,11 @@ namespace Com.Aspose.Words.Api
         public OfficeMathObjectResponse GetOfficeMathObject (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/OfficeMathObjects/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/OfficeMathObjects/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -7451,7 +7667,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -7460,7 +7676,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -7469,7 +7685,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -7478,7 +7694,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -7488,8 +7704,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(OfficeMathObjectResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as OfficeMathObjectResponse;
@@ -7536,8 +7751,11 @@ namespace Com.Aspose.Words.Api
         public SaaSposeResponse DeleteOfficeMathObject (string name, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/OfficeMathObjects/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/OfficeMathObjects/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -7595,7 +7813,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -7604,7 +7822,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -7613,7 +7831,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -7622,7 +7840,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -7631,7 +7849,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -7640,7 +7858,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -7649,7 +7867,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -7659,8 +7877,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
@@ -7706,8 +7923,11 @@ namespace Com.Aspose.Words.Api
         public Stream RenderMathObject (string name, string format, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/OfficeMathObjects/{index}/render?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;fontsLocation=[fontsLocation]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/OfficeMathObjects/{index}/render?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;fontsLocation=[fontsLocation]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -7771,7 +7991,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -7780,7 +8000,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -7789,7 +8009,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -7798,7 +8018,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -7807,7 +8027,7 @@ namespace Com.Aspose.Words.Api
             
             if (format == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
             } 
             else 
             {
@@ -7816,7 +8036,7 @@ namespace Com.Aspose.Words.Api
             
             if (fontsLocation == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=\[fontsLocation\]", string.Empty);
             } 
             else 
             {
@@ -7826,8 +8046,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Stream;
@@ -7870,8 +8089,11 @@ namespace Com.Aspose.Words.Api
         public BordersResponse GetBorders (string name, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/borders?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/borders?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -7914,7 +8136,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -7923,7 +8145,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -7932,7 +8154,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -7941,7 +8163,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -7951,8 +8173,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(BordersResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as BordersResponse;
@@ -7998,8 +8219,11 @@ namespace Com.Aspose.Words.Api
         public BordersResponse DeleteBorders (string name, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/borders?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/borders?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -8042,7 +8266,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -8051,7 +8275,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -8060,7 +8284,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -8069,7 +8293,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -8078,7 +8302,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -8087,7 +8311,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -8096,7 +8320,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -8106,8 +8330,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(BordersResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as BordersResponse;
@@ -8151,8 +8374,11 @@ namespace Com.Aspose.Words.Api
         public BorderResponse GetBorder (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/borders/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/borders/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -8210,7 +8436,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -8219,7 +8445,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -8228,7 +8454,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -8237,7 +8463,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -8247,8 +8473,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(BorderResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as BorderResponse;
@@ -8296,8 +8521,11 @@ namespace Com.Aspose.Words.Api
         public BorderResponse UpdateBorder (string name, Border borderProperties, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/borders/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/borders/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -8361,7 +8589,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -8370,7 +8598,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -8379,7 +8607,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -8388,7 +8616,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -8397,7 +8625,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -8406,7 +8634,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -8415,7 +8643,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -8426,8 +8654,7 @@ namespace Com.Aspose.Words.Api
             postBody = borderProperties; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(BorderResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as BorderResponse;
@@ -8474,8 +8701,11 @@ namespace Com.Aspose.Words.Api
         public BorderResponse DeleteBorder (string name, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/borders/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/borders/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -8533,7 +8763,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -8542,7 +8772,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -8551,7 +8781,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -8560,7 +8790,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -8569,7 +8799,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -8578,7 +8808,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -8587,7 +8817,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -8597,8 +8827,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(BorderResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as BorderResponse;
@@ -8641,8 +8870,11 @@ namespace Com.Aspose.Words.Api
         public DrawingObjectsResponse GetDocumentDrawingObjects (string name, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/drawingObjects?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/drawingObjects?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -8685,7 +8917,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -8694,7 +8926,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -8703,7 +8935,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -8712,7 +8944,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -8722,8 +8954,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(DrawingObjectsResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as DrawingObjectsResponse;
@@ -8771,8 +9002,11 @@ namespace Com.Aspose.Words.Api
         public DrawingObjectResponse PutDrawingObject (string name, string drawingObject, Stream imageFile, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/drawingObjects?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/drawingObjects?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -8827,7 +9061,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -8836,7 +9070,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -8845,7 +9079,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -8854,7 +9088,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -8863,7 +9097,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -8872,7 +9106,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -8881,7 +9115,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -8891,8 +9125,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(DrawingObjectResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as DrawingObjectResponse;
@@ -8936,8 +9169,11 @@ namespace Com.Aspose.Words.Api
         public DrawingObjectResponse GetDocumentDrawingObjectByIndex (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -8995,7 +9231,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -9004,7 +9240,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -9013,7 +9249,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -9022,7 +9258,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -9032,8 +9268,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(DrawingObjectResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as DrawingObjectResponse;
@@ -9082,8 +9317,11 @@ namespace Com.Aspose.Words.Api
         public DrawingObjectResponse PostDrawingObject (string name, string drawingObject, Stream imageFile, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -9153,7 +9391,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -9162,7 +9400,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -9171,7 +9409,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -9180,7 +9418,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -9189,7 +9427,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -9198,7 +9436,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -9207,7 +9445,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -9217,8 +9455,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(DrawingObjectResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DrawingObjectResponse;
@@ -9265,8 +9502,11 @@ namespace Com.Aspose.Words.Api
         public SaaSposeResponse DeleteDrawingObject (string name, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -9324,7 +9564,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -9333,7 +9573,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -9342,7 +9582,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -9351,7 +9591,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -9360,7 +9600,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -9369,7 +9609,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -9378,7 +9618,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -9388,8 +9628,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
@@ -9433,8 +9672,11 @@ namespace Com.Aspose.Words.Api
         public Stream GetDocumentDrawingObjectImageData (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/drawingObjects/{index}/imageData?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}/imageData?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -9492,7 +9734,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -9501,7 +9743,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -9510,7 +9752,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -9519,7 +9761,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -9529,8 +9771,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Stream;
@@ -9574,8 +9815,11 @@ namespace Com.Aspose.Words.Api
         public Stream GetDocumentDrawingObjectOleData (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/drawingObjects/{index}/oleData?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}/oleData?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -9633,7 +9877,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -9642,7 +9886,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -9651,7 +9895,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -9660,7 +9904,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -9670,8 +9914,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Stream;
@@ -9717,8 +9960,11 @@ namespace Com.Aspose.Words.Api
         public Stream RenderDrawingObject (string name, string format, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/drawingObjects/{index}/render?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;fontsLocation=[fontsLocation]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}/render?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;fontsLocation=[fontsLocation]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -9782,7 +10028,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -9791,7 +10037,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -9800,7 +10046,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -9809,7 +10055,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -9818,7 +10064,7 @@ namespace Com.Aspose.Words.Api
             
             if (format == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
             } 
             else 
             {
@@ -9827,7 +10073,7 @@ namespace Com.Aspose.Words.Api
             
             if (fontsLocation == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=\[fontsLocation\]", string.Empty);
             } 
             else 
             {
@@ -9837,8 +10083,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Stream;
@@ -9881,8 +10126,11 @@ namespace Com.Aspose.Words.Api
         public FieldsResponse GetFields (string name, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/fields?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/fields?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -9925,7 +10173,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -9934,7 +10182,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -9943,7 +10191,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -9952,7 +10200,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -9962,8 +10210,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(FieldsResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as FieldsResponse;
@@ -10011,8 +10258,11 @@ namespace Com.Aspose.Words.Api
         public FieldResponse PutField (string name, FieldDto field, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null, string insertBeforeNode = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/fields?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;insertBeforeNode=[insertBeforeNode]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/fields?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;insertBeforeNode=[insertBeforeNode]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -10061,7 +10311,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -10070,7 +10320,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -10079,7 +10329,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -10088,7 +10338,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -10097,7 +10347,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -10106,7 +10356,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -10115,7 +10365,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -10124,7 +10374,7 @@ namespace Com.Aspose.Words.Api
             
             if (insertBeforeNode == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])insertBeforeNode=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])insertBeforeNode=\[insertBeforeNode\]", string.Empty);
             } 
             else 
             {
@@ -10135,8 +10385,7 @@ namespace Com.Aspose.Words.Api
             postBody = field; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(FieldResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as FieldResponse;
@@ -10182,8 +10431,11 @@ namespace Com.Aspose.Words.Api
         public SaaSposeResponse DeleteFields (string name, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/fields?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/fields?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -10226,7 +10478,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -10235,7 +10487,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -10244,7 +10496,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -10253,7 +10505,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -10262,7 +10514,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -10271,7 +10523,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -10280,7 +10532,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -10290,8 +10542,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
@@ -10335,8 +10586,11 @@ namespace Com.Aspose.Words.Api
         public FieldResponse GetField (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -10394,7 +10648,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -10403,7 +10657,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -10412,7 +10666,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -10421,7 +10675,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -10431,8 +10685,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(FieldResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as FieldResponse;
@@ -10480,8 +10733,11 @@ namespace Com.Aspose.Words.Api
         public FieldResponse PostField (string name, FieldDto field, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -10545,7 +10801,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -10554,7 +10810,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -10563,7 +10819,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -10572,7 +10828,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -10581,7 +10837,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -10590,7 +10846,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -10599,7 +10855,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -10610,8 +10866,7 @@ namespace Com.Aspose.Words.Api
             postBody = field; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(FieldResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as FieldResponse;
@@ -10658,8 +10913,11 @@ namespace Com.Aspose.Words.Api
         public SaaSposeResponse DeleteField (string name, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -10717,7 +10975,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -10726,7 +10984,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -10735,7 +10993,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -10744,7 +11002,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -10753,7 +11011,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -10762,7 +11020,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -10771,7 +11029,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -10781,8 +11039,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
@@ -10825,8 +11082,11 @@ namespace Com.Aspose.Words.Api
         public FootnotesResponse GetFootnotes (string name, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/footnotes?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/footnotes?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -10869,7 +11129,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -10878,7 +11138,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -10887,7 +11147,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -10896,7 +11156,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -10906,8 +11166,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(FootnotesResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as FootnotesResponse;
@@ -10954,8 +11213,11 @@ namespace Com.Aspose.Words.Api
         public FootnoteResponse PutFootnote (string name, FootnoteDto footnoteDto, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/footnotes?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/footnotes?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -11004,7 +11266,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -11013,7 +11275,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -11022,7 +11284,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -11031,7 +11293,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -11040,7 +11302,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -11049,7 +11311,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -11058,7 +11320,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -11069,8 +11331,7 @@ namespace Com.Aspose.Words.Api
             postBody = footnoteDto; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(FootnoteResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as FootnoteResponse;
@@ -11114,8 +11375,11 @@ namespace Com.Aspose.Words.Api
         public FootnoteResponse GetFootnote (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -11173,7 +11437,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -11182,7 +11446,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -11191,7 +11455,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -11200,7 +11464,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -11210,8 +11474,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(FootnoteResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as FootnoteResponse;
@@ -11259,8 +11522,11 @@ namespace Com.Aspose.Words.Api
         public FootnoteResponse PostFootnote (string name, FootnoteDto footnoteDto, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -11324,7 +11590,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -11333,7 +11599,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -11342,7 +11608,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -11351,7 +11617,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -11360,7 +11626,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -11369,7 +11635,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -11378,7 +11644,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -11389,8 +11655,7 @@ namespace Com.Aspose.Words.Api
             postBody = footnoteDto; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(FootnoteResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as FootnoteResponse;
@@ -11437,8 +11702,11 @@ namespace Com.Aspose.Words.Api
         public SaaSposeResponse DeleteFootnote (string name, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -11496,7 +11764,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -11505,7 +11773,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -11514,7 +11782,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -11523,7 +11791,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -11532,7 +11800,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -11541,7 +11809,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -11550,7 +11818,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -11560,8 +11828,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
@@ -11604,8 +11871,11 @@ namespace Com.Aspose.Words.Api
         public FormFieldsResponse GetFormFields (string name, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/formfields?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/formfields?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -11648,7 +11918,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -11657,7 +11927,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -11666,7 +11936,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -11675,7 +11945,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -11685,8 +11955,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(FormFieldsResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as FormFieldsResponse;
@@ -11734,8 +12003,11 @@ namespace Com.Aspose.Words.Api
         public FormFieldResponse PutFormField (string name, FormField formField, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null, string insertBeforeNode = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/formfields?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;insertBeforeNode=[insertBeforeNode]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/formfields?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;insertBeforeNode=[insertBeforeNode]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -11784,7 +12056,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -11793,7 +12065,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -11802,7 +12074,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -11811,7 +12083,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -11820,7 +12092,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -11829,7 +12101,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -11838,7 +12110,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -11847,7 +12119,7 @@ namespace Com.Aspose.Words.Api
             
             if (insertBeforeNode == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])insertBeforeNode=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])insertBeforeNode=\[insertBeforeNode\]", string.Empty);
             } 
             else 
             {
@@ -11858,8 +12130,7 @@ namespace Com.Aspose.Words.Api
             postBody = formField; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(FormFieldResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as FormFieldResponse;
@@ -11903,8 +12174,11 @@ namespace Com.Aspose.Words.Api
         public FormFieldResponse GetFormField (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -11962,7 +12236,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -11971,7 +12245,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -11980,7 +12254,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -11989,7 +12263,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -11999,8 +12273,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(FormFieldResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as FormFieldResponse;
@@ -12048,8 +12321,11 @@ namespace Com.Aspose.Words.Api
         public FormFieldResponse PostFormField (string name, FormField formField, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -12113,7 +12389,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -12122,7 +12398,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -12131,7 +12407,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -12140,7 +12416,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -12149,7 +12425,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -12158,7 +12434,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -12167,7 +12443,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -12178,8 +12454,7 @@ namespace Com.Aspose.Words.Api
             postBody = formField; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(FormFieldResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as FormFieldResponse;
@@ -12226,8 +12501,11 @@ namespace Com.Aspose.Words.Api
         public SaaSposeResponse DeleteFormField (string name, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -12285,7 +12563,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -12294,7 +12572,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -12303,7 +12581,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -12312,7 +12590,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -12321,7 +12599,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -12330,7 +12608,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -12339,7 +12617,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -12349,8 +12627,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
@@ -12393,8 +12670,11 @@ namespace Com.Aspose.Words.Api
         public ParagraphLinkCollectionResponse GetDocumentParagraphs (string name, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/paragraphs?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/paragraphs?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -12437,7 +12717,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -12446,7 +12726,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -12455,7 +12735,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -12464,7 +12744,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -12474,8 +12754,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(ParagraphLinkCollectionResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as ParagraphLinkCollectionResponse;
@@ -12523,8 +12802,11 @@ namespace Com.Aspose.Words.Api
         public ParagraphResponse PutParagraph (string name, ParagraphInsertDto paragraph, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null, string insertBeforeNode = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/paragraphs?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;insertBeforeNode=[insertBeforeNode]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/paragraphs?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;insertBeforeNode=[insertBeforeNode]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -12573,7 +12855,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -12582,7 +12864,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -12591,7 +12873,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -12600,7 +12882,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -12609,7 +12891,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -12618,7 +12900,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -12627,7 +12909,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -12636,7 +12918,7 @@ namespace Com.Aspose.Words.Api
             
             if (insertBeforeNode == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])insertBeforeNode=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])insertBeforeNode=\[insertBeforeNode\]", string.Empty);
             } 
             else 
             {
@@ -12647,8 +12929,7 @@ namespace Com.Aspose.Words.Api
             postBody = paragraph; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(ParagraphResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as ParagraphResponse;
@@ -12692,8 +12973,11 @@ namespace Com.Aspose.Words.Api
         public ParagraphResponse GetDocumentParagraph (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/paragraphs/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/paragraphs/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -12751,7 +13035,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -12760,7 +13044,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -12769,7 +13053,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -12778,7 +13062,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -12788,8 +13072,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(ParagraphResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as ParagraphResponse;
@@ -12836,8 +13119,11 @@ namespace Com.Aspose.Words.Api
         public SaaSposeResponse DeleteParagraph (string name, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/paragraphs/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/paragraphs/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -12895,7 +13181,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -12904,7 +13190,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -12913,7 +13199,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -12922,7 +13208,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -12931,7 +13217,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -12940,7 +13226,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -12949,7 +13235,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -12959,8 +13245,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
@@ -13006,8 +13291,11 @@ namespace Com.Aspose.Words.Api
         public Stream RenderParagraph (string name, string format, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/paragraphs/{index}/render?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;fontsLocation=[fontsLocation]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/paragraphs/{index}/render?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;fontsLocation=[fontsLocation]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -13071,7 +13359,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -13080,7 +13368,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -13089,7 +13377,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -13098,7 +13386,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -13107,7 +13395,7 @@ namespace Com.Aspose.Words.Api
             
             if (format == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
             } 
             else 
             {
@@ -13116,7 +13404,7 @@ namespace Com.Aspose.Words.Api
             
             if (fontsLocation == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=\[fontsLocation\]", string.Empty);
             } 
             else 
             {
@@ -13126,8 +13414,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Stream;
@@ -13170,8 +13457,11 @@ namespace Com.Aspose.Words.Api
         public TableLinkCollectionResponse GetTables (string name, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/tables?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/tables?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -13214,7 +13504,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -13223,7 +13513,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -13232,7 +13522,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -13241,7 +13531,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -13251,8 +13541,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(TableLinkCollectionResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as TableLinkCollectionResponse;
@@ -13299,8 +13588,11 @@ namespace Com.Aspose.Words.Api
         public TableResponse InsertTable (string name, TableInsertDto table, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/tables?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/tables?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -13349,7 +13641,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -13358,7 +13650,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -13367,7 +13659,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -13376,7 +13668,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -13385,7 +13677,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -13394,7 +13686,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -13403,7 +13695,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -13414,8 +13706,7 @@ namespace Com.Aspose.Words.Api
             postBody = table; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(TableResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as TableResponse;
@@ -13459,8 +13750,11 @@ namespace Com.Aspose.Words.Api
         public TableResponse GetTable (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/tables/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/tables/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -13518,7 +13812,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -13527,7 +13821,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -13536,7 +13830,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -13545,7 +13839,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -13555,8 +13849,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(TableResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as TableResponse;
@@ -13603,8 +13896,11 @@ namespace Com.Aspose.Words.Api
         public SaaSposeResponse DeleteTable (string name, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/tables/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/tables/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -13662,7 +13958,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -13671,7 +13967,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -13680,7 +13976,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -13689,7 +13985,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -13698,7 +13994,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -13707,7 +14003,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -13716,7 +14012,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -13726,8 +14022,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
@@ -13771,8 +14066,11 @@ namespace Com.Aspose.Words.Api
         public TablePropertiesResponse GetTableProperties (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/tables/{index}/properties?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/tables/{index}/properties?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -13830,7 +14128,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -13839,7 +14137,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -13848,7 +14146,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -13857,7 +14155,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -13867,8 +14165,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(TablePropertiesResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as TablePropertiesResponse;
@@ -13916,8 +14213,11 @@ namespace Com.Aspose.Words.Api
         public TablePropertiesResponse UpdateTableProperties (string name, TablePropertiesDto properties, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/tables/{index}/properties?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/tables/{index}/properties?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -13981,7 +14281,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -13990,7 +14290,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -13999,7 +14299,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -14008,7 +14308,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -14017,7 +14317,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -14026,7 +14326,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -14035,7 +14335,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -14046,8 +14346,7 @@ namespace Com.Aspose.Words.Api
             postBody = properties; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(TablePropertiesResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as TablePropertiesResponse;
@@ -14093,8 +14392,11 @@ namespace Com.Aspose.Words.Api
         public Stream RenderTable (string name, string format, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{nodePath}/tables/{index}/render?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;fontsLocation=[fontsLocation]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{nodePath}/tables/{index}/render?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;fontsLocation=[fontsLocation]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -14158,7 +14460,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -14167,7 +14469,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -14176,7 +14478,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -14185,7 +14487,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -14194,7 +14496,7 @@ namespace Com.Aspose.Words.Api
             
             if (format == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
             } 
             else 
             {
@@ -14203,7 +14505,7 @@ namespace Com.Aspose.Words.Api
             
             if (fontsLocation == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=\[fontsLocation\]", string.Empty);
             } 
             else 
             {
@@ -14213,8 +14515,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Stream;
@@ -14257,8 +14558,11 @@ namespace Com.Aspose.Words.Api
         public RunsResponse GetDocumentParagraphRuns (string name, string paragraphPath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{paragraphPath}/runs?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{paragraphPath}/runs?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -14301,7 +14605,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -14310,7 +14614,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -14319,7 +14623,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -14328,7 +14632,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -14338,8 +14642,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(RunsResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as RunsResponse;
@@ -14387,8 +14690,11 @@ namespace Com.Aspose.Words.Api
         public RunResponse PutRun (string name, string paragraphPath, Run run, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null, string insertBeforeNode = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{paragraphPath}/runs?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;insertBeforeNode=[insertBeforeNode]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{paragraphPath}/runs?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;insertBeforeNode=[insertBeforeNode]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -14437,7 +14743,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -14446,7 +14752,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -14455,7 +14761,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -14464,7 +14770,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -14473,7 +14779,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -14482,7 +14788,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -14491,7 +14797,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -14500,7 +14806,7 @@ namespace Com.Aspose.Words.Api
             
             if (insertBeforeNode == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])insertBeforeNode=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])insertBeforeNode=\[insertBeforeNode\]", string.Empty);
             } 
             else 
             {
@@ -14511,8 +14817,7 @@ namespace Com.Aspose.Words.Api
             postBody = run; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(RunResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as RunResponse;
@@ -14556,8 +14861,11 @@ namespace Com.Aspose.Words.Api
         public RunResponse GetDocumentParagraphRun (string name, string paragraphPath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{paragraphPath}/runs/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{paragraphPath}/runs/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -14615,7 +14923,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -14624,7 +14932,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -14633,7 +14941,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -14642,7 +14950,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -14652,8 +14960,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(RunResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as RunResponse;
@@ -14701,8 +15008,11 @@ namespace Com.Aspose.Words.Api
         public RunResponse PostRun (string name, Run run, string paragraphPath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{paragraphPath}/runs/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{paragraphPath}/runs/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -14766,7 +15076,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -14775,7 +15085,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -14784,7 +15094,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -14793,7 +15103,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -14802,7 +15112,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -14811,7 +15121,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -14820,7 +15130,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -14831,8 +15141,7 @@ namespace Com.Aspose.Words.Api
             postBody = run; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(RunResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as RunResponse;
@@ -14879,8 +15188,11 @@ namespace Com.Aspose.Words.Api
         public SaaSposeResponse DeleteRun (string name, string paragraphPath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{paragraphPath}/runs/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{paragraphPath}/runs/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -14938,7 +15250,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -14947,7 +15259,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -14956,7 +15268,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -14965,7 +15277,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -14974,7 +15286,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -14983,7 +15295,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -14992,7 +15304,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -15002,8 +15314,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
@@ -15047,8 +15358,11 @@ namespace Com.Aspose.Words.Api
         public FontResponse GetDocumentParagraphRunFont (string name, string paragraphPath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{paragraphPath}/runs/{index}/font?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{paragraphPath}/runs/{index}/font?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -15106,7 +15420,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -15115,7 +15429,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -15124,7 +15438,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -15133,7 +15447,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -15143,8 +15457,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(FontResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as FontResponse;
@@ -15192,8 +15505,11 @@ namespace Com.Aspose.Words.Api
         public FontResponse PostDocumentParagraphRunFont (string name, Font fontDto, string paragraphPath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{paragraphPath}/runs/{index}/font?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{paragraphPath}/runs/{index}/font?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -15257,7 +15573,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -15266,7 +15582,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -15275,7 +15591,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -15284,7 +15600,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -15293,7 +15609,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -15302,7 +15618,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -15311,7 +15627,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -15322,8 +15638,7 @@ namespace Com.Aspose.Words.Api
             postBody = fontDto; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(FontResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as FontResponse;
@@ -15367,8 +15682,11 @@ namespace Com.Aspose.Words.Api
         public HeaderFootersResponse GetHeaderFooters (string name, string sectionPath, string storage = null, string folder = null, string loadEncoding = null, string password = null, string filterByType = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;filterByType=[filterByType]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;filterByType=[filterByType]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -15411,7 +15729,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -15420,7 +15738,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -15429,7 +15747,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -15438,7 +15756,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -15447,7 +15765,7 @@ namespace Com.Aspose.Words.Api
             
             if (filterByType == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])filterByType=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])filterByType=\[filterByType\]", string.Empty);
             } 
             else 
             {
@@ -15457,8 +15775,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(HeaderFootersResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as HeaderFootersResponse;
@@ -15505,8 +15822,11 @@ namespace Com.Aspose.Words.Api
         public HeaderFooterResponse PutHeaderFooter (string name, string headerFooterType, string sectionPath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -15555,7 +15875,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -15564,7 +15884,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -15573,7 +15893,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -15582,7 +15902,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -15591,7 +15911,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -15600,7 +15920,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -15609,7 +15929,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -15620,8 +15940,7 @@ namespace Com.Aspose.Words.Api
             postBody = headerFooterType; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(HeaderFooterResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as HeaderFooterResponse;
@@ -15668,8 +15987,11 @@ namespace Com.Aspose.Words.Api
         public SaaSposeResponse DeleteHeadersFooters (string name, string sectionPath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null, string headersFootersTypes = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;headersFootersTypes=[headersFootersTypes]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;headersFootersTypes=[headersFootersTypes]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -15712,7 +16034,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -15721,7 +16043,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -15730,7 +16052,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -15739,7 +16061,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -15748,7 +16070,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -15757,7 +16079,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -15766,7 +16088,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -15775,7 +16097,7 @@ namespace Com.Aspose.Words.Api
             
             if (headersFootersTypes == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])headersFootersTypes=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])headersFootersTypes=\[headersFootersTypes\]", string.Empty);
             } 
             else 
             {
@@ -15785,8 +16107,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
@@ -15821,7 +16142,7 @@ namespace Com.Aspose.Words.Api
         /// </summary>
         /// <param name="name"></param> 
         /// <param name="sectionPath"></param> 
-        /// <param name="index"></param> 
+        /// <param name="index">Object index</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -15830,11 +16151,14 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>SaaSposeResponse</returns>            
-        public SaaSposeResponse DeleteHeaderFooter (string name, string sectionPath, string index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteHeaderFooter (string name, string sectionPath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{sectionPath}/headersfooters/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{sectionPath}/headersfooters/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -15892,7 +16216,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -15901,7 +16225,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -15910,7 +16234,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -15919,7 +16243,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -15928,7 +16252,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -15937,7 +16261,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -15946,7 +16270,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -15956,8 +16280,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
@@ -16004,8 +16327,11 @@ namespace Com.Aspose.Words.Api
         public TableRowResponse InsertTableRow (string name, TableRowInsertDto row, string tablePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{tablePath}/rows?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{tablePath}/rows?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -16054,7 +16380,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -16063,7 +16389,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -16072,7 +16398,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -16081,7 +16407,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -16090,7 +16416,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -16099,7 +16425,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -16108,7 +16434,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -16119,8 +16445,7 @@ namespace Com.Aspose.Words.Api
             postBody = row; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(TableRowResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as TableRowResponse;
@@ -16155,17 +16480,20 @@ namespace Com.Aspose.Words.Api
         /// </summary>
         /// <param name="name"></param> 
         /// <param name="tablePath"></param> 
-        /// <param name="index"></param> 
+        /// <param name="index">Object index</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>TableRowResponse</returns>            
-        public TableRowResponse GetTableRow (string name, string tablePath, string index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public TableRowResponse GetTableRow (string name, string tablePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{tablePath}/rows/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{tablePath}/rows/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -16223,7 +16551,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -16232,7 +16560,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -16241,7 +16569,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -16250,7 +16578,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -16260,8 +16588,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(TableRowResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as TableRowResponse;
@@ -16296,7 +16623,7 @@ namespace Com.Aspose.Words.Api
         /// </summary>
         /// <param name="name"></param> 
         /// <param name="tablePath"></param> 
-        /// <param name="index"></param> 
+        /// <param name="index">Object index</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -16305,11 +16632,14 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>SaaSposeResponse</returns>            
-        public SaaSposeResponse DeleteTableRow (string name, string tablePath, string index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteTableRow (string name, string tablePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{tablePath}/rows/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{tablePath}/rows/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -16367,7 +16697,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -16376,7 +16706,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -16385,7 +16715,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -16394,7 +16724,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -16403,7 +16733,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -16412,7 +16742,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -16421,7 +16751,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -16431,8 +16761,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
@@ -16467,17 +16796,20 @@ namespace Com.Aspose.Words.Api
         /// </summary>
         /// <param name="name"></param> 
         /// <param name="tablePath"></param> 
-        /// <param name="index"></param> 
+        /// <param name="index">Object index</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>TableRowFormatResponse</returns>            
-        public TableRowFormatResponse GetTableRowFormat (string name, string tablePath, string index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public TableRowFormatResponse GetTableRowFormat (string name, string tablePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{tablePath}/rows/{index}/rowformat?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{tablePath}/rows/{index}/rowformat?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -16535,7 +16867,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -16544,7 +16876,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -16553,7 +16885,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -16562,7 +16894,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -16572,8 +16904,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(TableRowFormatResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as TableRowFormatResponse;
@@ -16609,7 +16940,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="name"></param> 
         /// <param name="format"></param> 
         /// <param name="tablePath"></param> 
-        /// <param name="index"></param> 
+        /// <param name="index">Object index</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -16618,11 +16949,14 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>TableRowFormatResponse</returns>            
-        public TableRowFormatResponse UpdateTableRowFormat (string name, TableRowFormatDto format, string tablePath, string index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public TableRowFormatResponse UpdateTableRowFormat (string name, TableRowFormatDto format, string tablePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{tablePath}/rows/{index}/rowformat?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{tablePath}/rows/{index}/rowformat?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -16686,7 +17020,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -16695,7 +17029,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -16704,7 +17038,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -16713,7 +17047,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -16722,7 +17056,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -16731,7 +17065,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -16740,7 +17074,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -16751,8 +17085,7 @@ namespace Com.Aspose.Words.Api
             postBody = format; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(TableRowFormatResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as TableRowFormatResponse;
@@ -16799,8 +17132,11 @@ namespace Com.Aspose.Words.Api
         public TableCellResponse InsertTableCell (string name, TableCellInsertDto cell, string tableRowPath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{tableRowPath}/cells?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{tableRowPath}/cells?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -16849,7 +17185,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -16858,7 +17194,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -16867,7 +17203,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -16876,7 +17212,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -16885,7 +17221,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -16894,7 +17230,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -16903,7 +17239,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -16914,8 +17250,7 @@ namespace Com.Aspose.Words.Api
             postBody = cell; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(TableCellResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as TableCellResponse;
@@ -16950,17 +17285,20 @@ namespace Com.Aspose.Words.Api
         /// </summary>
         /// <param name="name"></param> 
         /// <param name="tableRowPath"></param> 
-        /// <param name="index"></param> 
+        /// <param name="index">Object index</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>TableCellResponse</returns>            
-        public TableCellResponse GetTableCell (string name, string tableRowPath, string index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public TableCellResponse GetTableCell (string name, string tableRowPath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{tableRowPath}/cells/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{tableRowPath}/cells/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -17018,7 +17356,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -17027,7 +17365,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -17036,7 +17374,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -17045,7 +17383,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -17055,8 +17393,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(TableCellResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as TableCellResponse;
@@ -17091,7 +17428,7 @@ namespace Com.Aspose.Words.Api
         /// </summary>
         /// <param name="name"></param> 
         /// <param name="tableRowPath"></param> 
-        /// <param name="index"></param> 
+        /// <param name="index">Object index</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -17100,11 +17437,14 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>SaaSposeResponse</returns>            
-        public SaaSposeResponse DeleteTableCell (string name, string tableRowPath, string index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteTableCell (string name, string tableRowPath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{tableRowPath}/cells/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{tableRowPath}/cells/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -17162,7 +17502,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -17171,7 +17511,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -17180,7 +17520,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -17189,7 +17529,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -17198,7 +17538,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -17207,7 +17547,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -17216,7 +17556,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -17226,8 +17566,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
@@ -17262,17 +17601,20 @@ namespace Com.Aspose.Words.Api
         /// </summary>
         /// <param name="name"></param> 
         /// <param name="tableRowPath"></param> 
-        /// <param name="index"></param> 
+        /// <param name="index">Object index</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>TableCellFormatResponse</returns>            
-        public TableCellFormatResponse GetTableCellFormat (string name, string tableRowPath, string index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public TableCellFormatResponse GetTableCellFormat (string name, string tableRowPath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{tableRowPath}/cells/{index}/cellformat?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{tableRowPath}/cells/{index}/cellformat?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -17330,7 +17672,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -17339,7 +17681,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -17348,7 +17690,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -17357,7 +17699,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -17367,8 +17709,7 @@ namespace Com.Aspose.Words.Api
                       
             
             try 
-            {
-                
+            {                
                 if(typeof(TableCellFormatResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as TableCellFormatResponse;
@@ -17404,7 +17745,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="name"></param> 
         /// <param name="format"></param> 
         /// <param name="tableRowPath"></param> 
-        /// <param name="index"></param> 
+        /// <param name="index">Object index</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -17413,11 +17754,14 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>TableCellFormatResponse</returns>            
-        public TableCellFormatResponse UpdateTableCellFormat (string name, TableCellFormatDto format, string tableRowPath, string index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public TableCellFormatResponse UpdateTableCellFormat (string name, TableCellFormatDto format, string tableRowPath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}/{tableRowPath}/cells/{index}/cellformat?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]".Replace("{format}","json");
-            ResourcePath = Regex.Replace(ResourcePath, "\\*", string.Empty).Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
+            var ResourcePath = "/words/{name}/{tableRowPath}/cells/{index}/cellformat?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
 
             // query params
             var queryParams = new Dictionary<string, string>();
@@ -17481,7 +17825,7 @@ namespace Com.Aspose.Words.Api
             
             if (destFileName == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
             } 
             else 
             {
@@ -17490,7 +17834,7 @@ namespace Com.Aspose.Words.Api
             
             if (storage == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
             } 
             else 
             {
@@ -17499,7 +17843,7 @@ namespace Com.Aspose.Words.Api
             
             if (folder == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
             } 
             else 
             {
@@ -17508,7 +17852,7 @@ namespace Com.Aspose.Words.Api
             
             if (loadEncoding == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
             } 
             else 
             {
@@ -17517,7 +17861,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionAuthor == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionAuthor=\[revisionAuthor\]", string.Empty);
             } 
             else 
             {
@@ -17526,7 +17870,7 @@ namespace Com.Aspose.Words.Api
             
             if (revisionDateTime == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])revisionDateTime=\[revisionDateTime\]", string.Empty);
             } 
             else 
             {
@@ -17535,7 +17879,7 @@ namespace Com.Aspose.Words.Api
             
             if (password == null) 
             {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=", string.Empty);
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
             } 
             else 
             {
@@ -17546,8 +17890,7 @@ namespace Com.Aspose.Words.Api
             postBody = format; // http body (model) parameter
             
             try 
-            {
-                
+            {                
                 if(typeof(TableCellFormatResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as TableCellFormatResponse;
