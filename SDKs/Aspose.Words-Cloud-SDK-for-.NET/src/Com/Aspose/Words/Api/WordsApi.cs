@@ -117,33 +117,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as DocumentResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -225,33 +222,35 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
+            if (document != null) 
+            {
+                formParams.Add("document", apiInvoker.ToFileInfo(document, "document"));
+            }
+            
             try 
             {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as Stream;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -300,33 +299,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as DocumentResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -389,33 +385,40 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
+            if (template != null) 
+            {
+                formParams.Add("Template", apiInvoker.ToFileInfo(template, "Template"));
+            }
+            
+            if (data != null) 
+            {
+                formParams.Add("Data", apiInvoker.ToFileInfo(data, "Data"));
+            }
+            
             try 
             {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as Stream;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -488,33 +491,40 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
+            if (template != null) 
+            {
+                formParams.Add("Template", apiInvoker.ToFileInfo(template, "Template"));
+            }
+            
+            if (data != null) 
+            {
+                formParams.Add("Data", apiInvoker.ToFileInfo(data, "Data"));
+            }
+            
             try 
             {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as Stream;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -543,33 +553,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -616,33 +623,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = data; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(SaveResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as SaveResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaveResponse)ApiInvoker.deserialize(response, typeof(SaveResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaveResponse)ApiInvoker.deserialize(response, typeof(SaveResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -688,33 +692,35 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
+            if (template != null) 
+            {
+                formParams.Add("Template", apiInvoker.ToFileInfo(template, "Template"));
+            }
+            
             try 
             {                
                 if(typeof(FieldNamesResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as FieldNamesResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (FieldNamesResponse)ApiInvoker.deserialize(response, typeof(FieldNamesResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (FieldNamesResponse)ApiInvoker.deserialize(response, typeof(FieldNamesResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -743,33 +749,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(Object) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as Object;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (Object)ApiInvoker.deserialize(response, typeof(Object));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (Object)ApiInvoker.deserialize(response, typeof(Object));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -890,33 +893,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Stream;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -1039,33 +1039,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = documentList; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -1150,33 +1147,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(BookmarksResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as BookmarksResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (BookmarksResponse)ApiInvoker.deserialize(response, typeof(BookmarksResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (BookmarksResponse)ApiInvoker.deserialize(response, typeof(BookmarksResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -1277,33 +1271,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(BookmarkResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as BookmarkResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (BookmarkResponse)ApiInvoker.deserialize(response, typeof(BookmarkResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (BookmarkResponse)ApiInvoker.deserialize(response, typeof(BookmarkResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -1442,33 +1433,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = bookmarkData; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(BookmarkResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as BookmarkResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (BookmarkResponse)ApiInvoker.deserialize(response, typeof(BookmarkResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (BookmarkResponse)ApiInvoker.deserialize(response, typeof(BookmarkResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -1553,33 +1541,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(CommentsResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as CommentsResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (CommentsResponse)ApiInvoker.deserialize(response, typeof(CommentsResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (CommentsResponse)ApiInvoker.deserialize(response, typeof(CommentsResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -1702,33 +1687,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = comment; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(CommentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as CommentResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (CommentResponse)ApiInvoker.deserialize(response, typeof(CommentResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (CommentResponse)ApiInvoker.deserialize(response, typeof(CommentResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -1829,33 +1811,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(CommentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as CommentResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (CommentResponse)ApiInvoker.deserialize(response, typeof(CommentResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (CommentResponse)ApiInvoker.deserialize(response, typeof(CommentResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -1994,33 +1973,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = comment; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(CommentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as CommentResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (CommentResponse)ApiInvoker.deserialize(response, typeof(CommentResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (CommentResponse)ApiInvoker.deserialize(response, typeof(CommentResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -2151,33 +2127,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -2280,33 +2253,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = compareData; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -2391,33 +2361,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(DocumentPropertiesResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as DocumentPropertiesResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DocumentPropertiesResponse)ApiInvoker.deserialize(response, typeof(DocumentPropertiesResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DocumentPropertiesResponse)ApiInvoker.deserialize(response, typeof(DocumentPropertiesResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -2518,33 +2485,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(DocumentPropertyResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as DocumentPropertyResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DocumentPropertyResponse)ApiInvoker.deserialize(response, typeof(DocumentPropertyResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DocumentPropertyResponse)ApiInvoker.deserialize(response, typeof(DocumentPropertyResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -2683,33 +2647,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = property; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(DocumentPropertyResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as DocumentPropertyResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DocumentPropertyResponse)ApiInvoker.deserialize(response, typeof(DocumentPropertyResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DocumentPropertyResponse)ApiInvoker.deserialize(response, typeof(DocumentPropertyResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -2848,33 +2809,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = property; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(DocumentPropertyResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentPropertyResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DocumentPropertyResponse)ApiInvoker.deserialize(response, typeof(DocumentPropertyResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DocumentPropertyResponse)ApiInvoker.deserialize(response, typeof(DocumentPropertyResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -3005,33 +2963,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -3179,33 +3134,35 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
+            if (data != null) 
+            {
+                formParams.Add("data", data); // form parameter
+            }
+            
             try 
             {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -3337,33 +3294,35 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
+            if (data != null) 
+            {
+                formParams.Add("data", data); // form parameter
+            }
+            
             try 
             {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -3484,33 +3443,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(HeaderFooterResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as HeaderFooterResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (HeaderFooterResponse)ApiInvoker.deserialize(response, typeof(HeaderFooterResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (HeaderFooterResponse)ApiInvoker.deserialize(response, typeof(HeaderFooterResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -3595,33 +3551,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(HyperlinksResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as HyperlinksResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (HyperlinksResponse)ApiInvoker.deserialize(response, typeof(HyperlinksResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (HyperlinksResponse)ApiInvoker.deserialize(response, typeof(HyperlinksResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -3722,33 +3675,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(HyperlinkResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as HyperlinkResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (HyperlinkResponse)ApiInvoker.deserialize(response, typeof(HyperlinkResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (HyperlinkResponse)ApiInvoker.deserialize(response, typeof(HyperlinkResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -3871,33 +3821,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = pageNumber; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -4012,33 +3959,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -4133,33 +4077,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(FieldNamesResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as FieldNamesResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (FieldNamesResponse)ApiInvoker.deserialize(response, typeof(FieldNamesResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (FieldNamesResponse)ApiInvoker.deserialize(response, typeof(FieldNamesResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -4286,33 +4227,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Stream;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -4397,33 +4335,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(ProtectionDataResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as ProtectionDataResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (ProtectionDataResponse)ApiInvoker.deserialize(response, typeof(ProtectionDataResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (ProtectionDataResponse)ApiInvoker.deserialize(response, typeof(ProtectionDataResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -4526,33 +4461,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = protectionRequest; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(ProtectionDataResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as ProtectionDataResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (ProtectionDataResponse)ApiInvoker.deserialize(response, typeof(ProtectionDataResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (ProtectionDataResponse)ApiInvoker.deserialize(response, typeof(ProtectionDataResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -4655,33 +4587,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = protectionRequest; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(ProtectionDataResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as ProtectionDataResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (ProtectionDataResponse)ApiInvoker.deserialize(response, typeof(ProtectionDataResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (ProtectionDataResponse)ApiInvoker.deserialize(response, typeof(ProtectionDataResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -4784,33 +4713,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = protectionRequest; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(ProtectionDataResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as ProtectionDataResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (ProtectionDataResponse)ApiInvoker.deserialize(response, typeof(ProtectionDataResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (ProtectionDataResponse)ApiInvoker.deserialize(response, typeof(ProtectionDataResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -4933,33 +4859,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = replaceText; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(ReplaceTextResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as ReplaceTextResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (ReplaceTextResponse)ApiInvoker.deserialize(response, typeof(ReplaceTextResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (ReplaceTextResponse)ApiInvoker.deserialize(response, typeof(ReplaceTextResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -5054,33 +4977,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(RevisionsModificationResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as RevisionsModificationResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (RevisionsModificationResponse)ApiInvoker.deserialize(response, typeof(RevisionsModificationResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (RevisionsModificationResponse)ApiInvoker.deserialize(response, typeof(RevisionsModificationResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -5175,33 +5095,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(RevisionsModificationResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as RevisionsModificationResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (RevisionsModificationResponse)ApiInvoker.deserialize(response, typeof(RevisionsModificationResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (RevisionsModificationResponse)ApiInvoker.deserialize(response, typeof(RevisionsModificationResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -5314,33 +5231,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = saveOptionsData; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(SaveResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as SaveResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaveResponse)ApiInvoker.deserialize(response, typeof(SaveResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaveResponse)ApiInvoker.deserialize(response, typeof(SaveResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -5633,33 +5547,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = saveOptions; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(SaveResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as SaveResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaveResponse)ApiInvoker.deserialize(response, typeof(SaveResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaveResponse)ApiInvoker.deserialize(response, typeof(SaveResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -5754,33 +5665,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SearchResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as SearchResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SearchResponse)ApiInvoker.deserialize(response, typeof(SearchResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SearchResponse)ApiInvoker.deserialize(response, typeof(SearchResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -5865,33 +5773,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SectionLinkCollectionResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as SectionLinkCollectionResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SectionLinkCollectionResponse)ApiInvoker.deserialize(response, typeof(SectionLinkCollectionResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SectionLinkCollectionResponse)ApiInvoker.deserialize(response, typeof(SectionLinkCollectionResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -5992,33 +5897,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SectionResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as SectionResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SectionResponse)ApiInvoker.deserialize(response, typeof(SectionResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SectionResponse)ApiInvoker.deserialize(response, typeof(SectionResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -6145,33 +6047,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(HeaderFooterResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as HeaderFooterResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (HeaderFooterResponse)ApiInvoker.deserialize(response, typeof(HeaderFooterResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (HeaderFooterResponse)ApiInvoker.deserialize(response, typeof(HeaderFooterResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -6272,33 +6171,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SectionPageSetupResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as SectionPageSetupResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SectionPageSetupResponse)ApiInvoker.deserialize(response, typeof(SectionPageSetupResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SectionPageSetupResponse)ApiInvoker.deserialize(response, typeof(SectionPageSetupResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -6437,33 +6333,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = pageSetup; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(SectionPageSetupResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as SectionPageSetupResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SectionPageSetupResponse)ApiInvoker.deserialize(response, typeof(SectionPageSetupResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SectionPageSetupResponse)ApiInvoker.deserialize(response, typeof(SectionPageSetupResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -6608,33 +6501,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SplitDocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as SplitDocumentResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SplitDocumentResponse)ApiInvoker.deserialize(response, typeof(SplitDocumentResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SplitDocumentResponse)ApiInvoker.deserialize(response, typeof(SplitDocumentResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -6749,33 +6639,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(StatDataResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as StatDataResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (StatDataResponse)ApiInvoker.deserialize(response, typeof(StatDataResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (StatDataResponse)ApiInvoker.deserialize(response, typeof(StatDataResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -6860,33 +6747,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(TextItemsResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as TextItemsResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (TextItemsResponse)ApiInvoker.deserialize(response, typeof(TextItemsResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (TextItemsResponse)ApiInvoker.deserialize(response, typeof(TextItemsResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -6981,33 +6865,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -7122,33 +7003,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as DocumentResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -7284,33 +7162,35 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
+            if (imageFile != null) 
+            {
+                formParams.Add("imageFile", apiInvoker.ToFileInfo(imageFile, "imageFile"));
+            }
+            
             try 
             {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -7433,33 +7313,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = watermarkText; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(DocumentResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DocumentResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -7560,33 +7437,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(OfficeMathObjectsResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as OfficeMathObjectsResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (OfficeMathObjectsResponse)ApiInvoker.deserialize(response, typeof(OfficeMathObjectsResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (OfficeMathObjectsResponse)ApiInvoker.deserialize(response, typeof(OfficeMathObjectsResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -7703,33 +7577,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(OfficeMathObjectResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as OfficeMathObjectResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (OfficeMathObjectResponse)ApiInvoker.deserialize(response, typeof(OfficeMathObjectResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (OfficeMathObjectResponse)ApiInvoker.deserialize(response, typeof(OfficeMathObjectResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -7876,33 +7747,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -8045,33 +7913,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Stream;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -8172,33 +8037,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(BordersResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as BordersResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (BordersResponse)ApiInvoker.deserialize(response, typeof(BordersResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (BordersResponse)ApiInvoker.deserialize(response, typeof(BordersResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -8329,33 +8191,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(BordersResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as BordersResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (BordersResponse)ApiInvoker.deserialize(response, typeof(BordersResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (BordersResponse)ApiInvoker.deserialize(response, typeof(BordersResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -8472,33 +8331,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(BorderResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as BorderResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (BorderResponse)ApiInvoker.deserialize(response, typeof(BorderResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (BorderResponse)ApiInvoker.deserialize(response, typeof(BorderResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -8653,33 +8509,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = borderProperties; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(BorderResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as BorderResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (BorderResponse)ApiInvoker.deserialize(response, typeof(BorderResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (BorderResponse)ApiInvoker.deserialize(response, typeof(BorderResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -8826,33 +8679,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(BorderResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as BorderResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (BorderResponse)ApiInvoker.deserialize(response, typeof(BorderResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (BorderResponse)ApiInvoker.deserialize(response, typeof(BorderResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -8953,33 +8803,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(DrawingObjectsResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as DrawingObjectsResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DrawingObjectsResponse)ApiInvoker.deserialize(response, typeof(DrawingObjectsResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DrawingObjectsResponse)ApiInvoker.deserialize(response, typeof(DrawingObjectsResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -9124,33 +8971,40 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
+            if (drawingObject != null) 
+            {
+                formParams.Add("drawingObject", drawingObject); // form parameter
+            }
+            
+            if (imageFile != null) 
+            {
+                formParams.Add("imageFile", apiInvoker.ToFileInfo(imageFile, "imageFile"));
+            }
+            
             try 
             {                
                 if(typeof(DrawingObjectResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as DrawingObjectResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DrawingObjectResponse)ApiInvoker.deserialize(response, typeof(DrawingObjectResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DrawingObjectResponse)ApiInvoker.deserialize(response, typeof(DrawingObjectResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -9267,33 +9121,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(DrawingObjectResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as DrawingObjectResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DrawingObjectResponse)ApiInvoker.deserialize(response, typeof(DrawingObjectResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DrawingObjectResponse)ApiInvoker.deserialize(response, typeof(DrawingObjectResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -9454,33 +9305,40 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
+            if (drawingObject != null) 
+            {
+                formParams.Add("drawingObject", drawingObject); // form parameter
+            }
+            
+            if (imageFile != null) 
+            {
+                formParams.Add("imageFile", apiInvoker.ToFileInfo(imageFile, "imageFile"));
+            }
+            
             try 
             {                
                 if(typeof(DrawingObjectResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as DrawingObjectResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (DrawingObjectResponse)ApiInvoker.deserialize(response, typeof(DrawingObjectResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (DrawingObjectResponse)ApiInvoker.deserialize(response, typeof(DrawingObjectResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -9627,33 +9485,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -9770,33 +9625,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Stream;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -9913,33 +9765,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Stream;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -10082,33 +9931,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Stream;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -10209,33 +10055,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(FieldsResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as FieldsResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (FieldsResponse)ApiInvoker.deserialize(response, typeof(FieldsResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (FieldsResponse)ApiInvoker.deserialize(response, typeof(FieldsResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -10384,33 +10227,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = field; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(FieldResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as FieldResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (FieldResponse)ApiInvoker.deserialize(response, typeof(FieldResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (FieldResponse)ApiInvoker.deserialize(response, typeof(FieldResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -10541,33 +10381,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -10684,33 +10521,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(FieldResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as FieldResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (FieldResponse)ApiInvoker.deserialize(response, typeof(FieldResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (FieldResponse)ApiInvoker.deserialize(response, typeof(FieldResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -10865,33 +10699,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = field; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(FieldResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as FieldResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (FieldResponse)ApiInvoker.deserialize(response, typeof(FieldResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (FieldResponse)ApiInvoker.deserialize(response, typeof(FieldResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -11038,33 +10869,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -11165,33 +10993,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(FootnotesResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as FootnotesResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (FootnotesResponse)ApiInvoker.deserialize(response, typeof(FootnotesResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (FootnotesResponse)ApiInvoker.deserialize(response, typeof(FootnotesResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -11330,33 +11155,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = footnoteDto; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(FootnoteResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as FootnoteResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (FootnoteResponse)ApiInvoker.deserialize(response, typeof(FootnoteResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (FootnoteResponse)ApiInvoker.deserialize(response, typeof(FootnoteResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -11473,33 +11295,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(FootnoteResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as FootnoteResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (FootnoteResponse)ApiInvoker.deserialize(response, typeof(FootnoteResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (FootnoteResponse)ApiInvoker.deserialize(response, typeof(FootnoteResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -11654,33 +11473,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = footnoteDto; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(FootnoteResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as FootnoteResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (FootnoteResponse)ApiInvoker.deserialize(response, typeof(FootnoteResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (FootnoteResponse)ApiInvoker.deserialize(response, typeof(FootnoteResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -11827,33 +11643,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -11954,33 +11767,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(FormFieldsResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as FormFieldsResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (FormFieldsResponse)ApiInvoker.deserialize(response, typeof(FormFieldsResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (FormFieldsResponse)ApiInvoker.deserialize(response, typeof(FormFieldsResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -12129,33 +11939,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = formField; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(FormFieldResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as FormFieldResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (FormFieldResponse)ApiInvoker.deserialize(response, typeof(FormFieldResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (FormFieldResponse)ApiInvoker.deserialize(response, typeof(FormFieldResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -12272,33 +12079,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(FormFieldResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as FormFieldResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (FormFieldResponse)ApiInvoker.deserialize(response, typeof(FormFieldResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (FormFieldResponse)ApiInvoker.deserialize(response, typeof(FormFieldResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -12453,33 +12257,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = formField; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(FormFieldResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as FormFieldResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (FormFieldResponse)ApiInvoker.deserialize(response, typeof(FormFieldResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (FormFieldResponse)ApiInvoker.deserialize(response, typeof(FormFieldResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -12626,33 +12427,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -12753,33 +12551,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(ParagraphLinkCollectionResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as ParagraphLinkCollectionResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (ParagraphLinkCollectionResponse)ApiInvoker.deserialize(response, typeof(ParagraphLinkCollectionResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (ParagraphLinkCollectionResponse)ApiInvoker.deserialize(response, typeof(ParagraphLinkCollectionResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -12928,33 +12723,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = paragraph; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(ParagraphResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as ParagraphResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (ParagraphResponse)ApiInvoker.deserialize(response, typeof(ParagraphResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (ParagraphResponse)ApiInvoker.deserialize(response, typeof(ParagraphResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -13071,33 +12863,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(ParagraphResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as ParagraphResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (ParagraphResponse)ApiInvoker.deserialize(response, typeof(ParagraphResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (ParagraphResponse)ApiInvoker.deserialize(response, typeof(ParagraphResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -13244,33 +13033,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -13413,33 +13199,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Stream;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -13540,33 +13323,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(TableLinkCollectionResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as TableLinkCollectionResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (TableLinkCollectionResponse)ApiInvoker.deserialize(response, typeof(TableLinkCollectionResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (TableLinkCollectionResponse)ApiInvoker.deserialize(response, typeof(TableLinkCollectionResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -13705,33 +13485,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = table; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(TableResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as TableResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (TableResponse)ApiInvoker.deserialize(response, typeof(TableResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (TableResponse)ApiInvoker.deserialize(response, typeof(TableResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -13848,33 +13625,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(TableResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as TableResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (TableResponse)ApiInvoker.deserialize(response, typeof(TableResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (TableResponse)ApiInvoker.deserialize(response, typeof(TableResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -14021,33 +13795,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -14164,33 +13935,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(TablePropertiesResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as TablePropertiesResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (TablePropertiesResponse)ApiInvoker.deserialize(response, typeof(TablePropertiesResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (TablePropertiesResponse)ApiInvoker.deserialize(response, typeof(TablePropertiesResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -14345,33 +14113,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = properties; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(TablePropertiesResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as TablePropertiesResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (TablePropertiesResponse)ApiInvoker.deserialize(response, typeof(TablePropertiesResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (TablePropertiesResponse)ApiInvoker.deserialize(response, typeof(TablePropertiesResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -14514,33 +14279,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(Stream) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as Stream;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (Stream)ApiInvoker.deserialize(response, typeof(Stream));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -14641,33 +14403,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(RunsResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as RunsResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (RunsResponse)ApiInvoker.deserialize(response, typeof(RunsResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (RunsResponse)ApiInvoker.deserialize(response, typeof(RunsResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -14816,33 +14575,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = run; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(RunResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as RunResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (RunResponse)ApiInvoker.deserialize(response, typeof(RunResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (RunResponse)ApiInvoker.deserialize(response, typeof(RunResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -14959,33 +14715,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(RunResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as RunResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (RunResponse)ApiInvoker.deserialize(response, typeof(RunResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (RunResponse)ApiInvoker.deserialize(response, typeof(RunResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -15140,33 +14893,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = run; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(RunResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as RunResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (RunResponse)ApiInvoker.deserialize(response, typeof(RunResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (RunResponse)ApiInvoker.deserialize(response, typeof(RunResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -15313,33 +15063,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -15456,33 +15203,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(FontResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as FontResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (FontResponse)ApiInvoker.deserialize(response, typeof(FontResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (FontResponse)ApiInvoker.deserialize(response, typeof(FontResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -15637,33 +15381,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = fontDto; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(FontResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as FontResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (FontResponse)ApiInvoker.deserialize(response, typeof(FontResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (FontResponse)ApiInvoker.deserialize(response, typeof(FontResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -15774,33 +15515,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(HeaderFootersResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as HeaderFootersResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (HeaderFootersResponse)ApiInvoker.deserialize(response, typeof(HeaderFootersResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (HeaderFootersResponse)ApiInvoker.deserialize(response, typeof(HeaderFootersResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -15939,33 +15677,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = headerFooterType; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(HeaderFooterResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as HeaderFooterResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (HeaderFooterResponse)ApiInvoker.deserialize(response, typeof(HeaderFooterResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (HeaderFooterResponse)ApiInvoker.deserialize(response, typeof(HeaderFooterResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -16106,33 +15841,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -16279,33 +16011,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -16444,33 +16173,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = row; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(TableRowResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as TableRowResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (TableRowResponse)ApiInvoker.deserialize(response, typeof(TableRowResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (TableRowResponse)ApiInvoker.deserialize(response, typeof(TableRowResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -16587,33 +16313,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(TableRowResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as TableRowResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (TableRowResponse)ApiInvoker.deserialize(response, typeof(TableRowResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (TableRowResponse)ApiInvoker.deserialize(response, typeof(TableRowResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -16760,33 +16483,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -16903,33 +16623,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(TableRowFormatResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as TableRowFormatResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (TableRowFormatResponse)ApiInvoker.deserialize(response, typeof(TableRowFormatResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (TableRowFormatResponse)ApiInvoker.deserialize(response, typeof(TableRowFormatResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -17084,33 +16801,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = format; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(TableRowFormatResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as TableRowFormatResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (TableRowFormatResponse)ApiInvoker.deserialize(response, typeof(TableRowFormatResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (TableRowFormatResponse)ApiInvoker.deserialize(response, typeof(TableRowFormatResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -17249,33 +16963,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = cell; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(TableCellResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "PUT", queryParams, null, headerParams, formParams) as TableCellResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "PUT", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (TableCellResponse)ApiInvoker.deserialize(response, typeof(TableCellResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (TableCellResponse)ApiInvoker.deserialize(response, typeof(TableCellResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -17392,33 +17103,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(TableCellResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as TableCellResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (TableCellResponse)ApiInvoker.deserialize(response, typeof(TableCellResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (TableCellResponse)ApiInvoker.deserialize(response, typeof(TableCellResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -17565,33 +17273,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams) as SaaSposeResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "DELETE", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (SaaSposeResponse)ApiInvoker.deserialize(response, typeof(SaaSposeResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -17708,33 +17413,30 @@ namespace Com.Aspose.Words.Api
             
                       
             
+             
             try 
             {                
                 if(typeof(TableCellFormatResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as TableCellFormatResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (TableCellFormatResponse)ApiInvoker.deserialize(response, typeof(TableCellFormatResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (TableCellFormatResponse)ApiInvoker.deserialize(response, typeof(TableCellFormatResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 
@@ -17889,33 +17591,30 @@ namespace Com.Aspose.Words.Api
                       
             postBody = format; // http body (model) parameter
             
+             
             try 
             {                
                 if(typeof(TableCellFormatResponse) == typeof(Stream)) 
                 {
                     return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams) as TableCellFormatResponse;
                 }
-                else
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
+                if(response != null)
                 {
-                    var response = apiInvoker.invokeAPI(basePath, ResourcePath, "POST", queryParams, postBody, headerParams, formParams);
-                    if(response != null)
-                    {
-                        return (TableCellFormatResponse)ApiInvoker.deserialize(response, typeof(TableCellFormatResponse));
-                    }
-                    else 
-                    {
-                        return null;
-                    }
+                    return (TableCellFormatResponse)ApiInvoker.deserialize(response, typeof(TableCellFormatResponse));
                 }
+                    
+                return null;
             } 
             catch (ApiException ex) 
             {
-                if(ex.ErrorCode == 404) 
+                if (ex.ErrorCode == 404) 
                 {
                     return null;
                 }
                 
-                throw ex;                
+                throw;                
             }
         }
 

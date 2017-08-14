@@ -1529,21 +1529,18 @@ namespace WordsTest
         }
 
         /// <summary>
-        ///A test for PutDocumentFieldNames
-        ///</summary>
-        [TestMethod()]
+        /// A test for PutDocumentFieldNames
+        /// </summary>
+        [TestMethod]
         public void TestPutDocumentFieldNames()
-        {
-            bool useNonMergeFields = false; // TODO: Initialize to an appropriate value
-
+        {            
             using (var fileStream = System.IO.File.OpenRead(Common.GetDataDir() + "SampleExecuteTemplate.docx"))
-            {
-                Com.Aspose.Words.Model.FieldNamesResponse actual;
-                actual = target.PutDocumentFieldNames(fileStream, useNonMergeFields);
+            {                
+                FieldNamesResponse actual = target.PutDocumentFieldNames(fileStream, true);
 
                 Assert.AreEqual(actual.Code, "200");
-                Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FieldNamesResponse(), actual.GetType()); 
-            };                        
+                Assert.IsInstanceOfType(new FieldNamesResponse(), actual.GetType()); 
+            }
         }
 
         /// <summary>
