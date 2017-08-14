@@ -102,18 +102,22 @@ namespace Com.Aspose.Words
 
         public static string serialize(object obj)
         {
-        try
-        {
-            System.Diagnostics.Debug.WriteLine("Serialize:" + JsonConvert.SerializeObject(obj));
-            return obj != null ? JsonConvert.SerializeObject(obj) : null;
-        }
+            try
+            {
+                System.Diagnostics.Debug.WriteLine("Serialize:" + JsonConvert.SerializeObject(obj));
+                return obj != null
+                           ? JsonConvert.SerializeObject(
+                               obj,
+                               new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore })
+                           : null;
+            }
             catch (Exception e)
             {
-          throw new ApiException(500, e.Message);
+                throw new ApiException(500, e.Message);
+            }
         }
-      }
 
-      public string invokeAPI(string host, string path, string method, Dictionary<String, String> queryParams, object body, Dictionary<String, String> headerParams, Dictionary<String, object> formParams)
+        public string invokeAPI(string host, string path, string method, Dictionary<String, String> queryParams, object body, Dictionary<String, String> headerParams, Dictionary<String, object> formParams)
       {
           return invokeAPIInternal(host, path, method, false, queryParams, body, headerParams, formParams) as string;
       }

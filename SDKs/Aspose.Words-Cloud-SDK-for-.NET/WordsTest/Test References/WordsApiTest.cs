@@ -1544,9 +1544,9 @@ namespace WordsTest
         }
 
         /// <summary>
-        ///A test for PutDocumentSaveAsTiff
-        ///</summary>
-        [TestMethod()]
+        /// A test for PutDocumentSaveAsTiff
+        /// </summary>
+        [TestMethod]
         public void TestPutDocumentSaveAsTiff()
         {
             string name = "test_multi_pages.docx";
@@ -1566,11 +1566,9 @@ namespace WordsTest
             string tiffCompression = null;
             string dmlRenderingMode = null;
             string dmlEffectsRenderingMode = null;
-            string tiffBinarizationMethod = null;
-            string storage = null;
-            string folder = null;
+            string tiffBinarizationMethod = null;            
             bool zipOutput = false;
-            Com.Aspose.Words.Model.TiffSaveOptionsData body = new Com.Aspose.Words.Model.TiffSaveOptionsData();
+            TiffSaveOptionsData body = new TiffSaveOptionsData();
             body.FileName = "abc.tiff";
             body.SaveFormat = "tiff";
 
@@ -1592,9 +1590,7 @@ namespace WordsTest
                 tiffCompression: tiffCompression, 
                 dmlRenderingMode: dmlRenderingMode,
                 dmlEffectsRenderingMode: dmlEffectsRenderingMode, 
-                tiffBinarizationMethod: tiffBinarizationMethod,
-                storage: storage, 
-                folder: folder, 
+                tiffBinarizationMethod: tiffBinarizationMethod,                
                 zipOutput: zipOutput);
 
             Assert.AreEqual(actual.Code, "200");
