@@ -7,9 +7,7 @@ using System.Web;
 using System.Text.RegularExpressions;
 using System.Security.Cryptography;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
-using Com.Aspose.Words.Model;
 
 namespace Com.Aspose.Words
 {
@@ -250,78 +248,98 @@ namespace Com.Aspose.Words
                   statusCode = (int)response.StatusCode;
                   response.Close();
               }
+
               throw new ApiException(statusCode, ex.Message);
           }
       }
 
-      private static byte[] GetMultipartFormData(Dictionary<string, object> postParameters, string boundary)
-      {
-          Stream formDataStream = new System.IO.MemoryStream();
-          bool needsCLRF = false;
+        private static byte[] GetMultipartFormData(Dictionary<string, object> postParameters, string boundary)
+        {
+            Stream formDataStream = new MemoryStream();
+            bool needsCLRF = false;
 
-          if (postParameters.Count > 1)
-          {
+            if (postParameters.Count > 1)
+            {
+                foreach (var param in postParameters)
+                {
+                    // Thanks to feedback from commenters, add a CRLF to allow multiple parameters to be added.
+                    // Skip it on the first parameter, add it to subsequent parameters.
+                    if (needsCLRF)
+                    {
+                        formDataStream.Write(Encoding.UTF8.GetBytes("\r\n"), 0, Encoding.UTF8.GetByteCount("\r\n"));
+                    }
 
-          foreach (var param in postParameters)
-          {
-              // Thanks to feedback from commenters, add a CRLF to allow multiple parameters to be added.
-              // Skip it on the first parameter, add it to subsequent parameters.
-              if (needsCLRF)
-                  formDataStream.Write(Encoding.UTF8.GetBytes("\r\n"), 0, Encoding.UTF8.GetByteCount("\r\n"));
+                    needsCLRF = true;
+                    
+                    if (param.Value is FileInfo)
+                    {
+                        var fileInfo = (FileInfo)param.Value;
+                        string postData =
+                            string.Format(
+                                "--{0}\r\nContent-Disposition: form-data; name=\"{1}\"; filename=\"{1}\"\r\nContent-Type: {2}\r\n\r\n",
+                                boundary,
+                                param.Key,
+                                fileInfo.MimeType);
+                        formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
 
-              needsCLRF = true;
-              var fileInfo = (FileInfo)param.Value;
-              if (param.Value is FileInfo)
-              {                  
+                        // Write the file data directly to the Stream, rather than serializing it to a string.
+                        formDataStream.Write((fileInfo.file as byte[]), 0, (fileInfo.file as byte[]).Length);
+                    }
+                    else
+                    {
+                        var stringDaa = serialize(param.Value);
+                        string postData =
+                            string.Format(
+                                "--{0}\r\nContent-Disposition: form-data; name=\"{1}\"\r\n\r\n{2}",
+                                boundary,
+                                param.Key,
+                                stringDaa);
+                        formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
+                    }
+                }
 
-                  string postData = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"; filename=\"{1}\"\r\nContent-Type: {2}\r\n\r\n",
-                      boundary,
-                      param.Key,
-                      fileInfo.MimeType);
-                  formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
-                  
-                  // Write the file data directly to the Stream, rather than serializing it to a string.
-                  formDataStream.Write((fileInfo.file as byte[]), 0, (fileInfo.file as byte[]).Length);
-              }
-              else
-              {
-                  string postData = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"\r\n\r\n{2}",
-                      boundary,
-                      param.Key,
-                      fileInfo.file);
-                  formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
-              }
-          }
-          // Add the end of the request.  Start with a newline
-          string footer = "\r\n--" + boundary + "--\r\n";
-          formDataStream.Write(Encoding.UTF8.GetBytes(footer), 0, Encoding.UTF8.GetByteCount(footer));
-          }
-          else
-          {
-              foreach (var param in postParameters)
-              {
-                  var fileInfo = (FileInfo)param.Value;
-                  if (param.Value is FileInfo)
-                  {
-                      // Write the file data directly to the Stream, rather than serializing it to a string.
-                      formDataStream.Write((fileInfo.file as byte[]), 0, (fileInfo.file as byte[]).Length);
-                  }
-                  else
-                  {
-                      string postData = (string)param.Value;
-                      formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
-                  }
-              }
-          }
+                // Add the end of the request.  Start with a newline
+                string footer = "\r\n--" + boundary + "--\r\n";
+                formDataStream.Write(Encoding.UTF8.GetBytes(footer), 0, Encoding.UTF8.GetByteCount(footer));
+            }
+            else
+            {
+                foreach (var param in postParameters)
+                {
+                    
+                    if (param.Value is FileInfo)
+                    {
+                        var fileInfo = (FileInfo)param.Value;
 
-          // Dump the Stream into a byte[]
-          formDataStream.Position = 0;
-          byte[] formData = new byte[formDataStream.Length];
-          formDataStream.Read(formData, 0, formData.Length);
-          formDataStream.Close();
+                        // Write the file data directly to the Stream, rather than serializing it to a string.
+                        formDataStream.Write(fileInfo.file, 0, fileInfo.file.Length);
+                    }
+                    else
+                    {
+                        string postData;
+                        if (!(param.Value is string))
+                        {
+                            postData = serialize(param.Value);
+                        }
+                        else
+                        {
+                            postData = (string)param.Value;
+                        }
 
-          return formData;
-      }
+                        formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
+                    }
+                }
+            }
+
+            // Dump the Stream into a byte[]
+            formDataStream.Position = 0;
+            byte[] formData = new byte[formDataStream.Length];
+            formDataStream.Read(formData, 0, formData.Length);
+            formDataStream.Close();
+
+            return formData;
+        }
+
         /**
          * Overloaded method for returning the path value
          * For a string value an empty value is returned if the value is null
