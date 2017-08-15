@@ -1390,23 +1390,7 @@ namespace WordsTest
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ReplaceTextResponse(), actual.GetType());             
         }
-
-        /// <summary>
-        ///A test for PostRunTask
-        ///</summary>
-        [TestMethod()]
-        public void TestPostRunTask()
-        {
-            throw new NotImplementedException();
-            ////string name = "test_multi_pages.docx";
-            ////byte[] file = System.IO.File.ReadAllBytes(Common.GetDataDir() + name);
-            ////Com.Aspose.Words.Model.ResponseMessage actual;
-            ////actual = target.PostRunTask(file);
-
-            ////Assert.AreEqual(actual, null);
-            //Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType());             
-        }
-
+        
         /// <summary>
         ///A test for PostSplitDocument
         ///</summary>
