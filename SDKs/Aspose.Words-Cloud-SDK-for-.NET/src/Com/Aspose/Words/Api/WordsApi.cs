@@ -40,114 +40,6 @@ namespace Com.Aspose.Words.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="storage">File storage, which have to be used.</param> 
-        /// <param name="folder">Original document folder.</param> 
-        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
-        /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <returns>DocumentResponse</returns>            
-        public DocumentResponse GetDocument (string name, string storage = null, string folder = null, string loadEncoding = null, string password = null)
-        {
-            // create path and map variables
-            var ResourcePath = "/v{version}/words/{name}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
-            ResourcePath = Regex
-                        .Replace(ResourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-
-            // query params
-            var queryParams = new Dictionary<string, string>();
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;
-            
-            
-            // verify the required parameter 'name' is set
-            if (name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocument");
-            }
-            
-            
-            if (name == null || string.IsNullOrEmpty(name.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
-            }
-            
-            
-            if (storage == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "storage" + "]", apiInvoker.ToPathValue(storage));
-            }
-            
-            if (folder == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "folder" + "]", apiInvoker.ToPathValue(folder));
-            }
-            
-            if (loadEncoding == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "loadEncoding" + "]", apiInvoker.ToPathValue(loadEncoding));
-            }
-            
-            if (password == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
-            }
-            
-                      
-            
-             
-            try 
-            {                
-                if(typeof(DocumentResponse) == typeof(Stream)) 
-                {
-                    return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as DocumentResponse;
-                }
-               
-                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                if(response != null)
-                {
-                    return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
-        }
-
-        
-        /// <summary>
-        ///  
-        /// </summary>
         /// <param name="format"></param> 
         /// <param name="document">Converting document</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
@@ -761,6 +653,114 @@ namespace Com.Aspose.Words.Api
                 if(response != null)
                 {
                     return (Object)ApiInvoker.deserialize(response, typeof(Object));
+                }
+                    
+                return null;
+            } 
+            catch (ApiException ex) 
+            {
+                if (ex.ErrorCode == 404) 
+                {
+                    return null;
+                }
+                
+                throw;                
+            }
+        }
+
+        
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <param name="documentName"></param> 
+        /// <param name="storage">File storage, which have to be used.</param> 
+        /// <param name="folder">Original document folder.</param> 
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
+        /// <param name="password">Password for opening an encrypted document.</param> 
+        /// <returns>DocumentResponse</returns>            
+        public DocumentResponse GetDocument (string documentName, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        {
+            // create path and map variables
+            var ResourcePath = "/words/{documentName}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+
+            // query params
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, object>();
+            object postBody = null;
+            
+            
+            // verify the required parameter 'documentName' is set
+            if (documentName == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'documentName' when calling GetDocument");
+            }
+            
+            
+            if (documentName == null || string.IsNullOrEmpty(documentName.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "documentName" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "documentName" + "}", apiInvoker.ToPathValue(documentName));
+            }
+            
+            
+            if (storage == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "storage" + "]", apiInvoker.ToPathValue(storage));
+            }
+            
+            if (folder == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "folder" + "]", apiInvoker.ToPathValue(folder));
+            }
+            
+            if (loadEncoding == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "loadEncoding" + "]", apiInvoker.ToPathValue(loadEncoding));
+            }
+            
+            if (password == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
+            }
+            
+                      
+            
+             
+            try 
+            {                
+                if(typeof(DocumentResponse) == typeof(Stream)) 
+                {
+                    return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as DocumentResponse;
+                }
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
+                {
+                    return (DocumentResponse)ApiInvoker.deserialize(response, typeof(DocumentResponse));
                 }
                     
                 return null;

@@ -404,23 +404,17 @@ namespace WordsTest
         }
 
         /// <summary>
-        ///A test for GetDocument
-        ///</summary>
+        /// A test for GetDocument
+        /// </summary>
         [TestMethod()]
         public void TestGetDocument()
-        {
-            throw new NotImplementedException();
-            ////string name = "test_multi_pages.docx";
-            ////string storage = null;
-            ////string folder = null;
-            ////storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+        {            
+            string name = "test_multi_pages.docx";          
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
-            ////Com.Aspose.Words.Model.ResponseMessage actual;
-            ////actual = target.GetDocument(name, storage, folder);
+            var actual = target.GetDocument(name);
 
-            ////Assert.AreNotEqual(actual, "");
-            ////Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ResponseMessage(), actual.GetType()); 
-            
+            Assert.AreEqual(actual.Code, "200");            
         }
 
         /// <summary>
