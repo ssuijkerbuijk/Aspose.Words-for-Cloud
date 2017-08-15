@@ -1551,51 +1551,19 @@ namespace WordsTest
         {
             string name = "test_multi_pages.docx";
             string resultFile = "test.docx";
-            bool useAntiAliasing = false;
-            bool useHighQualityRendering = false;
-            float imageBrightness = 0F;
-            string imageColorMode = null;
-            float imageContrast = 0F;
-            string numeralFormat = null;
-            int pageCount = 0;
-            int pageIndex = 0;
-            string paperColor = null;
-            string pixelFormat = null;
-            float resolution = 0F;
-            float scale = 0F;
-            string tiffCompression = null;
-            string dmlRenderingMode = null;
-            string dmlEffectsRenderingMode = null;
-            string tiffBinarizationMethod = null;            
-            bool zipOutput = false;
+         
             TiffSaveOptionsData body = new TiffSaveOptionsData();
             body.FileName = "abc.tiff";
             body.SaveFormat = "tiff";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            Com.Aspose.Words.Model.SaveResponse actual;
-            actual = target.PutDocumentSaveAsTiff(name, body, resultFile, 
-                useAntiAliasing: useAntiAliasing, 
-                useHighQualityRendering: useHighQualityRendering, 
-                imageBrightness: imageBrightness, 
-                imageColorMode: imageColorMode, 
-                imageContrast: imageContrast, 
-                numeralFormat: numeralFormat, 
-                pageCount: pageCount,
-                pageIndex: pageIndex,
-                paperColor: paperColor, 
-                pixelFormat: pixelFormat, 
-                resolution: resolution, 
-                scale: scale, 
-                tiffCompression: tiffCompression, 
-                dmlRenderingMode: dmlRenderingMode,
-                dmlEffectsRenderingMode: dmlEffectsRenderingMode, 
-                tiffBinarizationMethod: tiffBinarizationMethod,                
-                zipOutput: zipOutput);
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));            
+            SaveResponse actual = target.PutDocumentSaveAsTiff(
+                name, 
+                body, 
+                resultFile);
 
             Assert.AreEqual(actual.Code, "200");
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaveResponse(), actual.GetType());
-
         }
 
         /// <summary>
