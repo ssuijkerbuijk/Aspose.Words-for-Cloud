@@ -37,7 +37,7 @@ namespace CSharp
             //// =====================================================
             //// =====================================================
 
-            ExecuteTemplate.Run();
+            //ExecuteTemplate.Run();
             //ExecuteTemplateUsingThirdPartyStorage.Run();
             //ExecuteWithoutRegions.Run();
             //ExecuteWithoutRegionsUsingThirdPartyStorage.Run();
@@ -87,7 +87,7 @@ namespace CSharp
 
             //AcceptAllTrackingChanges.Run();
             //AppendDocuments.Run();
-            //ConvertToAnyFormat.Run();
+            ConvertToAnyFormat.Run();
             //ConvertToImages.Run();
             //ConvertToImagesUsingThirdPartyStorage.Run();
             //ConvertToOtherFormatWithOutStorage.Run();

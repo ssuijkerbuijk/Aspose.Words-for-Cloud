@@ -104,6 +104,7 @@ namespace Com.Aspose.Words
 
             // Remove invalid symbols.
             signature = signature.TrimEnd('=');
+            //signature = signature.Replace("+", "");
             signature = HttpUtility.UrlEncode(signature);
 
             // Convert codes to upper case as they can be updated automatically.
@@ -262,6 +263,7 @@ namespace Com.Aspose.Words
                   statusCode = (int)response.StatusCode;
                   response.Close();
               }
+             
               throw new ApiException(statusCode, ex.Message);
           }
       }

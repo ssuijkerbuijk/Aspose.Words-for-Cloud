@@ -734,12 +734,16 @@
         if (file == null)
         {
             throw new ApiException(400, "missing required params");
-        }
+        }        
         if (file != null)
         {
             if (file is byte[])
             {
-                formParams.Add("file", file);
+
+                var docFile = new FileInfo();
+                docFile.file = file;
+                docFile.MimeType = "application/octet-stream";
+                formParams.Add("file", docFile);
             }
             else
             {
@@ -1135,7 +1139,7 @@
       /// <returns></returns>
       public SaaSposeResponse DeleteComment (string name, int commentIndex, string storage, string folder, string fileName) {
         // create path and map variables
-        var ResourcePath = "/words/{name}/comments/{commentIndex}/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}&amp;fileName={fileName}".Replace("{format}","json");
+        var ResourcePath = "/words/{name}/comments/{commentIndex}/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
 		ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
 
         // query params
@@ -1167,11 +1171,7 @@
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "folder" + "}", apiInvoker.ToPathValue(folder)); 
 		}
-        if (fileName == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])fileName=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "fileName" + "}", apiInvoker.ToPathValue(fileName)); 
-		}
+        
         try {
           if (typeof(SaaSposeResponse) == typeof(ResponseMessage)) {
             var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "DELETE", queryParams, null, headerParams, formParams);
@@ -1328,7 +1328,7 @@
       /// <returns></returns>
       public CommentResponse PostComment (string name, int commentIndex, string fileName, string storage, string folder, CommentDto body) {
         // create path and map variables
-        var ResourcePath = "/words/{name}/comments/{commentIndex}/?appSid={appSid}&amp;fileName={fileName}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
+        var ResourcePath = "/words/{name}/comments/{commentIndex}/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
 		ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
 
         // query params
@@ -1350,11 +1350,7 @@
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "commentIndex" + "}", apiInvoker.ToPathValue(commentIndex)); 
 		}
-        if (fileName == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])fileName=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "fileName" + "}", apiInvoker.ToPathValue(fileName)); 
-		}
+       
         if (storage == null){
 		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", "");
 		}else{
@@ -1398,7 +1394,7 @@
       /// <returns></returns>
       public CommentResponse PutComment (string name, string fileName, string storage, string folder, CommentDto body) {
         // create path and map variables
-        var ResourcePath = "/words/{name}/comments/?appSid={appSid}&amp;fileName={fileName}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
+        var ResourcePath = "/words/{name}/comments/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
 		ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
 
         // query params
@@ -1414,12 +1410,7 @@
 		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", "");
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name)); 
-		}
-        if (fileName == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])fileName=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "fileName" + "}", apiInvoker.ToPathValue(fileName)); 
-		}
+		}       
         if (storage == null){
 		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", "");
 		}else{
@@ -1720,7 +1711,7 @@
       /// <returns></returns>
       public FieldResponse GetField (string name, int sectionIndex, int paragraphIndex, int fieldIndex, string storage, string folder) {
         // create path and map variables
-        var ResourcePath = "/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/fields/{fieldIndex}/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
+        var ResourcePath = "/words/{name}/fields/{fieldIndex}/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
 		ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
 
         // query params
@@ -1737,16 +1728,7 @@
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name)); 
 		}
-        if (sectionIndex == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "sectionIndex" + "}", apiInvoker.ToPathValue(sectionIndex)); 
-		}
-        if (paragraphIndex == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])paragraphIndex=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "paragraphIndex" + "}", apiInvoker.ToPathValue(paragraphIndex)); 
-		}
+        
         if (fieldIndex == null){
 		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])fieldIndex=", "");
 		}else{
@@ -1992,7 +1974,7 @@
       /// <returns></returns>
       public FieldResponse PostField (string name, int sectionIndex, int paragraphIndex, int fieldIndex, string destFileName, string storage, string folder, FieldDto body) {
         // create path and map variables
-        var ResourcePath = "/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/fields/{fieldIndex}/?appSid={appSid}&amp;destFileName={destFileName}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
+          var ResourcePath = "/words/{name}/updateFields/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}".Replace("{format}", "json");
 		ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
 
         // query params
@@ -2001,7 +1983,7 @@
         var formParams = new Dictionary<String, object>();
 
         // verify required params are set
-        if (name == null || sectionIndex == null || paragraphIndex == null || fieldIndex == null || body == null ) {
+        if (name == null  ) {
            throw new ApiException(400, "missing required params");
         }
         if (name == null){
@@ -2009,26 +1991,8 @@
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name)); 
 		}
-        if (sectionIndex == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "sectionIndex" + "}", apiInvoker.ToPathValue(sectionIndex)); 
-		}
-        if (paragraphIndex == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])paragraphIndex=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "paragraphIndex" + "}", apiInvoker.ToPathValue(paragraphIndex)); 
-		}
-        if (fieldIndex == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])fieldIndex=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "fieldIndex" + "}", apiInvoker.ToPathValue(fieldIndex)); 
-		}
-        if (destFileName == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "destFileName" + "}", apiInvoker.ToPathValue(destFileName)); 
-		}
+      
+       
         if (storage == null){
 		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", "");
 		}else{
@@ -3103,7 +3067,7 @@
       /// <returns></returns>
       public DocumentResponse PostInsertDocumentWatermarkImage (string name, string filename, double rotationAngle, string image, string storage, string folder, byte[] file) {
         // create path and map variables
-        var ResourcePath = "/words/{name}/watermark/insertImage/?appSid={appSid}&amp;filename={filename}&amp;rotationAngle={rotationAngle}&amp;image={image}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
+        var ResourcePath = "/words/{name}/watermark/insertImage/?appSid={appSid}&amp;rotationAngle={rotationAngle}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
 		ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
 
         // query params
@@ -3120,21 +3084,17 @@
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name)); 
 		}
-        if (filename == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])filename=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "filename" + "}", apiInvoker.ToPathValue(filename)); 
-		}
+        
         if (rotationAngle == null){
 		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])rotationAngle=", "");
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "rotationAngle" + "}", apiInvoker.ToPathValue(rotationAngle)); 
 		}
-        if (image == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])image=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "image" + "}", apiInvoker.ToPathValue(image)); 
-		}
+        //if (image == null){
+        //  ResourcePath = Regex.Replace(ResourcePath, @"([&?])image=", "");
+        //}else{
+        //  ResourcePath = ResourcePath.Replace("{" + "image" + "}", apiInvoker.ToPathValue(image)); 
+        //}
         if (storage == null){
 		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", "");
 		}else{
@@ -3590,7 +3550,7 @@
       /// <returns></returns>
       public SaaSposeResponse DeleteFormField (string name, int sectionIndex, int paragraphIndex, int formfieldIndex, string destFileName, string storage, string folder) {
         // create path and map variables
-        var ResourcePath = "/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/formfields/{formfieldIndex}/?appSid={appSid}&amp;destFileName={destFileName}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
+        var ResourcePath = "/words/{name}/formfields/{formfieldIndex}/?appSid={appSid}&amp;destFileName={destFileName}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
 		ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
 
         // query params
@@ -3606,17 +3566,7 @@
 		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", "");
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name)); 
-		}
-        if (sectionIndex == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "sectionIndex" + "}", apiInvoker.ToPathValue(sectionIndex)); 
-		}
-        if (paragraphIndex == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])paragraphIndex=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "paragraphIndex" + "}", apiInvoker.ToPathValue(paragraphIndex)); 
-		}
+		}        
         if (formfieldIndex == null){
 		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])formfieldIndex=", "");
 		}else{
@@ -3777,7 +3727,7 @@
       /// <returns></returns>
       public FormFieldResponse GetFormField (string name, int sectionIndex, int paragraphIndex, int formfieldIndex, string storage, string folder) {
         // create path and map variables
-        var ResourcePath = "/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/formfields/{formfieldIndex}/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
+        var ResourcePath = "/words/{name}/formfields/{formfieldIndex}/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
 		ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
 
         // query params
@@ -3794,16 +3744,7 @@
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name)); 
 		}
-        if (sectionIndex == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "sectionIndex" + "}", apiInvoker.ToPathValue(sectionIndex)); 
-		}
-        if (paragraphIndex == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])paragraphIndex=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "paragraphIndex" + "}", apiInvoker.ToPathValue(paragraphIndex)); 
-		}
+       
         if (formfieldIndex == null){
 		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])formfieldIndex=", "");
 		}else{
@@ -3855,7 +3796,7 @@
       /// <returns></returns>
       public FormFieldResponse PostFormField (string name, int sectionIndex, int paragraphIndex, int formfieldIndex, string destFileName, string storage, string folder, FormField body) {
         // create path and map variables
-        var ResourcePath = "/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/formfields/{formfieldIndex}/?appSid={appSid}&amp;destFileName={destFileName}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
+        var ResourcePath = "/words/{name}/formfields/{formfieldIndex}/?appSid={appSid}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
 		ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
 
         // query params
@@ -3864,7 +3805,7 @@
         var formParams = new Dictionary<String, object>();
 
         // verify required params are set
-        if (name == null || sectionIndex == null || paragraphIndex == null || formfieldIndex == null || body == null ) {
+        if (name == null || formfieldIndex == null || body == null ) {
            throw new ApiException(400, "missing required params");
         }
         if (name == null){
@@ -3872,26 +3813,13 @@
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name)); 
 		}
-        if (sectionIndex == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "sectionIndex" + "}", apiInvoker.ToPathValue(sectionIndex)); 
-		}
-        if (paragraphIndex == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])paragraphIndex=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "paragraphIndex" + "}", apiInvoker.ToPathValue(paragraphIndex)); 
-		}
+        
         if (formfieldIndex == null){
 		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])formfieldIndex=", "");
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "formfieldIndex" + "}", apiInvoker.ToPathValue(formfieldIndex)); 
 		}
-        if (destFileName == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "destFileName" + "}", apiInvoker.ToPathValue(destFileName)); 
-		}
+        
         if (storage == null){
 		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", "");
 		}else{
@@ -3938,7 +3866,7 @@
       /// <returns></returns>
       public FormFieldResponse PutFormField (string name, int sectionIndex, int paragraphIndex, string insertBeforeNode, string destFileName, string storage, string folder, FormField body) {
         // create path and map variables
-        var ResourcePath = "/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/formfields/?appSid={appSid}&amp;insertBeforeNode={insertBeforeNode}&amp;destFileName={destFileName}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
+          var ResourcePath = "/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/formfields/?appSid={appSid}&amp;paragraphIndex={paragraphIndex}&amp;sectionIndex={sectionIndex}&amp;insertBeforeNode={insertBeforeNode}&amp;storage={storage}&amp;folder={folder}".Replace("{format}", "json");
 		ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
 
         // query params
@@ -3947,34 +3875,36 @@
         var formParams = new Dictionary<String, object>();
 
         // verify required params are set
-        if (name == null || sectionIndex == null || paragraphIndex == null || body == null ) {
+        if (name == null ||  body == null ) {
            throw new ApiException(400, "missing required params");
         }
         if (name == null){
 		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])name=", "");
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name)); 
-		}
-        if (sectionIndex == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "sectionIndex" + "}", apiInvoker.ToPathValue(sectionIndex)); 
-		}
-        if (paragraphIndex == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])paragraphIndex=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "paragraphIndex" + "}", apiInvoker.ToPathValue(paragraphIndex)); 
-		}
+		}        
         if (insertBeforeNode == null){
 		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])insertBeforeNode=", "");
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "insertBeforeNode" + "}", apiInvoker.ToPathValue(insertBeforeNode)); 
 		}
-        if (destFileName == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "destFileName" + "}", apiInvoker.ToPathValue(destFileName)); 
-		}
+
+        if (sectionIndex == null)
+        {
+            ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=", "");
+        }
+        else
+        {
+            ResourcePath = ResourcePath.Replace("{" + "sectionIndex" + "}", apiInvoker.ToPathValue(sectionIndex));
+        }
+        if (paragraphIndex == null)
+        {
+            ResourcePath = Regex.Replace(ResourcePath, @"([&?])paragraphIndex=", "");
+        }
+        else
+        {
+            ResourcePath = ResourcePath.Replace("{" + "paragraphIndex" + "}", apiInvoker.ToPathValue(paragraphIndex));
+        }
         if (storage == null){
 		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", "");
 		}else{
@@ -4388,19 +4318,23 @@
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "useWholeParagraphAsRegion" + "}", apiInvoker.ToPathValue(useWholeParagraphAsRegion)); 
 		}
-        if (file != null){
-         if(file is byte[]) {
-		 
-			 var docFile = new FileInfo();
-             docFile.file = file;
-             docFile.MimeType = "application/octet-stream";
-             formParams.Add("file", docFile);
-         } else {
-           //string paramStr = (file is DateTime) ? ((DateTime)(object)file).ToString("u") : Convert.ToString(file);
-		    string paramStr = Convert.ToString(file);
-           formParams.Add("file", paramStr);
-         }
-		}
+        if (file != null)
+        {
+            if (file is byte[])
+            {
+
+                var docFile = new FileInfo();
+                docFile.file = file;
+                docFile.MimeType = "application/octet-stream";
+                formParams.Add("file", docFile);
+            }
+            else
+            {
+                //string paramStr = (file is DateTime) ? ((DateTime)(object)file).ToString("u") : Convert.ToString(file);
+                string paramStr = Convert.ToString(file);
+                formParams.Add("file", paramStr);
+            }
+        }
         try {
           if (typeof(DocumentResponse) == typeof(ResponseMessage)) {
             var response = apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "POST", queryParams, null, headerParams, formParams);
@@ -5347,7 +5281,7 @@
       /// <returns></returns>
       public DocumentResponse PostInsertWatermarkImage (string name, string filename, double rotationAngle, string image, string storage, string folder, byte[] file) {
         // create path and map variables
-        var ResourcePath = "/words/{name}/insertWatermarkImage/?appSid={appSid}&amp;filename={filename}&amp;rotationAngle={rotationAngle}&amp;image={image}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
+        var ResourcePath = "/words/{name}/insertWatermarkImage/?appSid={appSid}&amp;rotationAngle={rotationAngle}&amp;storage={storage}&amp;folder={folder}".Replace("{format}","json");
 		ResourcePath = Regex.Replace(ResourcePath, "\\*", "").Replace("&amp;", "&").Replace("/?", "?").Replace("toFormat={toFormat}", "format={format}");
 
         // query params
@@ -5364,21 +5298,13 @@
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name)); 
 		}
-        if (filename == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])filename=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "filename" + "}", apiInvoker.ToPathValue(filename)); 
-		}
+       
         if (rotationAngle == null){
 		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])rotationAngle=", "");
 		}else{
 		  ResourcePath = ResourcePath.Replace("{" + "rotationAngle" + "}", apiInvoker.ToPathValue(rotationAngle)); 
 		}
-        if (image == null){
-		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])image=", "");
-		}else{
-		  ResourcePath = ResourcePath.Replace("{" + "image" + "}", apiInvoker.ToPathValue(image)); 
-		}
+       
         if (storage == null){
 		  ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=", "");
 		}else{
