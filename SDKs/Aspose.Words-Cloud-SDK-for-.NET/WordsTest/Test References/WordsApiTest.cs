@@ -1178,40 +1178,39 @@ namespace WordsTest
         }
 
         /// <summary>
-        ///A test for PostFormField
-        ///</summary>
-        [TestMethod()]
+        /// A test for PostFormField
+        /// </summary>
+        [TestMethod]
         public void TestPostFormField()
         {
-            string name = "FormFilled.docx";
-            int sectionIndex = 0;
-            int paragraphIndex = 0;
+            // Arrange
+            string name = "FormFilled.docx";           
             int formfieldIndex = 0;
             string destFileName = "newFormFilled.docx";
-            string storage = null;
-            string folder = null;
-
-            Com.Aspose.Words.Model.FormField body = new Com.Aspose.Words.Model.FormField();
+            
+            FormFieldTextInput body = new Com.Aspose.Words.Model.FormFieldTextInput();
 
             body.Name = "FullName";
             body.Enabled = true;
             body.CalculateOnExit = true;
-            body.StatusText = "";
-
-            throw new NotImplementedException();            
-            // body.TextInputType = "Regular";
-            // body.TextInputDefault = "";
-
-
+            body.StatusText = string.Empty;
+                     
+            body.TextInputType = "Regular";
+            body.TextInputDefault = string.Empty;
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-
-            Com.Aspose.Words.Model.FormFieldResponse actual;
-            actual = target.PostFormField(name, body, "sections/0/paragraphs/0/formfields", formfieldIndex, destFileName);
             
+            // Act
+            FormFieldResponse actual = target.PostFormField(name, body, "sections/0", formfieldIndex, destFileName);
+            
+            // Assert
             Assert.AreEqual(actual.Code, "200");
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FormFieldResponse(), actual.GetType());
-            throw new NotImplementedException();
+            Assert.AreEqual("FullName", actual.FormField.Name);
+            Assert.AreEqual(true, actual.FormField.Enabled);
+
+            var formFieldTextInput = actual.FormField as FormFieldTextInput;
+            Assert.IsTrue(formFieldTextInput != null, "Incorrect type of formfield: {0} instead of {1}", actual.FormField.GetType(), typeof(FormFieldTextInput));
+            Assert.AreEqual("Regular", formFieldTextInput.TextInputType);
         }
 
         /// <summary>

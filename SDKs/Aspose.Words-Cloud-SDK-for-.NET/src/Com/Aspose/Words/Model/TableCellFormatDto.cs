@@ -5,141 +5,101 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-
-
-namespace Com.Aspose.Words.Model {
-
+namespace Com.Aspose.Words.Model 
+{
   /// <summary>
   /// 
   /// </summary>  
   public class TableCellFormatDto {
-    
     /// <summary>
     /// Gets or Sets BottomPadding
     /// </summary>    
     public double? BottomPadding { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets FitText
     /// </summary>    
     public bool? FitText { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets HorizontalMerge
     /// </summary>    
     public string HorizontalMerge { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets LeftPadding
     /// </summary>    
     public double? LeftPadding { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Orientation
     /// </summary>    
     public string Orientation { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets PreferredWidth
     /// </summary>    
     public PreferredWidthDto PreferredWidth { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets RightPadding
     /// </summary>    
     public double? RightPadding { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets TopPadding
     /// </summary>    
     public double? TopPadding { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets VerticalAlignment
     /// </summary>    
     public string VerticalAlignment { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets VerticalMerge
     /// </summary>    
     public string VerticalMerge { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Width
     /// </summary>    
     public double? Width { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets WrapText
     /// </summary>    
     public bool? WrapText { get; set; }
 
-    
     /// <summary>
     /// Gets or Sets Link
     /// </summary>    
     public WordsApiLink Link { get; set; }
 
-    
 
     /// <summary>
     /// Get the string presentation of the object
     /// </summary>
     /// <returns>String presentation of the object</returns>
-    public override string ToString()  {
+    public override string ToString()  
+    {
       var sb = new StringBuilder();
       sb.Append("class TableCellFormatDto {\n");
-      
       sb.Append("  BottomPadding: ").Append(BottomPadding).Append("\n");
-      
       sb.Append("  FitText: ").Append(FitText).Append("\n");
-      
       sb.Append("  HorizontalMerge: ").Append(HorizontalMerge).Append("\n");
-      
       sb.Append("  LeftPadding: ").Append(LeftPadding).Append("\n");
-      
       sb.Append("  Orientation: ").Append(Orientation).Append("\n");
-      
       sb.Append("  PreferredWidth: ").Append(PreferredWidth).Append("\n");
-      
       sb.Append("  RightPadding: ").Append(RightPadding).Append("\n");
-      
       sb.Append("  TopPadding: ").Append(TopPadding).Append("\n");
-      
       sb.Append("  VerticalAlignment: ").Append(VerticalAlignment).Append("\n");
-      
       sb.Append("  VerticalMerge: ").Append(VerticalMerge).Append("\n");
-      
       sb.Append("  Width: ").Append(Width).Append("\n");
-      
       sb.Append("  WrapText: ").Append(WrapText).Append("\n");
-      
       sb.Append("  Link: ").Append(Link).Append("\n");
-      
       sb.Append("}\n");
       return sb.ToString();
     }
-
-    /// <summary>
-    /// Get the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public string ToJson() {
-      return JsonConvert.SerializeObject(this, Formatting.Indented);
-    }
-
-}
-
-
+  }
 }

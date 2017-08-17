@@ -75,138 +75,411 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\Com\Aspose\Words\ApiException.cs" />
-    <Compile Include="src\Com\Aspose\Words\apiInvoker.cs" />
-    <Compile Include="src\Com\Aspose\Words\Api\WordsApi.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\Bookmark.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\BookmarkData.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\BookmarkResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\Bookmarks.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\BookmarksResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\Border.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\BorderResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\BordersCollection.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\BordersResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\CommentDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\CommentResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\CommentsCollection.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\CommentsResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\CompareData.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\Document.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\DocumentEntry.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\DocumentEntryList.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\DocumentPositionDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\DocumentProperties.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\DocumentPropertiesResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\DocumentProperty.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\DocumentPropertyResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\DocumentResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\DocumentStatData.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\DrawingObjectCollectionDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\DrawingObjectDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\DrawingObjectResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\DrawingObjectsResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\FieldCollectionDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\FieldDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\FieldNames.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\FieldNamesResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\FieldResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\FieldsResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\FileLink.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\Font.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\FontResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\FootnoteCollectionDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\FootnoteDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\FootnoteResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\FootnotesResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\FootnotesStatData.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\FormField.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\FormFieldCollectionDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\FormFieldResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\FormFieldsResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\GraphicsQualityOptionsData.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\HeaderFooterDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\HeaderFooterLink.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\HeaderFooterLinkCollection.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\HeaderFooterResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\HeaderFootersResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\Hyperlink.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\HyperlinkResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\Hyperlinks.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\HyperlinksResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\Link.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\LinkElement.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\LoadWebDocumentData.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\MetafileRenderingOptionsData.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\ModificationOperationResult.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\NodeLink.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\OfficeMathObjectDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\OfficeMathObjectResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\OfficeMathObjectsCollectionDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\OfficeMathObjectsResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\PageNumber.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\PageSetup.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\PageStatData.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\ParagraphDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\ParagraphInsertDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\ParagraphLink.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\ParagraphLinkCollection.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\ParagraphLinkCollectionResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\ParagraphResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\PreferredWidthDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\ProtectionData.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\ProtectionDataResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\ProtectionRequest.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\ReplaceTextRequest.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\ReplaceTextResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\RevisionsModificationResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\Run.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\RunResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\RunsDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\RunsResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\SaaSposeResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\SaveOptionsData.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\SaveResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\SaveResult.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\SearchResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\SearchResult.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\SearchResultsCollection.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\SectionDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\SectionLink.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\SectionLinkCollection.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\SectionLinkCollectionResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\SectionPageSetupResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\SectionResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\SplitDocumentResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\SplitDocumentResult.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\StatDataResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\StoryChildNodes.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\StringFormatData.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TableCellDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TableCellFormatDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TableCellFormatResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TableCellInsertDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TableCellResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TableDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TableInsertDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TableLink.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TableLinkCollection.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TableLinkCollectionResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TablePropertiesDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TablePropertiesResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TableResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TableRowDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TableRowFormatDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TableRowFormatResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TableRowInsertDto.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TableRowResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TextItem.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TextItems.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TextItemsResponse.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\TiffSaveOptionsData.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\WatermarkText.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\WordsApiLink.cs" />
-    <Compile Include="src\Com\Aspose\Words\Model\XmlColor.cs" />
+    <Compile Include="src\Com\Aspose\Words\ApiException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\apiInvoker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Api\WordsApi.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\Bookmark.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\BookmarkData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\BookmarkResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\Bookmarks.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\BookmarksResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\Border.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\BorderResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\BordersCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\BordersResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\CommentDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\CommentResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\CommentsCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\CommentsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\CompareData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\Document.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\DocumentEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\DocumentEntryList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\DocumentPositionDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\DocumentProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\DocumentPropertiesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\DocumentProperty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\DocumentPropertyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\DocumentResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\DocumentStatData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\DrawingObjectCollectionDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\DrawingObjectDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\DrawingObjectResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\DrawingObjectsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FieldCollectionDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FieldDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FieldNames.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FieldNamesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FieldResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FieldsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FileLink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\Font.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FontResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FootnoteCollectionDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FootnoteDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FootnoteResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FootnotesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FootnotesStatData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FormField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FormFieldCheckbox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FormFieldCollectionDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FormFieldDropDown.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FormFieldResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FormFieldsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FormFieldTextInput.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\GraphicsQualityOptionsData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\HeaderFooterDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\HeaderFooterLink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\HeaderFooterLinkCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\HeaderFooterResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\HeaderFootersResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\Hyperlink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\HyperlinkResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\Hyperlinks.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\HyperlinksResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\Link.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\LinkElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\LoadWebDocumentData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\MetafileRenderingOptionsData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\ModificationOperationResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\NodeLink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\OfficeMathObjectDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\OfficeMathObjectResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\OfficeMathObjectsCollectionDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\OfficeMathObjectsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\PageNumber.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\PageSetup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\PageStatData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\ParagraphDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\ParagraphInsertDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\ParagraphLink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\ParagraphLinkCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\ParagraphLinkCollectionResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\ParagraphResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\PreferredWidthDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\ProtectionData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\ProtectionDataResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\ProtectionRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\ReplaceTextRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\ReplaceTextResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\RevisionsModificationResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\Run.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\RunResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\RunsDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\RunsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\SaaSposeResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\SaveOptionsData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\SaveResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\SaveResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\SearchResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\SearchResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\SearchResultsCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\SectionDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\SectionLink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\SectionLinkCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\SectionLinkCollectionResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\SectionPageSetupResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\SectionResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\SplitDocumentResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\SplitDocumentResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\StatDataResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\StoryChildNodes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\StringFormatData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TableCellDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TableCellFormatDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TableCellFormatResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TableCellInsertDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TableCellResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TableDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TableInsertDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TableLink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TableLinkCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TableLinkCollectionResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TablePropertiesDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TablePropertiesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TableResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TableRowDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TableRowFormatDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TableRowFormatResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TableRowInsertDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TableRowResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TextItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TextItems.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TextItemsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TiffSaveOptionsData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\WatermarkText.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\WordsApiLink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\XmlColor.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="TestFriends.cs" />
   </ItemGroup>
   <ItemGroup>
