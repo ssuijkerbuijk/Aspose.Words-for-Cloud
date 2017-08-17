@@ -4,54 +4,72 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
   /// 
   /// </summary>  
-  public class FieldDto {
-    /// <summary>
-    /// Gets or Sets Result
-    /// </summary>    
-    public string Result { get; set; }
+  public class FieldDto 
+  {           
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FieldDto" /> class.
+        /// </summary>
+        /// <param name="Result">Result.</param>
+        /// <param name="LocaleId">LocaleId.</param>
+        /// <param name="FieldCode">FieldCode.</param>
+        /// <param name="NodeId">NodeId.</param>
+        /// <param name="Link">Link.</param>
+        public FieldDto(string Result = default(string), string LocaleId = default(string), string FieldCode = default(string), string NodeId = default(string), WordsApiLink Link = default(WordsApiLink))
+        {
+                        this.Result = Result;
+                        this.LocaleId = LocaleId;
+                        this.FieldCode = FieldCode;
+                        this.NodeId = NodeId;
+                        this.Link = Link;
+        }
 
-    /// <summary>
-    /// Gets or Sets LocaleId
-    /// </summary>    
-    public string LocaleId { get; set; }
+        /// <summary>
+        /// Gets or sets Result
+        /// </summary>    
+        public string Result { get; set; }
 
-    /// <summary>
-    /// Gets or Sets FieldCode
-    /// </summary>    
-    public string FieldCode { get; set; }
+        /// <summary>
+        /// Gets or sets LocaleId
+        /// </summary>    
+        public string LocaleId { get; set; }
 
-    /// <summary>
-    /// Gets or Sets NodeId
-    /// </summary>    
-    public string NodeId { get; set; }
+        /// <summary>
+        /// Gets or sets FieldCode
+        /// </summary>    
+        public string FieldCode { get; set; }
 
-    /// <summary>
-    /// Gets or Sets Link
-    /// </summary>    
-    public WordsApiLink Link { get; set; }
+        /// <summary>
+        /// Gets or sets NodeId
+        /// </summary>    
+        public string NodeId { get; set; }
 
+        /// <summary>
+        /// Gets or sets Link
+        /// </summary>    
+        public WordsApiLink Link { get; set; }
 
-    /// <summary>
-    /// Get the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()  
-    {
-      var sb = new StringBuilder();
-      sb.Append("class FieldDto {\n");
-      sb.Append("  Result: ").Append(Result).Append("\n");
-      sb.Append("  LocaleId: ").Append(LocaleId).Append("\n");
-      sb.Append("  FieldCode: ").Append(FieldCode).Append("\n");
-      sb.Append("  NodeId: ").Append(NodeId).Append("\n");
-      sb.Append("  Link: ").Append(Link).Append("\n");
-      sb.Append("}\n");
-      return sb.ToString();
+        /// <summary>
+        /// Get the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()  
+        {
+          var sb = new StringBuilder();
+          sb.Append("class FieldDto {\n");
+          sb.Append("  Result: ").Append(Result).Append("\n");
+          sb.Append("  LocaleId: ").Append(LocaleId).Append("\n");
+          sb.Append("  FieldCode: ").Append(FieldCode).Append("\n");
+          sb.Append("  NodeId: ").Append(NodeId).Append("\n");
+          sb.Append("  Link: ").Append(Link).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
+        }
     }
-  }
 }

@@ -4,96 +4,277 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
   /// 
   /// </summary>  
-  public class DrawingObjectDto {
-    /// <summary>
-    /// Gets or Sets RenderLinks
-    /// </summary>    
-    public List<WordsApiLink> RenderLinks { get; set; }
+  public class DrawingObjectDto 
+  {           
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DrawingObjectDto" /> class.
+        /// </summary>
+        /// <param name="RenderLinks">RenderLinks.</param>
+        /// <param name="Width">Width.</param>
+        /// <param name="Height">Height.</param>
+        /// <param name="OleDataLink">OleDataLink.</param>
+        /// <param name="ImageDataLink">ImageDataLink.</param>
+        /// <param name="RelativeHorizontalPosition">RelativeHorizontalPosition.</param>
+        /// <param name="Left">Left.</param>
+        /// <param name="RelativeVerticalPosition">RelativeVerticalPosition.</param>
+        /// <param name="Top">Top.</param>
+        /// <param name="WrapType">WrapType.</param>
+        /// <param name="NodeId">NodeId.</param>
+        /// <param name="Link">Link.</param>
+        public DrawingObjectDto(List<WordsApiLink> RenderLinks = default(List<WordsApiLink>), double? Width = default(double?), double? Height = default(double?), WordsApiLink OleDataLink = default(WordsApiLink), WordsApiLink ImageDataLink = default(WordsApiLink), RelativeHorizontalPositionEnum? RelativeHorizontalPosition = default(RelativeHorizontalPositionEnum?), double? Left = default(double?), RelativeVerticalPositionEnum? RelativeVerticalPosition = default(RelativeVerticalPositionEnum?), double? Top = default(double?), WrapTypeEnum? WrapType = default(WrapTypeEnum?), string NodeId = default(string), WordsApiLink Link = default(WordsApiLink))
+        {
+                        this.RenderLinks = RenderLinks;
+                        this.Width = Width;
+                        this.Height = Height;
+                        this.OleDataLink = OleDataLink;
+                        this.ImageDataLink = ImageDataLink;
+                        this.RelativeHorizontalPosition = RelativeHorizontalPosition;
+                        this.Left = Left;
+                        this.RelativeVerticalPosition = RelativeVerticalPosition;
+                        this.Top = Top;
+                        this.WrapType = WrapType;
+                        this.NodeId = NodeId;
+                        this.Link = Link;
+        }
 
-    /// <summary>
-    /// Gets or Sets Width
-    /// </summary>    
-    public double? Width { get; set; }
+        /// <summary>
+        /// Gets or sets RelativeHorizontalPosition
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum RelativeHorizontalPositionEnum
+        {
+            
+            /// <summary>
+            /// Enum Margin for "Margin"
+            /// </summary>            
+            Margin,
+            
+            /// <summary>
+            /// Enum Page for "Page"
+            /// </summary>            
+            Page,
+            
+            /// <summary>
+            /// Enum Column for "Column"
+            /// </summary>            
+            Column,
+            
+            /// <summary>
+            /// Enum Character for "Character"
+            /// </summary>            
+            Character,
+            
+            /// <summary>
+            /// Enum LeftMargin for "LeftMargin"
+            /// </summary>            
+            LeftMargin,
+            
+            /// <summary>
+            /// Enum RightMargin for "RightMargin"
+            /// </summary>            
+            RightMargin,
+            
+            /// <summary>
+            /// Enum InsideMargin for "InsideMargin"
+            /// </summary>            
+            InsideMargin,
+            
+            /// <summary>
+            /// Enum OutsideMargin for "OutsideMargin"
+            /// </summary>            
+            OutsideMargin,
+            
+            /// <summary>
+            /// Enum Default for "Default"
+            /// </summary>            
+            Default
+        }
 
-    /// <summary>
-    /// Gets or Sets Height
-    /// </summary>    
-    public double? Height { get; set; }
+        /// <summary>
+        /// Gets or sets RelativeVerticalPosition
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum RelativeVerticalPositionEnum
+        {
+            
+            /// <summary>
+            /// Enum Margin for "Margin"
+            /// </summary>            
+            Margin,
+            
+            /// <summary>
+            /// Enum Page for "Page"
+            /// </summary>            
+            Page,
+            
+            /// <summary>
+            /// Enum Paragraph for "Paragraph"
+            /// </summary>            
+            Paragraph,
+            
+            /// <summary>
+            /// Enum Line for "Line"
+            /// </summary>            
+            Line,
+            
+            /// <summary>
+            /// Enum TopMargin for "TopMargin"
+            /// </summary>            
+            TopMargin,
+            
+            /// <summary>
+            /// Enum BottomMargin for "BottomMargin"
+            /// </summary>            
+            BottomMargin,
+            
+            /// <summary>
+            /// Enum InsideMargin for "InsideMargin"
+            /// </summary>            
+            InsideMargin,
+            
+            /// <summary>
+            /// Enum OutsideMargin for "OutsideMargin"
+            /// </summary>            
+            OutsideMargin,
+            
+            /// <summary>
+            /// Enum TableDefault for "TableDefault"
+            /// </summary>            
+            TableDefault,
+            
+            /// <summary>
+            /// Enum TextFrameDefault for "TextFrameDefault"
+            /// </summary>            
+            TextFrameDefault
+        }
 
-    /// <summary>
-    /// Gets or Sets OleDataLink
-    /// </summary>    
-    public WordsApiLink OleDataLink { get; set; }
+        /// <summary>
+        /// Gets or sets WrapType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum WrapTypeEnum
+        {
+            
+            /// <summary>
+            /// Enum None for "None"
+            /// </summary>            
+            None,
+            
+            /// <summary>
+            /// Enum Inline for "Inline"
+            /// </summary>            
+            Inline,
+            
+            /// <summary>
+            /// Enum TopBottom for "TopBottom"
+            /// </summary>            
+            TopBottom,
+            
+            /// <summary>
+            /// Enum Square for "Square"
+            /// </summary>            
+            Square,
+            
+            /// <summary>
+            /// Enum Tight for "Tight"
+            /// </summary>            
+            Tight,
+            
+            /// <summary>
+            /// Enum Through for "Through"
+            /// </summary>            
+            Through
+        }
 
-    /// <summary>
-    /// Gets or Sets ImageDataLink
-    /// </summary>    
-    public WordsApiLink ImageDataLink { get; set; }
+        /// <summary>
+        /// Gets or sets RelativeHorizontalPosition
+        /// </summary>
+        public RelativeHorizontalPositionEnum? RelativeHorizontalPosition { get; set; }
 
-    /// <summary>
-    /// Gets or Sets RelativeHorizontalPosition
-    /// </summary>    
-    public string RelativeHorizontalPosition { get; set; }
+        /// <summary>
+        /// Gets or sets RelativeVerticalPosition
+        /// </summary>
+        public RelativeVerticalPositionEnum? RelativeVerticalPosition { get; set; }
 
-    /// <summary>
-    /// Gets or Sets Left
-    /// </summary>    
-    public double? Left { get; set; }
+        /// <summary>
+        /// Gets or sets WrapType
+        /// </summary>
+        public WrapTypeEnum? WrapType { get; set; }
 
-    /// <summary>
-    /// Gets or Sets RelativeVerticalPosition
-    /// </summary>    
-    public string RelativeVerticalPosition { get; set; }
+        /// <summary>
+        /// Gets or sets RenderLinks
+        /// </summary>    
+        public List<WordsApiLink> RenderLinks { get; set; }
 
-    /// <summary>
-    /// Gets or Sets Top
-    /// </summary>    
-    public double? Top { get; set; }
+        /// <summary>
+        /// Gets or sets Width
+        /// </summary>    
+        public double? Width { get; set; }
 
-    /// <summary>
-    /// Gets or Sets WrapType
-    /// </summary>    
-    public string WrapType { get; set; }
+        /// <summary>
+        /// Gets or sets Height
+        /// </summary>    
+        public double? Height { get; set; }
 
-    /// <summary>
-    /// Gets or Sets NodeId
-    /// </summary>    
-    public string NodeId { get; set; }
+        /// <summary>
+        /// Gets or sets OleDataLink
+        /// </summary>    
+        public WordsApiLink OleDataLink { get; set; }
 
-    /// <summary>
-    /// Gets or Sets Link
-    /// </summary>    
-    public WordsApiLink Link { get; set; }
+        /// <summary>
+        /// Gets or sets ImageDataLink
+        /// </summary>    
+        public WordsApiLink ImageDataLink { get; set; }
 
+        /// <summary>
+        /// Gets or sets Left
+        /// </summary>    
+        public double? Left { get; set; }
 
-    /// <summary>
-    /// Get the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()  
-    {
-      var sb = new StringBuilder();
-      sb.Append("class DrawingObjectDto {\n");
-      sb.Append("  RenderLinks: ").Append(RenderLinks).Append("\n");
-      sb.Append("  Width: ").Append(Width).Append("\n");
-      sb.Append("  Height: ").Append(Height).Append("\n");
-      sb.Append("  OleDataLink: ").Append(OleDataLink).Append("\n");
-      sb.Append("  ImageDataLink: ").Append(ImageDataLink).Append("\n");
-      sb.Append("  RelativeHorizontalPosition: ").Append(RelativeHorizontalPosition).Append("\n");
-      sb.Append("  Left: ").Append(Left).Append("\n");
-      sb.Append("  RelativeVerticalPosition: ").Append(RelativeVerticalPosition).Append("\n");
-      sb.Append("  Top: ").Append(Top).Append("\n");
-      sb.Append("  WrapType: ").Append(WrapType).Append("\n");
-      sb.Append("  NodeId: ").Append(NodeId).Append("\n");
-      sb.Append("  Link: ").Append(Link).Append("\n");
-      sb.Append("}\n");
-      return sb.ToString();
+        /// <summary>
+        /// Gets or sets Top
+        /// </summary>    
+        public double? Top { get; set; }
+
+        /// <summary>
+        /// Gets or sets NodeId
+        /// </summary>    
+        public string NodeId { get; set; }
+
+        /// <summary>
+        /// Gets or sets Link
+        /// </summary>    
+        public WordsApiLink Link { get; set; }
+
+        /// <summary>
+        /// Get the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()  
+        {
+          var sb = new StringBuilder();
+          sb.Append("class DrawingObjectDto {\n");
+          sb.Append("  RenderLinks: ").Append(RenderLinks).Append("\n");
+          sb.Append("  Width: ").Append(Width).Append("\n");
+          sb.Append("  Height: ").Append(Height).Append("\n");
+          sb.Append("  OleDataLink: ").Append(OleDataLink).Append("\n");
+          sb.Append("  ImageDataLink: ").Append(ImageDataLink).Append("\n");
+          sb.Append("  RelativeHorizontalPosition: ").Append(RelativeHorizontalPosition).Append("\n");
+          sb.Append("  Left: ").Append(Left).Append("\n");
+          sb.Append("  RelativeVerticalPosition: ").Append(RelativeVerticalPosition).Append("\n");
+          sb.Append("  Top: ").Append(Top).Append("\n");
+          sb.Append("  WrapType: ").Append(WrapType).Append("\n");
+          sb.Append("  NodeId: ").Append(NodeId).Append("\n");
+          sb.Append("  Link: ").Append(Link).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
+        }
     }
-  }
 }

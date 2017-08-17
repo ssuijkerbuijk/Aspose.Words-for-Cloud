@@ -4,36 +4,48 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
   /// 
   /// </summary>  
-  public class TableLinkCollection {
-    /// <summary>
-    /// Gets or Sets TableLinkList
-    /// </summary>    
-    public List<TableLink> TableLinkList { get; set; }
+  public class TableLinkCollection 
+  {           
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLinkCollection" /> class.
+        /// </summary>
+        /// <param name="TableLinkList">TableLinkList.</param>
+        /// <param name="Link">Link.</param>
+        public TableLinkCollection(List<TableLink> TableLinkList = default(List<TableLink>), WordsApiLink Link = default(WordsApiLink))
+        {
+                        this.TableLinkList = TableLinkList;
+                        this.Link = Link;
+        }
 
-    /// <summary>
-    /// Gets or Sets Link
-    /// </summary>    
-    public WordsApiLink Link { get; set; }
+        /// <summary>
+        /// Gets or sets TableLinkList
+        /// </summary>    
+        public List<TableLink> TableLinkList { get; set; }
 
+        /// <summary>
+        /// Gets or sets Link
+        /// </summary>    
+        public WordsApiLink Link { get; set; }
 
-    /// <summary>
-    /// Get the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()  
-    {
-      var sb = new StringBuilder();
-      sb.Append("class TableLinkCollection {\n");
-      sb.Append("  TableLinkList: ").Append(TableLinkList).Append("\n");
-      sb.Append("  Link: ").Append(Link).Append("\n");
-      sb.Append("}\n");
-      return sb.ToString();
+        /// <summary>
+        /// Get the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()  
+        {
+          var sb = new StringBuilder();
+          sb.Append("class TableLinkCollection {\n");
+          sb.Append("  TableLinkList: ").Append(TableLinkList).Append("\n");
+          sb.Append("  Link: ").Append(Link).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
+        }
     }
-  }
 }

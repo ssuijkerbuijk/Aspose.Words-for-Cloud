@@ -1195,7 +1195,7 @@ namespace WordsTest
             body.CalculateOnExit = true;
             body.StatusText = string.Empty;
                      
-            body.TextInputType = "Regular";
+            body.TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular;
             body.TextInputDefault = string.Empty;
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
@@ -1752,8 +1752,8 @@ namespace WordsTest
             Com.Aspose.Words.Model.PageSetup body = new Com.Aspose.Words.Model.PageSetup();
             body.RtlGutter = true;
             body.LeftMargin = 10.0f;
-            body.Orientation = "Landscape";
-            body.PaperSize = "A5";
+            body.Orientation = PageSetup.OrientationEnum.Landscape;
+            body.PaperSize = PageSetup.PaperSizeEnum.A5;
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             

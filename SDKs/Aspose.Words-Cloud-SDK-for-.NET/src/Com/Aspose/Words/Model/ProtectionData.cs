@@ -4,30 +4,40 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
   /// 
   /// </summary>  
-  public class ProtectionData {
-    /// <summary>
-    /// Gets or Sets ProtectionType
-    /// </summary>    
-    public string ProtectionType { get; set; }
+  public class ProtectionData 
+  {           
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectionData" /> class.
+        /// </summary>
+        /// <param name="ProtectionType">ProtectionType.</param>
+        public ProtectionData(string ProtectionType = default(string))
+        {
+                        this.ProtectionType = ProtectionType;
+        }
 
+        /// <summary>
+        /// Gets or sets ProtectionType
+        /// </summary>    
+        public string ProtectionType { get; set; }
 
-    /// <summary>
-    /// Get the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()  
-    {
-      var sb = new StringBuilder();
-      sb.Append("class ProtectionData {\n");
-      sb.Append("  ProtectionType: ").Append(ProtectionType).Append("\n");
-      sb.Append("}\n");
-      return sb.ToString();
+        /// <summary>
+        /// Get the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()  
+        {
+          var sb = new StringBuilder();
+          sb.Append("class ProtectionData {\n");
+          sb.Append("  ProtectionType: ").Append(ProtectionType).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
+        }
     }
-  }
 }
