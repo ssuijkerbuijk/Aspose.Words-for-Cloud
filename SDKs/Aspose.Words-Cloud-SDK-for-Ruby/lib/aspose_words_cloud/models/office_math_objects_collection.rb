@@ -1,13 +1,16 @@
 module AsposeWordsCloud
   # 
-  class StoryChildNodes < BaseObject
-    attr_accessor :child_nodes
+  class OfficeMathObjectsCollection < BaseObject
+    attr_accessor :list, :link
     # attribute mapping from ruby-style variable name to JSON key
     def self.attribute_map
       {
         
         # 
-        :'child_nodes' => :'ChildNodes'
+        :'list' => :'List',
+        
+        # 
+        :'link' => :'link'
         
       }
     end
@@ -15,7 +18,8 @@ module AsposeWordsCloud
     # attribute type
     def self.swagger_types
       {
-        :'child_nodes' => :'Array<ChildNode>'
+        :'list' => :'Array<OfficeMathObject>',
+        :'link' => :'Link'
         
       }
     end
@@ -27,10 +31,14 @@ module AsposeWordsCloud
       attributes = attributes.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
 
       
-      if attributes[:'ChildNodes']
-        if (value = attributes[:'ChildNodes']).is_a?(Array)
-          self.child_nodes = value
+      if attributes[:'List']
+        if (value = attributes[:'List']).is_a?(Array)
+          self.list = value
         end
+      end
+      
+      if attributes[:'link']
+        self.link = attributes[:'link']
       end
       
     end

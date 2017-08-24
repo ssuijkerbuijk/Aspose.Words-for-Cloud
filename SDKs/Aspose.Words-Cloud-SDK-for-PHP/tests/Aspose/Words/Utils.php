@@ -7,8 +7,8 @@ use Aspose\Storage\AsposeApp;
 
 class Utils {
 	# Get App key and App SID from https://cloud.aspose.com
-	const appSID = "";
-	const apiKey = "";
+	const appSID = "App SID";
+	const apiKey = "Api Key";
 
 	public static function uploadFile($fileName) {
 		AsposeApp::$appSID = Utils::appSID;
