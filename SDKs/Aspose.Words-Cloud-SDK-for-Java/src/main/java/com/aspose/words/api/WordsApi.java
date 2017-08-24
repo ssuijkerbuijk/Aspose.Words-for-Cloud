@@ -391,7 +391,7 @@ public class WordsApi {
 		if (customFont != null)
 			resourcePath = resourcePath.replace("{" + "customFont" + "}", apiInvoker.toPathValue(customFont));
 		else
-			resourcePath = resourcePath.replaceAll("[&?]name.*?(?=&|\\?|$)", "");
+			resourcePath = resourcePath.replaceAll("[&?]customFont.*?(?=&|\\?|$)", "");
 		
 		
 		
@@ -852,7 +852,7 @@ public class WordsApi {
 			resourcePath = resourcePath.replace("{" + "outPath" + "}", apiInvoker.toPathValue(outPath));
 		else
 			resourcePath = resourcePath.replaceAll("[&?]outPath.*?(?=&|\\?|$)", "");
-		String[] contentTypes = { "multipart/form-data" };
+		String[] contentTypes = { "application/octet-stream" };
 
 		String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
 

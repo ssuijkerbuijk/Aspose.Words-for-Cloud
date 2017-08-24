@@ -27,12 +27,13 @@ public class ConvertDocumentToFormatExample {
 			String fileName = "SampleWordDocument.docx";
 
 			// set the desire output format
-			String format = "pdf";
+			String format = "html";
 			String storage = "";
 			String folder = "";
 			String outPath = "";
 			
-			Path p1=Utils.getPath(ConvertDocumentToFormatExample.class, fileName);
+			//Path p1=Utils.getPath(ConvertDocumentToFormatExample.class, fileName);
+			Path p1=Paths.get("/home/mateen/test182017.docx");
 
 			// upload file to aspose cloud storage
 			storageApi.PutCreate(fileName, "", "",p1.toFile());
@@ -42,12 +43,12 @@ public class ConvertDocumentToFormatExample {
 			
 			// invoke Aspose.Words Cloud SDK API to convert words document to
 			// required format
-			ResponseMessage apiResponse = wordsApi.GetDocumentWithFormat(fileName, format, storage, folder, outPath,"fonts");
+			ResponseMessage apiResponse = wordsApi.GetDocumentWithFormat(fileName, format, storage, folder, outPath,"");
 
 			if (apiResponse != null && apiResponse.getInputStream() != null) {
 				// save api response to file
 				InputStream responseStream = apiResponse.getInputStream();
-				final Path destination = Paths.get("SampleWordDocument.pdf");
+				final Path destination = Paths.get("test182017.html");
 				Files.copy(responseStream, destination, StandardCopyOption.REPLACE_EXISTING);
 			}
 
