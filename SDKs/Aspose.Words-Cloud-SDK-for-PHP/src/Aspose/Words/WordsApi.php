@@ -4408,4 +4408,894 @@ class WordsApi {
         return $responseObject;
     }
 
+    /**
+     * renderPage
+     *
+     * Renders page to specified format.
+     *
+     * @param string $name The document name. (required)
+     * @param int $page_index Page index. (required)
+     * @param string $format The destination format. (required)
+     * @param string $storage The document&#39;s storage. (optional)
+     * @param string $folder The document&#39;s folder. (optional)
+     * @return File
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     */
+    public function renderPage($name, $page_index, $format, $storage=null, $folder=null)
+    {
+        
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new InvalidArgumentException('Missing the required parameter $name when calling renderPage');
+        }
+        // verify the required parameter 'page_index' is set
+        if ($page_index === null) {
+            throw new InvalidArgumentException('Missing the required parameter $page_index when calling renderPage');
+        }
+        // verify the required parameter 'format' is set
+        if ($format === null) {
+            throw new InvalidArgumentException('Missing the required parameter $format when calling renderPage');
+        }
+  
+        // parse inputs
+        $resourcePath = "/words/{name}/pages/{pageIndex}/render?appSid={appSid}";
+        //$resourcePath = str_replace("{format}", "json", $resourcePath);
+        $method = "GET";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array());
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        // query params
+        if ($format !== null) {
+            $queryParams['format'] = $this->apiClient->toQueryValue($format);
+        }// query params
+        if ($storage !== null) {
+            $queryParams['storage'] = $this->apiClient->toQueryValue($storage);
+        }// query params
+        if ($folder !== null) {
+            $queryParams['folder'] = $this->apiClient->toQueryValue($folder);
+        }
+        
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                "{" . "name" . "}",
+                $this->apiClient->toPathValue($name),
+                $resourcePath
+            );
+        }// path params
+        if ($page_index !== null) {
+            $resourcePath = str_replace(
+                "{" . "pageIndex" . "}",
+                $this->apiClient->toPathValue($page_index),
+                $resourcePath
+            );
+        }
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } else if (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // make the API Call
+        $response = $this->apiClient->callApi(
+                $resourcePath, $method,
+                $queryParams, $httpBody,
+                $headerParams
+            );
+        
+        if (!$response) {
+            return null;
+        }
+  
+        return $this->apiClient->deserialize($response, 'ResponseMessage');
+    }
+
+    /**
+     * getOfficeMathObjectsForAParticularSection
+     *
+     * Read All OfficeMath objects for a particular section from a document.
+     *
+     * @param string $name The document name. (required)
+     * @param int $section_index Section&#39;s index. (required)
+     * @param int $paragraph_index Paragraph&#39;s index. (required)
+     * @param string $storage The document&#39;s storage. (optional)
+     * @param string $folder The document&#39;s folder. (optional)
+     * @return \Swagger\Client\Model\OfficeMathObjectsResponse
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     */
+    public function getOfficeMathObjectsForAParticularSection($name, $section_index, $paragraph_index, $storage=null, $folder=null)
+    {
+        
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new InvalidArgumentException('Missing the required parameter $name when calling getOfficeMathObjectsForAParticularSection');
+        }
+        // verify the required parameter 'section_index' is set
+        if ($section_index === null) {
+            throw new InvalidArgumentException('Missing the required parameter $section_index when calling getOfficeMathObjectsForAParticularSection');
+        }
+        // verify the required parameter 'paragraph_index' is set
+        if ($paragraph_index === null) {
+            throw new InvalidArgumentException('Missing the required parameter $paragraph_index when calling getOfficeMathObjectsForAParticularSection');
+        }
+  
+        // parse inputs
+        $resourcePath = "/words/{name}/sections/{sectionIndex}/paragraphs/{paragraphIndex}/OfficeMathObjects?appSid={appSid}";
+        //$resourcePath = str_replace("{format}", "json", $resourcePath);
+        $method = "GET";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = $this->apiClient->toQueryValue($storage);
+        }// query params
+        if ($folder !== null) {
+            $queryParams['folder'] = $this->apiClient->toQueryValue($folder);
+        }
+        
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                "{" . "name" . "}",
+                $this->apiClient->toPathValue($name),
+                $resourcePath
+            );
+        }// path params
+        if ($section_index !== null) {
+            $resourcePath = str_replace(
+                "{" . "sectionIndex" . "}",
+                $this->apiClient->toPathValue($section_index),
+                $resourcePath
+            );
+        }// path params
+        if ($paragraph_index !== null) {
+            $resourcePath = str_replace(
+                "{" . "paragraphIndex" . "}",
+                $this->apiClient->toPathValue($paragraph_index),
+                $resourcePath
+            );
+        }
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } else if (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+
+        // make the API Call
+        $response = $this->apiClient->callApi(
+                $resourcePath, $method,
+                $queryParams, $httpBody,
+                $headerParams
+            );
+        
+        if (!$response) {
+            return null;
+        }
+  
+        return $this->apiClient->deserialize($response, 'OfficeMathObjectsResponse');
+    }
+
+    /**
+     * getOfficeMathObjectsForAParticularParagraph
+     *
+     * Read All OfficeMath objects for a particular Paragraph from a document.
+     *
+     * @param string $name The document name. (required)
+     * @param int $paragraph_index Paragraph&#39;s index. (required)
+     * @param string $storage The document&#39;s storage. (optional)
+     * @param string $folder The document&#39;s folder. (optional)
+     * @return \Swagger\Client\Model\OfficeMathObjectsResponse
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     */
+    public function getOfficeMathObjectsForAParticularParagraph($name, $paragraph_index, $storage=null, $folder=null)
+    {
+        
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new InvalidArgumentException('Missing the required parameter $name when calling getOfficeMathObjectsForAParticularParagraph');
+        }
+        // verify the required parameter 'paragraph_index' is set
+        if ($paragraph_index === null) {
+            throw new InvalidArgumentException('Missing the required parameter $paragraph_index when calling getOfficeMathObjectsForAParticularParagraph');
+        }
+  
+        // parse inputs
+        $resourcePath = "/words/{name}/paragraphs/{paragraphIndex}/OfficeMathObjects?appSid={appSid}";
+        //$resourcePath = str_replace("{format}", "json", $resourcePath);
+        $method = "GET";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = $this->apiClient->toQueryValue($storage);
+        }// query params
+        if ($folder !== null) {
+            $queryParams['folder'] = $this->apiClient->toQueryValue($folder);
+        }
+        
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                "{" . "name" . "}",
+                $this->apiClient->toPathValue($name),
+                $resourcePath
+            );
+        }// path params
+        if ($paragraph_index !== null) {
+            $resourcePath = str_replace(
+                "{" . "paragraphIndex" . "}",
+                $this->apiClient->toPathValue($paragraph_index),
+                $resourcePath
+            );
+        }
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } else if (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+
+        // make the API Call
+        $response = $this->apiClient->callApi(
+                $resourcePath, $method,
+                $queryParams, $httpBody,
+                $headerParams
+            );
+        
+        if (!$response) {
+            return null;
+        }
+  
+        return $this->apiClient->deserialize($response, 'OfficeMathObjectsResponse');
+    }
+
+    /**
+     * getOfficeMathObjects
+     *
+     * Get OfficeMath objects from document.
+     *
+     * @param string $name The document name. (required)
+     * @param string $storage The document&#39;s storage. (optional)
+     * @param string $folder The document&#39;s folder. (optional)
+     * @return \Swagger\Client\Model\OfficeMathObjectsResponse
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     */
+    public function getOfficeMathObjects($name, $storage=null, $folder=null)
+    {
+        
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new InvalidArgumentException('Missing the required parameter $name when calling getOfficeMathObjects');
+        }
+  
+        // parse inputs
+        $resourcePath = "/words/{name}/OfficeMathObjects?appSid={appSid}";
+        //$resourcePath = str_replace("{format}", "json", $resourcePath);
+        $method = "GET";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = $this->apiClient->toQueryValue($storage);
+        }// query params
+        if ($folder !== null) {
+            $queryParams['folder'] = $this->apiClient->toQueryValue($folder);
+        }
+        
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                "{" . "name" . "}",
+                $this->apiClient->toPathValue($name),
+                $resourcePath
+            );
+        }
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } else if (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+
+        // make the API Call
+        $response = $this->apiClient->callApi(
+                $resourcePath, $method,
+                $queryParams, $httpBody,
+                $headerParams
+            );
+        
+        if (!$response) {
+            return null;
+        }
+  
+        return $this->apiClient->deserialize($response, 'OfficeMathObjectsResponse');
+    }
+
+    /**
+     * getOfficeMathObject
+     *
+     * Read OfficeMath object by index.
+     *
+     * @param string $name The document name. (required)
+     * @param int $index Object&#39;s index. (required)
+     * @param string $storage The document&#39;s storage. (optional)
+     * @param string $folder The document&#39;s folder. (optional)
+     * @return \Swagger\Client\Model\OfficeMathObjectResponse
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     */
+    public function getOfficeMathObject($name, $index, $storage=null, $folder=null)
+    {
+        
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new InvalidArgumentException('Missing the required parameter $name when calling getOfficeMathObject');
+        }
+        // verify the required parameter 'index' is set
+        if ($index === null) {
+            throw new InvalidArgumentException('Missing the required parameter $index when calling getOfficeMathObject');
+        }
+  
+        // parse inputs
+        $resourcePath = "/words/{name}/OfficeMathObjects/{index}?appSid={appSid}";
+        //$resourcePath = str_replace("{format}", "json", $resourcePath);
+        $method = "GET";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = $this->apiClient->toQueryValue($storage);
+        }// query params
+        if ($folder !== null) {
+            $queryParams['folder'] = $this->apiClient->toQueryValue($folder);
+        }
+        
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                "{" . "name" . "}",
+                $this->apiClient->toPathValue($name),
+                $resourcePath
+            );
+        }// path params
+        if ($index !== null) {
+            $resourcePath = str_replace(
+                "{" . "index" . "}",
+                $this->apiClient->toPathValue($index),
+                $resourcePath
+            );
+        }
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } else if (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+
+        // make the API Call
+        $response = $this->apiClient->callApi(
+                $resourcePath, $method,
+                $queryParams, $httpBody,
+                $headerParams
+            );
+        
+        if (!$response) {
+            return null;
+        }
+  
+        return $this->apiClient->deserialize($response, 'OfficeMathObjectResponse');
+    }
+
+    /**
+     * deleteOfficeMathObject
+     *
+     * Removes OfficeMath object from document.
+     *
+     * @param string $name The document name. (required)
+     * @param int $index Object&#39;s index. (required)
+     * @param string $storage The document&#39;s storage. (optional)
+     * @param string $folder The document&#39;s folder. (optional)
+     * @return \Swagger\Client\Model\BaseResponse
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     */
+    public function deleteOfficeMathObject($name, $index, $storage=null, $folder=null)
+    {
+        
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new InvalidArgumentException('Missing the required parameter $name when calling deleteOfficeMathObject');
+        }
+        // verify the required parameter 'index' is set
+        if ($index === null) {
+            throw new InvalidArgumentException('Missing the required parameter $index when calling deleteOfficeMathObject');
+        }
+  
+        // parse inputs
+        $resourcePath = "/words/{name}/OfficeMathObjects/{index}?appSid={appSid}";
+        //$resourcePath = str_replace("{format}", "json", $resourcePath);
+        $method = "DELETE";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = $this->apiClient->toQueryValue($storage);
+        }// query params
+        if ($folder !== null) {
+            $queryParams['folder'] = $this->apiClient->toQueryValue($folder);
+        }
+        
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                "{" . "name" . "}",
+                $this->apiClient->toPathValue($name),
+                $resourcePath
+            );
+        }// path params
+        if ($index !== null) {
+            $resourcePath = str_replace(
+                "{" . "index" . "}",
+                $this->apiClient->toPathValue($index),
+                $resourcePath
+            );
+        }
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } else if (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+
+        // make the API Call
+        $response = $this->apiClient->callApi(
+                $resourcePath, $method,
+                $queryParams, $httpBody,
+                $headerParams
+            );
+        
+        if (!$response) {
+            return null;
+        }
+  
+        return $this->apiClient->deserialize($response, 'BaseResponse');
+    }
+
+    /**
+     * getBorders
+     *
+     * Return a collection of borders.
+     *
+     * @param string $name The document name. (required)
+     * @param int $table_index Table index. (required)
+     * @param int $row_index Row index. (required)
+     * @param string $storage The document&#39;s storage. (optional)
+     * @param string $folder The document&#39;s folder. (optional)
+     * @return \Swagger\Client\Model\BordersResponse
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     */
+    public function getBorders($name, $table_index, $row_index, $storage=null, $folder=null)
+    {
+        
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new InvalidArgumentException('Missing the required parameter $name when calling getBorders');
+        }
+        // verify the required parameter 'table_index' is set
+        if ($table_index === null) {
+            throw new InvalidArgumentException('Missing the required parameter $table_index when calling getBorders');
+        }
+        // verify the required parameter 'row_index' is set
+        if ($row_index === null) {
+            throw new InvalidArgumentException('Missing the required parameter $row_index when calling getBorders');
+        }
+  
+        // parse inputs
+        $resourcePath = "/words/{name}/tables/{tableIndex}/rows/{rowIndex}/borders?appSid={appSid}";
+        //$resourcePath = str_replace("{format}", "json", $resourcePath);
+        $method = "GET";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = $this->apiClient->toQueryValue($storage);
+        }// query params
+        if ($folder !== null) {
+            $queryParams['folder'] = $this->apiClient->toQueryValue($folder);
+        }
+        
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                "{" . "name" . "}",
+                $this->apiClient->toPathValue($name),
+                $resourcePath
+            );
+        }// path params
+        if ($table_index !== null) {
+            $resourcePath = str_replace(
+                "{" . "tableIndex" . "}",
+                $this->apiClient->toPathValue($table_index),
+                $resourcePath
+            );
+        }// path params
+        if ($row_index !== null) {
+            $resourcePath = str_replace(
+                "{" . "rowIndex" . "}",
+                $this->apiClient->toPathValue($row_index),
+                $resourcePath
+            );
+        }
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } else if (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+
+        // make the API Call
+        $response = $this->apiClient->callApi(
+                $resourcePath, $method,
+                $queryParams, $httpBody,
+                $headerParams
+            );
+        
+        if (!$response) {
+            return null;
+        }
+  
+        return $this->apiClient->deserialize($response, 'BordersResponse');
+    }
+
+    /**
+     * deleteBorders
+     *
+     * Resets borders properties to default values.
+     *
+     * @param string $name The document name. (required)
+     * @param int $table_index Table index. (required)
+     * @param int $row_index Row index. (required)
+     * @param string $storage The document&#39;s storage. (optional)
+     * @param string $folder The document&#39;s folder. (optional)
+     * @return \Swagger\Client\Model\BordersResponse
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     */
+    public function deleteBorders($name, $table_index, $row_index, $storage=null, $folder=null)
+    {
+        
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new InvalidArgumentException('Missing the required parameter $name when calling deleteBorders');
+        }
+        // verify the required parameter 'table_index' is set
+        if ($table_index === null) {
+            throw new InvalidArgumentException('Missing the required parameter $table_index when calling deleteBorders');
+        }
+        // verify the required parameter 'row_index' is set
+        if ($row_index === null) {
+            throw new InvalidArgumentException('Missing the required parameter $row_index when calling deleteBorders');
+        }
+  
+        // parse inputs
+        $resourcePath = "/words/{name}/tables/{tableIndex}/rows/{rowIndex}/borders?appSid={appSid}";
+        //$resourcePath = str_replace("{format}", "json", $resourcePath);
+        $method = "DELETE";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = $this->apiClient->toQueryValue($storage);
+        }// query params
+        if ($folder !== null) {
+            $queryParams['folder'] = $this->apiClient->toQueryValue($folder);
+        }
+        
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                "{" . "name" . "}",
+                $this->apiClient->toPathValue($name),
+                $resourcePath
+            );
+        }// path params
+        if ($table_index !== null) {
+            $resourcePath = str_replace(
+                "{" . "tableIndex" . "}",
+                $this->apiClient->toPathValue($table_index),
+                $resourcePath
+            );
+        }// path params
+        if ($row_index !== null) {
+            $resourcePath = str_replace(
+                "{" . "rowIndex" . "}",
+                $this->apiClient->toPathValue($row_index),
+                $resourcePath
+            );
+        }
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } else if (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+
+        // make the API Call
+        $response = $this->apiClient->callApi(
+                $resourcePath, $method,
+                $queryParams, $httpBody,
+                $headerParams
+            );
+        
+        if (!$response) {
+            return null;
+        }
+  
+        return $this->apiClient->deserialize($response, 'BordersResponse');
+    }
+
+    /**
+     * getTable
+     *
+     * Return a table.
+     *
+     * @param string $name The document name. (required)
+     * @param int $index Object&#39;s index. (required)
+     * @param string $storage The document&#39;s storage. (optional)
+     * @param string $folder The document&#39;s folder. (optional)
+     * @return \Swagger\Client\Model\TableResponse
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     */
+    public function getTable($name, $index, $storage=null, $folder=null)
+    {
+        
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new InvalidArgumentException('Missing the required parameter $name when calling getTable');
+        }
+        // verify the required parameter 'index' is set
+        if ($index === null) {
+            throw new InvalidArgumentException('Missing the required parameter $index when calling getTable');
+        }
+  
+        // parse inputs
+        $resourcePath = "/words/{name}/tables/{index}?appSid={appSid}";
+        //$resourcePath = str_replace("{format}", "json", $resourcePath);
+        $method = "GET";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = $this->apiClient->toQueryValue($storage);
+        }// query params
+        if ($folder !== null) {
+            $queryParams['folder'] = $this->apiClient->toQueryValue($folder);
+        }
+        
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                "{" . "name" . "}",
+                $this->apiClient->toPathValue($name),
+                $resourcePath
+            );
+        }// path params
+        if ($index !== null) {
+            $resourcePath = str_replace(
+                "{" . "index" . "}",
+                $this->apiClient->toPathValue($index),
+                $resourcePath
+            );
+        }
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } else if (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+
+        // make the API Call
+        $response = $this->apiClient->callApi(
+                $resourcePath, $method,
+                $queryParams, $httpBody,
+                $headerParams
+            );
+        
+        if (!$response) {
+            return null;
+        }
+  
+        return $this->apiClient->deserialize($response, 'TableResponse');
+    }
+
+    /**
+     * deleteTable
+     *
+     * Delete a table.
+     *
+     * @param string $name The document name. (required)
+     * @param int $index Object&#39;s index. (required)
+     * @param string $storage The document&#39;s storage. (optional)
+     * @param string $folder The document&#39;s folder. (optional)
+     * @return \Swagger\Client\Model\BaseResponse
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     */
+    public function deleteTable($name, $index, $storage=null, $folder=null)
+    {
+        
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new InvalidArgumentException('Missing the required parameter $name when calling deleteTable');
+        }
+        // verify the required parameter 'index' is set
+        if ($index === null) {
+            throw new InvalidArgumentException('Missing the required parameter $index when calling deleteTable');
+        }
+  
+        // parse inputs
+        $resourcePath = "/words/{name}/tables/{index}?appSid={appSid}";
+        //$resourcePath = str_replace("{format}", "json", $resourcePath);
+        $method = "DELETE";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = $this->apiClient->toQueryValue($storage);
+        }// query params
+        if ($folder !== null) {
+            $queryParams['folder'] = $this->apiClient->toQueryValue($folder);
+        }
+        
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                "{" . "name" . "}",
+                $this->apiClient->toPathValue($name),
+                $resourcePath
+            );
+        }// path params
+        if ($index !== null) {
+            $resourcePath = str_replace(
+                "{" . "index" . "}",
+                $this->apiClient->toPathValue($index),
+                $resourcePath
+            );
+        }
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } else if (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+
+        // make the API Call
+        $response = $this->apiClient->callApi(
+                $resourcePath, $method,
+                $queryParams, $httpBody,
+                $headerParams
+            );
+        
+        if (!$response) {
+            return null;
+        }
+  
+        return $this->apiClient->deserialize($response, 'BaseResponse');
+    }
 }

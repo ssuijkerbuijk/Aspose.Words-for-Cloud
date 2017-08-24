@@ -1,13 +1,16 @@
 module AsposeWordsCloud
   # 
-  class StoryChildNodes < BaseObject
-    attr_accessor :child_nodes
+  class PreferredWidth < BaseObject
+    attr_accessor :type, :value
     # attribute mapping from ruby-style variable name to JSON key
     def self.attribute_map
       {
         
         # 
-        :'child_nodes' => :'ChildNodes'
+        :'type' => :'Type',
+        
+        # 
+        :'value' => :'Value'
         
       }
     end
@@ -15,7 +18,8 @@ module AsposeWordsCloud
     # attribute type
     def self.swagger_types
       {
-        :'child_nodes' => :'Array<ChildNode>'
+        :'type' => :'String',
+        :'value' => :'Float'
         
       }
     end
@@ -27,10 +31,12 @@ module AsposeWordsCloud
       attributes = attributes.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
 
       
-      if attributes[:'ChildNodes']
-        if (value = attributes[:'ChildNodes']).is_a?(Array)
-          self.child_nodes = value
-        end
+      if attributes[:'Type']
+        self.type = attributes[:'Type']
+      end
+      
+      if attributes[:'Value']
+        self.value = attributes[:'Value']
       end
       
     end

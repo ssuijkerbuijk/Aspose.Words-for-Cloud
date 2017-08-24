@@ -1,6 +1,6 @@
 <?php
 /**
- * Border
+ * Table
  *
  * PHP version 5
  *
@@ -35,7 +35,7 @@ namespace Aspose\Words\Models;
 
 use \ArrayAccess;
 /**
- * Border Class Doc Comment
+ * Table Class Doc Comment
  *
  * @category    Class
  * @description 
@@ -44,18 +44,17 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Border implements ArrayAccess
+class Table implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'line_style' => 'string',
-        'line_width' => 'double',
-        'color' => '\Swagger\Client\Model\Color',
-        'distance_from_text' => 'double',
-        'shadow' => 'bool'
+        'table_row_list' => '\Swagger\Client\Model\TableRow[]',
+        'table_properties' => '\Swagger\Client\Model\TableProperties',
+        'node_id' => 'string',
+        'link' => '\Swagger\Client\Model\Link'
     );
   
     /** 
@@ -63,11 +62,10 @@ class Border implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'line_style' => 'LineStyle',
-        'line_width' => 'LineWidth',
-        'color' => 'Color',
-        'distance_from_text' => 'DistanceFromText',
-        'shadow' => 'Shadow'
+        'table_row_list' => 'TableRowList',
+        'table_properties' => 'TableProperties',
+        'node_id' => 'NodeId',
+        'link' => 'link'
     );
   
     /**
@@ -75,11 +73,10 @@ class Border implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'line_style' => 'setLineStyle',
-        'line_width' => 'setLineWidth',
-        'color' => 'setColor',
-        'distance_from_text' => 'setDistanceFromText',
-        'shadow' => 'setShadow'
+        'table_row_list' => 'setTableRowList',
+        'table_properties' => 'setTableProperties',
+        'node_id' => 'setNodeId',
+        'link' => 'setLink'
     );
   
     /**
@@ -87,43 +84,36 @@ class Border implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'line_style' => 'getLineStyle',
-        'line_width' => 'getLineWidth',
-        'color' => 'getColor',
-        'distance_from_text' => 'getDistanceFromText',
-        'shadow' => 'getShadow'
+        'table_row_list' => 'getTableRowList',
+        'table_properties' => 'getTableProperties',
+        'node_id' => 'getNodeId',
+        'link' => 'getLink'
     );
   
     
     /**
-      * $line_style 
+      * $table_row_list 
+      * @var \Swagger\Client\Model\TableRow[]
+      */
+    protected $table_row_list;
+    
+    /**
+      * $table_properties 
+      * @var \Swagger\Client\Model\TableProperties
+      */
+    protected $table_properties;
+    
+    /**
+      * $node_id 
       * @var string
       */
-    protected $line_style;
+    protected $node_id;
     
     /**
-      * $line_width 
-      * @var double
+      * $link 
+      * @var \Swagger\Client\Model\Link
       */
-    protected $line_width;
-    
-    /**
-      * $color 
-      * @var \Swagger\Client\Model\Color
-      */
-    protected $color;
-    
-    /**
-      * $distance_from_text 
-      * @var double
-      */
-    protected $distance_from_text;
-    
-    /**
-      * $shadow 
-      * @var bool
-      */
-    protected $shadow;
+    protected $link;
     
 
     /**
@@ -133,119 +123,94 @@ class Border implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->line_style = $data["line_style"];
-            $this->line_width = $data["line_width"];
-            $this->color = $data["color"];
-            $this->distance_from_text = $data["distance_from_text"];
-            $this->shadow = $data["shadow"];
+            $this->table_row_list = $data["table_row_list"];
+            $this->table_properties = $data["table_properties"];
+            $this->node_id = $data["node_id"];
+            $this->link = $data["link"];
         }
     }
     
     /**
-     * Gets line_style
+     * Gets table_row_list
+     * @return \Swagger\Client\Model\TableRow[]
+     */
+    public function getTableRowList()
+    {
+        return $this->table_row_list;
+    }
+  
+    /**
+     * Sets table_row_list
+     * @param \Swagger\Client\Model\TableRow[] $table_row_list 
+     * @return $this
+     */
+    public function setTableRowList($table_row_list)
+    {
+        
+        $this->table_row_list = $table_row_list;
+        return $this;
+    }
+    
+    /**
+     * Gets table_properties
+     * @return \Swagger\Client\Model\TableProperties
+     */
+    public function getTableProperties()
+    {
+        return $this->table_properties;
+    }
+  
+    /**
+     * Sets table_properties
+     * @param \Swagger\Client\Model\TableProperties $table_properties 
+     * @return $this
+     */
+    public function setTableProperties($table_properties)
+    {
+        
+        $this->table_properties = $table_properties;
+        return $this;
+    }
+    
+    /**
+     * Gets node_id
      * @return string
      */
-    public function getLineStyle()
+    public function getNodeId()
     {
-        return $this->line_style;
+        return $this->node_id;
     }
   
     /**
-     * Sets line_style
-     * @param string $line_style 
+     * Sets node_id
+     * @param string $node_id 
      * @return $this
      */
-    public function setLineStyle($line_style)
+    public function setNodeId($node_id)
     {
-        $allowed_values = array("None", "Single", "Thick", "Double", "Hairline", "Dot", "DashLargeGap", "DotDash", "DotDotDash", "Triple", "ThinThickSmallGap", "ThickThinSmallGap", "ThinThickThinSmallGap", "ThinThickMediumGap", "ThickThinMediumGap", "ThinThickThinMediumGap", "ThinThickLargeGap", "ThickThinLargeGap", "ThinThickThinLargeGap", "Wave", "DoubleWave", "DashSmallGap", "DashDotStroker", "Emboss3D", "Engrave3D", "Outset", "Inset");
-        if (!in_array($line_style, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'line_style', must be one of 'None', 'Single', 'Thick', 'Double', 'Hairline', 'Dot', 'DashLargeGap', 'DotDash', 'DotDotDash', 'Triple', 'ThinThickSmallGap', 'ThickThinSmallGap', 'ThinThickThinSmallGap', 'ThinThickMediumGap', 'ThickThinMediumGap', 'ThinThickThinMediumGap', 'ThinThickLargeGap', 'ThickThinLargeGap', 'ThinThickThinLargeGap', 'Wave', 'DoubleWave', 'DashSmallGap', 'DashDotStroker', 'Emboss3D', 'Engrave3D', 'Outset', 'Inset'");
-        }
-        $this->line_style = $line_style;
+        
+        $this->node_id = $node_id;
         return $this;
     }
     
     /**
-     * Gets line_width
-     * @return double
+     * Gets link
+     * @return \Swagger\Client\Model\Link
      */
-    public function getLineWidth()
+    public function getLink()
     {
-        return $this->line_width;
+        return $this->link;
     }
   
     /**
-     * Sets line_width
-     * @param double $line_width 
+     * Sets link
+     * @param \Swagger\Client\Model\Link $link 
      * @return $this
      */
-    public function setLineWidth($line_width)
+    public function setLink($link)
     {
         
-        $this->line_width = $line_width;
-        return $this;
-    }
-    
-    /**
-     * Gets color
-     * @return \Swagger\Client\Model\Color
-     */
-    public function getColor()
-    {
-        return $this->color;
-    }
-  
-    /**
-     * Sets color
-     * @param \Swagger\Client\Model\Color $color 
-     * @return $this
-     */
-    public function setColor($color)
-    {
-        
-        $this->color = $color;
-        return $this;
-    }
-    
-    /**
-     * Gets distance_from_text
-     * @return double
-     */
-    public function getDistanceFromText()
-    {
-        return $this->distance_from_text;
-    }
-  
-    /**
-     * Sets distance_from_text
-     * @param double $distance_from_text 
-     * @return $this
-     */
-    public function setDistanceFromText($distance_from_text)
-    {
-        
-        $this->distance_from_text = $distance_from_text;
-        return $this;
-    }
-    
-    /**
-     * Gets shadow
-     * @return bool
-     */
-    public function getShadow()
-    {
-        return $this->shadow;
-    }
-  
-    /**
-     * Sets shadow
-     * @param bool $shadow 
-     * @return $this
-     */
-    public function setShadow($shadow)
-    {
-        
-        $this->shadow = $shadow;
+        $this->link = $link;
         return $this;
     }
     

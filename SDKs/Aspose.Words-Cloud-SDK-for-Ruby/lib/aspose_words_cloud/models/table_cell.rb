@@ -1,13 +1,19 @@
 module AsposeWordsCloud
   # 
-  class StoryChildNodes < BaseObject
-    attr_accessor :child_nodes
+  class TableCell < BaseObject
+    attr_accessor :child_nodes, :node_id, :link
     # attribute mapping from ruby-style variable name to JSON key
     def self.attribute_map
       {
         
         # 
-        :'child_nodes' => :'ChildNodes'
+        :'child_nodes' => :'ChildNodes',
+        
+        # 
+        :'node_id' => :'NodeId',
+        
+        # 
+        :'link' => :'link'
         
       }
     end
@@ -15,7 +21,9 @@ module AsposeWordsCloud
     # attribute type
     def self.swagger_types
       {
-        :'child_nodes' => :'Array<ChildNode>'
+        :'child_nodes' => :'Array<ChildNode>',
+        :'node_id' => :'String',
+        :'link' => :'Link'
         
       }
     end
@@ -31,6 +39,14 @@ module AsposeWordsCloud
         if (value = attributes[:'ChildNodes']).is_a?(Array)
           self.child_nodes = value
         end
+      end
+      
+      if attributes[:'NodeId']
+        self.node_id = attributes[:'NodeId']
+      end
+      
+      if attributes[:'link']
+        self.link = attributes[:'link']
       end
       
     end
