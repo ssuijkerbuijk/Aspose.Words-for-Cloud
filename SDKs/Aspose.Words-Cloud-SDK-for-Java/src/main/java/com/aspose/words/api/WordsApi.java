@@ -432,9 +432,7 @@ public class WordsApi {
 
 	/**
 	 * PostAppendDocument Append documents to original document.
-	 * 
-	 * @param name
-	 *            String Original document name.
+	 *
 	 * @param filename
 	 *            String Result name of the document after the operation. If
 	 *            this parameter is omitted then result of the operation will be
