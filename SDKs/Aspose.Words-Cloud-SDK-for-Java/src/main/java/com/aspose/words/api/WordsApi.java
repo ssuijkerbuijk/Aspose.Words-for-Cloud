@@ -854,11 +854,9 @@ public class WordsApi {
 
 		String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
 
-		if (contentType.startsWith("multipart/form-data")) {
-			FormDataMultiPart mp = new FormDataMultiPart();
-			mp.field("file", file, MediaType.MULTIPART_FORM_DATA_TYPE);
-			postBody = mp;
-		}
+		
+		postBody = file;
+		
 		try {
 			response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, postBody, headerParams,
 					formParams, contentType);
