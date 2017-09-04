@@ -12,16 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class ParagraphInsertDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ParagraphInsertDto" /> class.
-        /// </summary>
-        /// <param name="Text">Text.</param>
-        public ParagraphInsertDto(string Text = default(string))
-        {
-                        this.Text = Text;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Text
         /// </summary>    

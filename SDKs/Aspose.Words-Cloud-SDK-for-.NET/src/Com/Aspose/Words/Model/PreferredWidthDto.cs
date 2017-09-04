@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class PreferredWidthDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PreferredWidthDto" /> class.
-        /// </summary>
-        /// <param name="Type">Type.</param>
-        /// <param name="Value">Value.</param>
-        public PreferredWidthDto(TypeEnum? Type = default(TypeEnum?), double? Value = default(double?))
-        {
-                        this.Type = Type;
-                        this.Value = Value;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Type
         /// </summary>

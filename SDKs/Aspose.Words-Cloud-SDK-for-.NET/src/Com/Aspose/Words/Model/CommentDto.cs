@@ -12,30 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class CommentDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CommentDto" /> class.
-        /// </summary>
-        /// <param name="RangeStart">RangeStart.</param>
-        /// <param name="RangeEnd">RangeEnd.</param>
-        /// <param name="Author">Author.</param>
-        /// <param name="Initial">Initial.</param>
-        /// <param name="DateTime">DateTime.</param>
-        /// <param name="Text">Text.</param>
-        /// <param name="Content">Content.</param>
-        /// <param name="Link">Link.</param>
-        public CommentDto(DocumentPositionDto RangeStart = default(DocumentPositionDto), DocumentPositionDto RangeEnd = default(DocumentPositionDto), string Author = default(string), string Initial = default(string), DateTime? DateTime = default(DateTime?), string Text = default(string), StoryChildNodes Content = default(StoryChildNodes), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.RangeStart = RangeStart;
-                        this.RangeEnd = RangeEnd;
-                        this.Author = Author;
-                        this.Initial = Initial;
-                        this.DateTime = DateTime;
-                        this.Text = Text;
-                        this.Content = Content;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets RangeStart
         /// </summary>    

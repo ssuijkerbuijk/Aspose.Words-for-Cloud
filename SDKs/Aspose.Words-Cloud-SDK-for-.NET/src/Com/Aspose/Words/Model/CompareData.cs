@@ -12,20 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class CompareData 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CompareData" /> class.
-        /// </summary>
-        /// <param name="ComparingWithDocument">ComparingWithDocument.</param>
-        /// <param name="Author">Author.</param>
-        /// <param name="DateTime">DateTime.</param>
-        public CompareData(string ComparingWithDocument = default(string), string Author = default(string), DateTime? DateTime = default(DateTime?))
-        {
-                        this.ComparingWithDocument = ComparingWithDocument;
-                        this.Author = Author;
-                        this.DateTime = DateTime;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets ComparingWithDocument
         /// </summary>    

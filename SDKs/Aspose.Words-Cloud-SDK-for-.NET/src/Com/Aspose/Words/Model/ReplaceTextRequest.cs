@@ -12,24 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class ReplaceTextRequest 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ReplaceTextRequest" /> class.
-        /// </summary>
-        /// <param name="OldValue">OldValue.</param>
-        /// <param name="NewValue">NewValue.</param>
-        /// <param name="IsMatchCase">IsMatchCase.</param>
-        /// <param name="IsMatchWholeWord">IsMatchWholeWord.</param>
-        /// <param name="IsOldValueRegex">IsOldValueRegex.</param>
-        public ReplaceTextRequest(string OldValue = default(string), string NewValue = default(string), bool? IsMatchCase = default(bool?), bool? IsMatchWholeWord = default(bool?), bool? IsOldValueRegex = default(bool?))
-        {
-                        this.OldValue = OldValue;
-                        this.NewValue = NewValue;
-                        this.IsMatchCase = IsMatchCase;
-                        this.IsMatchWholeWord = IsMatchWholeWord;
-                        this.IsOldValueRegex = IsOldValueRegex;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets OldValue
         /// </summary>    

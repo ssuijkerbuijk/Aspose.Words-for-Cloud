@@ -12,20 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class SaveResult 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SaveResult" /> class.
-        /// </summary>
-        /// <param name="SourceDocument">SourceDocument.</param>
-        /// <param name="DestDocument">DestDocument.</param>
-        /// <param name="AdditionalItems">AdditionalItems.</param>
-        public SaveResult(FileLink SourceDocument = default(FileLink), FileLink DestDocument = default(FileLink), List<FileLink> AdditionalItems = default(List<FileLink>))
-        {
-                        this.SourceDocument = SourceDocument;
-                        this.DestDocument = DestDocument;
-                        this.AdditionalItems = AdditionalItems;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets SourceDocument
         /// </summary>    

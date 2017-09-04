@@ -12,44 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class TablePropertiesDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TablePropertiesDto" /> class.
-        /// </summary>
-        /// <param name="Alignment">Alignment.</param>
-        /// <param name="AllowAutoFit">AllowAutoFit.</param>
-        /// <param name="Bidi">Bidi.</param>
-        /// <param name="BottomPadding">BottomPadding.</param>
-        /// <param name="CellSpacing">CellSpacing.</param>
-        /// <param name="LeftIndent">LeftIndent.</param>
-        /// <param name="LeftPadding">LeftPadding.</param>
-        /// <param name="PreferredWidth">PreferredWidth.</param>
-        /// <param name="RightPadding">RightPadding.</param>
-        /// <param name="StyleIdentifier">StyleIdentifier.</param>
-        /// <param name="StyleName">StyleName.</param>
-        /// <param name="StyleOptions">StyleOptions.</param>
-        /// <param name="TextWrapping">TextWrapping.</param>
-        /// <param name="TopPadding">TopPadding.</param>
-        /// <param name="Link">Link.</param>
-        public TablePropertiesDto(AlignmentEnum? Alignment = default(AlignmentEnum?), bool? AllowAutoFit = default(bool?), bool? Bidi = default(bool?), double? BottomPadding = default(double?), double? CellSpacing = default(double?), double? LeftIndent = default(double?), double? LeftPadding = default(double?), PreferredWidthDto PreferredWidth = default(PreferredWidthDto), double? RightPadding = default(double?), StyleIdentifierEnum? StyleIdentifier = default(StyleIdentifierEnum?), string StyleName = default(string), StyleOptionsEnum? StyleOptions = default(StyleOptionsEnum?), TextWrappingEnum? TextWrapping = default(TextWrappingEnum?), double? TopPadding = default(double?), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.Alignment = Alignment;
-                        this.AllowAutoFit = AllowAutoFit;
-                        this.Bidi = Bidi;
-                        this.BottomPadding = BottomPadding;
-                        this.CellSpacing = CellSpacing;
-                        this.LeftIndent = LeftIndent;
-                        this.LeftPadding = LeftPadding;
-                        this.PreferredWidth = PreferredWidth;
-                        this.RightPadding = RightPadding;
-                        this.StyleIdentifier = StyleIdentifier;
-                        this.StyleName = StyleName;
-                        this.StyleOptions = StyleOptions;
-                        this.TextWrapping = TextWrapping;
-                        this.TopPadding = TopPadding;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Alignment
         /// </summary>

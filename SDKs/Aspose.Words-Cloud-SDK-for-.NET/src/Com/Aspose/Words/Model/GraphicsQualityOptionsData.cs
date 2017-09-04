@@ -12,26 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class GraphicsQualityOptionsData 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GraphicsQualityOptionsData" /> class.
-        /// </summary>
-        /// <param name="CompositingMode">CompositingMode.</param>
-        /// <param name="CompositingQuality">CompositingQuality.</param>
-        /// <param name="InterpolationMode">InterpolationMode.</param>
-        /// <param name="SmoothingMode">SmoothingMode.</param>
-        /// <param name="StringFormat">StringFormat.</param>
-        /// <param name="TextRenderingHint">TextRenderingHint.</param>
-        public GraphicsQualityOptionsData(CompositingModeEnum? CompositingMode = default(CompositingModeEnum?), CompositingQualityEnum? CompositingQuality = default(CompositingQualityEnum?), InterpolationModeEnum? InterpolationMode = default(InterpolationModeEnum?), SmoothingModeEnum? SmoothingMode = default(SmoothingModeEnum?), StringFormatData StringFormat = default(StringFormatData), TextRenderingHintEnum? TextRenderingHint = default(TextRenderingHintEnum?))
-        {
-                        this.CompositingMode = CompositingMode;
-                        this.CompositingQuality = CompositingQuality;
-                        this.InterpolationMode = InterpolationMode;
-                        this.SmoothingMode = SmoothingMode;
-                        this.StringFormat = StringFormat;
-                        this.TextRenderingHint = TextRenderingHint;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets CompositingMode
         /// </summary>

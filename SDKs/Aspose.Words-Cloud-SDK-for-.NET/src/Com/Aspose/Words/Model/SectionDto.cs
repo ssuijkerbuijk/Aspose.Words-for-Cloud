@@ -12,26 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class SectionDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SectionDto" /> class.
-        /// </summary>
-        /// <param name="Paragraphs">Paragraphs.</param>
-        /// <param name="PageSetup">PageSetup.</param>
-        /// <param name="HeaderFooters">HeaderFooters.</param>
-        /// <param name="Tables">Tables.</param>
-        /// <param name="ChildNodes">ChildNodes.</param>
-        /// <param name="Link">Link.</param>
-        public SectionDto(LinkElement Paragraphs = default(LinkElement), LinkElement PageSetup = default(LinkElement), LinkElement HeaderFooters = default(LinkElement), LinkElement Tables = default(LinkElement), List<Object> ChildNodes = default(List<Object>), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.Paragraphs = Paragraphs;
-                        this.PageSetup = PageSetup;
-                        this.HeaderFooters = HeaderFooters;
-                        this.Tables = Tables;
-                        this.ChildNodes = ChildNodes;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Paragraphs
         /// </summary>    

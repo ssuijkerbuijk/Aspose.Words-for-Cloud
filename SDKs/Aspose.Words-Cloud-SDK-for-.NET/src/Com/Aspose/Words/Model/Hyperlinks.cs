@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class Hyperlinks 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Hyperlinks" /> class.
-        /// </summary>
-        /// <param name="HyperlinkList">HyperlinkList.</param>
-        /// <param name="Link">Link.</param>
-        public Hyperlinks(List<Hyperlink> HyperlinkList = default(List<Hyperlink>), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.HyperlinkList = HyperlinkList;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets HyperlinkList
         /// </summary>    

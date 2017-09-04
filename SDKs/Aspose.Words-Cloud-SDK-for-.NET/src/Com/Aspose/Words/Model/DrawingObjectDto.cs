@@ -12,38 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class DrawingObjectDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DrawingObjectDto" /> class.
-        /// </summary>
-        /// <param name="RenderLinks">RenderLinks.</param>
-        /// <param name="Width">Width.</param>
-        /// <param name="Height">Height.</param>
-        /// <param name="OleDataLink">OleDataLink.</param>
-        /// <param name="ImageDataLink">ImageDataLink.</param>
-        /// <param name="RelativeHorizontalPosition">RelativeHorizontalPosition.</param>
-        /// <param name="Left">Left.</param>
-        /// <param name="RelativeVerticalPosition">RelativeVerticalPosition.</param>
-        /// <param name="Top">Top.</param>
-        /// <param name="WrapType">WrapType.</param>
-        /// <param name="NodeId">NodeId.</param>
-        /// <param name="Link">Link.</param>
-        public DrawingObjectDto(List<WordsApiLink> RenderLinks = default(List<WordsApiLink>), double? Width = default(double?), double? Height = default(double?), WordsApiLink OleDataLink = default(WordsApiLink), WordsApiLink ImageDataLink = default(WordsApiLink), RelativeHorizontalPositionEnum? RelativeHorizontalPosition = default(RelativeHorizontalPositionEnum?), double? Left = default(double?), RelativeVerticalPositionEnum? RelativeVerticalPosition = default(RelativeVerticalPositionEnum?), double? Top = default(double?), WrapTypeEnum? WrapType = default(WrapTypeEnum?), string NodeId = default(string), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.RenderLinks = RenderLinks;
-                        this.Width = Width;
-                        this.Height = Height;
-                        this.OleDataLink = OleDataLink;
-                        this.ImageDataLink = ImageDataLink;
-                        this.RelativeHorizontalPosition = RelativeHorizontalPosition;
-                        this.Left = Left;
-                        this.RelativeVerticalPosition = RelativeVerticalPosition;
-                        this.Top = Top;
-                        this.WrapType = WrapType;
-                        this.NodeId = NodeId;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets RelativeHorizontalPosition
         /// </summary>

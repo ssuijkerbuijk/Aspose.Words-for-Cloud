@@ -12,22 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class HeaderFooterDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="HeaderFooterDto" /> class.
-        /// </summary>
-        /// <param name="Paragraphs">Paragraphs.</param>
-        /// <param name="DrawingObjects">DrawingObjects.</param>
-        /// <param name="Type">Type.</param>
-        /// <param name="Link">Link.</param>
-        public HeaderFooterDto(LinkElement Paragraphs = default(LinkElement), LinkElement DrawingObjects = default(LinkElement), TypeEnum? Type = default(TypeEnum?), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.Paragraphs = Paragraphs;
-                        this.DrawingObjects = DrawingObjects;
-                        this.Type = Type;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Type
         /// </summary>

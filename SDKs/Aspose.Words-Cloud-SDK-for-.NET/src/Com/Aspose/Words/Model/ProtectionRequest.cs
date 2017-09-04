@@ -12,20 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class ProtectionRequest 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProtectionRequest" /> class.
-        /// </summary>
-        /// <param name="Password">Password.</param>
-        /// <param name="NewPassword">NewPassword.</param>
-        /// <param name="ProtectionType">ProtectionType.</param>
-        public ProtectionRequest(string Password = default(string), string NewPassword = default(string), string ProtectionType = default(string))
-        {
-                        this.Password = Password;
-                        this.NewPassword = NewPassword;
-                        this.ProtectionType = ProtectionType;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Password
         /// </summary>    

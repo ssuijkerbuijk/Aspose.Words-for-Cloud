@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class SectionLinkCollection 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SectionLinkCollection" /> class.
-        /// </summary>
-        /// <param name="SectionLinkList">SectionLinkList.</param>
-        /// <param name="Link">Link.</param>
-        public SectionLinkCollection(List<SectionLink> SectionLinkList = default(List<SectionLink>), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.SectionLinkList = SectionLinkList;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets SectionLinkList
         /// </summary>    

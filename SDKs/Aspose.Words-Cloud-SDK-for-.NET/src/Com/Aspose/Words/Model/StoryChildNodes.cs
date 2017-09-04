@@ -12,16 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class StoryChildNodes 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="StoryChildNodes" /> class.
-        /// </summary>
-        /// <param name="ChildNodes">ChildNodes.</param>
-        public StoryChildNodes(List<NodeLink> ChildNodes = default(List<NodeLink>))
-        {
-                        this.ChildNodes = ChildNodes;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets ChildNodes
         /// </summary>    

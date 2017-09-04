@@ -12,38 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class FormField 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FormField" /> class.
-        /// </summary>
-        /// <param name="NodeId">NodeId.</param>
-        /// <param name="Name">Name.</param>
-        /// <param name="Enabled">Enabled.</param>
-        /// <param name="StatusText">StatusText.</param>
-        /// <param name="OwnStatus">OwnStatus.</param>
-        /// <param name="HelpText">HelpText.</param>
-        /// <param name="OwnHelp">OwnHelp.</param>
-        /// <param name="CalculateOnExit">CalculateOnExit.</param>
-        /// <param name="EntryMacro">EntryMacro.</param>
-        /// <param name="ExitMacro">ExitMacro.</param>
-        /// <param name="FormFieldType">FormFieldType.</param>
-        /// <param name="Link">Link.</param>
-        public FormField(string NodeId = default(string), string Name = default(string), bool? Enabled = default(bool?), string StatusText = default(string), bool? OwnStatus = default(bool?), string HelpText = default(string), bool? OwnHelp = default(bool?), bool? CalculateOnExit = default(bool?), string EntryMacro = default(string), string ExitMacro = default(string), string FormFieldType = default(string), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.NodeId = NodeId;
-                        this.Name = Name;
-                        this.Enabled = Enabled;
-                        this.StatusText = StatusText;
-                        this.OwnStatus = OwnStatus;
-                        this.HelpText = HelpText;
-                        this.OwnHelp = OwnHelp;
-                        this.CalculateOnExit = CalculateOnExit;
-                        this.EntryMacro = EntryMacro;
-                        this.ExitMacro = ExitMacro;
-                        this.FormFieldType = FormFieldType;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets NodeId
         /// </summary>    
@@ -95,11 +64,6 @@ namespace Com.Aspose.Words.Model
         public string ExitMacro { get; set; }
 
         /// <summary>
-        /// Gets or sets FormFieldType
-        /// </summary>    
-        public string FormFieldType { get; set; }
-
-        /// <summary>
         /// Gets or sets Link
         /// </summary>    
         public WordsApiLink Link { get; set; }
@@ -122,7 +86,6 @@ namespace Com.Aspose.Words.Model
           sb.Append("  CalculateOnExit: ").Append(CalculateOnExit).Append("\n");
           sb.Append("  EntryMacro: ").Append(EntryMacro).Append("\n");
           sb.Append("  ExitMacro: ").Append(ExitMacro).Append("\n");
-          sb.Append("  FormFieldType: ").Append(FormFieldType).Append("\n");
           sb.Append("  Link: ").Append(Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();

@@ -12,20 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class Hyperlink 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Hyperlink" /> class.
-        /// </summary>
-        /// <param name="DisplayText">DisplayText.</param>
-        /// <param name="Value">Value.</param>
-        /// <param name="Link">Link.</param>
-        public Hyperlink(string DisplayText = default(string), string Value = default(string), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.DisplayText = DisplayText;
-                        this.Value = Value;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets DisplayText
         /// </summary>    

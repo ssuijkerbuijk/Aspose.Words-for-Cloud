@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class CommentsCollection 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CommentsCollection" /> class.
-        /// </summary>
-        /// <param name="CommentList">CommentList.</param>
-        /// <param name="Link">Link.</param>
-        public CommentsCollection(List<CommentDto> CommentList = default(List<CommentDto>), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.CommentList = CommentList;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets CommentList
         /// </summary>    

@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class TableLink 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink" /> class.
-        /// </summary>
-        /// <param name="NodeId">NodeId.</param>
-        /// <param name="Link">Link.</param>
-        public TableLink(string NodeId = default(string), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.NodeId = NodeId;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets NodeId
         /// </summary>    

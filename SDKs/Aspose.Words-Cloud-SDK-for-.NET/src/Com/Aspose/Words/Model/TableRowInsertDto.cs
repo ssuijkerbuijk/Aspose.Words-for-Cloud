@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class TableRowInsertDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TableRowInsertDto" /> class.
-        /// </summary>
-        /// <param name="InsertAfter">InsertAfter.</param>
-        /// <param name="ColumnsCount">ColumnsCount.</param>
-        public TableRowInsertDto(int? InsertAfter = default(int?), int? ColumnsCount = default(int?))
-        {
-                        this.InsertAfter = InsertAfter;
-                        this.ColumnsCount = ColumnsCount;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets InsertAfter
         /// </summary>    

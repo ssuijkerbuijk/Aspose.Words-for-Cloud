@@ -12,16 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class TableCellInsertDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TableCellInsertDto" /> class.
-        /// </summary>
-        /// <param name="InsertAfter">InsertAfter.</param>
-        public TableCellInsertDto(int? InsertAfter = default(int?))
-        {
-                        this.InsertAfter = InsertAfter;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets InsertAfter
         /// </summary>    

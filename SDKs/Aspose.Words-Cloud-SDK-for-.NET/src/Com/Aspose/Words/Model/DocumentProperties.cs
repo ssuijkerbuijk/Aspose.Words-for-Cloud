@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class DocumentProperties 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentProperties" /> class.
-        /// </summary>
-        /// <param name="List">List.</param>
-        /// <param name="Link">Link.</param>
-        public DocumentProperties(List<DocumentProperty> List = default(List<DocumentProperty>), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.List = List;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets List
         /// </summary>    

@@ -12,26 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class OfficeMathObjectDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OfficeMathObjectDto" /> class.
-        /// </summary>
-        /// <param name="Content">Content.</param>
-        /// <param name="DisplayType">DisplayType.</param>
-        /// <param name="Justification">Justification.</param>
-        /// <param name="MathObjectType">MathObjectType.</param>
-        /// <param name="NodeId">NodeId.</param>
-        /// <param name="Link">Link.</param>
-        public OfficeMathObjectDto(StoryChildNodes Content = default(StoryChildNodes), DisplayTypeEnum? DisplayType = default(DisplayTypeEnum?), JustificationEnum? Justification = default(JustificationEnum?), MathObjectTypeEnum? MathObjectType = default(MathObjectTypeEnum?), string NodeId = default(string), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.Content = Content;
-                        this.DisplayType = DisplayType;
-                        this.Justification = Justification;
-                        this.MathObjectType = MathObjectType;
-                        this.NodeId = NodeId;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets DisplayType
         /// </summary>

@@ -12,74 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class PageSetup 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PageSetup" /> class.
-        /// </summary>
-        /// <param name="Bidi">Bidi.</param>
-        /// <param name="BorderAlwaysInFront">BorderAlwaysInFront.</param>
-        /// <param name="BorderAppliesTo">BorderAppliesTo.</param>
-        /// <param name="BorderDistanceFrom">BorderDistanceFrom.</param>
-        /// <param name="BottomMargin">BottomMargin.</param>
-        /// <param name="DifferentFirstPageHeaderFooter">DifferentFirstPageHeaderFooter.</param>
-        /// <param name="FirstPageTray">FirstPageTray.</param>
-        /// <param name="FooterDistance">FooterDistance.</param>
-        /// <param name="Gutter">Gutter.</param>
-        /// <param name="HeaderDistance">HeaderDistance.</param>
-        /// <param name="LeftMargin">LeftMargin.</param>
-        /// <param name="LineNumberCountBy">LineNumberCountBy.</param>
-        /// <param name="LineNumberDistanceFromText">LineNumberDistanceFromText.</param>
-        /// <param name="LineNumberRestartMode">LineNumberRestartMode.</param>
-        /// <param name="LineStartingNumber">LineStartingNumber.</param>
-        /// <param name="Orientation">Orientation.</param>
-        /// <param name="OtherPagesTray">OtherPagesTray.</param>
-        /// <param name="PageHeight">PageHeight.</param>
-        /// <param name="PageNumberStyle">PageNumberStyle.</param>
-        /// <param name="PageStartingNumber">PageStartingNumber.</param>
-        /// <param name="PageWidth">PageWidth.</param>
-        /// <param name="PaperSize">PaperSize.</param>
-        /// <param name="RestartPageNumbering">RestartPageNumbering.</param>
-        /// <param name="RightMargin">RightMargin.</param>
-        /// <param name="RtlGutter">RtlGutter.</param>
-        /// <param name="SectionStart">SectionStart.</param>
-        /// <param name="SuppressEndnotes">SuppressEndnotes.</param>
-        /// <param name="TopMargin">TopMargin.</param>
-        /// <param name="VerticalAlignment">VerticalAlignment.</param>
-        /// <param name="Link">Link.</param>
-        public PageSetup(bool? Bidi = default(bool?), bool? BorderAlwaysInFront = default(bool?), BorderAppliesToEnum? BorderAppliesTo = default(BorderAppliesToEnum?), BorderDistanceFromEnum? BorderDistanceFrom = default(BorderDistanceFromEnum?), double? BottomMargin = default(double?), bool? DifferentFirstPageHeaderFooter = default(bool?), int? FirstPageTray = default(int?), double? FooterDistance = default(double?), double? Gutter = default(double?), double? HeaderDistance = default(double?), double? LeftMargin = default(double?), int? LineNumberCountBy = default(int?), double? LineNumberDistanceFromText = default(double?), LineNumberRestartModeEnum? LineNumberRestartMode = default(LineNumberRestartModeEnum?), int? LineStartingNumber = default(int?), OrientationEnum? Orientation = default(OrientationEnum?), int? OtherPagesTray = default(int?), double? PageHeight = default(double?), PageNumberStyleEnum? PageNumberStyle = default(PageNumberStyleEnum?), int? PageStartingNumber = default(int?), double? PageWidth = default(double?), PaperSizeEnum? PaperSize = default(PaperSizeEnum?), bool? RestartPageNumbering = default(bool?), double? RightMargin = default(double?), bool? RtlGutter = default(bool?), SectionStartEnum? SectionStart = default(SectionStartEnum?), bool? SuppressEndnotes = default(bool?), double? TopMargin = default(double?), VerticalAlignmentEnum? VerticalAlignment = default(VerticalAlignmentEnum?), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.Bidi = Bidi;
-                        this.BorderAlwaysInFront = BorderAlwaysInFront;
-                        this.BorderAppliesTo = BorderAppliesTo;
-                        this.BorderDistanceFrom = BorderDistanceFrom;
-                        this.BottomMargin = BottomMargin;
-                        this.DifferentFirstPageHeaderFooter = DifferentFirstPageHeaderFooter;
-                        this.FirstPageTray = FirstPageTray;
-                        this.FooterDistance = FooterDistance;
-                        this.Gutter = Gutter;
-                        this.HeaderDistance = HeaderDistance;
-                        this.LeftMargin = LeftMargin;
-                        this.LineNumberCountBy = LineNumberCountBy;
-                        this.LineNumberDistanceFromText = LineNumberDistanceFromText;
-                        this.LineNumberRestartMode = LineNumberRestartMode;
-                        this.LineStartingNumber = LineStartingNumber;
-                        this.Orientation = Orientation;
-                        this.OtherPagesTray = OtherPagesTray;
-                        this.PageHeight = PageHeight;
-                        this.PageNumberStyle = PageNumberStyle;
-                        this.PageStartingNumber = PageStartingNumber;
-                        this.PageWidth = PageWidth;
-                        this.PaperSize = PaperSize;
-                        this.RestartPageNumbering = RestartPageNumbering;
-                        this.RightMargin = RightMargin;
-                        this.RtlGutter = RtlGutter;
-                        this.SectionStart = SectionStart;
-                        this.SuppressEndnotes = SuppressEndnotes;
-                        this.TopMargin = TopMargin;
-                        this.VerticalAlignment = VerticalAlignment;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets BorderAppliesTo
         /// </summary>

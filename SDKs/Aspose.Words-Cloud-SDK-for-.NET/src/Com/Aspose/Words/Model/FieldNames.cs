@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class FieldNames 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FieldNames" /> class.
-        /// </summary>
-        /// <param name="Names">Names.</param>
-        /// <param name="Link">Link.</param>
-        public FieldNames(List<string> Names = default(List<string>), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.Names = Names;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Names
         /// </summary>    

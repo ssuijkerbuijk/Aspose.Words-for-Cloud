@@ -12,24 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class FieldDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FieldDto" /> class.
-        /// </summary>
-        /// <param name="Result">Result.</param>
-        /// <param name="LocaleId">LocaleId.</param>
-        /// <param name="FieldCode">FieldCode.</param>
-        /// <param name="NodeId">NodeId.</param>
-        /// <param name="Link">Link.</param>
-        public FieldDto(string Result = default(string), string LocaleId = default(string), string FieldCode = default(string), string NodeId = default(string), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.Result = Result;
-                        this.LocaleId = LocaleId;
-                        this.FieldCode = FieldCode;
-                        this.NodeId = NodeId;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Result
         /// </summary>    

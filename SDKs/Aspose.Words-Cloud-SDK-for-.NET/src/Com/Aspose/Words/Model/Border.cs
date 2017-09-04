@@ -12,28 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class Border 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Border" /> class.
-        /// </summary>
-        /// <param name="BorderType">BorderType.</param>
-        /// <param name="Color">Color.</param>
-        /// <param name="DistanceFromText">DistanceFromText.</param>
-        /// <param name="LineStyle">LineStyle.</param>
-        /// <param name="LineWidth">LineWidth.</param>
-        /// <param name="Shadow">Shadow.</param>
-        /// <param name="Link">Link.</param>
-        public Border(BorderTypeEnum? BorderType = default(BorderTypeEnum?), XmlColor Color = default(XmlColor), double? DistanceFromText = default(double?), LineStyleEnum? LineStyle = default(LineStyleEnum?), double? LineWidth = default(double?), bool? Shadow = default(bool?), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.BorderType = BorderType;
-                        this.Color = Color;
-                        this.DistanceFromText = DistanceFromText;
-                        this.LineStyle = LineStyle;
-                        this.LineWidth = LineWidth;
-                        this.Shadow = Shadow;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets BorderType
         /// </summary>

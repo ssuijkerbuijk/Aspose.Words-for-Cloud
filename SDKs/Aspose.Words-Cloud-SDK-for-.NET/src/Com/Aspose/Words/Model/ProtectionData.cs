@@ -12,16 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class ProtectionData 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProtectionData" /> class.
-        /// </summary>
-        /// <param name="ProtectionType">ProtectionType.</param>
-        public ProtectionData(string ProtectionType = default(string))
-        {
-                        this.ProtectionType = ProtectionType;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets ProtectionType
         /// </summary>    

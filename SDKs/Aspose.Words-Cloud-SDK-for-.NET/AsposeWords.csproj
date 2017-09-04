@@ -84,6 +84,7 @@
     <Compile Include="src\Com\Aspose\Words\Api\WordsApi.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\BmpSaveOptionsData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\Bookmark.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -96,6 +97,7 @@
     <Compile Include="src\Com\Aspose\Words\Model\Bookmarks.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\BookmarksOutlineLevelData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\BookmarksResponse.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -126,6 +128,7 @@
     <Compile Include="src\Com\Aspose\Words\Model\CompareData.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\DocSaveOptionsData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\Document.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -156,6 +159,7 @@
     <Compile Include="src\Com\Aspose\Words\Model\DocumentStatData.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\DownsampleOptionsData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\DrawingObjectCollectionDto.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -168,6 +172,8 @@
     <Compile Include="src\Com\Aspose\Words\Model\DrawingObjectsResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\EmfSaveOptionsData.cs" />
+    <Compile Include="src\Com\Aspose\Words\Model\EpubSaveOptionsData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\FieldCollectionDto.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -189,6 +195,7 @@
     <Compile Include="src\Com\Aspose\Words\Model\FileLink.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\FixedPageSaveOptionsData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\Font.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -231,6 +238,7 @@
     <Compile Include="src\Com\Aspose\Words\Model\FormFieldTextInput.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\GifSaveOptionsData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\GraphicsQualityOptionsData.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -249,6 +257,8 @@
     <Compile Include="src\Com\Aspose\Words\Model\HeaderFootersResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\HtmlFixedSaveOptionsData.cs" />
+    <Compile Include="src\Com\Aspose\Words\Model\HtmlSaveOptionsData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\Hyperlink.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -261,6 +271,8 @@
     <Compile Include="src\Com\Aspose\Words\Model\HyperlinksResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\ImageSaveOptionsData.cs" />
+    <Compile Include="src\Com\Aspose\Words\Model\JpegSaveOptionsData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\Link.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -273,12 +285,14 @@
     <Compile Include="src\Com\Aspose\Words\Model\MetafileRenderingOptionsData.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\MhtmlSaveOptionsData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\ModificationOperationResult.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="src\Com\Aspose\Words\Model\NodeLink.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\OdtSaveOptionsData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\OfficeMathObjectDto.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -291,6 +305,8 @@
     <Compile Include="src\Com\Aspose\Words\Model\OfficeMathObjectsResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\OoxmlSaveOptionsData.cs" />
+    <Compile Include="src\Com\Aspose\Words\Model\OutlineOptionsData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\PageNumber.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -318,6 +334,11 @@
     <Compile Include="src\Com\Aspose\Words\Model\ParagraphResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\PclSaveOptionsData.cs" />
+    <Compile Include="src\Com\Aspose\Words\Model\PdfDigitalSignatureDetailsData.cs" />
+    <Compile Include="src\Com\Aspose\Words\Model\PdfEncryptionDetailsData.cs" />
+    <Compile Include="src\Com\Aspose\Words\Model\PdfSaveOptionsData.cs" />
+    <Compile Include="src\Com\Aspose\Words\Model\PngSaveOptionsData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\PreferredWidthDto.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -330,6 +351,8 @@
     <Compile Include="src\Com\Aspose\Words\Model\ProtectionRequest.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\ProtectionResponse.cs" />
+    <Compile Include="src\Com\Aspose\Words\Model\PsSaveOptionsData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\ReplaceTextRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -339,6 +362,7 @@
     <Compile Include="src\Com\Aspose\Words\Model\RevisionsModificationResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\RtfSaveOptionsData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\Run.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -405,6 +429,8 @@
     <Compile Include="src\Com\Aspose\Words\Model\StringFormatData.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\SvgSaveOptionsData.cs" />
+    <Compile Include="src\Com\Aspose\Words\Model\SwfSaveOptionsData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\TableCellDto.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -468,18 +494,24 @@
     <Compile Include="src\Com\Aspose\Words\Model\TextItemsResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\TextSaveOptionsData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\TiffSaveOptionsData.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="src\Com\Aspose\Words\Model\WatermarkText.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\WordMLSaveOptionsData.cs" />
+    <Compile Include="src\Com\Aspose\Words\Model\WordsApiErrorResponse.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\WordsApiLink.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\XamlFixedSaveOptionsData.cs" />
+    <Compile Include="src\Com\Aspose\Words\Model\XamlFlowSaveOptionsData.cs" />
     <Compile Include="src\Com\Aspose\Words\Model\XmlColor.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Com\Aspose\Words\Model\XpsSaveOptionsData.cs" />
     <Compile Include="TestFriends.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class HeaderFooterLink 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="HeaderFooterLink" /> class.
-        /// </summary>
-        /// <param name="Type">Type.</param>
-        /// <param name="Link">Link.</param>
-        public HeaderFooterLink(TypeEnum? Type = default(TypeEnum?), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.Type = Type;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Type
         /// </summary>

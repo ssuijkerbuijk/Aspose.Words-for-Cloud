@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class DocumentEntry 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentEntry" /> class.
-        /// </summary>
-        /// <param name="Href">Href.</param>
-        /// <param name="ImportFormatMode">ImportFormatMode.</param>
-        public DocumentEntry(string Href = default(string), string ImportFormatMode = default(string))
-        {
-                        this.Href = Href;
-                        this.ImportFormatMode = ImportFormatMode;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Href
         /// </summary>    

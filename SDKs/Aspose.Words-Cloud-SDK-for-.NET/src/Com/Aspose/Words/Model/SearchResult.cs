@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class SearchResult 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchResult" /> class.
-        /// </summary>
-        /// <param name="RangeStart">RangeStart.</param>
-        /// <param name="RangeEnd">RangeEnd.</param>
-        public SearchResult(DocumentPositionDto RangeStart = default(DocumentPositionDto), DocumentPositionDto RangeEnd = default(DocumentPositionDto))
-        {
-                        this.RangeStart = RangeStart;
-                        this.RangeEnd = RangeEnd;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets RangeStart
         /// </summary>    

@@ -9369,8 +9369,8 @@ namespace Com.Aspose.Words.Api
         ///  
         /// </summary>
         /// <param name="name"></param> 
-        /// <param name="data">Mail merge data</param> 
         /// <param name="withRegions"></param> 
+        /// <param name="data">Mail merge data</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -9380,7 +9380,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="useWholeParagraphAsRegion"></param> 
         /// <param name="destFileName"></param> 
         /// <returns>DocumentResponse</returns>            
-        public DocumentResponse PostDocumentExecuteMailMerge (string name, string data, bool? withRegions, string storage = null, string folder = null, string loadEncoding = null, string password = null, string mailMergeDataFile = null, string cleanup = null, bool? useWholeParagraphAsRegion = null, string destFileName = null)
+        public DocumentResponse PostDocumentExecuteMailMerge (string name, bool? withRegions, string data = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string mailMergeDataFile = null, string cleanup = null, bool? useWholeParagraphAsRegion = null, string destFileName = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/executeMailMerge/{withRegions}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;mailMergeDataFile=[mailMergeDataFile]&amp;cleanup=[cleanup]&amp;useWholeParagraphAsRegion=[useWholeParagraphAsRegion]&amp;destFileName=[destFileName]";
@@ -9400,12 +9400,6 @@ namespace Com.Aspose.Words.Api
             if (name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostDocumentExecuteMailMerge");
-            }
-            
-            // verify the required parameter 'data' is set
-            if (data == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'data' when calling PostDocumentExecuteMailMerge");
             }
             
             // verify the required parameter 'withRegions' is set

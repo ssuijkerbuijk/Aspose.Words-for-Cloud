@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class FormFieldCollectionDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FormFieldCollectionDto" /> class.
-        /// </summary>
-        /// <param name="List">List.</param>
-        /// <param name="Link">Link.</param>
-        public FormFieldCollectionDto(List<FormField> List = default(List<FormField>), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.List = List;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets List
         /// </summary>    

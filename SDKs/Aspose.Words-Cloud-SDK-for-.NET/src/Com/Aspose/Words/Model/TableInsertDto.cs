@@ -12,20 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class TableInsertDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TableInsertDto" /> class.
-        /// </summary>
-        /// <param name="Postion">Postion.</param>
-        /// <param name="ColumnsCount">ColumnsCount.</param>
-        /// <param name="RowsCount">RowsCount.</param>
-        public TableInsertDto(DocumentPositionDto Postion = default(DocumentPositionDto), int? ColumnsCount = default(int?), int? RowsCount = default(int?))
-        {
-                        this.Postion = Postion;
-                        this.ColumnsCount = ColumnsCount;
-                        this.RowsCount = RowsCount;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Postion
         /// </summary>    

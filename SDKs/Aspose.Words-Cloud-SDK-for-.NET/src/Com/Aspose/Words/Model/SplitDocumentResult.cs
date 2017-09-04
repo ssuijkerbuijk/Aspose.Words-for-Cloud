@@ -12,20 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class SplitDocumentResult 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SplitDocumentResult" /> class.
-        /// </summary>
-        /// <param name="SourceDocument">SourceDocument.</param>
-        /// <param name="Pages">Pages.</param>
-        /// <param name="ZippedPages">ZippedPages.</param>
-        public SplitDocumentResult(FileLink SourceDocument = default(FileLink), List<FileLink> Pages = default(List<FileLink>), FileLink ZippedPages = default(FileLink))
-        {
-                        this.SourceDocument = SourceDocument;
-                        this.Pages = Pages;
-                        this.ZippedPages = ZippedPages;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets SourceDocument
         /// </summary>    

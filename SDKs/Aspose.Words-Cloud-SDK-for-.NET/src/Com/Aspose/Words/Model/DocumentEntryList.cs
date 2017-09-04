@@ -12,16 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class DocumentEntryList 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentEntryList" /> class.
-        /// </summary>
-        /// <param name="DocumentEntries">DocumentEntries.</param>
-        public DocumentEntryList(List<DocumentEntry> DocumentEntries = default(List<DocumentEntry>))
-        {
-                        this.DocumentEntries = DocumentEntries;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets DocumentEntries
         /// </summary>    

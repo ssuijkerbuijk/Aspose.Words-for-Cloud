@@ -12,22 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class TableRowDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TableRowDto" /> class.
-        /// </summary>
-        /// <param name="TableCellList">TableCellList.</param>
-        /// <param name="RowFormat">RowFormat.</param>
-        /// <param name="NodeId">NodeId.</param>
-        /// <param name="Link">Link.</param>
-        public TableRowDto(List<TableCellDto> TableCellList = default(List<TableCellDto>), TableRowFormatDto RowFormat = default(TableRowFormatDto), string NodeId = default(string), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.TableCellList = TableCellList;
-                        this.RowFormat = RowFormat;
-                        this.NodeId = NodeId;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets TableCellList
         /// </summary>    

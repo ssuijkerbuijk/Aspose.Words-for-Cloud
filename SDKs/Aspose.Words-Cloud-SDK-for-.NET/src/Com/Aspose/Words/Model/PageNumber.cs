@@ -12,22 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class PageNumber 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PageNumber" /> class.
-        /// </summary>
-        /// <param name="Format">Format.</param>
-        /// <param name="Alignment">Alignment.</param>
-        /// <param name="IsTop">IsTop.</param>
-        /// <param name="SetPageNumberOnFirstPage">SetPageNumberOnFirstPage.</param>
-        public PageNumber(string Format = default(string), string Alignment = default(string), bool? IsTop = default(bool?), bool? SetPageNumberOnFirstPage = default(bool?))
-        {
-                        this.Format = Format;
-                        this.Alignment = Alignment;
-                        this.IsTop = IsTop;
-                        this.SetPageNumberOnFirstPage = SetPageNumberOnFirstPage;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Format
         /// </summary>    

@@ -12,24 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class TableRowFormatDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TableRowFormatDto" /> class.
-        /// </summary>
-        /// <param name="Height">Height.</param>
-        /// <param name="HeightRule">HeightRule.</param>
-        /// <param name="AllowBreakAcrossPages">AllowBreakAcrossPages.</param>
-        /// <param name="HeadingFormat">HeadingFormat.</param>
-        /// <param name="Link">Link.</param>
-        public TableRowFormatDto(double? Height = default(double?), HeightRuleEnum? HeightRule = default(HeightRuleEnum?), bool? AllowBreakAcrossPages = default(bool?), bool? HeadingFormat = default(bool?), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.Height = Height;
-                        this.HeightRule = HeightRule;
-                        this.AllowBreakAcrossPages = AllowBreakAcrossPages;
-                        this.HeadingFormat = HeadingFormat;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets HeightRule
         /// </summary>

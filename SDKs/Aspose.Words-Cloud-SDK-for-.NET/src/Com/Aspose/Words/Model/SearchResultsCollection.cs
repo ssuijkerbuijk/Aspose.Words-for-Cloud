@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class SearchResultsCollection 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchResultsCollection" /> class.
-        /// </summary>
-        /// <param name="ResultsList">ResultsList.</param>
-        /// <param name="Link">Link.</param>
-        public SearchResultsCollection(List<SearchResult> ResultsList = default(List<SearchResult>), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.ResultsList = ResultsList;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets ResultsList
         /// </summary>    

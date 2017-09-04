@@ -12,40 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class TableCellFormatDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TableCellFormatDto" /> class.
-        /// </summary>
-        /// <param name="BottomPadding">BottomPadding.</param>
-        /// <param name="FitText">FitText.</param>
-        /// <param name="HorizontalMerge">HorizontalMerge.</param>
-        /// <param name="LeftPadding">LeftPadding.</param>
-        /// <param name="Orientation">Orientation.</param>
-        /// <param name="PreferredWidth">PreferredWidth.</param>
-        /// <param name="RightPadding">RightPadding.</param>
-        /// <param name="TopPadding">TopPadding.</param>
-        /// <param name="VerticalAlignment">VerticalAlignment.</param>
-        /// <param name="VerticalMerge">VerticalMerge.</param>
-        /// <param name="Width">Width.</param>
-        /// <param name="WrapText">WrapText.</param>
-        /// <param name="Link">Link.</param>
-        public TableCellFormatDto(double? BottomPadding = default(double?), bool? FitText = default(bool?), HorizontalMergeEnum? HorizontalMerge = default(HorizontalMergeEnum?), double? LeftPadding = default(double?), OrientationEnum? Orientation = default(OrientationEnum?), PreferredWidthDto PreferredWidth = default(PreferredWidthDto), double? RightPadding = default(double?), double? TopPadding = default(double?), VerticalAlignmentEnum? VerticalAlignment = default(VerticalAlignmentEnum?), VerticalMergeEnum? VerticalMerge = default(VerticalMergeEnum?), double? Width = default(double?), bool? WrapText = default(bool?), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.BottomPadding = BottomPadding;
-                        this.FitText = FitText;
-                        this.HorizontalMerge = HorizontalMerge;
-                        this.LeftPadding = LeftPadding;
-                        this.Orientation = Orientation;
-                        this.PreferredWidth = PreferredWidth;
-                        this.RightPadding = RightPadding;
-                        this.TopPadding = TopPadding;
-                        this.VerticalAlignment = VerticalAlignment;
-                        this.VerticalMerge = VerticalMerge;
-                        this.Width = Width;
-                        this.WrapText = WrapText;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets HorizontalMerge
         /// </summary>

@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class BookmarkData 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BookmarkData" /> class.
-        /// </summary>
-        /// <param name="Name">Name.</param>
-        /// <param name="Text">Text.</param>
-        public BookmarkData(string Name = default(string), string Text = default(string))
-        {
-                        this.Name = Name;
-                        this.Text = Text;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Name
         /// </summary>    

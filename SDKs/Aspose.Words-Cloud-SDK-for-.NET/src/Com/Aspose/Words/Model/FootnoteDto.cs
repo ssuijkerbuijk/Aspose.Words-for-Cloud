@@ -12,28 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class FootnoteDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FootnoteDto" /> class.
-        /// </summary>
-        /// <param name="Position">Position.</param>
-        /// <param name="FootnoteType">FootnoteType.</param>
-        /// <param name="ReferenceMark">ReferenceMark.</param>
-        /// <param name="Text">Text.</param>
-        /// <param name="Content">Content.</param>
-        /// <param name="NodeId">NodeId.</param>
-        /// <param name="Link">Link.</param>
-        public FootnoteDto(DocumentPositionDto Position = default(DocumentPositionDto), FootnoteTypeEnum? FootnoteType = default(FootnoteTypeEnum?), string ReferenceMark = default(string), string Text = default(string), StoryChildNodes Content = default(StoryChildNodes), string NodeId = default(string), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.Position = Position;
-                        this.FootnoteType = FootnoteType;
-                        this.ReferenceMark = ReferenceMark;
-                        this.Text = Text;
-                        this.Content = Content;
-                        this.NodeId = NodeId;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets FootnoteType
         /// </summary>

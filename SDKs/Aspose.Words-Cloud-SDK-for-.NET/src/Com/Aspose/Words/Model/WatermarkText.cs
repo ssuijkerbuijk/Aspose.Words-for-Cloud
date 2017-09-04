@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class WatermarkText 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WatermarkText" /> class.
-        /// </summary>
-        /// <param name="Text">Text.</param>
-        /// <param name="RotationAngle">RotationAngle.</param>
-        public WatermarkText(string Text = default(string), double? RotationAngle = default(double?))
-        {
-                        this.Text = Text;
-                        this.RotationAngle = RotationAngle;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Text
         /// </summary>    

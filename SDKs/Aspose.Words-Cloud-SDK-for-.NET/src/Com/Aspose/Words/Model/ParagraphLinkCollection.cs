@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class ParagraphLinkCollection 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ParagraphLinkCollection" /> class.
-        /// </summary>
-        /// <param name="ParagraphLinkList">ParagraphLinkList.</param>
-        /// <param name="Link">Link.</param>
-        public ParagraphLinkCollection(List<ParagraphLink> ParagraphLinkList = default(List<ParagraphLink>), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.ParagraphLinkList = ParagraphLinkList;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets ParagraphLinkList
         /// </summary>    

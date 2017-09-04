@@ -12,20 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class MetafileRenderingOptionsData 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MetafileRenderingOptionsData" /> class.
-        /// </summary>
-        /// <param name="EmfPlusDualRenderingMode">EmfPlusDualRenderingMode.</param>
-        /// <param name="RenderingMode">RenderingMode.</param>
-        /// <param name="UseEmfEmbeddedToWmf">UseEmfEmbeddedToWmf.</param>
-        public MetafileRenderingOptionsData(string EmfPlusDualRenderingMode = default(string), string RenderingMode = default(string), bool? UseEmfEmbeddedToWmf = default(bool?))
-        {
-                        this.EmfPlusDualRenderingMode = EmfPlusDualRenderingMode;
-                        this.RenderingMode = RenderingMode;
-                        this.UseEmfEmbeddedToWmf = UseEmfEmbeddedToWmf;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets EmfPlusDualRenderingMode
         /// </summary>    

@@ -12,24 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class StringFormatData 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="StringFormatData" /> class.
-        /// </summary>
-        /// <param name="Alignment">Alignment.</param>
-        /// <param name="FormatFlags">FormatFlags.</param>
-        /// <param name="HotkeyPrefix">HotkeyPrefix.</param>
-        /// <param name="LineAlignment">LineAlignment.</param>
-        /// <param name="Trimming">Trimming.</param>
-        public StringFormatData(AlignmentEnum? Alignment = default(AlignmentEnum?), FormatFlagsEnum? FormatFlags = default(FormatFlagsEnum?), HotkeyPrefixEnum? HotkeyPrefix = default(HotkeyPrefixEnum?), LineAlignmentEnum? LineAlignment = default(LineAlignmentEnum?), TrimmingEnum? Trimming = default(TrimmingEnum?))
-        {
-                        this.Alignment = Alignment;
-                        this.FormatFlags = FormatFlags;
-                        this.HotkeyPrefix = HotkeyPrefix;
-                        this.LineAlignment = LineAlignment;
-                        this.Trimming = Trimming;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Alignment
         /// </summary>

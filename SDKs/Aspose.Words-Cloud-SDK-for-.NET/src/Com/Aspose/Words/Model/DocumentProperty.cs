@@ -12,22 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class DocumentProperty 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentProperty" /> class.
-        /// </summary>
-        /// <param name="Name">Name.</param>
-        /// <param name="Value">Value.</param>
-        /// <param name="BuiltIn">BuiltIn.</param>
-        /// <param name="Link">Link.</param>
-        public DocumentProperty(string Name = default(string), string Value = default(string), bool? BuiltIn = default(bool?), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.Name = Name;
-                        this.Value = Value;
-                        this.BuiltIn = BuiltIn;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Name
         /// </summary>    

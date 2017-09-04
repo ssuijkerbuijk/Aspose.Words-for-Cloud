@@ -93,7 +93,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.RevisionsModificationResponse actual;
             actual = target.AcceptAllRevisions(name, filename, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.RevisionsModificationResponse(), actual.GetType()); 
             
         }
@@ -111,7 +111,7 @@ namespace WordsTest
 
             Com.Aspose.Words.Model.SaaSposeResponse actual;
             actual = target.DeleteComment(name, commentIndex, fileName);
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType()); 
             
         }
@@ -129,7 +129,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.SaaSposeResponse actual;
             actual = target.DeleteFields(name, string.Empty);
             
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType()); 
             
         }
@@ -149,7 +149,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.SaaSposeResponse actual;
             actual = target.DeleteDocumentMacros(name, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType()); 
             
         }
@@ -178,7 +178,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.SaaSposeResponse actual;
             actual = target.DeleteDocumentProperty(name, propertyName, filename, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);            
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType()); 
             
         }
@@ -199,7 +199,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.DeleteDocumentWatermark(name, filename, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+            Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType()); 
             
         }
@@ -219,7 +219,7 @@ namespace WordsTest
                         
             SaaSposeResponse actual = target.DeleteFormField(name, "sections/0", formfieldIndex, destFileName);
 
-            Assert.AreEqual(actual.Code, "200");                        
+           Assert.AreEqual(200, actual.Code);                        
         }
 
         /// <summary>
@@ -240,7 +240,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.SaaSposeResponse actual;
             actual = target.DeleteField(name, "sections/0/paragraphs/0", fieldIndex,  storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType());
 
         }
@@ -258,7 +258,7 @@ namespace WordsTest
             
             SaaSposeResponse actual = target.DeleteHeadersFooters(name, "sections/0", filename);
 
-            Assert.AreEqual(actual.Code, "200");            
+           Assert.AreEqual(200, actual.Code);            
         }
 
         /// <summary>
@@ -277,7 +277,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.SaaSposeResponse actual;
             actual = target.DeleteFields(name, "paragraphs/0", storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType()); 
             
         }
@@ -298,7 +298,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.SaaSposeResponse actual;
             actual = target.DeleteFields(name, "sections/0", storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType());             
         }
         /// <summary>
@@ -338,7 +338,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.SaaSposeResponse actual;
             actual = target.DeleteFields(name, "sections/0/paragraphs/0", storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType());             
         }
 
@@ -357,7 +357,7 @@ namespace WordsTest
                         
             ProtectionDataResponse actual = target.DeleteUnprotectDocument(name, body);
             
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ProtectionDataResponse(), actual.GetType()); 
             
         }
@@ -378,7 +378,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.CommentResponse actual;
             actual = target.GetComment(name, commentIndex, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.CommentResponse(), actual.GetType()); 
             
         }
@@ -398,7 +398,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.CommentsResponse actual;
             actual = target.GetComments(name, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.CommentsResponse(), actual.GetType()); 
             
         }
@@ -414,7 +414,7 @@ namespace WordsTest
             
             var actual = target.GetDocument(name);
 
-            Assert.AreEqual(actual.Code, "200");            
+           Assert.AreEqual(200, actual.Code);            
         }
 
         /// <summary>
@@ -432,7 +432,7 @@ namespace WordsTest
             
             Com.Aspose.Words.Model.BookmarkResponse actual;
             actual = target.GetDocumentBookmarkByName(name, bookmarkName, storage, folder);
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.BookmarkResponse(), actual.GetType()); 
             
         }
@@ -451,7 +451,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.BookmarksResponse actual;
             actual = target.GetDocumentBookmarks(name, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.BookmarksResponse(), actual.GetType());              
         }
 
@@ -470,7 +470,7 @@ namespace WordsTest
             
             DrawingObjectResponse actual = target.GetDocumentDrawingObjectByIndex(name, "sections/0", objectIndex, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");                        
+           Assert.AreEqual(200, actual.Code);                        
         }
 
         /// <summary>
@@ -540,7 +540,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.DrawingObjectsResponse actual;
             actual = target.GetDocumentDrawingObjects(name, "sections/0", storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DrawingObjectsResponse(), actual.GetType()); 
 
             
@@ -561,7 +561,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.FieldNamesResponse actual;
             actual = target.GetDocumentFieldNames(name, storage, folder, useNonMergeFields: useNonMergeFields);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FieldNamesResponse(), actual.GetType());             
         }
 
@@ -579,7 +579,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.HyperlinkResponse actual;
             actual = target.GetDocumentHyperlinkByIndex(name, hyperlinkIndex, storage, folder);
             
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.HyperlinkResponse(), actual.GetType()); 
             
         }
@@ -599,7 +599,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.HyperlinksResponse actual;
             actual = target.GetDocumentHyperlinks(name, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.HyperlinksResponse(), actual.GetType()); 
             
         }
@@ -620,7 +620,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.ParagraphResponse actual;
             actual = target.GetDocumentParagraph(name, "sections/0", index, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ParagraphResponse(), actual.GetType()); 
 
             
@@ -643,7 +643,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.RunResponse actual;
             actual = target.GetDocumentParagraphRun(name, "paragraphs/0", runIndex, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.RunResponse(), actual.GetType()); 
 
             
@@ -666,7 +666,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.FontResponse actual;
             actual = target.GetDocumentParagraphRunFont(name, "paragraphs/0", runIndex, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FontResponse(), actual.GetType()); 
             
         }
@@ -686,7 +686,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.ParagraphLinkCollectionResponse actual;
             actual = target.GetDocumentParagraphs(name, "sections/0", storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ParagraphLinkCollectionResponse(), actual.GetType()); 
             
         }
@@ -703,7 +703,7 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.DocumentPropertiesResponse actual;
             actual = target.GetDocumentProperties(name);
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentPropertiesResponse(), actual.GetType()); 
             
         }
@@ -722,7 +722,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.DocumentPropertyResponse actual;
             actual = target.GetDocumentProperty(name, propertyName, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentPropertyResponse(), actual.GetType()); 
             
         }
@@ -742,7 +742,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.ProtectionDataResponse actual;
             actual = target.GetDocumentProtection(name, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ProtectionDataResponse(), actual.GetType());
 
         }
@@ -764,7 +764,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.StatDataResponse actual;
             actual = target.GetDocumentStatistics(name, includeComments: includeComments, includeFootnotes: includeFootnotes, includeTextInShapes: includeTextInShapes);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.StatDataResponse(), actual.GetType());             
         }
 
@@ -783,7 +783,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.TextItemsResponse actual;
             actual = target.GetDocumentTextItems(name, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.TextItemsResponse(), actual.GetType()); 
             
         }
@@ -826,7 +826,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.FieldResponse actual;
             actual = target.GetField(name, "sections/0/paragraphs/0", fieldIndex, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FieldResponse(), actual.GetType()); 
             
         }
@@ -846,7 +846,7 @@ namespace WordsTest
             
             FieldsResponse actual = target.GetFields(name, "sections/0/paragraphs/0", storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");           
+           Assert.AreEqual(200, actual.Code);           
         }
 
         /// <summary>
@@ -865,7 +865,7 @@ namespace WordsTest
             
             RunsResponse actual = target.GetDocumentParagraphRuns(name, "sections/0/paragraphs/0", storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");            
+           Assert.AreEqual(200, actual.Code);            
 
         }
 
@@ -881,7 +881,7 @@ namespace WordsTest
             
             FormFieldsResponse actual = target.GetFormFields(name, "sections/0");
 
-            Assert.AreEqual(actual.Code, "200");            
+           Assert.AreEqual(200, actual.Code);            
         }
 
         /// <summary>
@@ -898,7 +898,7 @@ namespace WordsTest
             
             FormFieldResponse actual = target.GetFormField(name, "sections/0", formfieldIndex);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FormFieldResponse(), actual.GetType()); 
             
         }
@@ -919,7 +919,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.SectionResponse actual;
             actual = target.GetSection(name, sectionIndex, storage, folder);
             
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SectionResponse(), actual.GetType()); 
             
         }
@@ -940,7 +940,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.SectionPageSetupResponse actual;
             actual = target.GetSectionPageSetup(name, sectionIndex, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SectionPageSetupResponse(), actual.GetType()); 
             
         }
@@ -960,7 +960,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.SectionLinkCollectionResponse actual;
             actual = target.GetSections(name, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SectionLinkCollectionResponse(), actual.GetType()); 
             
         }
@@ -988,7 +988,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.PostAppendDocument(name, body, filename, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType()); 
             
         }
@@ -1011,7 +1011,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.ProtectionDataResponse actual;
             actual = target.PostChangeDocumentProtection(name, body, filename, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ProtectionDataResponse(), actual.GetType()); 
             
         }
@@ -1051,7 +1051,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.CommentResponse actual;
             actual = target.PostComment(name, commentIndex, body, fileName, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.CommentResponse(), actual.GetType()); 
             
         }
@@ -1074,9 +1074,9 @@ namespace WordsTest
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.DocumentResponse actual;
-            actual = target.PostDocumentExecuteMailMerge(name, data, destFileName: filename, withRegions: withRegions, cleanup: cleanup, useWholeParagraphAsRegion: useWholeParagraphAsRegion);
+            actual = target.PostDocumentExecuteMailMerge(name, withRegions, data, destFileName: filename, cleanup: cleanup, useWholeParagraphAsRegion: useWholeParagraphAsRegion);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType());             
         }
 
@@ -1099,7 +1099,7 @@ namespace WordsTest
 
             Com.Aspose.Words.Model.FontResponse actual;
             actual = target.PostDocumentParagraphRunFont(name, body, "paragraphs/0", runIndex, filename, storage, folder);
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FontResponse(), actual.GetType()); 
             
         }
@@ -1121,7 +1121,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.SaveResponse actual;
             actual = target.PostDocumentSaveAs(name, body);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaveResponse(), actual.GetType()); 
             
         }
@@ -1145,7 +1145,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.PostExecuteTemplate(name, data, cleanup: cleanup, destFileName: destFileName, useWholeParagraphAsRegion: useWholeParagraphAsRegion, withRegions: withRegions);
             
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType());             
         }
 
@@ -1172,7 +1172,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.FieldResponse actual;
             actual = target.PostField(name, body,"sections/0/paragraphs/0", fieldIndex, destFileName, storage, folder);
             
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FieldResponse(), actual.GetType()); 
             
         }
@@ -1204,7 +1204,7 @@ namespace WordsTest
             FormFieldResponse actual = target.PostFormField(name, body, "sections/0", formfieldIndex, destFileName);
             
             // Assert
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.AreEqual("FullName", actual.FormField.Name);
             Assert.AreEqual(true, actual.FormField.Enabled);
 
@@ -1234,7 +1234,7 @@ namespace WordsTest
                     filename,
                     rotationAngle: rotationAngle);
 
-                Assert.AreEqual(actual.Code, "200");
+               Assert.AreEqual(200, actual.Code);
                 Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType());
             }
 
@@ -1259,7 +1259,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.PostInsertDocumentWatermarkText(name, body, filename);
             
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType()); 
             
         }
@@ -1282,7 +1282,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.PostInsertPageNumbers(name, body, filename, storage, folder);
             
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType()); 
             
         }
@@ -1306,7 +1306,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.PostInsertDocumentWatermarkImage(name, image: image, rotationAngle: rotationAngle);
             
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType()); 
             
         }
@@ -1330,7 +1330,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.PostInsertDocumentWatermarkText(name, body, filename);
             
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType());             
         }
 
@@ -1356,7 +1356,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.SaveResponse actual;
             actual = target.PostLoadWebDocument(body);
             
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaveResponse(), actual.GetType()); 
             
         }
@@ -1380,7 +1380,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.ReplaceTextResponse actual;
             actual = target.PostReplaceText(name, body, filename, storage, folder);
             
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ReplaceTextResponse(), actual.GetType());             
         }
         
@@ -1403,7 +1403,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.SplitDocumentResponse actual;
             actual = target.PostSplitDocument(name, format: format, from: from, to: to);
             
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SplitDocumentResponse(), actual.GetType()); 
             
         }
@@ -1427,7 +1427,7 @@ namespace WordsTest
 
             Com.Aspose.Words.Model.BookmarkResponse actual;
             actual = target.PostUpdateDocumentBookmark(name, body, bookmarkName, filename, storage, folder);
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.BookmarkResponse(), actual.GetType()); 
             
         }
@@ -1448,7 +1448,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.DocumentResponse actual;
             actual = target.PostUpdateDocumentFields(name, filename, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType()); 
             
         }
@@ -1485,7 +1485,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.CommentResponse actual;
             actual = target.PutComment(name, body, fileName, storage, folder);
             
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.CommentResponse(), actual.GetType());             
         }
 
@@ -1515,7 +1515,7 @@ namespace WordsTest
             {                
                 FieldNamesResponse actual = target.PutDocumentFieldNames(fileStream, true);
 
-                Assert.AreEqual(actual.Code, "200");
+               Assert.AreEqual(200, actual.Code);
                 Assert.IsInstanceOfType(new FieldNamesResponse(), actual.GetType()); 
             }
         }
@@ -1539,7 +1539,7 @@ namespace WordsTest
                 body, 
                 resultFile);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaveResponse(), actual.GetType());
         }
 
@@ -1611,7 +1611,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.FieldResponse actual;
             actual = target.PutField(name, body, "sections/0/paragraphs/0", insertBeforeNode, destFileName, storage, folder);
             
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FieldResponse(), actual.GetType()); 
             
         }
@@ -1646,7 +1646,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.FormFieldResponse actual;
             actual = target.PutFormField(name, body, "sections/0/paragraphs/0", destFileName);
 
-            Assert.AreEqual(actual.Code, "200"); 
+           Assert.AreEqual(200, actual.Code); 
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FormFieldResponse(), actual.GetType()); 
             
         }
@@ -1668,7 +1668,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.ProtectionDataResponse actual;
             actual = target.PutProtectDocument(name, body, filename, storage, folder);
             
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ProtectionDataResponse(), actual.GetType()); 
             
         }
@@ -1692,7 +1692,7 @@ namespace WordsTest
 
             Com.Aspose.Words.Model.DocumentPropertyResponse actual;
             actual = target.PutUpdateDocumentProperty(name, propertyName, body, filename, storage, folder);
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentPropertyResponse(), actual.GetType()); 
             
         }
@@ -1713,7 +1713,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.RevisionsModificationResponse actual;
             actual = target.RejectAllRevisions(name, filename, storage, folder);
 
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.RevisionsModificationResponse(), actual.GetType()); 
             
         }
@@ -1732,7 +1732,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.SearchResponse actual;
             actual = target.Search(name, pattern: pattern);
             
-            Assert.AreEqual(actual.Code, "200"); 
+           Assert.AreEqual(200, actual.Code); 
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SearchResponse(), actual.GetType()); 
             
         }
@@ -1760,7 +1760,7 @@ namespace WordsTest
             Com.Aspose.Words.Model.SectionPageSetupResponse actual;
             actual = target.UpdateSectionPageSetup(name, sectionIndex, body, storage, folder, filename);
             
-            Assert.AreEqual(actual.Code, "200");
+           Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SectionPageSetupResponse(), actual.GetType()); 
             
         }

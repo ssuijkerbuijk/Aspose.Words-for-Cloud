@@ -12,22 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class WordsApiLink 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WordsApiLink" /> class.
-        /// </summary>
-        /// <param name="Href">Href.</param>
-        /// <param name="Rel">Rel.</param>
-        /// <param name="Type">Type.</param>
-        /// <param name="Title">Title.</param>
-        public WordsApiLink(string Href = default(string), string Rel = default(string), string Type = default(string), string Title = default(string))
-        {
-                        this.Href = Href;
-                        this.Rel = Rel;
-                        this.Type = Type;
-                        this.Title = Title;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Href
         /// </summary>    

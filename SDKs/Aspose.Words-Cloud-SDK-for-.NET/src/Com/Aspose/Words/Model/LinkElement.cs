@@ -12,16 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class LinkElement 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LinkElement" /> class.
-        /// </summary>
-        /// <param name="Link">Link.</param>
-        public LinkElement(WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Link
         /// </summary>    

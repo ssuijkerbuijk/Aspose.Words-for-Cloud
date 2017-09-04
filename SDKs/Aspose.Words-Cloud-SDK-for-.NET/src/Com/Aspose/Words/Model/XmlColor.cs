@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class XmlColor 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="XmlColor" /> class.
-        /// </summary>
-        /// <param name="Web">Web.</param>
-        /// <param name="Alpha">Alpha.</param>
-        public XmlColor(string Web = default(string), int? Alpha = default(int?))
-        {
-                        this.Web = Web;
-                        this.Alpha = Alpha;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Web
         /// </summary>    

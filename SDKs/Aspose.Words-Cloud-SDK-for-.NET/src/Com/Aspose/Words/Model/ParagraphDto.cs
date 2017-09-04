@@ -12,20 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class ParagraphDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ParagraphDto" /> class.
-        /// </summary>
-        /// <param name="ChildNodes">ChildNodes.</param>
-        /// <param name="NodeId">NodeId.</param>
-        /// <param name="Link">Link.</param>
-        public ParagraphDto(List<Object> ChildNodes = default(List<Object>), string NodeId = default(string), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.ChildNodes = ChildNodes;
-                        this.NodeId = NodeId;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets ChildNodes
         /// </summary>    

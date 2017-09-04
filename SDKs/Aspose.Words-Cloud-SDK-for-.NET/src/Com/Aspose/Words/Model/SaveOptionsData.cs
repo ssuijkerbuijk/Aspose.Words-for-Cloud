@@ -12,30 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class SaveOptionsData 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SaveOptionsData" /> class.
-        /// </summary>
-        /// <param name="ColorMode">ColorMode.</param>
-        /// <param name="SaveFormat">SaveFormat.</param>
-        /// <param name="FileName">FileName.</param>
-        /// <param name="DmlRenderingMode">DmlRenderingMode.</param>
-        /// <param name="DmlEffectsRenderingMode">DmlEffectsRenderingMode.</param>
-        /// <param name="ZipOutput">ZipOutput.</param>
-        /// <param name="UpdateSdtContent">UpdateSdtContent.</param>
-        /// <param name="UpdateFields">UpdateFields.</param>
-        public SaveOptionsData(string ColorMode = default(string), string SaveFormat = default(string), string FileName = default(string), string DmlRenderingMode = default(string), string DmlEffectsRenderingMode = default(string), bool? ZipOutput = default(bool?), bool? UpdateSdtContent = default(bool?), bool? UpdateFields = default(bool?))
-        {
-                        this.ColorMode = ColorMode;
-                        this.SaveFormat = SaveFormat;
-                        this.FileName = FileName;
-                        this.DmlRenderingMode = DmlRenderingMode;
-                        this.DmlEffectsRenderingMode = DmlEffectsRenderingMode;
-                        this.ZipOutput = ZipOutput;
-                        this.UpdateSdtContent = UpdateSdtContent;
-                        this.UpdateFields = UpdateFields;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets ColorMode
         /// </summary>    

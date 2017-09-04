@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class LoadWebDocumentData 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LoadWebDocumentData" /> class.
-        /// </summary>
-        /// <param name="LoadingDocumentUrl">LoadingDocumentUrl.</param>
-        /// <param name="SaveOptions">SaveOptions.</param>
-        public LoadWebDocumentData(string LoadingDocumentUrl = default(string), SaveOptionsData SaveOptions = default(SaveOptionsData))
-        {
-                        this.LoadingDocumentUrl = LoadingDocumentUrl;
-                        this.SaveOptions = SaveOptions;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets LoadingDocumentUrl
         /// </summary>    

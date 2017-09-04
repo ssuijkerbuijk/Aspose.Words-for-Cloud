@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class ModificationOperationResult 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ModificationOperationResult" /> class.
-        /// </summary>
-        /// <param name="Source">Source.</param>
-        /// <param name="Dest">Dest.</param>
-        public ModificationOperationResult(FileLink Source = default(FileLink), FileLink Dest = default(FileLink))
-        {
-                        this.Source = Source;
-                        this.Dest = Dest;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Source
         /// </summary>    

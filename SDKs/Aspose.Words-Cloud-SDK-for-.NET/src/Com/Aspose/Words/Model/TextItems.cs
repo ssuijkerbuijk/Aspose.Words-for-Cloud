@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class TextItems 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TextItems" /> class.
-        /// </summary>
-        /// <param name="List">List.</param>
-        /// <param name="Link">Link.</param>
-        public TextItems(List<TextItem> List = default(List<TextItem>), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.List = List;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets List
         /// </summary>    

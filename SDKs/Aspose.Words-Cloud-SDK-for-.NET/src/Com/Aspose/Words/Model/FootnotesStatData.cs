@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class FootnotesStatData 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FootnotesStatData" /> class.
-        /// </summary>
-        /// <param name="WordCount">WordCount.</param>
-        /// <param name="ParagraphCount">ParagraphCount.</param>
-        public FootnotesStatData(int? WordCount = default(int?), int? ParagraphCount = default(int?))
-        {
-                        this.WordCount = WordCount;
-                        this.ParagraphCount = ParagraphCount;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets WordCount
         /// </summary>    

@@ -12,26 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class Document 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Document" /> class.
-        /// </summary>
-        /// <param name="Links">Links.</param>
-        /// <param name="FileName">FileName.</param>
-        /// <param name="SourceFormat">SourceFormat.</param>
-        /// <param name="IsEncrypted">IsEncrypted.</param>
-        /// <param name="IsSigned">IsSigned.</param>
-        /// <param name="DocumentProperties">DocumentProperties.</param>
-        public Document(List<Link> Links = default(List<Link>), string FileName = default(string), SourceFormatEnum? SourceFormat = default(SourceFormatEnum?), bool? IsEncrypted = default(bool?), bool? IsSigned = default(bool?), DocumentProperties DocumentProperties = default(DocumentProperties))
-        {
-                        this.Links = Links;
-                        this.FileName = FileName;
-                        this.SourceFormat = SourceFormat;
-                        this.IsEncrypted = IsEncrypted;
-                        this.IsSigned = IsSigned;
-                        this.DocumentProperties = DocumentProperties;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets SourceFormat
         /// </summary>

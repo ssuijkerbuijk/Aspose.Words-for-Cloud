@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class TableLinkCollection 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TableLinkCollection" /> class.
-        /// </summary>
-        /// <param name="TableLinkList">TableLinkList.</param>
-        /// <param name="Link">Link.</param>
-        public TableLinkCollection(List<TableLink> TableLinkList = default(List<TableLink>), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.TableLinkList = TableLinkList;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets TableLinkList
         /// </summary>    

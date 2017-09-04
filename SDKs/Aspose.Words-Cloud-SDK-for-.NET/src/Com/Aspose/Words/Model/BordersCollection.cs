@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class BordersCollection 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BordersCollection" /> class.
-        /// </summary>
-        /// <param name="List">List.</param>
-        /// <param name="Link">Link.</param>
-        public BordersCollection(List<Border> List = default(List<Border>), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.List = List;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets List
         /// </summary>    

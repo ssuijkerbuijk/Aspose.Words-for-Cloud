@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class RunsDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RunsDto" /> class.
-        /// </summary>
-        /// <param name="List">List.</param>
-        /// <param name="Link">Link.</param>
-        public RunsDto(List<Run> List = default(List<Run>), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.List = List;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets List
         /// </summary>    

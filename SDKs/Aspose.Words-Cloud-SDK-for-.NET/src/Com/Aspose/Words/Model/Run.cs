@@ -12,20 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class Run 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Run" /> class.
-        /// </summary>
-        /// <param name="Text">Text.</param>
-        /// <param name="NodeId">NodeId.</param>
-        /// <param name="Link">Link.</param>
-        public Run(string Text = default(string), string NodeId = default(string), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.Text = Text;
-                        this.NodeId = NodeId;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Text
         /// </summary>    

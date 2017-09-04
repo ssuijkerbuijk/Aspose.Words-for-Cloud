@@ -12,24 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class DocumentStatData 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentStatData" /> class.
-        /// </summary>
-        /// <param name="WordCount">WordCount.</param>
-        /// <param name="ParagraphCount">ParagraphCount.</param>
-        /// <param name="PageCount">PageCount.</param>
-        /// <param name="FootnotesStatData">FootnotesStatData.</param>
-        /// <param name="PageStatData">PageStatData.</param>
-        public DocumentStatData(int? WordCount = default(int?), int? ParagraphCount = default(int?), int? PageCount = default(int?), FootnotesStatData FootnotesStatData = default(FootnotesStatData), List<PageStatData> PageStatData = default(List<PageStatData>))
-        {
-                        this.WordCount = WordCount;
-                        this.ParagraphCount = ParagraphCount;
-                        this.PageCount = PageCount;
-                        this.FootnotesStatData = FootnotesStatData;
-                        this.PageStatData = PageStatData;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets WordCount
         /// </summary>    

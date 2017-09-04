@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class DocumentPositionDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentPositionDto" /> class.
-        /// </summary>
-        /// <param name="Node">Node.</param>
-        /// <param name="Offset">Offset.</param>
-        public DocumentPositionDto(NodeLink Node = default(NodeLink), int? Offset = default(int?))
-        {
-                        this.Node = Node;
-                        this.Offset = Offset;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets Node
         /// </summary>    

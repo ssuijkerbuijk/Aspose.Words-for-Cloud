@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class DrawingObjectCollectionDto 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DrawingObjectCollectionDto" /> class.
-        /// </summary>
-        /// <param name="List">List.</param>
-        /// <param name="Link">Link.</param>
-        public DrawingObjectCollectionDto(List<LinkElement> List = default(List<LinkElement>), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.List = List;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets List
         /// </summary>    

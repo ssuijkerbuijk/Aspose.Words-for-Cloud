@@ -12,18 +12,7 @@ namespace Com.Aspose.Words.Model
   /// 
   /// </summary>  
   public class HeaderFooterLinkCollection 
-  {           
-        /// <summary>
-        /// Initializes a new instance of the <see cref="HeaderFooterLinkCollection" /> class.
-        /// </summary>
-        /// <param name="List">List.</param>
-        /// <param name="Link">Link.</param>
-        public HeaderFooterLinkCollection(List<HeaderFooterLink> List = default(List<HeaderFooterLink>), WordsApiLink Link = default(WordsApiLink))
-        {
-                        this.List = List;
-                        this.Link = Link;
-        }
-
+  {                       
         /// <summary>
         /// Gets or sets List
         /// </summary>    
