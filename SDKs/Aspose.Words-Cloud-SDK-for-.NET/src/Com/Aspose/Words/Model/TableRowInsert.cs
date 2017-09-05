@@ -11,17 +11,17 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class RunsDto 
+  public class TableRowInsert 
   {                       
         /// <summary>
-        /// Gets or sets List
+        /// Gets or sets InsertAfter
         /// </summary>    
-        public List<Run> List { get; set; }
+        public int? InsertAfter { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
+        /// Gets or sets ColumnsCount
         /// </summary>    
-        public WordsApiLink Link { get; set; }
+        public int? ColumnsCount { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -30,9 +30,9 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class RunsDto {\n");
-          sb.Append("  List: ").Append(List).Append("\n");
-          sb.Append("  Link: ").Append(Link).Append("\n");
+          sb.Append("class TableRowInsert {\n");
+          sb.Append("  InsertAfter: ").Append(InsertAfter).Append("\n");
+          sb.Append("  ColumnsCount: ").Append(ColumnsCount).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

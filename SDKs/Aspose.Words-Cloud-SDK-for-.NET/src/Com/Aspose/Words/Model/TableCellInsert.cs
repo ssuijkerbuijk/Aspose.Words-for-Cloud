@@ -11,22 +11,12 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class TableInsertDto 
+  public class TableCellInsert 
   {                       
         /// <summary>
-        /// Gets or sets Postion
+        /// Gets or sets InsertAfter
         /// </summary>    
-        public DocumentPositionDto Postion { get; set; }
-
-        /// <summary>
-        /// Gets or sets ColumnsCount
-        /// </summary>    
-        public int? ColumnsCount { get; set; }
-
-        /// <summary>
-        /// Gets or sets RowsCount
-        /// </summary>    
-        public int? RowsCount { get; set; }
+        public int? InsertAfter { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -35,10 +25,8 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class TableInsertDto {\n");
-          sb.Append("  Postion: ").Append(Postion).Append("\n");
-          sb.Append("  ColumnsCount: ").Append(ColumnsCount).Append("\n");
-          sb.Append("  RowsCount: ").Append(RowsCount).Append("\n");
+          sb.Append("class TableCellInsert {\n");
+          sb.Append("  InsertAfter: ").Append(InsertAfter).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

@@ -11,7 +11,7 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class DrawingObjectDto 
+  public class DrawingObject 
   {                       
         /// <summary>
         /// Gets or sets RelativeHorizontalPosition
@@ -229,7 +229,7 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class DrawingObjectDto {\n");
+          sb.Append("class DrawingObject {\n");
           sb.Append("  RenderLinks: ").Append(RenderLinks).Append("\n");
           sb.Append("  Width: ").Append(Width).Append("\n");
           sb.Append("  Height: ").Append(Height).Append("\n");

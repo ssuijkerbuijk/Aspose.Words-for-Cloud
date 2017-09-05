@@ -11,17 +11,17 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class DocumentPositionDto 
+  public class FootnoteCollection 
   {                       
         /// <summary>
-        /// Gets or sets Node
+        /// Gets or sets List
         /// </summary>    
-        public NodeLink Node { get; set; }
+        public List<Footnote> List { get; set; }
 
         /// <summary>
-        /// Gets or sets Offset
+        /// Gets or sets Link
         /// </summary>    
-        public int? Offset { get; set; }
+        public WordsApiLink Link { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -30,9 +30,9 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class DocumentPositionDto {\n");
-          sb.Append("  Node: ").Append(Node).Append("\n");
-          sb.Append("  Offset: ").Append(Offset).Append("\n");
+          sb.Append("class FootnoteCollection {\n");
+          sb.Append("  List: ").Append(List).Append("\n");
+          sb.Append("  Link: ").Append(Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

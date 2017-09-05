@@ -16,7 +16,7 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets Cell
         /// </summary>    
-        public TableCellDto Cell { get; set; }
+        public TableCell Cell { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object

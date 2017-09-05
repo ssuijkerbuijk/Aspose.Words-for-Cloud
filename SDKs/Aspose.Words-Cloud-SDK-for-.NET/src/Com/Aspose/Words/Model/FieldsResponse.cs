@@ -16,7 +16,7 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets Fields
         /// </summary>    
-        public FieldCollectionDto Fields { get; set; }
+        public FieldCollection Fields { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object

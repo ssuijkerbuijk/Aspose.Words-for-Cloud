@@ -11,17 +11,12 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class FormFieldCollectionDto 
+  public class ParagraphInsert 
   {                       
         /// <summary>
-        /// Gets or sets List
+        /// Gets or sets Text
         /// </summary>    
-        public List<FormField> List { get; set; }
-
-        /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
-        public WordsApiLink Link { get; set; }
+        public string Text { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -30,9 +25,8 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class FormFieldCollectionDto {\n");
-          sb.Append("  List: ").Append(List).Append("\n");
-          sb.Append("  Link: ").Append(Link).Append("\n");
+          sb.Append("class ParagraphInsert {\n");
+          sb.Append("  Text: ").Append(Text).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

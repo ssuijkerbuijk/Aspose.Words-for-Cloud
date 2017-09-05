@@ -16,7 +16,7 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets Footnotes
         /// </summary>    
-        public FootnoteCollectionDto Footnotes { get; set; }
+        public FootnoteCollection Footnotes { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object

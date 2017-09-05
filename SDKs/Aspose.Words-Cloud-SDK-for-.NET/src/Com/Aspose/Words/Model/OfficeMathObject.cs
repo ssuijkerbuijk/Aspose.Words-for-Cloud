@@ -11,7 +11,7 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class OfficeMathObjectDto 
+  public class OfficeMathObject 
   {                       
         /// <summary>
         /// Gets or sets DisplayType
@@ -264,7 +264,7 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class OfficeMathObjectDto {\n");
+          sb.Append("class OfficeMathObject {\n");
           sb.Append("  Content: ").Append(Content).Append("\n");
           sb.Append("  DisplayType: ").Append(DisplayType).Append("\n");
           sb.Append("  Justification: ").Append(Justification).Append("\n");

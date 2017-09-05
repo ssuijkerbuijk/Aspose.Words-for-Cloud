@@ -11,22 +11,22 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class TableCellDto 
+  public class TableInsert 
   {                       
         /// <summary>
-        /// Gets or sets ChildNodes
+        /// Gets or sets Postion
         /// </summary>    
-        public List<Object> ChildNodes { get; set; }
+        public DocumentPosition Postion { get; set; }
 
         /// <summary>
-        /// Gets or sets NodeId
+        /// Gets or sets ColumnsCount
         /// </summary>    
-        public string NodeId { get; set; }
+        public int? ColumnsCount { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
+        /// Gets or sets RowsCount
         /// </summary>    
-        public WordsApiLink Link { get; set; }
+        public int? RowsCount { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -35,10 +35,10 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class TableCellDto {\n");
-          sb.Append("  ChildNodes: ").Append(ChildNodes).Append("\n");
-          sb.Append("  NodeId: ").Append(NodeId).Append("\n");
-          sb.Append("  Link: ").Append(Link).Append("\n");
+          sb.Append("class TableInsert {\n");
+          sb.Append("  Postion: ").Append(Postion).Append("\n");
+          sb.Append("  ColumnsCount: ").Append(ColumnsCount).Append("\n");
+          sb.Append("  RowsCount: ").Append(RowsCount).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

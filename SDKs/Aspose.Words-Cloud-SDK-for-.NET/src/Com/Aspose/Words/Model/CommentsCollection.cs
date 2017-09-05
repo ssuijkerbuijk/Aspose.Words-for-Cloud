@@ -16,7 +16,7 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets CommentList
         /// </summary>    
-        public List<CommentDto> CommentList { get; set; }
+        public List<Comment> CommentList { get; set; }
 
         /// <summary>
         /// Gets or sets Link

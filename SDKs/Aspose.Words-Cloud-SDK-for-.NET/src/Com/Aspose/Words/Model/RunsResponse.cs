@@ -16,7 +16,7 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets Runs
         /// </summary>    
-        public RunsDto Runs { get; set; }
+        public Runs Runs { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object

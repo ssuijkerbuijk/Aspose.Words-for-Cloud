@@ -16,7 +16,7 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets Comment
         /// </summary>    
-        public CommentDto Comment { get; set; }
+        public Comment Comment { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object

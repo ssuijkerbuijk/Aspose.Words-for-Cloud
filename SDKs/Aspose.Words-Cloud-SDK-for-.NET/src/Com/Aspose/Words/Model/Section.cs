@@ -11,27 +11,32 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class FieldDto 
+  public class Section 
   {                       
         /// <summary>
-        /// Gets or sets Result
+        /// Gets or sets Paragraphs
         /// </summary>    
-        public string Result { get; set; }
+        public LinkElement Paragraphs { get; set; }
 
         /// <summary>
-        /// Gets or sets LocaleId
+        /// Gets or sets PageSetup
         /// </summary>    
-        public string LocaleId { get; set; }
+        public LinkElement PageSetup { get; set; }
 
         /// <summary>
-        /// Gets or sets FieldCode
+        /// Gets or sets HeaderFooters
         /// </summary>    
-        public string FieldCode { get; set; }
+        public LinkElement HeaderFooters { get; set; }
 
         /// <summary>
-        /// Gets or sets NodeId
+        /// Gets or sets Tables
         /// </summary>    
-        public string NodeId { get; set; }
+        public LinkElement Tables { get; set; }
+
+        /// <summary>
+        /// Gets or sets ChildNodes
+        /// </summary>    
+        public List<Object> ChildNodes { get; set; }
 
         /// <summary>
         /// Gets or sets Link
@@ -45,11 +50,12 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class FieldDto {\n");
-          sb.Append("  Result: ").Append(Result).Append("\n");
-          sb.Append("  LocaleId: ").Append(LocaleId).Append("\n");
-          sb.Append("  FieldCode: ").Append(FieldCode).Append("\n");
-          sb.Append("  NodeId: ").Append(NodeId).Append("\n");
+          sb.Append("class Section {\n");
+          sb.Append("  Paragraphs: ").Append(Paragraphs).Append("\n");
+          sb.Append("  PageSetup: ").Append(PageSetup).Append("\n");
+          sb.Append("  HeaderFooters: ").Append(HeaderFooters).Append("\n");
+          sb.Append("  Tables: ").Append(Tables).Append("\n");
+          sb.Append("  ChildNodes: ").Append(ChildNodes).Append("\n");
           sb.Append("  Link: ").Append(Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();

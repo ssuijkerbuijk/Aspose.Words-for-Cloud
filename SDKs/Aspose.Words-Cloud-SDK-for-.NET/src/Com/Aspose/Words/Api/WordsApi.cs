@@ -8431,7 +8431,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>TableResponse</returns>            
-        public TableResponse InsertTable (string name, TableInsertDto table, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public TableResponse InsertTable (string name, TableInsert table, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/tables?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -8578,7 +8578,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>TableCellResponse</returns>            
-        public TableCellResponse InsertTableCell (string name, TableCellInsertDto cell, string tableRowPath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public TableCellResponse InsertTableCell (string name, TableCellInsert cell, string tableRowPath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{tableRowPath}/cells?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -8725,7 +8725,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>TableRowResponse</returns>            
-        public TableRowResponse InsertTableRow (string name, TableRowInsertDto row, string tablePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public TableRowResponse InsertTableRow (string name, TableRowInsert row, string tablePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{tablePath}/rows?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -9118,7 +9118,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>CommentResponse</returns>            
-        public CommentResponse PostComment (string name, int? commentIndex, CommentDto comment, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public CommentResponse PostComment (string name, int? commentIndex, Comment comment, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/comments/{commentIndex}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -10138,7 +10138,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>FieldResponse</returns>            
-        public FieldResponse PostField (string name, FieldDto field, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public FieldResponse PostField (string name, Field field, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -10300,7 +10300,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>FootnoteResponse</returns>            
-        public FootnoteResponse PostFootnote (string name, FootnoteDto footnoteDto, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public FootnoteResponse PostFootnote (string name, Footnote footnoteDto, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -11840,7 +11840,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>CommentResponse</returns>            
-        public CommentResponse PutComment (string name, CommentDto comment, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public CommentResponse PutComment (string name, Comment comment, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/comments?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -12830,7 +12830,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <param name="insertBeforeNode"></param> 
         /// <returns>FieldResponse</returns>            
-        public FieldResponse PutField (string name, FieldDto field, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null, string insertBeforeNode = null)
+        public FieldResponse PutField (string name, Field field, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null, string insertBeforeNode = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/fields?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;insertBeforeNode=[insertBeforeNode]";
@@ -12985,7 +12985,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>FootnoteResponse</returns>            
-        public FootnoteResponse PutFootnote (string name, FootnoteDto footnoteDto, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public FootnoteResponse PutFootnote (string name, Footnote footnoteDto, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/footnotes?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -13436,7 +13436,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <param name="insertBeforeNode"></param> 
         /// <returns>ParagraphResponse</returns>            
-        public ParagraphResponse PutParagraph (string name, ParagraphInsertDto paragraph, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null, string insertBeforeNode = null)
+        public ParagraphResponse PutParagraph (string name, ParagraphInsert paragraph, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null, string insertBeforeNode = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/paragraphs?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;insertBeforeNode=[insertBeforeNode]";
@@ -15463,7 +15463,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>TableCellFormatResponse</returns>            
-        public TableCellFormatResponse UpdateTableCellFormat (string name, TableCellFormatDto format, string tableRowPath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public TableCellFormatResponse UpdateTableCellFormat (string name, TableCellFormat format, string tableRowPath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{tableRowPath}/cells/{index}/cellformat?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -15625,7 +15625,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>TablePropertiesResponse</returns>            
-        public TablePropertiesResponse UpdateTableProperties (string name, TablePropertiesDto properties, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public TablePropertiesResponse UpdateTableProperties (string name, TableProperties properties, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/tables/{index}/properties?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -15787,7 +15787,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>TableRowFormatResponse</returns>            
-        public TableRowFormatResponse UpdateTableRowFormat (string name, TableRowFormatDto format, string tablePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public TableRowFormatResponse UpdateTableRowFormat (string name, TableRowFormat format, string tablePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{tablePath}/rows/{index}/rowformat?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";

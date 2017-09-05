@@ -16,7 +16,7 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets Paragraph
         /// </summary>    
-        public ParagraphDto Paragraph { get; set; }
+        public Paragraph Paragraph { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object

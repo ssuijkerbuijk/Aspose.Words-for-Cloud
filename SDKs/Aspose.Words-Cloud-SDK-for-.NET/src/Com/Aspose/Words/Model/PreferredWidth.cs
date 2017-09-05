@@ -11,7 +11,7 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class PreferredWidthDto 
+  public class PreferredWidth 
   {                       
         /// <summary>
         /// Gets or sets Type
@@ -53,7 +53,7 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class PreferredWidthDto {\n");
+          sb.Append("class PreferredWidth {\n");
           sb.Append("  Type: ").Append(Type).Append("\n");
           sb.Append("  Value: ").Append(Value).Append("\n");
           sb.Append("}\n");

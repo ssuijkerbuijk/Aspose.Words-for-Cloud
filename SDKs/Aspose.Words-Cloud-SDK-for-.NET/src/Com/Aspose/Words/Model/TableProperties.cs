@@ -11,7 +11,7 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class TablePropertiesDto 
+  public class TableProperties 
   {                       
         /// <summary>
         /// Gets or sets Alignment
@@ -2038,7 +2038,7 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets PreferredWidth
         /// </summary>    
-        public PreferredWidthDto PreferredWidth { get; set; }
+        public PreferredWidth PreferredWidth { get; set; }
 
         /// <summary>
         /// Gets or sets RightPadding
@@ -2067,7 +2067,7 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class TablePropertiesDto {\n");
+          sb.Append("class TableProperties {\n");
           sb.Append("  Alignment: ").Append(Alignment).Append("\n");
           sb.Append("  AllowAutoFit: ").Append(AllowAutoFit).Append("\n");
           sb.Append("  Bidi: ").Append(Bidi).Append("\n");

@@ -11,17 +11,12 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class TableRowDto 
+  public class TableCell 
   {                       
         /// <summary>
-        /// Gets or sets TableCellList
+        /// Gets or sets ChildNodes
         /// </summary>    
-        public List<TableCellDto> TableCellList { get; set; }
-
-        /// <summary>
-        /// Gets or sets RowFormat
-        /// </summary>    
-        public TableRowFormatDto RowFormat { get; set; }
+        public List<Object> ChildNodes { get; set; }
 
         /// <summary>
         /// Gets or sets NodeId
@@ -40,9 +35,8 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class TableRowDto {\n");
-          sb.Append("  TableCellList: ").Append(TableCellList).Append("\n");
-          sb.Append("  RowFormat: ").Append(RowFormat).Append("\n");
+          sb.Append("class TableCell {\n");
+          sb.Append("  ChildNodes: ").Append(ChildNodes).Append("\n");
           sb.Append("  NodeId: ").Append(NodeId).Append("\n");
           sb.Append("  Link: ").Append(Link).Append("\n");
           sb.Append("}\n");

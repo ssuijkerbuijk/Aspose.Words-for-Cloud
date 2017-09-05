@@ -11,12 +11,12 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class FieldCollectionDto 
+  public class FieldCollection 
   {                       
         /// <summary>
         /// Gets or sets List
         /// </summary>    
-        public List<FieldDto> List { get; set; }
+        public List<Field> List { get; set; }
 
         /// <summary>
         /// Gets or sets Link
@@ -30,7 +30,7 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class FieldCollectionDto {\n");
+          sb.Append("class FieldCollection {\n");
           sb.Append("  List: ").Append(List).Append("\n");
           sb.Append("  Link: ").Append(Link).Append("\n");
           sb.Append("}\n");

@@ -16,7 +16,7 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets CellFormat
         /// </summary>    
-        public TableCellFormatDto CellFormat { get; set; }
+        public TableCellFormat CellFormat { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object

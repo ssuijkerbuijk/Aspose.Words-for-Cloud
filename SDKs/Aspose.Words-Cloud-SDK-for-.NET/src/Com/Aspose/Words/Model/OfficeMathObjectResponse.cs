@@ -16,7 +16,7 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets OfficeMathObject
         /// </summary>    
-        public OfficeMathObjectDto OfficeMathObject { get; set; }
+        public OfficeMathObject OfficeMathObject { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object

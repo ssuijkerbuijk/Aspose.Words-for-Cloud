@@ -11,12 +11,27 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class FootnoteCollectionDto 
+  public class Field 
   {                       
         /// <summary>
-        /// Gets or sets List
+        /// Gets or sets Result
         /// </summary>    
-        public List<FootnoteDto> List { get; set; }
+        public string Result { get; set; }
+
+        /// <summary>
+        /// Gets or sets LocaleId
+        /// </summary>    
+        public string LocaleId { get; set; }
+
+        /// <summary>
+        /// Gets or sets FieldCode
+        /// </summary>    
+        public string FieldCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets NodeId
+        /// </summary>    
+        public string NodeId { get; set; }
 
         /// <summary>
         /// Gets or sets Link
@@ -30,8 +45,11 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class FootnoteCollectionDto {\n");
-          sb.Append("  List: ").Append(List).Append("\n");
+          sb.Append("class Field {\n");
+          sb.Append("  Result: ").Append(Result).Append("\n");
+          sb.Append("  LocaleId: ").Append(LocaleId).Append("\n");
+          sb.Append("  FieldCode: ").Append(FieldCode).Append("\n");
+          sb.Append("  NodeId: ").Append(NodeId).Append("\n");
           sb.Append("  Link: ").Append(Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();

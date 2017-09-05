@@ -16,12 +16,12 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets RangeStart
         /// </summary>    
-        public DocumentPositionDto RangeStart { get; set; }
+        public DocumentPosition RangeStart { get; set; }
 
         /// <summary>
         /// Gets or sets RangeEnd
         /// </summary>    
-        public DocumentPositionDto RangeEnd { get; set; }
+        public DocumentPosition RangeEnd { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object

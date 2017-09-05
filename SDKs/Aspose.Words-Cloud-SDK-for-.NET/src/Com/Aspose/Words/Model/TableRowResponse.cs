@@ -16,7 +16,7 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets Row
         /// </summary>    
-        public TableRowDto Row { get; set; }
+        public TableRow Row { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object

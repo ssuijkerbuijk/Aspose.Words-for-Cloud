@@ -16,7 +16,7 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets DrawingObject
         /// </summary>    
-        public DrawingObjectDto DrawingObject { get; set; }
+        public DrawingObject DrawingObject { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object

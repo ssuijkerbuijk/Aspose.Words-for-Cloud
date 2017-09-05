@@ -11,7 +11,7 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class TableRowFormatDto 
+  public class TableRowFormat 
   {                       
         /// <summary>
         /// Gets or sets HeightRule
@@ -68,7 +68,7 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class TableRowFormatDto {\n");
+          sb.Append("class TableRowFormat {\n");
           sb.Append("  Height: ").Append(Height).Append("\n");
           sb.Append("  HeightRule: ").Append(HeightRule).Append("\n");
           sb.Append("  AllowBreakAcrossPages: ").Append(AllowBreakAcrossPages).Append("\n");

@@ -16,7 +16,7 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets RowFormat
         /// </summary>    
-        public TableRowFormatDto RowFormat { get; set; }
+        public TableRowFormat RowFormat { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object

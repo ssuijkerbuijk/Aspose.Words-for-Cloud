@@ -11,7 +11,7 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class HeaderFooterDto 
+  public class HeaderFooter 
   {                       
         /// <summary>
         /// Gets or sets Type
@@ -78,7 +78,7 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class HeaderFooterDto {\n");
+          sb.Append("class HeaderFooter {\n");
           sb.Append("  Paragraphs: ").Append(Paragraphs).Append("\n");
           sb.Append("  DrawingObjects: ").Append(DrawingObjects).Append("\n");
           sb.Append("  Type: ").Append(Type).Append("\n");

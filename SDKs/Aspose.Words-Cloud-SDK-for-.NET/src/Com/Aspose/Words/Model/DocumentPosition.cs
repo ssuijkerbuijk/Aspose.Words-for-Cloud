@@ -11,12 +11,17 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class ParagraphInsertDto 
+  public class DocumentPosition 
   {                       
         /// <summary>
-        /// Gets or sets Text
+        /// Gets or sets Node
         /// </summary>    
-        public string Text { get; set; }
+        public NodeLink Node { get; set; }
+
+        /// <summary>
+        /// Gets or sets Offset
+        /// </summary>    
+        public int? Offset { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -25,8 +30,9 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class ParagraphInsertDto {\n");
-          sb.Append("  Text: ").Append(Text).Append("\n");
+          sb.Append("class DocumentPosition {\n");
+          sb.Append("  Node: ").Append(Node).Append("\n");
+          sb.Append("  Offset: ").Append(Offset).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

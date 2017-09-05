@@ -11,17 +11,17 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class CommentDto 
+  public class Comment 
   {                       
         /// <summary>
         /// Gets or sets RangeStart
         /// </summary>    
-        public DocumentPositionDto RangeStart { get; set; }
+        public DocumentPosition RangeStart { get; set; }
 
         /// <summary>
         /// Gets or sets RangeEnd
         /// </summary>    
-        public DocumentPositionDto RangeEnd { get; set; }
+        public DocumentPosition RangeEnd { get; set; }
 
         /// <summary>
         /// Gets or sets Author
@@ -60,7 +60,7 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class CommentDto {\n");
+          sb.Append("class Comment {\n");
           sb.Append("  RangeStart: ").Append(RangeStart).Append("\n");
           sb.Append("  RangeEnd: ").Append(RangeEnd).Append("\n");
           sb.Append("  Author: ").Append(Author).Append("\n");

@@ -16,7 +16,7 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets HeaderFooter
         /// </summary>    
-        public HeaderFooterDto HeaderFooter { get; set; }
+        public HeaderFooter HeaderFooter { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object

@@ -1028,9 +1028,9 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            Com.Aspose.Words.Model.CommentDto body = new Com.Aspose.Words.Model.CommentDto();
+            var body = new Com.Aspose.Words.Model.Comment();
 
-            Com.Aspose.Words.Model.DocumentPositionDto dpdto = new Com.Aspose.Words.Model.DocumentPositionDto();
+            var dpdto = new Com.Aspose.Words.Model.DocumentPosition();
             Com.Aspose.Words.Model.NodeLink nodeLink = new Com.Aspose.Words.Model.NodeLink();
             
 
@@ -1161,7 +1161,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            Com.Aspose.Words.Model.FieldDto body = new Com.Aspose.Words.Model.FieldDto();
+            Com.Aspose.Words.Model.Field body = new Com.Aspose.Words.Model.Field();
             body.Result = "3";
             body.FieldCode = "{ NUMPAGES }";
             
@@ -1210,7 +1210,7 @@ namespace WordsTest
 
             var formFieldTextInput = actual.FormField as FormFieldTextInput;
             Assert.IsTrue(formFieldTextInput != null, "Incorrect type of formfield: {0} instead of {1}", actual.FormField.GetType(), typeof(FormFieldTextInput));
-            Assert.AreEqual("Regular", formFieldTextInput.TextInputType);
+            Assert.AreEqual(FormFieldTextInput.TextInputTypeEnum.Regular, formFieldTextInput.TextInputType);
         }
 
         /// <summary>
@@ -1463,9 +1463,9 @@ namespace WordsTest
             string fileName = null;
             string storage = null;
             string folder = null;
-            Com.Aspose.Words.Model.CommentDto body = new Com.Aspose.Words.Model.CommentDto();
+            Com.Aspose.Words.Model.Comment body = new Com.Aspose.Words.Model.Comment();
 
-            Com.Aspose.Words.Model.DocumentPositionDto dpdto = new Com.Aspose.Words.Model.DocumentPositionDto();
+            Com.Aspose.Words.Model.DocumentPosition dpdto = new Com.Aspose.Words.Model.DocumentPosition();
             Com.Aspose.Words.Model.NodeLink nodeLink = new Com.Aspose.Words.Model.NodeLink();
             
 
@@ -1599,7 +1599,7 @@ namespace WordsTest
             string storage = null;
             string folder = null;
 
-            Com.Aspose.Words.Model.FieldDto body = new Com.Aspose.Words.Model.FieldDto();
+            Com.Aspose.Words.Model.Field body = new Com.Aspose.Words.Model.Field();
             body.Result = "3";
             body.FieldCode = "{ NUMPAGES }";
             
@@ -1623,32 +1623,31 @@ namespace WordsTest
         public void TestPutFormField()
         {
             string name = "test_multi_pages.docx";
-            int sectionIndex = 0; 
-            int paragraphIndex = 0; 
+            int sectionIndex = 0;
+            int paragraphIndex = 0;
             string insertBeforeNode = null;
             string destFileName = "test.docx";
             string storage = null;
             string folder = null;
 
-            Com.Aspose.Words.Model.FormField body = new Com.Aspose.Words.Model.FormField();
-            
+            var body = new FormFieldTextInput();
+
             body.Name = "FullName";
             body.Enabled = true;
             body.CalculateOnExit = true;
             body.StatusText = "";
 
-            throw new NotImplementedException();            
-            ////body.TextInputType = "Regular";
-            ////body.TextInputDefault = "";
-            ////body.TextInputFormat = "UPPERCASE";
+
+            body.TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular;
+            body.TextInputDefault = "123";
+            body.TextInputFormat = "UPPERCASE";
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.FormFieldResponse actual;
             actual = target.PutFormField(name, body, "sections/0/paragraphs/0", destFileName);
 
-           Assert.AreEqual(200, actual.Code); 
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FormFieldResponse(), actual.GetType()); 
-            
+            Assert.AreEqual(200, actual.Code);
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FormFieldResponse(), actual.GetType());
         }
 
         /// <summary>

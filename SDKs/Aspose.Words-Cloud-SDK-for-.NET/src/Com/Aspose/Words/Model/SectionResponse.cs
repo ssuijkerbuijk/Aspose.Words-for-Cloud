@@ -16,7 +16,7 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets Section
         /// </summary>    
-        public SectionDto Section { get; set; }
+        public Section Section { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object

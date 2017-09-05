@@ -11,32 +11,17 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class SectionDto 
+  public class Paragraph 
   {                       
-        /// <summary>
-        /// Gets or sets Paragraphs
-        /// </summary>    
-        public LinkElement Paragraphs { get; set; }
-
-        /// <summary>
-        /// Gets or sets PageSetup
-        /// </summary>    
-        public LinkElement PageSetup { get; set; }
-
-        /// <summary>
-        /// Gets or sets HeaderFooters
-        /// </summary>    
-        public LinkElement HeaderFooters { get; set; }
-
-        /// <summary>
-        /// Gets or sets Tables
-        /// </summary>    
-        public LinkElement Tables { get; set; }
-
         /// <summary>
         /// Gets or sets ChildNodes
         /// </summary>    
         public List<Object> ChildNodes { get; set; }
+
+        /// <summary>
+        /// Gets or sets NodeId
+        /// </summary>    
+        public string NodeId { get; set; }
 
         /// <summary>
         /// Gets or sets Link
@@ -50,12 +35,9 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class SectionDto {\n");
-          sb.Append("  Paragraphs: ").Append(Paragraphs).Append("\n");
-          sb.Append("  PageSetup: ").Append(PageSetup).Append("\n");
-          sb.Append("  HeaderFooters: ").Append(HeaderFooters).Append("\n");
-          sb.Append("  Tables: ").Append(Tables).Append("\n");
+          sb.Append("class Paragraph {\n");
           sb.Append("  ChildNodes: ").Append(ChildNodes).Append("\n");
+          sb.Append("  NodeId: ").Append(NodeId).Append("\n");
           sb.Append("  Link: ").Append(Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();

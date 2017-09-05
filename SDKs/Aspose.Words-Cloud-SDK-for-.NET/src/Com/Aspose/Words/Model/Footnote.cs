@@ -11,7 +11,7 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class FootnoteDto 
+  public class Footnote 
   {                       
         /// <summary>
         /// Gets or sets FootnoteType
@@ -39,7 +39,7 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets Position
         /// </summary>    
-        public DocumentPositionDto Position { get; set; }
+        public DocumentPosition Position { get; set; }
 
         /// <summary>
         /// Gets or sets ReferenceMark
@@ -73,7 +73,7 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class FootnoteDto {\n");
+          sb.Append("class Footnote {\n");
           sb.Append("  Position: ").Append(Position).Append("\n");
           sb.Append("  FootnoteType: ").Append(FootnoteType).Append("\n");
           sb.Append("  ReferenceMark: ").Append(ReferenceMark).Append("\n");

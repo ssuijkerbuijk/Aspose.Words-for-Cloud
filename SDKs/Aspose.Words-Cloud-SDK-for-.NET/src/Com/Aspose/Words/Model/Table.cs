@@ -11,12 +11,22 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class OfficeMathObjectsCollectionDto 
+  public class Table 
   {                       
         /// <summary>
-        /// Gets or sets List
+        /// Gets or sets TableRowList
         /// </summary>    
-        public List<OfficeMathObjectDto> List { get; set; }
+        public List<TableRow> TableRowList { get; set; }
+
+        /// <summary>
+        /// Gets or sets TableProperties
+        /// </summary>    
+        public TableProperties TableProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets NodeId
+        /// </summary>    
+        public string NodeId { get; set; }
 
         /// <summary>
         /// Gets or sets Link
@@ -30,8 +40,10 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class OfficeMathObjectsCollectionDto {\n");
-          sb.Append("  List: ").Append(List).Append("\n");
+          sb.Append("class Table {\n");
+          sb.Append("  TableRowList: ").Append(TableRowList).Append("\n");
+          sb.Append("  TableProperties: ").Append(TableProperties).Append("\n");
+          sb.Append("  NodeId: ").Append(NodeId).Append("\n");
           sb.Append("  Link: ").Append(Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();

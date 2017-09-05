@@ -11,7 +11,7 @@ namespace Com.Aspose.Words.Model
   /// <summary>
   /// 
   /// </summary>  
-  public class TableCellFormatDto 
+  public class TableCellFormat 
   {                       
         /// <summary>
         /// Gets or sets HorizontalMerge
@@ -158,7 +158,7 @@ namespace Com.Aspose.Words.Model
         /// <summary>
         /// Gets or sets PreferredWidth
         /// </summary>    
-        public PreferredWidthDto PreferredWidth { get; set; }
+        public PreferredWidth PreferredWidth { get; set; }
 
         /// <summary>
         /// Gets or sets RightPadding
@@ -192,7 +192,7 @@ namespace Com.Aspose.Words.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class TableCellFormatDto {\n");
+          sb.Append("class TableCellFormat {\n");
           sb.Append("  BottomPadding: ").Append(BottomPadding).Append("\n");
           sb.Append("  FitText: ").Append(FitText).Append("\n");
           sb.Append("  HorizontalMerge: ").Append(HorizontalMerge).Append("\n");
