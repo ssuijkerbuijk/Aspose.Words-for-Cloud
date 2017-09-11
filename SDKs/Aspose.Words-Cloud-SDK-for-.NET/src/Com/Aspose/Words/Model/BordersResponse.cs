@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// This resonse should be returned by the service when handling:  GET {nodeWithBorders}/borders.
   /// </summary>  
   public class BordersResponse : SaaSposeResponse 
   {                       
         /// <summary>
-        /// Gets or sets Borders
-        /// </summary>    
+        /// Table.
+        /// </summary>
+        /// <value>Table.</value>    
         public BordersCollection Borders { get; set; }
 
         /// <summary>

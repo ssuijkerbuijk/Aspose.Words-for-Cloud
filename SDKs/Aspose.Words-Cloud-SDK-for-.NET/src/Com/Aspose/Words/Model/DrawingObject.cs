@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Represents Drawing Object DTO.
   /// </summary>  
   public class DrawingObject 
   {                       
         /// <summary>
-        /// Gets or sets RelativeHorizontalPosition
+        /// Specifies where the distance to the image is measured from.
         /// </summary>
+        /// <value>Specifies where the distance to the image is measured from.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RelativeHorizontalPositionEnum
         {
@@ -67,8 +68,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets RelativeVerticalPosition
+        /// Specifies where the distance to the image measured from.
         /// </summary>
+        /// <value>Specifies where the distance to the image measured from.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RelativeVerticalPositionEnum
         {
@@ -125,8 +127,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets WrapType
+        /// Specifies how to wrap text around the image.
         /// </summary>
+        /// <value>Specifies how to wrap text around the image.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum WrapTypeEnum
         {
@@ -163,63 +166,75 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets RelativeHorizontalPosition
+        /// Specifies where the distance to the image is measured from.
         /// </summary>
+        /// <value>Specifies where the distance to the image is measured from.</value>
         public RelativeHorizontalPositionEnum? RelativeHorizontalPosition { get; set; }
 
         /// <summary>
-        /// Gets or sets RelativeVerticalPosition
+        /// Specifies where the distance to the image measured from.
         /// </summary>
+        /// <value>Specifies where the distance to the image measured from.</value>
         public RelativeVerticalPositionEnum? RelativeVerticalPosition { get; set; }
 
         /// <summary>
-        /// Gets or sets WrapType
+        /// Specifies how to wrap text around the image.
         /// </summary>
+        /// <value>Specifies how to wrap text around the image.</value>
         public WrapTypeEnum? WrapType { get; set; }
 
         /// <summary>
-        /// Gets or sets RenderLinks
-        /// </summary>    
+        /// A list of links that originate from this {Aspose.Words.Cloud.DTO.DocumentElements.DrawingObjects.DrawingObjectDto}.
+        /// </summary>
+        /// <value>A list of links that originate from this {Aspose.Words.Cloud.DTO.DocumentElements.DrawingObjects.DrawingObjectDto}.</value>    
         public List<WordsApiLink> RenderLinks { get; set; }
 
         /// <summary>
-        /// Gets or sets Width
-        /// </summary>    
+        /// Width of the drawing objects in points.
+        /// </summary>
+        /// <value>Width of the drawing objects in points.</value>    
         public double? Width { get; set; }
 
         /// <summary>
-        /// Gets or sets Height
-        /// </summary>    
+        /// Height of the drawing object in points.
+        /// </summary>
+        /// <value>Height of the drawing object in points.</value>    
         public double? Height { get; set; }
 
         /// <summary>
-        /// Gets or sets OleDataLink
-        /// </summary>    
+        /// Link to ole object. Can be null if shape does not have ole data.
+        /// </summary>
+        /// <value>Link to ole object. Can be null if shape does not have ole data.</value>    
         public WordsApiLink OleDataLink { get; set; }
 
         /// <summary>
-        /// Gets or sets ImageDataLink
-        /// </summary>    
+        /// Link to image data. Can be null if shape does not have an image.
+        /// </summary>
+        /// <value>Link to image data. Can be null if shape does not have an image.</value>    
         public WordsApiLink ImageDataLink { get; set; }
 
         /// <summary>
-        /// Gets or sets Left
-        /// </summary>    
+        /// Distance in points from the origin to the left side of the image.
+        /// </summary>
+        /// <value>Distance in points from the origin to the left side of the image.</value>    
         public double? Left { get; set; }
 
         /// <summary>
-        /// Gets or sets Top
-        /// </summary>    
+        /// Distance in points from the origin to the top side of the image.
+        /// </summary>
+        /// <value>Distance in points from the origin to the top side of the image.</value>    
         public double? Top { get; set; }
 
         /// <summary>
-        /// Gets or sets NodeId
-        /// </summary>    
+        /// Node id
+        /// </summary>
+        /// <value>Node id</value>    
         public string NodeId { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

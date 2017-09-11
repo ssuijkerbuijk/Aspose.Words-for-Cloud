@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for individual bookmarks outline level
   /// </summary>  
   public class BookmarksOutlineLevelData 
   {                       
         /// <summary>
-        /// Gets or sets Name
-        /// </summary>    
+        /// Specify the bookmark's name
+        /// </summary>
+        /// <value>Specify the bookmark's name</value>    
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets BookmarksOutlineLevel
-        /// </summary>    
+        /// Specify the bookmark's level
+        /// </summary>
+        /// <value>Specify the bookmark's level</value>    
         public int? BookmarksOutlineLevel { get; set; }
 
         /// <summary>

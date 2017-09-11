@@ -9,38 +9,44 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Container class for text save options.
   /// </summary>  
   public class TextSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets Encoding
-        /// </summary>    
+        /// Specifies the encoding to use when exporting in plain text format
+        /// </summary>
+        /// <value>Specifies the encoding to use when exporting in plain text format</value>    
         public string Encoding { get; set; }
 
         /// <summary>
-        /// Gets or sets ExportHeadersFooters
-        /// </summary>    
+        /// Specifies whether to output headers and footers when exporting in plain text format
+        /// </summary>
+        /// <value>Specifies whether to output headers and footers when exporting in plain text format</value>    
         public bool? ExportHeadersFooters { get; set; }
 
         /// <summary>
-        /// Gets or sets ForcePageBreaks
-        /// </summary>    
+        /// Allows to specify whether the page breaks should be preserved during export.  The default value is false.
+        /// </summary>
+        /// <value>Allows to specify whether the page breaks should be preserved during export.  The default value is false.</value>    
         public bool? ForcePageBreaks { get; set; }
 
         /// <summary>
-        /// Gets or sets ParagraphBreak
-        /// </summary>    
+        /// Specifies the string to use as a paragraph break when exporting in plain text format
+        /// </summary>
+        /// <value>Specifies the string to use as a paragraph break when exporting in plain text format</value>    
         public string ParagraphBreak { get; set; }
 
         /// <summary>
-        /// Gets or sets PreserveTableLayout
-        /// </summary>    
+        /// Specifies whether the program should attempt to preserve layout of tables when saving in the plain text format
+        /// </summary>
+        /// <value>Specifies whether the program should attempt to preserve layout of tables when saving in the plain text format</value>    
         public bool? PreserveTableLayout { get; set; }
 
         /// <summary>
-        /// Gets or sets SimplifyListLabels
-        /// </summary>    
+        /// Specifies whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text
+        /// </summary>
+        /// <value>Specifies whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text</value>    
         public bool? SimplifyListLabels { get; set; }
 
         /// <summary>

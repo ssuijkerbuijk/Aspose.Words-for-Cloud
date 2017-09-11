@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Class for insert watermark text request building.
   /// </summary>  
   public class WatermarkText 
   {                       
         /// <summary>
-        /// Gets or sets Text
-        /// </summary>    
+        /// The watermark text.
+        /// </summary>
+        /// <value>The watermark text.</value>    
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or sets RotationAngle
-        /// </summary>    
+        /// The watermark rotation angle.
+        /// </summary>
+        /// <value>The watermark rotation angle.</value>    
         public double? RotationAngle { get; set; }
 
         /// <summary>

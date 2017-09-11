@@ -9,23 +9,26 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Table element
   /// </summary>  
   public class TableInsert 
   {                       
         /// <summary>
-        /// Gets or sets Postion
-        /// </summary>    
+        /// Table will be inserted before specified position.
+        /// </summary>
+        /// <value>Table will be inserted before specified position.</value>    
         public DocumentPosition Postion { get; set; }
 
         /// <summary>
-        /// Gets or sets ColumnsCount
-        /// </summary>    
+        /// Count of columns. Default is 2.
+        /// </summary>
+        /// <value>Count of columns. Default is 2.</value>    
         public int? ColumnsCount { get; set; }
 
         /// <summary>
-        /// Gets or sets RowsCount
-        /// </summary>    
+        /// Count of rows. Default is 2.
+        /// </summary>
+        /// <value>Count of rows. Default is 2.</value>    
         public int? RowsCount { get; set; }
 
         /// <summary>

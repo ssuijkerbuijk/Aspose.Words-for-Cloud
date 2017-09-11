@@ -9,153 +9,182 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for pdf save options
   /// </summary>  
   public class PdfSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets BookmarksOutlineLevel
-        /// </summary>    
+        /// Specifies the level in the PDF document outline at which to display Word bookmarks
+        /// </summary>
+        /// <value>Specifies the level in the PDF document outline at which to display Word bookmarks</value>    
         public int? BookmarksOutlineLevel { get; set; }
 
         /// <summary>
-        /// Gets or sets CreateNoteHyperlinks
-        /// </summary>    
+        /// Specifies whether to convert footnote/endnote references in main text story into active hyperlinks.  When clicked the hyperlink will lead to the corresponding footnote/endnote.  Default is false.
+        /// </summary>
+        /// <value>Specifies whether to convert footnote/endnote references in main text story into active hyperlinks.  When clicked the hyperlink will lead to the corresponding footnote/endnote.  Default is false.</value>    
         public bool? CreateNoteHyperlinks { get; set; }
 
         /// <summary>
-        /// Gets or sets Compliance
-        /// </summary>    
+        /// Specifies the PDF standards compliance level for output documents
+        /// </summary>
+        /// <value>Specifies the PDF standards compliance level for output documents</value>    
         public string Compliance { get; set; }
 
         /// <summary>
-        /// Gets or sets DigitalSignatureDetails
-        /// </summary>    
+        /// Specifies the details for signing the output PDF document
+        /// </summary>
+        /// <value>Specifies the details for signing the output PDF document</value>    
         public PdfDigitalSignatureDetailsData DigitalSignatureDetails { get; set; }
 
         /// <summary>
-        /// Gets or sets DisplayDocTitle
-        /// </summary>    
+        /// A flag specifying whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.
+        /// </summary>
+        /// <value>A flag specifying whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.</value>    
         public bool? DisplayDocTitle { get; set; }
 
         /// <summary>
-        /// Gets or sets DownsampleImages
-        /// </summary>    
+        /// Specifies whether or not the images should be downsampled
+        /// </summary>
+        /// <value>Specifies whether or not the images should be downsampled</value>    
         public bool? DownsampleImages { get; set; }
 
         /// <summary>
-        /// Gets or sets DownsampleResolution
-        /// </summary>    
+        /// Specifies the resolution in pixels per inch to which the images should be downsampled
+        /// </summary>
+        /// <value>Specifies the resolution in pixels per inch to which the images should be downsampled</value>    
         public int? DownsampleResolution { get; set; }
 
         /// <summary>
-        /// Gets or sets DownsampleOptions
-        /// </summary>    
+        /// Allows to specify downsample options.
+        /// </summary>
+        /// <value>Allows to specify downsample options.</value>    
         public DownsampleOptionsData DownsampleOptions { get; set; }
 
         /// <summary>
-        /// Gets or sets EmbedFullFonts
-        /// </summary>    
+        /// Controls how fonts are embedded into the resulting PDF documents
+        /// </summary>
+        /// <value>Controls how fonts are embedded into the resulting PDF documents</value>    
         public bool? EmbedFullFonts { get; set; }
 
         /// <summary>
-        /// Gets or sets EmbedStandardWindowsFonts
-        /// </summary>    
+        /// Determines whether or not to embed standard windows fonts Arial and Times New Roman
+        /// </summary>
+        /// <value>Determines whether or not to embed standard windows fonts Arial and Times New Roman</value>    
         public bool? EmbedStandardWindowsFonts { get; set; }
 
         /// <summary>
-        /// Gets or sets EncryptionDetails
-        /// </summary>    
+        /// Specifies the details for encrypting the output PDF document
+        /// </summary>
+        /// <value>Specifies the details for encrypting the output PDF document</value>    
         public PdfEncryptionDetailsData EncryptionDetails { get; set; }
 
         /// <summary>
-        /// Gets or sets ExpandedOutlineLevels
-        /// </summary>    
+        /// Specifies how many levels in the PDF document outline to show expanded when the PDF file is viewed
+        /// </summary>
+        /// <value>Specifies how many levels in the PDF document outline to show expanded when the PDF file is viewed</value>    
         public int? ExpandedOutlineLevels { get; set; }
 
         /// <summary>
-        /// Gets or sets ExportCustomPropertiesAsMetadata
-        /// </summary>    
+        /// Determines whether or not to export custom properties of document as Metadata
+        /// </summary>
+        /// <value>Determines whether or not to export custom properties of document as Metadata</value>    
         public bool? ExportCustomPropertiesAsMetadata { get; set; }
 
         /// <summary>
-        /// Gets or sets ExportDocumentStructure
-        /// </summary>    
+        /// Determines whether or not to export document structure
+        /// </summary>
+        /// <value>Determines whether or not to export document structure</value>    
         public bool? ExportDocumentStructure { get; set; }
 
         /// <summary>
-        /// Gets or sets FontEmbeddingMode
-        /// </summary>    
+        /// Specifies the font embedding mode
+        /// </summary>
+        /// <value>Specifies the font embedding mode</value>    
         public string FontEmbeddingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets HeadingsOutlineLevels
-        /// </summary>    
+        /// Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the PDF document outline
+        /// </summary>
+        /// <value>Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the PDF document outline</value>    
         public int? HeadingsOutlineLevels { get; set; }
 
         /// <summary>
-        /// Gets or sets ImageCompression
-        /// </summary>    
+        /// Specifies compression type to be used for all images in the document
+        /// </summary>
+        /// <value>Specifies compression type to be used for all images in the document</value>    
         public string ImageCompression { get; set; }
 
         /// <summary>
-        /// Gets or sets OpenHyperlinksInNewWindow
-        /// </summary>    
+        /// Determines whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser
+        /// </summary>
+        /// <value>Determines whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser</value>    
         public bool? OpenHyperlinksInNewWindow { get; set; }
 
         /// <summary>
-        /// Gets or sets OutlineOptions
-        /// </summary>    
+        /// Allows to specify outline options
+        /// </summary>
+        /// <value>Allows to specify outline options</value>    
         public OutlineOptionsData OutlineOptions { get; set; }
 
         /// <summary>
-        /// Gets or sets PageMode
-        /// </summary>    
+        /// Specifies how the PDF document should be displayed when opened in the PDF reader
+        /// </summary>
+        /// <value>Specifies how the PDF document should be displayed when opened in the PDF reader</value>    
         public string PageMode { get; set; }
 
         /// <summary>
-        /// Gets or sets ImageColorSpaceExportMode
-        /// </summary>    
+        /// Specifies how the color space will be selected for the images in PDF document.
+        /// </summary>
+        /// <value>Specifies how the color space will be selected for the images in PDF document.</value>    
         public string ImageColorSpaceExportMode { get; set; }
 
         /// <summary>
-        /// Gets or sets PreserveFormFields
-        /// </summary>    
+        /// Specifies whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text
+        /// </summary>
+        /// <value>Specifies whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text</value>    
         public bool? PreserveFormFields { get; set; }
 
         /// <summary>
-        /// Gets or sets TextCompression
-        /// </summary>    
+        /// Specifies compression type to be used for all textual content in the document
+        /// </summary>
+        /// <value>Specifies compression type to be used for all textual content in the document</value>    
         public string TextCompression { get; set; }
 
         /// <summary>
-        /// Gets or sets UseCoreFonts
-        /// </summary>    
+        /// Determines whether or not to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts
+        /// </summary>
+        /// <value>Determines whether or not to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts</value>    
         public bool? UseCoreFonts { get; set; }
 
         /// <summary>
-        /// Gets or sets UseBookFoldPrintingSettings
-        /// </summary>    
+        /// Determines whether the document should be saved using a booklet printing layout
+        /// </summary>
+        /// <value>Determines whether the document should be saved using a booklet printing layout</value>    
         public bool? UseBookFoldPrintingSettings { get; set; }
 
         /// <summary>
-        /// Gets or sets ZoomBehavior
-        /// </summary>    
+        /// Determines what type of zoom should be applied when a document is opened with a PDF viewer
+        /// </summary>
+        /// <value>Determines what type of zoom should be applied when a document is opened with a PDF viewer</value>    
         public string ZoomBehavior { get; set; }
 
         /// <summary>
-        /// Gets or sets ZoomFactor
-        /// </summary>    
+        /// Determines zoom factor (in percentages) for a document
+        /// </summary>
+        /// <value>Determines zoom factor (in percentages) for a document</value>    
         public int? ZoomFactor { get; set; }
 
         /// <summary>
-        /// Gets or sets CustomPropertiesExport
-        /// </summary>    
+        /// Gets or sets a value determining the way {Aspose.Words.Properties.CustomDocumentProperties} are exported to PDF file.  Default value is {Aspose.Words.Saving.PdfCustomPropertiesExport.None}.
+        /// </summary>
+        /// <value>Gets or sets a value determining the way {Aspose.Words.Properties.CustomDocumentProperties} are exported to PDF file.  Default value is {Aspose.Words.Saving.PdfCustomPropertiesExport.None}.</value>    
         public string CustomPropertiesExport { get; set; }
 
         /// <summary>
-        /// Gets or sets PreblendImages
-        /// </summary>    
+        /// Gets or sets a value determining whether or not to preblend transparent images with black background color.
+        /// </summary>
+        /// <value>Gets or sets a value determining whether or not to preblend transparent images with black background color.</value>    
         public bool? PreblendImages { get; set; }
 
         /// <summary>

@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Collection of footnotes.
   /// </summary>  
   public class FootnoteCollection 
   {                       
         /// <summary>
-        /// Gets or sets List
-        /// </summary>    
+        /// Collection of foonotes links
+        /// </summary>
+        /// <value>Collection of foonotes links</value>    
         public List<Footnote> List { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

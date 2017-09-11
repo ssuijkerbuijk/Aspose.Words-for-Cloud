@@ -9,7 +9,7 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Represents text DTO.
   /// </summary>  
   public class TextItem 
   {                       
@@ -19,8 +19,9 @@ namespace Com.Aspose.Words.Model
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Contains data for load web document
   /// </summary>  
   public class LoadWebDocumentData 
   {                       
         /// <summary>
-        /// Gets or sets LoadingDocumentUrl
-        /// </summary>    
+        /// Web document url
+        /// </summary>
+        /// <value>Web document url</value>    
         public string LoadingDocumentUrl { get; set; }
 
         /// <summary>
-        /// Gets or sets SaveOptions
-        /// </summary>    
+        /// Save options
+        /// </summary>
+        /// <value>Save options</value>    
         public SaveOptionsData SaveOptions { get; set; }
 
         /// <summary>

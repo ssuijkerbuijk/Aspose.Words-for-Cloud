@@ -9,23 +9,26 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for rtf save options
   /// </summary>  
   public class RtfSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets PrettyFormat
-        /// </summary>    
+        /// Specifies whether or not use pretty formats output
+        /// </summary>
+        /// <value>Specifies whether or not use pretty formats output</value>    
         public bool? PrettyFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets ExportCompactSize
-        /// </summary>    
+        /// Allows to make output RTF documents smaller in size, but if they contain RTL (right-to-left) text, it will not be displayed correctly
+        /// </summary>
+        /// <value>Allows to make output RTF documents smaller in size, but if they contain RTL (right-to-left) text, it will not be displayed correctly</value>    
         public bool? ExportCompactSize { get; set; }
 
         /// <summary>
-        /// Gets or sets ExportImagesForOldReaders
-        /// </summary>    
+        /// Specifies whether the keywords for \"old readers\" are written to RTF or not
+        /// </summary>
+        /// <value>Specifies whether the keywords for \"old readers\" are written to RTF or not</value>    
         public bool? ExportImagesForOldReaders { get; set; }
 
         /// <summary>

@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Footnote.
   /// </summary>  
   public class Footnote 
   {                       
         /// <summary>
-        /// Gets or sets FootnoteType
+        /// Returns a value that specifies whether this is a footnote or endnote.
         /// </summary>
+        /// <value>Returns a value that specifies whether this is a footnote or endnote.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum FootnoteTypeEnum
         {
@@ -32,38 +33,45 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets FootnoteType
+        /// Returns a value that specifies whether this is a footnote or endnote.
         /// </summary>
+        /// <value>Returns a value that specifies whether this is a footnote or endnote.</value>
         public FootnoteTypeEnum? FootnoteType { get; set; }
 
         /// <summary>
-        /// Gets or sets Position
-        /// </summary>    
+        /// Link to comment range start node.
+        /// </summary>
+        /// <value>Link to comment range start node.</value>    
         public DocumentPosition Position { get; set; }
 
         /// <summary>
-        /// Gets or sets ReferenceMark
-        /// </summary>    
+        /// Gets/sets custom reference mark to be used for this footnote.  Default value is {System.String.Empty}, meaning auto-numbered footnotes are used.
+        /// </summary>
+        /// <value>Gets/sets custom reference mark to be used for this footnote.  Default value is {System.String.Empty}, meaning auto-numbered footnotes are used.</value>    
         public string ReferenceMark { get; set; }
 
         /// <summary>
-        /// Gets or sets Text
-        /// </summary>    
+        /// This is a convenience property that allows to easily get or set text of the footnote.
+        /// </summary>
+        /// <value>This is a convenience property that allows to easily get or set text of the footnote.</value>    
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or sets Content
-        /// </summary>    
+        /// Content of footnote.
+        /// </summary>
+        /// <value>Content of footnote.</value>    
         public StoryChildNodes Content { get; set; }
 
         /// <summary>
-        /// Gets or sets NodeId
-        /// </summary>    
+        /// Node id
+        /// </summary>
+        /// <value>Node id</value>    
         public string NodeId { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

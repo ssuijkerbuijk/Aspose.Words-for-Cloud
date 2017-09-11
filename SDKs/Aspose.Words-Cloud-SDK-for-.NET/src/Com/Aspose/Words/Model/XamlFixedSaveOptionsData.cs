@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for xaml fixed save options
   /// </summary>  
   public class XamlFixedSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets ResourcesFolder
-        /// </summary>    
+        /// Specifies the physical folder where resources (images and fonts) are saved when exporting a document to fixed page Xaml format.  Default is null.
+        /// </summary>
+        /// <value>Specifies the physical folder where resources (images and fonts) are saved when exporting a document to fixed page Xaml format.  Default is null.</value>    
         public string ResourcesFolder { get; set; }
 
         /// <summary>
-        /// Gets or sets ResourcesFolderAlias
-        /// </summary>    
+        /// Specifies the name of the folder used to construct image URIs written into an fixed page Xaml document.  Default is null.
+        /// </summary>
+        /// <value>Specifies the name of the folder used to construct image URIs written into an fixed page Xaml document.  Default is null.</value>    
         public string ResourcesFolderAlias { get; set; }
 
         /// <summary>

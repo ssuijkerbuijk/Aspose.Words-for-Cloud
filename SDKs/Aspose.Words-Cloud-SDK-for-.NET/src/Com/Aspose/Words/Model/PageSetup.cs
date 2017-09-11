@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Represents the page setup properties of a section.
   /// </summary>  
   public class PageSetup 
   {                       
         /// <summary>
-        /// Gets or sets BorderAppliesTo
+        /// Specifies which pages the page border is printed on.
         /// </summary>
+        /// <value>Specifies which pages the page border is printed on.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BorderAppliesToEnum
         {
@@ -37,8 +38,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets BorderDistanceFrom
+        /// Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from  the text it surrounds.
         /// </summary>
+        /// <value>Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from  the text it surrounds.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BorderDistanceFromEnum
         {
@@ -55,8 +57,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets LineNumberRestartMode
+        /// Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new  page or section or runs continuously.
         /// </summary>
+        /// <value>Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new  page or section or runs continuously.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LineNumberRestartModeEnum
         {
@@ -78,8 +81,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets Orientation
+        /// Returns or sets the orientation of the page.
         /// </summary>
+        /// <value>Returns or sets the orientation of the page.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OrientationEnum
         {
@@ -96,8 +100,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets PageNumberStyle
+        /// Gets or sets the page number format.
         /// </summary>
+        /// <value>Gets or sets the page number format.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PageNumberStyleEnum
         {
@@ -419,8 +424,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets PaperSize
+        /// Returns or sets the paper size.
         /// </summary>
+        /// <value>Returns or sets the paper size.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PaperSizeEnum
         {
@@ -512,8 +518,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets SectionStart
+        /// Returns or sets the type of section break for the specified object.
         /// </summary>
+        /// <value>Returns or sets the type of section break for the specified object.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SectionStartEnum
         {
@@ -545,8 +552,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets VerticalAlignment
+        /// Returns or sets the vertical alignment of text on each page in a document or section.
         /// </summary>
+        /// <value>Returns or sets the vertical alignment of text on each page in a document or section.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VerticalAlignmentEnum
         {
@@ -573,153 +581,183 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets BorderAppliesTo
+        /// Specifies which pages the page border is printed on.
         /// </summary>
+        /// <value>Specifies which pages the page border is printed on.</value>
         public BorderAppliesToEnum? BorderAppliesTo { get; set; }
 
         /// <summary>
-        /// Gets or sets BorderDistanceFrom
+        /// Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from  the text it surrounds.
         /// </summary>
+        /// <value>Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from  the text it surrounds.</value>
         public BorderDistanceFromEnum? BorderDistanceFrom { get; set; }
 
         /// <summary>
-        /// Gets or sets LineNumberRestartMode
+        /// Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new  page or section or runs continuously.
         /// </summary>
+        /// <value>Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new  page or section or runs continuously.</value>
         public LineNumberRestartModeEnum? LineNumberRestartMode { get; set; }
 
         /// <summary>
-        /// Gets or sets Orientation
+        /// Returns or sets the orientation of the page.
         /// </summary>
+        /// <value>Returns or sets the orientation of the page.</value>
         public OrientationEnum? Orientation { get; set; }
 
         /// <summary>
-        /// Gets or sets PageNumberStyle
+        /// Gets or sets the page number format.
         /// </summary>
+        /// <value>Gets or sets the page number format.</value>
         public PageNumberStyleEnum? PageNumberStyle { get; set; }
 
         /// <summary>
-        /// Gets or sets PaperSize
+        /// Returns or sets the paper size.
         /// </summary>
+        /// <value>Returns or sets the paper size.</value>
         public PaperSizeEnum? PaperSize { get; set; }
 
         /// <summary>
-        /// Gets or sets SectionStart
+        /// Returns or sets the type of section break for the specified object.
         /// </summary>
+        /// <value>Returns or sets the type of section break for the specified object.</value>
         public SectionStartEnum? SectionStart { get; set; }
 
         /// <summary>
-        /// Gets or sets VerticalAlignment
+        /// Returns or sets the vertical alignment of text on each page in a document or section.
         /// </summary>
+        /// <value>Returns or sets the vertical alignment of text on each page in a document or section.</value>
         public VerticalAlignmentEnum? VerticalAlignment { get; set; }
 
         /// <summary>
-        /// Gets or sets Bidi
-        /// </summary>    
+        /// Specifies that this section contains bidirectional (complex scripts) text.
+        /// </summary>
+        /// <value>Specifies that this section contains bidirectional (complex scripts) text.</value>    
         public bool? Bidi { get; set; }
 
         /// <summary>
-        /// Gets or sets BorderAlwaysInFront
-        /// </summary>    
+        /// Specifies where the page border is positioned relative to intersecting texts and objects.
+        /// </summary>
+        /// <value>Specifies where the page border is positioned relative to intersecting texts and objects.</value>    
         public bool? BorderAlwaysInFront { get; set; }
 
         /// <summary>
-        /// Gets or sets BottomMargin
-        /// </summary>    
+        /// Returns or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body  text.
+        /// </summary>
+        /// <value>Returns or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body  text.</value>    
         public double? BottomMargin { get; set; }
 
         /// <summary>
-        /// Gets or sets DifferentFirstPageHeaderFooter
-        /// </summary>    
+        /// <b>True</b> if a different header or footer is used on the first page.
+        /// </summary>
+        /// <value><b>True</b> if a different header or footer is used on the first page.</value>    
         public bool? DifferentFirstPageHeaderFooter { get; set; }
 
         /// <summary>
-        /// Gets or sets FirstPageTray
-        /// </summary>    
+        /// Gets or sets the paper tray (bin) to use for the first page of a section.  The value is implementation (printer) specific.
+        /// </summary>
+        /// <value>Gets or sets the paper tray (bin) to use for the first page of a section.  The value is implementation (printer) specific.</value>    
         public int? FirstPageTray { get; set; }
 
         /// <summary>
-        /// Gets or sets FooterDistance
-        /// </summary>    
+        /// Returns or sets the distance (in points) between the footer and the bottom of the page.
+        /// </summary>
+        /// <value>Returns or sets the distance (in points) between the footer and the bottom of the page.</value>    
         public double? FooterDistance { get; set; }
 
         /// <summary>
-        /// Gets or sets Gutter
-        /// </summary>    
+        /// Gets or sets the amount of extra space added to the margin for document binding.
+        /// </summary>
+        /// <value>Gets or sets the amount of extra space added to the margin for document binding.</value>    
         public double? Gutter { get; set; }
 
         /// <summary>
-        /// Gets or sets HeaderDistance
-        /// </summary>    
+        /// Returns or sets the distance (in points) between the header and the top of the page.
+        /// </summary>
+        /// <value>Returns or sets the distance (in points) between the header and the top of the page.</value>    
         public double? HeaderDistance { get; set; }
 
         /// <summary>
-        /// Gets or sets LeftMargin
-        /// </summary>    
+        /// Returns or sets the distance (in points) between the left edge of the page and the left boundary of the body text.
+        /// </summary>
+        /// <value>Returns or sets the distance (in points) between the left edge of the page and the left boundary of the body text.</value>    
         public double? LeftMargin { get; set; }
 
         /// <summary>
-        /// Gets or sets LineNumberCountBy
-        /// </summary>    
+        /// Returns or sets the numeric increment for line numbers.
+        /// </summary>
+        /// <value>Returns or sets the numeric increment for line numbers.</value>    
         public int? LineNumberCountBy { get; set; }
 
         /// <summary>
-        /// Gets or sets LineNumberDistanceFromText
-        /// </summary>    
+        /// Gets or sets distance between the right edge of line numbers and the left edge of the document.
+        /// </summary>
+        /// <value>Gets or sets distance between the right edge of line numbers and the left edge of the document.</value>    
         public double? LineNumberDistanceFromText { get; set; }
 
         /// <summary>
-        /// Gets or sets LineStartingNumber
-        /// </summary>    
+        /// Gets or sets the starting line number.
+        /// </summary>
+        /// <value>Gets or sets the starting line number.</value>    
         public int? LineStartingNumber { get; set; }
 
         /// <summary>
-        /// Gets or sets OtherPagesTray
-        /// </summary>    
+        /// Gets or sets the paper tray (bin) to be used for all but the first page of a section.  The value is implementation (printer) specific.
+        /// </summary>
+        /// <value>Gets or sets the paper tray (bin) to be used for all but the first page of a section.  The value is implementation (printer) specific.</value>    
         public int? OtherPagesTray { get; set; }
 
         /// <summary>
-        /// Gets or sets PageHeight
-        /// </summary>    
+        /// Returns or sets the height of the page in points.
+        /// </summary>
+        /// <value>Returns or sets the height of the page in points.</value>    
         public double? PageHeight { get; set; }
 
         /// <summary>
-        /// Gets or sets PageStartingNumber
-        /// </summary>    
+        /// Gets or sets the starting page number of the section.
+        /// </summary>
+        /// <value>Gets or sets the starting page number of the section.</value>    
         public int? PageStartingNumber { get; set; }
 
         /// <summary>
-        /// Gets or sets PageWidth
-        /// </summary>    
+        /// Returns or sets the width of the page in points.
+        /// </summary>
+        /// <value>Returns or sets the width of the page in points.</value>    
         public double? PageWidth { get; set; }
 
         /// <summary>
-        /// Gets or sets RestartPageNumbering
-        /// </summary>    
+        /// <b>True</b> if page numbering restarts at the beginning of the section.
+        /// </summary>
+        /// <value><b>True</b> if page numbering restarts at the beginning of the section.</value>    
         public bool? RestartPageNumbering { get; set; }
 
         /// <summary>
-        /// Gets or sets RightMargin
-        /// </summary>    
+        /// Returns or sets the distance (in points) between the right edge of the page and the right boundary of the body  text.
+        /// </summary>
+        /// <value>Returns or sets the distance (in points) between the right edge of the page and the right boundary of the body  text.</value>    
         public double? RightMargin { get; set; }
 
         /// <summary>
-        /// Gets or sets RtlGutter
-        /// </summary>    
+        /// Gets or sets whether Microsoft Word uses gutters for the section based on a right-to-left language or a  left-to-right language.
+        /// </summary>
+        /// <value>Gets or sets whether Microsoft Word uses gutters for the section based on a right-to-left language or a  left-to-right language.</value>    
         public bool? RtlGutter { get; set; }
 
         /// <summary>
-        /// Gets or sets SuppressEndnotes
-        /// </summary>    
+        /// <b>True</b> if endnotes are printed at the end of the next section that doesn't suppress endnotes.                  Suppressed endnotes are printed before the endnotes in that section.
+        /// </summary>
+        /// <value><b>True</b> if endnotes are printed at the end of the next section that doesn't suppress endnotes.                  Suppressed endnotes are printed before the endnotes in that section.</value>    
         public bool? SuppressEndnotes { get; set; }
 
         /// <summary>
-        /// Gets or sets TopMargin
-        /// </summary>    
+        /// Returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.
+        /// </summary>
+        /// <value>Returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.</value>    
         public double? TopMargin { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

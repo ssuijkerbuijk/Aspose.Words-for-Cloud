@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Container class for tiff save options.
   /// </summary>  
   public class TiffSaveOptionsData : ImageSaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets TiffBinarizationMethod
-        /// </summary>    
+        /// Specifies method used while converting images to 1 bpp format.
+        /// </summary>
+        /// <value>Specifies method used while converting images to 1 bpp format.</value>    
         public string TiffBinarizationMethod { get; set; }
 
         /// <summary>
-        /// Gets or sets TiffCompression
-        /// </summary>    
+        /// Type of compression.
+        /// </summary>
+        /// <value>Type of compression.</value>    
         public string TiffCompression { get; set; }
 
         /// <summary>

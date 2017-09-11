@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// FormField text input element
   /// </summary>  
   public class FormFieldTextInput : FormField 
   {                       
         /// <summary>
-        /// Gets or sets TextInputType
+        /// Gets or sets the type of a text form field.
         /// </summary>
+        /// <value>Gets or sets the type of a text form field.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextInputTypeEnum
         {
@@ -52,23 +53,27 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets TextInputType
+        /// Gets or sets the type of a text form field.
         /// </summary>
+        /// <value>Gets or sets the type of a text form field.</value>
         public TextInputTypeEnum? TextInputType { get; set; }
 
         /// <summary>
-        /// Gets or sets TextInputFormat
-        /// </summary>    
+        /// Returns or sets the text formatting for a text form field.
+        /// </summary>
+        /// <value>Returns or sets the text formatting for a text form field.</value>    
         public string TextInputFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets TextInputDefault
-        /// </summary>    
+        /// Gets or sets the default string or a calculation expression of a text form field.
+        /// </summary>
+        /// <value>Gets or sets the default string or a calculation expression of a text form field.</value>    
         public string TextInputDefault { get; set; }
 
         /// <summary>
-        /// Gets or sets MaxLength
-        /// </summary>    
+        /// Maximum length for the text field. Zero when the length is not limited.
+        /// </summary>
+        /// <value>Maximum length for the text field. Zero when the length is not limited.</value>    
         public int? MaxLength { get; set; }
 
         /// <summary>

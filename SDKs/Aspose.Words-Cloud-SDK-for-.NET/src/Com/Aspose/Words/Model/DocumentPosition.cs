@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Represents a position in the document tree.
   /// </summary>  
   public class DocumentPosition 
   {                       
         /// <summary>
-        /// Gets or sets Node
-        /// </summary>    
+        /// Link to  node.
+        /// </summary>
+        /// <value>Link to  node.</value>    
         public NodeLink Node { get; set; }
 
         /// <summary>
-        /// Gets or sets Offset
-        /// </summary>    
+        /// Offset into the node.
+        /// </summary>
+        /// <value>Offset into the node.</value>    
         public int? Offset { get; set; }
 
         /// <summary>

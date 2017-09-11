@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// This resonse should be returned by the service when handling:  GET http://api.aspose.com/v1.1/words/Test.doc/search
   /// </summary>  
   public class SearchResponse : SaaSposeResponse 
   {                       
         /// <summary>
-        /// Gets or sets SearchingPattern
-        /// </summary>    
+        /// A regular expression pattern used to find matches.
+        /// </summary>
+        /// <value>A regular expression pattern used to find matches.</value>    
         public string SearchingPattern { get; set; }
 
         /// <summary>
-        /// Gets or sets SearchResults
-        /// </summary>    
+        /// Collection of search results.
+        /// </summary>
+        /// <value>Collection of search results.</value>    
         public SearchResultsCollection SearchResults { get; set; }
 
         /// <summary>

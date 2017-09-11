@@ -9,7 +9,7 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Represents a collection of merge fields within a document.
   /// </summary>  
   public class FieldNames 
   {                       
@@ -19,8 +19,9 @@ namespace Com.Aspose.Words.Model
         public List<string> Names { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

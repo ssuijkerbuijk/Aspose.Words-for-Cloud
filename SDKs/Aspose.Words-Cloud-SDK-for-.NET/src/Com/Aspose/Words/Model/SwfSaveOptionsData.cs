@@ -9,113 +9,134 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for swf save options
   /// </summary>  
   public class SwfSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets AllowReadMode
-        /// </summary>    
+        /// Allows to enable read mode
+        /// </summary>
+        /// <value>Allows to enable read mode</value>    
         public bool? AllowReadMode { get; set; }
 
         /// <summary>
-        /// Gets or sets BookmarksOutlineLevel
-        /// </summary>    
+        /// Specifies the level in the SWF document outline at which to display Word bookmarks
+        /// </summary>
+        /// <value>Specifies the level in the SWF document outline at which to display Word bookmarks</value>    
         public int? BookmarksOutlineLevel { get; set; }
 
         /// <summary>
-        /// Gets or sets Compressed
-        /// </summary>    
+        /// Specifies whether the generated SWF document should be compressed or not
+        /// </summary>
+        /// <value>Specifies whether the generated SWF document should be compressed or not</value>    
         public bool? Compressed { get; set; }
 
         /// <summary>
-        /// Gets or sets EnableContextMenu
-        /// </summary>    
+        /// Enable/disable context menu
+        /// </summary>
+        /// <value>Enable/disable context menu</value>    
         public bool? EnableContextMenu { get; set; }
 
         /// <summary>
-        /// Gets or sets ExpandedOutlineLevels
-        /// </summary>    
+        /// Specifies how many levels in the SWF document outline to show expanded when the SWF file is viewed
+        /// </summary>
+        /// <value>Specifies how many levels in the SWF document outline to show expanded when the SWF file is viewed</value>    
         public int? ExpandedOutlineLevels { get; set; }
 
         /// <summary>
-        /// Gets or sets HeadingsOutlineLevels
-        /// </summary>    
+        /// Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the SWF document outline
+        /// </summary>
+        /// <value>Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the SWF document outline</value>    
         public int? HeadingsOutlineLevels { get; set; }
 
         /// <summary>
-        /// Gets or sets LeftPaneControlFlags
-        /// </summary>    
+        /// Control flags used to configure appearance of left panel of SWF viewer
+        /// </summary>
+        /// <value>Control flags used to configure appearance of left panel of SWF viewer</value>    
         public string LeftPaneControlFlags { get; set; }
 
         /// <summary>
-        /// Gets or sets LogoImageBytes
-        /// </summary>    
+        /// Image that will be displayed as logo in the top right corner of the viewer as string in base64 format
+        /// </summary>
+        /// <value>Image that will be displayed as logo in the top right corner of the viewer as string in base64 format</value>    
         public string LogoImageBytes { get; set; }
 
         /// <summary>
-        /// Gets or sets LogoLink
-        /// </summary>    
+        /// Specifies the full hyperlink address for a logo
+        /// </summary>
+        /// <value>Specifies the full hyperlink address for a logo</value>    
         public string LogoLink { get; set; }
 
         /// <summary>
-        /// Gets or sets OutlineOptions
-        /// </summary>    
+        /// Allows to specify outline options
+        /// </summary>
+        /// <value>Allows to specify outline options</value>    
         public OutlineOptionsData OutlineOptions { get; set; }
 
         /// <summary>
-        /// Gets or sets ShowBottomPane
-        /// </summary>    
+        /// Show/hide bottom pane
+        /// </summary>
+        /// <value>Show/hide bottom pane</value>    
         public bool? ShowBottomPane { get; set; }
 
         /// <summary>
-        /// Gets or sets ShowFullScreen
-        /// </summary>    
+        /// Show/hide fullscreen button
+        /// </summary>
+        /// <value>Show/hide fullscreen button</value>    
         public bool? ShowFullScreen { get; set; }
 
         /// <summary>
-        /// Gets or sets ShowLeftPane
-        /// </summary>    
+        /// Show/hide left pane
+        /// </summary>
+        /// <value>Show/hide left pane</value>    
         public bool? ShowLeftPane { get; set; }
 
         /// <summary>
-        /// Gets or sets ShowPageBorder
-        /// </summary>    
+        /// Specifies whether border around pages should be shown
+        /// </summary>
+        /// <value>Specifies whether border around pages should be shown</value>    
         public bool? ShowPageBorder { get; set; }
 
         /// <summary>
-        /// Gets or sets ShowPageStepper
-        /// </summary>    
+        /// Show/hide page stepper
+        /// </summary>
+        /// <value>Show/hide page stepper</value>    
         public bool? ShowPageStepper { get; set; }
 
         /// <summary>
-        /// Gets or sets ShowSearch
-        /// </summary>    
+        /// Show/hide search section
+        /// </summary>
+        /// <value>Show/hide search section</value>    
         public bool? ShowSearch { get; set; }
 
         /// <summary>
-        /// Gets or sets ShowTopPane
-        /// </summary>    
+        /// Show/hide whole top pane
+        /// </summary>
+        /// <value>Show/hide whole top pane</value>    
         public bool? ShowTopPane { get; set; }
 
         /// <summary>
-        /// Gets or sets StartOpenLeftPane
-        /// </summary>    
+        /// Start with opened left pane
+        /// </summary>
+        /// <value>Start with opened left pane</value>    
         public bool? StartOpenLeftPane { get; set; }
 
         /// <summary>
-        /// Gets or sets ToolTipsFontName
-        /// </summary>    
+        /// Specifies a font used for tooltips in SWF viewer
+        /// </summary>
+        /// <value>Specifies a font used for tooltips in SWF viewer</value>    
         public string ToolTipsFontName { get; set; }
 
         /// <summary>
-        /// Gets or sets TopPaneControlFlags
-        /// </summary>    
+        /// Control flags used to configure appearance of top panel of SWF viewer
+        /// </summary>
+        /// <value>Control flags used to configure appearance of top panel of SWF viewer</value>    
         public string TopPaneControlFlags { get; set; }
 
         /// <summary>
-        /// Gets or sets ViewerIncluded
-        /// </summary>    
+        /// Specifies whether the generated SWF document should include the integrated document viewer or not
+        /// </summary>
+        /// <value>Specifies whether the generated SWF document should include the integrated document viewer or not</value>    
         public bool? ViewerIncluded { get; set; }
 
         /// <summary>

@@ -9,28 +9,32 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for outline options
   /// </summary>  
   public class OutlineOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets BookmarksOutlineLevels
-        /// </summary>    
+        /// Allows to specify individual bookmarks outline level
+        /// </summary>
+        /// <value>Allows to specify individual bookmarks outline level</value>    
         public List<BookmarksOutlineLevelData> BookmarksOutlineLevels { get; set; }
 
         /// <summary>
-        /// Gets or sets DefaultBookmarksOutlineLevel
-        /// </summary>    
+        /// Specifies the default level in the document outline at which to display Word bookmarks
+        /// </summary>
+        /// <value>Specifies the default level in the document outline at which to display Word bookmarks</value>    
         public int? DefaultBookmarksOutlineLevel { get; set; }
 
         /// <summary>
-        /// Gets or sets ExpandedOutlineLevels
-        /// </summary>    
+        /// Specifies how many levels in the document outline to show expanded when the file is viewed
+        /// </summary>
+        /// <value>Specifies how many levels in the document outline to show expanded when the file is viewed</value>    
         public int? ExpandedOutlineLevels { get; set; }
 
         /// <summary>
-        /// Gets or sets HeadingsOutlineLevels
-        /// </summary>    
+        /// Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the document outline
+        /// </summary>
+        /// <value>Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the document outline</value>    
         public int? HeadingsOutlineLevels { get; set; }
 
         /// <summary>

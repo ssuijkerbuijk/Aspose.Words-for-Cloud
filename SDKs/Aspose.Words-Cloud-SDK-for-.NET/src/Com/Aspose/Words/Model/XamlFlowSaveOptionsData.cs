@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for xaml flow save options
   /// </summary>  
   public class XamlFlowSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets ImagesFolder
-        /// </summary>    
+        /// Specifies the physical folder where images are saved when exporting
+        /// </summary>
+        /// <value>Specifies the physical folder where images are saved when exporting</value>    
         public string ImagesFolder { get; set; }
 
         /// <summary>
-        /// Gets or sets ImagesFolderAlias
-        /// </summary>    
+        /// Specifies the name of the folder used to construct image URIs
+        /// </summary>
+        /// <value>Specifies the name of the folder used to construct image URIs</value>    
         public string ImagesFolderAlias { get; set; }
 
         /// <summary>

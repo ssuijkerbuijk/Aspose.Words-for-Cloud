@@ -9,33 +9,38 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Class for document replace text request building.
   /// </summary>  
   public class ReplaceTextRequest 
   {                       
         /// <summary>
-        /// Gets or sets OldValue
-        /// </summary>    
+        /// Old text value (or regex pattern {Aspose.Words.Cloud.DTO.Replace.ReplaceTextRequest.IsOldValueRegex}) to replace.
+        /// </summary>
+        /// <value>Old text value (or regex pattern {Aspose.Words.Cloud.DTO.Replace.ReplaceTextRequest.IsOldValueRegex}) to replace.</value>    
         public string OldValue { get; set; }
 
         /// <summary>
-        /// Gets or sets NewValue
-        /// </summary>    
+        /// New text value to replace by.
+        /// </summary>
+        /// <value>New text value to replace by.</value>    
         public string NewValue { get; set; }
 
         /// <summary>
-        /// Gets or sets IsMatchCase
-        /// </summary>    
+        /// Flag, true means the search is case-sensitive; false means the search is not case-sensitive.
+        /// </summary>
+        /// <value>Flag, true means the search is case-sensitive; false means the search is not case-sensitive.</value>    
         public bool? IsMatchCase { get; set; }
 
         /// <summary>
-        /// Gets or sets IsMatchWholeWord
-        /// </summary>    
+        /// Flag, means that only whole word matched are replaced.
+        /// </summary>
+        /// <value>Flag, means that only whole word matched are replaced.</value>    
         public bool? IsMatchWholeWord { get; set; }
 
         /// <summary>
-        /// Gets or sets IsOldValueRegex
-        /// </summary>    
+        /// Flag, means that {Aspose.Words.Cloud.DTO.Replace.ReplaceTextRequest.OldValue} contains regex expression.
+        /// </summary>
+        /// <value>Flag, means that {Aspose.Words.Cloud.DTO.Replace.ReplaceTextRequest.OldValue} contains regex expression.</value>    
         public bool? IsOldValueRegex { get; set; }
 
         /// <summary>

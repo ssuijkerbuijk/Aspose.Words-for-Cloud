@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Represents DTO for collection of formfields.
   /// </summary>  
   public class FormFieldCollection 
   {                       
         /// <summary>
-        /// Gets or sets List
-        /// </summary>    
+        /// Collection of formfields
+        /// </summary>
+        /// <value>Collection of formfields</value>    
         public List<FormField> List { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

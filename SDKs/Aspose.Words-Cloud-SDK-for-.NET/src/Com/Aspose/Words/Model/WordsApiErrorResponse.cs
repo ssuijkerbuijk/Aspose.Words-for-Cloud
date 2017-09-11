@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Response for Api error
   /// </summary>  
   public class WordsApiErrorResponse : SaaSposeResponse 
   {                       
         /// <summary>
-        /// Gets or sets Message
-        /// </summary>    
+        /// Error message.
+        /// </summary>
+        /// <value>Error message.</value>    
         public string Message { get; set; }
 
         /// <summary>

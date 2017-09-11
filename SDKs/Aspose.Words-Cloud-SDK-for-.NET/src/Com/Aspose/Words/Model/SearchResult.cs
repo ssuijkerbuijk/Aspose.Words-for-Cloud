@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Result of search operation.
   /// </summary>  
   public class SearchResult 
   {                       
         /// <summary>
-        /// Gets or sets RangeStart
-        /// </summary>    
+        /// Link to result range start node.
+        /// </summary>
+        /// <value>Link to result range start node.</value>    
         public DocumentPosition RangeStart { get; set; }
 
         /// <summary>
-        /// Gets or sets RangeEnd
-        /// </summary>    
+        /// Link to result range end node.
+        /// </summary>
+        /// <value>Link to result range end node.</value>    
         public DocumentPosition RangeEnd { get; set; }
 
         /// <summary>

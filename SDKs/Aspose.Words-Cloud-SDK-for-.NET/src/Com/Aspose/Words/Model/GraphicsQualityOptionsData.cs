@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Allows to specify additional System.Drawing.Graphics quality options.
   /// </summary>  
   public class GraphicsQualityOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets CompositingMode
+        /// Gets or sets a value that specifies how composited images are drawn to this Graphics.
         /// </summary>
+        /// <value>Gets or sets a value that specifies how composited images are drawn to this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CompositingModeEnum
         {
@@ -32,8 +33,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets CompositingQuality
+        /// Gets or sets the rendering quality of composited images drawn to this Graphics.
         /// </summary>
+        /// <value>Gets or sets the rendering quality of composited images drawn to this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CompositingQualityEnum
         {
@@ -70,8 +72,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets InterpolationMode
+        /// Gets or sets the interpolation mode associated with this Graphics.
         /// </summary>
+        /// <value>Gets or sets the interpolation mode associated with this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum InterpolationModeEnum
         {
@@ -123,8 +126,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets SmoothingMode
+        /// Gets or sets the rendering quality for this Graphics.
         /// </summary>
+        /// <value>Gets or sets the rendering quality for this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SmoothingModeEnum
         {
@@ -161,8 +165,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets TextRenderingHint
+        /// Gets or sets the rendering mode for text associated with this Graphics.
         /// </summary>
+        /// <value>Gets or sets the rendering mode for text associated with this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextRenderingHintEnum
         {
@@ -199,33 +204,39 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets CompositingMode
+        /// Gets or sets a value that specifies how composited images are drawn to this Graphics.
         /// </summary>
+        /// <value>Gets or sets a value that specifies how composited images are drawn to this Graphics.</value>
         public CompositingModeEnum? CompositingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets CompositingQuality
+        /// Gets or sets the rendering quality of composited images drawn to this Graphics.
         /// </summary>
+        /// <value>Gets or sets the rendering quality of composited images drawn to this Graphics.</value>
         public CompositingQualityEnum? CompositingQuality { get; set; }
 
         /// <summary>
-        /// Gets or sets InterpolationMode
+        /// Gets or sets the interpolation mode associated with this Graphics.
         /// </summary>
+        /// <value>Gets or sets the interpolation mode associated with this Graphics.</value>
         public InterpolationModeEnum? InterpolationMode { get; set; }
 
         /// <summary>
-        /// Gets or sets SmoothingMode
+        /// Gets or sets the rendering quality for this Graphics.
         /// </summary>
+        /// <value>Gets or sets the rendering quality for this Graphics.</value>
         public SmoothingModeEnum? SmoothingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets TextRenderingHint
+        /// Gets or sets the rendering mode for text associated with this Graphics.
         /// </summary>
+        /// <value>Gets or sets the rendering mode for text associated with this Graphics.</value>
         public TextRenderingHintEnum? TextRenderingHint { get; set; }
 
         /// <summary>
-        /// Gets or sets StringFormat
-        /// </summary>    
+        /// Gets or sets text layout information (such as alignment, orientation and tab stops) display manipulations (such as ellipsis insertion and national digit substitution) and OpenType features.
+        /// </summary>
+        /// <value>Gets or sets text layout information (such as alignment, orientation and tab stops) display manipulations (such as ellipsis insertion and national digit substitution) and OpenType features.</value>    
         public StringFormatData StringFormat { get; set; }
 
         /// <summary>

@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// This resonse should be returned by the service when handling:  GET http://api.aspose.com/v1.1/words/Test.doc/sections
   /// </summary>  
   public class SectionLinkCollectionResponse : SaaSposeResponse 
   {                       
         /// <summary>
-        /// Gets or sets Sections
-        /// </summary>    
+        /// Collection of sections
+        /// </summary>
+        /// <value>Collection of sections</value>    
         public SectionLinkCollection Sections { get; set; }
 
         /// <summary>

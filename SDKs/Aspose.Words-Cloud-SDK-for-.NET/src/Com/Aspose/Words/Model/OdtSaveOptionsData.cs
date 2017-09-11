@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for odt/ott save options
   /// </summary>  
   public class OdtSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets PrettyFormat
-        /// </summary>    
+        /// Specifies whether or not use pretty formats output
+        /// </summary>
+        /// <value>Specifies whether or not use pretty formats output</value>    
         public bool? PrettyFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets IsStrictSchema11
-        /// </summary>    
+        /// Specifies whether export should correspond to ODT specification 1.1 strictly
+        /// </summary>
+        /// <value>Specifies whether export should correspond to ODT specification 1.1 strictly</value>    
         public bool? IsStrictSchema11 { get; set; }
 
         /// <summary>

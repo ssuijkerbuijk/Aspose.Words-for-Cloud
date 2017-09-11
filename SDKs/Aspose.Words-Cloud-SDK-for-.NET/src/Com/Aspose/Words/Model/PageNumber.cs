@@ -9,28 +9,32 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Class is used for insert page number request building.
   /// </summary>  
   public class PageNumber 
   {                       
         /// <summary>
-        /// Gets or sets Format
-        /// </summary>    
+        /// Page number format, e.g. \"{PAGE} of {NUMPAGES}\".
+        /// </summary>
+        /// <value>Page number format, e.g. \"{PAGE} of {NUMPAGES}\".</value>    
         public string Format { get; set; }
 
         /// <summary>
-        /// Gets or sets Alignment
-        /// </summary>    
+        /// Text alignment, possible values are left, right, center or justify.
+        /// </summary>
+        /// <value>Text alignment, possible values are left, right, center or justify.</value>    
         public string Alignment { get; set; }
 
         /// <summary>
-        /// Gets or sets IsTop
-        /// </summary>    
+        /// If true the page number is added at the top of the page, else at the bottom.
+        /// </summary>
+        /// <value>If true the page number is added at the top of the page, else at the bottom.</value>    
         public bool? IsTop { get; set; }
 
         /// <summary>
-        /// Gets or sets SetPageNumberOnFirstPage
-        /// </summary>    
+        /// If true the page number is added on first page too.
+        /// </summary>
+        /// <value>If true the page number is added on first page too.</value>    
         public bool? SetPageNumberOnFirstPage { get; set; }
 
         /// <summary>

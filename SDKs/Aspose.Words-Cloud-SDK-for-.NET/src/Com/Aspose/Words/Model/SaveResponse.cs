@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Save response.
   /// </summary>  
   public class SaveResponse : SaaSposeResponse 
   {                       
         /// <summary>
-        /// Gets or sets SaveResult
-        /// </summary>    
+        /// Save result.
+        /// </summary>
+        /// <value>Save result.</value>    
         public SaveResult SaveResult { get; set; }
 
         /// <summary>

@@ -9,48 +9,56 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Comment.
   /// </summary>  
   public class Comment 
   {                       
         /// <summary>
-        /// Gets or sets RangeStart
-        /// </summary>    
+        /// Link to comment range start node.
+        /// </summary>
+        /// <value>Link to comment range start node.</value>    
         public DocumentPosition RangeStart { get; set; }
 
         /// <summary>
-        /// Gets or sets RangeEnd
-        /// </summary>    
+        /// Link to comment range end node.
+        /// </summary>
+        /// <value>Link to comment range end node.</value>    
         public DocumentPosition RangeEnd { get; set; }
 
         /// <summary>
-        /// Gets or sets Author
-        /// </summary>    
+        /// Returns or sets the author name for a comment.
+        /// </summary>
+        /// <value>Returns or sets the author name for a comment.</value>    
         public string Author { get; set; }
 
         /// <summary>
-        /// Gets or sets Initial
-        /// </summary>    
+        /// Returns or sets the initials of the user associated with a specific comment.
+        /// </summary>
+        /// <value>Returns or sets the initials of the user associated with a specific comment.</value>    
         public string Initial { get; set; }
 
         /// <summary>
-        /// Gets or sets DateTime
-        /// </summary>    
+        /// Gets the date and time that the comment was made.
+        /// </summary>
+        /// <value>Gets the date and time that the comment was made.</value>    
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets Text
-        /// </summary>    
+        /// This is a convenience property that allows to easily get or set text of the comment.
+        /// </summary>
+        /// <value>This is a convenience property that allows to easily get or set text of the comment.</value>    
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or sets Content
-        /// </summary>    
+        /// Content of comment
+        /// </summary>
+        /// <value>Content of comment</value>    
         public StoryChildNodes Content { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

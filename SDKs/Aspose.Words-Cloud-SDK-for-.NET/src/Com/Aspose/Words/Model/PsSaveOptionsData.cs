@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for ps save options
   /// </summary>  
   public class PsSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets UseBookFoldPrintingSettings
-        /// </summary>    
+        /// Determines whether the document should be saved using a booklet printing layout
+        /// </summary>
+        /// <value>Determines whether the document should be saved using a booklet printing layout</value>    
         public bool? UseBookFoldPrintingSettings { get; set; }
 
         /// <summary>

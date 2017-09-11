@@ -9,28 +9,32 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Container class for xps save options.
   /// </summary>  
   public class XpsSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets BookmarksOutlineLevel
-        /// </summary>    
+        /// Specifies the level in the XPS document outline at which to display Word bookmarks.
+        /// </summary>
+        /// <value>Specifies the level in the XPS document outline at which to display Word bookmarks.</value>    
         public int? BookmarksOutlineLevel { get; set; }
 
         /// <summary>
-        /// Gets or sets HeadingsOutlineLevels
-        /// </summary>    
+        /// Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the XPS document outline.
+        /// </summary>
+        /// <value>Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the XPS document outline.</value>    
         public int? HeadingsOutlineLevels { get; set; }
 
         /// <summary>
-        /// Gets or sets OutlineOptions
-        /// </summary>    
+        /// Allows to specify outline options
+        /// </summary>
+        /// <value>Allows to specify outline options</value>    
         public OutlineOptionsData OutlineOptions { get; set; }
 
         /// <summary>
-        /// Gets or sets UseBookFoldPrintingSettings
-        /// </summary>    
+        /// Determines whether the document should be saved using a booklet printing layout
+        /// </summary>
+        /// <value>Determines whether the document should be saved using a booklet printing layout</value>    
         public bool? UseBookFoldPrintingSettings { get; set; }
 
         /// <summary>

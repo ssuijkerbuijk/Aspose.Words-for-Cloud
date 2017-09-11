@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Represents Words document DTO.
   /// </summary>  
   public class Document 
   {                       
         /// <summary>
-        /// Gets or sets SourceFormat
+        /// Gets the original format of the document.
         /// </summary>
+        /// <value>Gets the original format of the document.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SourceFormatEnum
         {
@@ -132,33 +133,39 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets SourceFormat
+        /// Gets the original format of the document.
         /// </summary>
+        /// <value>Gets the original format of the document.</value>
         public SourceFormatEnum? SourceFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets Links
-        /// </summary>    
+        /// A list of links that originate from this document.
+        /// </summary>
+        /// <value>A list of links that originate from this document.</value>    
         public List<Link> Links { get; set; }
 
         /// <summary>
-        /// Gets or sets FileName
-        /// </summary>    
+        /// Gets the name of the file.
+        /// </summary>
+        /// <value>Gets the name of the file.</value>    
         public string FileName { get; set; }
 
         /// <summary>
-        /// Gets or sets IsEncrypted
-        /// </summary>    
+        /// Returns true if the document is encrypted and requires a password to open.
+        /// </summary>
+        /// <value>Returns true if the document is encrypted and requires a password to open.</value>    
         public bool? IsEncrypted { get; set; }
 
         /// <summary>
-        /// Gets or sets IsSigned
-        /// </summary>    
+        /// Returns true if the document contains a digital signature. This property merely informs that a   digital signature is present on a document, but it does not specify whether the signature is valid or not.
+        /// </summary>
+        /// <value>Returns true if the document contains a digital signature. This property merely informs that a   digital signature is present on a document, but it does not specify whether the signature is valid or not.</value>    
         public bool? IsSigned { get; set; }
 
         /// <summary>
-        /// Gets or sets DocumentProperties
-        /// </summary>    
+        /// Returns document properties.
+        /// </summary>
+        /// <value>Returns document properties.</value>    
         public DocumentProperties DocumentProperties { get; set; }
 
         /// <summary>

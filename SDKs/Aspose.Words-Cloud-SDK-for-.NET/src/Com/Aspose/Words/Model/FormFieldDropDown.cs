@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// FormField dropdownlist element
   /// </summary>  
   public class FormFieldDropDown : FormField 
   {                       
         /// <summary>
-        /// Gets or sets DropDownSelectedIndex
-        /// </summary>    
+        /// Gets or sets the index specifying the currently selected item in a dropdown form field.
+        /// </summary>
+        /// <value>Gets or sets the index specifying the currently selected item in a dropdown form field.</value>    
         public int? DropDownSelectedIndex { get; set; }
 
         /// <summary>
-        /// Gets or sets DropDownItems
-        /// </summary>    
+        /// Provides access to the items of a dropdown form field.
+        /// </summary>
+        /// <value>Provides access to the items of a dropdown form field.</value>    
         public List<string> DropDownItems { get; set; }
 
         /// <summary>

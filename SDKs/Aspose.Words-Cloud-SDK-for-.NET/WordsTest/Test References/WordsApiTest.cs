@@ -10,7 +10,7 @@ namespace WordsTest
     /// <summary>
     ///This is a test class for TestWordsApi and is intended
     ///to contain all TestWordsApi Unit Tests
-    ///</summary>
+    /// </summary>
     [TestClass()]
     public class TestWordsApi
     {
@@ -22,7 +22,7 @@ namespace WordsTest
         /// <summary>
         ///Gets or sets the test context which provides
         ///information about and functionality for the current test run.
-        ///</summary>
+        /// </summary>
         public TestContext TestContext
         {
             get
@@ -68,7 +68,7 @@ namespace WordsTest
 
         /// <summary>
         ///A test for WordsApi Constructor
-        ///</summary>
+        /// </summary>
         public TestWordsApi()
         {
             target = new WordsApi("0fbf678c5ecabdb5caca48452a736dd0", "91a2fd07-bba1-4b32-9112-abfb1fe8aebd", "http://api.aspose.cloud/v1.1");
@@ -78,8 +78,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for AcceptAllRevisions
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestAcceptAllRevisions()
         {
 
@@ -100,8 +100,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for DeleteComment
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestDeleteComment()
         {
             string name = "test_multi_pages.docx";
@@ -118,8 +118,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for DeleteDocumentFields
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestDeleteDocumentFields()
         {
             string name = "test_multi_pages.docx";
@@ -136,8 +136,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for DeleteDocumentMacros
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestDeleteDocumentMacros()
         {
             string name = "test_multi_pages.docx";
@@ -156,8 +156,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for DeleteDocumentProperty
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestDeleteDocumentProperty()
         {
             string name = "test_multi_pages.docx";
@@ -185,8 +185,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for DeleteDocumentWatermark
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestDeleteDocumentWatermark()
         {
             string name = "test_multi_pages.docx";
@@ -217,28 +217,26 @@ namespace WordsTest
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
                         
-            SaaSposeResponse actual = target.DeleteFormField(name, "sections/0", formfieldIndex, destFileName);
+            SaaSposeResponse actual = target.DeleteFormField(name, formfieldIndex, "sections/0", destFileName);
 
            Assert.AreEqual(200, actual.Code);                        
         }
 
         /// <summary>
-        ///A test for DeleteField
-        ///</summary>
-        [TestMethod()]
+        /// A test for DeleteField
+        /// </summary>
+        [TestMethod]
         public void TestDeleteField()
         {
             string name = "GetField.docx";
             int sectionIndex = 0;
             int paragraphIndex = 0;
             int fieldIndex = 0;           
-            string storage = null;
-            string folder = null;
-
+            
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.SaaSposeResponse actual;
-            actual = target.DeleteField(name, "sections/0/paragraphs/0", fieldIndex,  storage, folder);
+            actual = target.DeleteField(name, fieldIndex, "sections/0/paragraphs/0");
 
            Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaaSposeResponse(), actual.GetType());
@@ -256,15 +254,15 @@ namespace WordsTest
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
-            SaaSposeResponse actual = target.DeleteHeadersFooters(name, "sections/0", filename);
+            SaaSposeResponse actual = target.DeleteHeadersFooters(name, "sections/0", destFileName: filename);
 
            Assert.AreEqual(200, actual.Code);            
         }
 
         /// <summary>
         ///A test for DeleteParagraphFields
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestDeleteParagraphFields()
         {
             string name = "test_multi_pages.docx";
@@ -284,8 +282,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for DeleteSectionFields
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestDeleteSectionFields()
         {
             string name = "test_multi_pages.docx";
@@ -303,8 +301,8 @@ namespace WordsTest
         }
         /// <summary>
         ///A test for GetRenderPage
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetRenderPage()
         {
             string name = "SampleWordDocument.docx";
@@ -322,8 +320,8 @@ namespace WordsTest
         }
         /// <summary>
         ///A test for DeleteSectionParagraphFields
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestDeleteSectionParagraphFields()
         {
 
@@ -364,8 +362,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for GetComment
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetComment()
         {
             string name = "test_multi_pages.docx";
@@ -385,8 +383,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for GetComments
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetComments()
         {
             string name = "test_multi_pages.docx";
@@ -406,7 +404,7 @@ namespace WordsTest
         /// <summary>
         /// A test for GetDocument
         /// </summary>
-        [TestMethod()]
+        [TestMethod]
         public void TestGetDocument()
         {            
             string name = "test_multi_pages.docx";          
@@ -419,8 +417,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for GetDocumentBookmarkByName
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentBookmarkByName()
         {
 
@@ -439,8 +437,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for GetDocumentBookmarks
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentBookmarks()
         {
             string name = "test_multi_pages.docx";
@@ -456,80 +454,67 @@ namespace WordsTest
         }
 
         /// <summary>
-        ///A test for GetDocumentDrawingObjectByIndex
-        ///</summary>
-        [TestMethod()]
+        /// A test for GetDocumentDrawingObjectByIndex
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentDrawingObjectByIndex()
         {
             string name = "test_multi_pages.docx";
             int objectIndex = 0;
-            string storage = null;
-            string folder = null;
-            
+          
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
-            DrawingObjectResponse actual = target.GetDocumentDrawingObjectByIndex(name, "sections/0", objectIndex, storage, folder);
+            DrawingObjectResponse actual = target.GetDocumentDrawingObjectByIndex(name, objectIndex, "sections/0");
 
            Assert.AreEqual(200, actual.Code);                        
         }
 
         /// <summary>
         ///A test for GetDocumentDrawingObjectByIndexWithFormat
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentDrawingObjectByIndexWithFormat()
         {
-
             string name = "test_multi_pages.docx";
             int objectIndex = 0;
             string format = "png";
-            string storage = null;
-            string folder = null;
+           
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-
             
-            var actual = target.RenderDrawingObject(name, format, "sections/0", objectIndex, storage, folder);            
-            
+            var actual = target.RenderDrawingObject(name, format, objectIndex, "sections/0");                        
         }
 
         /// <summary>
-        ///A test for GetDocumentDrawingObjectImageData
-        ///</summary>
-        [TestMethod()]
+        /// A test for GetDocumentDrawingObjectImageData
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentDrawingObjectImageData()
         {
             string name = "test_multi_pages.docx";
-            int objectIndex = 0;
-            string storage = null;
-            string folder = null;
+            int objectIndex = 0;            
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-
             
-            target.GetDocumentDrawingObjectImageData(name, "sections/0", objectIndex, storage, folder);        
-            
+            target.GetDocumentDrawingObjectImageData(name, objectIndex, "sections/0");            
         }
 
         /// <summary>
-        ///A test for GetDocumentDrawingObjectOleData
-        ///</summary>
-        [TestMethod()]
+        /// A test for GetDocumentDrawingObjectOleData
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentDrawingObjectOleData()
         {
             string name = "sample_EmbeddedOLE.docx";
-            int objectIndex = 0; 
-            string storage = null;
-            string folder = null;
+            int objectIndex = 0;             
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
 
-            target.GetDocumentDrawingObjectOleData(name, "sections/0", objectIndex, storage, folder);
-            
+            target.GetDocumentDrawingObjectOleData(name, objectIndex, "sections/0");            
         }
 
         /// <summary>
         ///A test for GetDocumentDrawingObjects
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentDrawingObjects()
         {
             string name = "test_multi_pages.docx";
@@ -540,35 +525,32 @@ namespace WordsTest
             Com.Aspose.Words.Model.DrawingObjectsResponse actual;
             actual = target.GetDocumentDrawingObjects(name, "sections/0", storage, folder);
 
-           Assert.AreEqual(200, actual.Code);
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DrawingObjectsResponse(), actual.GetType()); 
-
-            
+            Assert.AreEqual(200, actual.Code);
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DrawingObjectsResponse(), actual.GetType());
         }
 
         /// <summary>
-        ///A test for GetDocumentFieldNames
-        ///</summary>
-        [TestMethod()]
+        /// A test for GetDocumentFieldNames
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentFieldNames()
         {
             string name = name = "test_multi_pages.docx";
             bool useNonMergeFields = false;
-            string storage = null;
-            string folder = null;
+
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.FieldNamesResponse actual;
-            actual = target.GetDocumentFieldNames(name, storage, folder, useNonMergeFields: useNonMergeFields);
+            actual = target.GetDocumentFieldNames(name, useNonMergeFields: useNonMergeFields);
 
-           Assert.AreEqual(200, actual.Code);
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FieldNamesResponse(), actual.GetType());             
+            Assert.AreEqual(200, actual.Code);
+            Assert.IsInstanceOfType(new FieldNamesResponse(), actual.GetType());
         }
 
         /// <summary>
         ///A test for GetDocumentHyperlinkByIndex
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentHyperlinkByIndex()
         {
             string name = "test_doc.docx";
@@ -586,8 +568,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for GetDocumentHyperlinks
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentHyperlinks()
         {
             string name = "test_doc.docx";
@@ -606,30 +588,26 @@ namespace WordsTest
 
         /// <summary>
         ///A test for GetDocumentParagraph
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentParagraph()
         {
             string name = "test_multi_pages.docx";
-            int index = 0; 
-            string storage = null;
-            string folder = null;
+            int index = 0;
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.ParagraphResponse actual;
-            actual = target.GetDocumentParagraph(name, "sections/0", index, storage, folder);
+            actual = target.GetDocumentParagraph(name, index, "sections/0");
 
-           Assert.AreEqual(200, actual.Code);
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ParagraphResponse(), actual.GetType()); 
-
-            
+            Assert.AreEqual(200, actual.Code);
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.ParagraphResponse(), actual.GetType());
         }
 
         /// <summary>
         ///A test for GetDocumentParagraphRun
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentParagraphRun()
         {
             string name = "test_multi_pages.docx";
@@ -651,8 +629,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for GetDocumentParagraphRunFont
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentParagraphRunFont()
         {
             string name = "test_multi_pages.docx";
@@ -673,8 +651,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for GetDocumentParagraphs
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentParagraphs()
         {
             string name = "test_multi_pages.docx";
@@ -693,8 +671,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for GetDocumentProperties
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentProperties()
         {
             string name = "test_multi_pages.docx";
@@ -710,8 +688,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for GetDocumentProperty
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentProperty()
         {
             string name = "test_multi_pages.docx";
@@ -729,8 +707,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for GetDocumentProtection
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentProtection()
         {
             string name = "test_multi_pages.docx";
@@ -749,8 +727,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for GetDocumentStatistics
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentStatistics()
         {
             string name = "test_multi_pages.docx";
@@ -770,8 +748,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for GetDocumentTextItems
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentTextItems()
         {
             string name = "test_multi_pages.docx";
@@ -790,8 +768,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for GetDocumentWithFormat
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetDocumentWithFormat()
         {
             string name = "test_multi_pages.docx";
@@ -809,31 +787,29 @@ namespace WordsTest
         }
 
         /// <summary>
-        ///A test for GetField
-        ///</summary>
-        [TestMethod()]
+        /// A test for GetField
+        /// </summary>
+        [TestMethod]
         public void TestGetField()
         {
             string name = "GetField.docx";
-            int sectionIndex = 0; 
+            int sectionIndex = 0;
             int paragraphIndex = 0;
             int fieldIndex = 0;
-            string storage = null;
-            string folder = null;
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.FieldResponse actual;
-            actual = target.GetField(name, "sections/0/paragraphs/0", fieldIndex, storage, folder);
+            actual = target.GetField(name, fieldIndex, "sections/0/paragraphs/0");
 
-           Assert.AreEqual(200, actual.Code);
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FieldResponse(), actual.GetType()); 
-            
+            Assert.AreEqual(200, actual.Code);
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FieldResponse(), actual.GetType());
         }
+
         /// <summary>
         ///A test for GetFields
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetFields()
         {
             string name = "GetField.docx";
@@ -851,8 +827,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for TestGetParagraphRuns
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetParagraphRuns()
         {
             string name = "GetField.docx";
@@ -890,23 +866,21 @@ namespace WordsTest
         [TestMethod]
         public void TestGetFormField()
         {
-            string name = "FormFilled.docx";           
+            string name = "FormFilled.docx";
             int formfieldIndex = 0;
-           
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            FormFieldResponse actual = target.GetFormField(name, "sections/0", formfieldIndex);
 
-           Assert.AreEqual(200, actual.Code);
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FormFieldResponse(), actual.GetType()); 
-            
+            FormFieldResponse actual = target.GetFormField(name, formfieldIndex, "sections/0");
+
+            Assert.AreEqual(200, actual.Code);
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FormFieldResponse(), actual.GetType());
         }
 
         /// <summary>
         ///A test for GetSection
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetSection()
         {
             string name = "test_multi_pages.docx";
@@ -926,8 +900,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for GetSectionPageSetup
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetSectionPageSetup()
         {
             string name = "test_multi_pages.docx";
@@ -947,8 +921,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for GetSections
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestGetSections()
         {
             string name = "test_multi_pages.docx";
@@ -967,8 +941,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PostAppendDocument
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPostAppendDocument()
         {
             string name = "test_multi_pages.docx";
@@ -995,8 +969,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PostChangeDocumentProtection
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPostChangeDocumentProtection()
         {
             string name = "test_multi_pages.docx";
@@ -1018,8 +992,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PostComment
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPostComment()
         {
             string name = "test_multi_pages.docx";
@@ -1058,8 +1032,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PostDocumentExecuteMailMerge
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPostDocumentExecuteMailMerge()
         {
             string name = "SampleMailMergeTemplate.docx";
@@ -1082,15 +1056,13 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PostDocumentParagraphRunFont
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPostDocumentParagraphRunFont()
         {
             string name = "test_multi_pages.docx";
             int index = 0; // TODO: Initialize to an appropriate value
-            int runIndex = 0; // TODO: Initialize to an appropriate value
-            string storage = null;
-            string folder = null;
+            int runIndex = 0; // TODO: Initialize to an appropriate value          
             string filename = "test.docx";
             Com.Aspose.Words.Model.Font body = new Com.Aspose.Words.Model.Font();
             body.Bold = true;
@@ -1098,16 +1070,15 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             Com.Aspose.Words.Model.FontResponse actual;
-            actual = target.PostDocumentParagraphRunFont(name, body, "paragraphs/0", runIndex, filename, storage, folder);
-           Assert.AreEqual(200, actual.Code);
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FontResponse(), actual.GetType()); 
-            
+            actual = target.PostDocumentParagraphRunFont(name, body, runIndex, "paragraphs/0", filename);
+            Assert.AreEqual(200, actual.Code);
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FontResponse(), actual.GetType());             
         }
 
         /// <summary>
-        ///A test for PostDocumentSaveAs
-        ///</summary>
-        [TestMethod()]
+        /// A test for PostDocumentSaveAs
+        /// </summary>
+        [TestMethod]
         public void TestPostDocumentSaveAs()
         {
             string name = "test_multi_pages.docx";
@@ -1121,15 +1092,14 @@ namespace WordsTest
             Com.Aspose.Words.Model.SaveResponse actual;
             actual = target.PostDocumentSaveAs(name, body);
 
-           Assert.AreEqual(200, actual.Code);
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaveResponse(), actual.GetType()); 
-            
+            Assert.AreEqual(200, actual.Code);
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SaveResponse(), actual.GetType());             
         }
 
         /// <summary>
         ///A test for PostExecuteTemplate
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPostExecuteTemplate()
         {
             string name = "TestExecuteTemplate.doc";
@@ -1151,8 +1121,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PostField
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPostField()
         {
             string name = "GetField.docx";         
@@ -1170,11 +1140,10 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             Com.Aspose.Words.Model.FieldResponse actual;
-            actual = target.PostField(name, body,"sections/0/paragraphs/0", fieldIndex, destFileName, storage, folder);
+            actual = target.PostField(name, body, fieldIndex, "sections/0/paragraphs/0", destFileName);
             
-           Assert.AreEqual(200, actual.Code);
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FieldResponse(), actual.GetType()); 
-            
+            Assert.AreEqual(200, actual.Code);
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FieldResponse(), actual.GetType());             
         }
 
         /// <summary>
@@ -1201,10 +1170,10 @@ namespace WordsTest
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
             // Act
-            FormFieldResponse actual = target.PostFormField(name, body, "sections/0", formfieldIndex, destFileName);
+            FormFieldResponse actual = target.PostFormField(name, body, formfieldIndex, "sections/0", destFileName);
             
             // Assert
-           Assert.AreEqual(200, actual.Code);
+            Assert.AreEqual(200, actual.Code);
             Assert.AreEqual("FullName", actual.FormField.Name);
             Assert.AreEqual(true, actual.FormField.Enabled);
 
@@ -1214,9 +1183,9 @@ namespace WordsTest
         }
 
         /// <summary>
-        ///A test for PostInsertDocumentWatermarkImage
-        ///</summary>
-        [TestMethod()]
+        /// A test for PostInsertDocumentWatermarkImage
+        /// </summary>
+        [TestMethod]
         public void TestPostInsertDocumentWatermarkImage()
         {
             string name = "test_multi_pages.docx";
@@ -1231,8 +1200,8 @@ namespace WordsTest
                 actual = target.PostInsertDocumentWatermarkImage(
                     name,
                     file,
-                    filename,
-                    rotationAngle: rotationAngle);
+                    rotationAngle,
+                    destFileName: filename);
 
                Assert.AreEqual(200, actual.Code);
                 Assert.IsInstanceOfType(new Com.Aspose.Words.Model.DocumentResponse(), actual.GetType());
@@ -1242,8 +1211,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PostInsertDocumentWatermarkText
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPostInsertDocumentWatermarkText()
         {
             string name = "test_multi_pages.docx";
@@ -1266,8 +1235,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PostInsertPageNumbers
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPostInsertPageNumbers()
         {
             string name = "test_multi_pages.docx";
@@ -1289,8 +1258,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PostInsertWatermarkImage
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPostInsertWatermarkImage()
         {
             string name = "test_multi_pages.docx";
@@ -1313,8 +1282,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PostInsertWatermarkText
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPostInsertWatermarkText()
         {
             string name = "test_multi_pages.docx";
@@ -1336,8 +1305,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PostLoadWebDocument
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPostLoadWebDocument()
         {
             Com.Aspose.Words.Model.LoadWebDocumentData body = new Com.Aspose.Words.Model.LoadWebDocumentData();
@@ -1363,8 +1332,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PostReplaceText
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPostReplaceText()
         {
             string name = "test_multi_pages.docx";
@@ -1386,8 +1355,8 @@ namespace WordsTest
         
         /// <summary>
         ///A test for PostSplitDocument
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPostSplitDocument()
         {
             string name = "test_multi_pages.docx";
@@ -1410,8 +1379,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PostUpdateDocumentBookmark
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPostUpdateDocumentBookmark()
         {
             string name = "test_multi_pages.docx";
@@ -1434,8 +1403,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PostUpdateDocumentFields
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPostUpdateDocumentFields()
         {
             string name = "test_multi_pages.docx";
@@ -1455,8 +1424,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PutComment
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPutComment()
         {
             string name = "test_multi_pages.docx";
@@ -1491,8 +1460,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PutConvertDocument
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPutConvertDocument()
         {
             string format = "pdf";
@@ -1545,8 +1514,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PutExecuteMailMergeOnline
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPutExecuteMailMergeOnline()
         {
             bool withRegions = false;
@@ -1562,8 +1531,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PutExecuteTemplateOnline
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPutExecuteTemplateOnline()
         {
             string cleanup = null;
@@ -1586,8 +1555,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PutField
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPutField()
         {
 
@@ -1618,8 +1587,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PutFormField
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPutFormField()
         {
             string name = "test_multi_pages.docx";
@@ -1644,7 +1613,7 @@ namespace WordsTest
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             Com.Aspose.Words.Model.FormFieldResponse actual;
-            actual = target.PutFormField(name, body, "sections/0/paragraphs/0", destFileName);
+            actual = target.PutFormField(name, body, "sections/0/paragraphs/0", destFileName: destFileName);
 
             Assert.AreEqual(200, actual.Code);
             Assert.IsInstanceOfType(new Com.Aspose.Words.Model.FormFieldResponse(), actual.GetType());
@@ -1652,8 +1621,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PutProtectDocument
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPutProtectDocument()
         {
             string name = "test_multi_pages.docx";
@@ -1674,8 +1643,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for PutUpdateDocumentProperty
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestPutUpdateDocumentProperty()
         {
             string name = "test_multi_pages.docx";
@@ -1698,8 +1667,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for RejectAllRevisions
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestRejectAllRevisions()
         {
             string name = "test_multi_pages.docx";
@@ -1719,8 +1688,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for Search
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestSearch()
         {
             string name = "SampleWordDocument.docx";
@@ -1738,8 +1707,8 @@ namespace WordsTest
 
         /// <summary>
         ///A test for UpdateSectionPageSetup
-        ///</summary>
-        [TestMethod()]
+        /// </summary>
+        [TestMethod]
         public void TestUpdateSectionPageSetup()
         {
             string name = "test_multi_pages.docx";

@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// This resonse should be returned by the service when handling:  GET http://api.aspose.com/v1.1/words/Test.doc/paragraphs/{0}/formfields/{1}
   /// </summary>  
   public class FormFieldResponse : SaaSposeResponse 
   {                       
         /// <summary>
-        /// Gets or sets FormField
-        /// </summary>    
+        /// Field information
+        /// </summary>
+        /// <value>Field information</value>    
         public FormField FormField { get; set; }
 
         /// <summary>

@@ -9,23 +9,26 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for options of metafile rendering
   /// </summary>  
   public class MetafileRenderingOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets EmfPlusDualRenderingMode
-        /// </summary>    
+        /// Determines how EMF+ Dual metafiles should be rendered
+        /// </summary>
+        /// <value>Determines how EMF+ Dual metafiles should be rendered</value>    
         public string EmfPlusDualRenderingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets RenderingMode
-        /// </summary>    
+        /// Determines how metafile images should be rendered
+        /// </summary>
+        /// <value>Determines how metafile images should be rendered</value>    
         public string RenderingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets UseEmfEmbeddedToWmf
-        /// </summary>    
+        /// Determines how WMF metafiles with embedded EMF metafiles should be rendered
+        /// </summary>
+        /// <value>Determines how WMF metafiles with embedded EMF metafiles should be rendered</value>    
         public bool? UseEmfEmbeddedToWmf { get; set; }
 
         /// <summary>

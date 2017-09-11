@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Table link element
   /// </summary>  
   public class TableLink 
   {                       
         /// <summary>
-        /// Gets or sets NodeId
-        /// </summary>    
+        /// Node id
+        /// </summary>
+        /// <value>Node id</value>    
         public string NodeId { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

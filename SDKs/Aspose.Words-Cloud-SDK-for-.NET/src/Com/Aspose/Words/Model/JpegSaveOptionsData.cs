@@ -9,7 +9,7 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for jpeg save options.
   /// </summary>  
   public class JpegSaveOptionsData : ImageSaveOptionsData 
   {                       

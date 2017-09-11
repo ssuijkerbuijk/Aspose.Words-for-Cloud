@@ -9,38 +9,44 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for svg save options
   /// </summary>  
   public class SvgSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets ExportEmbeddedImages
-        /// </summary>    
+        /// Specified whether images should be embedded into SVG document as base64
+        /// </summary>
+        /// <value>Specified whether images should be embedded into SVG document as base64</value>    
         public bool? ExportEmbeddedImages { get; set; }
 
         /// <summary>
-        /// Gets or sets FitToViewPort
-        /// </summary>    
+        /// Specifies if the output SVG should fill the available viewport area (browser window or container). When set to true width and height of output SVG are set to 100%.
+        /// </summary>
+        /// <value>Specifies if the output SVG should fill the available viewport area (browser window or container). When set to true width and height of output SVG are set to 100%.</value>    
         public bool? FitToViewPort { get; set; }
 
         /// <summary>
-        /// Gets or sets ResourcesFolder
-        /// </summary>    
+        /// Specifies the physical folder where resources (images) are saved when exporting
+        /// </summary>
+        /// <value>Specifies the physical folder where resources (images) are saved when exporting</value>    
         public string ResourcesFolder { get; set; }
 
         /// <summary>
-        /// Gets or sets ResourcesFolderAlias
-        /// </summary>    
+        /// Specifies the name of the folder used to construct image URIs
+        /// </summary>
+        /// <value>Specifies the name of the folder used to construct image URIs</value>    
         public string ResourcesFolderAlias { get; set; }
 
         /// <summary>
-        /// Gets or sets ShowPageBorder
-        /// </summary>    
+        /// Show/hide page stepper
+        /// </summary>
+        /// <value>Show/hide page stepper</value>    
         public bool? ShowPageBorder { get; set; }
 
         /// <summary>
-        /// Gets or sets TextOutputMode
-        /// </summary>    
+        /// Determines how text should be rendered
+        /// </summary>
+        /// <value>Determines how text should be rendered</value>    
         public string TextOutputMode { get; set; }
 
         /// <summary>

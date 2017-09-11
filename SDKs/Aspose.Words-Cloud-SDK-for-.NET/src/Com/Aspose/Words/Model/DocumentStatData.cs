@@ -9,33 +9,38 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Container for the document&#39;s statistical data
   /// </summary>  
   public class DocumentStatData 
   {                       
         /// <summary>
-        /// Gets or sets WordCount
-        /// </summary>    
+        /// Total count of words in the document
+        /// </summary>
+        /// <value>Total count of words in the document</value>    
         public int? WordCount { get; set; }
 
         /// <summary>
-        /// Gets or sets ParagraphCount
-        /// </summary>    
+        /// Total count of paragraphs in the document
+        /// </summary>
+        /// <value>Total count of paragraphs in the document</value>    
         public int? ParagraphCount { get; set; }
 
         /// <summary>
-        /// Gets or sets PageCount
-        /// </summary>    
+        /// Total count of pages in the document
+        /// </summary>
+        /// <value>Total count of pages in the document</value>    
         public int? PageCount { get; set; }
 
         /// <summary>
-        /// Gets or sets FootnotesStatData
-        /// </summary>    
+        /// Detailed statistics of footnotes
+        /// </summary>
+        /// <value>Detailed statistics of footnotes</value>    
         public FootnotesStatData FootnotesStatData { get; set; }
 
         /// <summary>
-        /// Gets or sets PageStatData
-        /// </summary>    
+        /// Detailed statistics of all pages
+        /// </summary>
+        /// <value>Detailed statistics of all pages</value>    
         public List<PageStatData> PageStatData { get; set; }
 
         /// <summary>

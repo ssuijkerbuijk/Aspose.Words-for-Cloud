@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// This resonse should be returned by the service when handling:  GET http://api.aspose.com/v1.1/words/Test.doc/tables/{0}/rows/{1}/rowformat
   /// </summary>  
   public class TableRowFormatResponse : SaaSposeResponse 
   {                       
         /// <summary>
-        /// Gets or sets RowFormat
-        /// </summary>    
+        /// Table.
+        /// </summary>
+        /// <value>Table.</value>    
         public TableRowFormat RowFormat { get; set; }
 
         /// <summary>

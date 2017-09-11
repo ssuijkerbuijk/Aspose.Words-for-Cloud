@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Response for \&quot;drawingObjects/n\&quot; resource.
   /// </summary>  
   public class DrawingObjectResponse : SaaSposeResponse 
   {                       
         /// <summary>
-        /// Gets or sets DrawingObject
-        /// </summary>    
+        /// Drawing object.
+        /// </summary>
+        /// <value>Drawing object.</value>    
         public DrawingObject DrawingObject { get; set; }
 
         /// <summary>

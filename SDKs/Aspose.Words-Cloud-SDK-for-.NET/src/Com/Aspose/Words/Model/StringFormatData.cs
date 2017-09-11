@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Allows to specify System.Drawing.StringFormat options.
   /// </summary>  
   public class StringFormatData 
   {                       
         /// <summary>
-        /// Gets or sets Alignment
+        /// Gets or sets horizontal alignment of the string.
         /// </summary>
+        /// <value>Gets or sets horizontal alignment of the string.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AlignmentEnum
         {
@@ -37,8 +38,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets FormatFlags
+        /// Gets or sets a System.Drawing.StringFormatFlags enumeration that contains formatting information.
         /// </summary>
+        /// <value>Gets or sets a System.Drawing.StringFormatFlags enumeration that contains formatting information.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum FormatFlagsEnum
         {
@@ -90,8 +92,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets HotkeyPrefix
+        /// Gets or sets the System.Drawing.Text.HotkeyPrefix object for this System.Drawing.StringFormat object.
         /// </summary>
+        /// <value>Gets or sets the System.Drawing.Text.HotkeyPrefix object for this System.Drawing.StringFormat object.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HotkeyPrefixEnum
         {
@@ -113,8 +116,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets LineAlignment
+        /// Gets or sets the vertical alignment of the string.
         /// </summary>
+        /// <value>Gets or sets the vertical alignment of the string.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LineAlignmentEnum
         {
@@ -136,8 +140,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets Trimming
+        /// Gets or sets the System.Drawing.StringTrimming enumeration for this System.Drawing.StringFormat object.
         /// </summary>
+        /// <value>Gets or sets the System.Drawing.StringTrimming enumeration for this System.Drawing.StringFormat object.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TrimmingEnum
         {
@@ -174,28 +179,33 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets Alignment
+        /// Gets or sets horizontal alignment of the string.
         /// </summary>
+        /// <value>Gets or sets horizontal alignment of the string.</value>
         public AlignmentEnum? Alignment { get; set; }
 
         /// <summary>
-        /// Gets or sets FormatFlags
+        /// Gets or sets a System.Drawing.StringFormatFlags enumeration that contains formatting information.
         /// </summary>
+        /// <value>Gets or sets a System.Drawing.StringFormatFlags enumeration that contains formatting information.</value>
         public FormatFlagsEnum? FormatFlags { get; set; }
 
         /// <summary>
-        /// Gets or sets HotkeyPrefix
+        /// Gets or sets the System.Drawing.Text.HotkeyPrefix object for this System.Drawing.StringFormat object.
         /// </summary>
+        /// <value>Gets or sets the System.Drawing.Text.HotkeyPrefix object for this System.Drawing.StringFormat object.</value>
         public HotkeyPrefixEnum? HotkeyPrefix { get; set; }
 
         /// <summary>
-        /// Gets or sets LineAlignment
+        /// Gets or sets the vertical alignment of the string.
         /// </summary>
+        /// <value>Gets or sets the vertical alignment of the string.</value>
         public LineAlignmentEnum? LineAlignment { get; set; }
 
         /// <summary>
-        /// Gets or sets Trimming
+        /// Gets or sets the System.Drawing.StringTrimming enumeration for this System.Drawing.StringFormat object.
         /// </summary>
+        /// <value>Gets or sets the System.Drawing.StringTrimming enumeration for this System.Drawing.StringFormat object.</value>
         public TrimmingEnum? Trimming { get; set; }
 
         /// <summary>

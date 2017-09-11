@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Represents a border of an object.
   /// </summary>  
   public class Border 
   {                       
         /// <summary>
-        /// Gets or sets BorderType
+        /// Gets or sets the border type.
         /// </summary>
+        /// <value>Gets or sets the border type.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BorderTypeEnum
         {
@@ -67,8 +68,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets LineStyle
+        /// Gets or sets the border style.
         /// </summary>
+        /// <value>Gets or sets the border style.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LineStyleEnum
         {
@@ -210,38 +212,45 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets BorderType
+        /// Gets or sets the border type.
         /// </summary>
+        /// <value>Gets or sets the border type.</value>
         public BorderTypeEnum? BorderType { get; set; }
 
         /// <summary>
-        /// Gets or sets LineStyle
+        /// Gets or sets the border style.
         /// </summary>
+        /// <value>Gets or sets the border style.</value>
         public LineStyleEnum? LineStyle { get; set; }
 
         /// <summary>
-        /// Gets or sets Color
-        /// </summary>    
+        /// Gets or sets the border color.
+        /// </summary>
+        /// <value>Gets or sets the border color.</value>    
         public XmlColor Color { get; set; }
 
         /// <summary>
-        /// Gets or sets DistanceFromText
-        /// </summary>    
+        /// Gets or sets distance of the border from text or from the page edge in points.
+        /// </summary>
+        /// <value>Gets or sets distance of the border from text or from the page edge in points.</value>    
         public double? DistanceFromText { get; set; }
 
         /// <summary>
-        /// Gets or sets LineWidth
-        /// </summary>    
+        /// Gets or sets the border width in points.
+        /// </summary>
+        /// <value>Gets or sets the border width in points.</value>    
         public double? LineWidth { get; set; }
 
         /// <summary>
-        /// Gets or sets Shadow
-        /// </summary>    
+        /// Gets or sets a value indicating whether the border has a shadow.
+        /// </summary>
+        /// <value>Gets or sets a value indicating whether the border has a shadow.</value>    
         public bool? Shadow { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

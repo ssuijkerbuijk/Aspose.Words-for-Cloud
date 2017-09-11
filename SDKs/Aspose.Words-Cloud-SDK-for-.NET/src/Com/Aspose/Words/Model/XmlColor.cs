@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Utility class for {System.Drawing.Color} serialization
   /// </summary>  
   public class XmlColor 
   {                       
         /// <summary>
-        /// Gets or sets Web
-        /// </summary>    
+        /// HTML string color representation
+        /// </summary>
+        /// <value>HTML string color representation</value>    
         public string Web { get; set; }
 
         /// <summary>
-        /// Gets or sets Alpha
-        /// </summary>    
+        /// Alpha component of color structure
+        /// </summary>
+        /// <value>Alpha component of color structure</value>    
         public int? Alpha { get; set; }
 
         /// <summary>

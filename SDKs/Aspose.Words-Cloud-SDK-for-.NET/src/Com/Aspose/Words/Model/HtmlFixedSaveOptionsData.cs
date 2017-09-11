@@ -9,68 +9,80 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for fixed html save options
   /// </summary>  
   public class HtmlFixedSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets CssClassNamesPrefix
-        /// </summary>    
+        /// Specifies prefix which is added to all class names in style.css file.  Default value is \"aw\".
+        /// </summary>
+        /// <value>Specifies prefix which is added to all class names in style.css file.  Default value is \"aw\".</value>    
         public string CssClassNamesPrefix { get; set; }
 
         /// <summary>
-        /// Gets or sets ExportEmbeddedCss
-        /// </summary>    
+        /// Specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document.
+        /// </summary>
+        /// <value>Specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document.</value>    
         public bool? ExportEmbeddedCss { get; set; }
 
         /// <summary>
-        /// Gets or sets ExportEmbeddedFonts
-        /// </summary>    
+        /// Specifies whether fonts should be embedded into Html document in Base64 format.
+        /// </summary>
+        /// <value>Specifies whether fonts should be embedded into Html document in Base64 format.</value>    
         public bool? ExportEmbeddedFonts { get; set; }
 
         /// <summary>
-        /// Gets or sets ExportEmbeddedImages
-        /// </summary>    
+        /// Specifies whether images should be embedded into Html document in Base64 format.
+        /// </summary>
+        /// <value>Specifies whether images should be embedded into Html document in Base64 format.</value>    
         public bool? ExportEmbeddedImages { get; set; }
 
         /// <summary>
-        /// Gets or sets ExportFormFields
-        /// </summary>    
+        /// Gets or sets indication of whether form fields are exported as interactive items (as 'input' tag) rather than converted to text or graphics.
+        /// </summary>
+        /// <value>Gets or sets indication of whether form fields are exported as interactive items (as 'input' tag) rather than converted to text or graphics.</value>    
         public bool? ExportFormFields { get; set; }
 
         /// <summary>
-        /// Gets or sets Encoding
-        /// </summary>    
+        /// Encoding.
+        /// </summary>
+        /// <value>Encoding.</value>    
         public string Encoding { get; set; }
 
         /// <summary>
-        /// Gets or sets FontFormat
-        /// </summary>    
+        /// Specifies export format of fonts
+        /// </summary>
+        /// <value>Specifies export format of fonts</value>    
         public string FontFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets ResourcesFolder
-        /// </summary>    
+        /// Specifies the physical folder where resources are saved when exporting a document
+        /// </summary>
+        /// <value>Specifies the physical folder where resources are saved when exporting a document</value>    
         public string ResourcesFolder { get; set; }
 
         /// <summary>
-        /// Gets or sets ResourcesFolderAlias
-        /// </summary>    
+        /// Specifies the name of the folder used to construct resource URIs
+        /// </summary>
+        /// <value>Specifies the name of the folder used to construct resource URIs</value>    
         public string ResourcesFolderAlias { get; set; }
 
         /// <summary>
-        /// Gets or sets ShowPageBorder
-        /// </summary>    
+        /// Specifies whether border around pages should be shown.
+        /// </summary>
+        /// <value>Specifies whether border around pages should be shown.</value>    
         public bool? ShowPageBorder { get; set; }
 
         /// <summary>
-        /// Gets or sets PageHorizontalAlignment
-        /// </summary>    
+        /// Specifies the horizontal alignment of pages in an HTML document.  Default value is HtmlFixedHorizontalPageAlignment.Center.
+        /// </summary>
+        /// <value>Specifies the horizontal alignment of pages in an HTML document.  Default value is HtmlFixedHorizontalPageAlignment.Center.</value>    
         public string PageHorizontalAlignment { get; set; }
 
         /// <summary>
-        /// Gets or sets PageMargins
-        /// </summary>    
+        /// Specifies the margins around pages in an HTML document.  The margins value is measured in points and should be equal to or greater than 0.  Default value is 10 points.
+        /// </summary>
+        /// <value>Specifies the margins around pages in an HTML document.  The margins value is measured in points and should be equal to or greater than 0.  Default value is 10 points.</value>    
         public double? PageMargins { get; set; }
 
         /// <summary>

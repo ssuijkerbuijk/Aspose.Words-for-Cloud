@@ -9,73 +9,86 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Container abstract class for image save options
   /// </summary>  
   public class ImageSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets ImageBrightness
-        /// </summary>    
+        /// Brightness of image
+        /// </summary>
+        /// <value>Brightness of image</value>    
         public float? ImageBrightness { get; set; }
 
         /// <summary>
-        /// Gets or sets ImageColorMode
-        /// </summary>    
+        /// Color mode of image
+        /// </summary>
+        /// <value>Color mode of image</value>    
         public string ImageColorMode { get; set; }
 
         /// <summary>
-        /// Gets or sets ImageContrast
-        /// </summary>    
+        /// Contrast of image
+        /// </summary>
+        /// <value>Contrast of image</value>    
         public float? ImageContrast { get; set; }
 
         /// <summary>
-        /// Gets or sets GraphicsQualityOptions
-        /// </summary>    
+        /// Allows to specify additional System.Drawing.Graphics quality options.
+        /// </summary>
+        /// <value>Allows to specify additional System.Drawing.Graphics quality options.</value>    
         public GraphicsQualityOptionsData GraphicsQualityOptions { get; set; }
 
         /// <summary>
-        /// Gets or sets PixelFormat
-        /// </summary>    
+        /// Pixel format of image
+        /// </summary>
+        /// <value>Pixel format of image</value>    
         public string PixelFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets PaperColor
-        /// </summary>    
+        /// Background (paper) color of image
+        /// </summary>
+        /// <value>Background (paper) color of image</value>    
         public string PaperColor { get; set; }
 
         /// <summary>
-        /// Gets or sets Resolution
-        /// </summary>    
+        /// Sets both horizontal and vertical resolution for the generated images, in dots per inch.  <remarks>  This property has effect only when saving to raster image formats.  The default value is 96.  </remarks>
+        /// </summary>
+        /// <value>Sets both horizontal and vertical resolution for the generated images, in dots per inch.  <remarks>  This property has effect only when saving to raster image formats.  The default value is 96.  </remarks></value>    
         public float? Resolution { get; set; }
 
         /// <summary>
-        /// Gets or sets HorizontalResolution
-        /// </summary>    
+        /// Gets or sets the horizontal resolution for the generated images, in dots per inch.  <remarks>  This property has effect only when saving to raster image formats.  The default value is 96.  </remarks>
+        /// </summary>
+        /// <value>Gets or sets the horizontal resolution for the generated images, in dots per inch.  <remarks>  This property has effect only when saving to raster image formats.  The default value is 96.  </remarks></value>    
         public float? HorizontalResolution { get; set; }
 
         /// <summary>
-        /// Gets or sets VerticalResolution
-        /// </summary>    
+        /// Gets or sets the vertical resolution for the generated images, in dots per inch.  <remarks>  This property has effect only when saving to raster image formats.  The default value is 96.  </remarks>
+        /// </summary>
+        /// <value>Gets or sets the vertical resolution for the generated images, in dots per inch.  <remarks>  This property has effect only when saving to raster image formats.  The default value is 96.  </remarks></value>    
         public float? VerticalResolution { get; set; }
 
         /// <summary>
-        /// Gets or sets Scale
-        /// </summary>    
+        /// Zoom factor of image
+        /// </summary>
+        /// <value>Zoom factor of image</value>    
         public float? Scale { get; set; }
 
         /// <summary>
-        /// Gets or sets UseHighQualityRendering
-        /// </summary>    
+        /// Determine whether or not to use high quality (i.e. slow) rendering algorithms
+        /// </summary>
+        /// <value>Determine whether or not to use high quality (i.e. slow) rendering algorithms</value>    
         public bool? UseHighQualityRendering { get; set; }
 
         /// <summary>
-        /// Gets or sets UseAntiAliasing
-        /// </summary>    
+        /// Determine whether or not to use anti-aliasing for rendering
+        /// </summary>
+        /// <value>Determine whether or not to use anti-aliasing for rendering</value>    
         public bool? UseAntiAliasing { get; set; }
 
         /// <summary>
-        /// Gets or sets UseGdiEmfRenderer
-        /// </summary>    
+        /// Gets or sets a value determining whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
+        /// </summary>
+        /// <value>Gets or sets a value determining whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.</value>    
         public bool? UseGdiEmfRenderer { get; set; }
 
         /// <summary>

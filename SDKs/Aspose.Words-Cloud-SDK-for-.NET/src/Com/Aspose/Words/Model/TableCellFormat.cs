@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Represents all formatting for a table row.
   /// </summary>  
   public class TableCellFormat 
   {                       
         /// <summary>
-        /// Gets or sets HorizontalMerge
+        /// Specifies how the cell is merged horizontally with other cells in the row.
         /// </summary>
+        /// <value>Specifies how the cell is merged horizontally with other cells in the row.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HorizontalMergeEnum
         {
@@ -37,8 +38,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets Orientation
+        /// Returns or sets the orientation of text in a table cell.
         /// </summary>
+        /// <value>Returns or sets the orientation of text in a table cell.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OrientationEnum
         {
@@ -75,8 +77,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets VerticalAlignment
+        /// Returns or sets the vertical alignment of text in the cell.
         /// </summary>
+        /// <value>Returns or sets the vertical alignment of text in the cell.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VerticalAlignmentEnum
         {
@@ -98,8 +101,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets VerticalMerge
+        /// Specifies how the cell is merged with other cells vertically.
         /// </summary>
+        /// <value>Specifies how the cell is merged with other cells vertically.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VerticalMergeEnum
         {
@@ -121,68 +125,81 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets HorizontalMerge
+        /// Specifies how the cell is merged horizontally with other cells in the row.
         /// </summary>
+        /// <value>Specifies how the cell is merged horizontally with other cells in the row.</value>
         public HorizontalMergeEnum? HorizontalMerge { get; set; }
 
         /// <summary>
-        /// Gets or sets Orientation
+        /// Returns or sets the orientation of text in a table cell.
         /// </summary>
+        /// <value>Returns or sets the orientation of text in a table cell.</value>
         public OrientationEnum? Orientation { get; set; }
 
         /// <summary>
-        /// Gets or sets VerticalAlignment
+        /// Returns or sets the vertical alignment of text in the cell.
         /// </summary>
+        /// <value>Returns or sets the vertical alignment of text in the cell.</value>
         public VerticalAlignmentEnum? VerticalAlignment { get; set; }
 
         /// <summary>
-        /// Gets or sets VerticalMerge
+        /// Specifies how the cell is merged with other cells vertically.
         /// </summary>
+        /// <value>Specifies how the cell is merged with other cells vertically.</value>
         public VerticalMergeEnum? VerticalMerge { get; set; }
 
         /// <summary>
-        /// Gets or sets BottomPadding
-        /// </summary>    
+        /// Returns or sets the amount of space (in points) to add below the contents of cell.
+        /// </summary>
+        /// <value>Returns or sets the amount of space (in points) to add below the contents of cell.</value>    
         public double? BottomPadding { get; set; }
 
         /// <summary>
-        /// Gets or sets FitText
-        /// </summary>    
+        /// If true, fits text in the cell, compressing each paragraph to the width of the cell.
+        /// </summary>
+        /// <value>If true, fits text in the cell, compressing each paragraph to the width of the cell.</value>    
         public bool? FitText { get; set; }
 
         /// <summary>
-        /// Gets or sets LeftPadding
-        /// </summary>    
+        /// Returns or sets the amount of space (in points) to add to the left of the contents of cell.
+        /// </summary>
+        /// <value>Returns or sets the amount of space (in points) to add to the left of the contents of cell.</value>    
         public double? LeftPadding { get; set; }
 
         /// <summary>
-        /// Gets or sets PreferredWidth
-        /// </summary>    
+        /// Returns or sets the preferred width of the cell.
+        /// </summary>
+        /// <value>Returns or sets the preferred width of the cell.</value>    
         public PreferredWidth PreferredWidth { get; set; }
 
         /// <summary>
-        /// Gets or sets RightPadding
-        /// </summary>    
+        /// Returns or sets the amount of space (in points) to add to the right of the contents of cell.
+        /// </summary>
+        /// <value>Returns or sets the amount of space (in points) to add to the right of the contents of cell.</value>    
         public double? RightPadding { get; set; }
 
         /// <summary>
-        /// Gets or sets TopPadding
-        /// </summary>    
+        /// Returns or sets the amount of space (in points) to add above the contents of cell.
+        /// </summary>
+        /// <value>Returns or sets the amount of space (in points) to add above the contents of cell.</value>    
         public double? TopPadding { get; set; }
 
         /// <summary>
-        /// Gets or sets Width
-        /// </summary>    
+        /// Gets the width of the cell in points.
+        /// </summary>
+        /// <value>Gets the width of the cell in points.</value>    
         public double? Width { get; set; }
 
         /// <summary>
-        /// Gets or sets WrapText
-        /// </summary>    
+        /// If true, wrap text for the cell.
+        /// </summary>
+        /// <value>If true, wrap text for the cell.</value>    
         public bool? WrapText { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

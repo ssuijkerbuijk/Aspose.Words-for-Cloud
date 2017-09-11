@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for doc/dot save options
   /// </summary>  
   public class DocSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets Password
-        /// </summary>    
+        /// Password
+        /// </summary>
+        /// <value>Password</value>    
         public string Password { get; set; }
 
         /// <summary>
-        /// Gets or sets SaveRoutingSlip
-        /// </summary>    
+        /// Determine whether or not save RoutingSlip data saved to output document
+        /// </summary>
+        /// <value>Determine whether or not save RoutingSlip data saved to output document</value>    
         public bool? SaveRoutingSlip { get; set; }
 
         /// <summary>

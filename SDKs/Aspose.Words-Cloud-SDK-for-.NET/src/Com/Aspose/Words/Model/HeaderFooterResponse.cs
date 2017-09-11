@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// This resonse should be returned by the service when handling:  GET http://api.aspose.com/v1.1/words/Test.doc/headersfooters/{0}
   /// </summary>  
   public class HeaderFooterResponse : SaaSposeResponse 
   {                       
         /// <summary>
-        /// Gets or sets HeaderFooter
-        /// </summary>    
+        /// HeaderFooter
+        /// </summary>
+        /// <value>HeaderFooter</value>    
         public HeaderFooter HeaderFooter { get; set; }
 
         /// <summary>

@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// response of the modification operations for the revisions collection (now these are acceptAll and rejectAll)
   /// </summary>  
   public class RevisionsModificationResponse : SaaSposeResponse 
   {                       
         /// <summary>
-        /// Gets or sets Result
-        /// </summary>    
+        /// result of the modification operations for the revisions collection
+        /// </summary>
+        /// <value>result of the modification operations for the revisions collection</value>    
         public ModificationOperationResult Result { get; set; }
 
         /// <summary>

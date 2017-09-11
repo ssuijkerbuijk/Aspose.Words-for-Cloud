@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// result of the operation which modifies the original document and saves the result
   /// </summary>  
   public class ModificationOperationResult 
   {                       
         /// <summary>
-        /// Gets or sets Source
-        /// </summary>    
+        /// Link to the source document (source for the modification operation)
+        /// </summary>
+        /// <value>Link to the source document (source for the modification operation)</value>    
         public FileLink Source { get; set; }
 
         /// <summary>
-        /// Gets or sets Dest
-        /// </summary>    
+        /// Link to the dest document (result of the modification operation)
+        /// </summary>
+        /// <value>Link to the dest document (result of the modification operation)</value>    
         public FileLink Dest { get; set; }
 
         /// <summary>

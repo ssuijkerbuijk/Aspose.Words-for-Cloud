@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for wml save options
   /// </summary>  
   public class WordMLSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets PrettyFormat
-        /// </summary>    
+        /// Specifies whether or not use pretty formats output
+        /// </summary>
+        /// <value>Specifies whether or not use pretty formats output</value>    
         public bool? PrettyFormat { get; set; }
 
         /// <summary>

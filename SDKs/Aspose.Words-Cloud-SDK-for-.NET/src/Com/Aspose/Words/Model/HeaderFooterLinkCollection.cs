@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Collection of links to header/footers
   /// </summary>  
   public class HeaderFooterLinkCollection 
   {                       
         /// <summary>
-        /// Gets or sets List
-        /// </summary>    
+        /// Collection of section's links
+        /// </summary>
+        /// <value>Collection of section's links</value>    
         public List<HeaderFooterLink> List { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

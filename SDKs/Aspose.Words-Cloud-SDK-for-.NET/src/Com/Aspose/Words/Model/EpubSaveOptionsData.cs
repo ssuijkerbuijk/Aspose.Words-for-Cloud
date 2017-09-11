@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Container class for epub save options.
   /// </summary>  
   public class EpubSaveOptionsData : HtmlSaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets EpubNavigationMapLevel
-        /// </summary>    
+        /// Specifies the maximum level of headings populated to the navigation map when exporting
+        /// </summary>
+        /// <value>Specifies the maximum level of headings populated to the navigation map when exporting</value>    
         public int? EpubNavigationMapLevel { get; set; }
 
         /// <summary>

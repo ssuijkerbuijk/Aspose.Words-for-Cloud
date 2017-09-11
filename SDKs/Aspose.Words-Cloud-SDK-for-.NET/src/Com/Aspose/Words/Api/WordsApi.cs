@@ -36,9 +36,9 @@ namespace Com.Aspose.Words.Api
         }
     
         /// <summary>
-        ///  
+        /// Accept all revisions in document 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -142,10 +142,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Resets border properties to default values. &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="nodePath">Path to node with border(node should be cell or row).</param> 
         /// <param name="index">Object index</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
@@ -296,10 +296,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Resets borders properties to default values. &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="nodePath">Path to node with borders(node should be cell or row).</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -435,10 +435,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Remove comment from document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="commentIndex"></param> 
+        /// <param name="name">The file name.</param> 
+        /// <param name="commentIndex">Comment index</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -574,9 +574,9 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Remove macros from document. 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The file name.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -698,10 +698,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete document property. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="propertyName"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="propertyName">The property name.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -837,9 +837,9 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete watermark (for deleting last watermark from the document). 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -961,11 +961,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Removes drawing object from document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The file name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to collection of drawing objects.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -974,7 +974,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>SaaSposeResponse</returns>            
-        public SaaSposeResponse DeleteDrawingObject (string name, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteDrawingObject (string name, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -996,16 +996,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteDrawingObject");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteDrawingObject");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteDrawingObject");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteDrawingObject");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -1016,14 +1016,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -1031,6 +1023,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (destFileName == null) 
             {
@@ -1115,11 +1115,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete field from document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The file name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to collection of fields.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -1128,7 +1128,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>SaaSposeResponse</returns>            
-        public SaaSposeResponse DeleteField (string name, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteField (string name, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -1150,16 +1150,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteField");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteField");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteField");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteField");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -1170,14 +1170,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -1185,6 +1177,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (destFileName == null) 
             {
@@ -1269,10 +1269,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Remove fields from section paragraph. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The file name.</param> 
+        /// <param name="nodePath">Path to collection of fields.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -1408,11 +1408,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Removes footnote from document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The file name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to collection of footnotes.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -1421,7 +1421,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>SaaSposeResponse</returns>            
-        public SaaSposeResponse DeleteFootnote (string name, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteFootnote (string name, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -1443,16 +1443,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteFootnote");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteFootnote");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteFootnote");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteFootnote");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -1463,14 +1463,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -1478,6 +1470,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (destFileName == null) 
             {
@@ -1562,11 +1562,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Removes form field from document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to node that contains collection of formfields.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -1575,7 +1575,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>SaaSposeResponse</returns>            
-        public SaaSposeResponse DeleteFormField (string name, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteFormField (string name, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -1597,16 +1597,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteFormField");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteFormField");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteFormField");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteFormField");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -1617,14 +1617,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -1632,6 +1624,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (destFileName == null) 
             {
@@ -1716,11 +1716,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete header/footer from document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="sectionPath"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="sectionPath">Path to parent section.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -1729,7 +1729,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>SaaSposeResponse</returns>            
-        public SaaSposeResponse DeleteHeaderFooter (string name, string sectionPath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteHeaderFooter (string name, int? index, string sectionPath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{sectionPath}/headersfooters/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -1751,16 +1751,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteHeaderFooter");
             }
             
-            // verify the required parameter 'sectionPath' is set
-            if (sectionPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'sectionPath' when calling DeleteHeaderFooter");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteHeaderFooter");
+            }
+            
+            // verify the required parameter 'sectionPath' is set
+            if (sectionPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'sectionPath' when calling DeleteHeaderFooter");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -1771,14 +1771,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (sectionPath == null || string.IsNullOrEmpty(sectionPath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "sectionPath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "sectionPath" + "}", apiInvoker.ToPathValue(sectionPath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -1786,6 +1778,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (sectionPath == null || string.IsNullOrEmpty(sectionPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "sectionPath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "sectionPath" + "}", apiInvoker.ToPathValue(sectionPath));
             }
             if (destFileName == null) 
             {
@@ -1870,10 +1870,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete document headers and footers. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="sectionPath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="sectionPath">Path to parent section.</param> 
+        /// <param name="headersFootersTypes">List of types of headers and footers.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -1881,12 +1882,11 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param> 
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <param name="headersFootersTypes"></param> 
         /// <returns>SaaSposeResponse</returns>            
-        public SaaSposeResponse DeleteHeadersFooters (string name, string sectionPath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null, string headersFootersTypes = null)
+        public SaaSposeResponse DeleteHeadersFooters (string name, string sectionPath, string headersFootersTypes = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;headersFootersTypes=[headersFootersTypes]";
+            var ResourcePath = "/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;headersFootersTypes=[headersFootersTypes]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1927,6 +1927,14 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "sectionPath" + "}", apiInvoker.ToPathValue(sectionPath));
             }
+            if (headersFootersTypes == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])headersFootersTypes=\[headersFootersTypes\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "headersFootersTypes" + "]", apiInvoker.ToPathValue(headersFootersTypes));
+            }
             if (destFileName == null) 
             {
                 ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
@@ -1983,14 +1991,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
             }
-            if (headersFootersTypes == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])headersFootersTypes=\[headersFootersTypes\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "headersFootersTypes" + "]", apiInvoker.ToPathValue(headersFootersTypes));
-            }
                                     try 
             {                
                 if(typeof(SaaSposeResponse) == typeof(Stream)) 
@@ -2018,11 +2018,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Removes OfficeMath object from document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The file name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to collection of OfficeMath objects.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -2031,7 +2031,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>SaaSposeResponse</returns>            
-        public SaaSposeResponse DeleteOfficeMathObject (string name, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteOfficeMathObject (string name, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/OfficeMathObjects/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -2053,16 +2053,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteOfficeMathObject");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteOfficeMathObject");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteOfficeMathObject");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteOfficeMathObject");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -2073,14 +2073,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -2088,6 +2080,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (destFileName == null) 
             {
@@ -2172,11 +2172,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Remove paragraph from section. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The file name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to collection of paragraphs.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -2185,7 +2185,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>SaaSposeResponse</returns>            
-        public SaaSposeResponse DeleteParagraph (string name, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteParagraph (string name, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/paragraphs/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -2207,16 +2207,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteParagraph");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteParagraph");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteParagraph");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteParagraph");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -2227,14 +2227,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -2242,6 +2234,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (destFileName == null) 
             {
@@ -2326,10 +2326,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Removes run from document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="paragraphPath"></param> 
+        /// <param name="name">The file name.</param> 
+        /// <param name="paragraphPath">Path to parent paragraph.</param> 
         /// <param name="index">Object index</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
@@ -2480,11 +2480,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete a table. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to table.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -2493,7 +2493,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>SaaSposeResponse</returns>            
-        public SaaSposeResponse DeleteTable (string name, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteTable (string name, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/tables/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -2515,16 +2515,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteTable");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteTable");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteTable");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteTable");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -2535,14 +2535,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -2550,6 +2542,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (destFileName == null) 
             {
@@ -2634,10 +2634,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete a table cell. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="tableRowPath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="tableRowPath">Path to table row.</param> 
         /// <param name="index">Object index</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
@@ -2788,10 +2788,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete a table row. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="tablePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="tablePath">Path to table.</param> 
         /// <param name="index">Object index</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
@@ -2942,10 +2942,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Unprotect document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="protectionRequest"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="protectionRequest">{Aspose.Words.Cloud.DTO.ProtectionRequest} with protection settings.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -3056,10 +3056,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Return a border. &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="nodePath">Path to node with border(node should be cell or row).</param> 
         /// <param name="index">Object index</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -3183,10 +3183,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Return a collection of borders. &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="nodePath">Path to node with borders(node should be cell or row).</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -3295,10 +3295,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Get comment from document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="commentIndex"></param> 
+        /// <param name="name">The file name.</param> 
+        /// <param name="commentIndex">Comment index</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -3407,9 +3407,9 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Get comments from document. 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The file name.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -3504,9 +3504,9 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Read document common info. 
         /// </summary>
-        /// <param name="documentName"></param> 
+        /// <param name="documentName">The file name.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -3601,10 +3601,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Read document bookmark data by its name. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="bookmarkName"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="bookmarkName">The bookmark name.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -3713,9 +3713,9 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Read document bookmarks common info. 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -3810,17 +3810,17 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Read document drawing object common info by its index or convert to format specified. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to collection of drawing objects.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>DrawingObjectResponse</returns>            
-        public DrawingObjectResponse GetDocumentDrawingObjectByIndex (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public DrawingObjectResponse GetDocumentDrawingObjectByIndex (string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
@@ -3842,16 +3842,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentDrawingObjectByIndex");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetDocumentDrawingObjectByIndex");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectByIndex");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetDocumentDrawingObjectByIndex");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -3862,14 +3862,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -3877,6 +3869,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (storage == null) 
             {
@@ -3937,17 +3937,17 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Read drawing object image data. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to collection of drawing objects.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>System.IO.Stream</returns>            
-        public System.IO.Stream GetDocumentDrawingObjectImageData (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public System.IO.Stream GetDocumentDrawingObjectImageData (string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}/imageData?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
@@ -3969,16 +3969,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentDrawingObjectImageData");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetDocumentDrawingObjectImageData");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectImageData");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetDocumentDrawingObjectImageData");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -3989,14 +3989,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -4004,6 +3996,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (storage == null) 
             {
@@ -4064,17 +4064,17 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Get drawing object OLE data. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to collection of drawing objects.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>System.IO.Stream</returns>            
-        public System.IO.Stream GetDocumentDrawingObjectOleData (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public System.IO.Stream GetDocumentDrawingObjectOleData (string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}/oleData?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
@@ -4096,16 +4096,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentDrawingObjectOleData");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetDocumentDrawingObjectOleData");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectOleData");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetDocumentDrawingObjectOleData");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -4116,14 +4116,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -4131,6 +4123,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (storage == null) 
             {
@@ -4191,10 +4191,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Read document drawing objects common info. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="nodePath">Path to collection of drawing objects.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -4303,19 +4303,19 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Read document field names. 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="useNonMergeFields">If true, result includes \&quot;mustache\&quot; field names.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <param name="useNonMergeFields"></param> 
         /// <returns>FieldNamesResponse</returns>            
-        public FieldNamesResponse GetDocumentFieldNames (string name, string storage = null, string folder = null, string loadEncoding = null, string password = null, bool? useNonMergeFields = null)
+        public FieldNamesResponse GetDocumentFieldNames (string name, bool? useNonMergeFields = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/mailMergeFieldNames?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;useNonMergeFields=[useNonMergeFields]";
+            var ResourcePath = "/words/{name}/mailMergeFieldNames?appSid={appSid}&amp;useNonMergeFields=[useNonMergeFields]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4341,6 +4341,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
+            }
+            if (useNonMergeFields == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])useNonMergeFields=\[useNonMergeFields\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "useNonMergeFields" + "]", apiInvoker.ToPathValue(useNonMergeFields));
             }
             if (storage == null) 
             {
@@ -4374,14 +4382,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
             }
-            if (useNonMergeFields == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])useNonMergeFields=\[useNonMergeFields\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "useNonMergeFields" + "]", apiInvoker.ToPathValue(useNonMergeFields));
-            }
                                     try 
             {                
                 if(typeof(FieldNamesResponse) == typeof(Stream)) 
@@ -4409,10 +4409,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Read document hyperlink by its index. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="hyperlinkIndex"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="hyperlinkIndex">The hyperlink index.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -4521,9 +4521,9 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Read document hyperlinks common info. 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -4618,17 +4618,17 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// This resource represents one of the paragraphs contained in the document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to collection of paragraphs.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>ParagraphResponse</returns>            
-        public ParagraphResponse GetDocumentParagraph (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public ParagraphResponse GetDocumentParagraph (string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/paragraphs/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
@@ -4650,16 +4650,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraph");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetDocumentParagraph");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraph");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetDocumentParagraph");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -4670,14 +4670,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -4685,6 +4677,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (storage == null) 
             {
@@ -4745,10 +4745,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// This resource represents run of text contained in the document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="paragraphPath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="paragraphPath">Path to parent paragraph.</param> 
         /// <param name="index">Object index</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -4872,10 +4872,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// This resource represents font of run. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="paragraphPath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="paragraphPath">Path to parent paragraph.</param> 
         /// <param name="index">Object index</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -4999,10 +4999,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// This resource represents collection of runs in the paragraph. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="paragraphPath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="paragraphPath">Path to parent paragraph.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -5111,10 +5111,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Return a list of paragraphs that are contained in the document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="nodePath">Path to collection of paragraphs.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -5223,9 +5223,9 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Read document properties info. 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The document&#39;s name.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -5320,10 +5320,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Read document property info by the property name. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="propertyName"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="propertyName">The property name.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -5432,9 +5432,9 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Read document protection common info. 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -5529,21 +5529,21 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Read document statistics. 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="includeComments">Support including/excluding comments from the WordCount. Default value is \&quot;true\&quot;.</param> 
+        /// <param name="includeFootnotes">Support including/excluding footnotes from the WordCount. Default value is \&quot;false\&quot;.</param> 
+        /// <param name="includeTextInShapes">Support including/excluding shape&#39;s text from the WordCount. Default value is \&quot;false\&quot;</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <param name="includeComments"></param> 
-        /// <param name="includeFootnotes"></param> 
-        /// <param name="includeTextInShapes"></param> 
         /// <returns>StatDataResponse</returns>            
-        public StatDataResponse GetDocumentStatistics (string name, string storage = null, string folder = null, string loadEncoding = null, string password = null, bool? includeComments = null, bool? includeFootnotes = null, bool? includeTextInShapes = null)
+        public StatDataResponse GetDocumentStatistics (string name, bool? includeComments = null, bool? includeFootnotes = null, bool? includeTextInShapes = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/statistics?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;includeComments=[includeComments]&amp;includeFootnotes=[includeFootnotes]&amp;includeTextInShapes=[includeTextInShapes]";
+            var ResourcePath = "/words/{name}/statistics?appSid={appSid}&amp;includeComments=[includeComments]&amp;includeFootnotes=[includeFootnotes]&amp;includeTextInShapes=[includeTextInShapes]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5569,6 +5569,30 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
+            }
+            if (includeComments == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])includeComments=\[includeComments\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "includeComments" + "]", apiInvoker.ToPathValue(includeComments));
+            }
+            if (includeFootnotes == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])includeFootnotes=\[includeFootnotes\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "includeFootnotes" + "]", apiInvoker.ToPathValue(includeFootnotes));
+            }
+            if (includeTextInShapes == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])includeTextInShapes=\[includeTextInShapes\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "includeTextInShapes" + "]", apiInvoker.ToPathValue(includeTextInShapes));
             }
             if (storage == null) 
             {
@@ -5602,30 +5626,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
             }
-            if (includeComments == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])includeComments=\[includeComments\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "includeComments" + "]", apiInvoker.ToPathValue(includeComments));
-            }
-            if (includeFootnotes == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])includeFootnotes=\[includeFootnotes\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "includeFootnotes" + "]", apiInvoker.ToPathValue(includeFootnotes));
-            }
-            if (includeTextInShapes == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])includeTextInShapes=\[includeTextInShapes\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "includeTextInShapes" + "]", apiInvoker.ToPathValue(includeTextInShapes));
-            }
                                     try 
             {                
                 if(typeof(StatDataResponse) == typeof(Stream)) 
@@ -5653,9 +5653,9 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Read document text items. 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -5750,21 +5750,21 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Export the document into the specified format. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="format"></param> 
+        /// <param name="name">The file name.</param> 
+        /// <param name="format">The destination format.</param> 
+        /// <param name="outPath">Path to save result</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <param name="outPath"></param> 
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param> 
         /// <returns>System.IO.Stream</returns>            
-        public System.IO.Stream GetDocumentWithFormat (string name, string format, string storage = null, string folder = null, string loadEncoding = null, string password = null, string outPath = null, string fontsLocation = null)
+        public System.IO.Stream GetDocumentWithFormat (string name, string format, string outPath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;outPath=[outPath]&amp;fontsLocation=[fontsLocation]";
+            var ResourcePath = "/words/{name}?appSid={appSid}&amp;format=[format]&amp;outPath=[outPath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5797,6 +5797,22 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
+            if (format == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "format" + "]", apiInvoker.ToPathValue(format));
+            }
+            if (outPath == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])outPath=\[outPath\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "outPath" + "]", apiInvoker.ToPathValue(outPath));
+            }
             if (storage == null) 
             {
                 ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
@@ -5828,22 +5844,6 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
-            }
-            if (format == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "format" + "]", apiInvoker.ToPathValue(format));
-            }
-            if (outPath == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])outPath=\[outPath\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "outPath" + "]", apiInvoker.ToPathValue(outPath));
             }
             if (fontsLocation == null) 
             {
@@ -5880,17 +5880,17 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Get field from document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The file name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to collection of fields.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>FieldResponse</returns>            
-        public FieldResponse GetField (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public FieldResponse GetField (string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
@@ -5912,16 +5912,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetField");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetField");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetField");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetField");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -5932,14 +5932,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -5947,6 +5939,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (storage == null) 
             {
@@ -6007,10 +6007,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Get fields from document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The file name.</param> 
+        /// <param name="nodePath">Path to collection of fields.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -6119,17 +6119,17 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Read footnote by index. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to collection of footnotes.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>FootnoteResponse</returns>            
-        public FootnoteResponse GetFootnote (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public FootnoteResponse GetFootnote (string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
@@ -6151,16 +6151,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetFootnote");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetFootnote");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetFootnote");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetFootnote");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -6171,14 +6171,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -6186,6 +6178,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (storage == null) 
             {
@@ -6246,10 +6246,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Get footnotes from document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The file name.</param> 
+        /// <param name="nodePath">Path to collection of footnotes.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -6358,17 +6358,17 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Returns representation of an one of the form field. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to node that contains collection of formfields.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>FormFieldResponse</returns>            
-        public FormFieldResponse GetFormField (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public FormFieldResponse GetFormField (string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
@@ -6390,16 +6390,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetFormField");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetFormField");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetFormField");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetFormField");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -6410,14 +6410,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -6425,6 +6417,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (storage == null) 
             {
@@ -6485,10 +6485,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Get form fields from document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The file name.</param> 
+        /// <param name="nodePath">Path to node containing collection of form fields.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -6597,21 +6597,21 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Return a header/footer that is contained in the document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="headerFooterIndex"></param> 
-        /// <param name="sectionIndex"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="headerFooterIndex">Header/footer index.</param> 
+        /// <param name="sectionIndex">Section index.</param> 
+        /// <param name="filterByType">List of types of headers and footers.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <param name="filterByType"></param> 
         /// <returns>HeaderFooterResponse</returns>            
-        public HeaderFooterResponse GetHeaderFooter (string name, int? headerFooterIndex, int? sectionIndex, string storage = null, string folder = null, string loadEncoding = null, string password = null, string filterByType = null)
+        public HeaderFooterResponse GetHeaderFooter (string name, int? headerFooterIndex, int? sectionIndex = null, string filterByType = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;filterByType=[filterByType]";
+            var ResourcePath = "/words/{name}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;sectionIndex=[sectionIndex]&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6636,10 +6636,140 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'headerFooterIndex' when calling GetHeaderFooter");
             }
             
+            if (name == null || string.IsNullOrEmpty(name.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
+            }
+            if (headerFooterIndex == null || string.IsNullOrEmpty(headerFooterIndex.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "headerFooterIndex" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "headerFooterIndex" + "}", apiInvoker.ToPathValue(headerFooterIndex));
+            }
+            if (sectionIndex == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=\[sectionIndex\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "sectionIndex" + "]", apiInvoker.ToPathValue(sectionIndex));
+            }
+            if (filterByType == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])filterByType=\[filterByType\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "filterByType" + "]", apiInvoker.ToPathValue(filterByType));
+            }
+            if (storage == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "storage" + "]", apiInvoker.ToPathValue(storage));
+            }
+            if (folder == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "folder" + "]", apiInvoker.ToPathValue(folder));
+            }
+            if (loadEncoding == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "loadEncoding" + "]", apiInvoker.ToPathValue(loadEncoding));
+            }
+            if (password == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
+            }
+                                    try 
+            {                
+                if(typeof(HeaderFooterResponse) == typeof(Stream)) 
+                {
+                    return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as HeaderFooterResponse;
+                }
+               
+                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
+                if(response != null)
+                {
+                    return (HeaderFooterResponse)ApiInvoker.deserialize(response, typeof(HeaderFooterResponse));
+                }
+                    
+                return null;
+            } 
+            catch (ApiException ex) 
+            {
+                if (ex.ErrorCode == 404) 
+                {
+                    return null;
+                }
+                
+                throw;                
+            }
+        }
+
+        /// <summary>
+        /// Return a header/footer that is contained in the document. 
+        /// </summary>
+        /// <param name="name">The document name.</param> 
+        /// <param name="headerFooterIndex">Header/footer index.</param> 
+        /// <param name="sectionIndex">Section index.</param> 
+        /// <param name="filterByType">List of types of headers and footers.</param> 
+        /// <param name="storage">File storage, which have to be used.</param> 
+        /// <param name="folder">Original document folder.</param> 
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
+        /// <param name="password">Password for opening an encrypted document.</param> 
+        /// <returns>HeaderFooterResponse</returns>            
+        public HeaderFooterResponse GetHeaderFooter_1 (string name, int? headerFooterIndex, int? sectionIndex, string filterByType = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        {
+            // create path and map variables
+            var ResourcePath = "/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            ResourcePath = Regex
+                        .Replace(ResourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+
+            // query params
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, object>();
+            object postBody = null;
+            
+            
+            // verify the required parameter 'name' is set
+            if (name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetHeaderFooter_1");
+            }
+            
+            // verify the required parameter 'headerFooterIndex' is set
+            if (headerFooterIndex == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'headerFooterIndex' when calling GetHeaderFooter_1");
+            }
+            
             // verify the required parameter 'sectionIndex' is set
             if (sectionIndex == null) 
             {
-                throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetHeaderFooter");
+                throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetHeaderFooter_1");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -6666,38 +6796,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "sectionIndex" + "}", apiInvoker.ToPathValue(sectionIndex));
             }
-            if (storage == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "storage" + "]", apiInvoker.ToPathValue(storage));
-            }
-            if (folder == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "folder" + "]", apiInvoker.ToPathValue(folder));
-            }
-            if (loadEncoding == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "loadEncoding" + "]", apiInvoker.ToPathValue(loadEncoding));
-            }
-            if (password == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
-            }
             if (filterByType == null) 
             {
                 ResourcePath = Regex.Replace(ResourcePath, @"([&?])filterByType=\[filterByType\]", string.Empty);
@@ -6705,88 +6803,6 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("[" + "filterByType" + "]", apiInvoker.ToPathValue(filterByType));
-            }
-                                    try 
-            {                
-                if(typeof(HeaderFooterResponse) == typeof(Stream)) 
-                {
-                    return apiInvoker.invokeBinaryAPI(basePath, ResourcePath, "GET", queryParams, null, headerParams, formParams) as HeaderFooterResponse;
-                }
-               
-                var response = apiInvoker.invokeAPI(basePath, ResourcePath, "GET", queryParams, postBody, headerParams, formParams);
-                if(response != null)
-                {
-                    return (HeaderFooterResponse)ApiInvoker.deserialize(response, typeof(HeaderFooterResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="headerFooterIndex"></param> 
-        /// <param name="storage">File storage, which have to be used.</param> 
-        /// <param name="folder">Original document folder.</param> 
-        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
-        /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <param name="sectionIndex"></param> 
-        /// <param name="filterByType"></param> 
-        /// <returns>HeaderFooterResponse</returns>            
-        public HeaderFooterResponse GetHeaderFooter_1 (string name, int? headerFooterIndex, string storage = null, string folder = null, string loadEncoding = null, string password = null, int? sectionIndex = null, string filterByType = null)
-        {
-            // create path and map variables
-            var ResourcePath = "/words/{name}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;sectionIndex=[sectionIndex]&amp;filterByType=[filterByType]";
-            ResourcePath = Regex
-                        .Replace(ResourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-
-            // query params
-            var queryParams = new Dictionary<string, string>();
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;
-            
-            
-            // verify the required parameter 'name' is set
-            if (name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetHeaderFooter_1");
-            }
-            
-            // verify the required parameter 'headerFooterIndex' is set
-            if (headerFooterIndex == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'headerFooterIndex' when calling GetHeaderFooter_1");
-            }
-            
-            if (name == null || string.IsNullOrEmpty(name.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "name" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
-            }
-            if (headerFooterIndex == null || string.IsNullOrEmpty(headerFooterIndex.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "headerFooterIndex" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "headerFooterIndex" + "}", apiInvoker.ToPathValue(headerFooterIndex));
             }
             if (storage == null) 
             {
@@ -6820,22 +6836,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
             }
-            if (sectionIndex == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])sectionIndex=\[sectionIndex\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "sectionIndex" + "]", apiInvoker.ToPathValue(sectionIndex));
-            }
-            if (filterByType == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])filterByType=\[filterByType\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "filterByType" + "]", apiInvoker.ToPathValue(filterByType));
-            }
                                     try 
             {                
                 if(typeof(HeaderFooterResponse) == typeof(Stream)) 
@@ -6863,20 +6863,20 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Return a list of header/footers that are contained in the document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="sectionPath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="sectionPath">Path to parent section.</param> 
+        /// <param name="filterByType">List of types of headers and footers.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <param name="filterByType"></param> 
         /// <returns>HeaderFootersResponse</returns>            
-        public HeaderFootersResponse GetHeaderFooters (string name, string sectionPath, string storage = null, string folder = null, string loadEncoding = null, string password = null, string filterByType = null)
+        public HeaderFootersResponse GetHeaderFooters (string name, string sectionPath, string filterByType = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;filterByType=[filterByType]";
+            var ResourcePath = "/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6917,6 +6917,14 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "sectionPath" + "}", apiInvoker.ToPathValue(sectionPath));
             }
+            if (filterByType == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])filterByType=\[filterByType\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "filterByType" + "]", apiInvoker.ToPathValue(filterByType));
+            }
             if (storage == null) 
             {
                 ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
@@ -6949,14 +6957,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
             }
-            if (filterByType == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])filterByType=\[filterByType\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "filterByType" + "]", apiInvoker.ToPathValue(filterByType));
-            }
                                     try 
             {                
                 if(typeof(HeaderFootersResponse) == typeof(Stream)) 
@@ -6984,17 +6984,17 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Read OfficeMath object by index. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to collection of OfficeMath objects.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>OfficeMathObjectResponse</returns>            
-        public OfficeMathObjectResponse GetOfficeMathObject (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public OfficeMathObjectResponse GetOfficeMathObject (string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/OfficeMathObjects/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
@@ -7016,16 +7016,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetOfficeMathObject");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetOfficeMathObject");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetOfficeMathObject");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetOfficeMathObject");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -7036,14 +7036,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -7051,6 +7043,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (storage == null) 
             {
@@ -7111,10 +7111,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Get OfficeMath objects from document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The file name.</param> 
+        /// <param name="nodePath">Path to collection of OfficeMath objects.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -7223,10 +7223,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Get document section by index. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="sectionIndex"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="sectionIndex">Section index</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -7335,10 +7335,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Get page setup of section. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="sectionIndex"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="sectionIndex">Section index</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -7447,9 +7447,9 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Return a list of sections that are contained in the document. 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -7544,17 +7544,17 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Return a table. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to table.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>TableResponse</returns>            
-        public TableResponse GetTable (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public TableResponse GetTable (string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/tables/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
@@ -7576,16 +7576,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetTable");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetTable");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetTable");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetTable");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -7596,14 +7596,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -7611,6 +7603,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (storage == null) 
             {
@@ -7671,10 +7671,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Return a table cell. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="tableRowPath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="tableRowPath">Path to table row.</param> 
         /// <param name="index">Object index</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -7798,10 +7798,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Return a table cell format. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="tableRowPath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="tableRowPath">Path to table row.</param> 
         /// <param name="index">Object index</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -7925,17 +7925,17 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Return a table properties. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to table.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>TablePropertiesResponse</returns>            
-        public TablePropertiesResponse GetTableProperties (string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public TablePropertiesResponse GetTableProperties (string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/tables/{index}/properties?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
@@ -7957,16 +7957,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetTableProperties");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetTableProperties");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetTableProperties");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetTableProperties");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -7977,14 +7977,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -7992,6 +7984,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (storage == null) 
             {
@@ -8052,10 +8052,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Return a table row. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="tablePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="tablePath">Path to table.</param> 
         /// <param name="index">Object index</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -8179,10 +8179,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Return a table row format. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="tablePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="tablePath">Path to table.</param> 
         /// <param name="index">Object index</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -8306,10 +8306,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Return a list of tables that are contained in the document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="nodePath">Path to table collection.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -8418,11 +8418,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Adds table to document, returns added table&#39;s data. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="table"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="table">Table parameters/</param> 
+        /// <param name="nodePath">Path to table collection.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -8565,11 +8565,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Adds table cell to table, returns added cell&#39;s data. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="cell"></param> 
-        /// <param name="tableRowPath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="cell">Table cell parameters/</param> 
+        /// <param name="tableRowPath">Path to table row.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -8712,11 +8712,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Adds table row to table, returns added row&#39;s data. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="row"></param> 
-        /// <param name="tablePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="row">Table row parameters/</param> 
+        /// <param name="tablePath">Path to table.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -8859,10 +8859,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Append documents to original document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="documentList"></param> 
+        /// <param name="name">Original document name.</param> 
+        /// <param name="documentList">{Aspose.Words.Cloud.DTO.DocumentEntryList} with a list of documents to append.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -8991,10 +8991,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Change document protection. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="protectionRequest"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="protectionRequest">{Aspose.Words.Cloud.DTO.ProtectionRequest} with protection settings.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -9105,11 +9105,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Updates the comment, returns updated comment&#39;s data. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="commentIndex"></param> 
-        /// <param name="comment"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="commentIndex">Comment index</param> 
+        /// <param name="comment">Comment data.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -9252,10 +9252,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Compare document with original document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="compareData"></param> 
+        /// <param name="name">Original document name.</param> 
+        /// <param name="compareData">{Aspose.Words.Cloud.DTO.Compare.CompareData} with a document to compare.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -9366,24 +9366,24 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Execute document mail merge operation. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="withRegions"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="withRegions">With regions flag.</param> 
         /// <param name="data">Mail merge data</param> 
+        /// <param name="mailMergeDataFile">Mail merge data.</param> 
+        /// <param name="cleanup">Clean up options.</param> 
+        /// <param name="useWholeParagraphAsRegion">Gets or sets a value indicating whether paragraph with TableStart or               TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.               The default value is true.</param> 
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <param name="mailMergeDataFile"></param> 
-        /// <param name="cleanup"></param> 
-        /// <param name="useWholeParagraphAsRegion"></param> 
-        /// <param name="destFileName"></param> 
         /// <returns>DocumentResponse</returns>            
-        public DocumentResponse PostDocumentExecuteMailMerge (string name, bool? withRegions, string data = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string mailMergeDataFile = null, string cleanup = null, bool? useWholeParagraphAsRegion = null, string destFileName = null)
+        public DocumentResponse PostDocumentExecuteMailMerge (string name, bool? withRegions, string data = null, string mailMergeDataFile = null, string cleanup = null, bool? useWholeParagraphAsRegion = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/executeMailMerge/{withRegions}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;mailMergeDataFile=[mailMergeDataFile]&amp;cleanup=[cleanup]&amp;useWholeParagraphAsRegion=[useWholeParagraphAsRegion]&amp;destFileName=[destFileName]";
+            var ResourcePath = "/words/{name}/executeMailMerge/{withRegions}?appSid={appSid}&amp;mailMergeDataFile=[mailMergeDataFile]&amp;cleanup=[cleanup]&amp;useWholeParagraphAsRegion=[useWholeParagraphAsRegion]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -9424,38 +9424,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "withRegions" + "}", apiInvoker.ToPathValue(withRegions));
             }
-            if (storage == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "storage" + "]", apiInvoker.ToPathValue(storage));
-            }
-            if (folder == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "folder" + "]", apiInvoker.ToPathValue(folder));
-            }
-            if (loadEncoding == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "loadEncoding" + "]", apiInvoker.ToPathValue(loadEncoding));
-            }
-            if (password == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
-            }
             if (mailMergeDataFile == null) 
             {
                 ResourcePath = Regex.Replace(ResourcePath, @"([&?])mailMergeDataFile=\[mailMergeDataFile\]", string.Empty);
@@ -9488,6 +9456,38 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("[" + "destFileName" + "]", apiInvoker.ToPathValue(destFileName));
             }
+            if (storage == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "storage" + "]", apiInvoker.ToPathValue(storage));
+            }
+            if (folder == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "folder" + "]", apiInvoker.ToPathValue(folder));
+            }
+            if (loadEncoding == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "loadEncoding" + "]", apiInvoker.ToPathValue(loadEncoding));
+            }
+            if (password == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
+            }
                                     if (data != null) 
             {
                 formParams.Add("data", data); // form parameter
@@ -9519,12 +9519,12 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Updates font properties, returns updated font data. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="fontDto"></param> 
-        /// <param name="paragraphPath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="fontDto">Font dto object</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="paragraphPath">Path to parent paragraph.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -9533,7 +9533,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>FontResponse</returns>            
-        public FontResponse PostDocumentParagraphRunFont (string name, Font fontDto, string paragraphPath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public FontResponse PostDocumentParagraphRunFont (string name, Font fontDto, int? index, string paragraphPath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{paragraphPath}/runs/{index}/font?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -9561,16 +9561,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'fontDto' when calling PostDocumentParagraphRunFont");
             }
             
-            // verify the required parameter 'paragraphPath' is set
-            if (paragraphPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling PostDocumentParagraphRunFont");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostDocumentParagraphRunFont");
+            }
+            
+            // verify the required parameter 'paragraphPath' is set
+            if (paragraphPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling PostDocumentParagraphRunFont");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -9581,14 +9581,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (paragraphPath == null || string.IsNullOrEmpty(paragraphPath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "paragraphPath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "paragraphPath" + "}", apiInvoker.ToPathValue(paragraphPath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -9596,6 +9588,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (paragraphPath == null || string.IsNullOrEmpty(paragraphPath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "paragraphPath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "paragraphPath" + "}", apiInvoker.ToPathValue(paragraphPath));
             }
             if (destFileName == null) 
             {
@@ -9681,10 +9681,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Convert document to destination format with detailed settings and save result to storage. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="saveOptionsData"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="saveOptionsData">Save options.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -9804,13 +9804,13 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Updates drawing object, returns updated  drawing object&#39;s data. 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="drawingObject">Drawing object parameters</param> 
         /// <param name="imageFile">File with image</param> 
-        /// <param name="nodePath"></param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to collection of drawing objects.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -9819,7 +9819,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>DrawingObjectResponse</returns>            
-        public DrawingObjectResponse PostDrawingObject (string name, string drawingObject, System.IO.Stream imageFile, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public DrawingObjectResponse PostDrawingObject (string name, string drawingObject, System.IO.Stream imageFile, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -9853,16 +9853,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PostDrawingObject");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PostDrawingObject");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostDrawingObject");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PostDrawingObject");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -9873,14 +9873,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -9888,6 +9880,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (destFileName == null) 
             {
@@ -9980,23 +9980,23 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Populate document template with data. 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The template document name.</param> 
         /// <param name="data">Mail merge data</param> 
+        /// <param name="cleanup">Clean up options.</param> 
+        /// <param name="useWholeParagraphAsRegion">Gets or sets a value indicating whether paragraph with TableStart or   TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.    The default value is true.</param> 
+        /// <param name="withRegions">Merge with regions or not. True by default</param> 
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <param name="cleanup"></param> 
-        /// <param name="useWholeParagraphAsRegion"></param> 
-        /// <param name="withRegions"></param> 
-        /// <param name="destFileName"></param> 
         /// <returns>DocumentResponse</returns>            
-        public DocumentResponse PostExecuteTemplate (string name, string data, string storage = null, string folder = null, string loadEncoding = null, string password = null, string cleanup = null, bool? useWholeParagraphAsRegion = null, bool? withRegions = null, string destFileName = null)
+        public DocumentResponse PostExecuteTemplate (string name, string data, string cleanup = null, bool? useWholeParagraphAsRegion = null, bool? withRegions = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/executeTemplate?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;cleanup=[cleanup]&amp;useWholeParagraphAsRegion=[useWholeParagraphAsRegion]&amp;withRegions=[withRegions]&amp;destFileName=[destFileName]";
+            var ResourcePath = "/words/{name}/executeTemplate?appSid={appSid}&amp;cleanup=[cleanup]&amp;useWholeParagraphAsRegion=[useWholeParagraphAsRegion]&amp;withRegions=[withRegions]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -10028,38 +10028,6 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
-            }
-            if (storage == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "storage" + "]", apiInvoker.ToPathValue(storage));
-            }
-            if (folder == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "folder" + "]", apiInvoker.ToPathValue(folder));
-            }
-            if (loadEncoding == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "loadEncoding" + "]", apiInvoker.ToPathValue(loadEncoding));
-            }
-            if (password == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
             }
             if (cleanup == null) 
             {
@@ -10093,6 +10061,38 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("[" + "destFileName" + "]", apiInvoker.ToPathValue(destFileName));
             }
+            if (storage == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "storage" + "]", apiInvoker.ToPathValue(storage));
+            }
+            if (folder == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "folder" + "]", apiInvoker.ToPathValue(folder));
+            }
+            if (loadEncoding == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "loadEncoding" + "]", apiInvoker.ToPathValue(loadEncoding));
+            }
+            if (password == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
+            }
                                     if (data != null) 
             {
                 formParams.Add("data", data); // form parameter
@@ -10124,12 +10124,12 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Updates field&#39;s properties, returns updated field&#39;s data. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="field"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="field">Field data.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to collection of fields.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -10138,7 +10138,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>FieldResponse</returns>            
-        public FieldResponse PostField (string name, Field field, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public FieldResponse PostField (string name, Field field, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -10166,16 +10166,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'field' when calling PostField");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PostField");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostField");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PostField");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -10186,14 +10186,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -10201,6 +10193,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (destFileName == null) 
             {
@@ -10286,12 +10286,12 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Updates footnote&#39;s properties, returns updated run&#39;s data. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="footnoteDto"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="footnoteDto">Footnote data.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to collection of footnotes.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -10300,7 +10300,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>FootnoteResponse</returns>            
-        public FootnoteResponse PostFootnote (string name, Footnote footnoteDto, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public FootnoteResponse PostFootnote (string name, Footnote footnoteDto, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -10328,16 +10328,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'footnoteDto' when calling PostFootnote");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PostFootnote");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostFootnote");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PostFootnote");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -10348,14 +10348,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -10363,6 +10355,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (destFileName == null) 
             {
@@ -10448,12 +10448,12 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Updates properties of form field, returns updated form field. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="formField"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="formField">From field data.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to node that contains collection of formfields.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -10462,7 +10462,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>FormFieldResponse</returns>            
-        public FormFieldResponse PostFormField (string name, FormField formField, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public FormFieldResponse PostFormField (string name, FormField formField, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -10490,16 +10490,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'formField' when calling PostFormField");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PostFormField");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostFormField");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PostFormField");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -10510,14 +10510,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -10525,6 +10517,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (destFileName == null) 
             {
@@ -10610,10 +10610,12 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Insert document watermark image. 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="imageFile">File with image</param> 
+        /// <param name="rotationAngle">The watermark rotation angle.</param> 
+        /// <param name="image">The image file server full name. If the name is empty the image is expected in request content.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -10621,13 +10623,11 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param> 
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <param name="rotationAngle"></param> 
-        /// <param name="image"></param> 
         /// <returns>DocumentResponse</returns>            
-        public DocumentResponse PostInsertDocumentWatermarkImage (string name, System.IO.Stream imageFile = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null, double? rotationAngle = null, string image = null)
+        public DocumentResponse PostInsertDocumentWatermarkImage (string name, System.IO.Stream imageFile = null, double? rotationAngle = null, string image = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/watermark/insertImage?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;rotationAngle=[rotationAngle]&amp;image=[image]";
+            var ResourcePath = "/words/{name}/watermark/insertImage?appSid={appSid}&amp;rotationAngle=[rotationAngle]&amp;image=[image]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -10653,6 +10653,22 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
+            }
+            if (rotationAngle == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])rotationAngle=\[rotationAngle\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "rotationAngle" + "]", apiInvoker.ToPathValue(rotationAngle));
+            }
+            if (image == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])image=\[image\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "image" + "]", apiInvoker.ToPathValue(image));
             }
             if (destFileName == null) 
             {
@@ -10710,22 +10726,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
             }
-            if (rotationAngle == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])rotationAngle=\[rotationAngle\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "rotationAngle" + "]", apiInvoker.ToPathValue(rotationAngle));
-            }
-            if (image == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])image=\[image\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "image" + "]", apiInvoker.ToPathValue(image));
-            }
                                     if (imageFile != null) 
             {
                 formParams.Add("imageFile", apiInvoker.ToFileInfo(imageFile, "imageFile"));
@@ -10757,10 +10757,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Insert document watermark text. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="watermarkText"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="watermarkText">{Aspose.Words.Cloud.DTO.WatermarkText} with the watermark data.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -10889,10 +10889,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Insert document page numbers. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="pageNumber"></param> 
+        /// <param name="name">A document name.</param> 
+        /// <param name="pageNumber">{Aspose.Words.Cloud.DTO.PageNumber} with the page numbers settings.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -11021,9 +11021,9 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Loads new document from web into the file with any supported format of data. 
         /// </summary>
-        /// <param name="data"></param> 
+        /// <param name="data">Parameters of loading.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <returns>SaveResponse</returns>            
         public SaveResponse PostLoadWebDocument (LoadWebDocumentData data, string storage = null)
@@ -11084,10 +11084,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Replace document text. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="replaceText"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="replaceText">{Aspose.Words.Cloud.DTO.Replace.ReplaceTextResponse} with the replace operation settings.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -11216,11 +11216,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Updates run&#39;s properties, returns updated run&#39;s data. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="run"></param> 
-        /// <param name="paragraphPath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="run">Run data.</param> 
+        /// <param name="paragraphPath">Path to parent paragraph.</param> 
         /// <param name="index">Object index</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
@@ -11378,7 +11378,7 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Run tasks 
         /// </summary>
         /// <returns>Object</returns>            
         public Object PostRunTask ()
@@ -11424,24 +11424,24 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Split document. 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">Original document name.</param> 
+        /// <param name="format">Format to split.</param> 
+        /// <param name="from">Start page.</param> 
+        /// <param name="to">End page.</param> 
+        /// <param name="zipOutput">ZipOutput or not.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <param name="format"></param> 
-        /// <param name="from"></param> 
-        /// <param name="to"></param> 
-        /// <param name="zipOutput"></param> 
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param> 
         /// <returns>SplitDocumentResponse</returns>            
-        public SplitDocumentResponse PostSplitDocument (string name, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string format = null, int? from = null, int? to = null, bool? zipOutput = null, string fontsLocation = null)
+        public SplitDocumentResponse PostSplitDocument (string name, string format = null, int? from = null, int? to = null, bool? zipOutput = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/split?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;from=[from]&amp;to=[to]&amp;zipOutput=[zipOutput]&amp;fontsLocation=[fontsLocation]";
+            var ResourcePath = "/words/{name}/split?appSid={appSid}&amp;format=[format]&amp;from=[from]&amp;to=[to]&amp;zipOutput=[zipOutput]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -11467,6 +11467,38 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
+            }
+            if (format == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "format" + "]", apiInvoker.ToPathValue(format));
+            }
+            if (from == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])from=\[from\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "from" + "]", apiInvoker.ToPathValue(from));
+            }
+            if (to == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])to=\[to\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "to" + "]", apiInvoker.ToPathValue(to));
+            }
+            if (zipOutput == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])zipOutput=\[zipOutput\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "zipOutput" + "]", apiInvoker.ToPathValue(zipOutput));
             }
             if (destFileName == null) 
             {
@@ -11508,38 +11540,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
             }
-            if (format == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "format" + "]", apiInvoker.ToPathValue(format));
-            }
-            if (from == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])from=\[from\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "from" + "]", apiInvoker.ToPathValue(from));
-            }
-            if (to == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])to=\[to\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "to" + "]", apiInvoker.ToPathValue(to));
-            }
-            if (zipOutput == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])zipOutput=\[zipOutput\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "zipOutput" + "]", apiInvoker.ToPathValue(zipOutput));
-            }
             if (fontsLocation == null) 
             {
                 ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=\[fontsLocation\]", string.Empty);
@@ -11575,11 +11575,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Update document bookmark. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="bookmarkData"></param> 
-        /// <param name="bookmarkName"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="bookmarkData">{Aspose.Words.Cloud.DTO.DocumentElements.Bookmarks.BookmarkData} with new bookmark data.</param> 
+        /// <param name="bookmarkName">The bookmark name.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -11722,9 +11722,9 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Update (reevaluate) fields in document. 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -11828,10 +11828,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Adds comment to document, returns inserted comment&#39;s data. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="comment"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="comment">Comment data.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -11960,18 +11960,18 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Convert document from request content to format specified. 
         /// </summary>
-        /// <param name="format"></param> 
+        /// <param name="format">Format to convert.</param> 
         /// <param name="document">Converting document</param> 
+        /// <param name="outPath">Path for saving operation result to the local storage.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
-        /// <param name="outPath"></param> 
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param> 
         /// <returns>System.IO.Stream</returns>            
-        public System.IO.Stream PutConvertDocument (string format, System.IO.Stream document, string storage = null, string outPath = null, string fontsLocation = null)
+        public System.IO.Stream PutConvertDocument (string format, System.IO.Stream document, string outPath = null, string storage = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/convert?appSid={appSid}&amp;format=[format]&amp;storage=[storage]&amp;outPath=[outPath]&amp;fontsLocation=[fontsLocation]";
+            var ResourcePath = "/words/convert?appSid={appSid}&amp;format=[format]&amp;outPath=[outPath]&amp;storage=[storage]&amp;fontsLocation=[fontsLocation]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -12004,14 +12004,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("[" + "format" + "]", apiInvoker.ToPathValue(format));
             }
-            if (storage == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "storage" + "]", apiInvoker.ToPathValue(storage));
-            }
             if (outPath == null) 
             {
                 ResourcePath = Regex.Replace(ResourcePath, @"([&?])outPath=\[outPath\]", string.Empty);
@@ -12019,6 +12011,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("[" + "outPath" + "]", apiInvoker.ToPathValue(outPath));
+            }
+            if (storage == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "storage" + "]", apiInvoker.ToPathValue(storage));
             }
             if (fontsLocation == null) 
             {
@@ -12059,9 +12059,9 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Creates new document. 
         /// </summary>
-        /// <param name="folder"></param> 
+        /// <param name="folder">The document folder.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <returns>DocumentResponse</returns>            
         public DocumentResponse PutCreateDocument (string folder = null, string storage = null)
@@ -12123,10 +12123,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Read document field names. 
         /// </summary>
         /// <param name="template">File with template</param> 
-        /// <param name="useNonMergeFields"></param> 
+        /// <param name="useNonMergeFields">Use non merge fields or not.</param> 
         /// <returns>FieldNamesResponse</returns>            
         public FieldNamesResponse PutDocumentFieldNames (System.IO.Stream template, bool? useNonMergeFields = null)
         {
@@ -12189,39 +12189,39 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Convert document to tiff with detailed settings and save result to storage. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="saveOptions"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="saveOptions">Tiff save options.</param> 
+        /// <param name="resultFile">The resulting file name.</param> 
+        /// <param name="useAntiAliasing">Use antialiasing flag.</param> 
+        /// <param name="useHighQualityRendering">Use high quality flag.</param> 
+        /// <param name="imageBrightness">Brightness for the generated images.</param> 
+        /// <param name="imageColorMode">Color mode for the generated images.</param> 
+        /// <param name="imageContrast">The contrast for the generated images.</param> 
+        /// <param name="numeralFormat">The images numeral format.</param> 
+        /// <param name="pageCount">Number of pages to render.</param> 
+        /// <param name="pageIndex">Page index to start rendering.</param> 
+        /// <param name="paperColor">Background image color.</param> 
+        /// <param name="pixelFormat">The pixel format of generated images.</param> 
+        /// <param name="resolution">The resolution of generated images.</param> 
+        /// <param name="scale">Zoom factor for generated images.</param> 
+        /// <param name="tiffCompression">The compression tipe.</param> 
+        /// <param name="dmlRenderingMode">Optional, default is Fallback.</param> 
+        /// <param name="dmlEffectsRenderingMode">Optional, default is Simplified.</param> 
+        /// <param name="tiffBinarizationMethod">Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.</param> 
+        /// <param name="zipOutput">Optional. A value determining zip output or not.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <param name="resultFile"></param> 
-        /// <param name="useAntiAliasing"></param> 
-        /// <param name="useHighQualityRendering"></param> 
-        /// <param name="imageBrightness"></param> 
-        /// <param name="imageColorMode"></param> 
-        /// <param name="imageContrast"></param> 
-        /// <param name="numeralFormat"></param> 
-        /// <param name="pageCount"></param> 
-        /// <param name="pageIndex"></param> 
-        /// <param name="paperColor"></param> 
-        /// <param name="pixelFormat"></param> 
-        /// <param name="resolution"></param> 
-        /// <param name="scale"></param> 
-        /// <param name="tiffCompression"></param> 
-        /// <param name="dmlRenderingMode"></param> 
-        /// <param name="dmlEffectsRenderingMode"></param> 
-        /// <param name="tiffBinarizationMethod"></param> 
-        /// <param name="zipOutput"></param> 
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param> 
         /// <returns>SaveResponse</returns>            
-        public SaveResponse PutDocumentSaveAsTiff (string name, TiffSaveOptionsData saveOptions, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string resultFile = null, bool? useAntiAliasing = null, bool? useHighQualityRendering = null, float? imageBrightness = null, string imageColorMode = null, float? imageContrast = null, string numeralFormat = null, int? pageCount = null, int? pageIndex = null, string paperColor = null, string pixelFormat = null, float? resolution = null, float? scale = null, string tiffCompression = null, string dmlRenderingMode = null, string dmlEffectsRenderingMode = null, string tiffBinarizationMethod = null, bool? zipOutput = null, string fontsLocation = null)
+        public SaveResponse PutDocumentSaveAsTiff (string name, TiffSaveOptionsData saveOptions, string resultFile = null, bool? useAntiAliasing = null, bool? useHighQualityRendering = null, float? imageBrightness = null, string imageColorMode = null, float? imageContrast = null, string numeralFormat = null, int? pageCount = null, int? pageIndex = null, string paperColor = null, string pixelFormat = null, float? resolution = null, float? scale = null, string tiffCompression = null, string dmlRenderingMode = null, string dmlEffectsRenderingMode = null, string tiffBinarizationMethod = null, bool? zipOutput = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/saveAs/tiff?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;resultFile=[resultFile]&amp;useAntiAliasing=[useAntiAliasing]&amp;useHighQualityRendering=[useHighQualityRendering]&amp;imageBrightness=[imageBrightness]&amp;imageColorMode=[imageColorMode]&amp;imageContrast=[imageContrast]&amp;numeralFormat=[numeralFormat]&amp;pageCount=[pageCount]&amp;pageIndex=[pageIndex]&amp;paperColor=[paperColor]&amp;pixelFormat=[pixelFormat]&amp;resolution=[resolution]&amp;scale=[scale]&amp;tiffCompression=[tiffCompression]&amp;dmlRenderingMode=[dmlRenderingMode]&amp;dmlEffectsRenderingMode=[dmlEffectsRenderingMode]&amp;tiffBinarizationMethod=[tiffBinarizationMethod]&amp;zipOutput=[zipOutput]&amp;fontsLocation=[fontsLocation]";
+            var ResourcePath = "/words/{name}/saveAs/tiff?appSid={appSid}&amp;resultFile=[resultFile]&amp;useAntiAliasing=[useAntiAliasing]&amp;useHighQualityRendering=[useHighQualityRendering]&amp;imageBrightness=[imageBrightness]&amp;imageColorMode=[imageColorMode]&amp;imageContrast=[imageContrast]&amp;numeralFormat=[numeralFormat]&amp;pageCount=[pageCount]&amp;pageIndex=[pageIndex]&amp;paperColor=[paperColor]&amp;pixelFormat=[pixelFormat]&amp;resolution=[resolution]&amp;scale=[scale]&amp;tiffCompression=[tiffCompression]&amp;dmlRenderingMode=[dmlRenderingMode]&amp;dmlEffectsRenderingMode=[dmlEffectsRenderingMode]&amp;tiffBinarizationMethod=[tiffBinarizationMethod]&amp;zipOutput=[zipOutput]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -12253,46 +12253,6 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
-            }
-            if (destFileName == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "destFileName" + "]", apiInvoker.ToPathValue(destFileName));
-            }
-            if (storage == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "storage" + "]", apiInvoker.ToPathValue(storage));
-            }
-            if (folder == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "folder" + "]", apiInvoker.ToPathValue(folder));
-            }
-            if (loadEncoding == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "loadEncoding" + "]", apiInvoker.ToPathValue(loadEncoding));
-            }
-            if (password == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
             }
             if (resultFile == null) 
             {
@@ -12438,6 +12398,46 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("[" + "zipOutput" + "]", apiInvoker.ToPathValue(zipOutput));
             }
+            if (destFileName == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])destFileName=\[destFileName\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "destFileName" + "]", apiInvoker.ToPathValue(destFileName));
+            }
+            if (storage == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "storage" + "]", apiInvoker.ToPathValue(storage));
+            }
+            if (folder == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])folder=\[folder\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "folder" + "]", apiInvoker.ToPathValue(folder));
+            }
+            if (loadEncoding == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])loadEncoding=\[loadEncoding\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "loadEncoding" + "]", apiInvoker.ToPathValue(loadEncoding));
+            }
+            if (password == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])password=\[password\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
+            }
             if (fontsLocation == null) 
             {
                 ResourcePath = Regex.Replace(ResourcePath, @"([&?])fontsLocation=\[fontsLocation\]", string.Empty);
@@ -12474,12 +12474,12 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Adds  drawing object to document, returns added  drawing object&#39;s data. 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="drawingObject">Drawing object parameters</param> 
         /// <param name="imageFile">File with image</param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="nodePath">Path to collection of drawing objects.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -12635,12 +12635,12 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Execute document mail merge online. 
         /// </summary>
         /// <param name="template">File with template</param> 
         /// <param name="data">File with mailmerge data</param> 
-        /// <param name="withRegions"></param> 
-        /// <param name="cleanup"></param> 
+        /// <param name="withRegions">With regions flag.</param> 
+        /// <param name="cleanup">Clean up options.</param> 
         /// <returns>System.IO.Stream</returns>            
         public System.IO.Stream PutExecuteMailMergeOnline (System.IO.Stream template, System.IO.Stream data, bool? withRegions = null, string cleanup = null)
         {
@@ -12721,13 +12721,13 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Populate document template with data online. 
         /// </summary>
         /// <param name="template">File with template</param> 
         /// <param name="data">File with mailmerge data</param> 
-        /// <param name="cleanup"></param> 
-        /// <param name="useWholeParagraphAsRegion"></param> 
-        /// <param name="withRegions"></param> 
+        /// <param name="cleanup">Clean up options.</param> 
+        /// <param name="useWholeParagraphAsRegion">Gets or sets a value indicating whether paragraph with TableStart or               TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.               The default value is true.</param> 
+        /// <param name="withRegions">Merge with regions or not. True by default</param> 
         /// <returns>System.IO.Stream</returns>            
         public System.IO.Stream PutExecuteTemplateOnline (System.IO.Stream template, System.IO.Stream data, string cleanup = null, bool? useWholeParagraphAsRegion = null, bool? withRegions = null)
         {
@@ -12816,11 +12816,12 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Adds field to document, returns inserted field&#39;s data. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="field"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="field">Field data.</param> 
+        /// <param name="nodePath">Path to collection of fields.</param> 
+        /// <param name="insertBeforeNode">Field will be inserted before node with id&#x3D;\&quot;nodeId\&quot;.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -12828,12 +12829,11 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param> 
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <param name="insertBeforeNode"></param> 
         /// <returns>FieldResponse</returns>            
-        public FieldResponse PutField (string name, Field field, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null, string insertBeforeNode = null)
+        public FieldResponse PutField (string name, Field field, string nodePath, string insertBeforeNode = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/{nodePath}/fields?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;insertBeforeNode=[insertBeforeNode]";
+            var ResourcePath = "/words/{name}/{nodePath}/fields?appSid={appSid}&amp;insertBeforeNode=[insertBeforeNode]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -12879,6 +12879,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
+            }
+            if (insertBeforeNode == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])insertBeforeNode=\[insertBeforeNode\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "insertBeforeNode" + "]", apiInvoker.ToPathValue(insertBeforeNode));
             }
             if (destFileName == null) 
             {
@@ -12936,14 +12944,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
             }
-            if (insertBeforeNode == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])insertBeforeNode=\[insertBeforeNode\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "insertBeforeNode" + "]", apiInvoker.ToPathValue(insertBeforeNode));
-            }
                         postBody = field; // http body (model) parameter
             try 
             {                
@@ -12972,11 +12972,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Adds footnote to document, returns added footnote&#39;s data. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="footnoteDto"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="footnoteDto">Footnote data.</param> 
+        /// <param name="nodePath">Path to collection of footnotes.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -13119,11 +13119,12 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Adds form field to paragraph, returns added form field&#39;s data. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="formField"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="formField">From field data.</param> 
+        /// <param name="nodePath">Path to node that contains collection of formfields.</param> 
+        /// <param name="insertBeforeNode">Form field will be inserted before node with index.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -13131,12 +13132,11 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param> 
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <param name="insertBeforeNode"></param> 
         /// <returns>FormFieldResponse</returns>            
-        public FormFieldResponse PutFormField (string name, FormField formField, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null, string insertBeforeNode = null)
+        public FormFieldResponse PutFormField (string name, FormField formField, string nodePath, string insertBeforeNode = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/{nodePath}/formfields?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;insertBeforeNode=[insertBeforeNode]";
+            var ResourcePath = "/words/{name}/{nodePath}/formfields?appSid={appSid}&amp;insertBeforeNode=[insertBeforeNode]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -13182,6 +13182,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
+            }
+            if (insertBeforeNode == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])insertBeforeNode=\[insertBeforeNode\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "insertBeforeNode" + "]", apiInvoker.ToPathValue(insertBeforeNode));
             }
             if (destFileName == null) 
             {
@@ -13239,14 +13247,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
             }
-            if (insertBeforeNode == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])insertBeforeNode=\[insertBeforeNode\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "insertBeforeNode" + "]", apiInvoker.ToPathValue(insertBeforeNode));
-            }
                         postBody = formField; // http body (model) parameter
             try 
             {                
@@ -13275,11 +13275,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Insert to document header or footer. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="headerFooterType"></param> 
-        /// <param name="sectionPath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="headerFooterType">Type of header/footer.</param> 
+        /// <param name="sectionPath">Path to parent section.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -13422,11 +13422,12 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Adds paragraph to document, returns added paragraph&#39;s data. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="paragraph"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="paragraph">Paragraph data.</param> 
+        /// <param name="nodePath">Path to collection of paragraphs.</param> 
+        /// <param name="insertBeforeNode">Paragraph will be inserted before node with index.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -13434,12 +13435,11 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param> 
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <param name="insertBeforeNode"></param> 
         /// <returns>ParagraphResponse</returns>            
-        public ParagraphResponse PutParagraph (string name, ParagraphInsert paragraph, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null, string insertBeforeNode = null)
+        public ParagraphResponse PutParagraph (string name, ParagraphInsert paragraph, string nodePath, string insertBeforeNode = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/{nodePath}/paragraphs?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;insertBeforeNode=[insertBeforeNode]";
+            var ResourcePath = "/words/{name}/{nodePath}/paragraphs?appSid={appSid}&amp;insertBeforeNode=[insertBeforeNode]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -13485,6 +13485,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
+            }
+            if (insertBeforeNode == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])insertBeforeNode=\[insertBeforeNode\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "insertBeforeNode" + "]", apiInvoker.ToPathValue(insertBeforeNode));
             }
             if (destFileName == null) 
             {
@@ -13542,14 +13550,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
             }
-            if (insertBeforeNode == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])insertBeforeNode=\[insertBeforeNode\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "insertBeforeNode" + "]", apiInvoker.ToPathValue(insertBeforeNode));
-            }
                         postBody = paragraph; // http body (model) parameter
             try 
             {                
@@ -13578,10 +13578,10 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Protect document. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="protectionRequest"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="protectionRequest">{Aspose.Words.Cloud.DTO.ProtectionRequest} with protection settings.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -13692,11 +13692,12 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Adds run to document, returns added paragraph&#39;s data. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="paragraphPath"></param> 
-        /// <param name="run"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="paragraphPath">Path to parent paragraph.</param> 
+        /// <param name="run">Run data.</param> 
+        /// <param name="insertBeforeNode">Paragraph will be inserted before node with index.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -13704,12 +13705,11 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param> 
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <param name="insertBeforeNode"></param> 
         /// <returns>RunResponse</returns>            
-        public RunResponse PutRun (string name, string paragraphPath, Run run, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null, string insertBeforeNode = null)
+        public RunResponse PutRun (string name, string paragraphPath, Run run, string insertBeforeNode = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/{paragraphPath}/runs?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]&amp;insertBeforeNode=[insertBeforeNode]";
+            var ResourcePath = "/words/{name}/{paragraphPath}/runs?appSid={appSid}&amp;insertBeforeNode=[insertBeforeNode]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -13755,6 +13755,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "paragraphPath" + "}", apiInvoker.ToPathValue(paragraphPath));
+            }
+            if (insertBeforeNode == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])insertBeforeNode=\[insertBeforeNode\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "insertBeforeNode" + "]", apiInvoker.ToPathValue(insertBeforeNode));
             }
             if (destFileName == null) 
             {
@@ -13812,14 +13820,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
             }
-            if (insertBeforeNode == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])insertBeforeNode=\[insertBeforeNode\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "insertBeforeNode" + "]", apiInvoker.ToPathValue(insertBeforeNode));
-            }
                         postBody = run; // http body (model) parameter
             try 
             {                
@@ -13848,11 +13848,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Add new or update existing document property. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="propertyName"></param> 
-        /// <param name="property"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="propertyName">The property name.</param> 
+        /// <param name="property">The property with new value.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -13995,11 +13995,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Add new or update existing document property. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="propertyName"></param> 
-        /// <param name="property"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="propertyName">The property name.</param> 
+        /// <param name="property">The property with new value.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -14142,9 +14142,9 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Reject all revisions in document 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The document name.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -14248,22 +14248,22 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Renders drawing object to specified format. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="format"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The file name.</param> 
+        /// <param name="format">The destination format.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to parent node.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param> 
         /// <returns>System.IO.Stream</returns>            
-        public System.IO.Stream RenderDrawingObject (string name, string format, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
+        public System.IO.Stream RenderDrawingObject (string name, string format, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}/render?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;fontsLocation=[fontsLocation]";
+            var ResourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}/render?appSid={appSid}&amp;format=[format]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -14288,16 +14288,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'format' when calling RenderDrawingObject");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling RenderDrawingObject");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling RenderDrawingObject");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling RenderDrawingObject");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -14308,6 +14308,14 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
             if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
@@ -14316,13 +14324,13 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
-            if (index == null || string.IsNullOrEmpty(index.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
+            if (format == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
             } 
             else 
             {
-                ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+                ResourcePath = ResourcePath.Replace("[" + "format" + "]", apiInvoker.ToPathValue(format));
             }
             if (storage == null) 
             {
@@ -14355,14 +14363,6 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
-            }
-            if (format == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "format" + "]", apiInvoker.ToPathValue(format));
             }
             if (fontsLocation == null) 
             {
@@ -14399,22 +14399,22 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Renders math object to specified format. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="format"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The file name.</param> 
+        /// <param name="format">The destination format.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to parent node.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param> 
         /// <returns>System.IO.Stream</returns>            
-        public System.IO.Stream RenderMathObject (string name, string format, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
+        public System.IO.Stream RenderMathObject (string name, string format, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/{nodePath}/OfficeMathObjects/{index}/render?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;fontsLocation=[fontsLocation]";
+            var ResourcePath = "/words/{name}/{nodePath}/OfficeMathObjects/{index}/render?appSid={appSid}&amp;format=[format]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -14439,16 +14439,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'format' when calling RenderMathObject");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling RenderMathObject");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling RenderMathObject");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling RenderMathObject");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -14459,6 +14459,14 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
             if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
@@ -14467,13 +14475,13 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
-            if (index == null || string.IsNullOrEmpty(index.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
+            if (format == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
             } 
             else 
             {
-                ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+                ResourcePath = ResourcePath.Replace("[" + "format" + "]", apiInvoker.ToPathValue(format));
             }
             if (storage == null) 
             {
@@ -14506,14 +14514,6 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
-            }
-            if (format == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "format" + "]", apiInvoker.ToPathValue(format));
             }
             if (fontsLocation == null) 
             {
@@ -14550,11 +14550,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Renders page to specified format. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="pageIndex"></param> 
-        /// <param name="format"></param> 
+        /// <param name="name">The file name.</param> 
+        /// <param name="pageIndex">Comment index</param> 
+        /// <param name="format">The destination format.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
@@ -14564,7 +14564,7 @@ namespace Com.Aspose.Words.Api
         public System.IO.Stream RenderPage (string name, int? pageIndex, string format, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/pages/{pageIndex}/render?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;fontsLocation=[fontsLocation]";
+            var ResourcePath = "/words/{name}/pages/{pageIndex}/render?appSid={appSid}&amp;format=[format]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -14611,6 +14611,14 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "pageIndex" + "}", apiInvoker.ToPathValue(pageIndex));
             }
+            if (format == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "format" + "]", apiInvoker.ToPathValue(format));
+            }
             if (storage == null) 
             {
                 ResourcePath = Regex.Replace(ResourcePath, @"([&?])storage=\[storage\]", string.Empty);
@@ -14642,14 +14650,6 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
-            }
-            if (format == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "format" + "]", apiInvoker.ToPathValue(format));
             }
             if (fontsLocation == null) 
             {
@@ -14686,22 +14686,22 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Renders paragraph to specified format. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="format"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The file name.</param> 
+        /// <param name="format">The destination format.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to parent node.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param> 
         /// <returns>System.IO.Stream</returns>            
-        public System.IO.Stream RenderParagraph (string name, string format, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
+        public System.IO.Stream RenderParagraph (string name, string format, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/{nodePath}/paragraphs/{index}/render?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;fontsLocation=[fontsLocation]";
+            var ResourcePath = "/words/{name}/{nodePath}/paragraphs/{index}/render?appSid={appSid}&amp;format=[format]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -14726,16 +14726,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'format' when calling RenderParagraph");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling RenderParagraph");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling RenderParagraph");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling RenderParagraph");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -14746,6 +14746,14 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
             if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
@@ -14754,13 +14762,13 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
-            if (index == null || string.IsNullOrEmpty(index.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
+            if (format == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
             } 
             else 
             {
-                ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+                ResourcePath = ResourcePath.Replace("[" + "format" + "]", apiInvoker.ToPathValue(format));
             }
             if (storage == null) 
             {
@@ -14793,14 +14801,6 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
-            }
-            if (format == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "format" + "]", apiInvoker.ToPathValue(format));
             }
             if (fontsLocation == null) 
             {
@@ -14837,22 +14837,22 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Renders table to specified format. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="format"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The file name.</param> 
+        /// <param name="format">The destination format.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to parent node.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param> 
         /// <returns>System.IO.Stream</returns>            
-        public System.IO.Stream RenderTable (string name, string format, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
+        public System.IO.Stream RenderTable (string name, string format, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/{nodePath}/tables/{index}/render?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;format=[format]&amp;fontsLocation=[fontsLocation]";
+            var ResourcePath = "/words/{name}/{nodePath}/tables/{index}/render?appSid={appSid}&amp;format=[format]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -14877,16 +14877,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'format' when calling RenderTable");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling RenderTable");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling RenderTable");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling RenderTable");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -14897,6 +14897,14 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
+            if (index == null || string.IsNullOrEmpty(index.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
             if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
@@ -14905,13 +14913,13 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
-            if (index == null || string.IsNullOrEmpty(index.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
+            if (format == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
             } 
             else 
             {
-                ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+                ResourcePath = ResourcePath.Replace("[" + "format" + "]", apiInvoker.ToPathValue(format));
             }
             if (storage == null) 
             {
@@ -14944,14 +14952,6 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
-            }
-            if (format == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])format=\[format\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "format" + "]", apiInvoker.ToPathValue(format));
             }
             if (fontsLocation == null) 
             {
@@ -14988,7 +14988,7 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Resets font&#39;s cache. 
         /// </summary>
         /// <returns>SaaSposeResponse</returns>            
         public SaaSposeResponse ResetCache ()
@@ -15034,19 +15034,19 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Search text in document. 
         /// </summary>
-        /// <param name="name"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="pattern">The regular expression used to find matches.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
-        /// <param name="pattern"></param> 
         /// <returns>SearchResponse</returns>            
-        public SearchResponse Search (string name, string storage = null, string folder = null, string loadEncoding = null, string password = null, string pattern = null)
+        public SearchResponse Search (string name, string pattern = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var ResourcePath = "/words/{name}/search?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;pattern=[pattern]";
+            var ResourcePath = "/words/{name}/search?appSid={appSid}&amp;pattern=[pattern]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             ResourcePath = Regex
                         .Replace(ResourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -15072,6 +15072,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
+            }
+            if (pattern == null) 
+            {
+                ResourcePath = Regex.Replace(ResourcePath, @"([&?])pattern=\[pattern\]", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("[" + "pattern" + "]", apiInvoker.ToPathValue(pattern));
             }
             if (storage == null) 
             {
@@ -15105,14 +15113,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("[" + "password" + "]", apiInvoker.ToPathValue(password));
             }
-            if (pattern == null) 
-            {
-                ResourcePath = Regex.Replace(ResourcePath, @"([&?])pattern=\[pattern\]", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("[" + "pattern" + "]", apiInvoker.ToPathValue(pattern));
-            }
                                     try 
             {                
                 if(typeof(SearchResponse) == typeof(Stream)) 
@@ -15140,11 +15140,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Updates border properties. &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="borderProperties"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="borderProperties">Border properties</param> 
+        /// <param name="nodePath">Path to node with border(node should be cell or row).</param> 
         /// <param name="index">Object index</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
@@ -15302,11 +15302,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Update page setup of section. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="sectionIndex"></param> 
-        /// <param name="pageSetup"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="sectionIndex">Section index</param> 
+        /// <param name="pageSetup">Page setup properties dto</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -15449,11 +15449,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Updates a table cell format. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="format"></param> 
-        /// <param name="tableRowPath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="format">The properties.</param> 
+        /// <param name="tableRowPath">Path to table row.</param> 
         /// <param name="index">Object index</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
@@ -15611,12 +15611,12 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Updates a table properties. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="properties"></param> 
-        /// <param name="nodePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="properties">The properties.</param> 
         /// <param name="index">Object index</param> 
+        /// <param name="nodePath">Path to table.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -15625,7 +15625,7 @@ namespace Com.Aspose.Words.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns>TablePropertiesResponse</returns>            
-        public TablePropertiesResponse UpdateTableProperties (string name, TableProperties properties, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public TablePropertiesResponse UpdateTableProperties (string name, TableProperties properties, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var ResourcePath = "/words/{name}/{nodePath}/tables/{index}/properties?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -15653,16 +15653,16 @@ namespace Com.Aspose.Words.Api
                 throw new ApiException(400, "Missing required parameter 'properties' when calling UpdateTableProperties");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling UpdateTableProperties");
-            }
-            
             // verify the required parameter 'index' is set
             if (index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling UpdateTableProperties");
+            }
+            
+            // verify the required parameter 'nodePath' is set
+            if (nodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling UpdateTableProperties");
             }
             
             if (name == null || string.IsNullOrEmpty(name.ToString())) 
@@ -15673,14 +15673,6 @@ namespace Com.Aspose.Words.Api
             {
                 ResourcePath = ResourcePath.Replace("{" + "name" + "}", apiInvoker.ToPathValue(name));
             }
-            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
-            {                
-                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
-            } 
-            else 
-            {
-                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
-            }
             if (index == null || string.IsNullOrEmpty(index.ToString())) 
             {                
                  ResourcePath = ResourcePath.Replace("/{" + "index" + "}", string.Empty);
@@ -15688,6 +15680,14 @@ namespace Com.Aspose.Words.Api
             else 
             {
                 ResourcePath = ResourcePath.Replace("{" + "index" + "}", apiInvoker.ToPathValue(index));
+            }
+            if (nodePath == null || string.IsNullOrEmpty(nodePath.ToString())) 
+            {                
+                 ResourcePath = ResourcePath.Replace("/{" + "nodePath" + "}", string.Empty);
+            } 
+            else 
+            {
+                ResourcePath = ResourcePath.Replace("{" + "nodePath" + "}", apiInvoker.ToPathValue(nodePath));
             }
             if (destFileName == null) 
             {
@@ -15773,11 +15773,11 @@ namespace Com.Aspose.Words.Api
         }
 
         /// <summary>
-        ///  
+        /// Updates a table row format. 
         /// </summary>
-        /// <param name="name"></param> 
-        /// <param name="format"></param> 
-        /// <param name="tablePath"></param> 
+        /// <param name="name">The document name.</param> 
+        /// <param name="format">The properties.</param> 
+        /// <param name="tablePath">Path to table.</param> 
         /// <param name="index">Object index</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 

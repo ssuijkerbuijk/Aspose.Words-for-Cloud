@@ -9,28 +9,32 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Table row element.
   /// </summary>  
   public class TableRow 
   {                       
         /// <summary>
-        /// Gets or sets TableCellList
-        /// </summary>    
+        /// Collection of table's rows.
+        /// </summary>
+        /// <value>Collection of table's rows.</value>    
         public List<TableCell> TableCellList { get; set; }
 
         /// <summary>
-        /// Gets or sets RowFormat
-        /// </summary>    
+        /// Provides access to the formatting properties of the row.
+        /// </summary>
+        /// <value>Provides access to the formatting properties of the row.</value>    
         public TableRowFormat RowFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets NodeId
-        /// </summary>    
+        /// Node id
+        /// </summary>
+        /// <value>Node id</value>    
         public string NodeId { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

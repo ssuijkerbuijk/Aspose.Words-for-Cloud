@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Collection of comments.
   /// </summary>  
   public class CommentsCollection 
   {                       
         /// <summary>
-        /// Gets or sets CommentList
-        /// </summary>    
+        /// Collection of comments
+        /// </summary>
+        /// <value>Collection of comments</value>    
         public List<Comment> CommentList { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

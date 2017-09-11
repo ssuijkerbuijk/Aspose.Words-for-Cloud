@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Represents the table properties.
   /// </summary>  
   public class TableProperties 
   {                       
         /// <summary>
-        /// Gets or sets Alignment
+        /// Specifies how an inline table is aligned in the document.
         /// </summary>
+        /// <value>Specifies how an inline table is aligned in the document.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AlignmentEnum
         {
@@ -37,8 +38,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets StyleIdentifier
+        /// Gets or sets the locale independent style identifier of the table style applied to this table.
         /// </summary>
+        /// <value>Gets or sets the locale independent style identifier of the table style applied to this table.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StyleIdentifierEnum
         {
@@ -1910,8 +1912,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets StyleOptions
+        /// Gets or sets bit flags that specify how a table style is applied to this table.
         /// </summary>
+        /// <value>Gets or sets bit flags that specify how a table style is applied to this table.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StyleOptionsEnum
         {
@@ -1963,8 +1966,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets TextWrapping
+        /// Get or sets TextWrapping {Aspose.Words.Cloud.DTO.DocumentElements.Tables.TablePropertiesDto.TextWrapping} for table.
         /// </summary>
+        /// <value>Get or sets TextWrapping {Aspose.Words.Cloud.DTO.DocumentElements.Tables.TablePropertiesDto.TextWrapping} for table.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextWrappingEnum
         {
@@ -1986,78 +1990,93 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets Alignment
+        /// Specifies how an inline table is aligned in the document.
         /// </summary>
+        /// <value>Specifies how an inline table is aligned in the document.</value>
         public AlignmentEnum? Alignment { get; set; }
 
         /// <summary>
-        /// Gets or sets StyleIdentifier
+        /// Gets or sets the locale independent style identifier of the table style applied to this table.
         /// </summary>
+        /// <value>Gets or sets the locale independent style identifier of the table style applied to this table.</value>
         public StyleIdentifierEnum? StyleIdentifier { get; set; }
 
         /// <summary>
-        /// Gets or sets StyleOptions
+        /// Gets or sets bit flags that specify how a table style is applied to this table.
         /// </summary>
+        /// <value>Gets or sets bit flags that specify how a table style is applied to this table.</value>
         public StyleOptionsEnum? StyleOptions { get; set; }
 
         /// <summary>
-        /// Gets or sets TextWrapping
+        /// Get or sets TextWrapping {Aspose.Words.Cloud.DTO.DocumentElements.Tables.TablePropertiesDto.TextWrapping} for table.
         /// </summary>
+        /// <value>Get or sets TextWrapping {Aspose.Words.Cloud.DTO.DocumentElements.Tables.TablePropertiesDto.TextWrapping} for table.</value>
         public TextWrappingEnum? TextWrapping { get; set; }
 
         /// <summary>
-        /// Gets or sets AllowAutoFit
-        /// </summary>    
+        /// Allows Microsoft Word and Aspose.Words to automatically resize cells in a table to fit their contents.
+        /// </summary>
+        /// <value>Allows Microsoft Word and Aspose.Words to automatically resize cells in a table to fit their contents.</value>    
         public bool? AllowAutoFit { get; set; }
 
         /// <summary>
-        /// Gets or sets Bidi
-        /// </summary>    
+        /// Gets or sets whether this is a right-to-left table.
+        /// </summary>
+        /// <value>Gets or sets whether this is a right-to-left table.</value>    
         public bool? Bidi { get; set; }
 
         /// <summary>
-        /// Gets or sets BottomPadding
-        /// </summary>    
+        /// Gets or sets the amount of space (in points) to add below the contents of cells.
+        /// </summary>
+        /// <value>Gets or sets the amount of space (in points) to add below the contents of cells.</value>    
         public double? BottomPadding { get; set; }
 
         /// <summary>
-        /// Gets or sets CellSpacing
-        /// </summary>    
+        /// Gets or sets the amount of space (in points) between the cells.
+        /// </summary>
+        /// <value>Gets or sets the amount of space (in points) between the cells.</value>    
         public double? CellSpacing { get; set; }
 
         /// <summary>
-        /// Gets or sets LeftIndent
-        /// </summary>    
+        /// Gets or sets the value that represents the left indent of the table.
+        /// </summary>
+        /// <value>Gets or sets the value that represents the left indent of the table.</value>    
         public double? LeftIndent { get; set; }
 
         /// <summary>
-        /// Gets or sets LeftPadding
-        /// </summary>    
+        /// Gets or sets the amount of space (in points) to add to the left of the contents of cells.
+        /// </summary>
+        /// <value>Gets or sets the amount of space (in points) to add to the left of the contents of cells.</value>    
         public double? LeftPadding { get; set; }
 
         /// <summary>
-        /// Gets or sets PreferredWidth
-        /// </summary>    
+        /// Gets or sets the table preferred width.   <para>Preferred width can be specified as a percentage, number of points or a special \"auto\" value.</para>
+        /// </summary>
+        /// <value>Gets or sets the table preferred width.   <para>Preferred width can be specified as a percentage, number of points or a special \"auto\" value.</para></value>    
         public PreferredWidth PreferredWidth { get; set; }
 
         /// <summary>
-        /// Gets or sets RightPadding
-        /// </summary>    
+        /// Gets or sets the amount of space (in points) to add to the right of the contents of cells.
+        /// </summary>
+        /// <value>Gets or sets the amount of space (in points) to add to the right of the contents of cells.</value>    
         public double? RightPadding { get; set; }
 
         /// <summary>
-        /// Gets or sets StyleName
-        /// </summary>    
+        /// Gets or sets the name of the table style applied to this table.
+        /// </summary>
+        /// <value>Gets or sets the name of the table style applied to this table.</value>    
         public string StyleName { get; set; }
 
         /// <summary>
-        /// Gets or sets TopPadding
-        /// </summary>    
+        /// Gets or sets the amount of space (in points) to add above the contents of cells.
+        /// </summary>
+        /// <value>Gets or sets the amount of space (in points) to add above the contents of cells.</value>    
         public double? TopPadding { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

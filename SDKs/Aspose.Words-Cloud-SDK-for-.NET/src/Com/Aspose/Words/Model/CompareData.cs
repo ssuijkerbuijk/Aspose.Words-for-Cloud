@@ -9,23 +9,26 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Container class for compare documents
   /// </summary>  
   public class CompareData 
   {                       
         /// <summary>
-        /// Gets or sets ComparingWithDocument
-        /// </summary>    
+        /// Path to document to compare at the server.
+        /// </summary>
+        /// <value>Path to document to compare at the server.</value>    
         public string ComparingWithDocument { get; set; }
 
         /// <summary>
-        /// Gets or sets Author
-        /// </summary>    
+        /// Initials of the author to use for revisions.
+        /// </summary>
+        /// <value>Initials of the author to use for revisions.</value>    
         public string Author { get; set; }
 
         /// <summary>
-        /// Gets or sets DateTime
-        /// </summary>    
+        /// The date and time to use for revisions.
+        /// </summary>
+        /// <value>The date and time to use for revisions.</value>    
         public DateTime? DateTime { get; set; }
 
         /// <summary>

@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Container for the data about protection of the document
   /// </summary>  
   public class ProtectionData 
   {                       
         /// <summary>
-        /// Gets or sets ProtectionType
-        /// </summary>    
+        /// Type of the protection
+        /// </summary>
+        /// <value>Type of the protection</value>    
         public string ProtectionType { get; set; }
 
         /// <summary>

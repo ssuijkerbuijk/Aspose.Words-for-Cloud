@@ -9,28 +9,32 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Container for the page&#39;s statistical data
   /// </summary>  
   public class PageStatData 
   {                       
         /// <summary>
-        /// Gets or sets PageNumber
-        /// </summary>    
+        /// Page number
+        /// </summary>
+        /// <value>Page number</value>    
         public int? PageNumber { get; set; }
 
         /// <summary>
-        /// Gets or sets WordCount
-        /// </summary>    
+        /// Total count of words in the page
+        /// </summary>
+        /// <value>Total count of words in the page</value>    
         public int? WordCount { get; set; }
 
         /// <summary>
-        /// Gets or sets ParagraphCount
-        /// </summary>    
+        /// Total count of paragraphs in the page
+        /// </summary>
+        /// <value>Total count of paragraphs in the page</value>    
         public int? ParagraphCount { get; set; }
 
         /// <summary>
-        /// Gets or sets FootnotesStatData
-        /// </summary>    
+        /// Detailed statistics of footnotes
+        /// </summary>
+        /// <value>Detailed statistics of footnotes</value>    
         public FootnotesStatData FootnotesStatData { get; set; }
 
         /// <summary>

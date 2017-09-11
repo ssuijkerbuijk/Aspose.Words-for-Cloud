@@ -9,23 +9,26 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// FormField checkbox element
   /// </summary>  
   public class FormFieldCheckbox : FormField 
   {                       
         /// <summary>
-        /// Gets or sets IsCheckBoxExactSize
-        /// </summary>    
+        /// Gets or sets the boolean value that indicates whether the size of the textbox is automatic or specified explicitly.
+        /// </summary>
+        /// <value>Gets or sets the boolean value that indicates whether the size of the textbox is automatic or specified explicitly.</value>    
         public bool? IsCheckBoxExactSize { get; set; }
 
         /// <summary>
-        /// Gets or sets CheckBoxSize
-        /// </summary>    
+        /// Gets or sets the size of the checkbox in points. Has effect only when {Aspose.Words.Cloud.DTO.DocumentElements.FormFields.FormFieldCheckbox.IsCheckBoxExactSize} is true.
+        /// </summary>
+        /// <value>Gets or sets the size of the checkbox in points. Has effect only when {Aspose.Words.Cloud.DTO.DocumentElements.FormFields.FormFieldCheckbox.IsCheckBoxExactSize} is true.</value>    
         public double? CheckBoxSize { get; set; }
 
         /// <summary>
-        /// Gets or sets _Checked
-        /// </summary>    
+        /// Gets or sets the checked status of the check box form field.
+        /// </summary>
+        /// <value>Gets or sets the checked status of the check box form field.</value>    
         public bool? _Checked { get; set; }
 
         /// <summary>

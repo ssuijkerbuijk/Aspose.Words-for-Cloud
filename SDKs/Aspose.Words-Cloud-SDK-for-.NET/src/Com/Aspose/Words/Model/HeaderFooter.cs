@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Section element
   /// </summary>  
   public class HeaderFooter 
   {                       
         /// <summary>
-        /// Gets or sets Type
+        /// Paragraph&#39;s text
         /// </summary>
+        /// <value>Paragraph&#39;s text</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -52,23 +53,27 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets Type
+        /// Paragraph&#39;s text
         /// </summary>
+        /// <value>Paragraph&#39;s text</value>
         public TypeEnum? Type { get; set; }
 
         /// <summary>
-        /// Gets or sets Paragraphs
-        /// </summary>    
+        /// Link to Paragraphs resource
+        /// </summary>
+        /// <value>Link to Paragraphs resource</value>    
         public LinkElement Paragraphs { get; set; }
 
         /// <summary>
-        /// Gets or sets DrawingObjects
-        /// </summary>    
+        /// Link to DrawingObjects resource
+        /// </summary>
+        /// <value>Link to DrawingObjects resource</value>    
         public LinkElement DrawingObjects { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

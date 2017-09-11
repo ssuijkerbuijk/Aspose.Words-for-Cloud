@@ -9,28 +9,32 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Words document property DTO.
   /// </summary>  
   public class DocumentProperty 
   {                       
         /// <summary>
-        /// Gets or sets Name
-        /// </summary>    
+        /// Name of the document property.
+        /// </summary>
+        /// <value>Name of the document property.</value>    
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets Value
-        /// </summary>    
+        /// String value of the document property.
+        /// </summary>
+        /// <value>String value of the document property.</value>    
         public string Value { get; set; }
 
         /// <summary>
-        /// Gets or sets BuiltIn
-        /// </summary>    
+        /// Flag indicates whether the property is built-in or not.  If true the property is built-in, if false the property is custom.
+        /// </summary>
+        /// <value>Flag indicates whether the property is built-in or not.  If true the property is built-in, if false the property is custom.</value>    
         public bool? BuiltIn { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

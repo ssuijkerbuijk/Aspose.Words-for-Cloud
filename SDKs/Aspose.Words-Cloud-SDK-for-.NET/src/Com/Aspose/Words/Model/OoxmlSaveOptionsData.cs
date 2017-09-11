@@ -9,23 +9,26 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for docx/docm/dotx/dotm/flatopc save options
   /// </summary>  
   public class OoxmlSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets PrettyFormat
-        /// </summary>    
+        /// Specifies whether or not use pretty formats output
+        /// </summary>
+        /// <value>Specifies whether or not use pretty formats output</value>    
         public bool? PrettyFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets Compliance
-        /// </summary>    
+        /// Specifies the OOXML version for the output document
+        /// </summary>
+        /// <value>Specifies the OOXML version for the output document</value>    
         public string Compliance { get; set; }
 
         /// <summary>
-        /// Gets or sets Password
-        /// </summary>    
+        /// Specifies a password to encrypt document using ECMA376 Standard encryption algorithm
+        /// </summary>
+        /// <value>Specifies a password to encrypt document using ECMA376 Standard encryption algorithm</value>    
         public string Password { get; set; }
 
         /// <summary>

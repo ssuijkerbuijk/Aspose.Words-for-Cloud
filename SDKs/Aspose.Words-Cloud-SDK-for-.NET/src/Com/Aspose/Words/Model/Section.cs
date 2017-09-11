@@ -9,38 +9,44 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Section element
   /// </summary>  
   public class Section 
   {                       
         /// <summary>
-        /// Gets or sets Paragraphs
-        /// </summary>    
+        /// Link to Paragraphs resource
+        /// </summary>
+        /// <value>Link to Paragraphs resource</value>    
         public LinkElement Paragraphs { get; set; }
 
         /// <summary>
-        /// Gets or sets PageSetup
-        /// </summary>    
+        /// Link to PageSetup resource
+        /// </summary>
+        /// <value>Link to PageSetup resource</value>    
         public LinkElement PageSetup { get; set; }
 
         /// <summary>
-        /// Gets or sets HeaderFooters
-        /// </summary>    
+        /// Link to HeaderFooters resource
+        /// </summary>
+        /// <value>Link to HeaderFooters resource</value>    
         public LinkElement HeaderFooters { get; set; }
 
         /// <summary>
-        /// Gets or sets Tables
-        /// </summary>    
+        /// Link to Tables resource
+        /// </summary>
+        /// <value>Link to Tables resource</value>    
         public LinkElement Tables { get; set; }
 
         /// <summary>
-        /// Gets or sets ChildNodes
-        /// </summary>    
+        /// Child nodes.
+        /// </summary>
+        /// <value>Child nodes.</value>    
         public List<Object> ChildNodes { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

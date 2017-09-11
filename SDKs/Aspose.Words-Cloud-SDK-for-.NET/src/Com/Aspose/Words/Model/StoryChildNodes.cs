@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Child nodes of {Aspose.Words.Story} or {Aspose.Words.InlineStory}
   /// </summary>  
   public class StoryChildNodes 
   {                       
         /// <summary>
-        /// Gets or sets ChildNodes
-        /// </summary>    
+        /// Child nodes.
+        /// </summary>
+        /// <value>Child nodes.</value>    
         public List<NodeLink> ChildNodes { get; set; }
 
         /// <summary>

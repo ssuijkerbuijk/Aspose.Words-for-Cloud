@@ -9,33 +9,38 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for details of digital signature
   /// </summary>  
   public class PdfDigitalSignatureDetailsData 
   {                       
         /// <summary>
-        /// Gets or sets CertificateFilename
-        /// </summary>    
+        /// certificate's filename using for signing
+        /// </summary>
+        /// <value>certificate's filename using for signing</value>    
         public string CertificateFilename { get; set; }
 
         /// <summary>
-        /// Gets or sets HashAlgorithm
-        /// </summary>    
+        /// hash algorithm
+        /// </summary>
+        /// <value>hash algorithm</value>    
         public string HashAlgorithm { get; set; }
 
         /// <summary>
-        /// Gets or sets Location
-        /// </summary>    
+        /// location of the signing
+        /// </summary>
+        /// <value>location of the signing</value>    
         public string Location { get; set; }
 
         /// <summary>
-        /// Gets or sets Reason
-        /// </summary>    
+        /// reason for the signing
+        /// </summary>
+        /// <value>reason for the signing</value>    
         public string Reason { get; set; }
 
         /// <summary>
-        /// Gets or sets SignatureDate
-        /// </summary>    
+        /// date of the signing
+        /// </summary>
+        /// <value>date of the signing</value>    
         public DateTime? SignatureDate { get; set; }
 
         /// <summary>

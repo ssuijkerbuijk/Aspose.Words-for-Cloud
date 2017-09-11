@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Table cell element
   /// </summary>  
   public class TableCellInsert 
   {                       
         /// <summary>
-        /// Gets or sets InsertAfter
-        /// </summary>    
+        /// Table cell will be inserted after cell with specified 0-based index.
+        /// </summary>
+        /// <value>Table cell will be inserted after cell with specified 0-based index.</value>    
         public int? InsertAfter { get; set; }
 
         /// <summary>

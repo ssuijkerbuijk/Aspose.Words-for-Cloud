@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// OfficeMath object.
   /// </summary>  
   public class OfficeMathObject 
   {                       
         /// <summary>
-        /// Gets or sets DisplayType
+        /// Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text  or displayed on its own line.
         /// </summary>
+        /// <value>Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text  or displayed on its own line.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DisplayTypeEnum
         {
@@ -32,8 +33,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets Justification
+        /// Gets/sets Office Math justification.
         /// </summary>
+        /// <value>Gets/sets Office Math justification.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum JustificationEnum
         {
@@ -70,8 +72,9 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets MathObjectType
+        /// Gets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.
         /// </summary>
+        /// <value>Gets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum MathObjectTypeEnum
         {
@@ -228,33 +231,39 @@ namespace Com.Aspose.Words.Model
         }
 
         /// <summary>
-        /// Gets or sets DisplayType
+        /// Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text  or displayed on its own line.
         /// </summary>
+        /// <value>Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text  or displayed on its own line.</value>
         public DisplayTypeEnum? DisplayType { get; set; }
 
         /// <summary>
-        /// Gets or sets Justification
+        /// Gets/sets Office Math justification.
         /// </summary>
+        /// <value>Gets/sets Office Math justification.</value>
         public JustificationEnum? Justification { get; set; }
 
         /// <summary>
-        /// Gets or sets MathObjectType
+        /// Gets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.
         /// </summary>
+        /// <value>Gets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.</value>
         public MathObjectTypeEnum? MathObjectType { get; set; }
 
         /// <summary>
-        /// Gets or sets Content
-        /// </summary>    
+        /// Content of footnote.
+        /// </summary>
+        /// <value>Content of footnote.</value>    
         public StoryChildNodes Content { get; set; }
 
         /// <summary>
-        /// Gets or sets NodeId
-        /// </summary>    
+        /// Node id
+        /// </summary>
+        /// <value>Node id</value>    
         public string NodeId { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

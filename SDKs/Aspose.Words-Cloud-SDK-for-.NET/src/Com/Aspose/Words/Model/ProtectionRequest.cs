@@ -9,23 +9,26 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Request on changing of protection
   /// </summary>  
   public class ProtectionRequest 
   {                       
         /// <summary>
-        /// Gets or sets Password
-        /// </summary>    
+        /// Current password
+        /// </summary>
+        /// <value>Current password</value>    
         public string Password { get; set; }
 
         /// <summary>
-        /// Gets or sets NewPassword
-        /// </summary>    
+        /// New password
+        /// </summary>
+        /// <value>New password</value>    
         public string NewPassword { get; set; }
 
         /// <summary>
-        /// Gets or sets ProtectionType
-        /// </summary>    
+        /// New type of protection
+        /// </summary>
+        /// <value>New type of protection</value>    
         public string ProtectionType { get; set; }
 
         /// <summary>

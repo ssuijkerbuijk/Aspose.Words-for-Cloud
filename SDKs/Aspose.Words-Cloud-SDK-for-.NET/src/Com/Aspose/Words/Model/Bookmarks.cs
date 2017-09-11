@@ -19,8 +19,9 @@ namespace Com.Aspose.Words.Model
         public List<Bookmark> BookmarkList { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

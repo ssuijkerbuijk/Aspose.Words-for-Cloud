@@ -9,23 +9,26 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Hyperlink element.
   /// </summary>  
   public class Hyperlink 
   {                       
         /// <summary>
-        /// Gets or sets DisplayText
-        /// </summary>    
+        /// Hypelink's display text
+        /// </summary>
+        /// <value>Hypelink's display text</value>    
         public string DisplayText { get; set; }
 
         /// <summary>
-        /// Gets or sets Value
-        /// </summary>    
+        /// Value
+        /// </summary>
+        /// <value>Value</value>    
         public string Value { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

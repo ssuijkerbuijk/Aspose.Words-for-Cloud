@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Container for the footnotes statistical data
   /// </summary>  
   public class FootnotesStatData 
   {                       
         /// <summary>
-        /// Gets or sets WordCount
-        /// </summary>    
+        /// Total count of words in footnotes
+        /// </summary>
+        /// <value>Total count of words in footnotes</value>    
         public int? WordCount { get; set; }
 
         /// <summary>
-        /// Gets or sets ParagraphCount
-        /// </summary>    
+        /// Total count of paragraphs in footnotes
+        /// </summary>
+        /// <value>Total count of paragraphs in footnotes</value>    
         public int? ParagraphCount { get; set; }
 
         /// <summary>

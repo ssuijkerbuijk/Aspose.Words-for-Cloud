@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Response for the request of the document&#39;s statistical data
   /// </summary>  
   public class StatDataResponse : SaaSposeResponse 
   {                       
         /// <summary>
-        /// Gets or sets StatData
-        /// </summary>    
+        /// Statistical data of the document
+        /// </summary>
+        /// <value>Statistical data of the document</value>    
         public DocumentStatData StatData { get; set; }
 
         /// <summary>
-        /// Gets or sets DocumentLink
-        /// </summary>    
+        /// Link to the document
+        /// </summary>
+        /// <value>Link to the document</value>    
         public FileLink DocumentLink { get; set; }
 
         /// <summary>

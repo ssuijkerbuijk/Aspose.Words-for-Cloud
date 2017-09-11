@@ -9,7 +9,7 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Container class for emf save options.
   /// </summary>  
   public class EmfSaveOptionsData : ImageSaveOptionsData 
   {                       

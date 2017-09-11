@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Base class for all responses.
   /// </summary>  
   public class SaaSposeResponse 
   {                       
         /// <summary>
-        /// Gets or sets Code
-        /// </summary>    
+        /// Response status code.
+        /// </summary>
+        /// <value>Response status code.</value>    
         public int? Code { get; set; }
 
         /// <summary>
-        /// Gets or sets Status
-        /// </summary>    
+        /// Response status.
+        /// </summary>
+        /// <value>Response status.</value>    
         public string Status { get; set; }
 
         /// <summary>

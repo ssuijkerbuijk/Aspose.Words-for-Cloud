@@ -9,23 +9,26 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Result of saving.
   /// </summary>  
   public class SaveResult 
   {                       
         /// <summary>
-        /// Gets or sets SourceDocument
-        /// </summary>    
+        /// Link to source document.
+        /// </summary>
+        /// <value>Link to source document.</value>    
         public FileLink SourceDocument { get; set; }
 
         /// <summary>
-        /// Gets or sets DestDocument
-        /// </summary>    
+        /// Link to destination document.
+        /// </summary>
+        /// <value>Link to destination document.</value>    
         public FileLink DestDocument { get; set; }
 
         /// <summary>
-        /// Gets or sets AdditionalItems
-        /// </summary>    
+        /// Links to additional items (css, images etc).
+        /// </summary>
+        /// <value>Links to additional items (css, images etc).</value>    
         public List<FileLink> AdditionalItems { get; set; }
 
         /// <summary>

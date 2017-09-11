@@ -9,63 +9,74 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// FromField
   /// </summary>  
   public class FormField 
   {                       
         /// <summary>
-        /// Gets or sets NodeId
-        /// </summary>    
+        /// Node id
+        /// </summary>
+        /// <value>Node id</value>    
         public string NodeId { get; set; }
 
         /// <summary>
-        /// Gets or sets Name
-        /// </summary>    
+        /// Gets or sets the form field name.
+        /// </summary>
+        /// <value>Gets or sets the form field name.</value>    
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets Enabled
-        /// </summary>    
+        /// True if a form field is enabled.
+        /// </summary>
+        /// <value>True if a form field is enabled.</value>    
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// Gets or sets StatusText
-        /// </summary>    
+        /// Returns or sets the text that's displayed in the status bar when a form field has the focus.
+        /// </summary>
+        /// <value>Returns or sets the text that's displayed in the status bar when a form field has the focus.</value>    
         public string StatusText { get; set; }
 
         /// <summary>
-        /// Gets or sets OwnStatus
-        /// </summary>    
+        /// Specifies the source of the text that's displayed in the status bar when a form field has the focus.
+        /// </summary>
+        /// <value>Specifies the source of the text that's displayed in the status bar when a form field has the focus.</value>    
         public bool? OwnStatus { get; set; }
 
         /// <summary>
-        /// Gets or sets HelpText
-        /// </summary>    
+        /// Returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.
+        /// </summary>
+        /// <value>Returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.</value>    
         public string HelpText { get; set; }
 
         /// <summary>
-        /// Gets or sets OwnHelp
-        /// </summary>    
+        /// Specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
+        /// </summary>
+        /// <value>Specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.</value>    
         public bool? OwnHelp { get; set; }
 
         /// <summary>
-        /// Gets or sets CalculateOnExit
-        /// </summary>    
+        /// True if references to the specified form field are automatically updated whenever the field is exited.
+        /// </summary>
+        /// <value>True if references to the specified form field are automatically updated whenever the field is exited.</value>    
         public bool? CalculateOnExit { get; set; }
 
         /// <summary>
-        /// Gets or sets EntryMacro
-        /// </summary>    
+        /// Returns or sets an entry macro name for the form field.
+        /// </summary>
+        /// <value>Returns or sets an entry macro name for the form field.</value>    
         public string EntryMacro { get; set; }
 
         /// <summary>
-        /// Gets or sets ExitMacro
-        /// </summary>    
+        /// Returns or sets an exit macro name for the form field.
+        /// </summary>
+        /// <value>Returns or sets an exit macro name for the form field.</value>    
         public string ExitMacro { get; set; }
 
         /// <summary>
-        /// Gets or sets Link
-        /// </summary>    
+        /// Link to the document.
+        /// </summary>
+        /// <value>Link to the document.</value>    
         public WordsApiLink Link { get; set; }
 
         /// <summary>

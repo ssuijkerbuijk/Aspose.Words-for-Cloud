@@ -9,18 +9,20 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Table row element
   /// </summary>  
   public class TableRowInsert 
   {                       
         /// <summary>
-        /// Gets or sets InsertAfter
-        /// </summary>    
+        /// Table row will be inserted after row with specified 0-based index.
+        /// </summary>
+        /// <value>Table row will be inserted after row with specified 0-based index.</value>    
         public int? InsertAfter { get; set; }
 
         /// <summary>
-        /// Gets or sets ColumnsCount
-        /// </summary>    
+        /// Count of columns. Default is 1.
+        /// </summary>
+        /// <value>Count of columns. Default is 1.</value>    
         public int? ColumnsCount { get; set; }
 
         /// <summary>

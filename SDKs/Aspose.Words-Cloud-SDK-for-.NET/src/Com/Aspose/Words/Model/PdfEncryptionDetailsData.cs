@@ -9,28 +9,32 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// container class for details of encryption
   /// </summary>  
   public class PdfEncryptionDetailsData 
   {                       
         /// <summary>
-        /// Gets or sets EncryptionAlgorithm
-        /// </summary>    
+        /// Specifies the encryption algorithm to use
+        /// </summary>
+        /// <value>Specifies the encryption algorithm to use</value>    
         public string EncryptionAlgorithm { get; set; }
 
         /// <summary>
-        /// Gets or sets OwnerPassword
-        /// </summary>    
+        /// Specifies the owner password for the encrypted PDF document
+        /// </summary>
+        /// <value>Specifies the owner password for the encrypted PDF document</value>    
         public string OwnerPassword { get; set; }
 
         /// <summary>
-        /// Gets or sets Permissions
-        /// </summary>    
+        /// Specifies the operations that are allowed to a user on an encrypted PDF document
+        /// </summary>
+        /// <value>Specifies the operations that are allowed to a user on an encrypted PDF document</value>    
         public string Permissions { get; set; }
 
         /// <summary>
-        /// Gets or sets UserPassword
-        /// </summary>    
+        /// Specifies the user password required for opening the encrypted PDF document
+        /// </summary>
+        /// <value>Specifies the user password required for opening the encrypted PDF document</value>    
         public string UserPassword { get; set; }
 
         /// <summary>

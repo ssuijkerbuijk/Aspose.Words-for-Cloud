@@ -9,13 +9,14 @@ using Newtonsoft.Json.Converters;
 namespace Com.Aspose.Words.Model 
 {
   /// <summary>
-  /// 
+  /// Paragraph element
   /// </summary>  
   public class ParagraphInsert 
   {                       
         /// <summary>
-        /// Gets or sets Text
-        /// </summary>    
+        /// Paragraph's text
+        /// </summary>
+        /// <value>Paragraph's text</value>    
         public string Text { get; set; }
 
         /// <summary>
