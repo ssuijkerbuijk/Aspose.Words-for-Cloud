@@ -5,6 +5,7 @@ using System;
 
 namespace WordsTest
 {
+    using Com.Aspose.Words;
     using Com.Aspose.Words.Model;
 
     /// <summary>
@@ -1728,11 +1729,29 @@ namespace WordsTest
             Com.Aspose.Words.Model.SectionPageSetupResponse actual;
             actual = target.UpdateSectionPageSetup(name, sectionIndex, body, storage, folder, filename);
             
-           Assert.AreEqual(200, actual.Code);
-            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SectionPageSetupResponse(), actual.GetType()); 
-            
+            Assert.AreEqual(200, actual.Code);
+            Assert.IsInstanceOfType(new Com.Aspose.Words.Model.SectionPageSetupResponse(), actual.GetType());             
         }
 
+        /// <summary>
+        /// If file does not exist, 400 response should be returned with message "Error while loading file ".
+        /// </summary>
+        [TestMethod]
+        public void TestHandleErrors()
+        {
+            string name = "noFileWithThisName.docx";
 
+            try
+            {
+                var result = this.target.GetSections(name);
+
+                Assert.Fail("Excpected exception has not been throwed");
+            }
+            catch (ApiException apiException)
+            {
+                Assert.AreEqual(400, apiException.ErrorCode);
+                Assert.IsTrue(apiException.Message.StartsWith("Error while loading file 'noFileWithThisName.docx' from storage:"), "Current message: " + apiException.Message);
+            }
+        }
     }
 }

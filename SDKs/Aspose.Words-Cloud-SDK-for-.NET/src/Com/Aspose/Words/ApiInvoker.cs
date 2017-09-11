@@ -206,6 +206,7 @@ namespace Com.Aspose.Words
                       {
                           requestStream.Write(formData, 0, formData.Length);
                       }
+
                       if (body != null)
                       {
                           var swRequestWriter = new StreamWriter(requestStream);
@@ -215,6 +216,7 @@ namespace Com.Aspose.Words
                       else
                           System.Diagnostics.Debug.WriteLine("body is null");
                   }
+
                   break;
               default:
                   throw new ApiException(500, "unknown method type " + method);
@@ -225,8 +227,7 @@ namespace Com.Aspose.Words
               var webResponse = (HttpWebResponse)client.GetResponse();
               if (webResponse.StatusCode != HttpStatusCode.OK)
               {
-                  webResponse.Close();
-                  throw new ApiException((int)webResponse.StatusCode, webResponse.StatusDescription);
+                  this.ThrowApiException(webResponse);                  
               }
 
               if (binaryResponse)
@@ -248,16 +249,31 @@ namespace Com.Aspose.Words
           catch (WebException ex)
           {
               var response = ex.Response as HttpWebResponse;
-              int statusCode = 0;
-              if (response != null)
-              {
-                  statusCode = (int)response.StatusCode;
-                  response.Close();
-              }
-
-              throw new ApiException(statusCode, ex.Message);
+              this.ThrowApiException(response);
+              throw;
           }
       }
+
+        private void ThrowApiException(HttpWebResponse webResponse)
+        {
+            try
+            {
+                using (var responseReader = new StreamReader(webResponse.GetResponseStream()))
+                {
+                    var responseData = responseReader.ReadToEnd();
+                    var errorResponse = (WordsApiErrorResponse)deserialize(responseData, typeof(WordsApiErrorResponse));
+                    throw new ApiException((int)webResponse.StatusCode, errorResponse.Message);
+                }
+            }
+            catch (ApiException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw new ApiException((int)webResponse.StatusCode, webResponse.StatusDescription);
+            }
+        }
 
         private static byte[] GetMultipartFormData(Dictionary<string, object> postParameters, string boundary)
         {
