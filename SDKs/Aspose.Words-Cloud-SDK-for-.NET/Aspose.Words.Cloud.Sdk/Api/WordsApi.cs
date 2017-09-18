@@ -520,7 +520,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The file name.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to collection of drawing objects.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of drawing objects.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -529,10 +529,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
-        public SaaSposeResponse DeleteDrawingObject(string name, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteDrawingObject(string name, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -554,15 +554,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteDrawingObject");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteDrawingObject");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -602,7 +596,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The file name.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to collection of fields.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of fields.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -611,10 +605,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
-        public SaaSposeResponse DeleteField(string name, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteField(string name, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -636,15 +630,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteField");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteField");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -683,7 +671,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// Remove fields from section paragraph. 
         /// </summary>
         /// <param name="name">The file name.</param> 
-        /// <param name="nodePath">Path to collection of fields.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of fields.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -692,10 +680,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
-        public SaaSposeResponse DeleteFields(string name, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteFields(string name, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/fields?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/fields?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -711,14 +699,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteFields");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteFields");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -758,7 +740,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The file name.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to collection of footnotes.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of footnotes.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -767,10 +749,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
-        public SaaSposeResponse DeleteFootnote(string name, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteFootnote(string name, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -792,15 +774,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteFootnote");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteFootnote");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -849,10 +825,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
-        public SaaSposeResponse DeleteFormField(string name, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteFormField(string name, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -874,15 +850,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteFormField");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteFormField");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -931,10 +901,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
-        public SaaSposeResponse DeleteHeaderFooter(string name, int? index, string sectionPath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteHeaderFooter(string name, int? index, string sectionPath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{sectionPath}/headersfooters/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{sectionPath}/headersfooters/{index}?appSid={appSid}&amp;sectionPath=[sectionPath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -956,15 +926,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteHeaderFooter");
             }
             
-            // verify the required parameter 'sectionPath' is set
-            if (sectionPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'sectionPath' when calling DeleteHeaderFooter");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "sectionPath", sectionPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "sectionPath", sectionPath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -1013,10 +977,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
-        public SaaSposeResponse DeleteHeadersFooters(string name, string sectionPath, string headersFootersTypes = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteHeadersFooters(string name, string sectionPath = null, string headersFootersTypes = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;headersFootersTypes=[headersFootersTypes]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;sectionPath=[sectionPath]&amp;headersFootersTypes=[headersFootersTypes]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1032,14 +996,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteHeadersFooters");
             }
             
-            // verify the required parameter 'sectionPath' is set
-            if (sectionPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'sectionPath' when calling DeleteHeadersFooters");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "sectionPath", sectionPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "sectionPath", sectionPath);
             resourcePath = this.AddQueryParameter(resourcePath, "headersFootersTypes", headersFootersTypes);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
@@ -1080,7 +1038,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The file name.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to collection of OfficeMath objects.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of OfficeMath objects.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -1089,10 +1047,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
-        public SaaSposeResponse DeleteOfficeMathObject(string name, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteOfficeMathObject(string name, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/OfficeMathObjects/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/OfficeMathObjects/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1114,15 +1072,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteOfficeMathObject");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteOfficeMathObject");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -1162,7 +1114,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The file name.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to collection of paragraphs.</param> 
+        /// <param name="nodePath">Path to node which contains paragraphs.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -1171,10 +1123,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
-        public SaaSposeResponse DeleteParagraph(string name, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteParagraph(string name, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/paragraphs/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/paragraphs/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1196,15 +1148,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteParagraph");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteParagraph");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -1326,7 +1272,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to table.</param> 
+        /// <param name="nodePath">Path to node, which contains tables.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -1335,10 +1281,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
-        public SaaSposeResponse DeleteTable(string name, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public SaaSposeResponse DeleteTable(string name, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/tables/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/tables/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1360,15 +1306,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteTable");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteTable");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -2101,16 +2041,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to collection of drawing objects.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of drawing objects.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="DrawingObjectResponse"/></returns>            
-        public DrawingObjectResponse GetDocumentDrawingObjectByIndex(string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public DrawingObjectResponse GetDocumentDrawingObjectByIndex(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2132,15 +2072,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectByIndex");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetDocumentDrawingObjectByIndex");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -2177,16 +2111,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to collection of drawing objects.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of drawing objects.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
-        public System.IO.Stream GetDocumentDrawingObjectImageData(string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public System.IO.Stream GetDocumentDrawingObjectImageData(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}/imageData?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}/imageData?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2208,15 +2142,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectImageData");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetDocumentDrawingObjectImageData");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -2253,16 +2181,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to collection of drawing objects.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of drawing objects.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
-        public System.IO.Stream GetDocumentDrawingObjectOleData(string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public System.IO.Stream GetDocumentDrawingObjectOleData(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}/oleData?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}/oleData?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2284,15 +2212,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectOleData");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetDocumentDrawingObjectOleData");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -2328,16 +2250,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// Read document drawing objects common info. 
         /// </summary>
         /// <param name="name">The document name.</param> 
-        /// <param name="nodePath">Path to collection of drawing objects.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of drawing objects.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="DrawingObjectsResponse"/></returns>            
-        public DrawingObjectsResponse GetDocumentDrawingObjects(string name, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public DrawingObjectsResponse GetDocumentDrawingObjects(string name, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/drawingObjects?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/drawingObjects?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2353,14 +2275,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentDrawingObjects");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetDocumentDrawingObjects");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -2587,16 +2503,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to collection of paragraphs.</param> 
+        /// <param name="nodePath">Path to node which contains paragraphs.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="ParagraphResponse"/></returns>            
-        public ParagraphResponse GetDocumentParagraph(string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public ParagraphResponse GetDocumentParagraph(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/paragraphs/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/paragraphs/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2618,15 +2534,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraph");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetDocumentParagraph");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -2882,16 +2792,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// Return a list of paragraphs that are contained in the document. 
         /// </summary>
         /// <param name="name">The document name.</param> 
-        /// <param name="nodePath">Path to collection of paragraphs.</param> 
+        /// <param name="nodePath">Path to node which contains paragraphs.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="ParagraphLinkCollectionResponse"/></returns>            
-        public ParagraphLinkCollectionResponse GetDocumentParagraphs(string name, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public ParagraphLinkCollectionResponse GetDocumentParagraphs(string name, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/paragraphs?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/paragraphs?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2907,14 +2817,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphs");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetDocumentParagraphs");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -3337,16 +3241,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The file name.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to collection of fields.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of fields.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="FieldResponse"/></returns>            
-        public FieldResponse GetField(string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public FieldResponse GetField(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3368,15 +3272,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetField");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetField");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -3412,16 +3310,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// Get fields from document. 
         /// </summary>
         /// <param name="name">The file name.</param> 
-        /// <param name="nodePath">Path to collection of fields.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of fields.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="FieldsResponse"/></returns>            
-        public FieldsResponse GetFields(string name, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public FieldsResponse GetFields(string name, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/fields?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/fields?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3437,14 +3335,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetFields");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetFields");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -3481,16 +3373,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to collection of footnotes.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of footnotes.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="FootnoteResponse"/></returns>            
-        public FootnoteResponse GetFootnote(string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public FootnoteResponse GetFootnote(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3512,15 +3404,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetFootnote");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetFootnote");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -3556,16 +3442,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// Get footnotes from document. 
         /// </summary>
         /// <param name="name">The file name.</param> 
-        /// <param name="nodePath">Path to collection of footnotes.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of footnotes.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="FootnotesResponse"/></returns>            
-        public FootnotesResponse GetFootnotes(string name, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public FootnotesResponse GetFootnotes(string name, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/footnotes?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/footnotes?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3581,14 +3467,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetFootnotes");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetFootnotes");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -3631,10 +3511,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="FormFieldResponse"/></returns>            
-        public FormFieldResponse GetFormField(string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public FormFieldResponse GetFormField(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3656,15 +3536,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetFormField");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetFormField");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -3706,10 +3580,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="FormFieldsResponse"/></returns>            
-        public FormFieldsResponse GetFormFields(string name, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public FormFieldsResponse GetFormFields(string name, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/formfields?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/formfields?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3725,14 +3599,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetFormFields");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetFormFields");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -3776,10 +3644,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="HeaderFooterResponse"/></returns>            
-        public HeaderFooterResponse GetHeaderFooter(string name, int? headerFooterIndex, int? sectionIndex = null, string filterByType = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public HeaderFooterResponse GetHeaderFooter(string name, int? headerFooterIndex, int? sectionIndex, string filterByType = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;sectionIndex=[sectionIndex]&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3801,9 +3669,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'headerFooterIndex' when calling GetHeaderFooter");
             }
             
+            // verify the required parameter 'sectionIndex' is set
+            if (sectionIndex == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetHeaderFooter");
+            }
+            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "headerFooterIndex", headerFooterIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "sectionIndex", sectionIndex);
+            resourcePath = this.AddPathParameter(resourcePath, "sectionIndex", sectionIndex);
             resourcePath = this.AddQueryParameter(resourcePath, "filterByType", filterByType);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -3848,10 +3722,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="HeaderFooterResponse"/></returns>            
-        public HeaderFooterResponse GetHeaderFooter_1(string name, int? headerFooterIndex, int? sectionIndex, string filterByType = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public HeaderFooterResponse GetHeaderFooter_1(string name, int? headerFooterIndex, int? sectionIndex = null, string filterByType = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;sectionIndex=[sectionIndex]&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3873,15 +3747,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'headerFooterIndex' when calling GetHeaderFooter_1");
             }
             
-            // verify the required parameter 'sectionIndex' is set
-            if (sectionIndex == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetHeaderFooter_1");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "headerFooterIndex", headerFooterIndex);
-            resourcePath = this.AddPathParameter(resourcePath, "sectionIndex", sectionIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "sectionIndex", sectionIndex);
             resourcePath = this.AddQueryParameter(resourcePath, "filterByType", filterByType);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -3925,10 +3793,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="HeaderFootersResponse"/></returns>            
-        public HeaderFootersResponse GetHeaderFooters(string name, string sectionPath, string filterByType = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public HeaderFootersResponse GetHeaderFooters(string name, string sectionPath = null, string filterByType = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;sectionPath=[sectionPath]&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3944,14 +3812,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetHeaderFooters");
             }
             
-            // verify the required parameter 'sectionPath' is set
-            if (sectionPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'sectionPath' when calling GetHeaderFooters");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "sectionPath", sectionPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "sectionPath", sectionPath);
             resourcePath = this.AddQueryParameter(resourcePath, "filterByType", filterByType);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -3989,16 +3851,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to collection of OfficeMath objects.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of OfficeMath objects.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="OfficeMathObjectResponse"/></returns>            
-        public OfficeMathObjectResponse GetOfficeMathObject(string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public OfficeMathObjectResponse GetOfficeMathObject(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/OfficeMathObjects/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/OfficeMathObjects/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4020,15 +3882,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetOfficeMathObject");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetOfficeMathObject");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -4064,16 +3920,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// Get OfficeMath objects from document. 
         /// </summary>
         /// <param name="name">The file name.</param> 
-        /// <param name="nodePath">Path to collection of OfficeMath objects.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of OfficeMath objects.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="OfficeMathObjectsResponse"/></returns>            
-        public OfficeMathObjectsResponse GetOfficeMathObjects(string name, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public OfficeMathObjectsResponse GetOfficeMathObjects(string name, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/OfficeMathObjects?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/OfficeMathObjects?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4089,14 +3945,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetOfficeMathObjects");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetOfficeMathObjects");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -4329,16 +4179,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to table.</param> 
+        /// <param name="nodePath">Path to node, which contains tables.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="TableResponse"/></returns>            
-        public TableResponse GetTable(string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public TableResponse GetTable(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/tables/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/tables/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4360,15 +4210,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetTable");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetTable");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -4557,16 +4401,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The document name.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to table.</param> 
+        /// <param name="nodePath">Path to node, which contains tables.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="TablePropertiesResponse"/></returns>            
-        public TablePropertiesResponse GetTableProperties(string name, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public TablePropertiesResponse GetTableProperties(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/tables/{index}/properties?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/tables/{index}/properties?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4588,15 +4432,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetTableProperties");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetTableProperties");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -4784,16 +4622,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// Return a list of tables that are contained in the document. 
         /// </summary>
         /// <param name="name">The document name.</param> 
-        /// <param name="nodePath">Path to table collection.</param> 
+        /// <param name="nodePath">Path to node, which contains tables.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="TableLinkCollectionResponse"/></returns>            
-        public TableLinkCollectionResponse GetTables(string name, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)
+        public TableLinkCollectionResponse GetTables(string name, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/tables?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/tables?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4809,14 +4647,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetTables");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetTables");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -4853,7 +4685,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The document name.</param> 
         /// <param name="table">Table parameters/</param> 
-        /// <param name="nodePath">Path to table collection.</param> 
+        /// <param name="nodePath">Path to node, which contains tables.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -4862,10 +4694,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="TableResponse"/></returns>            
-        public TableResponse InsertTable(string name, TableInsert table, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public TableResponse InsertTable(string name, TableInsert table, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/tables?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/tables?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4887,14 +4719,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'table' when calling InsertTable");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling InsertTable");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -5469,8 +5295,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The document name.</param> 
         /// <param name="fontDto">Font dto object</param> 
-        /// <param name="index">Object index</param> 
         /// <param name="paragraphPath">Path to parent paragraph.</param> 
+        /// <param name="index">Object index</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -5479,7 +5305,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="FontResponse"/></returns>            
-        public FontResponse PostDocumentParagraphRunFont(string name, Font fontDto, int? index, string paragraphPath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public FontResponse PostDocumentParagraphRunFont(string name, Font fontDto, string paragraphPath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
             var resourcePath = "/words/{name}/{paragraphPath}/runs/{index}/font?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
@@ -5504,21 +5330,21 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'fontDto' when calling PostDocumentParagraphRunFont");
             }
             
-            // verify the required parameter 'index' is set
-            if (index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling PostDocumentParagraphRunFont");
-            }
-            
             // verify the required parameter 'paragraphPath' is set
             if (paragraphPath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling PostDocumentParagraphRunFont");
             }
             
+            // verify the required parameter 'index' is set
+            if (index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling PostDocumentParagraphRunFont");
+            }
+            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", index);
             resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", paragraphPath);
+            resourcePath = this.AddPathParameter(resourcePath, "index", index);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -5631,7 +5457,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="drawingObject">Drawing object parameters</param> 
         /// <param name="imageFile">File with image</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to collection of drawing objects.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of drawing objects.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -5640,10 +5466,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="DrawingObjectResponse"/></returns>            
-        public DrawingObjectResponse PostDrawingObject(string name, string drawingObject, System.IO.Stream imageFile, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public DrawingObjectResponse PostDrawingObject(string name, string drawingObject, System.IO.Stream imageFile, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5677,15 +5503,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostDrawingObject");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PostDrawingObject");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -5813,7 +5633,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="name">The document name.</param> 
         /// <param name="field">Field data.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to collection of fields.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of fields.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -5822,10 +5642,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="FieldResponse"/></returns>            
-        public FieldResponse PostField(string name, Field field, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public FieldResponse PostField(string name, Field field, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5853,15 +5673,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostField");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PostField");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -5902,7 +5716,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="name">The document name.</param> 
         /// <param name="footnoteDto">Footnote data.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to collection of footnotes.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of footnotes.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -5911,10 +5725,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="FootnoteResponse"/></returns>            
-        public FootnoteResponse PostFootnote(string name, Footnote footnoteDto, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public FootnoteResponse PostFootnote(string name, Footnote footnoteDto, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5942,15 +5756,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostFootnote");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PostFootnote");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -6000,10 +5808,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="FormFieldResponse"/></returns>            
-        public FormFieldResponse PostFormField(string name, FormField formField, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public FormFieldResponse PostFormField(string name, FormField formField, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6031,15 +5839,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostFormField");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PostFormField");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -7129,7 +6931,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="name">The document name.</param> 
         /// <param name="drawingObject">Drawing object parameters</param> 
         /// <param name="imageFile">File with image</param> 
-        /// <param name="nodePath">Path to collection of drawing objects.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of drawing objects.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -7138,10 +6940,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="DrawingObjectResponse"/></returns>            
-        public DrawingObjectResponse PutDrawingObject(string name, string drawingObject, System.IO.Stream imageFile, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public DrawingObjectResponse PutDrawingObject(string name, string drawingObject, System.IO.Stream imageFile, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/drawingObjects?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/drawingObjects?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7169,14 +6971,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PutDrawingObject");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PutDrawingObject");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -7366,7 +7162,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The document name.</param> 
         /// <param name="field">Field data.</param> 
-        /// <param name="nodePath">Path to collection of fields.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of fields.</param> 
         /// <param name="insertBeforeNode">Field will be inserted before node with id&#x3D;\&quot;nodeId\&quot;.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
@@ -7376,10 +7172,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="FieldResponse"/></returns>            
-        public FieldResponse PutField(string name, Field field, string nodePath, string insertBeforeNode = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public FieldResponse PutField(string name, Field field, string nodePath = null, string insertBeforeNode = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/fields?appSid={appSid}&amp;insertBeforeNode=[insertBeforeNode]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/fields?appSid={appSid}&amp;nodePath=[nodePath]&amp;insertBeforeNode=[insertBeforeNode]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7401,14 +7197,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'field' when calling PutField");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PutField");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "insertBeforeNode", insertBeforeNode);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
@@ -7449,7 +7239,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The document name.</param> 
         /// <param name="footnoteDto">Footnote data.</param> 
-        /// <param name="nodePath">Path to collection of footnotes.</param> 
+        /// <param name="nodePath">Path to node, which contains collection of footnotes.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -7458,10 +7248,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="FootnoteResponse"/></returns>            
-        public FootnoteResponse PutFootnote(string name, Footnote footnoteDto, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public FootnoteResponse PutFootnote(string name, Footnote footnoteDto, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/footnotes?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/footnotes?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7483,14 +7273,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'footnoteDto' when calling PutFootnote");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PutFootnote");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -7540,10 +7324,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="FormFieldResponse"/></returns>            
-        public FormFieldResponse PutFormField(string name, FormField formField, string nodePath, string insertBeforeNode = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public FormFieldResponse PutFormField(string name, FormField formField, string nodePath = null, string insertBeforeNode = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/formfields?appSid={appSid}&amp;insertBeforeNode=[insertBeforeNode]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/formfields?appSid={appSid}&amp;nodePath=[nodePath]&amp;insertBeforeNode=[insertBeforeNode]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7565,14 +7349,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'formField' when calling PutFormField");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PutFormField");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "insertBeforeNode", insertBeforeNode);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
@@ -7622,10 +7400,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="HeaderFooterResponse"/></returns>            
-        public HeaderFooterResponse PutHeaderFooter(string name, string headerFooterType, string sectionPath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public HeaderFooterResponse PutHeaderFooter(string name, string headerFooterType, string sectionPath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;sectionPath=[sectionPath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7647,14 +7425,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'headerFooterType' when calling PutHeaderFooter");
             }
             
-            // verify the required parameter 'sectionPath' is set
-            if (sectionPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'sectionPath' when calling PutHeaderFooter");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "sectionPath", sectionPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "sectionPath", sectionPath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -7694,7 +7466,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// </summary>
         /// <param name="name">The document name.</param> 
         /// <param name="paragraph">Paragraph data.</param> 
-        /// <param name="nodePath">Path to collection of paragraphs.</param> 
+        /// <param name="nodePath">Path to node which contains paragraphs.</param> 
         /// <param name="insertBeforeNode">Paragraph will be inserted before node with index.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
@@ -7704,10 +7476,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="ParagraphResponse"/></returns>            
-        public ParagraphResponse PutParagraph(string name, ParagraphInsert paragraph, string nodePath, string insertBeforeNode = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public ParagraphResponse PutParagraph(string name, ParagraphInsert paragraph, string nodePath = null, string insertBeforeNode = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/paragraphs?appSid={appSid}&amp;insertBeforeNode=[insertBeforeNode]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/paragraphs?appSid={appSid}&amp;nodePath=[nodePath]&amp;insertBeforeNode=[insertBeforeNode]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7729,14 +7501,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'paragraph' when calling PutParagraph");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PutParagraph");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "insertBeforeNode", insertBeforeNode);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
@@ -8154,17 +7920,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="name">The file name.</param> 
         /// <param name="format">The destination format.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to parent node.</param> 
+        /// <param name="nodePath">Path to node, which contains drawing objects.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
-        public System.IO.Stream RenderDrawingObject(string name, string format, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
+        public System.IO.Stream RenderDrawingObject(string name, string format, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}/render?appSid={appSid}&amp;format=[format]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
+            var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}/render?appSid={appSid}&amp;format=[format]&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -8192,16 +7958,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling RenderDrawingObject");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling RenderDrawingObject");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "format", format);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -8240,17 +8000,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="name">The file name.</param> 
         /// <param name="format">The destination format.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to parent node.</param> 
+        /// <param name="nodePath">Path to node, which contains office math objects.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
-        public System.IO.Stream RenderMathObject(string name, string format, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
+        public System.IO.Stream RenderMathObject(string name, string format, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/OfficeMathObjects/{index}/render?appSid={appSid}&amp;format=[format]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
+            var resourcePath = "/words/{name}/{nodePath}/OfficeMathObjects/{index}/render?appSid={appSid}&amp;format=[format]&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -8278,16 +8038,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling RenderMathObject");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling RenderMathObject");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "format", format);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -8404,17 +8158,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="name">The file name.</param> 
         /// <param name="format">The destination format.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to parent node.</param> 
+        /// <param name="nodePath">Path to node, which contains paragraphs.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
-        public System.IO.Stream RenderParagraph(string name, string format, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
+        public System.IO.Stream RenderParagraph(string name, string format, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/paragraphs/{index}/render?appSid={appSid}&amp;format=[format]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
+            var resourcePath = "/words/{name}/{nodePath}/paragraphs/{index}/render?appSid={appSid}&amp;format=[format]&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -8442,16 +8196,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling RenderParagraph");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling RenderParagraph");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "format", format);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -8490,17 +8238,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="name">The file name.</param> 
         /// <param name="format">The destination format.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to parent node.</param> 
+        /// <param name="nodePath">Path to node, which contains tables.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
-        public System.IO.Stream RenderTable(string name, string format, int? index, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
+        public System.IO.Stream RenderTable(string name, string format, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/tables/{index}/render?appSid={appSid}&amp;format=[format]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
+            var resourcePath = "/words/{name}/{nodePath}/tables/{index}/render?appSid={appSid}&amp;format=[format]&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -8528,16 +8276,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling RenderTable");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling RenderTable");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "format", format);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", loadEncoding);
@@ -8941,7 +8683,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="name">The document name.</param> 
         /// <param name="properties">The properties.</param> 
         /// <param name="index">Object index</param> 
-        /// <param name="nodePath">Path to table.</param> 
+        /// <param name="nodePath">Path to node, which contains tables.</param> 
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param> 
         /// <param name="storage">File storage, which have to be used.</param> 
         /// <param name="folder">Original document folder.</param> 
@@ -8950,10 +8692,10 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="revisionDateTime">The date and time to use for revisions.</param> 
         /// <param name="password">Password for opening an encrypted document.</param> 
         /// <returns><see cref="TablePropertiesResponse"/></returns>            
-        public TablePropertiesResponse UpdateTableProperties(string name, TableProperties properties, int? index, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
+        public TablePropertiesResponse UpdateTableProperties(string name, TableProperties properties, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/{nodePath}/tables/{index}/properties?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            var resourcePath = "/words/{name}/{nodePath}/tables/{index}/properties?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -8981,15 +8723,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling UpdateTableProperties");
             }
             
-            // verify the required parameter 'nodePath' is set
-            if (nodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling UpdateTableProperties");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", name);
             resourcePath = this.AddPathParameter(resourcePath, "index", index);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", nodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", nodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", destFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", folder);
@@ -9129,6 +8865,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
 
         private string AddQueryParameter(string url, string parameterName, object parameterValue)
         {
+            if (url.Contains("{" + parameterName + "}"))
+            {
+                url = Regex.Replace(url, @"([&?])" + parameterName + @"=\[" + parameterName + @"\]", string.Empty);
+                url = this.AddPathParameter(url, parameterName, parameterValue);
+                return url;
+            }
+
             if (parameterValue == null) 
             {
                 url = Regex.Replace(url, @"([&?])" + parameterName + @"=\[" + parameterName + @"\]", string.Empty);
@@ -9137,7 +8880,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
             {
                 url = url.Replace("[" + parameterName + "]", this.apiInvoker.ToPathValue(parameterValue));
             }
-
+          
             return url;
         }
     }

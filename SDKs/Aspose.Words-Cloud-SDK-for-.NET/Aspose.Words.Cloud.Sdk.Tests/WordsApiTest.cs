@@ -121,7 +121,7 @@
          
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
-            var actual = target.DeleteFields(name, string.Empty);
+            var actual = target.DeleteFields(name);
             
             Assert.AreEqual(200, actual.Code);
         }
@@ -557,6 +557,22 @@
         }
 
         /// <summary>
+        /// A test for GetDocumentParagraph
+        /// </summary>
+        [TestMethod]
+        public void TestGetDocumentParagraphWithoutNodePath()
+        {
+            string name = "test_multi_pages.docx";
+            int index = 0;
+
+            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var actual = target.GetDocumentParagraph(name, index);
+
+            Assert.AreEqual(200, actual.Code);
+        }
+
+        /// <summary>
         /// A test for GetDocumentParagraphRun
         /// </summary>
         [TestMethod]
@@ -741,7 +757,7 @@
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
-            FieldsResponse actual = target.GetFields(name, "sections/0/paragraphs/0", storage, folder);
+            FieldsResponse actual = target.GetFields(name, "sections/0", storage, folder);
 
            Assert.AreEqual(200, actual.Code);           
         }
@@ -967,7 +983,7 @@
             
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
-            var actual = target.PostDocumentParagraphRunFont(name, body, runIndex, "paragraphs/0", filename);
+            var actual = target.PostDocumentParagraphRunFont(name, body, "paragraphs/0", runIndex, filename);
             Assert.AreEqual(200, actual.Code);
         }
 
