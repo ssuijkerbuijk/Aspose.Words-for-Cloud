@@ -4,7 +4,7 @@
     {
         public static string GetDataDir()
         {        
-            return @"../../../../../Data/";
+            return @"Data\";
         }
     }
 }
