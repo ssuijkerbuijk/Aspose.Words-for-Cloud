@@ -71,21 +71,179 @@
     <Compile Include="WordsApiTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="resources\aspose-cloud.png" />
-    <Content Include="resources\SampleMailMergeTemplateData.txt" />
-    <Content Include="resources\TestExecuteTemplateData.txt" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="..\..\..\Data\AppendFile_destination.docx">
+      <Link>Data\AppendFile_destination.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\AppendFile_source.docx">
+      <Link>Data\AppendFile_source.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\Comment.docx">
+      <Link>Data\Comment.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\doc-sample-hyperlink.doc">
+      <Link>Data\doc-sample-hyperlink.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\doc-sample-protect.doc">
+      <Link>Data\doc-sample-protect.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\doc-sample-unprotect.doc">
+      <Link>Data\doc-sample-unprotect.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\doc-sample-watermark.doc">
+      <Link>Data\doc-sample-watermark.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\doc-sample.doc">
+      <Link>Data\doc-sample.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\doc-sample1.doc">
+      <Link>Data\doc-sample1.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\doc-sample2.doc">
+      <Link>Data\doc-sample2.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\doc-sample3.doc">
+      <Link>Data\doc-sample3.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\FormFilled.docx">
+      <Link>Data\FormFilled.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\GetField.docx">
+      <Link>Data\GetField.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\header-footer.doc">
+      <Link>Data\header-footer.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\imagefile.doc">
+      <Link>Data\imagefile.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\Invoice Template.doc">
+      <Link>Data\Invoice Template.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\MathsObject.docx">
+      <Link>Data\MathsObject.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\OLE.docx">
+      <Link>Data\OLE.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\SampleAppendDoc.docx">
+      <Link>Data\SampleAppendDoc.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\SampleAppendDoc2.docx">
+      <Link>Data\SampleAppendDoc2.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\SampleBlankWatermarkDocument.docx">
+      <Link>Data\SampleBlankWatermarkDocument.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\SampleBlankWordDocument.docx">
+      <Link>Data\SampleBlankWordDocument.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\SampleExecuteTemplate.doc">
+      <Link>Data\SampleExecuteTemplate.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\SampleExecuteTemplate.docx">
+      <Link>Data\SampleExecuteTemplate.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\SampleHeaderFooterWordDocument.docx">
+      <Link>Data\SampleHeaderFooterWordDocument.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\SampleInvoiceTemplate.doc">
+      <Link>Data\SampleInvoiceTemplate.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\SampleMailMergeTemplate.docx">
+      <Link>Data\SampleMailMergeTemplate.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\SampleMailMergeTemplateImage.doc">
+      <Link>Data\SampleMailMergeTemplateImage.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\SampleOlePdfData.docx">
+      <Link>Data\SampleOlePdfData.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\SampleProtectedBlankWordDocument.docx">
+      <Link>Data\SampleProtectedBlankWordDocument.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\SampleWordComments.docx">
+      <Link>Data\SampleWordComments.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\SampleWordDocument.docx">
+      <Link>Data\SampleWordDocument.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\sample_EmbeddedOLE.docx">
+      <Link>Data\sample_EmbeddedOLE.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\TableDocument.doc">
+      <Link>Data\TableDocument.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\TestExecuteResult.doc">
+      <Link>Data\TestExecuteResult.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\TestExecuteTemplate.doc">
+      <Link>Data\TestExecuteTemplate.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\testfile.doc">
+      <Link>Data\testfile.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\test_convertlocal.docx">
+      <Link>Data\test_convertlocal.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\test_doc.docx">
+      <Link>Data\test_doc.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\test_multi_pages.docx">
+      <Link>Data\test_multi_pages.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\test_uploadfile.docx">
+      <Link>Data\test_uploadfile.docx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\WithRegions.doc">
+      <Link>Data\WithRegions.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Data\WordFormatConverterExampleTest.doc">
+      <Link>Data\WordFormatConverterExampleTest.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
-    <None Include="resources\FormFilled.docx" />
-    <None Include="resources\SampleMailMergeTemplate.docx" />
-    <None Include="resources\SampleWordDocument.docx" />
-    <None Include="resources\sample_EmbeddedOLE.docx" />
-    <None Include="resources\TestExecuteTemplate.doc" />
-    <None Include="resources\test_convertlocal.docx" />
-    <None Include="resources\test_doc.docx" />
-    <None Include="resources\test_multi_pages.docx" />
-    <None Include="resources\test_uploadfile.docx" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -98,6 +256,60 @@
       <Project>{13284d1a-8b08-469a-a58b-5c94b92c68e7}</Project>
       <Name>Aspose.Words.Cloud.Sdk</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\Data\Aspose Logo.png">
+      <Link>Data\Aspose Logo.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Data\aspose-cloud.png">
+      <Link>Data\aspose-cloud.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Data\Customers.txt">
+      <Link>Data\Customers.txt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Data\google-sample.xml">
+      <Link>Data\google-sample.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Data\header-logo.png">
+      <Link>Data\header-logo.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Data\Orders.xml">
+      <Link>Data\Orders.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Data\SampleExecuteTemplateData.txt">
+      <Link>Data\SampleExecuteTemplateData.txt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Data\SampleInvoiceTemplateData.txt">
+      <Link>Data\SampleInvoiceTemplateData.txt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Data\SampleMailMergeTemplateData.txt">
+      <Link>Data\SampleMailMergeTemplateData.txt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Data\SampleMailMergeTemplateImageData.txt">
+      <Link>Data\SampleMailMergeTemplateImageData.txt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Data\TestExecuteTemplateData.txt">
+      <Link>Data\TestExecuteTemplateData.txt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Data\testfile1.txt">
+      <Link>Data\testfile1.txt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\Data\WithRegions.xml">
+      <Link>Data\WithRegions.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

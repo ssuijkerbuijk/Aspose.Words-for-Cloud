@@ -15,6 +15,7 @@
     /// to contain all TestWordsApi Unit Tests
     /// </summary>
     [TestClass]
+    [DeploymentItem("Data", "Data")]
     public class TestWordsApi
     {
         private TestContext testContextInstance;
