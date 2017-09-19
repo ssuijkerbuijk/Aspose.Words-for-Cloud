@@ -1,24 +1,10 @@
-﻿using System.IO;
-
-internal class Common
+﻿namespace Aspose.Words.Cloud.Sdk.Tests
 {
-    public static string GetDataDir()
+    internal class Common
     {
-        var parent = ((Directory.GetParent(Directory.GetCurrentDirectory()).Parent).Parent).Parent;
-        string startDirectory = null;
-        if (parent != null)
-        {
-            var directoryInfo = parent.Parent;
-            if (directoryInfo != null)
-            {
-                startDirectory = directoryInfo.FullName;
-            }
+        public static string GetDataDir()
+        {        
+            return @"../../../../../Data/";
         }
-        else
-        {
-            startDirectory = parent.FullName;
-        }
-
-        return Path.Combine(startDirectory, "Data\\");
     }
 }
