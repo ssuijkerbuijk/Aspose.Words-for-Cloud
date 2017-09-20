@@ -1,0 +1,128 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using {{packageName}}.Model;
+
+namespace {{packageName}}.Api
+{
+    {{#operations}}
+    public class {{classname}}
+    {        
+        private readonly string basePath;
+        private readonly ApiInvoker apiInvoker = ApiInvoker.GetInstance();        
+
+        public {{classname}}(string apiKey, string appSid, string basePath)
+        {
+            this.apiInvoker.AddAuthInfo(apiKey, appSid);
+            this.basePath = basePath;
+        }               
+        {{#operation}}
+
+        /// <summary>
+        /// {{summary}} {{notes}}
+        /// </summary>
+        {{#allParams}}/// <param name="{{paramName}}">{{description}}</param> 
+        {{/allParams}}/// <returns><see cref="{{#returnType}}{{{returnType}}}{{/returnType}}"/></returns>            
+        public {{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}void{{/returnType}} {{nickname}}({{#allParams}}{{{dataType}}} {{paramName}}{{^required}} = null{{/required}}{{#hasMore}}, {{/hasMore}}{{/allParams}})
+        {
+            // create path and map variables
+            var resourcePath = "{{path}}?appSid={appSid}{{#queryParams}}&amp;{{paramName}}=[{{paramName}}]{{/queryParams}}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, object>();
+            object postBody = null;            
+            {{#allParams}}{{#required}}
+            // verify the required parameter '{{paramName}}' is set
+            if ({{paramName}} == null) 
+            {
+                throw new ApiException(400, "Missing required parameter '{{paramName}}' when calling {{nickname}}");
+            }
+            {{/required}}{{/allParams}}
+            {{#pathParams}}
+            resourcePath = this.AddPathParameter(resourcePath, "{{baseName}}", {{paramName}});
+            {{/pathParams}}
+            {{#queryParams}}
+            resourcePath = this.AddQueryParameter(resourcePath, "{{baseName}}", {{paramName}});
+            {{/queryParams}}
+            {{#headerParams}}
+            if ({{paramName}} != null) 
+            {
+                headerParams.Add("{{baseName}}", this.apiInvoker.ToPathValue({{paramName}})); // header parameter
+            }
+            {{/headerParams}}
+            {{#bodyParam}}postBody = {{paramName}}; // http body (model) parameter{{/bodyParam}}
+            {{#formParams}}
+            if ({{paramName}} != null) 
+            {
+                {{#isFile}}formParams.Add("{{baseName}}", this.apiInvoker.ToFileInfo({{paramName}}, "{{baseName}}"));{{/isFile}}{{^isFile}}formParams.Add("{{baseName}}", {{paramName}}); // form parameter{{/isFile}}
+            }
+            {{/formParams}}
+            try 
+            {                
+                if (typeof({{returnType}}) == typeof(Stream)) 
+                {
+                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "{{httpMethod}}", null, headerParams, formParams) as {{returnType}};
+                }
+               
+                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "{{httpMethod}}", postBody, headerParams, formParams);
+                if (response != null)
+                {
+                    return ({{returnType}})SerializationHelper.Deserialize(response, typeof({{returnType}}));
+                }
+                    
+                return null;
+            } 
+            catch (ApiException ex) 
+            {
+                if (ex.ErrorCode == 404) 
+                {
+                    return null;
+                }
+                
+                throw;                
+            }
+        }
+        {{/operation}}
+
+        private string AddPathParameter(string url, string parameterName, object parameterValue)
+        {
+            if (parameterValue == null || string.IsNullOrEmpty(parameterValue.ToString()))
+            {
+                url = url.Replace("/{" + parameterName + "}", string.Empty);
+            }
+            else
+            {
+                url = url.Replace("{" + parameterName + "}", this.apiInvoker.ToPathValue(parameterValue));
+            }
+
+            return url;
+        }
+
+        private string AddQueryParameter(string url, string parameterName, object parameterValue)
+        {
+            if (url.Contains("{" + parameterName + "}"))
+            {
+                url = Regex.Replace(url, @"([&?])" + parameterName + @"=\[" + parameterName + @"\]", string.Empty);
+                url = this.AddPathParameter(url, parameterName, parameterValue);
+                return url;
+            }
+
+            if (parameterValue == null) 
+            {
+                url = Regex.Replace(url, @"([&?])" + parameterName + @"=\[" + parameterName + @"\]", string.Empty);
+            } 
+            else 
+            {
+                url = url.Replace("[" + parameterName + "]", this.apiInvoker.ToPathValue(parameterValue));
+            }
+          
+            return url;
+        }
+    }
+    {{/operations}}
+}

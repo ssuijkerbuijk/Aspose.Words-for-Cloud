@@ -1,0 +1,66 @@
+{{#models}}
+{{#model}}
+namespace {{packageName}}.Model 
+{
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
+
+  /// <summary>
+  /// {{description}}
+  /// </summary>  
+  public class {{classname}}{{#parent}} : {{{parent}}}{{/parent}} 
+  {                       
+        {{#vars}}
+        {{#isEnum}}
+{{>modelInnerEnum}}
+        {{/isEnum}}
+        {{#items.isEnum}}
+        {{#items}}
+{{>modelInnerEnum}}
+        {{/items}}
+        {{/items.isEnum}}
+        {{/vars}}
+        {{#vars}}
+        {{#isEnum}}
+        /// <summary>
+        /// {{^description}}Gets or sets {{{name}}}{{/description}}{{#description}}{{description}}{{/description}}
+        /// </summary>
+        {{#description}}
+        /// <value>{{description}}</value>
+        {{/description}}        
+        public {{{datatypeWithEnum}}}{{#isEnum}}{{^isContainer}}?{{/isContainer}}{{/isEnum}} {{name}} { get; set; }
+
+        {{/isEnum}}
+        {{/vars}}
+        {{#vars}}
+        {{^isEnum}}
+        /// <summary>
+        /// {{^description}}Gets or sets {{{name}}}{{/description}}{{#description}}{{{description}}}{{/description}}
+        /// </summary>  
+        public {{{datatype}}} {{name}} { get; set; }
+
+        {{/isEnum}}
+        {{/vars}}
+        /// <summary>
+        /// Get the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()  
+        {
+          var sb = new StringBuilder();
+          sb.Append("class {{classname}} {\n");
+          {{#vars}}
+          sb.Append("  {{name}}: ").Append(this.{{name}}).Append("\n");
+          {{/vars}}
+          sb.Append("}\n");
+          return sb.ToString();
+        }
+    }
+{{/model}}
+{{/models}}
+}
