@@ -16,7 +16,7 @@ namespace Document
                 StorageApi storageApi = new StorageApi(Common.APP_KEY, Common.APP_SID, Common.BASEPATH);
 
                 // Set input file name
-                String fileName = "SampleWordDocument.docx";
+                String fileName = "Rendering.docx";
                 String storage = null;
                 String folder = null;
 
@@ -29,7 +29,7 @@ namespace Document
                 {
                     
                     // Upload file to aspose cloud storage
-                    storageApi.PutCreate(fileName, "", "", System.IO.File.ReadAllBytes(Common.GetDataDir() + fileName));
+                    storageApi.PutCreate(fileName, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + fileName));
 
                     // Invoke Aspose.Words Cloud SDK API to convert words document to required format
                     SaveResponse apiResponse = wordsApi.PostDocumentSaveAs(fileName, storage, folder, body);
