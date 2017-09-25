@@ -22,9 +22,9 @@ namespace {{packageName}}.Api
         /// <summary>
         /// {{summary}} {{notes}}
         /// </summary>
-        {{#allParams}}/// <param name="{{paramName}}">{{description}}</param> 
-        {{/allParams}}/// <returns><see cref="{{#returnType}}{{{returnType}}}{{/returnType}}"/></returns>            
-        public {{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}void{{/returnType}} {{nickname}}({{#allParams}}{{{dataType}}} {{paramName}}{{^required}} = null{{/required}}{{#hasMore}}, {{/hasMore}}{{/allParams}})
+        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.{{nickname}}Request" /></param> 
+        /// <returns><see cref="{{#returnType}}{{{returnType}}}{{/returnType}}"/></returns>            
+        public {{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}void{{/returnType}} {{nickname}}({{nickname}}Request request)
         {
             // create path and map variables
             var resourcePath = "{{path}}?appSid={appSid}{{#queryParams}}&amp;{{paramName}}=[{{paramName}}]{{/queryParams}}";
@@ -38,28 +38,28 @@ namespace {{packageName}}.Api
             object postBody = null;            
             {{#allParams}}{{#required}}
             // verify the required parameter '{{paramName}}' is set
-            if ({{paramName}} == null) 
+            if (request.{{baseName}} == null) 
             {
                 throw new ApiException(400, "Missing required parameter '{{paramName}}' when calling {{nickname}}");
             }
             {{/required}}{{/allParams}}
             {{#pathParams}}
-            resourcePath = this.AddPathParameter(resourcePath, "{{baseName}}", {{paramName}});
+            resourcePath = this.AddPathParameter(resourcePath, "{{baseName}}", request.{{baseName}});
             {{/pathParams}}
             {{#queryParams}}
-            resourcePath = this.AddQueryParameter(resourcePath, "{{baseName}}", {{paramName}});
+            resourcePath = this.AddQueryParameter(resourcePath, "{{baseName}}", request.{{baseName}});
             {{/queryParams}}
             {{#headerParams}}
             if ({{paramName}} != null) 
             {
-                headerParams.Add("{{baseName}}", this.apiInvoker.ToPathValue({{paramName}})); // header parameter
+                headerParams.Add("{{baseName}}", this.apiInvoker.ToPathValue(request.{{baseName}})); // header parameter
             }
             {{/headerParams}}
-            {{#bodyParam}}postBody = {{paramName}}; // http body (model) parameter{{/bodyParam}}
+            {{#bodyParam}}postBody = request.{{baseName}}; // http body (model) parameter{{/bodyParam}}
             {{#formParams}}
-            if ({{paramName}} != null) 
+            if (request.{{baseName}} != null) 
             {
-                {{#isFile}}formParams.Add("{{baseName}}", this.apiInvoker.ToFileInfo({{paramName}}, "{{baseName}}"));{{/isFile}}{{^isFile}}formParams.Add("{{baseName}}", {{paramName}}); // form parameter{{/isFile}}
+                {{#isFile}}formParams.Add("{{baseName}}", this.apiInvoker.ToFileInfo(request.{{baseName}}, "{{baseName}}"));{{/isFile}}{{^isFile}}formParams.Add("{{baseName}}", request.{{baseName}}); // form parameter{{/isFile}}
             }
             {{/formParams}}
             try 
@@ -126,3 +126,5 @@ namespace {{packageName}}.Api
     }
     {{/operations}}
 }
+
+{{>requestModel}}

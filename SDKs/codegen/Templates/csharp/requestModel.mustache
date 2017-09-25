@@ -1,0 +1,30 @@
+{{#operations}}
+namespace {{packageName}}.Model 
+{
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
+{{#operation}}
+
+  /// <summary>
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.{{nickname}}" /> operation.
+  /// </summary>  
+  public class {{nickname}}Request
+  {                       
+        {{#allParams}}                
+        /// <summary>
+        /// {{^description}}Gets or sets {{baseName}}{{/description}}{{#description}}{{{description}}}{{/description}}
+        /// </summary>  
+        public {{{dataType}}} {{baseName}} { get; set; }
+        {{#hasMore}}
+
+        {{/hasMore}}
+        {{/allParams}}
+  }
+{{/operation}}
+}
+{{/operations}}
