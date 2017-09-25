@@ -92,7 +92,8 @@
 
             storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var actual = target.AcceptAllRevisions(name, filename, storage, folder);
+            var request = new AcceptAllRevisionsRequest(name, filename, storage, folder);
+            var actual = target.AcceptAllRevisions(request);
 
             Assert.AreEqual(200, actual.Code);
         }

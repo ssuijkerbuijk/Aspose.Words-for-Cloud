@@ -36,17 +36,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling AcceptAllRevisions");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -93,33 +93,33 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteBorder");
             }
             
             // verify the required parameter 'nodePath' is set
-            if (request.nodePath == null) 
+            if (request.NodePath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteBorder");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteBorder");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -166,26 +166,26 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteBorders");
             }
             
             // verify the required parameter 'nodePath' is set
-            if (request.nodePath == null) 
+            if (request.NodePath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteBorders");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -232,26 +232,26 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteComment");
             }
             
             // verify the required parameter 'commentIndex' is set
-            if (request.commentIndex == null) 
+            if (request.CommentIndex == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'commentIndex' when calling DeleteComment");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "commentIndex", request.commentIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "CommentIndex", request.CommentIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -298,19 +298,19 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteDocumentMacros");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -357,26 +357,26 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteDocumentProperty");
             }
             
             // verify the required parameter 'propertyName' is set
-            if (request.propertyName == null) 
+            if (request.PropertyName == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'propertyName' when calling DeleteDocumentProperty");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "propertyName", request.propertyName);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "PropertyName", request.PropertyName);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -423,19 +423,19 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteDocumentWatermark");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -482,27 +482,27 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteDrawingObject");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteDrawingObject");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -549,27 +549,27 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteField");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteField");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -616,20 +616,20 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteFields");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -676,27 +676,27 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteFootnote");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteFootnote");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -743,27 +743,27 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteFormField");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteFormField");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -810,27 +810,27 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteHeaderFooter");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteHeaderFooter");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "sectionPath", request.sectionPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "SectionPath", request.SectionPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -877,21 +877,21 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteHeadersFooters");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "sectionPath", request.sectionPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "headersFootersTypes", request.headersFootersTypes);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "SectionPath", request.SectionPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "HeadersFootersTypes", request.HeadersFootersTypes);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -938,27 +938,27 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteOfficeMathObject");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteOfficeMathObject");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -1005,27 +1005,27 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteParagraph");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteParagraph");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -1072,33 +1072,33 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteRun");
             }
             
             // verify the required parameter 'paragraphPath' is set
-            if (request.paragraphPath == null) 
+            if (request.ParagraphPath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling DeleteRun");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteRun");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.paragraphPath);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "ParagraphPath", request.ParagraphPath);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -1145,27 +1145,27 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteTable");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteTable");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -1212,33 +1212,33 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteTableCell");
             }
             
             // verify the required parameter 'tableRowPath' is set
-            if (request.tableRowPath == null) 
+            if (request.TableRowPath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling DeleteTableCell");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteTableCell");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "tableRowPath", request.tableRowPath);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "TableRowPath", request.TableRowPath);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -1285,33 +1285,33 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteTableRow");
             }
             
             // verify the required parameter 'tablePath' is set
-            if (request.tablePath == null) 
+            if (request.TablePath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'tablePath' when calling DeleteTableRow");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteTableRow");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "tablePath", request.tablePath);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "TablePath", request.TablePath);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -1358,24 +1358,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteUnprotectDocument");
             }
             
             // verify the required parameter 'protectionRequest' is set
-            if (request.protectionRequest == null) 
+            if (request.ProtectionRequest == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling DeleteUnprotectDocument");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.protectionRequest; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.ProtectionRequest; // http body (model) parameter
             try 
             {                
                 if (typeof(ProtectionDataResponse) == typeof(Stream)) 
@@ -1421,30 +1421,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetBorder");
             }
             
             // verify the required parameter 'nodePath' is set
-            if (request.nodePath == null) 
+            if (request.NodePath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetBorder");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetBorder");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -1491,23 +1491,23 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetBorders");
             }
             
             // verify the required parameter 'nodePath' is set
-            if (request.nodePath == null) 
+            if (request.NodePath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetBorders");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -1554,23 +1554,23 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetComment");
             }
             
             // verify the required parameter 'commentIndex' is set
-            if (request.commentIndex == null) 
+            if (request.CommentIndex == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'commentIndex' when calling GetComment");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "commentIndex", request.commentIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "CommentIndex", request.CommentIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -1617,16 +1617,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetComments");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -1673,16 +1673,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'documentName' is set
-            if (request.documentName == null) 
+            if (request.DocumentName == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'documentName' when calling GetDocument");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "documentName", request.documentName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "DocumentName", request.DocumentName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -1729,23 +1729,23 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentBookmarkByName");
             }
             
             // verify the required parameter 'bookmarkName' is set
-            if (request.bookmarkName == null) 
+            if (request.BookmarkName == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'bookmarkName' when calling GetDocumentBookmarkByName");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "bookmarkName", request.bookmarkName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "BookmarkName", request.BookmarkName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -1792,16 +1792,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentBookmarks");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -1848,24 +1848,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentDrawingObjectByIndex");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectByIndex");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -1912,24 +1912,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentDrawingObjectImageData");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectImageData");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -1976,24 +1976,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentDrawingObjectOleData");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectOleData");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -2040,17 +2040,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentDrawingObjects");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -2097,17 +2097,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentFieldNames");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "useNonMergeFields", request.useNonMergeFields);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "UseNonMergeFields", request.UseNonMergeFields);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -2154,23 +2154,23 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentHyperlinkByIndex");
             }
             
             // verify the required parameter 'hyperlinkIndex' is set
-            if (request.hyperlinkIndex == null) 
+            if (request.HyperlinkIndex == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'hyperlinkIndex' when calling GetDocumentHyperlinkByIndex");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "hyperlinkIndex", request.hyperlinkIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "HyperlinkIndex", request.HyperlinkIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -2217,16 +2217,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentHyperlinks");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -2273,24 +2273,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraph");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraph");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -2337,30 +2337,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphRun");
             }
             
             // verify the required parameter 'paragraphPath' is set
-            if (request.paragraphPath == null) 
+            if (request.ParagraphPath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling GetDocumentParagraphRun");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraphRun");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.paragraphPath);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "ParagraphPath", request.ParagraphPath);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -2407,30 +2407,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphRunFont");
             }
             
             // verify the required parameter 'paragraphPath' is set
-            if (request.paragraphPath == null) 
+            if (request.ParagraphPath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling GetDocumentParagraphRunFont");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraphRunFont");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.paragraphPath);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "ParagraphPath", request.ParagraphPath);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -2477,23 +2477,23 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphRuns");
             }
             
             // verify the required parameter 'paragraphPath' is set
-            if (request.paragraphPath == null) 
+            if (request.ParagraphPath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling GetDocumentParagraphRuns");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.paragraphPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "ParagraphPath", request.ParagraphPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -2540,17 +2540,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphs");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -2597,16 +2597,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentProperties");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -2653,23 +2653,23 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentProperty");
             }
             
             // verify the required parameter 'propertyName' is set
-            if (request.propertyName == null) 
+            if (request.PropertyName == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'propertyName' when calling GetDocumentProperty");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "propertyName", request.propertyName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "PropertyName", request.PropertyName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -2716,16 +2716,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentProtection");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -2772,19 +2772,19 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentStatistics");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "includeComments", request.includeComments);
-            resourcePath = this.AddQueryParameter(resourcePath, "includeFootnotes", request.includeFootnotes);
-            resourcePath = this.AddQueryParameter(resourcePath, "includeTextInShapes", request.includeTextInShapes);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "IncludeComments", request.IncludeComments);
+            resourcePath = this.AddQueryParameter(resourcePath, "IncludeFootnotes", request.IncludeFootnotes);
+            resourcePath = this.AddQueryParameter(resourcePath, "IncludeTextInShapes", request.IncludeTextInShapes);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -2831,16 +2831,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentTextItems");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -2887,25 +2887,25 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentWithFormat");
             }
             
             // verify the required parameter 'format' is set
-            if (request.format == null) 
+            if (request.Format == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'format' when calling GetDocumentWithFormat");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "format", request.format);
-            resourcePath = this.AddQueryParameter(resourcePath, "outPath", request.outPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.fontsLocation);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "Format", request.Format);
+            resourcePath = this.AddQueryParameter(resourcePath, "OutPath", request.OutPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
             
             try 
             {                
@@ -2952,24 +2952,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetField");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetField");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -3016,17 +3016,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetFields");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -3073,24 +3073,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetFootnote");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetFootnote");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -3137,17 +3137,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetFootnotes");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -3194,24 +3194,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetFormField");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetFormField");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -3258,17 +3258,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetFormFields");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -3304,7 +3304,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         public HeaderFooterResponse GetHeaderFooter(GetHeaderFooterRequest request)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;sectionIndex=[sectionIndex]&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3315,31 +3315,25 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetHeaderFooter");
             }
             
             // verify the required parameter 'headerFooterIndex' is set
-            if (request.headerFooterIndex == null) 
+            if (request.HeaderFooterIndex == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'headerFooterIndex' when calling GetHeaderFooter");
             }
             
-            // verify the required parameter 'sectionIndex' is set
-            if (request.sectionIndex == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetHeaderFooter");
-            }
-            
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "headerFooterIndex", request.headerFooterIndex);
-            resourcePath = this.AddPathParameter(resourcePath, "sectionIndex", request.sectionIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "filterByType", request.filterByType);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "HeaderFooterIndex", request.HeaderFooterIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "SectionIndex", request.SectionIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "FilterByType", request.FilterByType);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -3375,7 +3369,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         public HeaderFooterResponse GetHeaderFooter_1(GetHeaderFooter_1Request request)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;sectionIndex=[sectionIndex]&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3386,25 +3380,31 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetHeaderFooter_1");
             }
             
             // verify the required parameter 'headerFooterIndex' is set
-            if (request.headerFooterIndex == null) 
+            if (request.HeaderFooterIndex == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'headerFooterIndex' when calling GetHeaderFooter_1");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "headerFooterIndex", request.headerFooterIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "sectionIndex", request.sectionIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "filterByType", request.filterByType);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            // verify the required parameter 'sectionIndex' is set
+            if (request.SectionIndex == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetHeaderFooter_1");
+            }
+            
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "HeaderFooterIndex", request.HeaderFooterIndex);
+            resourcePath = this.AddPathParameter(resourcePath, "SectionIndex", request.SectionIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "FilterByType", request.FilterByType);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -3451,18 +3451,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetHeaderFooters");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "sectionPath", request.sectionPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "filterByType", request.filterByType);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "SectionPath", request.SectionPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "FilterByType", request.FilterByType);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -3509,24 +3509,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetOfficeMathObject");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetOfficeMathObject");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -3573,17 +3573,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetOfficeMathObjects");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -3630,23 +3630,23 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetSection");
             }
             
             // verify the required parameter 'sectionIndex' is set
-            if (request.sectionIndex == null) 
+            if (request.SectionIndex == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetSection");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "sectionIndex", request.sectionIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "SectionIndex", request.SectionIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -3693,23 +3693,23 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetSectionPageSetup");
             }
             
             // verify the required parameter 'sectionIndex' is set
-            if (request.sectionIndex == null) 
+            if (request.SectionIndex == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetSectionPageSetup");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "sectionIndex", request.sectionIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "SectionIndex", request.SectionIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -3756,16 +3756,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetSections");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -3812,24 +3812,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetTable");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetTable");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -3876,30 +3876,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetTableCell");
             }
             
             // verify the required parameter 'tableRowPath' is set
-            if (request.tableRowPath == null) 
+            if (request.TableRowPath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling GetTableCell");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetTableCell");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "tableRowPath", request.tableRowPath);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "TableRowPath", request.TableRowPath);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -3946,30 +3946,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetTableCellFormat");
             }
             
             // verify the required parameter 'tableRowPath' is set
-            if (request.tableRowPath == null) 
+            if (request.TableRowPath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling GetTableCellFormat");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetTableCellFormat");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "tableRowPath", request.tableRowPath);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "TableRowPath", request.TableRowPath);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -4016,24 +4016,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetTableProperties");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetTableProperties");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -4080,30 +4080,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetTableRow");
             }
             
             // verify the required parameter 'tablePath' is set
-            if (request.tablePath == null) 
+            if (request.TablePath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'tablePath' when calling GetTableRow");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetTableRow");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "tablePath", request.tablePath);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "TablePath", request.TablePath);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -4150,30 +4150,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetTableRowFormat");
             }
             
             // verify the required parameter 'tablePath' is set
-            if (request.tablePath == null) 
+            if (request.TablePath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'tablePath' when calling GetTableRowFormat");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetTableRowFormat");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "tablePath", request.tablePath);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "TablePath", request.TablePath);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -4220,17 +4220,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetTables");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -4277,27 +4277,27 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertTable");
             }
             
             // verify the required parameter 'table' is set
-            if (request.table == null) 
+            if (request.Table == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'table' when calling InsertTable");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.table; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.Table; // http body (model) parameter
             try 
             {                
                 if (typeof(TableResponse) == typeof(Stream)) 
@@ -4343,33 +4343,33 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertTableCell");
             }
             
             // verify the required parameter 'cell' is set
-            if (request.cell == null) 
+            if (request.Cell == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'cell' when calling InsertTableCell");
             }
             
             // verify the required parameter 'tableRowPath' is set
-            if (request.tableRowPath == null) 
+            if (request.TableRowPath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling InsertTableCell");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "tableRowPath", request.tableRowPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.cell; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "TableRowPath", request.TableRowPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.Cell; // http body (model) parameter
             try 
             {                
                 if (typeof(TableCellResponse) == typeof(Stream)) 
@@ -4415,33 +4415,33 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertTableRow");
             }
             
             // verify the required parameter 'row' is set
-            if (request.row == null) 
+            if (request.Row == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'row' when calling InsertTableRow");
             }
             
             // verify the required parameter 'tablePath' is set
-            if (request.tablePath == null) 
+            if (request.TablePath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'tablePath' when calling InsertTableRow");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "tablePath", request.tablePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.row; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "TablePath", request.TablePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.Row; // http body (model) parameter
             try 
             {                
                 if (typeof(TableRowResponse) == typeof(Stream)) 
@@ -4487,26 +4487,26 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostAppendDocument");
             }
             
             // verify the required parameter 'documentList' is set
-            if (request.documentList == null) 
+            if (request.DocumentList == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'documentList' when calling PostAppendDocument");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.documentList; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.DocumentList; // http body (model) parameter
             try 
             {                
                 if (typeof(DocumentResponse) == typeof(Stream)) 
@@ -4552,24 +4552,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostChangeDocumentProtection");
             }
             
             // verify the required parameter 'protectionRequest' is set
-            if (request.protectionRequest == null) 
+            if (request.ProtectionRequest == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling PostChangeDocumentProtection");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.protectionRequest; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.ProtectionRequest; // http body (model) parameter
             try 
             {                
                 if (typeof(ProtectionDataResponse) == typeof(Stream)) 
@@ -4615,33 +4615,33 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostComment");
             }
             
             // verify the required parameter 'commentIndex' is set
-            if (request.commentIndex == null) 
+            if (request.CommentIndex == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'commentIndex' when calling PostComment");
             }
             
             // verify the required parameter 'comment' is set
-            if (request.comment == null) 
+            if (request.Comment == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'comment' when calling PostComment");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "commentIndex", request.commentIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.comment; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "CommentIndex", request.CommentIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.Comment; // http body (model) parameter
             try 
             {                
                 if (typeof(CommentResponse) == typeof(Stream)) 
@@ -4687,24 +4687,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostCompareDocument");
             }
             
             // verify the required parameter 'compareData' is set
-            if (request.compareData == null) 
+            if (request.CompareData == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'compareData' when calling PostCompareDocument");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.compareData; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.CompareData; // http body (model) parameter
             try 
             {                
                 if (typeof(DocumentResponse) == typeof(Stream)) 
@@ -4750,31 +4750,31 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostDocumentExecuteMailMerge");
             }
             
             // verify the required parameter 'withRegions' is set
-            if (request.withRegions == null) 
+            if (request.WithRegions == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'withRegions' when calling PostDocumentExecuteMailMerge");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "withRegions", request.withRegions);
-            resourcePath = this.AddQueryParameter(resourcePath, "mailMergeDataFile", request.mailMergeDataFile);
-            resourcePath = this.AddQueryParameter(resourcePath, "cleanup", request.cleanup);
-            resourcePath = this.AddQueryParameter(resourcePath, "useWholeParagraphAsRegion", request.useWholeParagraphAsRegion);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "WithRegions", request.WithRegions);
+            resourcePath = this.AddQueryParameter(resourcePath, "MailMergeDataFile", request.MailMergeDataFile);
+            resourcePath = this.AddQueryParameter(resourcePath, "Cleanup", request.Cleanup);
+            resourcePath = this.AddQueryParameter(resourcePath, "UseWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
-            if (request.data != null) 
+            if (request.Data != null) 
             {
-                formParams.Add("data", request.data); // form parameter
+                formParams.Add("Data", request.Data); // form parameter
             }
             try 
             {                
@@ -4821,40 +4821,40 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostDocumentParagraphRunFont");
             }
             
             // verify the required parameter 'fontDto' is set
-            if (request.fontDto == null) 
+            if (request.FontDto == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'fontDto' when calling PostDocumentParagraphRunFont");
             }
             
             // verify the required parameter 'paragraphPath' is set
-            if (request.paragraphPath == null) 
+            if (request.ParagraphPath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling PostDocumentParagraphRunFont");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostDocumentParagraphRunFont");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.paragraphPath);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.fontDto; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "ParagraphPath", request.ParagraphPath);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.FontDto; // http body (model) parameter
             try 
             {                
                 if (typeof(FontResponse) == typeof(Stream)) 
@@ -4900,25 +4900,25 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostDocumentSaveAs");
             }
             
             // verify the required parameter 'saveOptionsData' is set
-            if (request.saveOptionsData == null) 
+            if (request.SaveOptionsData == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'saveOptionsData' when calling PostDocumentSaveAs");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.fontsLocation);
-            postBody = request.saveOptionsData; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
+            postBody = request.SaveOptionsData; // http body (model) parameter
             try 
             {                
                 if (typeof(SaveResponse) == typeof(Stream)) 
@@ -4964,47 +4964,47 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostDrawingObject");
             }
             
             // verify the required parameter 'drawingObject' is set
-            if (request.drawingObject == null) 
+            if (request.DrawingObject == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'drawingObject' when calling PostDrawingObject");
             }
             
             // verify the required parameter 'imageFile' is set
-            if (request.imageFile == null) 
+            if (request.ImageFile == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PostDrawingObject");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostDrawingObject");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
-            if (request.drawingObject != null) 
+            if (request.DrawingObject != null) 
             {
-                formParams.Add("drawingObject", request.drawingObject); // form parameter
+                formParams.Add("DrawingObject", request.DrawingObject); // form parameter
             }
-            if (request.imageFile != null) 
+            if (request.ImageFile != null) 
             {
-                formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.imageFile, "imageFile"));
+                formParams.Add("ImageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
             }
             try 
             {                
@@ -5051,30 +5051,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostExecuteTemplate");
             }
             
             // verify the required parameter 'data' is set
-            if (request.data == null) 
+            if (request.Data == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'data' when calling PostExecuteTemplate");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "cleanup", request.cleanup);
-            resourcePath = this.AddQueryParameter(resourcePath, "useWholeParagraphAsRegion", request.useWholeParagraphAsRegion);
-            resourcePath = this.AddQueryParameter(resourcePath, "withRegions", request.withRegions);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "Cleanup", request.Cleanup);
+            resourcePath = this.AddQueryParameter(resourcePath, "UseWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
+            resourcePath = this.AddQueryParameter(resourcePath, "WithRegions", request.WithRegions);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
-            if (request.data != null) 
+            if (request.Data != null) 
             {
-                formParams.Add("data", request.data); // form parameter
+                formParams.Add("Data", request.Data); // form parameter
             }
             try 
             {                
@@ -5121,34 +5121,34 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostField");
             }
             
             // verify the required parameter 'field' is set
-            if (request.field == null) 
+            if (request.Field == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'field' when calling PostField");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostField");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.field; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.Field; // http body (model) parameter
             try 
             {                
                 if (typeof(FieldResponse) == typeof(Stream)) 
@@ -5194,34 +5194,34 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostFootnote");
             }
             
             // verify the required parameter 'footnoteDto' is set
-            if (request.footnoteDto == null) 
+            if (request.FootnoteDto == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'footnoteDto' when calling PostFootnote");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostFootnote");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.footnoteDto; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.FootnoteDto; // http body (model) parameter
             try 
             {                
                 if (typeof(FootnoteResponse) == typeof(Stream)) 
@@ -5267,34 +5267,34 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostFormField");
             }
             
             // verify the required parameter 'formField' is set
-            if (request.formField == null) 
+            if (request.FormField == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'formField' when calling PostFormField");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostFormField");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.formField; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.FormField; // http body (model) parameter
             try 
             {                
                 if (typeof(FormFieldResponse) == typeof(Stream)) 
@@ -5340,25 +5340,25 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostInsertDocumentWatermarkImage");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "rotationAngle", request.rotationAngle);
-            resourcePath = this.AddQueryParameter(resourcePath, "image", request.image);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "RotationAngle", request.RotationAngle);
+            resourcePath = this.AddQueryParameter(resourcePath, "Image", request.Image);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
-            if (request.imageFile != null) 
+            if (request.ImageFile != null) 
             {
-                formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.imageFile, "imageFile"));
+                formParams.Add("ImageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
             }
             try 
             {                
@@ -5405,26 +5405,26 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostInsertDocumentWatermarkText");
             }
             
             // verify the required parameter 'watermarkText' is set
-            if (request.watermarkText == null) 
+            if (request.WatermarkText == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'watermarkText' when calling PostInsertDocumentWatermarkText");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.watermarkText; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.WatermarkText; // http body (model) parameter
             try 
             {                
                 if (typeof(DocumentResponse) == typeof(Stream)) 
@@ -5470,26 +5470,26 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostInsertPageNumbers");
             }
             
             // verify the required parameter 'pageNumber' is set
-            if (request.pageNumber == null) 
+            if (request.PageNumber == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'pageNumber' when calling PostInsertPageNumbers");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.pageNumber; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.PageNumber; // http body (model) parameter
             try 
             {                
                 if (typeof(DocumentResponse) == typeof(Stream)) 
@@ -5535,13 +5535,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'data' is set
-            if (request.data == null) 
+            if (request.Data == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'data' when calling PostLoadWebDocument");
             }
             
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            postBody = request.data; // http body (model) parameter
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            postBody = request.Data; // http body (model) parameter
             try 
             {                
                 if (typeof(SaveResponse) == typeof(Stream)) 
@@ -5587,26 +5587,26 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostReplaceText");
             }
             
             // verify the required parameter 'replaceText' is set
-            if (request.replaceText == null) 
+            if (request.ReplaceText == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'replaceText' when calling PostReplaceText");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.replaceText; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.ReplaceText; // http body (model) parameter
             try 
             {                
                 if (typeof(ReplaceTextResponse) == typeof(Stream)) 
@@ -5652,40 +5652,40 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostRun");
             }
             
             // verify the required parameter 'run' is set
-            if (request.run == null) 
+            if (request.Run == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'run' when calling PostRun");
             }
             
             // verify the required parameter 'paragraphPath' is set
-            if (request.paragraphPath == null) 
+            if (request.ParagraphPath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling PostRun");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostRun");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.paragraphPath);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.run; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "ParagraphPath", request.ParagraphPath);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.Run; // http body (model) parameter
             try 
             {                
                 if (typeof(RunResponse) == typeof(Stream)) 
@@ -5776,22 +5776,22 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostSplitDocument");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "format", request.format);
-            resourcePath = this.AddQueryParameter(resourcePath, "from", request.from);
-            resourcePath = this.AddQueryParameter(resourcePath, "to", request.to);
-            resourcePath = this.AddQueryParameter(resourcePath, "zipOutput", request.zipOutput);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.fontsLocation);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "Format", request.Format);
+            resourcePath = this.AddQueryParameter(resourcePath, "From", request.From);
+            resourcePath = this.AddQueryParameter(resourcePath, "To", request.To);
+            resourcePath = this.AddQueryParameter(resourcePath, "ZipOutput", request.ZipOutput);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
             
             try 
             {                
@@ -5838,33 +5838,33 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostUpdateDocumentBookmark");
             }
             
             // verify the required parameter 'bookmarkData' is set
-            if (request.bookmarkData == null) 
+            if (request.BookmarkData == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'bookmarkData' when calling PostUpdateDocumentBookmark");
             }
             
             // verify the required parameter 'bookmarkName' is set
-            if (request.bookmarkName == null) 
+            if (request.BookmarkName == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'bookmarkName' when calling PostUpdateDocumentBookmark");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "bookmarkName", request.bookmarkName);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.bookmarkData; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "BookmarkName", request.BookmarkName);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.BookmarkData; // http body (model) parameter
             try 
             {                
                 if (typeof(BookmarkResponse) == typeof(Stream)) 
@@ -5910,17 +5910,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostUpdateDocumentFields");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -5967,26 +5967,26 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PutComment");
             }
             
             // verify the required parameter 'comment' is set
-            if (request.comment == null) 
+            if (request.Comment == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'comment' when calling PutComment");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.comment; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.Comment; // http body (model) parameter
             try 
             {                
                 if (typeof(CommentResponse) == typeof(Stream)) 
@@ -6032,25 +6032,25 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'format' is set
-            if (request.format == null) 
+            if (request.Format == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'format' when calling PutConvertDocument");
             }
             
             // verify the required parameter 'document' is set
-            if (request.document == null) 
+            if (request.Document == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'document' when calling PutConvertDocument");
             }
             
-            resourcePath = this.AddQueryParameter(resourcePath, "format", request.format);
-            resourcePath = this.AddQueryParameter(resourcePath, "outPath", request.outPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.fontsLocation);
+            resourcePath = this.AddQueryParameter(resourcePath, "Format", request.Format);
+            resourcePath = this.AddQueryParameter(resourcePath, "OutPath", request.OutPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
             
-            if (request.document != null) 
+            if (request.Document != null) 
             {
-                formParams.Add("document", this.apiInvoker.ToFileInfo(request.document, "document"));
+                formParams.Add("Document", this.apiInvoker.ToFileInfo(request.Document, "Document"));
             }
             try 
             {                
@@ -6079,7 +6079,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         }
 
         /// <summary>
-        /// Creates new document. 
+        /// Creates new document.  Document is created with format which is recognized from file extensions.   Supported extentions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot; 
         /// </summary>
         /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutCreateDocumentRequest" /></param> 
         /// <returns><see cref="DocumentResponse"/></returns>            
@@ -6096,8 +6096,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
             var formParams = new Dictionary<string, object>();
             object postBody = null;            
             
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
             
             try 
             {                
@@ -6149,7 +6149,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'template' when calling PutDocumentFieldNames");
             }
             
-            resourcePath = this.AddQueryParameter(resourcePath, "useNonMergeFields", request.useNonMergeFields);
+            resourcePath = this.AddQueryParameter(resourcePath, "UseNonMergeFields", request.UseNonMergeFields);
             
             if (request.Template != null) 
             {
@@ -6200,43 +6200,43 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PutDocumentSaveAsTiff");
             }
             
             // verify the required parameter 'saveOptions' is set
-            if (request.saveOptions == null) 
+            if (request.SaveOptions == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'saveOptions' when calling PutDocumentSaveAsTiff");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "resultFile", request.resultFile);
-            resourcePath = this.AddQueryParameter(resourcePath, "useAntiAliasing", request.useAntiAliasing);
-            resourcePath = this.AddQueryParameter(resourcePath, "useHighQualityRendering", request.useHighQualityRendering);
-            resourcePath = this.AddQueryParameter(resourcePath, "imageBrightness", request.imageBrightness);
-            resourcePath = this.AddQueryParameter(resourcePath, "imageColorMode", request.imageColorMode);
-            resourcePath = this.AddQueryParameter(resourcePath, "imageContrast", request.imageContrast);
-            resourcePath = this.AddQueryParameter(resourcePath, "numeralFormat", request.numeralFormat);
-            resourcePath = this.AddQueryParameter(resourcePath, "pageCount", request.pageCount);
-            resourcePath = this.AddQueryParameter(resourcePath, "pageIndex", request.pageIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "paperColor", request.paperColor);
-            resourcePath = this.AddQueryParameter(resourcePath, "pixelFormat", request.pixelFormat);
-            resourcePath = this.AddQueryParameter(resourcePath, "resolution", request.resolution);
-            resourcePath = this.AddQueryParameter(resourcePath, "scale", request.scale);
-            resourcePath = this.AddQueryParameter(resourcePath, "tiffCompression", request.tiffCompression);
-            resourcePath = this.AddQueryParameter(resourcePath, "dmlRenderingMode", request.dmlRenderingMode);
-            resourcePath = this.AddQueryParameter(resourcePath, "dmlEffectsRenderingMode", request.dmlEffectsRenderingMode);
-            resourcePath = this.AddQueryParameter(resourcePath, "tiffBinarizationMethod", request.tiffBinarizationMethod);
-            resourcePath = this.AddQueryParameter(resourcePath, "zipOutput", request.zipOutput);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.fontsLocation);
-            postBody = request.saveOptions; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "ResultFile", request.ResultFile);
+            resourcePath = this.AddQueryParameter(resourcePath, "UseAntiAliasing", request.UseAntiAliasing);
+            resourcePath = this.AddQueryParameter(resourcePath, "UseHighQualityRendering", request.UseHighQualityRendering);
+            resourcePath = this.AddQueryParameter(resourcePath, "ImageBrightness", request.ImageBrightness);
+            resourcePath = this.AddQueryParameter(resourcePath, "ImageColorMode", request.ImageColorMode);
+            resourcePath = this.AddQueryParameter(resourcePath, "ImageContrast", request.ImageContrast);
+            resourcePath = this.AddQueryParameter(resourcePath, "NumeralFormat", request.NumeralFormat);
+            resourcePath = this.AddQueryParameter(resourcePath, "PageCount", request.PageCount);
+            resourcePath = this.AddQueryParameter(resourcePath, "PageIndex", request.PageIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "PaperColor", request.PaperColor);
+            resourcePath = this.AddQueryParameter(resourcePath, "PixelFormat", request.PixelFormat);
+            resourcePath = this.AddQueryParameter(resourcePath, "Resolution", request.Resolution);
+            resourcePath = this.AddQueryParameter(resourcePath, "Scale", request.Scale);
+            resourcePath = this.AddQueryParameter(resourcePath, "TiffCompression", request.TiffCompression);
+            resourcePath = this.AddQueryParameter(resourcePath, "DmlRenderingMode", request.DmlRenderingMode);
+            resourcePath = this.AddQueryParameter(resourcePath, "DmlEffectsRenderingMode", request.DmlEffectsRenderingMode);
+            resourcePath = this.AddQueryParameter(resourcePath, "TiffBinarizationMethod", request.TiffBinarizationMethod);
+            resourcePath = this.AddQueryParameter(resourcePath, "ZipOutput", request.ZipOutput);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
+            postBody = request.SaveOptions; // http body (model) parameter
             try 
             {                
                 if (typeof(SaveResponse) == typeof(Stream)) 
@@ -6282,40 +6282,40 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PutDrawingObject");
             }
             
             // verify the required parameter 'drawingObject' is set
-            if (request.drawingObject == null) 
+            if (request.DrawingObject == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'drawingObject' when calling PutDrawingObject");
             }
             
             // verify the required parameter 'imageFile' is set
-            if (request.imageFile == null) 
+            if (request.ImageFile == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PutDrawingObject");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
-            if (request.drawingObject != null) 
+            if (request.DrawingObject != null) 
             {
-                formParams.Add("drawingObject", request.drawingObject); // form parameter
+                formParams.Add("DrawingObject", request.DrawingObject); // form parameter
             }
-            if (request.imageFile != null) 
+            if (request.ImageFile != null) 
             {
-                formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.imageFile, "imageFile"));
+                formParams.Add("ImageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
             }
             try 
             {                
@@ -6373,8 +6373,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'data' when calling PutExecuteMailMergeOnline");
             }
             
-            resourcePath = this.AddQueryParameter(resourcePath, "withRegions", request.withRegions);
-            resourcePath = this.AddQueryParameter(resourcePath, "cleanup", request.cleanup);
+            resourcePath = this.AddQueryParameter(resourcePath, "WithRegions", request.WithRegions);
+            resourcePath = this.AddQueryParameter(resourcePath, "Cleanup", request.Cleanup);
             
             if (request.Template != null) 
             {
@@ -6440,9 +6440,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'data' when calling PutExecuteTemplateOnline");
             }
             
-            resourcePath = this.AddQueryParameter(resourcePath, "cleanup", request.cleanup);
-            resourcePath = this.AddQueryParameter(resourcePath, "useWholeParagraphAsRegion", request.useWholeParagraphAsRegion);
-            resourcePath = this.AddQueryParameter(resourcePath, "withRegions", request.withRegions);
+            resourcePath = this.AddQueryParameter(resourcePath, "Cleanup", request.Cleanup);
+            resourcePath = this.AddQueryParameter(resourcePath, "UseWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
+            resourcePath = this.AddQueryParameter(resourcePath, "WithRegions", request.WithRegions);
             
             if (request.Template != null) 
             {
@@ -6497,28 +6497,28 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PutField");
             }
             
             // verify the required parameter 'field' is set
-            if (request.field == null) 
+            if (request.Field == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'field' when calling PutField");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "insertBeforeNode", request.insertBeforeNode);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.field; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "InsertBeforeNode", request.InsertBeforeNode);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.Field; // http body (model) parameter
             try 
             {                
                 if (typeof(FieldResponse) == typeof(Stream)) 
@@ -6564,27 +6564,27 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PutFootnote");
             }
             
             // verify the required parameter 'footnoteDto' is set
-            if (request.footnoteDto == null) 
+            if (request.FootnoteDto == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'footnoteDto' when calling PutFootnote");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.footnoteDto; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.FootnoteDto; // http body (model) parameter
             try 
             {                
                 if (typeof(FootnoteResponse) == typeof(Stream)) 
@@ -6630,28 +6630,28 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PutFormField");
             }
             
             // verify the required parameter 'formField' is set
-            if (request.formField == null) 
+            if (request.FormField == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'formField' when calling PutFormField");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "insertBeforeNode", request.insertBeforeNode);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.formField; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "InsertBeforeNode", request.InsertBeforeNode);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.FormField; // http body (model) parameter
             try 
             {                
                 if (typeof(FormFieldResponse) == typeof(Stream)) 
@@ -6697,27 +6697,27 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PutHeaderFooter");
             }
             
             // verify the required parameter 'headerFooterType' is set
-            if (request.headerFooterType == null) 
+            if (request.HeaderFooterType == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'headerFooterType' when calling PutHeaderFooter");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "sectionPath", request.sectionPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.headerFooterType; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "SectionPath", request.SectionPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.HeaderFooterType; // http body (model) parameter
             try 
             {                
                 if (typeof(HeaderFooterResponse) == typeof(Stream)) 
@@ -6763,28 +6763,28 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PutParagraph");
             }
             
             // verify the required parameter 'paragraph' is set
-            if (request.paragraph == null) 
+            if (request.Paragraph == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'paragraph' when calling PutParagraph");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "insertBeforeNode", request.insertBeforeNode);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.paragraph; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "InsertBeforeNode", request.InsertBeforeNode);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.Paragraph; // http body (model) parameter
             try 
             {                
                 if (typeof(ParagraphResponse) == typeof(Stream)) 
@@ -6830,24 +6830,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PutProtectDocument");
             }
             
             // verify the required parameter 'protectionRequest' is set
-            if (request.protectionRequest == null) 
+            if (request.ProtectionRequest == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling PutProtectDocument");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.protectionRequest; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.ProtectionRequest; // http body (model) parameter
             try 
             {                
                 if (typeof(ProtectionDataResponse) == typeof(Stream)) 
@@ -6893,34 +6893,34 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PutRun");
             }
             
             // verify the required parameter 'paragraphPath' is set
-            if (request.paragraphPath == null) 
+            if (request.ParagraphPath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling PutRun");
             }
             
             // verify the required parameter 'run' is set
-            if (request.run == null) 
+            if (request.Run == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'run' when calling PutRun");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.paragraphPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "insertBeforeNode", request.insertBeforeNode);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.run; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "ParagraphPath", request.ParagraphPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "InsertBeforeNode", request.InsertBeforeNode);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.Run; // http body (model) parameter
             try 
             {                
                 if (typeof(RunResponse) == typeof(Stream)) 
@@ -6966,33 +6966,33 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PutUpdateDocumentProperty");
             }
             
             // verify the required parameter 'propertyName' is set
-            if (request.propertyName == null) 
+            if (request.PropertyName == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'propertyName' when calling PutUpdateDocumentProperty");
             }
             
             // verify the required parameter 'property' is set
-            if (request.property == null) 
+            if (request.Property == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'property' when calling PutUpdateDocumentProperty");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "propertyName", request.propertyName);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.property; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "PropertyName", request.PropertyName);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.Property; // http body (model) parameter
             try 
             {                
                 if (typeof(DocumentPropertyResponse) == typeof(Stream)) 
@@ -7038,33 +7038,33 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling PutUpdateDocumentProperty_2");
             }
             
             // verify the required parameter 'propertyName' is set
-            if (request.propertyName == null) 
+            if (request.PropertyName == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'propertyName' when calling PutUpdateDocumentProperty_2");
             }
             
             // verify the required parameter 'property' is set
-            if (request.property == null) 
+            if (request.Property == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'property' when calling PutUpdateDocumentProperty_2");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "propertyName", request.propertyName);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.property; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "PropertyName", request.PropertyName);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.Property; // http body (model) parameter
             try 
             {                
                 if (typeof(DocumentPropertyResponse) == typeof(Stream)) 
@@ -7110,17 +7110,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling RejectAllRevisions");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -7167,32 +7167,32 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderDrawingObject");
             }
             
             // verify the required parameter 'format' is set
-            if (request.format == null) 
+            if (request.Format == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'format' when calling RenderDrawingObject");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling RenderDrawingObject");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "format", request.format);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.fontsLocation);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "Format", request.Format);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
             
             try 
             {                
@@ -7239,32 +7239,32 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderMathObject");
             }
             
             // verify the required parameter 'format' is set
-            if (request.format == null) 
+            if (request.Format == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'format' when calling RenderMathObject");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling RenderMathObject");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "format", request.format);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.fontsLocation);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "Format", request.Format);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
             
             try 
             {                
@@ -7311,31 +7311,31 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderPage");
             }
             
             // verify the required parameter 'pageIndex' is set
-            if (request.pageIndex == null) 
+            if (request.PageIndex == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'pageIndex' when calling RenderPage");
             }
             
             // verify the required parameter 'format' is set
-            if (request.format == null) 
+            if (request.Format == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'format' when calling RenderPage");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "pageIndex", request.pageIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "format", request.format);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.fontsLocation);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "PageIndex", request.PageIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "Format", request.Format);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
             
             try 
             {                
@@ -7382,32 +7382,32 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderParagraph");
             }
             
             // verify the required parameter 'format' is set
-            if (request.format == null) 
+            if (request.Format == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'format' when calling RenderParagraph");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling RenderParagraph");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "format", request.format);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.fontsLocation);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "Format", request.Format);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
             
             try 
             {                
@@ -7454,32 +7454,32 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderTable");
             }
             
             // verify the required parameter 'format' is set
-            if (request.format == null) 
+            if (request.Format == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'format' when calling RenderTable");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling RenderTable");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "format", request.format);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.fontsLocation);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "Format", request.Format);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
             
             try 
             {                
@@ -7571,17 +7571,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling Search");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddQueryParameter(resourcePath, "pattern", request.pattern);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "Pattern", request.Pattern);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
             
             try 
             {                
@@ -7628,40 +7628,40 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateBorder");
             }
             
             // verify the required parameter 'borderProperties' is set
-            if (request.borderProperties == null) 
+            if (request.BorderProperties == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'borderProperties' when calling UpdateBorder");
             }
             
             // verify the required parameter 'nodePath' is set
-            if (request.nodePath == null) 
+            if (request.NodePath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'nodePath' when calling UpdateBorder");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling UpdateBorder");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.borderProperties; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.BorderProperties; // http body (model) parameter
             try 
             {                
                 if (typeof(BorderResponse) == typeof(Stream)) 
@@ -7707,33 +7707,33 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateSectionPageSetup");
             }
             
             // verify the required parameter 'sectionIndex' is set
-            if (request.sectionIndex == null) 
+            if (request.SectionIndex == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling UpdateSectionPageSetup");
             }
             
             // verify the required parameter 'pageSetup' is set
-            if (request.pageSetup == null) 
+            if (request.PageSetup == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'pageSetup' when calling UpdateSectionPageSetup");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "sectionIndex", request.sectionIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.pageSetup; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "SectionIndex", request.SectionIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.PageSetup; // http body (model) parameter
             try 
             {                
                 if (typeof(SectionPageSetupResponse) == typeof(Stream)) 
@@ -7779,40 +7779,40 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateTableCellFormat");
             }
             
             // verify the required parameter 'format' is set
-            if (request.format == null) 
+            if (request.Format == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'format' when calling UpdateTableCellFormat");
             }
             
             // verify the required parameter 'tableRowPath' is set
-            if (request.tableRowPath == null) 
+            if (request.TableRowPath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling UpdateTableCellFormat");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling UpdateTableCellFormat");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "tableRowPath", request.tableRowPath);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.format; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "TableRowPath", request.TableRowPath);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.Format; // http body (model) parameter
             try 
             {                
                 if (typeof(TableCellFormatResponse) == typeof(Stream)) 
@@ -7858,34 +7858,34 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateTableProperties");
             }
             
             // verify the required parameter 'properties' is set
-            if (request.properties == null) 
+            if (request.Properties == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'properties' when calling UpdateTableProperties");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling UpdateTableProperties");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.nodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.properties; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.Properties; // http body (model) parameter
             try 
             {                
                 if (typeof(TablePropertiesResponse) == typeof(Stream)) 
@@ -7931,40 +7931,40 @@ namespace Aspose.Words.Cloud.Sdk.Api
             object postBody = null;            
             
             // verify the required parameter 'name' is set
-            if (request.name == null) 
+            if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateTableRowFormat");
             }
             
             // verify the required parameter 'format' is set
-            if (request.format == null) 
+            if (request.Format == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'format' when calling UpdateTableRowFormat");
             }
             
             // verify the required parameter 'tablePath' is set
-            if (request.tablePath == null) 
+            if (request.TablePath == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'tablePath' when calling UpdateTableRowFormat");
             }
             
             // verify the required parameter 'index' is set
-            if (request.index == null) 
+            if (request.Index == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'index' when calling UpdateTableRowFormat");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.name);
-            resourcePath = this.AddPathParameter(resourcePath, "tablePath", request.tablePath);
-            resourcePath = this.AddPathParameter(resourcePath, "index", request.index);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.destFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.loadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.revisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.revisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.password);
-            postBody = request.format; // http body (model) parameter
+            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "TablePath", request.TablePath);
+            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            postBody = request.Format; // http body (model) parameter
             try 
             {                
                 if (typeof(TableRowFormatResponse) == typeof(Stream)) 
@@ -8042,4233 +8042,6371 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.AcceptAllRevisions" /> operation.
   /// </summary>  
   public class AcceptAllRevisionsRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public AcceptAllRevisionsRequest(string name, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteBorder" /> operation.
   /// </summary>  
   public class DeleteBorderRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="nodePath">Path to node with border(node should be cell or row).</param>
+        /// <param name="index">Object index</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteBorderRequest(string name, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.NodePath = nodePath;
+            this.Index = index;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to node with border(node should be cell or row).
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteBorders" /> operation.
   /// </summary>  
   public class DeleteBordersRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="nodePath">Path to node with borders(node should be cell or row).</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteBordersRequest(string name, string nodePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.NodePath = nodePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to node with borders(node should be cell or row).
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteComment" /> operation.
   /// </summary>  
   public class DeleteCommentRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="commentIndex">Comment index</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteCommentRequest(string name, int? commentIndex, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.CommentIndex = commentIndex;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Comment index
         /// </summary>  
-        public int? commentIndex { get; set; }
+        public int? CommentIndex { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteDocumentMacros" /> operation.
   /// </summary>  
   public class DeleteDocumentMacrosRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteDocumentMacrosRequest(string name, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteDocumentProperty" /> operation.
   /// </summary>  
   public class DeleteDocumentPropertyRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="propertyName">The property name.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteDocumentPropertyRequest(string name, string propertyName, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.PropertyName = propertyName;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The property name.
         /// </summary>  
-        public string propertyName { get; set; }
+        public string PropertyName { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteDocumentWatermark" /> operation.
   /// </summary>  
   public class DeleteDocumentWatermarkRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteDocumentWatermarkRequest(string name, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteDrawingObject" /> operation.
   /// </summary>  
   public class DeleteDrawingObjectRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains collection of drawing objects.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteDrawingObjectRequest(string name, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of drawing objects.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteField" /> operation.
   /// </summary>  
   public class DeleteFieldRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains collection of fields.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteFieldRequest(string name, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of fields.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteFields" /> operation.
   /// </summary>  
   public class DeleteFieldsRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="nodePath">Path to node, which contains collection of fields.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteFieldsRequest(string name, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.NodePath = nodePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of fields.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteFootnote" /> operation.
   /// </summary>  
   public class DeleteFootnoteRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains collection of footnotes.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteFootnoteRequest(string name, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of footnotes.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteFormField" /> operation.
   /// </summary>  
   public class DeleteFormFieldRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node that contains collection of formfields.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteFormFieldRequest(string name, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node that contains collection of formfields.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteHeaderFooter" /> operation.
   /// </summary>  
   public class DeleteHeaderFooterRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="sectionPath">Path to parent section.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteHeaderFooterRequest(string name, int? index, string sectionPath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.SectionPath = sectionPath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to parent section.
         /// </summary>  
-        public string sectionPath { get; set; }
+        public string SectionPath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteHeadersFooters" /> operation.
   /// </summary>  
   public class DeleteHeadersFootersRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="sectionPath">Path to parent section.</param>
+        /// <param name="headersFootersTypes">List of types of headers and footers.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteHeadersFootersRequest(string name, string sectionPath = null, string headersFootersTypes = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.SectionPath = sectionPath;
+            this.HeadersFootersTypes = headersFootersTypes;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to parent section.
         /// </summary>  
-        public string sectionPath { get; set; }
+        public string SectionPath { get; set; }
 
         /// <summary>
         /// List of types of headers and footers.
         /// </summary>  
-        public string headersFootersTypes { get; set; }
+        public string HeadersFootersTypes { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteOfficeMathObject" /> operation.
   /// </summary>  
   public class DeleteOfficeMathObjectRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains collection of OfficeMath objects.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteOfficeMathObjectRequest(string name, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of OfficeMath objects.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteParagraph" /> operation.
   /// </summary>  
   public class DeleteParagraphRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node which contains paragraphs.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteParagraphRequest(string name, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node which contains paragraphs.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteRun" /> operation.
   /// </summary>  
   public class DeleteRunRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="paragraphPath">Path to parent paragraph.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteRunRequest(string name, string paragraphPath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.ParagraphPath = paragraphPath;
+            this.Index = index;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to parent paragraph.
         /// </summary>  
-        public string paragraphPath { get; set; }
+        public string ParagraphPath { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteTable" /> operation.
   /// </summary>  
   public class DeleteTableRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains tables.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteTableRequest(string name, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains tables.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteTableCell" /> operation.
   /// </summary>  
   public class DeleteTableCellRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="tableRowPath">Path to table row.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteTableCellRequest(string name, string tableRowPath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.TableRowPath = tableRowPath;
+            this.Index = index;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to table row.
         /// </summary>  
-        public string tableRowPath { get; set; }
+        public string TableRowPath { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteTableRow" /> operation.
   /// </summary>  
   public class DeleteTableRowRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="tablePath">Path to table.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteTableRowRequest(string name, string tablePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.TablePath = tablePath;
+            this.Index = index;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to table.
         /// </summary>  
-        public string tablePath { get; set; }
+        public string TablePath { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteUnprotectDocument" /> operation.
   /// </summary>  
   public class DeleteUnprotectDocumentRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="protectionRequest">{Aspose.Words.Cloud.DTO.ProtectionRequest} with protection settings.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public DeleteUnprotectDocumentRequest(string name, ProtectionRequest protectionRequest, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.ProtectionRequest = protectionRequest;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// {Aspose.Words.Cloud.DTO.ProtectionRequest} with protection settings.
         /// </summary>  
-        public ProtectionRequest protectionRequest { get; set; }
+        public ProtectionRequest ProtectionRequest { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetBorder" /> operation.
   /// </summary>  
   public class GetBorderRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="nodePath">Path to node with border(node should be cell or row).</param>
+        /// <param name="index">Object index</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetBorderRequest(string name, string nodePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.NodePath = nodePath;
+            this.Index = index;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to node with border(node should be cell or row).
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetBorders" /> operation.
   /// </summary>  
   public class GetBordersRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="nodePath">Path to node with borders(node should be cell or row).</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetBordersRequest(string name, string nodePath, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to node with borders(node should be cell or row).
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetComment" /> operation.
   /// </summary>  
   public class GetCommentRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="commentIndex">Comment index</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetCommentRequest(string name, int? commentIndex, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.CommentIndex = commentIndex;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Comment index
         /// </summary>  
-        public int? commentIndex { get; set; }
+        public int? CommentIndex { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetComments" /> operation.
   /// </summary>  
   public class GetCommentsRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetCommentsRequest(string name, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocument" /> operation.
   /// </summary>  
   public class GetDocumentRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="documentName">The file name.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentRequest(string documentName, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.DocumentName = documentName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string documentName { get; set; }
+        public string DocumentName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentBookmarkByName" /> operation.
   /// </summary>  
   public class GetDocumentBookmarkByNameRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="bookmarkName">The bookmark name.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentBookmarkByNameRequest(string name, string bookmarkName, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.BookmarkName = bookmarkName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The bookmark name.
         /// </summary>  
-        public string bookmarkName { get; set; }
+        public string BookmarkName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentBookmarks" /> operation.
   /// </summary>  
   public class GetDocumentBookmarksRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentBookmarksRequest(string name, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentDrawingObjectByIndex" /> operation.
   /// </summary>  
   public class GetDocumentDrawingObjectByIndexRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains collection of drawing objects.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentDrawingObjectByIndexRequest(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of drawing objects.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentDrawingObjectImageData" /> operation.
   /// </summary>  
   public class GetDocumentDrawingObjectImageDataRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains collection of drawing objects.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentDrawingObjectImageDataRequest(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of drawing objects.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentDrawingObjectOleData" /> operation.
   /// </summary>  
   public class GetDocumentDrawingObjectOleDataRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains collection of drawing objects.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentDrawingObjectOleDataRequest(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of drawing objects.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentDrawingObjects" /> operation.
   /// </summary>  
   public class GetDocumentDrawingObjectsRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="nodePath">Path to node, which contains collection of drawing objects.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentDrawingObjectsRequest(string name, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of drawing objects.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentFieldNames" /> operation.
   /// </summary>  
   public class GetDocumentFieldNamesRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="useNonMergeFields">If true, result includes \&quot;mustache\&quot; field names.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentFieldNamesRequest(string name, bool? useNonMergeFields = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.UseNonMergeFields = useNonMergeFields;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// If true, result includes \"mustache\" field names.
         /// </summary>  
-        public bool? useNonMergeFields { get; set; }
+        public bool? UseNonMergeFields { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentHyperlinkByIndex" /> operation.
   /// </summary>  
   public class GetDocumentHyperlinkByIndexRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="hyperlinkIndex">The hyperlink index.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentHyperlinkByIndexRequest(string name, int? hyperlinkIndex, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.HyperlinkIndex = hyperlinkIndex;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The hyperlink index.
         /// </summary>  
-        public int? hyperlinkIndex { get; set; }
+        public int? HyperlinkIndex { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentHyperlinks" /> operation.
   /// </summary>  
   public class GetDocumentHyperlinksRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentHyperlinksRequest(string name, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentParagraph" /> operation.
   /// </summary>  
   public class GetDocumentParagraphRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node which contains paragraphs.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentParagraphRequest(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node which contains paragraphs.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentParagraphRun" /> operation.
   /// </summary>  
   public class GetDocumentParagraphRunRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="paragraphPath">Path to parent paragraph.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentParagraphRunRequest(string name, string paragraphPath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.ParagraphPath = paragraphPath;
+            this.Index = index;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to parent paragraph.
         /// </summary>  
-        public string paragraphPath { get; set; }
+        public string ParagraphPath { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentParagraphRunFont" /> operation.
   /// </summary>  
   public class GetDocumentParagraphRunFontRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="paragraphPath">Path to parent paragraph.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentParagraphRunFontRequest(string name, string paragraphPath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.ParagraphPath = paragraphPath;
+            this.Index = index;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to parent paragraph.
         /// </summary>  
-        public string paragraphPath { get; set; }
+        public string ParagraphPath { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentParagraphRuns" /> operation.
   /// </summary>  
   public class GetDocumentParagraphRunsRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="paragraphPath">Path to parent paragraph.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentParagraphRunsRequest(string name, string paragraphPath, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.ParagraphPath = paragraphPath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to parent paragraph.
         /// </summary>  
-        public string paragraphPath { get; set; }
+        public string ParagraphPath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentParagraphs" /> operation.
   /// </summary>  
   public class GetDocumentParagraphsRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="nodePath">Path to node which contains paragraphs.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentParagraphsRequest(string name, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to node which contains paragraphs.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentProperties" /> operation.
   /// </summary>  
   public class GetDocumentPropertiesRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document&#39;s name.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentPropertiesRequest(string name, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document's name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentProperty" /> operation.
   /// </summary>  
   public class GetDocumentPropertyRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="propertyName">The property name.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentPropertyRequest(string name, string propertyName, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.PropertyName = propertyName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The property name.
         /// </summary>  
-        public string propertyName { get; set; }
+        public string PropertyName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentProtection" /> operation.
   /// </summary>  
   public class GetDocumentProtectionRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentProtectionRequest(string name, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentStatistics" /> operation.
   /// </summary>  
   public class GetDocumentStatisticsRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="includeComments">Support including/excluding comments from the WordCount. Default value is \&quot;true\&quot;.</param>
+        /// <param name="includeFootnotes">Support including/excluding footnotes from the WordCount. Default value is \&quot;false\&quot;.</param>
+        /// <param name="includeTextInShapes">Support including/excluding shape&#39;s text from the WordCount. Default value is \&quot;false\&quot;</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentStatisticsRequest(string name, bool? includeComments = null, bool? includeFootnotes = null, bool? includeTextInShapes = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.IncludeComments = includeComments;
+            this.IncludeFootnotes = includeFootnotes;
+            this.IncludeTextInShapes = includeTextInShapes;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Support including/excluding comments from the WordCount. Default value is \"true\".
         /// </summary>  
-        public bool? includeComments { get; set; }
+        public bool? IncludeComments { get; set; }
 
         /// <summary>
         /// Support including/excluding footnotes from the WordCount. Default value is \"false\".
         /// </summary>  
-        public bool? includeFootnotes { get; set; }
+        public bool? IncludeFootnotes { get; set; }
 
         /// <summary>
         /// Support including/excluding shape's text from the WordCount. Default value is \"false\"
         /// </summary>  
-        public bool? includeTextInShapes { get; set; }
+        public bool? IncludeTextInShapes { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentTextItems" /> operation.
   /// </summary>  
   public class GetDocumentTextItemsRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetDocumentTextItemsRequest(string name, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentWithFormat" /> operation.
   /// </summary>  
   public class GetDocumentWithFormatRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="format">The destination format.</param>
+        /// <param name="outPath">Path to save result</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
+        public GetDocumentWithFormatRequest(string name, string format, string outPath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)             
+        {
+            this.Name = name;
+            this.Format = format;
+            this.OutPath = outPath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+            this.FontsLocation = fontsLocation;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The destination format.
         /// </summary>  
-        public string format { get; set; }
+        public string Format { get; set; }
 
         /// <summary>
         /// Path to save result
         /// </summary>  
-        public string outPath { get; set; }
+        public string OutPath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.
         /// </summary>  
-        public string fontsLocation { get; set; }
+        public string FontsLocation { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetField" /> operation.
   /// </summary>  
   public class GetFieldRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains collection of fields.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetFieldRequest(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of fields.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetFields" /> operation.
   /// </summary>  
   public class GetFieldsRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="nodePath">Path to node, which contains collection of fields.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetFieldsRequest(string name, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of fields.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetFootnote" /> operation.
   /// </summary>  
   public class GetFootnoteRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains collection of footnotes.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetFootnoteRequest(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of footnotes.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetFootnotes" /> operation.
   /// </summary>  
   public class GetFootnotesRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="nodePath">Path to node, which contains collection of footnotes.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetFootnotesRequest(string name, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of footnotes.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetFormField" /> operation.
   /// </summary>  
   public class GetFormFieldRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node that contains collection of formfields.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetFormFieldRequest(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node that contains collection of formfields.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetFormFields" /> operation.
   /// </summary>  
   public class GetFormFieldsRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="nodePath">Path to node containing collection of form fields.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetFormFieldsRequest(string name, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to node containing collection of form fields.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetHeaderFooter" /> operation.
   /// </summary>  
   public class GetHeaderFooterRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="headerFooterIndex">Header/footer index.</param>
+        /// <param name="sectionIndex">Section index.</param>
+        /// <param name="filterByType">List of types of headers and footers.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetHeaderFooterRequest(string name, int? headerFooterIndex, int? sectionIndex = null, string filterByType = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.HeaderFooterIndex = headerFooterIndex;
+            this.SectionIndex = sectionIndex;
+            this.FilterByType = filterByType;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Header/footer index.
         /// </summary>  
-        public int? headerFooterIndex { get; set; }
+        public int? HeaderFooterIndex { get; set; }
 
         /// <summary>
         /// Section index.
         /// </summary>  
-        public int? sectionIndex { get; set; }
+        public int? SectionIndex { get; set; }
 
         /// <summary>
         /// List of types of headers and footers.
         /// </summary>  
-        public string filterByType { get; set; }
+        public string FilterByType { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetHeaderFooter_1" /> operation.
   /// </summary>  
   public class GetHeaderFooter_1Request
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="headerFooterIndex">Header/footer index.</param>
+        /// <param name="sectionIndex">Section index.</param>
+        /// <param name="filterByType">List of types of headers and footers.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetHeaderFooter_1Request(string name, int? headerFooterIndex, int? sectionIndex, string filterByType = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.HeaderFooterIndex = headerFooterIndex;
+            this.SectionIndex = sectionIndex;
+            this.FilterByType = filterByType;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Header/footer index.
         /// </summary>  
-        public int? headerFooterIndex { get; set; }
+        public int? HeaderFooterIndex { get; set; }
 
         /// <summary>
         /// Section index.
         /// </summary>  
-        public int? sectionIndex { get; set; }
+        public int? SectionIndex { get; set; }
 
         /// <summary>
         /// List of types of headers and footers.
         /// </summary>  
-        public string filterByType { get; set; }
+        public string FilterByType { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetHeaderFooters" /> operation.
   /// </summary>  
   public class GetHeaderFootersRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="sectionPath">Path to parent section.</param>
+        /// <param name="filterByType">List of types of headers and footers.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetHeaderFootersRequest(string name, string sectionPath = null, string filterByType = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.SectionPath = sectionPath;
+            this.FilterByType = filterByType;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to parent section.
         /// </summary>  
-        public string sectionPath { get; set; }
+        public string SectionPath { get; set; }
 
         /// <summary>
         /// List of types of headers and footers.
         /// </summary>  
-        public string filterByType { get; set; }
+        public string FilterByType { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetOfficeMathObject" /> operation.
   /// </summary>  
   public class GetOfficeMathObjectRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains collection of OfficeMath objects.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetOfficeMathObjectRequest(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of OfficeMath objects.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetOfficeMathObjects" /> operation.
   /// </summary>  
   public class GetOfficeMathObjectsRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="nodePath">Path to node, which contains collection of OfficeMath objects.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetOfficeMathObjectsRequest(string name, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of OfficeMath objects.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetSection" /> operation.
   /// </summary>  
   public class GetSectionRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="sectionIndex">Section index</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetSectionRequest(string name, int? sectionIndex, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.SectionIndex = sectionIndex;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Section index
         /// </summary>  
-        public int? sectionIndex { get; set; }
+        public int? SectionIndex { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetSectionPageSetup" /> operation.
   /// </summary>  
   public class GetSectionPageSetupRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="sectionIndex">Section index</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetSectionPageSetupRequest(string name, int? sectionIndex, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.SectionIndex = sectionIndex;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Section index
         /// </summary>  
-        public int? sectionIndex { get; set; }
+        public int? SectionIndex { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetSections" /> operation.
   /// </summary>  
   public class GetSectionsRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetSectionsRequest(string name, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetTable" /> operation.
   /// </summary>  
   public class GetTableRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains tables.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetTableRequest(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains tables.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetTableCell" /> operation.
   /// </summary>  
   public class GetTableCellRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="tableRowPath">Path to table row.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetTableCellRequest(string name, string tableRowPath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.TableRowPath = tableRowPath;
+            this.Index = index;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to table row.
         /// </summary>  
-        public string tableRowPath { get; set; }
+        public string TableRowPath { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetTableCellFormat" /> operation.
   /// </summary>  
   public class GetTableCellFormatRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="tableRowPath">Path to table row.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetTableCellFormatRequest(string name, string tableRowPath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.TableRowPath = tableRowPath;
+            this.Index = index;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to table row.
         /// </summary>  
-        public string tableRowPath { get; set; }
+        public string TableRowPath { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetTableProperties" /> operation.
   /// </summary>  
   public class GetTablePropertiesRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains tables.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetTablePropertiesRequest(string name, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains tables.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetTableRow" /> operation.
   /// </summary>  
   public class GetTableRowRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="tablePath">Path to table.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetTableRowRequest(string name, string tablePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.TablePath = tablePath;
+            this.Index = index;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to table.
         /// </summary>  
-        public string tablePath { get; set; }
+        public string TablePath { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetTableRowFormat" /> operation.
   /// </summary>  
   public class GetTableRowFormatRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="tablePath">Path to table.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetTableRowFormatRequest(string name, string tablePath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.TablePath = tablePath;
+            this.Index = index;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to table.
         /// </summary>  
-        public string tablePath { get; set; }
+        public string TablePath { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetTables" /> operation.
   /// </summary>  
   public class GetTablesRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="nodePath">Path to node, which contains tables.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetTablesRequest(string name, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to node, which contains tables.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertTable" /> operation.
   /// </summary>  
   public class InsertTableRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="table">Table parameters/</param>
+        /// <param name="nodePath">Path to node, which contains tables.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public InsertTableRequest(string name, TableInsert table, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Table = table;
+            this.NodePath = nodePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Table parameters/
         /// </summary>  
-        public TableInsert table { get; set; }
+        public TableInsert Table { get; set; }
 
         /// <summary>
         /// Path to node, which contains tables.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertTableCell" /> operation.
   /// </summary>  
   public class InsertTableCellRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="cell">Table cell parameters/</param>
+        /// <param name="tableRowPath">Path to table row.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public InsertTableCellRequest(string name, TableCellInsert cell, string tableRowPath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Cell = cell;
+            this.TableRowPath = tableRowPath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Table cell parameters/
         /// </summary>  
-        public TableCellInsert cell { get; set; }
+        public TableCellInsert Cell { get; set; }
 
         /// <summary>
         /// Path to table row.
         /// </summary>  
-        public string tableRowPath { get; set; }
+        public string TableRowPath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertTableRow" /> operation.
   /// </summary>  
   public class InsertTableRowRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="row">Table row parameters/</param>
+        /// <param name="tablePath">Path to table.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public InsertTableRowRequest(string name, TableRowInsert row, string tablePath, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Row = row;
+            this.TablePath = tablePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Table row parameters/
         /// </summary>  
-        public TableRowInsert row { get; set; }
+        public TableRowInsert Row { get; set; }
 
         /// <summary>
         /// Path to table.
         /// </summary>  
-        public string tablePath { get; set; }
+        public string TablePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostAppendDocument" /> operation.
   /// </summary>  
   public class PostAppendDocumentRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">Original document name.</param>
+        /// <param name="documentList">{Aspose.Words.Cloud.DTO.DocumentEntryList} with a list of documents to append.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostAppendDocumentRequest(string name, DocumentEntryList documentList, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.DocumentList = documentList;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// Original document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// {Aspose.Words.Cloud.DTO.DocumentEntryList} with a list of documents to append.
         /// </summary>  
-        public DocumentEntryList documentList { get; set; }
+        public DocumentEntryList DocumentList { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostChangeDocumentProtection" /> operation.
   /// </summary>  
   public class PostChangeDocumentProtectionRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="protectionRequest">{Aspose.Words.Cloud.DTO.ProtectionRequest} with protection settings.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostChangeDocumentProtectionRequest(string name, ProtectionRequest protectionRequest, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.ProtectionRequest = protectionRequest;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// {Aspose.Words.Cloud.DTO.ProtectionRequest} with protection settings.
         /// </summary>  
-        public ProtectionRequest protectionRequest { get; set; }
+        public ProtectionRequest ProtectionRequest { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostComment" /> operation.
   /// </summary>  
   public class PostCommentRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="commentIndex">Comment index</param>
+        /// <param name="comment">Comment data.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostCommentRequest(string name, int? commentIndex, Comment comment, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.CommentIndex = commentIndex;
+            this.Comment = comment;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Comment index
         /// </summary>  
-        public int? commentIndex { get; set; }
+        public int? CommentIndex { get; set; }
 
         /// <summary>
         /// Comment data.
         /// </summary>  
-        public Comment comment { get; set; }
+        public Comment Comment { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostCompareDocument" /> operation.
   /// </summary>  
   public class PostCompareDocumentRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">Original document name.</param>
+        /// <param name="compareData">{Aspose.Words.Cloud.DTO.Compare.CompareData} with a document to compare.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostCompareDocumentRequest(string name, CompareData compareData, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.CompareData = compareData;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// Original document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// {Aspose.Words.Cloud.DTO.Compare.CompareData} with a document to compare.
         /// </summary>  
-        public CompareData compareData { get; set; }
+        public CompareData CompareData { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostDocumentExecuteMailMerge" /> operation.
   /// </summary>  
   public class PostDocumentExecuteMailMergeRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="withRegions">With regions flag.</param>
+        /// <param name="data">Mail merge data</param>
+        /// <param name="mailMergeDataFile">Mail merge data.</param>
+        /// <param name="cleanup">Clean up options.</param>
+        /// <param name="useWholeParagraphAsRegion">Gets or sets a value indicating whether paragraph with TableStart or               TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.               The default value is true.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostDocumentExecuteMailMergeRequest(string name, bool? withRegions, string data = null, string mailMergeDataFile = null, string cleanup = null, bool? useWholeParagraphAsRegion = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.WithRegions = withRegions;
+            this.Data = data;
+            this.MailMergeDataFile = mailMergeDataFile;
+            this.Cleanup = cleanup;
+            this.UseWholeParagraphAsRegion = useWholeParagraphAsRegion;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// With regions flag.
         /// </summary>  
-        public bool? withRegions { get; set; }
+        public bool? WithRegions { get; set; }
 
         /// <summary>
         /// Mail merge data
         /// </summary>  
-        public string data { get; set; }
+        public string Data { get; set; }
 
         /// <summary>
         /// Mail merge data.
         /// </summary>  
-        public string mailMergeDataFile { get; set; }
+        public string MailMergeDataFile { get; set; }
 
         /// <summary>
         /// Clean up options.
         /// </summary>  
-        public string cleanup { get; set; }
+        public string Cleanup { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether paragraph with TableStart or               TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.               The default value is true.
         /// </summary>  
-        public bool? useWholeParagraphAsRegion { get; set; }
+        public bool? UseWholeParagraphAsRegion { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostDocumentParagraphRunFont" /> operation.
   /// </summary>  
   public class PostDocumentParagraphRunFontRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="fontDto">Font dto object</param>
+        /// <param name="paragraphPath">Path to parent paragraph.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostDocumentParagraphRunFontRequest(string name, Font fontDto, string paragraphPath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.FontDto = fontDto;
+            this.ParagraphPath = paragraphPath;
+            this.Index = index;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Font dto object
         /// </summary>  
-        public Font fontDto { get; set; }
+        public Font FontDto { get; set; }
 
         /// <summary>
         /// Path to parent paragraph.
         /// </summary>  
-        public string paragraphPath { get; set; }
+        public string ParagraphPath { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostDocumentSaveAs" /> operation.
   /// </summary>  
   public class PostDocumentSaveAsRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="saveOptionsData">Save options.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
+        public PostDocumentSaveAsRequest(string name, SaveOptionsData saveOptionsData, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)             
+        {
+            this.Name = name;
+            this.SaveOptionsData = saveOptionsData;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+            this.FontsLocation = fontsLocation;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Save options.
         /// </summary>  
-        public SaveOptionsData saveOptionsData { get; set; }
+        public SaveOptionsData SaveOptionsData { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.
         /// </summary>  
-        public string fontsLocation { get; set; }
+        public string FontsLocation { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostDrawingObject" /> operation.
   /// </summary>  
   public class PostDrawingObjectRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="drawingObject">Drawing object parameters</param>
+        /// <param name="imageFile">File with image</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains collection of drawing objects.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostDrawingObjectRequest(string name, string drawingObject, System.IO.Stream imageFile, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.DrawingObject = drawingObject;
+            this.ImageFile = imageFile;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Drawing object parameters
         /// </summary>  
-        public string drawingObject { get; set; }
+        public string DrawingObject { get; set; }
 
         /// <summary>
         /// File with image
         /// </summary>  
-        public System.IO.Stream imageFile { get; set; }
+        public System.IO.Stream ImageFile { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of drawing objects.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostExecuteTemplate" /> operation.
   /// </summary>  
   public class PostExecuteTemplateRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The template document name.</param>
+        /// <param name="data">Mail merge data</param>
+        /// <param name="cleanup">Clean up options.</param>
+        /// <param name="useWholeParagraphAsRegion">Gets or sets a value indicating whether paragraph with TableStart or   TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.    The default value is true.</param>
+        /// <param name="withRegions">Merge with regions or not. True by default</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostExecuteTemplateRequest(string name, string data, string cleanup = null, bool? useWholeParagraphAsRegion = null, bool? withRegions = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Data = data;
+            this.Cleanup = cleanup;
+            this.UseWholeParagraphAsRegion = useWholeParagraphAsRegion;
+            this.WithRegions = withRegions;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The template document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Mail merge data
         /// </summary>  
-        public string data { get; set; }
+        public string Data { get; set; }
 
         /// <summary>
         /// Clean up options.
         /// </summary>  
-        public string cleanup { get; set; }
+        public string Cleanup { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether paragraph with TableStart or   TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.    The default value is true.
         /// </summary>  
-        public bool? useWholeParagraphAsRegion { get; set; }
+        public bool? UseWholeParagraphAsRegion { get; set; }
 
         /// <summary>
         /// Merge with regions or not. True by default
         /// </summary>  
-        public bool? withRegions { get; set; }
+        public bool? WithRegions { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostField" /> operation.
   /// </summary>  
   public class PostFieldRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="field">Field data.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains collection of fields.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostFieldRequest(string name, Field field, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Field = field;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Field data.
         /// </summary>  
-        public Field field { get; set; }
+        public Field Field { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of fields.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostFootnote" /> operation.
   /// </summary>  
   public class PostFootnoteRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="footnoteDto">Footnote data.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains collection of footnotes.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostFootnoteRequest(string name, Footnote footnoteDto, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.FootnoteDto = footnoteDto;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Footnote data.
         /// </summary>  
-        public Footnote footnoteDto { get; set; }
+        public Footnote FootnoteDto { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of footnotes.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostFormField" /> operation.
   /// </summary>  
   public class PostFormFieldRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="formField">From field data.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node that contains collection of formfields.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostFormFieldRequest(string name, FormField formField, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.FormField = formField;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// From field data.
         /// </summary>  
-        public FormField formField { get; set; }
+        public FormField FormField { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node that contains collection of formfields.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostInsertDocumentWatermarkImage" /> operation.
   /// </summary>  
   public class PostInsertDocumentWatermarkImageRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="imageFile">File with image</param>
+        /// <param name="rotationAngle">The watermark rotation angle.</param>
+        /// <param name="image">The image file server full name. If the name is empty the image is expected in request content.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostInsertDocumentWatermarkImageRequest(string name, System.IO.Stream imageFile = null, double? rotationAngle = null, string image = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.ImageFile = imageFile;
+            this.RotationAngle = rotationAngle;
+            this.Image = image;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// File with image
         /// </summary>  
-        public System.IO.Stream imageFile { get; set; }
+        public System.IO.Stream ImageFile { get; set; }
 
         /// <summary>
         /// The watermark rotation angle.
         /// </summary>  
-        public double? rotationAngle { get; set; }
+        public double? RotationAngle { get; set; }
 
         /// <summary>
         /// The image file server full name. If the name is empty the image is expected in request content.
         /// </summary>  
-        public string image { get; set; }
+        public string Image { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostInsertDocumentWatermarkText" /> operation.
   /// </summary>  
   public class PostInsertDocumentWatermarkTextRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="watermarkText">{Aspose.Words.Cloud.DTO.WatermarkText} with the watermark data.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostInsertDocumentWatermarkTextRequest(string name, WatermarkText watermarkText, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.WatermarkText = watermarkText;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// {Aspose.Words.Cloud.DTO.WatermarkText} with the watermark data.
         /// </summary>  
-        public WatermarkText watermarkText { get; set; }
+        public WatermarkText WatermarkText { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostInsertPageNumbers" /> operation.
   /// </summary>  
   public class PostInsertPageNumbersRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">A document name.</param>
+        /// <param name="pageNumber">{Aspose.Words.Cloud.DTO.PageNumber} with the page numbers settings.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostInsertPageNumbersRequest(string name, PageNumber pageNumber, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.PageNumber = pageNumber;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// A document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// {Aspose.Words.Cloud.DTO.PageNumber} with the page numbers settings.
         /// </summary>  
-        public PageNumber pageNumber { get; set; }
+        public PageNumber PageNumber { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostLoadWebDocument" /> operation.
   /// </summary>  
   public class PostLoadWebDocumentRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="data">Parameters of loading.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        public PostLoadWebDocumentRequest(LoadWebDocumentData data, string storage = null)             
+        {
+            this.Data = data;
+            this.Storage = storage;
+        }
+
         /// <summary>
         /// Parameters of loading.
         /// </summary>  
-        public LoadWebDocumentData data { get; set; }
+        public LoadWebDocumentData Data { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostReplaceText" /> operation.
   /// </summary>  
   public class PostReplaceTextRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="replaceText">{Aspose.Words.Cloud.DTO.Replace.ReplaceTextResponse} with the replace operation settings.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostReplaceTextRequest(string name, ReplaceTextRequest replaceText, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.ReplaceText = replaceText;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// {Aspose.Words.Cloud.DTO.Replace.ReplaceTextResponse} with the replace operation settings.
         /// </summary>  
-        public ReplaceTextRequest replaceText { get; set; }
+        public ReplaceTextRequest ReplaceText { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostRun" /> operation.
   /// </summary>  
   public class PostRunRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="run">Run data.</param>
+        /// <param name="paragraphPath">Path to parent paragraph.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostRunRequest(string name, Run run, string paragraphPath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Run = run;
+            this.ParagraphPath = paragraphPath;
+            this.Index = index;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Run data.
         /// </summary>  
-        public Run run { get; set; }
+        public Run Run { get; set; }
 
         /// <summary>
         /// Path to parent paragraph.
         /// </summary>  
-        public string paragraphPath { get; set; }
+        public string ParagraphPath { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostRunTask" /> operation.
   /// </summary>  
   public class PostRunTaskRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        public PostRunTaskRequest()             
+        {
+        }
+
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostSplitDocument" /> operation.
   /// </summary>  
   public class PostSplitDocumentRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">Original document name.</param>
+        /// <param name="format">Format to split.</param>
+        /// <param name="from">Start page.</param>
+        /// <param name="to">End page.</param>
+        /// <param name="zipOutput">ZipOutput or not.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
+        public PostSplitDocumentRequest(string name, string format = null, int? from = null, int? to = null, bool? zipOutput = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)             
+        {
+            this.Name = name;
+            this.Format = format;
+            this.From = from;
+            this.To = to;
+            this.ZipOutput = zipOutput;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+            this.FontsLocation = fontsLocation;
+        }
+
         /// <summary>
         /// Original document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Format to split.
         /// </summary>  
-        public string format { get; set; }
+        public string Format { get; set; }
 
         /// <summary>
         /// Start page.
         /// </summary>  
-        public int? from { get; set; }
+        public int? From { get; set; }
 
         /// <summary>
         /// End page.
         /// </summary>  
-        public int? to { get; set; }
+        public int? To { get; set; }
 
         /// <summary>
         /// ZipOutput or not.
         /// </summary>  
-        public bool? zipOutput { get; set; }
+        public bool? ZipOutput { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.
         /// </summary>  
-        public string fontsLocation { get; set; }
+        public string FontsLocation { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostUpdateDocumentBookmark" /> operation.
   /// </summary>  
   public class PostUpdateDocumentBookmarkRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="bookmarkData">{Aspose.Words.Cloud.DTO.DocumentElements.Bookmarks.BookmarkData} with new bookmark data.</param>
+        /// <param name="bookmarkName">The bookmark name.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostUpdateDocumentBookmarkRequest(string name, BookmarkData bookmarkData, string bookmarkName, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.BookmarkData = bookmarkData;
+            this.BookmarkName = bookmarkName;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// {Aspose.Words.Cloud.DTO.DocumentElements.Bookmarks.BookmarkData} with new bookmark data.
         /// </summary>  
-        public BookmarkData bookmarkData { get; set; }
+        public BookmarkData BookmarkData { get; set; }
 
         /// <summary>
         /// The bookmark name.
         /// </summary>  
-        public string bookmarkName { get; set; }
+        public string BookmarkName { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostUpdateDocumentFields" /> operation.
   /// </summary>  
   public class PostUpdateDocumentFieldsRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PostUpdateDocumentFieldsRequest(string name, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutComment" /> operation.
   /// </summary>  
   public class PutCommentRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="comment">Comment data.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PutCommentRequest(string name, Comment comment, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Comment = comment;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Comment data.
         /// </summary>  
-        public Comment comment { get; set; }
+        public Comment Comment { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutConvertDocument" /> operation.
   /// </summary>  
   public class PutConvertDocumentRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="format">Format to convert.</param>
+        /// <param name="document">Converting document</param>
+        /// <param name="outPath">Path for saving operation result to the local storage.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
+        public PutConvertDocumentRequest(string format, System.IO.Stream document, string outPath = null, string storage = null, string fontsLocation = null)             
+        {
+            this.Format = format;
+            this.Document = document;
+            this.OutPath = outPath;
+            this.Storage = storage;
+            this.FontsLocation = fontsLocation;
+        }
+
         /// <summary>
         /// Format to convert.
         /// </summary>  
-        public string format { get; set; }
+        public string Format { get; set; }
 
         /// <summary>
         /// Converting document
         /// </summary>  
-        public System.IO.Stream document { get; set; }
+        public System.IO.Stream Document { get; set; }
 
         /// <summary>
         /// Path for saving operation result to the local storage.
         /// </summary>  
-        public string outPath { get; set; }
+        public string OutPath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.
         /// </summary>  
-        public string fontsLocation { get; set; }
+        public string FontsLocation { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutCreateDocument" /> operation.
   /// </summary>  
   public class PutCreateDocumentRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="folder">The document folder.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        public PutCreateDocumentRequest(string folder = null, string storage = null)             
+        {
+            this.Folder = folder;
+            this.Storage = storage;
+        }
+
         /// <summary>
         /// The document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutDocumentFieldNames" /> operation.
   /// </summary>  
   public class PutDocumentFieldNamesRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="template">File with template</param>
+        /// <param name="useNonMergeFields">Use non merge fields or not.</param>
+        public PutDocumentFieldNamesRequest(System.IO.Stream template, bool? useNonMergeFields = null)             
+        {
+            this.Template = template;
+            this.UseNonMergeFields = useNonMergeFields;
+        }
+
         /// <summary>
         /// File with template
         /// </summary>  
@@ -12277,211 +14415,314 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Use non merge fields or not.
         /// </summary>  
-        public bool? useNonMergeFields { get; set; }
+        public bool? UseNonMergeFields { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutDocumentSaveAsTiff" /> operation.
   /// </summary>  
   public class PutDocumentSaveAsTiffRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="saveOptions">Tiff save options.</param>
+        /// <param name="resultFile">The resulting file name.</param>
+        /// <param name="useAntiAliasing">Use antialiasing flag.</param>
+        /// <param name="useHighQualityRendering">Use high quality flag.</param>
+        /// <param name="imageBrightness">Brightness for the generated images.</param>
+        /// <param name="imageColorMode">Color mode for the generated images.</param>
+        /// <param name="imageContrast">The contrast for the generated images.</param>
+        /// <param name="numeralFormat">The images numeral format.</param>
+        /// <param name="pageCount">Number of pages to render.</param>
+        /// <param name="pageIndex">Page index to start rendering.</param>
+        /// <param name="paperColor">Background image color.</param>
+        /// <param name="pixelFormat">The pixel format of generated images.</param>
+        /// <param name="resolution">The resolution of generated images.</param>
+        /// <param name="scale">Zoom factor for generated images.</param>
+        /// <param name="tiffCompression">The compression tipe.</param>
+        /// <param name="dmlRenderingMode">Optional, default is Fallback.</param>
+        /// <param name="dmlEffectsRenderingMode">Optional, default is Simplified.</param>
+        /// <param name="tiffBinarizationMethod">Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.</param>
+        /// <param name="zipOutput">Optional. A value determining zip output or not.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
+        public PutDocumentSaveAsTiffRequest(string name, TiffSaveOptionsData saveOptions, string resultFile = null, bool? useAntiAliasing = null, bool? useHighQualityRendering = null, float? imageBrightness = null, string imageColorMode = null, float? imageContrast = null, string numeralFormat = null, int? pageCount = null, int? pageIndex = null, string paperColor = null, string pixelFormat = null, float? resolution = null, float? scale = null, string tiffCompression = null, string dmlRenderingMode = null, string dmlEffectsRenderingMode = null, string tiffBinarizationMethod = null, bool? zipOutput = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)             
+        {
+            this.Name = name;
+            this.SaveOptions = saveOptions;
+            this.ResultFile = resultFile;
+            this.UseAntiAliasing = useAntiAliasing;
+            this.UseHighQualityRendering = useHighQualityRendering;
+            this.ImageBrightness = imageBrightness;
+            this.ImageColorMode = imageColorMode;
+            this.ImageContrast = imageContrast;
+            this.NumeralFormat = numeralFormat;
+            this.PageCount = pageCount;
+            this.PageIndex = pageIndex;
+            this.PaperColor = paperColor;
+            this.PixelFormat = pixelFormat;
+            this.Resolution = resolution;
+            this.Scale = scale;
+            this.TiffCompression = tiffCompression;
+            this.DmlRenderingMode = dmlRenderingMode;
+            this.DmlEffectsRenderingMode = dmlEffectsRenderingMode;
+            this.TiffBinarizationMethod = tiffBinarizationMethod;
+            this.ZipOutput = zipOutput;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+            this.FontsLocation = fontsLocation;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Tiff save options.
         /// </summary>  
-        public TiffSaveOptionsData saveOptions { get; set; }
+        public TiffSaveOptionsData SaveOptions { get; set; }
 
         /// <summary>
         /// The resulting file name.
         /// </summary>  
-        public string resultFile { get; set; }
+        public string ResultFile { get; set; }
 
         /// <summary>
         /// Use antialiasing flag.
         /// </summary>  
-        public bool? useAntiAliasing { get; set; }
+        public bool? UseAntiAliasing { get; set; }
 
         /// <summary>
         /// Use high quality flag.
         /// </summary>  
-        public bool? useHighQualityRendering { get; set; }
+        public bool? UseHighQualityRendering { get; set; }
 
         /// <summary>
         /// Brightness for the generated images.
         /// </summary>  
-        public float? imageBrightness { get; set; }
+        public float? ImageBrightness { get; set; }
 
         /// <summary>
         /// Color mode for the generated images.
         /// </summary>  
-        public string imageColorMode { get; set; }
+        public string ImageColorMode { get; set; }
 
         /// <summary>
         /// The contrast for the generated images.
         /// </summary>  
-        public float? imageContrast { get; set; }
+        public float? ImageContrast { get; set; }
 
         /// <summary>
         /// The images numeral format.
         /// </summary>  
-        public string numeralFormat { get; set; }
+        public string NumeralFormat { get; set; }
 
         /// <summary>
         /// Number of pages to render.
         /// </summary>  
-        public int? pageCount { get; set; }
+        public int? PageCount { get; set; }
 
         /// <summary>
         /// Page index to start rendering.
         /// </summary>  
-        public int? pageIndex { get; set; }
+        public int? PageIndex { get; set; }
 
         /// <summary>
         /// Background image color.
         /// </summary>  
-        public string paperColor { get; set; }
+        public string PaperColor { get; set; }
 
         /// <summary>
         /// The pixel format of generated images.
         /// </summary>  
-        public string pixelFormat { get; set; }
+        public string PixelFormat { get; set; }
 
         /// <summary>
         /// The resolution of generated images.
         /// </summary>  
-        public float? resolution { get; set; }
+        public float? Resolution { get; set; }
 
         /// <summary>
         /// Zoom factor for generated images.
         /// </summary>  
-        public float? scale { get; set; }
+        public float? Scale { get; set; }
 
         /// <summary>
         /// The compression tipe.
         /// </summary>  
-        public string tiffCompression { get; set; }
+        public string TiffCompression { get; set; }
 
         /// <summary>
         /// Optional, default is Fallback.
         /// </summary>  
-        public string dmlRenderingMode { get; set; }
+        public string DmlRenderingMode { get; set; }
 
         /// <summary>
         /// Optional, default is Simplified.
         /// </summary>  
-        public string dmlEffectsRenderingMode { get; set; }
+        public string DmlEffectsRenderingMode { get; set; }
 
         /// <summary>
         /// Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
         /// </summary>  
-        public string tiffBinarizationMethod { get; set; }
+        public string TiffBinarizationMethod { get; set; }
 
         /// <summary>
         /// Optional. A value determining zip output or not.
         /// </summary>  
-        public bool? zipOutput { get; set; }
+        public bool? ZipOutput { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.
         /// </summary>  
-        public string fontsLocation { get; set; }
+        public string FontsLocation { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutDrawingObject" /> operation.
   /// </summary>  
   public class PutDrawingObjectRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="drawingObject">Drawing object parameters</param>
+        /// <param name="imageFile">File with image</param>
+        /// <param name="nodePath">Path to node, which contains collection of drawing objects.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PutDrawingObjectRequest(string name, string drawingObject, System.IO.Stream imageFile, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.DrawingObject = drawingObject;
+            this.ImageFile = imageFile;
+            this.NodePath = nodePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Drawing object parameters
         /// </summary>  
-        public string drawingObject { get; set; }
+        public string DrawingObject { get; set; }
 
         /// <summary>
         /// File with image
         /// </summary>  
-        public System.IO.Stream imageFile { get; set; }
+        public System.IO.Stream ImageFile { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of drawing objects.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutExecuteMailMergeOnline" /> operation.
   /// </summary>  
   public class PutExecuteMailMergeOnlineRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="template">File with template</param>
+        /// <param name="data">File with mailmerge data</param>
+        /// <param name="withRegions">With regions flag.</param>
+        /// <param name="cleanup">Clean up options.</param>
+        public PutExecuteMailMergeOnlineRequest(System.IO.Stream template, System.IO.Stream data, bool? withRegions = null, string cleanup = null)             
+        {
+            this.Template = template;
+            this.Data = data;
+            this.WithRegions = withRegions;
+            this.Cleanup = cleanup;
+        }
+
         /// <summary>
         /// File with template
         /// </summary>  
@@ -12495,19 +14736,36 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// With regions flag.
         /// </summary>  
-        public bool? withRegions { get; set; }
+        public bool? WithRegions { get; set; }
 
         /// <summary>
         /// Clean up options.
         /// </summary>  
-        public string cleanup { get; set; }
+        public string Cleanup { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutExecuteTemplateOnline" /> operation.
   /// </summary>  
   public class PutExecuteTemplateOnlineRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="template">File with template</param>
+        /// <param name="data">File with mailmerge data</param>
+        /// <param name="cleanup">Clean up options.</param>
+        /// <param name="useWholeParagraphAsRegion">Gets or sets a value indicating whether paragraph with TableStart or               TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.               The default value is true.</param>
+        /// <param name="withRegions">Merge with regions or not. True by default</param>
+        public PutExecuteTemplateOnlineRequest(System.IO.Stream template, System.IO.Stream data, string cleanup = null, bool? useWholeParagraphAsRegion = null, bool? withRegions = null)             
+        {
+            this.Template = template;
+            this.Data = data;
+            this.Cleanup = cleanup;
+            this.UseWholeParagraphAsRegion = useWholeParagraphAsRegion;
+            this.WithRegions = withRegions;
+        }
+
         /// <summary>
         /// File with template
         /// </summary>  
@@ -12521,1154 +14779,1710 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Clean up options.
         /// </summary>  
-        public string cleanup { get; set; }
+        public string Cleanup { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether paragraph with TableStart or               TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.               The default value is true.
         /// </summary>  
-        public bool? useWholeParagraphAsRegion { get; set; }
+        public bool? UseWholeParagraphAsRegion { get; set; }
 
         /// <summary>
         /// Merge with regions or not. True by default
         /// </summary>  
-        public bool? withRegions { get; set; }
+        public bool? WithRegions { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutField" /> operation.
   /// </summary>  
   public class PutFieldRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="field">Field data.</param>
+        /// <param name="nodePath">Path to node, which contains collection of fields.</param>
+        /// <param name="insertBeforeNode">Field will be inserted before node with id&#x3D;\&quot;nodeId\&quot;.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PutFieldRequest(string name, Field field, string nodePath = null, string insertBeforeNode = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Field = field;
+            this.NodePath = nodePath;
+            this.InsertBeforeNode = insertBeforeNode;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Field data.
         /// </summary>  
-        public Field field { get; set; }
+        public Field Field { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of fields.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Field will be inserted before node with id=\"nodeId\".
         /// </summary>  
-        public string insertBeforeNode { get; set; }
+        public string InsertBeforeNode { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutFootnote" /> operation.
   /// </summary>  
   public class PutFootnoteRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="footnoteDto">Footnote data.</param>
+        /// <param name="nodePath">Path to node, which contains collection of footnotes.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PutFootnoteRequest(string name, Footnote footnoteDto, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.FootnoteDto = footnoteDto;
+            this.NodePath = nodePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Footnote data.
         /// </summary>  
-        public Footnote footnoteDto { get; set; }
+        public Footnote FootnoteDto { get; set; }
 
         /// <summary>
         /// Path to node, which contains collection of footnotes.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutFormField" /> operation.
   /// </summary>  
   public class PutFormFieldRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="formField">From field data.</param>
+        /// <param name="nodePath">Path to node that contains collection of formfields.</param>
+        /// <param name="insertBeforeNode">Form field will be inserted before node with index.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PutFormFieldRequest(string name, FormField formField, string nodePath = null, string insertBeforeNode = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.FormField = formField;
+            this.NodePath = nodePath;
+            this.InsertBeforeNode = insertBeforeNode;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// From field data.
         /// </summary>  
-        public FormField formField { get; set; }
+        public FormField FormField { get; set; }
 
         /// <summary>
         /// Path to node that contains collection of formfields.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Form field will be inserted before node with index.
         /// </summary>  
-        public string insertBeforeNode { get; set; }
+        public string InsertBeforeNode { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutHeaderFooter" /> operation.
   /// </summary>  
   public class PutHeaderFooterRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="headerFooterType">Type of header/footer.</param>
+        /// <param name="sectionPath">Path to parent section.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PutHeaderFooterRequest(string name, string headerFooterType, string sectionPath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.HeaderFooterType = headerFooterType;
+            this.SectionPath = sectionPath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Type of header/footer.
         /// </summary>  
-        public string headerFooterType { get; set; }
+        public string HeaderFooterType { get; set; }
 
         /// <summary>
         /// Path to parent section.
         /// </summary>  
-        public string sectionPath { get; set; }
+        public string SectionPath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutParagraph" /> operation.
   /// </summary>  
   public class PutParagraphRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="paragraph">Paragraph data.</param>
+        /// <param name="nodePath">Path to node which contains paragraphs.</param>
+        /// <param name="insertBeforeNode">Paragraph will be inserted before node with index.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PutParagraphRequest(string name, ParagraphInsert paragraph, string nodePath = null, string insertBeforeNode = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Paragraph = paragraph;
+            this.NodePath = nodePath;
+            this.InsertBeforeNode = insertBeforeNode;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Paragraph data.
         /// </summary>  
-        public ParagraphInsert paragraph { get; set; }
+        public ParagraphInsert Paragraph { get; set; }
 
         /// <summary>
         /// Path to node which contains paragraphs.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Paragraph will be inserted before node with index.
         /// </summary>  
-        public string insertBeforeNode { get; set; }
+        public string InsertBeforeNode { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutProtectDocument" /> operation.
   /// </summary>  
   public class PutProtectDocumentRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="protectionRequest">{Aspose.Words.Cloud.DTO.ProtectionRequest} with protection settings.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PutProtectDocumentRequest(string name, ProtectionRequest protectionRequest, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.ProtectionRequest = protectionRequest;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// {Aspose.Words.Cloud.DTO.ProtectionRequest} with protection settings.
         /// </summary>  
-        public ProtectionRequest protectionRequest { get; set; }
+        public ProtectionRequest ProtectionRequest { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutRun" /> operation.
   /// </summary>  
   public class PutRunRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="paragraphPath">Path to parent paragraph.</param>
+        /// <param name="run">Run data.</param>
+        /// <param name="insertBeforeNode">Paragraph will be inserted before node with index.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PutRunRequest(string name, string paragraphPath, Run run, string insertBeforeNode = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.ParagraphPath = paragraphPath;
+            this.Run = run;
+            this.InsertBeforeNode = insertBeforeNode;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Path to parent paragraph.
         /// </summary>  
-        public string paragraphPath { get; set; }
+        public string ParagraphPath { get; set; }
 
         /// <summary>
         /// Run data.
         /// </summary>  
-        public Run run { get; set; }
+        public Run Run { get; set; }
 
         /// <summary>
         /// Paragraph will be inserted before node with index.
         /// </summary>  
-        public string insertBeforeNode { get; set; }
+        public string InsertBeforeNode { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutUpdateDocumentProperty" /> operation.
   /// </summary>  
   public class PutUpdateDocumentPropertyRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="propertyName">The property name.</param>
+        /// <param name="property">The property with new value.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PutUpdateDocumentPropertyRequest(string name, string propertyName, DocumentProperty property, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.PropertyName = propertyName;
+            this.Property = property;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The property name.
         /// </summary>  
-        public string propertyName { get; set; }
+        public string PropertyName { get; set; }
 
         /// <summary>
         /// The property with new value.
         /// </summary>  
-        public DocumentProperty property { get; set; }
+        public DocumentProperty Property { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutUpdateDocumentProperty_2" /> operation.
   /// </summary>  
   public class PutUpdateDocumentProperty_2Request
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="propertyName">The property name.</param>
+        /// <param name="property">The property with new value.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public PutUpdateDocumentProperty_2Request(string name, string propertyName, DocumentProperty property, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.PropertyName = propertyName;
+            this.Property = property;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The property name.
         /// </summary>  
-        public string propertyName { get; set; }
+        public string PropertyName { get; set; }
 
         /// <summary>
         /// The property with new value.
         /// </summary>  
-        public DocumentProperty property { get; set; }
+        public DocumentProperty Property { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RejectAllRevisions" /> operation.
   /// </summary>  
   public class RejectAllRevisionsRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public RejectAllRevisionsRequest(string name, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RenderDrawingObject" /> operation.
   /// </summary>  
   public class RenderDrawingObjectRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="format">The destination format.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains drawing objects.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
+        public RenderDrawingObjectRequest(string name, string format, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)             
+        {
+            this.Name = name;
+            this.Format = format;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+            this.FontsLocation = fontsLocation;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The destination format.
         /// </summary>  
-        public string format { get; set; }
+        public string Format { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains drawing objects.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.
         /// </summary>  
-        public string fontsLocation { get; set; }
+        public string FontsLocation { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RenderMathObject" /> operation.
   /// </summary>  
   public class RenderMathObjectRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="format">The destination format.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains office math objects.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
+        public RenderMathObjectRequest(string name, string format, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)             
+        {
+            this.Name = name;
+            this.Format = format;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+            this.FontsLocation = fontsLocation;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The destination format.
         /// </summary>  
-        public string format { get; set; }
+        public string Format { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains office math objects.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.
         /// </summary>  
-        public string fontsLocation { get; set; }
+        public string FontsLocation { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RenderPage" /> operation.
   /// </summary>  
   public class RenderPageRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="pageIndex">Comment index</param>
+        /// <param name="format">The destination format.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
+        public RenderPageRequest(string name, int? pageIndex, string format, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)             
+        {
+            this.Name = name;
+            this.PageIndex = pageIndex;
+            this.Format = format;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+            this.FontsLocation = fontsLocation;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Comment index
         /// </summary>  
-        public int? pageIndex { get; set; }
+        public int? PageIndex { get; set; }
 
         /// <summary>
         /// The destination format.
         /// </summary>  
-        public string format { get; set; }
+        public string Format { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.
         /// </summary>  
-        public string fontsLocation { get; set; }
+        public string FontsLocation { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RenderParagraph" /> operation.
   /// </summary>  
   public class RenderParagraphRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="format">The destination format.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains paragraphs.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
+        public RenderParagraphRequest(string name, string format, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)             
+        {
+            this.Name = name;
+            this.Format = format;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+            this.FontsLocation = fontsLocation;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The destination format.
         /// </summary>  
-        public string format { get; set; }
+        public string Format { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains paragraphs.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.
         /// </summary>  
-        public string fontsLocation { get; set; }
+        public string FontsLocation { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RenderTable" /> operation.
   /// </summary>  
   public class RenderTableRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The file name.</param>
+        /// <param name="format">The destination format.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains tables.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
+        public RenderTableRequest(string name, string format, int? index, string nodePath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)             
+        {
+            this.Name = name;
+            this.Format = format;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+            this.FontsLocation = fontsLocation;
+        }
+
         /// <summary>
         /// The file name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The destination format.
         /// </summary>  
-        public string format { get; set; }
+        public string Format { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains tables.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.
         /// </summary>  
-        public string fontsLocation { get; set; }
+        public string FontsLocation { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ResetCache" /> operation.
   /// </summary>  
   public class ResetCacheRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        public ResetCacheRequest()             
+        {
+        }
+
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.Search" /> operation.
   /// </summary>  
   public class SearchRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="pattern">The regular expression used to find matches.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public SearchRequest(string name, string pattern = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Pattern = pattern;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The regular expression used to find matches.
         /// </summary>  
-        public string pattern { get; set; }
+        public string Pattern { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateBorder" /> operation.
   /// </summary>  
   public class UpdateBorderRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="borderProperties">Border properties</param>
+        /// <param name="nodePath">Path to node with border(node should be cell or row).</param>
+        /// <param name="index">Object index</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public UpdateBorderRequest(string name, Border borderProperties, string nodePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.BorderProperties = borderProperties;
+            this.NodePath = nodePath;
+            this.Index = index;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Border properties
         /// </summary>  
-        public Border borderProperties { get; set; }
+        public Border BorderProperties { get; set; }
 
         /// <summary>
         /// Path to node with border(node should be cell or row).
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateSectionPageSetup" /> operation.
   /// </summary>  
   public class UpdateSectionPageSetupRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="sectionIndex">Section index</param>
+        /// <param name="pageSetup">Page setup properties dto</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public UpdateSectionPageSetupRequest(string name, int? sectionIndex, PageSetup pageSetup, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.SectionIndex = sectionIndex;
+            this.PageSetup = pageSetup;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Section index
         /// </summary>  
-        public int? sectionIndex { get; set; }
+        public int? SectionIndex { get; set; }
 
         /// <summary>
         /// Page setup properties dto
         /// </summary>  
-        public PageSetup pageSetup { get; set; }
+        public PageSetup PageSetup { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateTableCellFormat" /> operation.
   /// </summary>  
   public class UpdateTableCellFormatRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="format">The properties.</param>
+        /// <param name="tableRowPath">Path to table row.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public UpdateTableCellFormatRequest(string name, TableCellFormat format, string tableRowPath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Format = format;
+            this.TableRowPath = tableRowPath;
+            this.Index = index;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The properties.
         /// </summary>  
-        public TableCellFormat format { get; set; }
+        public TableCellFormat Format { get; set; }
 
         /// <summary>
         /// Path to table row.
         /// </summary>  
-        public string tableRowPath { get; set; }
+        public string TableRowPath { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateTableProperties" /> operation.
   /// </summary>  
   public class UpdateTablePropertiesRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="properties">The properties.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="nodePath">Path to node, which contains tables.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public UpdateTablePropertiesRequest(string name, TableProperties properties, int? index, string nodePath = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Properties = properties;
+            this.Index = index;
+            this.NodePath = nodePath;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The properties.
         /// </summary>  
-        public TableProperties properties { get; set; }
+        public TableProperties Properties { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Path to node, which contains tables.
         /// </summary>  
-        public string nodePath { get; set; }
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateTableRowFormat" /> operation.
   /// </summary>  
   public class UpdateTableRowFormatRequest
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="format">Table row format.</param>
+        /// <param name="tablePath">Path to table.</param>
+        /// <param name="index">Object index</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public UpdateTableRowFormatRequest(string name, TableRowFormat format, string tablePath, int? index, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.Format = format;
+            this.TablePath = tablePath;
+            this.Index = index;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
-        /// The properties.
+        /// Table row format.
         /// </summary>  
-        public TableRowFormat format { get; set; }
+        public TableRowFormat Format { get; set; }
 
         /// <summary>
         /// Path to table.
         /// </summary>  
-        public string tablePath { get; set; }
+        public string TablePath { get; set; }
 
         /// <summary>
         /// Object index
         /// </summary>  
-        public int? index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string destFileName { get; set; }
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        public string storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string loadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string revisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string revisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string password { get; set; }
+        public string Password { get; set; }
   }
 }

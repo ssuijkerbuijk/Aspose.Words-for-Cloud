@@ -14,7 +14,20 @@ namespace {{packageName}}.Model
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.{{nickname}}" /> operation.
   /// </summary>  
   public class {{nickname}}Request
-  {                       
+  {       
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// </summary>
+        {{#allParams}}
+        /// <param name="{{paramName}}">{{description}}</param>
+        {{/allParams}}
+        public {{nickname}}Request({{#allParams}}{{{dataType}}} {{paramName}}{{^required}} = null{{/required}}{{#hasMore}}, {{/hasMore}}{{/allParams}})             
+        {
+            {{#allParams}}
+            this.{{baseName}} = {{paramName}};
+            {{/allParams}}   
+        }
+
         {{#allParams}}                
         /// <summary>
         /// {{^description}}Gets or sets {{baseName}}{{/description}}{{#description}}{{{description}}}{{/description}}
