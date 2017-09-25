@@ -1,5 +1,5 @@
 del /S /Q "c:\tmp\csharp"
-java -jar SDKs\codegen\swagger-codegen-cli-2.3.0.jar generate -i asposeforcloud_word.json -l csharp -t SDKs\codegen\Templates\csharp -o c:/tmp/csharp/ -c SDKs\codegen\config.json 
+java -jar SDKs\codegen\swagger-codegen-cli-2.3.0.jar generate -i SDKs\spec\asposeforcloud_word_csharp.json -l csharp -t SDKs\codegen\Templates\csharp -o c:/tmp/csharp/ -c SDKs\codegen\config.json 
 
 del /S /Q "SDKs\Aspose.Words-Cloud-SDK-for-.NET\Aspose.Words.Cloud.Sdk\Model"
 del /S /Q "SDKs\Aspose.Words-Cloud-SDK-for-.NET\Aspose.Words.Cloud.Sdk\Api"
