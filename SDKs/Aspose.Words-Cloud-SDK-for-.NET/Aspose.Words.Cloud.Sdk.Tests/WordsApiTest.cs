@@ -1,7 +1,5 @@
 ﻿namespace Aspose.Words.Cloud.Sdk.Tests
 {
-    using System;
-
     using Aspose.Words.Cloud.Sdk;
     using Aspose.Words.Cloud.Sdk.Api;
     using Aspose.Words.Cloud.Sdk.Model;
@@ -18,66 +16,23 @@
     [DeploymentItem("Data", "Data")]
     public class TestWordsApi
     {
-        private TestContext testContextInstance;
-
-        protected WordsApi target;
-        protected StorageApi storageApi;
-
-        /// <summary>
-        /// Gets or sets the test context which provides
-        /// information about and functionality for the current test run.
-        /// </summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return testContextInstance;
-            }
-
-            set
-            {
-                testContextInstance = value;
-            }
-        }
-
-        #region Additional test attributes
-        // 
-        //You can use the following additional attributes as you write your tests:
-        //
-        //Use ClassInitialize to run code before running the first test in the class
-        //[ClassInitialize()]
-        //public static void MyClassInitialize(TestContext testContext)
-        //{
-        //}
-        //
-        //Use ClassCleanup to run code after all tests in a class have run
-        //[ClassCleanup()]
-        //public static void MyClassCleanup()
-        //{
-        //}
-        //
-        //Use TestInitialize to run code before running each test
-        //[TestInitialize()]
-        //public void MyTestInitialize()
-        //{
-        //}
-        //
-        //Use TestCleanup to run code after each test has run
-        //[TestCleanup()]
-        //public void MyTestCleanup()
-        //{
-        //}
-        //
-        #endregion
+        private readonly WordsApi wordsApi;
+        private readonly StorageApi storageApi;
 
         /// <summary>
         /// A test for WordsApi Constructor
         /// </summary>
         public TestWordsApi()
         {
-            target = new WordsApi("0fbf678c5ecabdb5caca48452a736dd0", "91a2fd07-bba1-4b32-9112-abfb1fe8aebd", "http://api.aspose.cloud/v1.1");
-            storageApi = new StorageApi("0fbf678c5ecabdb5caca48452a736dd0", "91a2fd07-bba1-4b32-9112-abfb1fe8aebd", "http://api.aspose.cloud/v1.1");
+            this.wordsApi = new WordsApi("0fbf678c5ecabdb5caca48452a736dd0", "91a2fd07-bba1-4b32-9112-abfb1fe8aebd", "http://api.aspose.cloud/v1.1");
+            this.storageApi = new StorageApi("0fbf678c5ecabdb5caca48452a736dd0", "91a2fd07-bba1-4b32-9112-abfb1fe8aebd", "http://api.aspose.cloud/v1.1");
         }
+
+        /// <summary>
+        /// Gets or sets the test context which provides
+        /// information about and functionality for the current test run.
+        /// </summary>
+        public TestContext TestContext { get; set; }
 
         /// <summary>
         /// A test for AcceptAllRevisions
@@ -87,13 +42,11 @@
         {
             string name = "test_multi_pages.docx";
             string filename = "Test2.docx";
-            string storage = null;
-            string folder = null;
+         
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-
-            var request = new AcceptAllRevisionsRequest(name, filename, storage, folder);
-            var actual = target.AcceptAllRevisions(request);
+            var request = new AcceptAllRevisionsRequest(name, filename);
+            var actual = this.wordsApi.AcceptAllRevisions(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -107,9 +60,10 @@
             string name = "test_multi_pages.docx";
             int commentIndex = 0;           
             string fileName = "test_multi_pages.docx";
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
-            var actual = target.DeleteComment(name, commentIndex, fileName);
+            var request = new DeleteCommentRequest(name, commentIndex, fileName);
+            var actual = this.wordsApi.DeleteComment(request);
             Assert.AreEqual(200, actual.Code);
         }
 
@@ -121,9 +75,10 @@
         {
             string name = "test_multi_pages.docx";
          
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
-            var actual = target.DeleteFields(name);
+            var request = new DeleteFieldsRequest(name);
+            var actual = this.wordsApi.DeleteFields(request);
             
             Assert.AreEqual(200, actual.Code);
         }
@@ -135,12 +90,11 @@
         public void TestDeleteDocumentMacros()
         {
             string name = "test_multi_pages.docx";
-            string storage = null;
-            string folder = null;
+         
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.DeleteDocumentMacros(name, storage, folder);
+            var request = new DeleteDocumentMacrosRequest(name);
+            var actual = this.wordsApi.DeleteDocumentMacros(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -154,20 +108,20 @@
             string name = "test_multi_pages.docx";
             string propertyName = "AsposeAuthor";
             string filename = "test_multi_pages.docx";
-            string storage = null;
-            string folder = null;
-
+          
             var body = new DocumentProperty();
             body.Name = "AsposeAuthor";
             body.Value = "Imran Anwar";
             body.BuiltIn = false;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             // setting a property
-            target.PutUpdateDocumentProperty(name, propertyName, body, filename, storage, folder);
+            var updateRequest = new PutUpdateDocumentPropertyRequest(name, propertyName, body, filename);
+            this.wordsApi.PutUpdateDocumentProperty(updateRequest);
 
-            var actual = target.DeleteDocumentProperty(name, propertyName, filename, storage, folder);
+            var deleteRequest = new DeleteDocumentPropertyRequest(name, propertyName, filename);
+            var actual = this.wordsApi.DeleteDocumentProperty(deleteRequest);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -180,12 +134,11 @@
         {
             string name = "test_multi_pages.docx";
             string filename = "test.docx";
-            string storage = null;
-            string folder = null;
+         
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.DeleteDocumentWatermark(name, filename, storage, folder);
+            var request = new DeleteDocumentWatermarkRequest(name, filename);
+            var actual = this.wordsApi.DeleteDocumentWatermark(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -200,10 +153,10 @@
             int formfieldIndex = 0;
             string destFileName = "FormFilledTest.docx";
             
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-                        
-            SaaSposeResponse actual = target.DeleteFormField(name, formfieldIndex, "sections/0", destFileName);
+            var request = new DeleteFormFieldRequest(name, formfieldIndex, "sections/0", destFileName);
+            SaaSposeResponse actual = this.wordsApi.DeleteFormField(request);
 
             Assert.AreEqual(200, actual.Code);                        
         }
@@ -214,14 +167,13 @@
         [TestMethod]
         public void TestDeleteField()
         {
-            string name = "GetField.docx";
-            int sectionIndex = 0;
-            int paragraphIndex = 0;
+            string name = "GetField.docx";         
             int fieldIndex = 0;           
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.DeleteField(name, fieldIndex, "sections/0/paragraphs/0");
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new DeleteFieldRequest(name, fieldIndex, "sections/0/paragraphs/0");
+            var actual = this.wordsApi.DeleteField(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -232,14 +184,15 @@
         [TestMethod]
         public void TestDeleteHeadersFooters()
         {
-            string name = "test_multi_pages.docx";            
-            string filename = "test.docx";            
+            string name = "test_multi_pages.docx";
+            string filename = "test.docx";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            SaaSposeResponse actual = target.DeleteHeadersFooters(name, "sections/0", destFileName: filename);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-           Assert.AreEqual(200, actual.Code);            
+            var request = new DeleteHeadersFootersRequest(name, "sections/0", destFileName: filename);
+            SaaSposeResponse actual = this.wordsApi.DeleteHeadersFooters(request);
+
+            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -249,13 +202,11 @@
         public void TestDeleteParagraphFields()
         {
             string name = "test_multi_pages.docx";
-            int index = 0; 
-            string storage = null;
-            string folder = null;
-
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
-            var actual = target.DeleteFields(name, "paragraphs/0", storage, folder);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new DeleteFieldsRequest(name, "paragraphs/0");
+            var actual = this.wordsApi.DeleteFields(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -266,14 +217,11 @@
         [TestMethod]
         public void TestDeleteSectionFields()
         {
-            string name = "test_multi_pages.docx";
-            int sectionIndex = 0; // TODO: Initialize to an appropriate value
-            string storage = null;
-            string folder = null;
-            
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.DeleteFields(name, "sections/0", storage, folder);
+            string name = "test_multi_pages.docx";            
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new DeleteFieldsRequest(name, "sections/0");
+            var actual = this.wordsApi.DeleteFields(request);
 
             Assert.AreEqual(200, actual.Code);            
         }
@@ -286,13 +234,12 @@
         {
             string name = "SampleWordDocument.docx";
             int pageNumber = 1;
-            String format = "bmp";
-            string storage = null;
-            string folder = null;
+            string format = "bmp";
+           
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            target.RenderPage(name, pageNumber, format, storage, folder);
+            var request = new RenderPageRequest(name, pageNumber, format);
+            this.wordsApi.RenderPage(request);
 
             // TODO: check response file
         }
@@ -303,16 +250,12 @@
         [TestMethod]
         public void TestDeleteSectionParagraphFields()
         {
-
             string name = "test_multi_pages.docx";
-            int sectionIndex = 0; // TODO: Initialize to an appropriate value
-            int paragraphIndex = 0; // TODO: Initialize to an appropriate value
-            string storage = null;
-            string folder = null;
+         
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.DeleteFields(name, "sections/0/paragraphs/0", storage, folder);
+            var request = new DeleteFieldsRequest(name, "sections/0/paragraphs/0");
+            var actual = this.wordsApi.DeleteFields(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -328,9 +271,10 @@
             var body = new ProtectionRequest();
             body.Password = "aspose";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-                        
-            ProtectionDataResponse actual = target.DeleteUnprotectDocument(name, body);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new DeleteUnprotectDocumentRequest(name, body);
+            ProtectionDataResponse actual = this.wordsApi.DeleteUnprotectDocument(request);
             
             Assert.AreEqual(200, actual.Code);            
         }
@@ -343,12 +287,11 @@
         {
             string name = "test_multi_pages.docx";
             int commentIndex = 0;
-            string storage = null;
-            string folder = null;
-            
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.GetComment(name, commentIndex, storage, folder);
+         
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new GetCommentRequest(name, commentIndex);
+            var actual = this.wordsApi.GetComment(request);
 
             Assert.AreEqual(200, actual.Code);            
         }
@@ -360,12 +303,11 @@
         public void TestGetComments()
         {
             string name = "test_multi_pages.docx";
-            string storage = null;
-            string folder = null;
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-                        
-            var actual = target.GetComments(name, storage, folder);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new GetCommentsRequest(name);
+            var actual = this.wordsApi.GetComments(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -377,9 +319,10 @@
         public void TestGetDocument()
         {            
             string name = "test_multi_pages.docx";          
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
-            var actual = target.GetDocument(name);
+            var request = new GetDocumentRequest(name);
+            var actual = this.wordsApi.GetDocument(request);
 
            Assert.AreEqual(200, actual.Code);            
         }
@@ -390,14 +333,12 @@
         [TestMethod]
         public void TestGetDocumentBookmarkByName()
         {
-
             string name = "test_multi_pages.docx";
-            string bookmarkName = "aspose";
-            string storage = null;
-            string folder = null;
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-                        
-            var actual = target.GetDocumentBookmarkByName(name, bookmarkName, storage, folder);
+            string bookmarkName = "aspose";           
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new GetDocumentBookmarkByNameRequest(name, bookmarkName);
+            var actual = this.wordsApi.GetDocumentBookmarkByName(request);
             Assert.AreEqual(200, actual.Code);
         }
 
@@ -408,11 +349,10 @@
         public void TestGetDocumentBookmarks()
         {
             string name = "test_multi_pages.docx";
-            string storage = null;
-            string folder = null;
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.GetDocumentBookmarks(name, storage, folder);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new GetDocumentBookmarksRequest(name);
+            var actual = this.wordsApi.GetDocumentBookmarks(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -426,9 +366,10 @@
             string name = "test_multi_pages.docx";
             int objectIndex = 0;
           
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            DrawingObjectResponse actual = target.GetDocumentDrawingObjectByIndex(name, objectIndex, "sections/0");
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new GetDocumentDrawingObjectByIndexRequest(name, objectIndex, "sections/0");
+            DrawingObjectResponse actual = this.wordsApi.GetDocumentDrawingObjectByIndex(request);
 
             Assert.AreEqual(200, actual.Code);                        
         }
@@ -443,9 +384,10 @@
             int objectIndex = 0;
             string format = "png";
            
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.RenderDrawingObject(name, format, objectIndex, "sections/0");                        
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new RenderDrawingObjectRequest(name, format, objectIndex, "sections/0");
+            this.wordsApi.RenderDrawingObject(request);                        
         }
 
         /// <summary>
@@ -456,9 +398,10 @@
         {
             string name = "test_multi_pages.docx";
             int objectIndex = 0;            
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            target.GetDocumentDrawingObjectImageData(name, objectIndex, "sections/0");            
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new GetDocumentDrawingObjectImageDataRequest(name, objectIndex, "sections/0");
+            this.wordsApi.GetDocumentDrawingObjectImageData(request);            
         }
 
         /// <summary>
@@ -469,10 +412,10 @@
         {
             string name = "sample_EmbeddedOLE.docx";
             int objectIndex = 0;             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-
-            target.GetDocumentDrawingObjectOleData(name, objectIndex, "sections/0");            
+            var request = new GetDocumentDrawingObjectOleDataRequest(name, objectIndex, "sections/0");
+            this.wordsApi.GetDocumentDrawingObjectOleData(request);            
         }
 
         /// <summary>
@@ -482,12 +425,11 @@
         public void TestGetDocumentDrawingObjects()
         {
             string name = "test_multi_pages.docx";
-            string storage = null;
-            string folder = null;
+         
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.GetDocumentDrawingObjects(name, "sections/0", storage, folder);
+            var request = new GetDocumentDrawingObjectsRequest(name, "sections/0");
+            var actual = this.wordsApi.GetDocumentDrawingObjects(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -498,12 +440,12 @@
         [TestMethod]
         public void TestGetDocumentFieldNames()
         {
-            string name = name = "test_multi_pages.docx";
-            bool useNonMergeFields = false;
-
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            string name = "test_multi_pages.docx";
             
-            var actual = target.GetDocumentFieldNames(name, useNonMergeFields: useNonMergeFields);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new GetDocumentFieldNamesRequest(name);
+            var actual = this.wordsApi.GetDocumentFieldNames(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -515,12 +457,11 @@
         public void TestGetDocumentHyperlinkByIndex()
         {
             string name = "test_doc.docx";
-            int hyperlinkIndex = 0;
-            string storage = null;
-            string folder = null;
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.GetDocumentHyperlinkByIndex(name, hyperlinkIndex, storage, folder);
+            int hyperlinkIndex = 0;         
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new GetDocumentHyperlinkByIndexRequest(name, hyperlinkIndex);
+            var actual = this.wordsApi.GetDocumentHyperlinkByIndex(request);
             
             Assert.AreEqual(200, actual.Code);
         }
@@ -531,13 +472,11 @@
         [TestMethod]
         public void TestGetDocumentHyperlinks()
         {
-            string name = "test_doc.docx";
-            string storage = null;
-            string folder = null;
+            string name = "test_doc.docx";           
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.GetDocumentHyperlinks(name, storage, folder);
+            var request = new GetDocumentHyperlinksRequest(name);
+            var actual = this.wordsApi.GetDocumentHyperlinks(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -551,9 +490,10 @@
             string name = "test_multi_pages.docx";
             int index = 0;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.GetDocumentParagraph(name, index, "sections/0");
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new GetDocumentParagraphRequest(name, index, "sections/0");
+            var actual = this.wordsApi.GetDocumentParagraph(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -567,9 +507,10 @@
             string name = "test_multi_pages.docx";
             int index = 0;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var actual = target.GetDocumentParagraph(name, index);
+            var request = new GetDocumentParagraphRequest(name, index);
+            var actual = this.wordsApi.GetDocumentParagraph(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -580,17 +521,15 @@
         [TestMethod]
         public void TestGetDocumentParagraphRun()
         {
-            string name = "test_multi_pages.docx";
-            int index = 0; 
-            int runIndex = 0; 
-            string storage = null;
-            string folder = null;
+            string name = "test_multi_pages.docx";            
+            int runIndex = 0;             
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.GetDocumentParagraphRun(name, "paragraphs/0", runIndex, storage, folder);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-           Assert.AreEqual(200, actual.Code);
+            var request = new GetDocumentParagraphRunRequest(name, "paragraphs/0", runIndex);
+            var actual = this.wordsApi.GetDocumentParagraphRun(request);
+
+            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -599,15 +538,13 @@
         [TestMethod]
         public void TestGetDocumentParagraphRunFont()
         {
-            string name = "test_multi_pages.docx";
-            int index = 0; 
-            int runIndex = 0;
-            string storage = null;
-            string folder = null;
+            string name = "test_multi_pages.docx";            
+            int runIndex = 0;           
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.GetDocumentParagraphRunFont(name, "paragraphs/0", runIndex, storage, folder);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new GetDocumentParagraphRunFontRequest(name, "paragraphs/0", runIndex);
+            var actual = this.wordsApi.GetDocumentParagraphRunFont(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -619,12 +556,11 @@
         public void TestGetDocumentParagraphs()
         {
             string name = "test_multi_pages.docx";
-            string storage = null;
-            string folder = null;
+         
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.GetDocumentParagraphs(name, "sections/0", storage, folder);
+            var request = new GetDocumentParagraphsRequest(name, "sections/0");
+            var actual = this.wordsApi.GetDocumentParagraphs(request);
 
             Assert.AreEqual(200, actual.Code);            
         }
@@ -635,11 +571,11 @@
         [TestMethod]
         public void TestGetDocumentProperties()
         {
-            string name = "test_multi_pages.docx";
-            string storage = null;
-            string folder = null;
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));            
-            var actual = target.GetDocumentProperties(name);
+            string name = "test_multi_pages.docx";            
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new GetDocumentPropertiesRequest(name);
+            var actual = this.wordsApi.GetDocumentProperties(request);
             Assert.AreEqual(200, actual.Code);
         }
 
@@ -651,9 +587,10 @@
         {
             string name = "test_multi_pages.docx";
             string propertyName = "Author";            
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.GetDocumentProperty(name, propertyName);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new GetDocumentPropertyRequest(name, propertyName);
+            var actual = this.wordsApi.GetDocumentProperty(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -666,9 +603,10 @@
         {
             string name = "test_multi_pages.docx";
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
-            var actual = target.GetDocumentProtection(name);
+            var request = new GetDocumentProtectionRequest(name);
+            var actual = this.wordsApi.GetDocumentProtection(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -680,14 +618,11 @@
         public void TestGetDocumentStatistics()
         {
             string name = "test_multi_pages.docx";
-            bool includeComments = false;
-            bool includeFootnotes = false;
-            bool includeTextInShapes = false;
           
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.GetDocumentStatistics(name, includeComments: includeComments, includeFootnotes: includeFootnotes, includeTextInShapes: includeTextInShapes);
+            var request = new GetDocumentStatisticsRequest(name);
+            var actual = this.wordsApi.GetDocumentStatistics(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -700,9 +635,10 @@
         {
             string name = "test_multi_pages.docx";
           
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
-            var actual = target.GetDocumentTextItems(name);
+            var request = new GetDocumentTextItemsRequest(name);
+            var actual = this.wordsApi.GetDocumentTextItems(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -715,14 +651,11 @@
         {
             string name = "test_multi_pages.docx";
             string format = "text";
-            string storage = null;
-            string folder = null;
-            string outPath = null;
+     
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-
-            
-            target.GetDocumentWithFormat(name, format, storage, folder, outPath);
+            var request = new GetDocumentWithFormatRequest(name, format);
+            this.wordsApi.GetDocumentWithFormat(request);
 
             // TODO: add case with specified out path            
         }
@@ -733,14 +666,13 @@
         [TestMethod]
         public void TestGetField()
         {
-            string name = "GetField.docx";
-            int sectionIndex = 0;
-            int paragraphIndex = 0;
+            string name = "GetField.docx";         
             int fieldIndex = 0;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.GetField(name, fieldIndex, "sections/0/paragraphs/0");
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new GetFieldRequest(name, fieldIndex, "sections/0/paragraphs/0");
+            var actual = this.wordsApi.GetField(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -752,14 +684,11 @@
         public void TestGetFields()
         {
             string name = "GetField.docx";
-            int sectionIndex = 0;
-            int paragraphIndex = 0;           
-            string storage = null;
-            string folder = null;
+           
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            FieldsResponse actual = target.GetFields(name, "sections/0", storage, folder);
+            var request = new GetFieldsRequest(name, "sections/0");
+            FieldsResponse actual = this.wordsApi.GetFields(request);
 
            Assert.AreEqual(200, actual.Code);           
         }
@@ -771,14 +700,11 @@
         public void TestGetParagraphRuns()
         {
             string name = "GetField.docx";
-            int sectionIndex = 0;
-            int paragraphIndex = 0;
-            string storage = null;
-            string folder = null;
+          
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            RunsResponse actual = target.GetDocumentParagraphRuns(name, "sections/0/paragraphs/0", storage, folder);
+            var request = new GetDocumentParagraphRunsRequest(name, "sections/0/paragraphs/0");
+            RunsResponse actual = this.wordsApi.GetDocumentParagraphRuns(request);
 
             Assert.AreEqual(200, actual.Code);            
         }
@@ -791,9 +717,10 @@
         {
             string name = "FormFilled.docx";
           
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            FormFieldsResponse actual = target.GetFormFields(name, "sections/0");
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new GetFormFieldsRequest(name, "sections/0");
+            FormFieldsResponse actual = this.wordsApi.GetFormFields(request);
 
            Assert.AreEqual(200, actual.Code);            
         }
@@ -807,9 +734,10 @@
             string name = "FormFilled.docx";
             int formfieldIndex = 0;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            FormFieldResponse actual = target.GetFormField(name, formfieldIndex, "sections/0");
+            var request = new GetFormFieldRequest(name, formfieldIndex, "sections/0");
+            FormFieldResponse actual = this.wordsApi.GetFormField(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -822,12 +750,11 @@
         {
             string name = "test_multi_pages.docx";
             int sectionIndex = 0;
-            string storage = null;
-            string folder = null;
+           
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.GetSection(name, sectionIndex, storage, folder);
+            var request = new GetSectionRequest(name, sectionIndex);
+            var actual = this.wordsApi.GetSection(request);
             
             Assert.AreEqual(200, actual.Code);
         }
@@ -840,12 +767,11 @@
         {
             string name = "test_multi_pages.docx";
             int sectionIndex = 0;
-            string storage = null;
-            string folder = null;
-
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
-            var actual = target.GetSectionPageSetup(name, sectionIndex, storage, folder);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new GetSectionPageSetupRequest(name, sectionIndex);
+            var actual = this.wordsApi.GetSectionPageSetup(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -857,12 +783,11 @@
         public void TestGetSections()
         {
             string name = "test_multi_pages.docx";
-            string storage = null;
-            string folder = null;
-
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             
-            var actual = target.GetSections(name, storage, folder);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new GetSectionsRequest(name);
+            var actual = this.wordsApi.GetSections(request);
 
             Assert.AreEqual(200, actual.Code);            
         }
@@ -877,7 +802,7 @@
             string filename = "test_multi_pages.docx";
            
             var body = new DocumentEntryList();
-            System.Collections.Generic.List<DocumentEntry> docEntries = new System.Collections.Generic.List<DocumentEntry> { };
+            System.Collections.Generic.List<DocumentEntry> docEntries = new System.Collections.Generic.List<DocumentEntry>();
 
             DocumentEntry docEntry = new DocumentEntry();
             docEntry.Href = "test_multi_pages.docx";
@@ -885,9 +810,10 @@
             docEntries.Add(docEntry);
             body.DocumentEntries = docEntries;            
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var actual = target.PostAppendDocument(name, body, filename);
+            var request = new PostAppendDocumentRequest(name, body, filename);
+            var actual = this.wordsApi.PostAppendDocument(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -901,11 +827,12 @@
             string name = "test_multi_pages.docx";
             
             var body = new ProtectionRequest();
-            body.NewPassword = "";
+            body.NewPassword = string.Empty;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var actual = target.PostChangeDocumentProtection(name, body);
+            var request = new PostChangeDocumentProtectionRequest(name, body);
+            var actual = this.wordsApi.PostChangeDocumentProtection(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -918,16 +845,12 @@
         {
             string name = "test_multi_pages.docx";
             int commentIndex = 0;
-            string fileName = null;
-            string storage = null;
-            string folder = null;
-
+           
             var body = new Comment();
 
             var dpdto = new DocumentPosition();
             NodeLink nodeLink = new NodeLink();
             
-
             dpdto.Node = nodeLink;
             dpdto.Offset = 0;
             
@@ -940,9 +863,10 @@
             body.Author = "Imran Anwar";
             body.Text = "A new Comment";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.PostComment(name, commentIndex, body, fileName, storage, folder);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new PostCommentRequest(name, commentIndex, body);
+            var actual = this.wordsApi.PostComment(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -953,19 +877,15 @@
         [TestMethod]
         public void TestPostDocumentExecuteMailMerge()
         {
-            string name = "SampleMailMergeTemplate.docx";
-            bool withRegions = false;
-            string mailMergeDataFile = null;
-            string cleanup = null;
-            string filename = "SampleMailMergeResult.docx";
-            string storage = null;
-            string folder = null;
-            bool useWholeParagraphAsRegion = false;
+            string name = "SampleMailMergeTemplate.docx";                       
+            string filename = "SampleMailMergeResult.docx";            
+            
             var data = System.IO.File.ReadAllText(Common.GetDataDir() + "SampleMailMergeTemplateData.txt");
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.PostDocumentExecuteMailMerge(name, withRegions, data, destFileName: filename, cleanup: cleanup, useWholeParagraphAsRegion: useWholeParagraphAsRegion);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new PostDocumentExecuteMailMergeRequest(name, false, data, destFileName: filename);
+            var actual = this.wordsApi.PostDocumentExecuteMailMerge(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -976,16 +896,16 @@
         [TestMethod]
         public void TestPostDocumentParagraphRunFont()
         {
-            string name = "test_multi_pages.docx";
-            int index = 0; // TODO: Initialize to an appropriate value
-            int runIndex = 0; // TODO: Initialize to an appropriate value          
+            string name = "test_multi_pages.docx";            
+            int runIndex = 0;
             string filename = "test.docx";
             var body = new Font();
             body.Bold = true;
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.PostDocumentParagraphRunFont(name, body, "paragraphs/0", runIndex, filename);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new PostDocumentParagraphRunFontRequest(name, body, "paragraphs/0", runIndex, filename);
+            var actual = this.wordsApi.PostDocumentParagraphRunFont(request);
             Assert.AreEqual(200, actual.Code);
         }
 
@@ -1002,9 +922,10 @@
             body.SaveFormat = "pdf";
             body.FileName = "output.pdf";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.PostDocumentSaveAs(name, body);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new PostDocumentSaveAsRequest(name, body);
+            var actual = this.wordsApi.PostDocumentSaveAs(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -1016,17 +937,15 @@
         public void TestPostExecuteTemplate()
         {
             string name = "TestExecuteTemplate.doc";
-            string cleanup = null;
+            
             string destFileName = "TestExecuteResult.doc";
-            string storage = null;
-            string folder = null;
-            bool useWholeParagraphAsRegion = false; // TODO: Initialize to an appropriate value
-            bool withRegions = false; // TODO: Initialize to an appropriate value
+                        
             string data = System.IO.File.ReadAllText(Common.GetDataDir() + "TestExecuteTemplateData.txt");
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.PostExecuteTemplate(name, data, cleanup: cleanup, destFileName: destFileName, useWholeParagraphAsRegion: useWholeParagraphAsRegion, withRegions: withRegions);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new PostExecuteTemplateRequest(name, data, destFileName: destFileName);
+            var actual = this.wordsApi.PostExecuteTemplate(request);
             
             Assert.AreEqual(200, actual.Code);
         }
@@ -1038,20 +957,19 @@
         public void TestPostField()
         {
             string name = "GetField.docx";         
-            int fieldIndex = 0; // TODO: Initialize to an appropriate value
+            int fieldIndex = 0;
             string destFileName = "newSampleWordDocument.docx";
-            string storage = null;
-            string folder = null;
-
+            
             var body = new Field();
             body.Result = "3";
             body.FieldCode = "{ NUMPAGES }";
             
             body.NodeId = "0.0.3";
                         
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-                        
-            var actual = target.PostField(name, body, fieldIndex, "sections/0/paragraphs/0", destFileName);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new PostFieldRequest(name, body, fieldIndex, "sections/0/paragraphs/0", destFileName);
+            var actual = this.wordsApi.PostField(request);
             
             Assert.AreEqual(200, actual.Code);            
         }
@@ -1077,10 +995,12 @@
             body.TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular;
             body.TextInputDefault = string.Empty;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new PostFormFieldRequest(name, body, formfieldIndex, "sections/0", destFileName);
+
             // Act
-            FormFieldResponse actual = target.PostFormField(name, body, formfieldIndex, "sections/0", destFileName);
+            FormFieldResponse actual = this.wordsApi.PostFormField(request);
             
             // Assert
             Assert.AreEqual(200, actual.Code);
@@ -1105,13 +1025,14 @@
            
             using (var file = System.IO.File.OpenRead(Common.GetDataDir() + image))
             {
-                storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-                
-                var actual = target.PostInsertDocumentWatermarkImage(
-                    name,
+                this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+                var request = new PostInsertDocumentWatermarkImageRequest(name,
                     file,
                     rotationAngle,
                     destFileName: filename);
+
+                var actual = this.wordsApi.PostInsertDocumentWatermarkImage(request);
 
                 Assert.AreEqual(200, actual.Code);
             }
@@ -1125,15 +1046,14 @@
         {
             string name = "test_multi_pages.docx";
             string filename = "test.docx";
-            string text = "Aspose Watermark";
-            double rotationAngle = 0F;
             
             var body = new WatermarkText();
             body.Text = "The watermark of Aspose";            
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.PostInsertDocumentWatermarkText(name, body, filename);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new PostInsertDocumentWatermarkTextRequest(name, body, filename);
+            var actual = this.wordsApi.PostInsertDocumentWatermarkText(request);
             
             Assert.AreEqual(200, actual.Code);
         }
@@ -1151,9 +1071,10 @@
             body.Alignment = "center";
             body.Format = "{PAGE} of {NUMPAGES}";
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.PostInsertPageNumbers(name, body, filename);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new PostInsertPageNumbersRequest(name, body, filename);
+            var actual = this.wordsApi.PostInsertPageNumbers(request);
             
             Assert.AreEqual(200, actual.Code);
         }
@@ -1165,16 +1086,15 @@
         public void TestPostInsertWatermarkImage()
         {
             string name = "test_multi_pages.docx";
-            string filename = "test.docx";
+            string filename = "TestPostInsertWatermarkImageOut.docx";
             double rotationAngle = 0F; // TODO: Initialize to an appropriate value
             string image = "aspose-cloud.png";
-            string storage = null;
-            string folder = null;
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            storageApi.PutCreate(image, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + image));
-            
-            var actual = target.PostInsertDocumentWatermarkImage(name, image: image, rotationAngle: rotationAngle);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            this.storageApi.PutCreate(image, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + image));
+
+            var request = new PostInsertDocumentWatermarkImageRequest(name, image: image, rotationAngle: rotationAngle, destFileName: filename);
+            var actual = this.wordsApi.PostInsertDocumentWatermarkImage(request);
             
             Assert.AreEqual(200, actual.Code);            
         }
@@ -1193,9 +1113,10 @@
             body.Text = "This is the text";
             body.RotationAngle = 90.0f;
             
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.PostInsertDocumentWatermarkText(name, body, filename);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new PostInsertDocumentWatermarkTextRequest(name, body, filename);
+            var actual = this.wordsApi.PostInsertDocumentWatermarkText(request);
             
             Assert.AreEqual(200, actual.Code);
         }
@@ -1218,8 +1139,9 @@
 
             body.LoadingDocumentUrl = "http://google.com";
             body.SaveOptions = soptions;
-            
-            var actual = target.PostLoadWebDocument(body);
+
+            var request = new PostLoadWebDocumentRequest(body);
+            var actual = this.wordsApi.PostLoadWebDocument(request);
             
             Assert.AreEqual(200, actual.Code);
         }
@@ -1231,17 +1153,15 @@
         public void TestPostReplaceText()
         {
             string name = "test_multi_pages.docx";
-            string filename = "test_multi_pages_result.docx";
-            string storage = null;
-            string folder = null;
+            string filename = "test_multi_pages_result.docx";         
             var body = new ReplaceTextRequest();
             body.OldValue = "aspose";
             body.NewValue = "aspose new";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            
-            var actual = target.PostReplaceText(name, body, filename, storage, folder);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new PostReplaceTextRequest(name, body, filename);
+            var actual = this.wordsApi.PostReplaceText(request);
             
             Assert.AreEqual(200, actual.Code);
         }
@@ -1256,13 +1176,11 @@
             string format = "text";
             int from = 1; 
             int to = 2; 
-            bool zipOutput = false; 
-            string storage = null;
-            string folder = null;
+           
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.PostSplitDocument(name, format: format, from: from, to: to);
+            var request = new PostSplitDocumentRequest(name, format: format, from: from, to: to);
+            var actual = this.wordsApi.PostSplitDocument(request);
             
             Assert.AreEqual(200, actual.Code);            
         }
@@ -1275,16 +1193,15 @@
         {
             string name = "test_multi_pages.docx";
             string bookmarkName = "aspose";
-            string filename = "test.docx";
-            string storage = null;
-            string folder = null;
+            string filename = "test.docx";          
             var body = new BookmarkData();
             body.Name = "aspose";
             body.Text = "This will be the text for Aspose";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var actual = target.PostUpdateDocumentBookmark(name, body, bookmarkName, filename, storage, folder);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new PostUpdateDocumentBookmarkRequest(name, body, bookmarkName, filename);
+            var actual = this.wordsApi.PostUpdateDocumentBookmark(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -1296,13 +1213,11 @@
         public void TestPostUpdateDocumentFields()
         {
             string name = "test_multi_pages.docx";
-            string filename = "test_multi_pages.docx";
-            string storage = null;
-            string folder = null;
+            
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-
-            var actual = target.PostUpdateDocumentFields(name, filename, storage, folder);
+            var request = new PostUpdateDocumentFieldsRequest(name);
+            var actual = this.wordsApi.PostUpdateDocumentFields(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -1313,16 +1228,12 @@
         [TestMethod]
         public void TestPutComment()
         {
-            string name = "test_multi_pages.docx";
-            string fileName = null;
-            string storage = null;
-            string folder = null;
+            string name = "test_multi_pages.docx";           
             var body = new Comment();
 
             var dpdto = new DocumentPosition();
             NodeLink nodeLink = new NodeLink();
             
-
             dpdto.Node = nodeLink;
             dpdto.Offset = 0;            
             nodeLink.NodeId = "0.0.3";
@@ -1334,10 +1245,10 @@
             body.Author = "Imran Anwar";
             body.Text = "A new Comment";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            CommentResponse actual;
-            actual = target.PutComment(name, body, fileName, storage, folder);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+                        
+            var request = new PutCommentRequest(name, body);
+            var actual = this.wordsApi.PutComment(request);
             
             Assert.AreEqual(200, actual.Code);
         }
@@ -1348,12 +1259,11 @@
         [TestMethod]
         public void TestPutConvertDocument()
         {
-            string format = "pdf";
-            string outPath = null;
-            string replaceResourcesHostTo = "new_pdf.pdf";
+            string format = "pdf";            
             using (var fileStream = System.IO.File.OpenRead(Common.GetDataDir() + "test_uploadfile.docx"))
-            {                
-                target.PutConvertDocument(format, fileStream);             
+            {
+                var request = new PutConvertDocumentRequest(format, fileStream);
+                this.wordsApi.PutConvertDocument(request);             
             }
         }
 
@@ -1364,8 +1274,9 @@
         public void TestPutDocumentFieldNames()
         {            
             using (var fileStream = System.IO.File.OpenRead(Common.GetDataDir() + "SampleExecuteTemplate.docx"))
-            {                
-                FieldNamesResponse actual = target.PutDocumentFieldNames(fileStream, true);
+            {
+                var request = new PutDocumentFieldNamesRequest(fileStream, true);
+                FieldNamesResponse actual = this.wordsApi.PutDocumentFieldNames(request);
 
                 Assert.AreEqual(200, actual.Code);
             }
@@ -1384,11 +1295,11 @@
             body.FileName = "abc.tiff";
             body.SaveFormat = "tiff";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));            
-            SaveResponse actual = target.PutDocumentSaveAsTiff(
-                name, 
-                body, 
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            var request = new PutDocumentSaveAsTiffRequest(name,
+                body,
                 resultFile);
+            SaveResponse actual = this.wordsApi.PutDocumentSaveAsTiff(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -1398,14 +1309,13 @@
         /// </summary>
         [TestMethod]
         public void TestPutExecuteMailMergeOnline()
-        {
-            bool withRegions = false;
-            string cleanup = null;
+        {          
             using (var file = System.IO.File.OpenRead(Common.GetDataDir() + "SampleExecuteTemplate.docx"))
             {
                 using (var data = System.IO.File.OpenRead(Common.GetDataDir() + "SampleExecuteTemplateData.txt"))
-                {                    
-                    var actual = target.PutExecuteMailMergeOnline(file, data, withRegions, cleanup);                   
+                {
+                    var request = new PutExecuteMailMergeOnlineRequest(file, data);
+                    this.wordsApi.PutExecuteMailMergeOnline(request);                   
                 }
             }
         }
@@ -1415,21 +1325,13 @@
         /// </summary>
         [TestMethod]
         public void TestPutExecuteTemplateOnline()
-        {
-            string cleanup = null;
-            bool useWholeParagraphAsRegion = false;
-            bool withRegions = false; 
-         
+        {           
             using (var file = System.IO.File.OpenRead(Common.GetDataDir() + "SampleMailMergeTemplate.docx"))
             {
                 using (var data = System.IO.File.OpenRead(Common.GetDataDir() + "SampleExecuteTemplateData.txt"))
-                {                    
-                    var actual = target.PutExecuteTemplateOnline(
-                        file,
-                        data,
-                        cleanup,
-                        useWholeParagraphAsRegion,
-                        withRegions);                    
+                {
+                    var request = new PutExecuteTemplateOnlineRequest(file, data);
+                    this.wordsApi.PutExecuteTemplateOnline(request);                    
                 }
             }
         }
@@ -1441,24 +1343,17 @@
         public void TestPutField()
         {
             string name = "SampleWordDocument.docx";
-            int sectionIndex = 0; 
-            int paragraphIndex = 0; 
-            string insertBeforeNode = null;
-            string destFileName = null;
-            string storage = null;
-            string folder = null;
-
+           
             Field body = new Field();
             body.Result = "3";
             body.FieldCode = "{ NUMPAGES }";
             
             body.NodeId = "0.0.3";
             
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-
-            FieldResponse actual;
-            actual = target.PutField(name, body, "sections/0/paragraphs/0", insertBeforeNode, destFileName, storage, folder);
+            var request = new PutFieldRequest(name, body, "sections/0/paragraphs/0");
+            var actual = this.wordsApi.PutField(request);
             
             Assert.AreEqual(200, actual.Code);
         }
@@ -1469,29 +1364,23 @@
         [TestMethod]
         public void TestPutFormField()
         {
-            string name = "test_multi_pages.docx";
-            int sectionIndex = 0;
-            int paragraphIndex = 0;
-            string insertBeforeNode = null;
+            string name = "test_multi_pages.docx";            
             string destFileName = "test.docx";
-            string storage = null;
-            string folder = null;
-
+           
             var body = new FormFieldTextInput();
 
             body.Name = "FullName";
             body.Enabled = true;
             body.CalculateOnExit = true;
-            body.StatusText = "";
-
-
+            body.StatusText = string.Empty;
             body.TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular;
             body.TextInputDefault = "123";
             body.TextInputFormat = "UPPERCASE";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            FormFieldResponse actual;
-            actual = target.PutFormField(name, body, "sections/0/paragraphs/0", destFileName: destFileName);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new PutFormFieldRequest(name, body, "sections/0/paragraphs/0", destFileName: destFileName);
+            var actual = this.wordsApi.PutFormField(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -1503,15 +1392,13 @@
         public void TestPutProtectDocument()
         {
             string name = "test_multi_pages.docx";
-            string filename = "test_multi_pages.docx";
-            string storage = null;
-            string folder = null;
+            string filename = "test_multi_pages.docx";            
             ProtectionRequest body = new ProtectionRequest(); 
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            ProtectionDataResponse actual;
-            actual = target.PutProtectDocument(name, body, filename, storage, folder);
+            var request = new PutProtectDocumentRequest(name, body, filename);
+            var actual = this.wordsApi.PutProtectDocument(request);
             
             Assert.AreEqual(200, actual.Code);
         }
@@ -1524,17 +1411,15 @@
         {
             string name = "test_multi_pages.docx";
             string propertyName = "Author";
-            string filename = "test_multi_pages.docx";
-            string storage = null;
-            string folder = null;
+            string filename = "test_multi_pages.docx";          
             DocumentProperty body = new DocumentProperty();
             body.Name = "Author";
             body.Value = "Imran Anwar";
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            DocumentPropertyResponse actual;
-            actual = target.PutUpdateDocumentProperty(name, propertyName, body, filename, storage, folder);
+            var request = new PutUpdateDocumentPropertyRequest(name, propertyName, body, filename);
+            var actual = this.wordsApi.PutUpdateDocumentProperty(request);
             Assert.AreEqual(200, actual.Code);
         }
 
@@ -1546,13 +1431,11 @@
         {
             string name = "test_multi_pages.docx";
             string filename = "test_multi_pages.docx";
-            string storage = null;
-            string folder = null;
+           
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-
-            RevisionsModificationResponse actual;
-            actual = target.RejectAllRevisions(name, filename, storage, folder);
+            var request = new RejectAllRevisionsRequest(name, filename);
+            var actual = this.wordsApi.RejectAllRevisions(request);
 
             Assert.AreEqual(200, actual.Code);
         }
@@ -1566,10 +1449,10 @@
             string name = "SampleWordDocument.docx";
             string pattern = "aspose";
          
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            SearchResponse actual;
-            actual = target.Search(name, pattern: pattern);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new SearchRequest(name, pattern);
+            var actual = this.wordsApi.Search(request);
             
             Assert.AreEqual(200, actual.Code);
         }
@@ -1582,19 +1465,17 @@
         {
             string name = "test_multi_pages.docx";
             int sectionIndex = 0; 
-            string storage = null;
-            string folder = null;
-            string filename = null;
-
+            
             var body = new PageSetup();
             body.RtlGutter = true;
             body.LeftMargin = 10.0f;
             body.Orientation = PageSetup.OrientationEnum.Landscape;
             body.PaperSize = PageSetup.PaperSizeEnum.A5;
 
-            storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-                        
-            var actual = target.UpdateSectionPageSetup(name, sectionIndex, body, storage, folder, filename);
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+
+            var request = new UpdateSectionPageSetupRequest(name, sectionIndex, body);
+            var actual = this.wordsApi.UpdateSectionPageSetup(request);
             
             Assert.AreEqual(200, actual.Code);
         }
@@ -1609,7 +1490,8 @@
 
             try
             {
-                var result = this.target.GetSections(name);
+                var request = new GetSectionsRequest(name);
+                this.wordsApi.GetSections(request);
 
                 Assert.Fail("Excpected exception has not been throwed");
             }

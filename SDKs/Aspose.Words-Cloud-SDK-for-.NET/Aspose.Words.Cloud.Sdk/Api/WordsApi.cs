@@ -41,12 +41,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling AcceptAllRevisions");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -110,16 +110,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteBorder");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -177,15 +177,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteBorders");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -243,15 +243,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'commentIndex' when calling DeleteComment");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "CommentIndex", request.CommentIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "commentIndex", request.CommentIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -303,14 +303,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteDocumentMacros");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -368,15 +368,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'propertyName' when calling DeleteDocumentProperty");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "PropertyName", request.PropertyName);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "propertyName", request.PropertyName);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -428,14 +428,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteDocumentWatermark");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -493,16 +493,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteDrawingObject");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -560,16 +560,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteField");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -621,15 +621,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteFields");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -687,16 +687,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteFootnote");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -754,16 +754,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteFormField");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -821,16 +821,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteHeaderFooter");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "SectionPath", request.SectionPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "sectionPath", request.SectionPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -882,16 +882,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteHeadersFooters");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "SectionPath", request.SectionPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "HeadersFootersTypes", request.HeadersFootersTypes);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "sectionPath", request.SectionPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "headersFootersTypes", request.HeadersFootersTypes);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -949,16 +949,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteOfficeMathObject");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -1016,16 +1016,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteParagraph");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -1089,16 +1089,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteRun");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "ParagraphPath", request.ParagraphPath);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -1156,16 +1156,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteTable");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -1229,16 +1229,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteTableCell");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "TableRowPath", request.TableRowPath);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "tableRowPath", request.TableRowPath);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -1302,16 +1302,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling DeleteTableRow");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "TablePath", request.TablePath);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "tablePath", request.TablePath);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -1369,12 +1369,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling DeleteUnprotectDocument");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.ProtectionRequest; // http body (model) parameter
             try 
             {                
@@ -1438,13 +1438,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetBorder");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -1502,12 +1502,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetBorders");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -1565,12 +1565,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'commentIndex' when calling GetComment");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "CommentIndex", request.CommentIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "commentIndex", request.CommentIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -1622,11 +1622,11 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetComments");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -1678,11 +1678,11 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'documentName' when calling GetDocument");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "DocumentName", request.DocumentName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "documentName", request.DocumentName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -1740,12 +1740,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'bookmarkName' when calling GetDocumentBookmarkByName");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "BookmarkName", request.BookmarkName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "bookmarkName", request.BookmarkName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -1797,11 +1797,11 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentBookmarks");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -1859,13 +1859,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectByIndex");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -1923,13 +1923,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectImageData");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -1987,13 +1987,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectOleData");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -2045,12 +2045,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentDrawingObjects");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -2102,12 +2102,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentFieldNames");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "UseNonMergeFields", request.UseNonMergeFields);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "useNonMergeFields", request.UseNonMergeFields);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -2165,12 +2165,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'hyperlinkIndex' when calling GetDocumentHyperlinkByIndex");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "HyperlinkIndex", request.HyperlinkIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "hyperlinkIndex", request.HyperlinkIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -2222,11 +2222,11 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentHyperlinks");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -2284,13 +2284,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraph");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -2354,13 +2354,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraphRun");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "ParagraphPath", request.ParagraphPath);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -2424,13 +2424,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraphRunFont");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "ParagraphPath", request.ParagraphPath);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -2488,12 +2488,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling GetDocumentParagraphRuns");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "ParagraphPath", request.ParagraphPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -2545,12 +2545,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphs");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -2602,11 +2602,11 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentProperties");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -2664,12 +2664,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'propertyName' when calling GetDocumentProperty");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "PropertyName", request.PropertyName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "propertyName", request.PropertyName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -2721,11 +2721,11 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentProtection");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -2777,14 +2777,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentStatistics");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "IncludeComments", request.IncludeComments);
-            resourcePath = this.AddQueryParameter(resourcePath, "IncludeFootnotes", request.IncludeFootnotes);
-            resourcePath = this.AddQueryParameter(resourcePath, "IncludeTextInShapes", request.IncludeTextInShapes);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "includeComments", request.IncludeComments);
+            resourcePath = this.AddQueryParameter(resourcePath, "includeFootnotes", request.IncludeFootnotes);
+            resourcePath = this.AddQueryParameter(resourcePath, "includeTextInShapes", request.IncludeTextInShapes);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -2836,11 +2836,11 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentTextItems");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -2898,14 +2898,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'format' when calling GetDocumentWithFormat");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "Format", request.Format);
-            resourcePath = this.AddQueryParameter(resourcePath, "OutPath", request.OutPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
-            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "format", request.Format);
+            resourcePath = this.AddQueryParameter(resourcePath, "outPath", request.OutPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
             
             try 
             {                
@@ -2963,13 +2963,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetField");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -3021,12 +3021,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetFields");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -3084,13 +3084,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetFootnote");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -3142,12 +3142,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetFootnotes");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -3205,13 +3205,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetFormField");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -3263,12 +3263,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetFormFields");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -3326,14 +3326,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'headerFooterIndex' when calling GetHeaderFooter");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "HeaderFooterIndex", request.HeaderFooterIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "SectionIndex", request.SectionIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "FilterByType", request.FilterByType);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "headerFooterIndex", request.HeaderFooterIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "sectionIndex", request.SectionIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "filterByType", request.FilterByType);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -3397,14 +3397,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetHeaderFooter_1");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "HeaderFooterIndex", request.HeaderFooterIndex);
-            resourcePath = this.AddPathParameter(resourcePath, "SectionIndex", request.SectionIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "FilterByType", request.FilterByType);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "headerFooterIndex", request.HeaderFooterIndex);
+            resourcePath = this.AddPathParameter(resourcePath, "sectionIndex", request.SectionIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "filterByType", request.FilterByType);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -3456,13 +3456,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetHeaderFooters");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "SectionPath", request.SectionPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "FilterByType", request.FilterByType);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "sectionPath", request.SectionPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "filterByType", request.FilterByType);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -3520,13 +3520,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetOfficeMathObject");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -3578,12 +3578,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetOfficeMathObjects");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -3641,12 +3641,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetSection");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "SectionIndex", request.SectionIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "sectionIndex", request.SectionIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -3704,12 +3704,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetSectionPageSetup");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "SectionIndex", request.SectionIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "sectionIndex", request.SectionIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -3761,11 +3761,11 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetSections");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -3823,13 +3823,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetTable");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -3893,13 +3893,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetTableCell");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "TableRowPath", request.TableRowPath);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "tableRowPath", request.TableRowPath);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -3963,13 +3963,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetTableCellFormat");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "TableRowPath", request.TableRowPath);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "tableRowPath", request.TableRowPath);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -4027,13 +4027,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetTableProperties");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -4097,13 +4097,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetTableRow");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "TablePath", request.TablePath);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "tablePath", request.TablePath);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -4167,13 +4167,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling GetTableRowFormat");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "TablePath", request.TablePath);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "tablePath", request.TablePath);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -4225,12 +4225,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetTables");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -4288,15 +4288,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'table' when calling InsertTable");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.Table; // http body (model) parameter
             try 
             {                
@@ -4360,15 +4360,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling InsertTableCell");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "TableRowPath", request.TableRowPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "tableRowPath", request.TableRowPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.Cell; // http body (model) parameter
             try 
             {                
@@ -4432,15 +4432,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'tablePath' when calling InsertTableRow");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "TablePath", request.TablePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "tablePath", request.TablePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.Row; // http body (model) parameter
             try 
             {                
@@ -4498,14 +4498,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'documentList' when calling PostAppendDocument");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.DocumentList; // http body (model) parameter
             try 
             {                
@@ -4563,12 +4563,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling PostChangeDocumentProtection");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.ProtectionRequest; // http body (model) parameter
             try 
             {                
@@ -4632,15 +4632,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'comment' when calling PostComment");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "CommentIndex", request.CommentIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "commentIndex", request.CommentIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.Comment; // http body (model) parameter
             try 
             {                
@@ -4698,12 +4698,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'compareData' when calling PostCompareDocument");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.CompareData; // http body (model) parameter
             try 
             {                
@@ -4761,16 +4761,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'withRegions' when calling PostDocumentExecuteMailMerge");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "WithRegions", request.WithRegions);
-            resourcePath = this.AddQueryParameter(resourcePath, "MailMergeDataFile", request.MailMergeDataFile);
-            resourcePath = this.AddQueryParameter(resourcePath, "Cleanup", request.Cleanup);
-            resourcePath = this.AddQueryParameter(resourcePath, "UseWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "withRegions", request.WithRegions);
+            resourcePath = this.AddQueryParameter(resourcePath, "mailMergeDataFile", request.MailMergeDataFile);
+            resourcePath = this.AddQueryParameter(resourcePath, "cleanup", request.Cleanup);
+            resourcePath = this.AddQueryParameter(resourcePath, "useWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             if (request.Data != null) 
             {
@@ -4844,16 +4844,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostDocumentParagraphRunFont");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "ParagraphPath", request.ParagraphPath);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.FontDto; // http body (model) parameter
             try 
             {                
@@ -4911,13 +4911,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'saveOptionsData' when calling PostDocumentSaveAs");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
-            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
             postBody = request.SaveOptionsData; // http body (model) parameter
             try 
             {                
@@ -4987,16 +4987,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostDrawingObject");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             if (request.DrawingObject != null) 
             {
@@ -5004,7 +5004,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
             }
             if (request.ImageFile != null) 
             {
-                formParams.Add("ImageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
+                formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
             }
             try 
             {                
@@ -5062,15 +5062,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'data' when calling PostExecuteTemplate");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "Cleanup", request.Cleanup);
-            resourcePath = this.AddQueryParameter(resourcePath, "UseWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
-            resourcePath = this.AddQueryParameter(resourcePath, "WithRegions", request.WithRegions);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "cleanup", request.Cleanup);
+            resourcePath = this.AddQueryParameter(resourcePath, "useWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
+            resourcePath = this.AddQueryParameter(resourcePath, "withRegions", request.WithRegions);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             if (request.Data != null) 
             {
@@ -5138,16 +5138,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostField");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.Field; // http body (model) parameter
             try 
             {                
@@ -5211,16 +5211,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostFootnote");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.FootnoteDto; // http body (model) parameter
             try 
             {                
@@ -5284,16 +5284,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostFormField");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.FormField; // http body (model) parameter
             try 
             {                
@@ -5345,20 +5345,20 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostInsertDocumentWatermarkImage");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "RotationAngle", request.RotationAngle);
-            resourcePath = this.AddQueryParameter(resourcePath, "Image", request.Image);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "rotationAngle", request.RotationAngle);
+            resourcePath = this.AddQueryParameter(resourcePath, "image", request.Image);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             if (request.ImageFile != null) 
             {
-                formParams.Add("ImageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
+                formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
             }
             try 
             {                
@@ -5416,14 +5416,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'watermarkText' when calling PostInsertDocumentWatermarkText");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.WatermarkText; // http body (model) parameter
             try 
             {                
@@ -5481,14 +5481,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'pageNumber' when calling PostInsertPageNumbers");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.PageNumber; // http body (model) parameter
             try 
             {                
@@ -5540,7 +5540,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'data' when calling PostLoadWebDocument");
             }
             
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
             postBody = request.Data; // http body (model) parameter
             try 
             {                
@@ -5598,14 +5598,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'replaceText' when calling PostReplaceText");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.ReplaceText; // http body (model) parameter
             try 
             {                
@@ -5675,16 +5675,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling PostRun");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "ParagraphPath", request.ParagraphPath);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.Run; // http body (model) parameter
             try 
             {                
@@ -5781,17 +5781,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostSplitDocument");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "Format", request.Format);
-            resourcePath = this.AddQueryParameter(resourcePath, "From", request.From);
-            resourcePath = this.AddQueryParameter(resourcePath, "To", request.To);
-            resourcePath = this.AddQueryParameter(resourcePath, "ZipOutput", request.ZipOutput);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
-            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "format", request.Format);
+            resourcePath = this.AddQueryParameter(resourcePath, "from", request.From);
+            resourcePath = this.AddQueryParameter(resourcePath, "to", request.To);
+            resourcePath = this.AddQueryParameter(resourcePath, "zipOutput", request.ZipOutput);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
             
             try 
             {                
@@ -5855,15 +5855,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'bookmarkName' when calling PostUpdateDocumentBookmark");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "BookmarkName", request.BookmarkName);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "bookmarkName", request.BookmarkName);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.BookmarkData; // http body (model) parameter
             try 
             {                
@@ -5915,12 +5915,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostUpdateDocumentFields");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -5978,14 +5978,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'comment' when calling PutComment");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.Comment; // http body (model) parameter
             try 
             {                
@@ -6043,14 +6043,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'document' when calling PutConvertDocument");
             }
             
-            resourcePath = this.AddQueryParameter(resourcePath, "Format", request.Format);
-            resourcePath = this.AddQueryParameter(resourcePath, "OutPath", request.OutPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
+            resourcePath = this.AddQueryParameter(resourcePath, "format", request.Format);
+            resourcePath = this.AddQueryParameter(resourcePath, "outPath", request.OutPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
             
             if (request.Document != null) 
             {
-                formParams.Add("Document", this.apiInvoker.ToFileInfo(request.Document, "Document"));
+                formParams.Add("document", this.apiInvoker.ToFileInfo(request.Document, "Document"));
             }
             try 
             {                
@@ -6096,8 +6096,8 @@ namespace Aspose.Words.Cloud.Sdk.Api
             var formParams = new Dictionary<string, object>();
             object postBody = null;            
             
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
             
             try 
             {                
@@ -6149,11 +6149,11 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'template' when calling PutDocumentFieldNames");
             }
             
-            resourcePath = this.AddQueryParameter(resourcePath, "UseNonMergeFields", request.UseNonMergeFields);
+            resourcePath = this.AddQueryParameter(resourcePath, "useNonMergeFields", request.UseNonMergeFields);
             
             if (request.Template != null) 
             {
-                formParams.Add("Template", this.apiInvoker.ToFileInfo(request.Template, "Template"));
+                formParams.Add("template", this.apiInvoker.ToFileInfo(request.Template, "Template"));
             }
             try 
             {                
@@ -6211,31 +6211,31 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'saveOptions' when calling PutDocumentSaveAsTiff");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "ResultFile", request.ResultFile);
-            resourcePath = this.AddQueryParameter(resourcePath, "UseAntiAliasing", request.UseAntiAliasing);
-            resourcePath = this.AddQueryParameter(resourcePath, "UseHighQualityRendering", request.UseHighQualityRendering);
-            resourcePath = this.AddQueryParameter(resourcePath, "ImageBrightness", request.ImageBrightness);
-            resourcePath = this.AddQueryParameter(resourcePath, "ImageColorMode", request.ImageColorMode);
-            resourcePath = this.AddQueryParameter(resourcePath, "ImageContrast", request.ImageContrast);
-            resourcePath = this.AddQueryParameter(resourcePath, "NumeralFormat", request.NumeralFormat);
-            resourcePath = this.AddQueryParameter(resourcePath, "PageCount", request.PageCount);
-            resourcePath = this.AddQueryParameter(resourcePath, "PageIndex", request.PageIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "PaperColor", request.PaperColor);
-            resourcePath = this.AddQueryParameter(resourcePath, "PixelFormat", request.PixelFormat);
-            resourcePath = this.AddQueryParameter(resourcePath, "Resolution", request.Resolution);
-            resourcePath = this.AddQueryParameter(resourcePath, "Scale", request.Scale);
-            resourcePath = this.AddQueryParameter(resourcePath, "TiffCompression", request.TiffCompression);
-            resourcePath = this.AddQueryParameter(resourcePath, "DmlRenderingMode", request.DmlRenderingMode);
-            resourcePath = this.AddQueryParameter(resourcePath, "DmlEffectsRenderingMode", request.DmlEffectsRenderingMode);
-            resourcePath = this.AddQueryParameter(resourcePath, "TiffBinarizationMethod", request.TiffBinarizationMethod);
-            resourcePath = this.AddQueryParameter(resourcePath, "ZipOutput", request.ZipOutput);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
-            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "resultFile", request.ResultFile);
+            resourcePath = this.AddQueryParameter(resourcePath, "useAntiAliasing", request.UseAntiAliasing);
+            resourcePath = this.AddQueryParameter(resourcePath, "useHighQualityRendering", request.UseHighQualityRendering);
+            resourcePath = this.AddQueryParameter(resourcePath, "imageBrightness", request.ImageBrightness);
+            resourcePath = this.AddQueryParameter(resourcePath, "imageColorMode", request.ImageColorMode);
+            resourcePath = this.AddQueryParameter(resourcePath, "imageContrast", request.ImageContrast);
+            resourcePath = this.AddQueryParameter(resourcePath, "numeralFormat", request.NumeralFormat);
+            resourcePath = this.AddQueryParameter(resourcePath, "pageCount", request.PageCount);
+            resourcePath = this.AddQueryParameter(resourcePath, "pageIndex", request.PageIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "paperColor", request.PaperColor);
+            resourcePath = this.AddQueryParameter(resourcePath, "pixelFormat", request.PixelFormat);
+            resourcePath = this.AddQueryParameter(resourcePath, "resolution", request.Resolution);
+            resourcePath = this.AddQueryParameter(resourcePath, "scale", request.Scale);
+            resourcePath = this.AddQueryParameter(resourcePath, "tiffCompression", request.TiffCompression);
+            resourcePath = this.AddQueryParameter(resourcePath, "dmlRenderingMode", request.DmlRenderingMode);
+            resourcePath = this.AddQueryParameter(resourcePath, "dmlEffectsRenderingMode", request.DmlEffectsRenderingMode);
+            resourcePath = this.AddQueryParameter(resourcePath, "tiffBinarizationMethod", request.TiffBinarizationMethod);
+            resourcePath = this.AddQueryParameter(resourcePath, "zipOutput", request.ZipOutput);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
             postBody = request.SaveOptions; // http body (model) parameter
             try 
             {                
@@ -6299,15 +6299,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PutDrawingObject");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             if (request.DrawingObject != null) 
             {
@@ -6315,7 +6315,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
             }
             if (request.ImageFile != null) 
             {
-                formParams.Add("ImageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
+                formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
             }
             try 
             {                
@@ -6373,16 +6373,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'data' when calling PutExecuteMailMergeOnline");
             }
             
-            resourcePath = this.AddQueryParameter(resourcePath, "WithRegions", request.WithRegions);
-            resourcePath = this.AddQueryParameter(resourcePath, "Cleanup", request.Cleanup);
+            resourcePath = this.AddQueryParameter(resourcePath, "withRegions", request.WithRegions);
+            resourcePath = this.AddQueryParameter(resourcePath, "cleanup", request.Cleanup);
             
             if (request.Template != null) 
             {
-                formParams.Add("Template", this.apiInvoker.ToFileInfo(request.Template, "Template"));
+                formParams.Add("template", this.apiInvoker.ToFileInfo(request.Template, "Template"));
             }
             if (request.Data != null) 
             {
-                formParams.Add("Data", this.apiInvoker.ToFileInfo(request.Data, "Data"));
+                formParams.Add("data", this.apiInvoker.ToFileInfo(request.Data, "Data"));
             }
             try 
             {                
@@ -6440,17 +6440,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'data' when calling PutExecuteTemplateOnline");
             }
             
-            resourcePath = this.AddQueryParameter(resourcePath, "Cleanup", request.Cleanup);
-            resourcePath = this.AddQueryParameter(resourcePath, "UseWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
-            resourcePath = this.AddQueryParameter(resourcePath, "WithRegions", request.WithRegions);
+            resourcePath = this.AddQueryParameter(resourcePath, "cleanup", request.Cleanup);
+            resourcePath = this.AddQueryParameter(resourcePath, "useWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
+            resourcePath = this.AddQueryParameter(resourcePath, "withRegions", request.WithRegions);
             
             if (request.Template != null) 
             {
-                formParams.Add("Template", this.apiInvoker.ToFileInfo(request.Template, "Template"));
+                formParams.Add("template", this.apiInvoker.ToFileInfo(request.Template, "Template"));
             }
             if (request.Data != null) 
             {
-                formParams.Add("Data", this.apiInvoker.ToFileInfo(request.Data, "Data"));
+                formParams.Add("data", this.apiInvoker.ToFileInfo(request.Data, "Data"));
             }
             try 
             {                
@@ -6508,16 +6508,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'field' when calling PutField");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "InsertBeforeNode", request.InsertBeforeNode);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.Field; // http body (model) parameter
             try 
             {                
@@ -6575,15 +6575,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'footnoteDto' when calling PutFootnote");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.FootnoteDto; // http body (model) parameter
             try 
             {                
@@ -6641,16 +6641,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'formField' when calling PutFormField");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "InsertBeforeNode", request.InsertBeforeNode);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.FormField; // http body (model) parameter
             try 
             {                
@@ -6708,15 +6708,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'headerFooterType' when calling PutHeaderFooter");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "SectionPath", request.SectionPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "sectionPath", request.SectionPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.HeaderFooterType; // http body (model) parameter
             try 
             {                
@@ -6774,16 +6774,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'paragraph' when calling PutParagraph");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "InsertBeforeNode", request.InsertBeforeNode);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.Paragraph; // http body (model) parameter
             try 
             {                
@@ -6841,12 +6841,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling PutProtectDocument");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.ProtectionRequest; // http body (model) parameter
             try 
             {                
@@ -6910,16 +6910,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'run' when calling PutRun");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "ParagraphPath", request.ParagraphPath);
-            resourcePath = this.AddQueryParameter(resourcePath, "InsertBeforeNode", request.InsertBeforeNode);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
+            resourcePath = this.AddQueryParameter(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.Run; // http body (model) parameter
             try 
             {                
@@ -6983,15 +6983,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'property' when calling PutUpdateDocumentProperty");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "PropertyName", request.PropertyName);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "propertyName", request.PropertyName);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.Property; // http body (model) parameter
             try 
             {                
@@ -7055,15 +7055,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'property' when calling PutUpdateDocumentProperty_2");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "PropertyName", request.PropertyName);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "propertyName", request.PropertyName);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.Property; // http body (model) parameter
             try 
             {                
@@ -7115,12 +7115,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling RejectAllRevisions");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -7184,15 +7184,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling RenderDrawingObject");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "Format", request.Format);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
-            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "format", request.Format);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
             
             try 
             {                
@@ -7256,15 +7256,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling RenderMathObject");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "Format", request.Format);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
-            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "format", request.Format);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
             
             try 
             {                
@@ -7328,14 +7328,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'format' when calling RenderPage");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "PageIndex", request.PageIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "Format", request.Format);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
-            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "pageIndex", request.PageIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "format", request.Format);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
             
             try 
             {                
@@ -7399,15 +7399,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling RenderParagraph");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "Format", request.Format);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
-            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "format", request.Format);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
             
             try 
             {                
@@ -7471,15 +7471,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling RenderTable");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "Format", request.Format);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
-            resourcePath = this.AddQueryParameter(resourcePath, "FontsLocation", request.FontsLocation);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "format", request.Format);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
+            resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
             
             try 
             {                
@@ -7576,12 +7576,12 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'name' when calling Search");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddQueryParameter(resourcePath, "Pattern", request.Pattern);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddQueryParameter(resourcePath, "pattern", request.Pattern);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
             {                
@@ -7651,16 +7651,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling UpdateBorder");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.BorderProperties; // http body (model) parameter
             try 
             {                
@@ -7724,15 +7724,15 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'pageSetup' when calling UpdateSectionPageSetup");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "SectionIndex", request.SectionIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "sectionIndex", request.SectionIndex);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.PageSetup; // http body (model) parameter
             try 
             {                
@@ -7802,16 +7802,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling UpdateTableCellFormat");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "TableRowPath", request.TableRowPath);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "tableRowPath", request.TableRowPath);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.Format; // http body (model) parameter
             try 
             {                
@@ -7875,16 +7875,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling UpdateTableProperties");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "NodePath", request.NodePath);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.Properties; // http body (model) parameter
             try 
             {                
@@ -7954,16 +7954,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                 throw new ApiException(400, "Missing required parameter 'index' when calling UpdateTableRowFormat");
             }
             
-            resourcePath = this.AddPathParameter(resourcePath, "Name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "TablePath", request.TablePath);
-            resourcePath = this.AddPathParameter(resourcePath, "Index", request.Index);
-            resourcePath = this.AddQueryParameter(resourcePath, "DestFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "Storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "Folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "LoadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "RevisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "Password", request.Password);
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "tablePath", request.TablePath);
+            resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             postBody = request.Format; // http body (model) parameter
             try 
             {                
