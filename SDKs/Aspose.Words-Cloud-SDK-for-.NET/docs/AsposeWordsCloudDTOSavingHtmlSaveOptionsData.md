@@ -1,0 +1,45 @@
+# IO.Swagger.com.aspose.AsposeWordsCloudDTOSavingHtmlSaveOptionsData
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**PrettyFormat** | **bool?** | Specifies whether or not use pretty formats output | [optional] 
+**AllowNegativeIndent** | **bool?** | Specifies whether negative left and right indents of paragraphs are allowed (not normalized) | [optional] 
+**CssStyleSheetFileName** | **string** | Specifies the name of the CSS file written when the document is exported to HTML | [optional] 
+**CssStyleSheetType** | **string** | Specifies how CSS styles are exported | [optional] 
+**DocumentSplitCriteria** | **string** | Specifies how the document should be split when saving | [optional] 
+**DocumentSplitHeadingLevel** | **int?** | Specifies the maximum level of headings at which to split the document | [optional] 
+**Encoding** | **string** | Specifies the encoding to use when exporting | [optional] 
+**ExportDocumentProperties** | **bool?** | Specifies whether to export built-in and custom document properties | [optional] 
+**ExportFontsAsBase64** | **bool?** | Specifies whether fonts resources should be embedded to HTML in Base64 encoding.  Default is false. | [optional] 
+**ExportFontResources** | **bool?** | Specifies whether font resources should be exported | [optional] 
+**ExportHeadersFootersMode** | **string** | Specifies how headers and footers are output | [optional] 
+**ExportImagesAsBase64** | **bool?** | Specifies whether images are saved in Base64 format | [optional] 
+**ExportLanguageInformation** | **bool?** | Specifies whether language information is exported | [optional] 
+**ExportListLabels** | **string** | Controls how list labels are output | [optional] 
+**ExportMetafileAsRaster** | **bool?** | Specifies whether to convert metafiles into raster images when exporting | [optional] 
+**ExportOriginalUrlForLinkedImages** | **bool?** | Specifies whether original URL should be used as the URL of the linked images.  Default value is false. | [optional] 
+**ExportPageMargins** | **bool?** | Specifies whether page margins is exported to HTML, MHTML or EPUB.  Default is false. | [optional] 
+**ExportPageSetup** | **bool?** | Specifies whether page setup is exported | [optional] 
+**ExportRelativeFontSize** | **bool?** | Specifies whether font sizes should be output in relative units when saving | [optional] 
+**ExportRoundtripInformation** | **bool?** | Specifies whether to write the roundtrip information when saving to HTML  Default value is true. | [optional] 
+**ExportTextBoxAsSvg** | **bool?** | Controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. Default value is false.  &lt;remarks&gt;    When set to true, exports textboxes as inline \&quot;svg\&quot; elements. When false, exports as \&quot;image\&quot; elements.  &lt;/remarks&gt; | [optional] 
+**ExportTextInputFormFieldAsText** | **bool?** | Controls how text input form fields are saved | [optional] 
+**ExportTocPageNumbers** | **bool?** | Specifies whether to write page numbers to table of contents when saving | [optional] 
+**ExportXhtmlTransitional** | **bool?** | Specifies whether to write the DOCTYPE declaration when saving | [optional] 
+**FontsFolder** | **string** | Specifies the physical folder where fonts are saved when exporting a document | [optional] 
+**FontsFolderAlias** | **string** | Specifies the name of the folder used to construct font URIs | [optional] 
+**FontResourcesSubsettingSizeThreshold** | **int?** | Controls which font resources need subsetting when saving | [optional] 
+**HtmlVersion** | **string** | Specifies version of HTML standard that should be used when saving the document to HTML or MHTML.    Default value is Aspose.Words.Saving.HtmlVersion.Xhtml. | [optional] 
+**ImagesFolder** | **string** | Specifies the physical folder where images are saved when exporting a document | [optional] 
+**ImagesFolderAlias** | **string** | Specifies the name of the folder used to construct image URIs | [optional] 
+**ImageResolution** | **int?** | Specifies the output resolution for images when exporting | [optional] 
+**OfficeMathOutputMode** | **string** | Controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image. | [optional] 
+**ResourceFolder** | **string** | Specifies a physical folder where all resources like images, fonts, and external CSS are saved when a document is exported to HTML. Default is an empty string. | [optional] 
+**ResourceFolderAlias** | **string** | Specifies the name of the folder used to construct URIs of all resources written into an HTML document.  Default is an empty string. | [optional] 
+**ScaleImageToShapeSize** | **bool?** | Specifies whether images are scaled by Aspose.Words to the bounding shape size when exporting | [optional] 
+**TableWidthOutputMode** | **string** | Controls how table, row and cell widths are exported | [optional] 
+**ExportDropDownFormFieldAsText** | **bool?** | Controls how drop-down form fields are saved to HTML.  Default value is false. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
