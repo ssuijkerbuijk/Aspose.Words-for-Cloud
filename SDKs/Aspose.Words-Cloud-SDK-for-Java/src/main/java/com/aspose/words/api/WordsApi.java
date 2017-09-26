@@ -391,7 +391,7 @@ public class WordsApi {
 		if (customFont != null)
 			resourcePath = resourcePath.replace("{" + "customFont" + "}", apiInvoker.toPathValue(customFont));
 		else
-			resourcePath = resourcePath.replaceAll("[&?]name.*?(?=&|\\?|$)", "");
+			resourcePath = resourcePath.replaceAll("[&?]customFont.*?(?=&|\\?|$)", "");
 		
 		
 		
@@ -432,9 +432,7 @@ public class WordsApi {
 
 	/**
 	 * PostAppendDocument Append documents to original document.
-	 * 
-	 * @param name
-	 *            String Original document name.
+	 *
 	 * @param filename
 	 *            String Result name of the document after the operation. If
 	 *            this parameter is omitted then result of the operation will be
@@ -852,15 +850,13 @@ public class WordsApi {
 			resourcePath = resourcePath.replace("{" + "outPath" + "}", apiInvoker.toPathValue(outPath));
 		else
 			resourcePath = resourcePath.replaceAll("[&?]outPath.*?(?=&|\\?|$)", "");
-		String[] contentTypes = { "multipart/form-data" };
+		String[] contentTypes = { "application/octet-stream" };
 
 		String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
 
-		if (contentType.startsWith("multipart/form-data")) {
-			FormDataMultiPart mp = new FormDataMultiPart();
-			mp.field("file", file, MediaType.MULTIPART_FORM_DATA_TYPE);
-			postBody = mp;
-		}
+		
+		postBody = file;
+		
 		try {
 			response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, postBody, headerParams,
 					formParams, contentType);

@@ -22,11 +22,12 @@ namespace Document
 
                 Com.Aspose.Words.Model.SaveOptionsData body = new Com.Aspose.Words.Model.SaveOptionsData();
                 body.SaveFormat = "pdf";
-                body.FileName =  "output.pdf";
+                body.FileName = "output.pdf";
 
 
                 try
                 {
+                    
                     // Upload file to aspose cloud storage
                     storageApi.PutCreate(fileName, "", "", System.IO.File.ReadAllBytes(Common.GetDataDir() + fileName));
 

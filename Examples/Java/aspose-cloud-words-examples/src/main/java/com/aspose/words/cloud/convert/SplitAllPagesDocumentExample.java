@@ -25,15 +25,16 @@ public class SplitAllPagesDocumentExample {
 			WordsApi wordsApi = new WordsApi(Configuration.apiKey, Configuration.appSID, true);
 
 			// set input file name
-			String fileName = "SampleWordDocument.docx";
-			String format = "pdf";
-			Integer from = 2;
-			Integer to = 3;
-			Boolean zipOutput = false;
+			String fileName = "test2082017.docx";
+			String format = "html";
+			Integer from = 1;
+			Integer to = 29;
+			Boolean zipOutput = true;
 			String storage = null;
 			String folder = null;
 
-			Path p1=Utils.getPath(AppendDocumentExample.class, fileName);
+			//Path p1=Utils.getPath(AppendDocumentExample.class, fileName);
+			Path p1=Paths.get("/home/mateen/test2082017.docx");
 			// upload input file to aspose cloud storage
 			storageApi.PutCreate(fileName, "", "",p1.toFile());
 

@@ -1,0 +1,6 @@
+{
+  "moduleName":"AsposeOcrCloud",
+  "artifactId":"MyClient",
+  "artifactVersion":"1.0.0",
+  "library":"feign"
+}

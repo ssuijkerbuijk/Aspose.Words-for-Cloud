@@ -1,0 +1,68 @@
+var path = require('path');
+var fs = require('fs');
+var apiClient = require('./api-client');
+
+{{#operations}}
+function {{classname}}(config) {
+	var self = this;
+	
+	apiClient = new apiClient(config);
+	this.config = apiClient.config;
+}
+
+{{#operation}}
+/**
+* {{nickname}}
+* {{summary}}
+*{{#allParams}}
+* @param  ({{dataType}}) {{paramName}}  -  {{description}} {{#required}}(required){{/required}}{{^required}}(optional){{/required}} {{/allParams}}
+* @returns {{returnType}} (Map)
+*/
+{{classname}}.prototype.{{nickname}} = function({{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}, callback) {
+
+    var self = this;
+	{{#queryParams}}{{#required}}
+	if( typeof {{paramName}} === 'undefined' || {{paramName}} === null && {{paramName}} === ''){
+		throw new Error('missing required parameters.');
+    }{{/required}} {{/queryParams}}	
+	{{#formParams}}{{#isFile}}
+	if( typeof file === 'undefined' || file === null && file === ''){
+		throw new Error('missing required file.');
+    }{{/isFile}}{{/formParams}}	
+	var resourcePath = '{{path}}';
+	
+	resourcePath = resourcePath.replace(new RegExp('\\*', 'g'), "");
+	resourcePath = resourcePath.replace(new RegExp('&amp;', 'g'), '&');
+	resourcePath = resourcePath.replace('&amp;','&').replace("/?","?").replace("toFormat={toFormat}","format={format}").replace("{path}","{Path}");
+	
+	{{#queryParams}}
+	if(typeof {{paramName}} !== 'undefined' &&  {{paramName}} !== null && {{paramName}}!== ''){            
+			resourcePath = resourcePath.replace("{" + "{{paramName}}" + "}" , {{paramName}});
+	}else{
+		resourcePath = resourcePath.replace(new RegExp('[&?]{{paramName}}.*?(?=&|\\?|$)', 'g'), "");
+		}
+	{{newline}}{{/queryParams}}
+	
+	if(this.config.debug){console.log('resourcePath :: ' + resourcePath);}
+	
+    method = '{{httpMethod}}'
+    queryParams = {}
+    headerParams = {}
+    formParams = {}
+    files = {}
+	postData = {{#bodyParam}}JSON.stringify(body);{{/bodyParam}}{{^bodyParam}}null;{{/bodyParam}}
+    
+	{{#formParams}}{{#isFile}}if(file !== 'undefined' && file !== null && file !== ''){
+		postData = fs.readFileSync(file)
+	}
+	{{/isFile}}{{/formParams}}
+	headerParams['Accept'] = '{{#produces}}{{mediaType}}{{#hasMore}},{{/hasMore}}{{/produces}}'
+    headerParams['Content-Type'] = '{{#consumes}}{{mediaType}}{{#hasMore}},{{/hasMore}}{{/consumes}}'
+
+	return apiClient.InvokeAPI(resourcePath, method, queryParams, postData, headerParams, files, callback);
+  }
+    {{/operation}}
+{{newline}}
+module.exports = {{classname}}
+{{/operations}}
+{{newline}}

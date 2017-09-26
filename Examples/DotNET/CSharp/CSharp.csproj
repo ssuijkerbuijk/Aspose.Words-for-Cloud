@@ -65,6 +65,7 @@
     <Compile Include="Document-Properties\GetAllDocumentProperties.cs" />
     <Compile Include="Document\ConvertToAnyFormat.cs" />
     <Compile Include="Document\ConvertWebPages.cs" />
+    <Compile Include="Document\GetComment.cs" />
     <Compile Include="Document\RejectAllTrackingChanges.cs" />
     <Compile Include="Document\AcceptAllTrackingChanges.cs" />
     <Compile Include="Document\GetWordAndParagraphCount.cs" />
@@ -121,6 +122,7 @@
     <Compile Include="Hyperlink\ReadAllHyperlinks.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
