@@ -1,22 +1,16 @@
 {{#operations}}
-namespace {{packageName}}.Model 
+namespace {{packageName}}.Requests 
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+  using {{packageName}}.Model; 
 {{#operation}}
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.{{nickname}}" /> operation.
   /// </summary>  
-  public class {{nickname}}Request
-  {       
+  public class {{nickname}}Request{{#vendorExtensions}}{{#x-csharp-implements}} : {{x-csharp-implements}} {{/x-csharp-implements}}  {{/vendorExtensions}}
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="{{nickname}}Request"/> class.
         /// </summary>
         {{#allParams}}
         /// <param name="{{paramName}}">{{description}}</param>

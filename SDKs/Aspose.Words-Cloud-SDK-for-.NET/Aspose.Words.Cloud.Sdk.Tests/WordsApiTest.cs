@@ -3,6 +3,7 @@
     using Aspose.Words.Cloud.Sdk;
     using Aspose.Words.Cloud.Sdk.Api;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Requests;
 
     using Com.Aspose.Storage.Api;
 

@@ -1,11 +1,12 @@
-using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using Aspose.Words.Cloud.Sdk.Model;
-
 namespace Aspose.Words.Cloud.Sdk.Api
 {
+    using System;    
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Text.RegularExpressions;
+    using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Requests;
+
     public class WordsApi
     {        
         private readonly string basePath;
@@ -20,7 +21,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Accept all revisions in document 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.AcceptAllRevisionsRequest" /></param> 
+        /// <param name="request">Request. <see cref="AcceptAllRevisionsRequest" /></param> 
         /// <returns><see cref="RevisionsModificationResponse"/></returns>            
         public RevisionsModificationResponse AcceptAllRevisions(AcceptAllRevisionsRequest request)
         {
@@ -77,7 +78,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Resets border properties to default values. &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteBorderRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteBorderRequest" /></param> 
         /// <returns><see cref="BorderResponse"/></returns>            
         public BorderResponse DeleteBorder(DeleteBorderRequest request)
         {
@@ -150,7 +151,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Resets borders properties to default values. &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteBordersRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteBordersRequest" /></param> 
         /// <returns><see cref="BordersResponse"/></returns>            
         public BordersResponse DeleteBorders(DeleteBordersRequest request)
         {
@@ -216,7 +217,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Remove comment from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteCommentRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteCommentRequest" /></param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteComment(DeleteCommentRequest request)
         {
@@ -282,7 +283,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Remove macros from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteDocumentMacrosRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteDocumentMacrosRequest" /></param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteDocumentMacros(DeleteDocumentMacrosRequest request)
         {
@@ -341,7 +342,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Delete document property. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteDocumentPropertyRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteDocumentPropertyRequest" /></param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteDocumentProperty(DeleteDocumentPropertyRequest request)
         {
@@ -407,7 +408,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Delete watermark (for deleting last watermark from the document). 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteDocumentWatermarkRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteDocumentWatermarkRequest" /></param> 
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse DeleteDocumentWatermark(DeleteDocumentWatermarkRequest request)
         {
@@ -466,7 +467,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Removes drawing object from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteDrawingObjectRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteDrawingObjectRequest" /></param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteDrawingObject(DeleteDrawingObjectRequest request)
         {
@@ -533,7 +534,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Delete field from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteFieldRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteFieldRequest" /></param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteField(DeleteFieldRequest request)
         {
@@ -600,7 +601,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Remove fields from section paragraph. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteFieldsRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteFieldsRequest" /></param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteFields(DeleteFieldsRequest request)
         {
@@ -660,7 +661,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Removes footnote from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteFootnoteRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteFootnoteRequest" /></param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteFootnote(DeleteFootnoteRequest request)
         {
@@ -727,7 +728,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Removes form field from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteFormFieldRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteFormFieldRequest" /></param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteFormField(DeleteFormFieldRequest request)
         {
@@ -794,7 +795,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Delete header/footer from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteHeaderFooterRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteHeaderFooterRequest" /></param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteHeaderFooter(DeleteHeaderFooterRequest request)
         {
@@ -861,7 +862,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Delete document headers and footers. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteHeadersFootersRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteHeadersFootersRequest" /></param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteHeadersFooters(DeleteHeadersFootersRequest request)
         {
@@ -922,7 +923,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Removes OfficeMath object from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteOfficeMathObjectRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteOfficeMathObjectRequest" /></param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteOfficeMathObject(DeleteOfficeMathObjectRequest request)
         {
@@ -989,7 +990,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Remove paragraph from section. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteParagraphRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteParagraphRequest" /></param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteParagraph(DeleteParagraphRequest request)
         {
@@ -1056,7 +1057,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Removes run from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteRunRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteRunRequest" /></param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteRun(DeleteRunRequest request)
         {
@@ -1129,7 +1130,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Delete a table. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteTableRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteTableRequest" /></param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteTable(DeleteTableRequest request)
         {
@@ -1196,7 +1197,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Delete a table cell. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteTableCellRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteTableCellRequest" /></param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteTableCell(DeleteTableCellRequest request)
         {
@@ -1269,7 +1270,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Delete a table row. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteTableRowRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteTableRowRequest" /></param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteTableRow(DeleteTableRowRequest request)
         {
@@ -1342,7 +1343,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Unprotect document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.DeleteUnprotectDocumentRequest" /></param> 
+        /// <param name="request">Request. <see cref="DeleteUnprotectDocumentRequest" /></param> 
         /// <returns><see cref="ProtectionDataResponse"/></returns>            
         public ProtectionDataResponse DeleteUnprotectDocument(DeleteUnprotectDocumentRequest request)
         {
@@ -1405,7 +1406,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Return a border. &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetBorderRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetBorderRequest" /></param> 
         /// <returns><see cref="BorderResponse"/></returns>            
         public BorderResponse GetBorder(GetBorderRequest request)
         {
@@ -1475,7 +1476,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Return a collection of borders. &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetBordersRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetBordersRequest" /></param> 
         /// <returns><see cref="BordersResponse"/></returns>            
         public BordersResponse GetBorders(GetBordersRequest request)
         {
@@ -1538,7 +1539,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Get comment from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetCommentRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetCommentRequest" /></param> 
         /// <returns><see cref="CommentResponse"/></returns>            
         public CommentResponse GetComment(GetCommentRequest request)
         {
@@ -1601,7 +1602,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Get comments from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetCommentsRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetCommentsRequest" /></param> 
         /// <returns><see cref="CommentsResponse"/></returns>            
         public CommentsResponse GetComments(GetCommentsRequest request)
         {
@@ -1657,7 +1658,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Read document common info. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentRequest" /></param> 
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse GetDocument(GetDocumentRequest request)
         {
@@ -1713,7 +1714,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Read document bookmark data by its name. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentBookmarkByNameRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentBookmarkByNameRequest" /></param> 
         /// <returns><see cref="BookmarkResponse"/></returns>            
         public BookmarkResponse GetDocumentBookmarkByName(GetDocumentBookmarkByNameRequest request)
         {
@@ -1776,7 +1777,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Read document bookmarks common info. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentBookmarksRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentBookmarksRequest" /></param> 
         /// <returns><see cref="BookmarksResponse"/></returns>            
         public BookmarksResponse GetDocumentBookmarks(GetDocumentBookmarksRequest request)
         {
@@ -1832,7 +1833,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Read document drawing object common info by its index or convert to format specified. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentDrawingObjectByIndexRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentDrawingObjectByIndexRequest" /></param> 
         /// <returns><see cref="DrawingObjectResponse"/></returns>            
         public DrawingObjectResponse GetDocumentDrawingObjectByIndex(GetDocumentDrawingObjectByIndexRequest request)
         {
@@ -1896,7 +1897,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Read drawing object image data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentDrawingObjectImageDataRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentDrawingObjectImageDataRequest" /></param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream GetDocumentDrawingObjectImageData(GetDocumentDrawingObjectImageDataRequest request)
         {
@@ -1960,7 +1961,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Get drawing object OLE data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentDrawingObjectOleDataRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentDrawingObjectOleDataRequest" /></param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream GetDocumentDrawingObjectOleData(GetDocumentDrawingObjectOleDataRequest request)
         {
@@ -2024,7 +2025,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Read document drawing objects common info. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentDrawingObjectsRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentDrawingObjectsRequest" /></param> 
         /// <returns><see cref="DrawingObjectsResponse"/></returns>            
         public DrawingObjectsResponse GetDocumentDrawingObjects(GetDocumentDrawingObjectsRequest request)
         {
@@ -2081,7 +2082,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Read document field names. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentFieldNamesRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentFieldNamesRequest" /></param> 
         /// <returns><see cref="FieldNamesResponse"/></returns>            
         public FieldNamesResponse GetDocumentFieldNames(GetDocumentFieldNamesRequest request)
         {
@@ -2138,7 +2139,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Read document hyperlink by its index. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentHyperlinkByIndexRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentHyperlinkByIndexRequest" /></param> 
         /// <returns><see cref="HyperlinkResponse"/></returns>            
         public HyperlinkResponse GetDocumentHyperlinkByIndex(GetDocumentHyperlinkByIndexRequest request)
         {
@@ -2201,7 +2202,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Read document hyperlinks common info. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentHyperlinksRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentHyperlinksRequest" /></param> 
         /// <returns><see cref="HyperlinksResponse"/></returns>            
         public HyperlinksResponse GetDocumentHyperlinks(GetDocumentHyperlinksRequest request)
         {
@@ -2257,7 +2258,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// This resource represents one of the paragraphs contained in the document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentParagraphRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentParagraphRequest" /></param> 
         /// <returns><see cref="ParagraphResponse"/></returns>            
         public ParagraphResponse GetDocumentParagraph(GetDocumentParagraphRequest request)
         {
@@ -2321,7 +2322,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// This resource represents run of text contained in the document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentParagraphRunRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentParagraphRunRequest" /></param> 
         /// <returns><see cref="RunResponse"/></returns>            
         public RunResponse GetDocumentParagraphRun(GetDocumentParagraphRunRequest request)
         {
@@ -2391,7 +2392,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// This resource represents font of run. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentParagraphRunFontRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentParagraphRunFontRequest" /></param> 
         /// <returns><see cref="FontResponse"/></returns>            
         public FontResponse GetDocumentParagraphRunFont(GetDocumentParagraphRunFontRequest request)
         {
@@ -2461,7 +2462,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// This resource represents collection of runs in the paragraph. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentParagraphRunsRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentParagraphRunsRequest" /></param> 
         /// <returns><see cref="RunsResponse"/></returns>            
         public RunsResponse GetDocumentParagraphRuns(GetDocumentParagraphRunsRequest request)
         {
@@ -2524,7 +2525,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Return a list of paragraphs that are contained in the document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentParagraphsRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentParagraphsRequest" /></param> 
         /// <returns><see cref="ParagraphLinkCollectionResponse"/></returns>            
         public ParagraphLinkCollectionResponse GetDocumentParagraphs(GetDocumentParagraphsRequest request)
         {
@@ -2581,7 +2582,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Read document properties info. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentPropertiesRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentPropertiesRequest" /></param> 
         /// <returns><see cref="DocumentPropertiesResponse"/></returns>            
         public DocumentPropertiesResponse GetDocumentProperties(GetDocumentPropertiesRequest request)
         {
@@ -2637,7 +2638,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Read document property info by the property name. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentPropertyRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentPropertyRequest" /></param> 
         /// <returns><see cref="DocumentPropertyResponse"/></returns>            
         public DocumentPropertyResponse GetDocumentProperty(GetDocumentPropertyRequest request)
         {
@@ -2700,7 +2701,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Read document protection common info. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentProtectionRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentProtectionRequest" /></param> 
         /// <returns><see cref="ProtectionDataResponse"/></returns>            
         public ProtectionDataResponse GetDocumentProtection(GetDocumentProtectionRequest request)
         {
@@ -2756,7 +2757,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Read document statistics. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentStatisticsRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentStatisticsRequest" /></param> 
         /// <returns><see cref="StatDataResponse"/></returns>            
         public StatDataResponse GetDocumentStatistics(GetDocumentStatisticsRequest request)
         {
@@ -2815,7 +2816,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Read document text items. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentTextItemsRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentTextItemsRequest" /></param> 
         /// <returns><see cref="TextItemsResponse"/></returns>            
         public TextItemsResponse GetDocumentTextItems(GetDocumentTextItemsRequest request)
         {
@@ -2871,7 +2872,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Export the document into the specified format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetDocumentWithFormatRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetDocumentWithFormatRequest" /></param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream GetDocumentWithFormat(GetDocumentWithFormatRequest request)
         {
@@ -2936,7 +2937,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Get field from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetFieldRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetFieldRequest" /></param> 
         /// <returns><see cref="FieldResponse"/></returns>            
         public FieldResponse GetField(GetFieldRequest request)
         {
@@ -3000,7 +3001,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Get fields from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetFieldsRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetFieldsRequest" /></param> 
         /// <returns><see cref="FieldsResponse"/></returns>            
         public FieldsResponse GetFields(GetFieldsRequest request)
         {
@@ -3057,7 +3058,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Read footnote by index. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetFootnoteRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetFootnoteRequest" /></param> 
         /// <returns><see cref="FootnoteResponse"/></returns>            
         public FootnoteResponse GetFootnote(GetFootnoteRequest request)
         {
@@ -3121,7 +3122,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Get footnotes from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetFootnotesRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetFootnotesRequest" /></param> 
         /// <returns><see cref="FootnotesResponse"/></returns>            
         public FootnotesResponse GetFootnotes(GetFootnotesRequest request)
         {
@@ -3178,7 +3179,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Returns representation of an one of the form field. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetFormFieldRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetFormFieldRequest" /></param> 
         /// <returns><see cref="FormFieldResponse"/></returns>            
         public FormFieldResponse GetFormField(GetFormFieldRequest request)
         {
@@ -3242,7 +3243,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Get form fields from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetFormFieldsRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetFormFieldsRequest" /></param> 
         /// <returns><see cref="FormFieldsResponse"/></returns>            
         public FormFieldsResponse GetFormFields(GetFormFieldsRequest request)
         {
@@ -3299,7 +3300,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Return a header/footer that is contained in the document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetHeaderFooterRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetHeaderFooterRequest" /></param> 
         /// <returns><see cref="HeaderFooterResponse"/></returns>            
         public HeaderFooterResponse GetHeaderFooter(GetHeaderFooterRequest request)
         {
@@ -3364,7 +3365,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Return a header/footer that is contained in the document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetHeaderFooter_1Request" /></param> 
+        /// <param name="request">Request. <see cref="GetHeaderFooter_1Request" /></param> 
         /// <returns><see cref="HeaderFooterResponse"/></returns>            
         public HeaderFooterResponse GetHeaderFooter_1(GetHeaderFooter_1Request request)
         {
@@ -3435,7 +3436,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Return a list of header/footers that are contained in the document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetHeaderFootersRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetHeaderFootersRequest" /></param> 
         /// <returns><see cref="HeaderFootersResponse"/></returns>            
         public HeaderFootersResponse GetHeaderFooters(GetHeaderFootersRequest request)
         {
@@ -3493,7 +3494,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Read OfficeMath object by index. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetOfficeMathObjectRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetOfficeMathObjectRequest" /></param> 
         /// <returns><see cref="OfficeMathObjectResponse"/></returns>            
         public OfficeMathObjectResponse GetOfficeMathObject(GetOfficeMathObjectRequest request)
         {
@@ -3557,7 +3558,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Get OfficeMath objects from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetOfficeMathObjectsRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetOfficeMathObjectsRequest" /></param> 
         /// <returns><see cref="OfficeMathObjectsResponse"/></returns>            
         public OfficeMathObjectsResponse GetOfficeMathObjects(GetOfficeMathObjectsRequest request)
         {
@@ -3614,7 +3615,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Get document section by index. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetSectionRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetSectionRequest" /></param> 
         /// <returns><see cref="SectionResponse"/></returns>            
         public SectionResponse GetSection(GetSectionRequest request)
         {
@@ -3677,7 +3678,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Get page setup of section. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetSectionPageSetupRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetSectionPageSetupRequest" /></param> 
         /// <returns><see cref="SectionPageSetupResponse"/></returns>            
         public SectionPageSetupResponse GetSectionPageSetup(GetSectionPageSetupRequest request)
         {
@@ -3740,7 +3741,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Return a list of sections that are contained in the document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetSectionsRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetSectionsRequest" /></param> 
         /// <returns><see cref="SectionLinkCollectionResponse"/></returns>            
         public SectionLinkCollectionResponse GetSections(GetSectionsRequest request)
         {
@@ -3796,7 +3797,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Return a table. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetTableRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetTableRequest" /></param> 
         /// <returns><see cref="TableResponse"/></returns>            
         public TableResponse GetTable(GetTableRequest request)
         {
@@ -3860,7 +3861,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Return a table cell. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetTableCellRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetTableCellRequest" /></param> 
         /// <returns><see cref="TableCellResponse"/></returns>            
         public TableCellResponse GetTableCell(GetTableCellRequest request)
         {
@@ -3930,7 +3931,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Return a table cell format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetTableCellFormatRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetTableCellFormatRequest" /></param> 
         /// <returns><see cref="TableCellFormatResponse"/></returns>            
         public TableCellFormatResponse GetTableCellFormat(GetTableCellFormatRequest request)
         {
@@ -4000,7 +4001,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Return a table properties. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetTablePropertiesRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetTablePropertiesRequest" /></param> 
         /// <returns><see cref="TablePropertiesResponse"/></returns>            
         public TablePropertiesResponse GetTableProperties(GetTablePropertiesRequest request)
         {
@@ -4064,7 +4065,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Return a table row. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetTableRowRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetTableRowRequest" /></param> 
         /// <returns><see cref="TableRowResponse"/></returns>            
         public TableRowResponse GetTableRow(GetTableRowRequest request)
         {
@@ -4134,7 +4135,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Return a table row format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetTableRowFormatRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetTableRowFormatRequest" /></param> 
         /// <returns><see cref="TableRowFormatResponse"/></returns>            
         public TableRowFormatResponse GetTableRowFormat(GetTableRowFormatRequest request)
         {
@@ -4204,7 +4205,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Return a list of tables that are contained in the document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.GetTablesRequest" /></param> 
+        /// <param name="request">Request. <see cref="GetTablesRequest" /></param> 
         /// <returns><see cref="TableLinkCollectionResponse"/></returns>            
         public TableLinkCollectionResponse GetTables(GetTablesRequest request)
         {
@@ -4261,7 +4262,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Adds table to document, returns added table&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.InsertTableRequest" /></param> 
+        /// <param name="request">Request. <see cref="InsertTableRequest" /></param> 
         /// <returns><see cref="TableResponse"/></returns>            
         public TableResponse InsertTable(InsertTableRequest request)
         {
@@ -4327,7 +4328,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Adds table cell to table, returns added cell&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.InsertTableCellRequest" /></param> 
+        /// <param name="request">Request. <see cref="InsertTableCellRequest" /></param> 
         /// <returns><see cref="TableCellResponse"/></returns>            
         public TableCellResponse InsertTableCell(InsertTableCellRequest request)
         {
@@ -4399,7 +4400,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Adds table row to table, returns added row&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.InsertTableRowRequest" /></param> 
+        /// <param name="request">Request. <see cref="InsertTableRowRequest" /></param> 
         /// <returns><see cref="TableRowResponse"/></returns>            
         public TableRowResponse InsertTableRow(InsertTableRowRequest request)
         {
@@ -4471,7 +4472,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Append documents to original document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostAppendDocumentRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostAppendDocumentRequest" /></param> 
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse PostAppendDocument(PostAppendDocumentRequest request)
         {
@@ -4536,7 +4537,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Change document protection. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostChangeDocumentProtectionRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostChangeDocumentProtectionRequest" /></param> 
         /// <returns><see cref="ProtectionDataResponse"/></returns>            
         public ProtectionDataResponse PostChangeDocumentProtection(PostChangeDocumentProtectionRequest request)
         {
@@ -4599,7 +4600,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Updates the comment, returns updated comment&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostCommentRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostCommentRequest" /></param> 
         /// <returns><see cref="CommentResponse"/></returns>            
         public CommentResponse PostComment(PostCommentRequest request)
         {
@@ -4671,7 +4672,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Compare document with original document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostCompareDocumentRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostCompareDocumentRequest" /></param> 
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse PostCompareDocument(PostCompareDocumentRequest request)
         {
@@ -4734,7 +4735,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Execute document mail merge operation. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostDocumentExecuteMailMergeRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostDocumentExecuteMailMergeRequest" /></param> 
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse PostDocumentExecuteMailMerge(PostDocumentExecuteMailMergeRequest request)
         {
@@ -4805,7 +4806,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Updates font properties, returns updated font data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostDocumentParagraphRunFontRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostDocumentParagraphRunFontRequest" /></param> 
         /// <returns><see cref="FontResponse"/></returns>            
         public FontResponse PostDocumentParagraphRunFont(PostDocumentParagraphRunFontRequest request)
         {
@@ -4884,7 +4885,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Convert document to destination format with detailed settings and save result to storage. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostDocumentSaveAsRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostDocumentSaveAsRequest" /></param> 
         /// <returns><see cref="SaveResponse"/></returns>            
         public SaveResponse PostDocumentSaveAs(PostDocumentSaveAsRequest request)
         {
@@ -4948,7 +4949,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Updates drawing object, returns updated  drawing object&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostDrawingObjectRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostDrawingObjectRequest" /></param> 
         /// <returns><see cref="DrawingObjectResponse"/></returns>            
         public DrawingObjectResponse PostDrawingObject(PostDrawingObjectRequest request)
         {
@@ -5035,7 +5036,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Populate document template with data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostExecuteTemplateRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostExecuteTemplateRequest" /></param> 
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse PostExecuteTemplate(PostExecuteTemplateRequest request)
         {
@@ -5105,7 +5106,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Updates field&#39;s properties, returns updated field&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostFieldRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostFieldRequest" /></param> 
         /// <returns><see cref="FieldResponse"/></returns>            
         public FieldResponse PostField(PostFieldRequest request)
         {
@@ -5178,7 +5179,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Updates footnote&#39;s properties, returns updated run&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostFootnoteRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostFootnoteRequest" /></param> 
         /// <returns><see cref="FootnoteResponse"/></returns>            
         public FootnoteResponse PostFootnote(PostFootnoteRequest request)
         {
@@ -5251,7 +5252,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Updates properties of form field, returns updated form field. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostFormFieldRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostFormFieldRequest" /></param> 
         /// <returns><see cref="FormFieldResponse"/></returns>            
         public FormFieldResponse PostFormField(PostFormFieldRequest request)
         {
@@ -5324,7 +5325,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Insert document watermark image. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostInsertDocumentWatermarkImageRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostInsertDocumentWatermarkImageRequest" /></param> 
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse PostInsertDocumentWatermarkImage(PostInsertDocumentWatermarkImageRequest request)
         {
@@ -5389,7 +5390,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Insert document watermark text. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostInsertDocumentWatermarkTextRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostInsertDocumentWatermarkTextRequest" /></param> 
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse PostInsertDocumentWatermarkText(PostInsertDocumentWatermarkTextRequest request)
         {
@@ -5454,7 +5455,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Insert document page numbers. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostInsertPageNumbersRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostInsertPageNumbersRequest" /></param> 
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse PostInsertPageNumbers(PostInsertPageNumbersRequest request)
         {
@@ -5519,7 +5520,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Loads new document from web into the file with any supported format of data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostLoadWebDocumentRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostLoadWebDocumentRequest" /></param> 
         /// <returns><see cref="SaveResponse"/></returns>            
         public SaveResponse PostLoadWebDocument(PostLoadWebDocumentRequest request)
         {
@@ -5571,7 +5572,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Replace document text. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostReplaceTextRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostReplaceTextRequest" /></param> 
         /// <returns><see cref="ReplaceTextResponse"/></returns>            
         public ReplaceTextResponse PostReplaceText(PostReplaceTextRequest request)
         {
@@ -5636,7 +5637,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Updates run&#39;s properties, returns updated run&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostRunRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostRunRequest" /></param> 
         /// <returns><see cref="RunResponse"/></returns>            
         public RunResponse PostRun(PostRunRequest request)
         {
@@ -5715,7 +5716,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Run tasks 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostRunTaskRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostRunTaskRequest" /></param> 
         /// <returns><see cref="Object"/></returns>            
         public Object PostRunTask(PostRunTaskRequest request)
         {
@@ -5760,7 +5761,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Split document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostSplitDocumentRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostSplitDocumentRequest" /></param> 
         /// <returns><see cref="SplitDocumentResponse"/></returns>            
         public SplitDocumentResponse PostSplitDocument(PostSplitDocumentRequest request)
         {
@@ -5822,7 +5823,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Update document bookmark. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostUpdateDocumentBookmarkRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostUpdateDocumentBookmarkRequest" /></param> 
         /// <returns><see cref="BookmarkResponse"/></returns>            
         public BookmarkResponse PostUpdateDocumentBookmark(PostUpdateDocumentBookmarkRequest request)
         {
@@ -5894,7 +5895,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Update (reevaluate) fields in document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PostUpdateDocumentFieldsRequest" /></param> 
+        /// <param name="request">Request. <see cref="PostUpdateDocumentFieldsRequest" /></param> 
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse PostUpdateDocumentFields(PostUpdateDocumentFieldsRequest request)
         {
@@ -5951,7 +5952,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Adds comment to document, returns inserted comment&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutCommentRequest" /></param> 
+        /// <param name="request">Request. <see cref="PutCommentRequest" /></param> 
         /// <returns><see cref="CommentResponse"/></returns>            
         public CommentResponse PutComment(PutCommentRequest request)
         {
@@ -6016,7 +6017,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Convert document from request content to format specified. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutConvertDocumentRequest" /></param> 
+        /// <param name="request">Request. <see cref="PutConvertDocumentRequest" /></param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream PutConvertDocument(PutConvertDocumentRequest request)
         {
@@ -6081,7 +6082,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Creates new document.  Document is created with format which is recognized from file extensions.   Supported extentions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot; 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutCreateDocumentRequest" /></param> 
+        /// <param name="request">Request. <see cref="PutCreateDocumentRequest" /></param> 
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse PutCreateDocument(PutCreateDocumentRequest request)
         {
@@ -6128,7 +6129,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Read document field names. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutDocumentFieldNamesRequest" /></param> 
+        /// <param name="request">Request. <see cref="PutDocumentFieldNamesRequest" /></param> 
         /// <returns><see cref="FieldNamesResponse"/></returns>            
         public FieldNamesResponse PutDocumentFieldNames(PutDocumentFieldNamesRequest request)
         {
@@ -6184,7 +6185,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Convert document to tiff with detailed settings and save result to storage. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutDocumentSaveAsTiffRequest" /></param> 
+        /// <param name="request">Request. <see cref="PutDocumentSaveAsTiffRequest" /></param> 
         /// <returns><see cref="SaveResponse"/></returns>            
         public SaveResponse PutDocumentSaveAsTiff(PutDocumentSaveAsTiffRequest request)
         {
@@ -6266,7 +6267,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Adds  drawing object to document, returns added  drawing object&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutDrawingObjectRequest" /></param> 
+        /// <param name="request">Request. <see cref="PutDrawingObjectRequest" /></param> 
         /// <returns><see cref="DrawingObjectResponse"/></returns>            
         public DrawingObjectResponse PutDrawingObject(PutDrawingObjectRequest request)
         {
@@ -6346,7 +6347,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Execute document mail merge online. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutExecuteMailMergeOnlineRequest" /></param> 
+        /// <param name="request">Request. <see cref="PutExecuteMailMergeOnlineRequest" /></param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream PutExecuteMailMergeOnline(PutExecuteMailMergeOnlineRequest request)
         {
@@ -6413,7 +6414,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Populate document template with data online. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutExecuteTemplateOnlineRequest" /></param> 
+        /// <param name="request">Request. <see cref="PutExecuteTemplateOnlineRequest" /></param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream PutExecuteTemplateOnline(PutExecuteTemplateOnlineRequest request)
         {
@@ -6481,7 +6482,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Adds field to document, returns inserted field&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutFieldRequest" /></param> 
+        /// <param name="request">Request. <see cref="PutFieldRequest" /></param> 
         /// <returns><see cref="FieldResponse"/></returns>            
         public FieldResponse PutField(PutFieldRequest request)
         {
@@ -6548,7 +6549,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Adds footnote to document, returns added footnote&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutFootnoteRequest" /></param> 
+        /// <param name="request">Request. <see cref="PutFootnoteRequest" /></param> 
         /// <returns><see cref="FootnoteResponse"/></returns>            
         public FootnoteResponse PutFootnote(PutFootnoteRequest request)
         {
@@ -6614,7 +6615,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Adds form field to paragraph, returns added form field&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutFormFieldRequest" /></param> 
+        /// <param name="request">Request. <see cref="PutFormFieldRequest" /></param> 
         /// <returns><see cref="FormFieldResponse"/></returns>            
         public FormFieldResponse PutFormField(PutFormFieldRequest request)
         {
@@ -6681,7 +6682,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Insert to document header or footer. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutHeaderFooterRequest" /></param> 
+        /// <param name="request">Request. <see cref="PutHeaderFooterRequest" /></param> 
         /// <returns><see cref="HeaderFooterResponse"/></returns>            
         public HeaderFooterResponse PutHeaderFooter(PutHeaderFooterRequest request)
         {
@@ -6747,7 +6748,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Adds paragraph to document, returns added paragraph&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutParagraphRequest" /></param> 
+        /// <param name="request">Request. <see cref="PutParagraphRequest" /></param> 
         /// <returns><see cref="ParagraphResponse"/></returns>            
         public ParagraphResponse PutParagraph(PutParagraphRequest request)
         {
@@ -6814,7 +6815,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Protect document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutProtectDocumentRequest" /></param> 
+        /// <param name="request">Request. <see cref="PutProtectDocumentRequest" /></param> 
         /// <returns><see cref="ProtectionDataResponse"/></returns>            
         public ProtectionDataResponse PutProtectDocument(PutProtectDocumentRequest request)
         {
@@ -6877,7 +6878,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Adds run to document, returns added paragraph&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutRunRequest" /></param> 
+        /// <param name="request">Request. <see cref="PutRunRequest" /></param> 
         /// <returns><see cref="RunResponse"/></returns>            
         public RunResponse PutRun(PutRunRequest request)
         {
@@ -6950,7 +6951,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Add new or update existing document property. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutUpdateDocumentPropertyRequest" /></param> 
+        /// <param name="request">Request. <see cref="PutUpdateDocumentPropertyRequest" /></param> 
         /// <returns><see cref="DocumentPropertyResponse"/></returns>            
         public DocumentPropertyResponse PutUpdateDocumentProperty(PutUpdateDocumentPropertyRequest request)
         {
@@ -7022,7 +7023,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Add new or update existing document property. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.PutUpdateDocumentProperty_2Request" /></param> 
+        /// <param name="request">Request. <see cref="PutUpdateDocumentProperty_2Request" /></param> 
         /// <returns><see cref="DocumentPropertyResponse"/></returns>            
         public DocumentPropertyResponse PutUpdateDocumentProperty_2(PutUpdateDocumentProperty_2Request request)
         {
@@ -7094,7 +7095,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Reject all revisions in document 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.RejectAllRevisionsRequest" /></param> 
+        /// <param name="request">Request. <see cref="RejectAllRevisionsRequest" /></param> 
         /// <returns><see cref="RevisionsModificationResponse"/></returns>            
         public RevisionsModificationResponse RejectAllRevisions(RejectAllRevisionsRequest request)
         {
@@ -7151,7 +7152,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Renders drawing object to specified format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.RenderDrawingObjectRequest" /></param> 
+        /// <param name="request">Request. <see cref="RenderDrawingObjectRequest" /></param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream RenderDrawingObject(RenderDrawingObjectRequest request)
         {
@@ -7223,7 +7224,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Renders math object to specified format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.RenderMathObjectRequest" /></param> 
+        /// <param name="request">Request. <see cref="RenderMathObjectRequest" /></param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream RenderMathObject(RenderMathObjectRequest request)
         {
@@ -7295,7 +7296,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Renders page to specified format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.RenderPageRequest" /></param> 
+        /// <param name="request">Request. <see cref="RenderPageRequest" /></param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream RenderPage(RenderPageRequest request)
         {
@@ -7366,7 +7367,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Renders paragraph to specified format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.RenderParagraphRequest" /></param> 
+        /// <param name="request">Request. <see cref="RenderParagraphRequest" /></param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream RenderParagraph(RenderParagraphRequest request)
         {
@@ -7438,7 +7439,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Renders table to specified format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.RenderTableRequest" /></param> 
+        /// <param name="request">Request. <see cref="RenderTableRequest" /></param> 
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream RenderTable(RenderTableRequest request)
         {
@@ -7510,7 +7511,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Resets font&#39;s cache. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.ResetCacheRequest" /></param> 
+        /// <param name="request">Request. <see cref="ResetCacheRequest" /></param> 
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse ResetCache(ResetCacheRequest request)
         {
@@ -7555,7 +7556,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Search text in document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.SearchRequest" /></param> 
+        /// <param name="request">Request. <see cref="SearchRequest" /></param> 
         /// <returns><see cref="SearchResponse"/></returns>            
         public SearchResponse Search(SearchRequest request)
         {
@@ -7612,7 +7613,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Updates border properties. &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.UpdateBorderRequest" /></param> 
+        /// <param name="request">Request. <see cref="UpdateBorderRequest" /></param> 
         /// <returns><see cref="BorderResponse"/></returns>            
         public BorderResponse UpdateBorder(UpdateBorderRequest request)
         {
@@ -7691,7 +7692,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Update page setup of section. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.UpdateSectionPageSetupRequest" /></param> 
+        /// <param name="request">Request. <see cref="UpdateSectionPageSetupRequest" /></param> 
         /// <returns><see cref="SectionPageSetupResponse"/></returns>            
         public SectionPageSetupResponse UpdateSectionPageSetup(UpdateSectionPageSetupRequest request)
         {
@@ -7763,7 +7764,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Updates a table cell format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.UpdateTableCellFormatRequest" /></param> 
+        /// <param name="request">Request. <see cref="UpdateTableCellFormatRequest" /></param> 
         /// <returns><see cref="TableCellFormatResponse"/></returns>            
         public TableCellFormatResponse UpdateTableCellFormat(UpdateTableCellFormatRequest request)
         {
@@ -7842,7 +7843,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Updates a table properties. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.UpdateTablePropertiesRequest" /></param> 
+        /// <param name="request">Request. <see cref="UpdateTablePropertiesRequest" /></param> 
         /// <returns><see cref="TablePropertiesResponse"/></returns>            
         public TablePropertiesResponse UpdateTableProperties(UpdateTablePropertiesRequest request)
         {
@@ -7915,7 +7916,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Updates a table row format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="Aspose.Words.Cloud.Sdk.Model.UpdateTableRowFormatRequest" /></param> 
+        /// <param name="request">Request. <see cref="UpdateTableRowFormatRequest" /></param> 
         /// <returns><see cref="TableRowFormatResponse"/></returns>            
         public TableRowFormatResponse UpdateTableRowFormat(UpdateTableRowFormatRequest request)
         {
@@ -8028,23 +8029,17 @@ namespace Aspose.Words.Cloud.Sdk.Api
     }
 }
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Requests 
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+  using Aspose.Words.Cloud.Sdk.Model; 
 
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.AcceptAllRevisions" /> operation.
   /// </summary>  
-  public class AcceptAllRevisionsRequest
-  {       
+  public class AcceptAllRevisionsRequest : ICanModifyDocumentRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="AcceptAllRevisionsRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
@@ -8096,10 +8091,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteBorder" /> operation.
   /// </summary>  
-  public class DeleteBorderRequest
-  {       
+  public class DeleteBorderRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteBorderRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="nodePath">Path to node with border(node should be cell or row).</param>
@@ -8179,10 +8174,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteBorders" /> operation.
   /// </summary>  
-  public class DeleteBordersRequest
-  {       
+  public class DeleteBordersRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteBordersRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="nodePath">Path to node with borders(node should be cell or row).</param>
@@ -8255,10 +8250,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteComment" /> operation.
   /// </summary>  
-  public class DeleteCommentRequest
-  {       
+  public class DeleteCommentRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteCommentRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="commentIndex">Comment index</param>
@@ -8331,10 +8326,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteDocumentMacros" /> operation.
   /// </summary>  
-  public class DeleteDocumentMacrosRequest
-  {       
+  public class DeleteDocumentMacrosRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteDocumentMacrosRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
@@ -8400,10 +8395,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteDocumentProperty" /> operation.
   /// </summary>  
-  public class DeleteDocumentPropertyRequest
-  {       
+  public class DeleteDocumentPropertyRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteDocumentPropertyRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="propertyName">The property name.</param>
@@ -8476,10 +8471,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteDocumentWatermark" /> operation.
   /// </summary>  
-  public class DeleteDocumentWatermarkRequest
-  {       
+  public class DeleteDocumentWatermarkRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteDocumentWatermarkRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
@@ -8545,10 +8540,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteDrawingObject" /> operation.
   /// </summary>  
-  public class DeleteDrawingObjectRequest
-  {       
+  public class DeleteDrawingObjectRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteDrawingObjectRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="index">Object index</param>
@@ -8628,10 +8623,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteField" /> operation.
   /// </summary>  
-  public class DeleteFieldRequest
-  {       
+  public class DeleteFieldRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteFieldRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="index">Object index</param>
@@ -8711,10 +8706,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteFields" /> operation.
   /// </summary>  
-  public class DeleteFieldsRequest
-  {       
+  public class DeleteFieldsRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteFieldsRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="nodePath">Path to node, which contains collection of fields.</param>
@@ -8787,10 +8782,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteFootnote" /> operation.
   /// </summary>  
-  public class DeleteFootnoteRequest
-  {       
+  public class DeleteFootnoteRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteFootnoteRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="index">Object index</param>
@@ -8870,10 +8865,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteFormField" /> operation.
   /// </summary>  
-  public class DeleteFormFieldRequest
-  {       
+  public class DeleteFormFieldRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteFormFieldRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="index">Object index</param>
@@ -8953,10 +8948,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteHeaderFooter" /> operation.
   /// </summary>  
-  public class DeleteHeaderFooterRequest
-  {       
+  public class DeleteHeaderFooterRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteHeaderFooterRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="index">Object index</param>
@@ -9036,10 +9031,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteHeadersFooters" /> operation.
   /// </summary>  
-  public class DeleteHeadersFootersRequest
-  {       
+  public class DeleteHeadersFootersRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteHeadersFootersRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="sectionPath">Path to parent section.</param>
@@ -9119,10 +9114,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteOfficeMathObject" /> operation.
   /// </summary>  
-  public class DeleteOfficeMathObjectRequest
-  {       
+  public class DeleteOfficeMathObjectRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteOfficeMathObjectRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="index">Object index</param>
@@ -9202,10 +9197,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteParagraph" /> operation.
   /// </summary>  
-  public class DeleteParagraphRequest
-  {       
+  public class DeleteParagraphRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteParagraphRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="index">Object index</param>
@@ -9285,10 +9280,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteRun" /> operation.
   /// </summary>  
-  public class DeleteRunRequest
-  {       
+  public class DeleteRunRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteRunRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="paragraphPath">Path to parent paragraph.</param>
@@ -9368,10 +9363,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteTable" /> operation.
   /// </summary>  
-  public class DeleteTableRequest
-  {       
+  public class DeleteTableRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteTableRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="index">Object index</param>
@@ -9451,10 +9446,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteTableCell" /> operation.
   /// </summary>  
-  public class DeleteTableCellRequest
-  {       
+  public class DeleteTableCellRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteTableCellRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="tableRowPath">Path to table row.</param>
@@ -9534,10 +9529,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteTableRow" /> operation.
   /// </summary>  
-  public class DeleteTableRowRequest
-  {       
+  public class DeleteTableRowRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteTableRowRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="tablePath">Path to table.</param>
@@ -9617,10 +9612,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteUnprotectDocument" /> operation.
   /// </summary>  
-  public class DeleteUnprotectDocumentRequest
-  {       
+  public class DeleteUnprotectDocumentRequest : ICanModifyDocumentRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="DeleteUnprotectDocumentRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="protectionRequest">{Aspose.Words.Cloud.DTO.ProtectionRequest} with protection settings.</param>
@@ -9679,10 +9674,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetBorder" /> operation.
   /// </summary>  
-  public class GetBorderRequest
-  {       
+  public class GetBorderRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetBorderRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="nodePath">Path to node with border(node should be cell or row).</param>
@@ -9741,10 +9736,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetBorders" /> operation.
   /// </summary>  
-  public class GetBordersRequest
-  {       
+  public class GetBordersRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetBordersRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="nodePath">Path to node with borders(node should be cell or row).</param>
@@ -9796,10 +9791,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetComment" /> operation.
   /// </summary>  
-  public class GetCommentRequest
-  {       
+  public class GetCommentRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetCommentRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="commentIndex">Comment index</param>
@@ -9851,10 +9846,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetComments" /> operation.
   /// </summary>  
-  public class GetCommentsRequest
-  {       
+  public class GetCommentsRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetCommentsRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="storage">File storage, which have to be used.</param>
@@ -9899,10 +9894,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocument" /> operation.
   /// </summary>  
-  public class GetDocumentRequest
-  {       
+  public class GetDocumentRequest  
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentRequest"/> class.
         /// </summary>
         /// <param name="documentName">The file name.</param>
         /// <param name="storage">File storage, which have to be used.</param>
@@ -9947,10 +9942,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentBookmarkByName" /> operation.
   /// </summary>  
-  public class GetDocumentBookmarkByNameRequest
-  {       
+  public class GetDocumentBookmarkByNameRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentBookmarkByNameRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="bookmarkName">The bookmark name.</param>
@@ -10002,10 +9997,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentBookmarks" /> operation.
   /// </summary>  
-  public class GetDocumentBookmarksRequest
-  {       
+  public class GetDocumentBookmarksRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentBookmarksRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="storage">File storage, which have to be used.</param>
@@ -10050,10 +10045,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentDrawingObjectByIndex" /> operation.
   /// </summary>  
-  public class GetDocumentDrawingObjectByIndexRequest
-  {       
+  public class GetDocumentDrawingObjectByIndexRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentDrawingObjectByIndexRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="index">Object index</param>
@@ -10112,10 +10107,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentDrawingObjectImageData" /> operation.
   /// </summary>  
-  public class GetDocumentDrawingObjectImageDataRequest
-  {       
+  public class GetDocumentDrawingObjectImageDataRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentDrawingObjectImageDataRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="index">Object index</param>
@@ -10174,10 +10169,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentDrawingObjectOleData" /> operation.
   /// </summary>  
-  public class GetDocumentDrawingObjectOleDataRequest
-  {       
+  public class GetDocumentDrawingObjectOleDataRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentDrawingObjectOleDataRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="index">Object index</param>
@@ -10236,10 +10231,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentDrawingObjects" /> operation.
   /// </summary>  
-  public class GetDocumentDrawingObjectsRequest
-  {       
+  public class GetDocumentDrawingObjectsRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentDrawingObjectsRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="nodePath">Path to node, which contains collection of drawing objects.</param>
@@ -10291,10 +10286,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentFieldNames" /> operation.
   /// </summary>  
-  public class GetDocumentFieldNamesRequest
-  {       
+  public class GetDocumentFieldNamesRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentFieldNamesRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="useNonMergeFields">If true, result includes \&quot;mustache\&quot; field names.</param>
@@ -10346,10 +10341,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentHyperlinkByIndex" /> operation.
   /// </summary>  
-  public class GetDocumentHyperlinkByIndexRequest
-  {       
+  public class GetDocumentHyperlinkByIndexRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentHyperlinkByIndexRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="hyperlinkIndex">The hyperlink index.</param>
@@ -10401,10 +10396,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentHyperlinks" /> operation.
   /// </summary>  
-  public class GetDocumentHyperlinksRequest
-  {       
+  public class GetDocumentHyperlinksRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentHyperlinksRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="storage">File storage, which have to be used.</param>
@@ -10449,10 +10444,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentParagraph" /> operation.
   /// </summary>  
-  public class GetDocumentParagraphRequest
-  {       
+  public class GetDocumentParagraphRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentParagraphRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="index">Object index</param>
@@ -10511,10 +10506,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentParagraphRun" /> operation.
   /// </summary>  
-  public class GetDocumentParagraphRunRequest
-  {       
+  public class GetDocumentParagraphRunRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentParagraphRunRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="paragraphPath">Path to parent paragraph.</param>
@@ -10573,10 +10568,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentParagraphRunFont" /> operation.
   /// </summary>  
-  public class GetDocumentParagraphRunFontRequest
-  {       
+  public class GetDocumentParagraphRunFontRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentParagraphRunFontRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="paragraphPath">Path to parent paragraph.</param>
@@ -10635,10 +10630,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentParagraphRuns" /> operation.
   /// </summary>  
-  public class GetDocumentParagraphRunsRequest
-  {       
+  public class GetDocumentParagraphRunsRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentParagraphRunsRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="paragraphPath">Path to parent paragraph.</param>
@@ -10690,10 +10685,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentParagraphs" /> operation.
   /// </summary>  
-  public class GetDocumentParagraphsRequest
-  {       
+  public class GetDocumentParagraphsRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentParagraphsRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="nodePath">Path to node which contains paragraphs.</param>
@@ -10745,10 +10740,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentProperties" /> operation.
   /// </summary>  
-  public class GetDocumentPropertiesRequest
-  {       
+  public class GetDocumentPropertiesRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentPropertiesRequest"/> class.
         /// </summary>
         /// <param name="name">The document&#39;s name.</param>
         /// <param name="storage">File storage, which have to be used.</param>
@@ -10793,10 +10788,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentProperty" /> operation.
   /// </summary>  
-  public class GetDocumentPropertyRequest
-  {       
+  public class GetDocumentPropertyRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentPropertyRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="propertyName">The property name.</param>
@@ -10848,10 +10843,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentProtection" /> operation.
   /// </summary>  
-  public class GetDocumentProtectionRequest
-  {       
+  public class GetDocumentProtectionRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentProtectionRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="storage">File storage, which have to be used.</param>
@@ -10896,10 +10891,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentStatistics" /> operation.
   /// </summary>  
-  public class GetDocumentStatisticsRequest
-  {       
+  public class GetDocumentStatisticsRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentStatisticsRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="includeComments">Support including/excluding comments from the WordCount. Default value is \&quot;true\&quot;.</param>
@@ -10965,10 +10960,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentTextItems" /> operation.
   /// </summary>  
-  public class GetDocumentTextItemsRequest
-  {       
+  public class GetDocumentTextItemsRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentTextItemsRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="storage">File storage, which have to be used.</param>
@@ -11013,10 +11008,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentWithFormat" /> operation.
   /// </summary>  
-  public class GetDocumentWithFormatRequest
-  {       
+  public class GetDocumentWithFormatRequest : IWordDocumentRequest, ICanUseCustomFontsRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetDocumentWithFormatRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="format">The destination format.</param>
@@ -11082,10 +11077,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetField" /> operation.
   /// </summary>  
-  public class GetFieldRequest
-  {       
+  public class GetFieldRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetFieldRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="index">Object index</param>
@@ -11144,10 +11139,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetFields" /> operation.
   /// </summary>  
-  public class GetFieldsRequest
-  {       
+  public class GetFieldsRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetFieldsRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="nodePath">Path to node, which contains collection of fields.</param>
@@ -11199,10 +11194,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetFootnote" /> operation.
   /// </summary>  
-  public class GetFootnoteRequest
-  {       
+  public class GetFootnoteRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetFootnoteRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="index">Object index</param>
@@ -11261,10 +11256,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetFootnotes" /> operation.
   /// </summary>  
-  public class GetFootnotesRequest
-  {       
+  public class GetFootnotesRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetFootnotesRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="nodePath">Path to node, which contains collection of footnotes.</param>
@@ -11316,10 +11311,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetFormField" /> operation.
   /// </summary>  
-  public class GetFormFieldRequest
-  {       
+  public class GetFormFieldRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetFormFieldRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="index">Object index</param>
@@ -11378,10 +11373,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetFormFields" /> operation.
   /// </summary>  
-  public class GetFormFieldsRequest
-  {       
+  public class GetFormFieldsRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetFormFieldsRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="nodePath">Path to node containing collection of form fields.</param>
@@ -11433,10 +11428,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetHeaderFooter" /> operation.
   /// </summary>  
-  public class GetHeaderFooterRequest
-  {       
+  public class GetHeaderFooterRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetHeaderFooterRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="headerFooterIndex">Header/footer index.</param>
@@ -11502,10 +11497,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetHeaderFooter_1" /> operation.
   /// </summary>  
-  public class GetHeaderFooter_1Request
-  {       
+  public class GetHeaderFooter_1Request : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetHeaderFooter_1Request"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="headerFooterIndex">Header/footer index.</param>
@@ -11571,10 +11566,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetHeaderFooters" /> operation.
   /// </summary>  
-  public class GetHeaderFootersRequest
-  {       
+  public class GetHeaderFootersRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetHeaderFootersRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="sectionPath">Path to parent section.</param>
@@ -11633,10 +11628,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetOfficeMathObject" /> operation.
   /// </summary>  
-  public class GetOfficeMathObjectRequest
-  {       
+  public class GetOfficeMathObjectRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetOfficeMathObjectRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="index">Object index</param>
@@ -11695,10 +11690,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetOfficeMathObjects" /> operation.
   /// </summary>  
-  public class GetOfficeMathObjectsRequest
-  {       
+  public class GetOfficeMathObjectsRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetOfficeMathObjectsRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="nodePath">Path to node, which contains collection of OfficeMath objects.</param>
@@ -11750,10 +11745,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetSection" /> operation.
   /// </summary>  
-  public class GetSectionRequest
-  {       
+  public class GetSectionRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetSectionRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="sectionIndex">Section index</param>
@@ -11805,10 +11800,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetSectionPageSetup" /> operation.
   /// </summary>  
-  public class GetSectionPageSetupRequest
-  {       
+  public class GetSectionPageSetupRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetSectionPageSetupRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="sectionIndex">Section index</param>
@@ -11860,10 +11855,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetSections" /> operation.
   /// </summary>  
-  public class GetSectionsRequest
-  {       
+  public class GetSectionsRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetSectionsRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="storage">File storage, which have to be used.</param>
@@ -11908,10 +11903,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetTable" /> operation.
   /// </summary>  
-  public class GetTableRequest
-  {       
+  public class GetTableRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetTableRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="index">Object index</param>
@@ -11970,10 +11965,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetTableCell" /> operation.
   /// </summary>  
-  public class GetTableCellRequest
-  {       
+  public class GetTableCellRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetTableCellRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="tableRowPath">Path to table row.</param>
@@ -12032,10 +12027,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetTableCellFormat" /> operation.
   /// </summary>  
-  public class GetTableCellFormatRequest
-  {       
+  public class GetTableCellFormatRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetTableCellFormatRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="tableRowPath">Path to table row.</param>
@@ -12094,10 +12089,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetTableProperties" /> operation.
   /// </summary>  
-  public class GetTablePropertiesRequest
-  {       
+  public class GetTablePropertiesRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetTablePropertiesRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="index">Object index</param>
@@ -12156,10 +12151,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetTableRow" /> operation.
   /// </summary>  
-  public class GetTableRowRequest
-  {       
+  public class GetTableRowRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetTableRowRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="tablePath">Path to table.</param>
@@ -12218,10 +12213,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetTableRowFormat" /> operation.
   /// </summary>  
-  public class GetTableRowFormatRequest
-  {       
+  public class GetTableRowFormatRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetTableRowFormatRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="tablePath">Path to table.</param>
@@ -12280,10 +12275,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetTables" /> operation.
   /// </summary>  
-  public class GetTablesRequest
-  {       
+  public class GetTablesRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="GetTablesRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="nodePath">Path to node, which contains tables.</param>
@@ -12335,10 +12330,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertTable" /> operation.
   /// </summary>  
-  public class InsertTableRequest
-  {       
+  public class InsertTableRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="InsertTableRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="table">Table parameters/</param>
@@ -12418,10 +12413,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertTableCell" /> operation.
   /// </summary>  
-  public class InsertTableCellRequest
-  {       
+  public class InsertTableCellRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="InsertTableCellRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="cell">Table cell parameters/</param>
@@ -12501,10 +12496,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertTableRow" /> operation.
   /// </summary>  
-  public class InsertTableRowRequest
-  {       
+  public class InsertTableRowRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="InsertTableRowRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="row">Table row parameters/</param>
@@ -12584,10 +12579,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostAppendDocument" /> operation.
   /// </summary>  
-  public class PostAppendDocumentRequest
-  {       
+  public class PostAppendDocumentRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostAppendDocumentRequest"/> class.
         /// </summary>
         /// <param name="name">Original document name.</param>
         /// <param name="documentList">{Aspose.Words.Cloud.DTO.DocumentEntryList} with a list of documents to append.</param>
@@ -12660,10 +12655,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostChangeDocumentProtection" /> operation.
   /// </summary>  
-  public class PostChangeDocumentProtectionRequest
-  {       
+  public class PostChangeDocumentProtectionRequest : ICanModifyDocumentRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostChangeDocumentProtectionRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="protectionRequest">{Aspose.Words.Cloud.DTO.ProtectionRequest} with protection settings.</param>
@@ -12722,10 +12717,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostComment" /> operation.
   /// </summary>  
-  public class PostCommentRequest
-  {       
+  public class PostCommentRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostCommentRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="commentIndex">Comment index</param>
@@ -12805,10 +12800,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostCompareDocument" /> operation.
   /// </summary>  
-  public class PostCompareDocumentRequest
-  {       
+  public class PostCompareDocumentRequest : ICanModifyDocumentRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostCompareDocumentRequest"/> class.
         /// </summary>
         /// <param name="name">Original document name.</param>
         /// <param name="compareData">{Aspose.Words.Cloud.DTO.Compare.CompareData} with a document to compare.</param>
@@ -12867,10 +12862,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostDocumentExecuteMailMerge" /> operation.
   /// </summary>  
-  public class PostDocumentExecuteMailMergeRequest
-  {       
+  public class PostDocumentExecuteMailMergeRequest : ICanModifyDocumentRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostDocumentExecuteMailMergeRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="withRegions">With regions flag.</param>
@@ -12957,10 +12952,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostDocumentParagraphRunFont" /> operation.
   /// </summary>  
-  public class PostDocumentParagraphRunFontRequest
-  {       
+  public class PostDocumentParagraphRunFontRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostDocumentParagraphRunFontRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="fontDto">Font dto object</param>
@@ -13047,10 +13042,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostDocumentSaveAs" /> operation.
   /// </summary>  
-  public class PostDocumentSaveAsRequest
-  {       
+  public class PostDocumentSaveAsRequest : ICanModifyDocumentRequest, IWordDocumentRequest, ICanUseCustomFontsRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostDocumentSaveAsRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="saveOptionsData">Save options.</param>
@@ -13116,10 +13111,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostDrawingObject" /> operation.
   /// </summary>  
-  public class PostDrawingObjectRequest
-  {       
+  public class PostDrawingObjectRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostDrawingObjectRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="drawingObject">Drawing object parameters</param>
@@ -13213,10 +13208,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostExecuteTemplate" /> operation.
   /// </summary>  
-  public class PostExecuteTemplateRequest
-  {       
+  public class PostExecuteTemplateRequest : ICanModifyDocumentRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostExecuteTemplateRequest"/> class.
         /// </summary>
         /// <param name="name">The template document name.</param>
         /// <param name="data">Mail merge data</param>
@@ -13296,10 +13291,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostField" /> operation.
   /// </summary>  
-  public class PostFieldRequest
-  {       
+  public class PostFieldRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostFieldRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="field">Field data.</param>
@@ -13386,10 +13381,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostFootnote" /> operation.
   /// </summary>  
-  public class PostFootnoteRequest
-  {       
+  public class PostFootnoteRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostFootnoteRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="footnoteDto">Footnote data.</param>
@@ -13476,10 +13471,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostFormField" /> operation.
   /// </summary>  
-  public class PostFormFieldRequest
-  {       
+  public class PostFormFieldRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostFormFieldRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="formField">From field data.</param>
@@ -13566,10 +13561,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostInsertDocumentWatermarkImage" /> operation.
   /// </summary>  
-  public class PostInsertDocumentWatermarkImageRequest
-  {       
+  public class PostInsertDocumentWatermarkImageRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostInsertDocumentWatermarkImageRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="imageFile">File with image</param>
@@ -13656,10 +13651,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostInsertDocumentWatermarkText" /> operation.
   /// </summary>  
-  public class PostInsertDocumentWatermarkTextRequest
-  {       
+  public class PostInsertDocumentWatermarkTextRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostInsertDocumentWatermarkTextRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="watermarkText">{Aspose.Words.Cloud.DTO.WatermarkText} with the watermark data.</param>
@@ -13732,10 +13727,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostInsertPageNumbers" /> operation.
   /// </summary>  
-  public class PostInsertPageNumbersRequest
-  {       
+  public class PostInsertPageNumbersRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostInsertPageNumbersRequest"/> class.
         /// </summary>
         /// <param name="name">A document name.</param>
         /// <param name="pageNumber">{Aspose.Words.Cloud.DTO.PageNumber} with the page numbers settings.</param>
@@ -13808,10 +13803,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostLoadWebDocument" /> operation.
   /// </summary>  
-  public class PostLoadWebDocumentRequest
-  {       
+  public class PostLoadWebDocumentRequest  
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostLoadWebDocumentRequest"/> class.
         /// </summary>
         /// <param name="data">Parameters of loading.</param>
         /// <param name="storage">File storage, which have to be used.</param>
@@ -13835,10 +13830,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostReplaceText" /> operation.
   /// </summary>  
-  public class PostReplaceTextRequest
-  {       
+  public class PostReplaceTextRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostReplaceTextRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="replaceText">{Aspose.Words.Cloud.DTO.Replace.ReplaceTextResponse} with the replace operation settings.</param>
@@ -13911,10 +13906,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostRun" /> operation.
   /// </summary>  
-  public class PostRunRequest
-  {       
+  public class PostRunRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostRunRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="run">Run data.</param>
@@ -14001,10 +13996,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostRunTask" /> operation.
   /// </summary>  
-  public class PostRunTaskRequest
-  {       
+  public class PostRunTaskRequest  
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostRunTaskRequest"/> class.
         /// </summary>
         public PostRunTaskRequest()             
         {
@@ -14015,10 +14010,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostSplitDocument" /> operation.
   /// </summary>  
-  public class PostSplitDocumentRequest
-  {       
+  public class PostSplitDocumentRequest : ICanModifyDocumentRequest, IWordDocumentRequest, ICanUseCustomFontsRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostSplitDocumentRequest"/> class.
         /// </summary>
         /// <param name="name">Original document name.</param>
         /// <param name="format">Format to split.</param>
@@ -14105,10 +14100,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostUpdateDocumentBookmark" /> operation.
   /// </summary>  
-  public class PostUpdateDocumentBookmarkRequest
-  {       
+  public class PostUpdateDocumentBookmarkRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostUpdateDocumentBookmarkRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="bookmarkData">{Aspose.Words.Cloud.DTO.DocumentElements.Bookmarks.BookmarkData} with new bookmark data.</param>
@@ -14188,10 +14183,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostUpdateDocumentFields" /> operation.
   /// </summary>  
-  public class PostUpdateDocumentFieldsRequest
-  {       
+  public class PostUpdateDocumentFieldsRequest : ICanModifyDocumentRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PostUpdateDocumentFieldsRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
@@ -14243,10 +14238,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutComment" /> operation.
   /// </summary>  
-  public class PutCommentRequest
-  {       
+  public class PutCommentRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PutCommentRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="comment">Comment data.</param>
@@ -14319,10 +14314,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutConvertDocument" /> operation.
   /// </summary>  
-  public class PutConvertDocumentRequest
-  {       
+  public class PutConvertDocumentRequest : ICanUseCustomFontsRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PutConvertDocumentRequest"/> class.
         /// </summary>
         /// <param name="format">Format to convert.</param>
         /// <param name="document">Converting document</param>
@@ -14367,10 +14362,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutCreateDocument" /> operation.
   /// </summary>  
-  public class PutCreateDocumentRequest
-  {       
+  public class PutCreateDocumentRequest  
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PutCreateDocumentRequest"/> class.
         /// </summary>
         /// <param name="folder">The document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
@@ -14394,10 +14389,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutDocumentFieldNames" /> operation.
   /// </summary>  
-  public class PutDocumentFieldNamesRequest
-  {       
+  public class PutDocumentFieldNamesRequest  
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PutDocumentFieldNamesRequest"/> class.
         /// </summary>
         /// <param name="template">File with template</param>
         /// <param name="useNonMergeFields">Use non merge fields or not.</param>
@@ -14421,10 +14416,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutDocumentSaveAsTiff" /> operation.
   /// </summary>  
-  public class PutDocumentSaveAsTiffRequest
-  {       
+  public class PutDocumentSaveAsTiffRequest : ICanModifyDocumentRequest, IWordDocumentRequest, ICanUseCustomFontsRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PutDocumentSaveAsTiffRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="saveOptions">Tiff save options.</param>
@@ -14616,10 +14611,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutDrawingObject" /> operation.
   /// </summary>  
-  public class PutDrawingObjectRequest
-  {       
+  public class PutDrawingObjectRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PutDrawingObjectRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="drawingObject">Drawing object parameters</param>
@@ -14706,10 +14701,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutExecuteMailMergeOnline" /> operation.
   /// </summary>  
-  public class PutExecuteMailMergeOnlineRequest
-  {       
+  public class PutExecuteMailMergeOnlineRequest  
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PutExecuteMailMergeOnlineRequest"/> class.
         /// </summary>
         /// <param name="template">File with template</param>
         /// <param name="data">File with mailmerge data</param>
@@ -14747,10 +14742,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutExecuteTemplateOnline" /> operation.
   /// </summary>  
-  public class PutExecuteTemplateOnlineRequest
-  {       
+  public class PutExecuteTemplateOnlineRequest  
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PutExecuteTemplateOnlineRequest"/> class.
         /// </summary>
         /// <param name="template">File with template</param>
         /// <param name="data">File with mailmerge data</param>
@@ -14795,10 +14790,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutField" /> operation.
   /// </summary>  
-  public class PutFieldRequest
-  {       
+  public class PutFieldRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PutFieldRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="field">Field data.</param>
@@ -14885,10 +14880,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutFootnote" /> operation.
   /// </summary>  
-  public class PutFootnoteRequest
-  {       
+  public class PutFootnoteRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PutFootnoteRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="footnoteDto">Footnote data.</param>
@@ -14968,10 +14963,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutFormField" /> operation.
   /// </summary>  
-  public class PutFormFieldRequest
-  {       
+  public class PutFormFieldRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PutFormFieldRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="formField">From field data.</param>
@@ -15058,10 +15053,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutHeaderFooter" /> operation.
   /// </summary>  
-  public class PutHeaderFooterRequest
-  {       
+  public class PutHeaderFooterRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PutHeaderFooterRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="headerFooterType">Type of header/footer.</param>
@@ -15141,10 +15136,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutParagraph" /> operation.
   /// </summary>  
-  public class PutParagraphRequest
-  {       
+  public class PutParagraphRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PutParagraphRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="paragraph">Paragraph data.</param>
@@ -15231,10 +15226,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutProtectDocument" /> operation.
   /// </summary>  
-  public class PutProtectDocumentRequest
-  {       
+  public class PutProtectDocumentRequest : ICanModifyDocumentRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PutProtectDocumentRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="protectionRequest">{Aspose.Words.Cloud.DTO.ProtectionRequest} with protection settings.</param>
@@ -15293,10 +15288,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutRun" /> operation.
   /// </summary>  
-  public class PutRunRequest
-  {       
+  public class PutRunRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PutRunRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="paragraphPath">Path to parent paragraph.</param>
@@ -15383,10 +15378,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutUpdateDocumentProperty" /> operation.
   /// </summary>  
-  public class PutUpdateDocumentPropertyRequest
-  {       
+  public class PutUpdateDocumentPropertyRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PutUpdateDocumentPropertyRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="propertyName">The property name.</param>
@@ -15466,10 +15461,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutUpdateDocumentProperty_2" /> operation.
   /// </summary>  
-  public class PutUpdateDocumentProperty_2Request
-  {       
+  public class PutUpdateDocumentProperty_2Request : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="PutUpdateDocumentProperty_2Request"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="propertyName">The property name.</param>
@@ -15549,10 +15544,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RejectAllRevisions" /> operation.
   /// </summary>  
-  public class RejectAllRevisionsRequest
-  {       
+  public class RejectAllRevisionsRequest : ICanModifyDocumentRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="RejectAllRevisionsRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
@@ -15604,10 +15599,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RenderDrawingObject" /> operation.
   /// </summary>  
-  public class RenderDrawingObjectRequest
-  {       
+  public class RenderDrawingObjectRequest : IWordDocumentRequest, ICanUseCustomFontsRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="RenderDrawingObjectRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="format">The destination format.</param>
@@ -15680,10 +15675,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RenderMathObject" /> operation.
   /// </summary>  
-  public class RenderMathObjectRequest
-  {       
+  public class RenderMathObjectRequest : IWordDocumentRequest, ICanUseCustomFontsRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="RenderMathObjectRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="format">The destination format.</param>
@@ -15756,10 +15751,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RenderPage" /> operation.
   /// </summary>  
-  public class RenderPageRequest
-  {       
+  public class RenderPageRequest : IWordDocumentRequest, ICanUseCustomFontsRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="RenderPageRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="pageIndex">Comment index</param>
@@ -15825,10 +15820,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RenderParagraph" /> operation.
   /// </summary>  
-  public class RenderParagraphRequest
-  {       
+  public class RenderParagraphRequest : IWordDocumentRequest, ICanUseCustomFontsRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="RenderParagraphRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="format">The destination format.</param>
@@ -15901,10 +15896,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RenderTable" /> operation.
   /// </summary>  
-  public class RenderTableRequest
-  {       
+  public class RenderTableRequest : IWordDocumentRequest, ICanUseCustomFontsRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="RenderTableRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="format">The destination format.</param>
@@ -15977,10 +15972,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ResetCache" /> operation.
   /// </summary>  
-  public class ResetCacheRequest
-  {       
+  public class ResetCacheRequest  
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="ResetCacheRequest"/> class.
         /// </summary>
         public ResetCacheRequest()             
         {
@@ -15991,10 +15986,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.Search" /> operation.
   /// </summary>  
-  public class SearchRequest
-  {       
+  public class SearchRequest : IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="SearchRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="pattern">The regular expression used to find matches.</param>
@@ -16046,10 +16041,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateBorder" /> operation.
   /// </summary>  
-  public class UpdateBorderRequest
-  {       
+  public class UpdateBorderRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="UpdateBorderRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="borderProperties">Border properties</param>
@@ -16136,10 +16131,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateSectionPageSetup" /> operation.
   /// </summary>  
-  public class UpdateSectionPageSetupRequest
-  {       
+  public class UpdateSectionPageSetupRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="UpdateSectionPageSetupRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="sectionIndex">Section index</param>
@@ -16219,10 +16214,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateTableCellFormat" /> operation.
   /// </summary>  
-  public class UpdateTableCellFormatRequest
-  {       
+  public class UpdateTableCellFormatRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="UpdateTableCellFormatRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="format">The properties.</param>
@@ -16309,10 +16304,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateTableProperties" /> operation.
   /// </summary>  
-  public class UpdateTablePropertiesRequest
-  {       
+  public class UpdateTablePropertiesRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="UpdateTablePropertiesRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="properties">The properties.</param>
@@ -16399,10 +16394,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateTableRowFormat" /> operation.
   /// </summary>  
-  public class UpdateTableRowFormatRequest
-  {       
+  public class UpdateTableRowFormatRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TableLink"/> class.
+        /// Initializes a new instance of the <see cref="UpdateTableRowFormatRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="format">Table row format.</param>

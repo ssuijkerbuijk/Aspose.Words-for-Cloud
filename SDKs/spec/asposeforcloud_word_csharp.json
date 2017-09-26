@@ -86,7 +86,8 @@
               "type": "file"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest, ICanUseCustomFontsRequest"
       }
     },
     "/words/convert": {
@@ -146,7 +147,8 @@
               "type": "file"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanUseCustomFontsRequest"
       }
     },
     "/words/{name}/saveAs/tiff": {
@@ -360,7 +362,8 @@
               "$ref": "#/definitions/SaveResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, IWordDocumentRequest, ICanUseCustomFontsRequest"
       }
     },
     "/words/{name}/saveAs": {
@@ -442,7 +445,8 @@
               "$ref": "#/definitions/SaveResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, IWordDocumentRequest, ICanUseCustomFontsRequest"
       }
     },
     "/words/{name}/{paragraphPath}/runs": {
@@ -507,7 +511,8 @@
               "$ref": "#/definitions/RunsResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "put": {
         "tags": [
@@ -607,7 +612,8 @@
               "$ref": "#/definitions/RunResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{paragraphPath}/runs/{index}": {
@@ -679,7 +685,8 @@
               "$ref": "#/definitions/RunResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "post": {
         "tags": [
@@ -779,7 +786,8 @@
               "$ref": "#/definitions/RunResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       },
       "delete": {
         "tags": [
@@ -867,7 +875,8 @@
               "$ref": "#/definitions/SaaSposeResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{paragraphPath}/runs/{index}/font": {
@@ -939,7 +948,8 @@
               "$ref": "#/definitions/FontResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "post": {
         "tags": [
@@ -1039,7 +1049,8 @@
               "$ref": "#/definitions/FontResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{nodePath}/paragraphs": {
@@ -1104,7 +1115,8 @@
               "$ref": "#/definitions/ParagraphLinkCollectionResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "put": {
         "tags": [
@@ -1204,7 +1216,8 @@
               "$ref": "#/definitions/ParagraphResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{nodePath}/paragraphs/{index}": {
@@ -1276,7 +1289,8 @@
               "$ref": "#/definitions/ParagraphResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "delete": {
         "tags": [
@@ -1364,7 +1378,8 @@
               "$ref": "#/definitions/SaaSposeResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/fonts/cache": {
@@ -1448,7 +1463,8 @@
               "$ref": "#/definitions/HyperlinksResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       }
     },
     "/words/{name}/hyperlinks/{hyperlinkIndex}": {
@@ -1514,7 +1530,8 @@
               "$ref": "#/definitions/HyperlinkResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       }
     },
     "/words/{name}/{nodePath}/formfields": {
@@ -1579,7 +1596,8 @@
               "$ref": "#/definitions/FormFieldsResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "put": {
         "tags": [
@@ -1679,7 +1697,8 @@
               "$ref": "#/definitions/FormFieldResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{nodePath}/formfields/{index}": {
@@ -1751,7 +1770,8 @@
               "$ref": "#/definitions/FormFieldResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "post": {
         "tags": [
@@ -1851,7 +1871,8 @@
               "$ref": "#/definitions/FormFieldResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       },
       "delete": {
         "tags": [
@@ -1939,7 +1960,8 @@
               "$ref": "#/definitions/SaaSposeResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/insertPageNumbers": {
@@ -2027,7 +2049,8 @@
               "$ref": "#/definitions/DocumentResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/comments": {
@@ -2085,7 +2108,8 @@
               "$ref": "#/definitions/CommentsResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "put": {
         "tags": [
@@ -2171,7 +2195,8 @@
               "$ref": "#/definitions/CommentResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/comments/{commentIndex}": {
@@ -2237,7 +2262,8 @@
               "$ref": "#/definitions/CommentResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "post": {
         "tags": [
@@ -2331,7 +2357,8 @@
               "$ref": "#/definitions/CommentResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       },
       "delete": {
         "tags": [
@@ -2413,7 +2440,8 @@
               "$ref": "#/definitions/SaaSposeResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{nodePath}/tables": {
@@ -2478,7 +2506,8 @@
               "$ref": "#/definitions/TableLinkCollectionResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "put": {
         "tags": [
@@ -2571,7 +2600,8 @@
               "$ref": "#/definitions/TableResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{nodePath}/tables/{index}": {
@@ -2643,7 +2673,8 @@
               "$ref": "#/definitions/TableResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "delete": {
         "tags": [
@@ -2731,7 +2762,8 @@
               "$ref": "#/definitions/SaaSposeResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{nodePath}/tables/{index}/properties": {
@@ -2803,7 +2835,8 @@
               "$ref": "#/definitions/TablePropertiesResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "post": {
         "tags": [
@@ -2903,7 +2936,8 @@
               "$ref": "#/definitions/TablePropertiesResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{tablePath}/rows/{index}": {
@@ -2975,7 +3009,8 @@
               "$ref": "#/definitions/TableRowResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "delete": {
         "tags": [
@@ -3063,7 +3098,8 @@
               "$ref": "#/definitions/SaaSposeResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{tablePath}/rows": {
@@ -3158,7 +3194,8 @@
               "$ref": "#/definitions/TableRowResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{tablePath}/rows/{index}/rowformat": {
@@ -3230,7 +3267,8 @@
               "$ref": "#/definitions/TableRowFormatResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "post": {
         "tags": [
@@ -3330,7 +3368,8 @@
               "$ref": "#/definitions/TableRowFormatResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{tableRowPath}/cells/{index}": {
@@ -3402,7 +3441,8 @@
               "$ref": "#/definitions/TableCellResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "delete": {
         "tags": [
@@ -3490,7 +3530,8 @@
               "$ref": "#/definitions/SaaSposeResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{tableRowPath}/cells": {
@@ -3585,7 +3626,8 @@
               "$ref": "#/definitions/TableCellResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{tableRowPath}/cells/{index}/cellformat": {
@@ -3657,7 +3699,8 @@
               "$ref": "#/definitions/TableCellFormatResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "post": {
         "tags": [
@@ -3757,7 +3800,8 @@
               "$ref": "#/definitions/TableCellFormatResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/textItems": {
@@ -3815,7 +3859,8 @@
               "$ref": "#/definitions/TextItemsResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       }
     },
     "/words/{name}/replaceText": {
@@ -3903,7 +3948,8 @@
               "$ref": "#/definitions/ReplaceTextResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/documentProperties": {
@@ -3961,7 +4007,8 @@
               "$ref": "#/definitions/DocumentPropertiesResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       }
     },
     "/words/{name}/documentProperties/{propertyName}": {
@@ -4026,7 +4073,8 @@
               "$ref": "#/definitions/DocumentPropertyResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "put": {
         "tags": [
@@ -4119,7 +4167,8 @@
               "$ref": "#/definitions/DocumentPropertyResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       },
       "post": {
         "tags": [
@@ -4212,7 +4261,8 @@
               "$ref": "#/definitions/DocumentPropertyResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       },
       "delete": {
         "tags": [
@@ -4293,7 +4343,8 @@
               "$ref": "#/definitions/SaaSposeResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/split": {
@@ -4393,7 +4444,8 @@
               "$ref": "#/definitions/SplitDocumentResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, IWordDocumentRequest, ICanUseCustomFontsRequest"
       }
     },
     "/words/{name}/{nodePath}/footnotes": {
@@ -4458,7 +4510,8 @@
               "$ref": "#/definitions/FootnotesResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "put": {
         "tags": [
@@ -4551,7 +4604,8 @@
               "$ref": "#/definitions/FootnoteResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{nodePath}/footnotes/{index}": {
@@ -4623,7 +4677,8 @@
               "$ref": "#/definitions/FootnoteResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "post": {
         "tags": [
@@ -4723,7 +4778,8 @@
               "$ref": "#/definitions/FootnoteResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       },
       "delete": {
         "tags": [
@@ -4811,7 +4867,8 @@
               "$ref": "#/definitions/SaaSposeResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/watermark/insertImage": {
@@ -4910,7 +4967,8 @@
               "$ref": "#/definitions/DocumentResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/watermark/insertText": {
@@ -4998,7 +5056,8 @@
               "$ref": "#/definitions/DocumentResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/watermark": {
@@ -5074,7 +5133,8 @@
               "$ref": "#/definitions/DocumentResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/executeTemplate": {
@@ -5168,7 +5228,8 @@
               "$ref": "#/definitions/DocumentResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/executeMailMerge/{withRegions}": {
@@ -5269,7 +5330,8 @@
               "$ref": "#/definitions/DocumentResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, IWordDocumentRequest"
       }
     },
     "/words/executeTemplate": {
@@ -5493,7 +5555,8 @@
               "$ref": "#/definitions/FieldNamesResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       }
     },
     "/words/{name}/{nodePath}/drawingObjects": {
@@ -5558,7 +5621,8 @@
               "$ref": "#/definitions/DrawingObjectsResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "put": {
         "tags": [
@@ -5654,7 +5718,8 @@
               "$ref": "#/definitions/DrawingObjectResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{nodePath}/drawingObjects/{index}": {
@@ -5726,7 +5791,8 @@
               "$ref": "#/definitions/DrawingObjectResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "post": {
         "tags": [
@@ -5829,7 +5895,8 @@
               "$ref": "#/definitions/DrawingObjectResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       },
       "delete": {
         "tags": [
@@ -5917,7 +5984,8 @@
               "$ref": "#/definitions/SaaSposeResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{nodePath}/drawingObjects/{index}/imageData": {
@@ -5988,7 +6056,8 @@
               "type": "file"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       }
     },
     "/words/{name}/{nodePath}/drawingObjects/{index}/oleData": {
@@ -6059,7 +6128,8 @@
               "type": "file"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       }
     },
     "/words/{name}/protection": {
@@ -6117,7 +6187,8 @@
               "$ref": "#/definitions/ProtectionDataResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "put": {
         "tags": [
@@ -6191,7 +6262,8 @@
               "$ref": "#/definitions/ProtectionDataResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, IWordDocumentRequest"
       },
       "post": {
         "tags": [
@@ -6265,7 +6337,8 @@
               "$ref": "#/definitions/ProtectionDataResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, IWordDocumentRequest"
       },
       "delete": {
         "tags": [
@@ -6339,7 +6412,8 @@
               "$ref": "#/definitions/ProtectionDataResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/sections": {
@@ -6397,7 +6471,8 @@
               "$ref": "#/definitions/SectionLinkCollectionResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       }
     },
     "/words/{name}/sections/{sectionIndex}": {
@@ -6463,7 +6538,8 @@
               "$ref": "#/definitions/SectionResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       }
     },
     "/words/{name}/sections/{sectionIndex}/pageSetup": {
@@ -6529,7 +6605,8 @@
               "$ref": "#/definitions/SectionPageSetupResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "post": {
         "tags": [
@@ -6623,7 +6700,8 @@
               "$ref": "#/definitions/SectionPageSetupResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/pages/{pageIndex}/render": {
@@ -6701,7 +6779,8 @@
               "type": "file"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest, ICanUseCustomFontsRequest"
       }
     },
     "/words/{name}/{nodePath}/paragraphs/{index}/render": {
@@ -6785,7 +6864,8 @@
               "type": "file"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest, ICanUseCustomFontsRequest"
       }
     },
     "/words/{name}/{nodePath}/tables/{index}/render": {
@@ -6869,7 +6949,8 @@
               "type": "file"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest, ICanUseCustomFontsRequest"
       }
     },
     "/words/{name}/{nodePath}/drawingObjects/{index}/render": {
@@ -6953,7 +7034,8 @@
               "type": "file"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest, ICanUseCustomFontsRequest"
       }
     },
     "/words/{name}/{nodePath}/OfficeMathObjects/{index}/render": {
@@ -7037,7 +7119,8 @@
               "type": "file"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest, ICanUseCustomFontsRequest"
       }
     },
     "/words/{name}/search": {
@@ -7102,7 +7185,8 @@
               "$ref": "#/definitions/SearchResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       }
     },
     "/words/{name}/appendDocument": {
@@ -7190,7 +7274,8 @@
               "$ref": "#/definitions/DocumentResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/compareDocument": {
@@ -7266,7 +7351,8 @@
               "$ref": "#/definitions/DocumentResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{nodePath}/OfficeMathObjects": {
@@ -7331,7 +7417,8 @@
               "$ref": "#/definitions/OfficeMathObjectsResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       }
     },
     "/words/{name}/{nodePath}/OfficeMathObjects/{index}": {
@@ -7403,7 +7490,8 @@
               "$ref": "#/definitions/OfficeMathObjectResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "delete": {
         "tags": [
@@ -7491,7 +7579,8 @@
               "$ref": "#/definitions/SaaSposeResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{sectionPath}/headersfooters": {
@@ -7563,7 +7652,8 @@
               "$ref": "#/definitions/HeaderFootersResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "put": {
         "tags": [
@@ -7656,7 +7746,8 @@
               "$ref": "#/definitions/HeaderFooterResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       },
       "delete": {
         "tags": [
@@ -7744,7 +7835,8 @@
               "$ref": "#/definitions/SaaSposeResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/headersfooters/{headerFooterIndex}": {
@@ -7825,7 +7917,8 @@
               "$ref": "#/definitions/HeaderFooterResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       }
     },
     "/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}": {
@@ -7906,7 +7999,8 @@
               "$ref": "#/definitions/HeaderFooterResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       }
     },
     "/words/{name}/{sectionPath}/headersfooters/{index}": {
@@ -7996,7 +8090,8 @@
               "$ref": "#/definitions/SaaSposeResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/tasks": {
@@ -8078,7 +8173,8 @@
               "$ref": "#/definitions/BookmarksResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       }
     },
     "/words/{name}/bookmarks/{bookmarkName}": {
@@ -8143,7 +8239,8 @@
               "$ref": "#/definitions/BookmarkResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "post": {
         "tags": [
@@ -8236,7 +8333,8 @@
               "$ref": "#/definitions/BookmarkResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/macros": {
@@ -8312,7 +8410,8 @@
               "$ref": "#/definitions/SaaSposeResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/statistics": {
@@ -8391,7 +8490,8 @@
               "$ref": "#/definitions/StatDataResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       }
     },
     "/words/{documentName}": {
@@ -8600,7 +8700,8 @@
               "$ref": "#/definitions/BordersResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "delete": {
         "tags": [
@@ -8682,7 +8783,8 @@
               "$ref": "#/definitions/BordersResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{nodePath}/borders/{index}": {
@@ -8755,7 +8857,8 @@
               "$ref": "#/definitions/BorderResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "post": {
         "tags": [
@@ -8856,7 +8959,8 @@
               "$ref": "#/definitions/BorderResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       },
       "delete": {
         "tags": [
@@ -8945,7 +9049,8 @@
               "$ref": "#/definitions/BorderResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/updateFields": {
@@ -9009,7 +9114,8 @@
               "$ref": "#/definitions/DocumentResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{nodePath}/fields": {
@@ -9074,7 +9180,8 @@
               "$ref": "#/definitions/FieldsResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "put": {
         "tags": [
@@ -9174,7 +9281,8 @@
               "$ref": "#/definitions/FieldResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       },
       "delete": {
         "tags": [
@@ -9255,7 +9363,8 @@
               "$ref": "#/definitions/SaaSposeResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/{nodePath}/fields/{index}": {
@@ -9327,7 +9436,8 @@
               "$ref": "#/definitions/FieldResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "IWordDocumentRequest"
       },
       "post": {
         "tags": [
@@ -9427,7 +9537,8 @@
               "$ref": "#/definitions/FieldResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       },
       "delete": {
         "tags": [
@@ -9515,7 +9626,8 @@
               "$ref": "#/definitions/SaaSposeResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/revisions/acceptAll": {
@@ -9579,7 +9691,8 @@
               "$ref": "#/definitions/RevisionsModificationResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, IWordDocumentRequest"
       }
     },
     "/words/{name}/revisions/rejectAll": {
@@ -9643,7 +9756,8 @@
               "$ref": "#/definitions/RevisionsModificationResponse"
             }
           }
-        }
+        },
+        "x-csharp-implements": "ICanModifyDocumentRequest, IWordDocumentRequest"
       }
     }
   },
