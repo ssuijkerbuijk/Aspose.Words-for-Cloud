@@ -36,8 +36,8 @@ namespace Document
 
                     if (apiResponse != null && apiResponse.Status.Equals("OK"))
                     {
-                        Console.WriteLine("doc:" + apiResponse.SaveResult.DestDocument.Href);
-                        //Console.ReadKey();
+                        Console.WriteLine("doc:" + apiResponse.SaveResult.DestDocument.Href);                       
+                        Console.ReadKey();
                     }
                 }
                 catch (Exception ex)
