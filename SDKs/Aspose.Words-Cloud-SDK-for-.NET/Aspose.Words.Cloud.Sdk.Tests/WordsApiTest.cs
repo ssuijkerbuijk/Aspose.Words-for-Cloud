@@ -118,8 +118,8 @@
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             // setting a property
-            var updateRequest = new PutUpdateDocumentPropertyRequest(name, propertyName, body, filename);
-            this.wordsApi.PutUpdateDocumentProperty(updateRequest);
+            var updateRequest = new CreateOrUpdateDocumentPropertyRequest(name, propertyName, body, filename);
+            this.wordsApi.CreateOrUpdateDocumentProperty(updateRequest);
 
             var deleteRequest = new DeleteDocumentPropertyRequest(name, propertyName, filename);
             var actual = this.wordsApi.DeleteDocumentProperty(deleteRequest);
@@ -1419,8 +1419,8 @@
 
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new PutUpdateDocumentPropertyRequest(name, propertyName, body, filename);
-            var actual = this.wordsApi.PutUpdateDocumentProperty(request);
+            var request = new CreateOrUpdateDocumentPropertyRequest(name, propertyName, body, filename);
+            var actual = this.wordsApi.CreateOrUpdateDocumentProperty(request);
             Assert.AreEqual(200, actual.Code);
         }
 

@@ -76,6 +76,78 @@ namespace Aspose.Words.Cloud.Sdk.Api
         }
 
         /// <summary>
+        /// Add new or update existing document property. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="CreateOrUpdateDocumentPropertyRequest" /></param> 
+        /// <returns><see cref="DocumentPropertyResponse"/></returns>            
+        public DocumentPropertyResponse CreateOrUpdateDocumentProperty(CreateOrUpdateDocumentPropertyRequest request)
+        {
+            // create path and map variables
+            var resourcePath = "/words/{name}/documentProperties/{propertyName}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, object>();
+            object postBody = null;            
+            
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling CreateOrUpdateDocumentProperty");
+            }
+            
+            // verify the required parameter 'propertyName' is set
+            if (request.PropertyName == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'propertyName' when calling CreateOrUpdateDocumentProperty");
+            }
+            
+            // verify the required parameter 'property' is set
+            if (request.Property == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'property' when calling CreateOrUpdateDocumentProperty");
+            }
+            
+            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = this.AddPathParameter(resourcePath, "propertyName", request.PropertyName);
+            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
+            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
+            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
+            postBody = request.Property; // http body (model) parameter
+            try 
+            {                
+                if (typeof(DocumentPropertyResponse) == typeof(Stream)) 
+                {
+                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as DocumentPropertyResponse;
+                }
+               
+                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+                if (response != null)
+                {
+                    return (DocumentPropertyResponse)SerializationHelper.Deserialize(response, typeof(DocumentPropertyResponse));
+                }
+                    
+                return null;
+            } 
+            catch (ApiException ex) 
+            {
+                if (ex.ErrorCode == 404) 
+                {
+                    return null;
+                }
+                
+                throw;                
+            }
+        }
+
+        /// <summary>
         /// Resets border properties to default values. &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteBorderRequest" /></param> 
@@ -3305,7 +3377,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
         public HeaderFooterResponse GetHeaderFooter(GetHeaderFooterRequest request)
         {
             // create path and map variables
-            var resourcePath = "/words/{name}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;sectionIndex=[sectionIndex]&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
+            var resourcePath = "/words/{name}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3329,7 +3401,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "headerFooterIndex", request.HeaderFooterIndex);
-            resourcePath = this.AddQueryParameter(resourcePath, "sectionIndex", request.SectionIndex);
             resourcePath = this.AddQueryParameter(resourcePath, "filterByType", request.FilterByType);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
@@ -3365,9 +3436,9 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <summary>
         /// Return a header/footer that is contained in the document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetHeaderFooter_1Request" /></param> 
+        /// <param name="request">Request. <see cref="GetHeaderFooterOfSectionRequest" /></param> 
         /// <returns><see cref="HeaderFooterResponse"/></returns>            
-        public HeaderFooterResponse GetHeaderFooter_1(GetHeaderFooter_1Request request)
+        public HeaderFooterResponse GetHeaderFooterOfSection(GetHeaderFooterOfSectionRequest request)
         {
             // create path and map variables
             var resourcePath = "/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
@@ -3383,19 +3454,19 @@ namespace Aspose.Words.Cloud.Sdk.Api
             // verify the required parameter 'name' is set
             if (request.Name == null) 
             {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetHeaderFooter_1");
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetHeaderFooterOfSection");
             }
             
             // verify the required parameter 'headerFooterIndex' is set
             if (request.HeaderFooterIndex == null) 
             {
-                throw new ApiException(400, "Missing required parameter 'headerFooterIndex' when calling GetHeaderFooter_1");
+                throw new ApiException(400, "Missing required parameter 'headerFooterIndex' when calling GetHeaderFooterOfSection");
             }
             
             // verify the required parameter 'sectionIndex' is set
             if (request.SectionIndex == null) 
             {
-                throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetHeaderFooter_1");
+                throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetHeaderFooterOfSection");
             }
             
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
@@ -6949,150 +7020,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
         }
 
         /// <summary>
-        /// Add new or update existing document property. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PutUpdateDocumentPropertyRequest" /></param> 
-        /// <returns><see cref="DocumentPropertyResponse"/></returns>            
-        public DocumentPropertyResponse PutUpdateDocumentProperty(PutUpdateDocumentPropertyRequest request)
-        {
-            // create path and map variables
-            var resourcePath = "/words/{name}/documentProperties/{propertyName}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutUpdateDocumentProperty");
-            }
-            
-            // verify the required parameter 'propertyName' is set
-            if (request.PropertyName == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'propertyName' when calling PutUpdateDocumentProperty");
-            }
-            
-            // verify the required parameter 'property' is set
-            if (request.Property == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'property' when calling PutUpdateDocumentProperty");
-            }
-            
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "propertyName", request.PropertyName);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.Property; // http body (model) parameter
-            try 
-            {                
-                if (typeof(DocumentPropertyResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as DocumentPropertyResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
-                if (response != null)
-                {
-                    return (DocumentPropertyResponse)SerializationHelper.Deserialize(response, typeof(DocumentPropertyResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
-        }
-
-        /// <summary>
-        /// Add new or update existing document property. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PutUpdateDocumentProperty_2Request" /></param> 
-        /// <returns><see cref="DocumentPropertyResponse"/></returns>            
-        public DocumentPropertyResponse PutUpdateDocumentProperty_2(PutUpdateDocumentProperty_2Request request)
-        {
-            // create path and map variables
-            var resourcePath = "/words/{name}/documentProperties/{propertyName}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutUpdateDocumentProperty_2");
-            }
-            
-            // verify the required parameter 'propertyName' is set
-            if (request.PropertyName == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'propertyName' when calling PutUpdateDocumentProperty_2");
-            }
-            
-            // verify the required parameter 'property' is set
-            if (request.Property == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'property' when calling PutUpdateDocumentProperty_2");
-            }
-            
-            resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = this.AddPathParameter(resourcePath, "propertyName", request.PropertyName);
-            resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
-            resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
-            resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.Property; // http body (model) parameter
-            try 
-            {                
-                if (typeof(DocumentPropertyResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as DocumentPropertyResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
-                if (response != null)
-                {
-                    return (DocumentPropertyResponse)SerializationHelper.Deserialize(response, typeof(DocumentPropertyResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
-        }
-
-        /// <summary>
         /// Reject all revisions in document 
         /// </summary>
         /// <param name="request">Request. <see cref="RejectAllRevisionsRequest" /></param> 
@@ -8081,6 +8008,89 @@ namespace Aspose.Words.Cloud.Sdk.Requests
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
         public string LoadEncoding { get; set; }
+
+        /// <summary>
+        /// Password for opening an encrypted document.
+        /// </summary>  
+        public string Password { get; set; }
+  }
+
+  /// <summary>
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.CreateOrUpdateDocumentProperty" /> operation.
+  /// </summary>  
+  public class CreateOrUpdateDocumentPropertyRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateOrUpdateDocumentPropertyRequest"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="propertyName">The property name.</param>
+        /// <param name="property">The property with new value.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public CreateOrUpdateDocumentPropertyRequest(string name, string propertyName, DocumentProperty property, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
+        {
+            this.Name = name;
+            this.PropertyName = propertyName;
+            this.Property = property;
+            this.DestFileName = destFileName;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
+            this.Password = password;
+        }
+
+        /// <summary>
+        /// The document name.
+        /// </summary>  
+        public string Name { get; set; }
+
+        /// <summary>
+        /// The property name.
+        /// </summary>  
+        public string PropertyName { get; set; }
+
+        /// <summary>
+        /// The property with new value.
+        /// </summary>  
+        public DocumentProperty Property { get; set; }
+
+        /// <summary>
+        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        /// </summary>  
+        public string DestFileName { get; set; }
+
+        /// <summary>
+        /// File storage, which have to be used.
+        /// </summary>  
+        public string Storage { get; set; }
+
+        /// <summary>
+        /// Original document folder.
+        /// </summary>  
+        public string Folder { get; set; }
+
+        /// <summary>
+        /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        /// </summary>  
+        public string LoadEncoding { get; set; }
+
+        /// <summary>
+        /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        /// </summary>  
+        public string RevisionAuthor { get; set; }
+
+        /// <summary>
+        /// The date and time to use for revisions.
+        /// </summary>  
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
@@ -11435,17 +11445,15 @@ namespace Aspose.Words.Cloud.Sdk.Requests
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="headerFooterIndex">Header/footer index.</param>
-        /// <param name="sectionIndex">Section index.</param>
         /// <param name="filterByType">List of types of headers and footers.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        public GetHeaderFooterRequest(string name, int? headerFooterIndex, int? sectionIndex = null, string filterByType = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        public GetHeaderFooterRequest(string name, int? headerFooterIndex, string filterByType = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
         {
             this.Name = name;
             this.HeaderFooterIndex = headerFooterIndex;
-            this.SectionIndex = sectionIndex;
             this.FilterByType = filterByType;
             this.Storage = storage;
             this.Folder = folder;
@@ -11462,11 +11470,6 @@ namespace Aspose.Words.Cloud.Sdk.Requests
         /// Header/footer index.
         /// </summary>  
         public int? HeaderFooterIndex { get; set; }
-
-        /// <summary>
-        /// Section index.
-        /// </summary>  
-        public int? SectionIndex { get; set; }
 
         /// <summary>
         /// List of types of headers and footers.
@@ -11495,12 +11498,12 @@ namespace Aspose.Words.Cloud.Sdk.Requests
   }
 
   /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetHeaderFooter_1" /> operation.
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetHeaderFooterOfSection" /> operation.
   /// </summary>  
-  public class GetHeaderFooter_1Request : IWordDocumentRequest   
+  public class GetHeaderFooterOfSectionRequest : IWordDocumentRequest   
   {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetHeaderFooter_1Request"/> class.
+        /// Initializes a new instance of the <see cref="GetHeaderFooterOfSectionRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="headerFooterIndex">Header/footer index.</param>
@@ -11510,7 +11513,7 @@ namespace Aspose.Words.Cloud.Sdk.Requests
         /// <param name="folder">Original document folder.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        public GetHeaderFooter_1Request(string name, int? headerFooterIndex, int? sectionIndex, string filterByType = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        public GetHeaderFooterOfSectionRequest(string name, int? headerFooterIndex, int? sectionIndex, string filterByType = null, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
         {
             this.Name = name;
             this.HeaderFooterIndex = headerFooterIndex;
@@ -15338,172 +15341,6 @@ namespace Aspose.Words.Cloud.Sdk.Requests
         /// Paragraph will be inserted before node with index.
         /// </summary>  
         public string InsertBeforeNode { get; set; }
-
-        /// <summary>
-        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        /// </summary>  
-        public string DestFileName { get; set; }
-
-        /// <summary>
-        /// File storage, which have to be used.
-        /// </summary>  
-        public string Storage { get; set; }
-
-        /// <summary>
-        /// Original document folder.
-        /// </summary>  
-        public string Folder { get; set; }
-
-        /// <summary>
-        /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        /// </summary>  
-        public string LoadEncoding { get; set; }
-
-        /// <summary>
-        /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        /// </summary>  
-        public string RevisionAuthor { get; set; }
-
-        /// <summary>
-        /// The date and time to use for revisions.
-        /// </summary>  
-        public string RevisionDateTime { get; set; }
-
-        /// <summary>
-        /// Password for opening an encrypted document.
-        /// </summary>  
-        public string Password { get; set; }
-  }
-
-  /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutUpdateDocumentProperty" /> operation.
-  /// </summary>  
-  public class PutUpdateDocumentPropertyRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
-  {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PutUpdateDocumentPropertyRequest"/> class.
-        /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="propertyName">The property name.</param>
-        /// <param name="property">The property with new value.</param>
-        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
-        /// <param name="folder">Original document folder.</param>
-        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
-        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
-        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        /// <param name="password">Password for opening an encrypted document.</param>
-        public PutUpdateDocumentPropertyRequest(string name, string propertyName, DocumentProperty property, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
-        {
-            this.Name = name;
-            this.PropertyName = propertyName;
-            this.Property = property;
-            this.DestFileName = destFileName;
-            this.Storage = storage;
-            this.Folder = folder;
-            this.LoadEncoding = loadEncoding;
-            this.RevisionAuthor = revisionAuthor;
-            this.RevisionDateTime = revisionDateTime;
-            this.Password = password;
-        }
-
-        /// <summary>
-        /// The document name.
-        /// </summary>  
-        public string Name { get; set; }
-
-        /// <summary>
-        /// The property name.
-        /// </summary>  
-        public string PropertyName { get; set; }
-
-        /// <summary>
-        /// The property with new value.
-        /// </summary>  
-        public DocumentProperty Property { get; set; }
-
-        /// <summary>
-        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        /// </summary>  
-        public string DestFileName { get; set; }
-
-        /// <summary>
-        /// File storage, which have to be used.
-        /// </summary>  
-        public string Storage { get; set; }
-
-        /// <summary>
-        /// Original document folder.
-        /// </summary>  
-        public string Folder { get; set; }
-
-        /// <summary>
-        /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        /// </summary>  
-        public string LoadEncoding { get; set; }
-
-        /// <summary>
-        /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        /// </summary>  
-        public string RevisionAuthor { get; set; }
-
-        /// <summary>
-        /// The date and time to use for revisions.
-        /// </summary>  
-        public string RevisionDateTime { get; set; }
-
-        /// <summary>
-        /// Password for opening an encrypted document.
-        /// </summary>  
-        public string Password { get; set; }
-  }
-
-  /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutUpdateDocumentProperty_2" /> operation.
-  /// </summary>  
-  public class PutUpdateDocumentProperty_2Request : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
-  {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PutUpdateDocumentProperty_2Request"/> class.
-        /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="propertyName">The property name.</param>
-        /// <param name="property">The property with new value.</param>
-        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
-        /// <param name="folder">Original document folder.</param>
-        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
-        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
-        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        /// <param name="password">Password for opening an encrypted document.</param>
-        public PutUpdateDocumentProperty_2Request(string name, string propertyName, DocumentProperty property, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string revisionAuthor = null, string revisionDateTime = null, string password = null)             
-        {
-            this.Name = name;
-            this.PropertyName = propertyName;
-            this.Property = property;
-            this.DestFileName = destFileName;
-            this.Storage = storage;
-            this.Folder = folder;
-            this.LoadEncoding = loadEncoding;
-            this.RevisionAuthor = revisionAuthor;
-            this.RevisionDateTime = revisionDateTime;
-            this.Password = password;
-        }
-
-        /// <summary>
-        /// The document name.
-        /// </summary>  
-        public string Name { get; set; }
-
-        /// <summary>
-        /// The property name.
-        /// </summary>  
-        public string PropertyName { get; set; }
-
-        /// <summary>
-        /// The property with new value.
-        /// </summary>  
-        public DocumentProperty Property { get; set; }
 
         /// <summary>
         /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
