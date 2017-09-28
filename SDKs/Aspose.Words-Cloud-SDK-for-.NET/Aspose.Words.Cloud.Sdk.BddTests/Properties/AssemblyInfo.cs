@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BddTest")]
+[assembly: AssemblyTitle("Aspose.Words.Cloud.Sdk.BddTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BddTest")]
+[assembly: AssemblyProduct("Aspose.Words.Cloud.Sdk.BddTests")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("05808baa-5a83-455c-98bb-6018ea53189e")]
+[assembly: Guid("c1db5d37-fa22-431d-8d24-6d4cf6385959")]
 
 // Version information for an assembly consists of the following four values:
 //

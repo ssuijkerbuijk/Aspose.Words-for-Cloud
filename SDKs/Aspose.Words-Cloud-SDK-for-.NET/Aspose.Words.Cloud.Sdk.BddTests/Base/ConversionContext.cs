@@ -1,6 +1,5 @@
-﻿namespace BddTest.Base
+﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Base
 {
-    using System;
     using System.IO;
 
     using Aspose.Words.Cloud.Sdk.Api;
@@ -9,9 +8,9 @@
     using Com.Aspose.Storage.Api;
 
     /// <summary>
-    /// This is a context for conversion operation
+    /// This class contains implementation of all required operations for document conversion
     /// </summary>
-    public class ConversionContext : IDisposable
+    public class ConversionContext
     {
         private const string BaseProductUri = @"http://api-dev.aspose.cloud/v1.1";
         private const string AppSID = "78b637f6-b4cc-41de-a619-d8bd9fc2b6b6";
@@ -113,7 +112,13 @@
         /// <returns>is exist</returns>
         public bool? FileWithNameExists(string name)
         {
-            return this.storageApi.GetIsExist(Folder + this.OutPath, null, null)?.FileExist?.IsExist;
+            if (this.storageApi.GetIsExist(Folder + this.OutPath, null, null) != null 
+                && this.storageApi.GetIsExist(Folder + this.OutPath, null, null).FileExist != null)
+            {
+                return this.storageApi.GetIsExist(Folder + this.OutPath, null, null).FileExist.IsExist;
+            }
+
+            return null;
         }
 
         /// <summary>
