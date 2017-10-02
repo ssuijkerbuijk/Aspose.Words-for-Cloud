@@ -1,4 +1,4 @@
-﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Steps
+﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.ConversionSteps
 {
     using System;
 
@@ -12,7 +12,7 @@
     /// Class with steps for On Fly Conversion
     /// </summary>
     [Binding]
-    public class OnFlyConversionSteps : BaseStep
+    public class OnFlyConversionSteps : BaseConversionStep
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OnFlyConversionSteps"/> class.

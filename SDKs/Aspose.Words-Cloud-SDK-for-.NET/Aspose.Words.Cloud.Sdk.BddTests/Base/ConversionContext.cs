@@ -2,39 +2,13 @@
 {
     using System.IO;
 
-    using Aspose.Words.Cloud.Sdk.Api;
     using Aspose.Words.Cloud.Sdk.Requests;
-
-    using Com.Aspose.Storage.Api;
 
     /// <summary>
     /// This class contains implementation of all required operations for document conversion
     /// </summary>
-    public class ConversionContext
+    public class ConversionContext : BaseContext
     {
-        private const string BaseProductUri = @"http://api-dev.aspose.cloud/v1.1";
-        private const string AppSID = "78b637f6-b4cc-41de-a619-d8bd9fc2b6b6";
-        private const string AppKey = "3d588eb82b3d5a634ad3141f09b03629";
-
-        private const string Folder = "TempSDKTests/";
-        private WordsApi methodsApi;
-
-        private StorageApi storageApi;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConversionContext"/> class.
-        /// </summary>
-        public ConversionContext()
-        {
-            this.methodsApi = new WordsApi(AppKey, AppSID, BaseProductUri);
-            this.storageApi = new StorageApi(AppKey, AppSID, BaseProductUri);
-        }
-
-        /// <summary>
-        /// File we want to convert
-        /// </summary>
-        public string FileName { get; set; }
-
         /// <summary>
         /// Format of document we want to get
         /// </summary>
@@ -60,8 +34,7 @@
         /// </summary>
         public void ConvertDocumentFormAttachment()
         {
-            var path = DirectoryHelper.GetTestDataPath();
-            using (var fileStream = System.IO.File.OpenRead(Path.Combine(path, this.FileName)))
+            using (var fileStream = System.IO.File.OpenRead(Path.Combine(this.TestDataPath, this.FileName)))
             {
                 this.ConvertDocumentFromAttachment(this.OutputFormat, fileStream);
             }
@@ -73,11 +46,11 @@
         /// <param name="documentName">the name of a document on storage</param>
         public void ConvertDocumentFromStorage(string documentName)
         {
-            var fullPath = Folder + documentName;
-            var resp = this.storageApi.GetDownload(fullPath, null, null);
+            var fullPath = this.Folder + documentName;
+            var resp = this.StorageApi.GetDownload(fullPath, null, null);
             var request = new PutConvertDocumentRequest(this.OutputFormat, new MemoryStream(resp.ResponseStream));
             this.ConvertedDocument =
-                (MemoryStream)this.methodsApi.PutConvertDocument(request);
+                (MemoryStream)this.MethodsApi.PutConvertDocument(request);
         }
 
         /// <summary>
@@ -86,23 +59,11 @@
         /// <remarks>Document will save with name specified in <see cref="OutPath"/></remarks>
         public void SaveConvertedDocumentToStorage()
         {
-            this.storageApi.PutCreate(
-                Folder + this.OutPath,
+            this.StorageApi.PutCreate(
+                this.Folder + this.OutPath,
                 string.Empty,
                 string.Empty,
                 this.ConvertedDocument.ToArray());
-        }
-
-        /// <summary>
-        /// Uploads document to storage
-        /// </summary>
-        public void UploadDocumentToStorage()
-        {
-            this.storageApi.PutCreate(
-                Folder + this.FileName,
-                null,
-                null,
-                File.ReadAllBytes(Path.Combine(DirectoryHelper.GetTestDataPath(), this.FileName)));
         }
 
         /// <summary>
@@ -112,10 +73,11 @@
         /// <returns>is exist</returns>
         public bool? FileWithNameExists(string name)
         {
-            if (this.storageApi.GetIsExist(Folder + this.OutPath, null, null) != null 
-                && this.storageApi.GetIsExist(Folder + this.OutPath, null, null).FileExist != null)
+            var isExists = this.StorageApi.GetIsExist(this.Folder + this.OutPath, null, null);
+            if (isExists != null 
+                && isExists.FileExist != null)
             {
-                return this.storageApi.GetIsExist(Folder + this.OutPath, null, null).FileExist.IsExist;
+                return isExists.FileExist.IsExist;
             }
 
             return null;
@@ -126,9 +88,9 @@
         /// </summary>
         public void ConversionWithEncoding()
         {
-            var request = new GetDocumentWithFormatRequest(this.FileName, this.OutputFormat, this.OutPath, null, Folder, this.LoadEncoding);
+            var request = new GetDocumentWithFormatRequest(this.FileName, this.OutputFormat, this.OutPath, null, this.Folder, this.LoadEncoding);
             this.ConvertedDocument =
-                (MemoryStream)this.methodsApi.GetDocumentWithFormat(request);
+                (MemoryStream)this.MethodsApi.GetDocumentWithFormat(request);
         }
 
         /// <summary>
@@ -149,7 +111,7 @@
             Stream document)
         {
             var request = new PutConvertDocumentRequest(format, document);
-            this.ConvertedDocument = (MemoryStream)this.methodsApi.PutConvertDocument(request);
+            this.ConvertedDocument = (MemoryStream)this.MethodsApi.PutConvertDocument(request);
         }
     }
 }

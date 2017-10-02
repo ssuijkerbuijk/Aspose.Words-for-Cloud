@@ -1,4 +1,4 @@
-﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Steps
+﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.ConversionSteps
 {
     using Aspose.Words.Cloud.Sdk.BddTests.Base;
 
@@ -10,7 +10,7 @@
     /// Class contains steps related to document conversion with encoding
     /// </summary>
     [Binding]
-    public class ConversionWithEncodingSteps : BaseStep
+    public class ConversionWithEncodingSteps : BaseConversionStep
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversionWithEncodingSteps"/> class.

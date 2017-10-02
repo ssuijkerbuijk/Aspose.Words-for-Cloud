@@ -1,4 +1,4 @@
-﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Steps
+﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.ConversionSteps
 {
     using Aspose.Words.Cloud.Sdk.BddTests.Base;
 
@@ -10,10 +10,10 @@
     /// Class with steps related to conversion with storage
     /// </summary>
     [Binding]
-    public class ConversionWithStorageSteps : BaseStep
+    public class ConversionWithStorageSteps : BaseConversionStep
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Aspose.Words.Cloud.Sdk.BddTests.Steps.ConversionWithStorageSteps" /> class.
+        /// Initializes a new instance of the <see cref="T:Aspose.Words.Cloud.Sdk.BddTests.Steps.ConversionSteps.ConversionWithStorageSteps" /> class.
         /// </summary>
         /// <param name="context">Converstion context</param>
         public ConversionWithStorageSteps(ConversionContext context) : base(context)
