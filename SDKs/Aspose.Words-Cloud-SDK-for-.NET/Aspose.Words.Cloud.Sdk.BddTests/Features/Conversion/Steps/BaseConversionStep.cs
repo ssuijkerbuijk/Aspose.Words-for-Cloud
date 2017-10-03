@@ -1,7 +1,5 @@
-﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.ConversionSteps
+﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Features.Conversion.Steps
 {
-    using Aspose.Words.Cloud.Sdk.BddTests.Base;
-
     /// <summary>
     /// It's a base conversion step class with injection of conversion context
     /// </summary>
@@ -19,6 +17,6 @@
         /// <summary>
         /// Gets the context.
         /// </summary>
-        protected ConversionContext Context { get; }
+        protected ConversionContext Context { get; set; }
     }
 }

@@ -1,13 +1,10 @@
-﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMergeSteps
+﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Features.MailMerge.Steps
 {
     using System;
-
-    using Aspose.Words.Cloud.Sdk.BddTests.Base;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     using TechTalk.SpecFlow;
-
 
     /// <summary>
     /// Steps for template execution

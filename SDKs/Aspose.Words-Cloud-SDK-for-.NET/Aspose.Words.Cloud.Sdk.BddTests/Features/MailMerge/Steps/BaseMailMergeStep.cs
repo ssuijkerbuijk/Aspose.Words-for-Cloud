@@ -1,7 +1,5 @@
-﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMergeSteps
+﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Features.MailMerge.Steps
 {
-    using Aspose.Words.Cloud.Sdk.BddTests.Base;
-
     /// <summary>
     /// Base class for mail merge steps 
     /// </summary>

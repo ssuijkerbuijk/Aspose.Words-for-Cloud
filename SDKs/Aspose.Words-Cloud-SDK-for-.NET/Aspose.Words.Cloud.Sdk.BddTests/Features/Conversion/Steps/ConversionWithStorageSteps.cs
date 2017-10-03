@@ -1,7 +1,5 @@
-﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.ConversionSteps
+﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Features.Conversion.Steps
 {
-    using Aspose.Words.Cloud.Sdk.BddTests.Base;
-
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     using TechTalk.SpecFlow;
@@ -13,7 +11,7 @@
     public class ConversionWithStorageSteps : BaseConversionStep
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Aspose.Words.Cloud.Sdk.BddTests.Steps.ConversionSteps.ConversionWithStorageSteps" /> class.
+        /// Initializes a new instance of the <see cref="T:Aspose.Words.Cloud.Sdk.BddTests.Features.Conversion.Steps.ConversionWithStorageSteps" /> class.
         /// </summary>
         /// <param name="context">Converstion context</param>
         public ConversionWithStorageSteps(ConversionContext context) : base(context)

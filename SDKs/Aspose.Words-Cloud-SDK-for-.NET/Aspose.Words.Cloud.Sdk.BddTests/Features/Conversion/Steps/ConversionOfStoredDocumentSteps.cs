@@ -1,7 +1,5 @@
-﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.ConversionSteps
+﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Features.Conversion.Steps
 {
-    using Aspose.Words.Cloud.Sdk.BddTests.Base;
-
     using TechTalk.SpecFlow;
 
     /// <summary>

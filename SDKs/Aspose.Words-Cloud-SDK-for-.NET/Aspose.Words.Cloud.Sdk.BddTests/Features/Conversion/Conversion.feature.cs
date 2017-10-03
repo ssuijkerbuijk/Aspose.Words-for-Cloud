@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Aspose.Words.Cloud.Sdk.BddTests.Features
+namespace Aspose.Words.Cloud.Sdk.BddTests.Features.Conversion
 {
     using TechTalk.SpecFlow;
     
@@ -50,7 +50,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Features
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
                         && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "Document conversion")))
             {
-                Aspose.Words.Cloud.Sdk.BddTests.Features.DocumentConversionFeature.FeatureSetup(null);
+                Aspose.Words.Cloud.Sdk.BddTests.Features.Conversion.DocumentConversionFeature.FeatureSetup(null);
             }
         }
         

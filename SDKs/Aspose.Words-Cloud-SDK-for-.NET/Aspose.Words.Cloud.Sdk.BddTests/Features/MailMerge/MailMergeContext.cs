@@ -1,7 +1,8 @@
-﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Base
+﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Features.MailMerge
 {
     using System.IO;
 
+    using Aspose.Words.Cloud.Sdk.BddTests.Base;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Requests;
 

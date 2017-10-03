@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Aspose.Words.Cloud.Sdk.BddTests.Features
+namespace Aspose.Words.Cloud.Sdk.BddTests.Features.MailMerge
 {
     using TechTalk.SpecFlow;
     
@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Features
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
                         && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "MailMerge")))
             {
-                Aspose.Words.Cloud.Sdk.BddTests.Features.MailMergeFeature.FeatureSetup(null);
+                Aspose.Words.Cloud.Sdk.BddTests.Features.MailMerge.MailMergeFeature.FeatureSetup(null);
             }
         }
         
