@@ -14316,6 +14316,10 @@ namespace Aspose.Words.Cloud.Sdk.Requests
   /// </summary>  
   public class PutConvertDocumentRequest : ICanUseCustomFontsRequest   
   {
+      public PutConvertDocumentRequest()
+      {
+          
+      }
         /// <summary>
         /// Initializes a new instance of the <see cref="PutConvertDocumentRequest"/> class.
         /// </summary>

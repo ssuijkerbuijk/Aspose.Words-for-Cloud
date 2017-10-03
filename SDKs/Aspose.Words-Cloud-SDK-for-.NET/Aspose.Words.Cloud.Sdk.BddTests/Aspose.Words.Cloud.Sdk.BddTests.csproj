@@ -67,38 +67,43 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Features\Conversion\ConversionContext.cs" />
-    <Compile Include="Base\DirectoryHelper.cs" />
-    <Compile Include="Features\MailMerge\MailMergeContext.cs" />
-    <Compile Include="Features\Conversion\Conversion.feature.cs">
+    <Compile Include="Base\Context\BaseContext.cs" />
+    <Compile Include="Base\Steps\FileResultSteps.cs" />
+    <Compile Include="Base\Steps\StorageSteps.cs" />
+    <Compile Include="Base\Steps\WordDocumentRequestSteps.cs" />
+    <Compile Include="Features\Conversion\GetAlternateDocument\GetAlternateDocument.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Conversion.feature</DependentUpon>
+      <DependentUpon>GetAlternateDocument.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\MailMerge\MailMerge1.feature.cs">
+    <Compile Include="Base\DirectoryHelper.cs" />
+    <Compile Include="Features\Conversion\SaveAs\SaveAs.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MailMerge.feature</DependentUpon>
+      <DependentUpon>SaveAs.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Conversion\PutConvert\PutConvert.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PutConvert.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Base\BaseContext.cs" />
-    <Compile Include="Features\Conversion\Steps\BaseConversionStep.cs" />
-    <Compile Include="Features\MailMerge\Steps\BaseMailMergeStep.cs" />
-    <Compile Include="Features\Conversion\Steps\ConversionOfStoredDocumentSteps.cs" />
-    <Compile Include="Features\Conversion\Steps\ConversionWithEncodingSteps.cs" />
-    <Compile Include="Features\Conversion\Steps\ConversionWithStorageSteps.cs" />
-    <Compile Include="Features\Conversion\Steps\OnFlyConversionSteps.cs" />
-    <Compile Include="Features\MailMerge\Steps\TemplateExecutionSteps.cs" />
+    <Compile Include="Features\Conversion\PutConvert\Steps\PutConvertSteps.cs" />
+    <Compile Include="Features\Conversion\GetAlternateDocument\Steps\ConversionOfStoredDocumentSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Features\Conversion\Conversion.feature">
+    <None Include="Features\Conversion\GetAlternateDocument\GetAlternateDocument.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Conversion.feature.cs</LastGenOutput>
+      <LastGenOutput>GetAlternateDocument.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\MailMerge\MailMerge.feature">
+    <None Include="Features\Conversion\PutConvert\PutConvert.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>MailMerge1.feature.cs</LastGenOutput>
+      <LastGenOutput>PutConvert.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Conversion\SaveAs\SaveAs.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SaveAs.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>

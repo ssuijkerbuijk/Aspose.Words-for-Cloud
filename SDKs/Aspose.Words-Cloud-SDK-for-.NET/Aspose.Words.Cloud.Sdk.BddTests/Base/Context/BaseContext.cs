@@ -1,15 +1,13 @@
-﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Base
+﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
 {
-    using System.IO;
-
     using Aspose.Words.Cloud.Sdk.Api;
 
     using Com.Aspose.Storage.Api;
 
     /// <summary>
-    /// Base context for all tests
+    /// Base context for all tests.
     /// </summary>
-    public abstract class BaseContext
+    public class BaseContext
     {
         private const string BaseProductUri = @"http://api-dev.aspose.cloud/v1.1";
         private const string AppSID = "78b637f6-b4cc-41de-a619-d8bd9fc2b6b6";
@@ -18,45 +16,38 @@
         private string testFolder;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BaseContext"/> class.
+        /// Initializes a new instance of the <see cref="BaseContext"/>.
         /// </summary>
         protected BaseContext()
-        {
-            this.MethodsApi = new WordsApi(AppKey, AppSID, BaseProductUri);
+        {            
+            this.WordsApi = new WordsApi(AppKey, AppSID, BaseProductUri);
             this.StorageApi = new StorageApi(AppKey, AppSID, BaseProductUri);
         }
-
-
-        /// <summary>
-        /// File we want to convert
-        /// </summary>
-        public string FileName { get; set; }
 
         /// <summary>
         /// Storage API
         /// </summary>
-        protected StorageApi StorageApi { get; set; }
+        public StorageApi StorageApi { get; set; }
 
         /// <summary>
-        /// Methods API
+        /// Words API
         /// </summary>
-        protected WordsApi MethodsApi { get; set; }
+        public WordsApi WordsApi { get; set; }
 
         /// <summary>
-        /// Folder name
+        /// Request.
         /// </summary>
-        protected string Folder
-        {
-            get
-            {
-                return "TempSDKTests/";
-            }
-        }
+        public object Request { get; set; }
+
+        /// <summary>
+        /// Response.
+        /// </summary>
+        public object Response { get; set; }        
 
         /// <summary>
         /// Get path to test data
         /// </summary>
-        protected string TestDataPath
+        public string TestDataPath
         {
             get
             {
@@ -65,15 +56,14 @@
         }
 
         /// <summary>
-        /// Uploads document to storage
+        /// Folder name
         /// </summary>
-        public void UploadDocumentToStorage()
+        public string TestFolderInStorage
         {
-            this.StorageApi.PutCreate(
-                this.Folder + this.FileName,
-                null,
-                null,
-                File.ReadAllBytes(Path.Combine(this.TestDataPath, this.FileName)));
+            get
+            {
+                return "TempSDKTests/";
+            }
         }
     }
 }
