@@ -9,6 +9,14 @@ namespace {{packageName}}.Requests
   /// </summary>  
   public class {{nickname}}Request{{#vendorExtensions}}{{#x-csharp-implements}} : {{x-csharp-implements}} {{/x-csharp-implements}}  {{/vendorExtensions}}
   {
+        {{#hasParams}}
+        /// <summary>
+        /// Initializes a new instance of the <see cref="{{nickname}}Request"/> class.
+        /// </summary>        
+        public {{nickname}}Request()
+        {
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="{{nickname}}Request"/> class.
         /// </summary>
@@ -31,6 +39,7 @@ namespace {{packageName}}.Requests
 
         {{/hasMore}}
         {{/allParams}}
+        {{/hasParams}}
   }
 {{/operation}}
 }
