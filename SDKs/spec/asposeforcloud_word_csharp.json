@@ -3,7 +3,7 @@
   "info": {
     "version": "v1.1",
     "title": "Aspose Words for Cloud Web API",
-    "description": "Version of Aspose.Words: 17.9.0.0 <br/> \r\n                                                   Version of Aspose.Words.Cloud: 17.8.0.0 <br/> \r\n                                                   Build number: 1"
+    "description": "Version of Aspose.Words: 17.9.0.0 <br/> \r\n                                                   Version of Aspose.Words.Cloud: 17.9.0.0 <br/> \r\n                                                   Build number: 1"
   },
   "host": "localhost",
   "basePath": "/WordsCloud",
@@ -4076,106 +4076,12 @@
         },
         "x-csharp-implements": "IWordDocumentRequest"
       },
-      "put": {
-        "tags": [
-          "words"
-        ],
-        "summary": "Add new or update existing document property.",
-        "operationId": "PutUpdateDocumentProperty",
-        "consumes": [
-          "application/json",
-          "application/x-www-form-urlencoded",
-          "application/xml",
-          "text/xml"
-        ],
-        "produces": [
-          "application/json",
-          "application/xml",
-          "text/xml"
-        ],
-        "parameters": [
-          {
-            "name": "Name",
-            "in": "path",
-            "description": "The document name.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "PropertyName",
-            "in": "path",
-            "description": "The property name.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "Property",
-            "in": "body",
-            "description": "The property with new value.",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/DocumentProperty"
-            }
-          },
-          {
-            "name": "DestFileName",
-            "in": "query",
-            "description": "Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.",
-            "type": "string"
-          },
-          {
-            "name": "Storage",
-            "in": "query",
-            "description": "File storage, which have to be used.",
-            "type": "string"
-          },
-          {
-            "name": "Folder",
-            "in": "query",
-            "description": "Original document folder.",
-            "type": "string"
-          },
-          {
-            "name": "LoadEncoding",
-            "in": "query",
-            "description": "Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.",
-            "type": "string"
-          },
-          {
-            "name": "RevisionAuthor",
-            "in": "query",
-            "description": "Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.",
-            "type": "string"
-          },
-          {
-            "name": "RevisionDateTime",
-            "in": "query",
-            "description": "The date and time to use for revisions.",
-            "type": "string"
-          },
-          {
-            "name": "Password",
-            "in": "query",
-            "description": "Password for opening an encrypted document.",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/DocumentPropertyResponse"
-            }
-          }
-        },
-        "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
-      },
       "post": {
         "tags": [
           "words"
         ],
         "summary": "Add new or update existing document property.",
-        "operationId": "PutUpdateDocumentProperty",
+        "operationId": "CreateOrUpdateDocumentProperty",
         "consumes": [
           "application/json",
           "application/x-www-form-urlencoded",
@@ -7871,14 +7777,6 @@
             "format": "int32"
           },
           {
-            "name": "SectionIndex",
-            "in": "query",
-            "description": "Section index.",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
             "name": "FilterByType",
             "in": "query",
             "description": "List of types of headers and footers.",
@@ -7927,7 +7825,7 @@
           "words"
         ],
         "summary": "Return a header/footer that is contained in the document.",
-        "operationId": "GetHeaderFooter",
+        "operationId": "GetHeaderFooterOfSection",
         "consumes": [
           "application/xml"
         ],
