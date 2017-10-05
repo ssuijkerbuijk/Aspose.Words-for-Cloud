@@ -68,7 +68,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="WordsApiTest.cs" />
+    <Compile Include="TestWordsApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\Data\AppendFile_destination.docx">
