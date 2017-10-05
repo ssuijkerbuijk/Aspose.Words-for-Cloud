@@ -44,8 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets the unit of measure used for this preferred width value.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Auto for "Auto"
             /// </summary>            
@@ -59,13 +58,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Points for "Points"
             /// </summary>            
-            Points
+            Points            
         }
 
         /// <summary>
         /// Gets the unit of measure used for this preferred width value.
         /// </summary>
-        /// <value>Gets the unit of measure used for this preferred width value.</value>
         public TypeEnum? Type { get; set; }
 
         /// <summary>

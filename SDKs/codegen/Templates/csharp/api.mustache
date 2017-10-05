@@ -27,21 +27,35 @@ namespace {{packageName}}.Api
 {
     using System;    
     using System.Collections.Generic;
-    using System.IO;
     using System.Text.RegularExpressions;
     using {{packageName}}.Model;
     using {{packageName}}.Requests;
 
     {{#operations}}
+    /// <summary>
+    /// Aspose.Words for Cloud API.
+    /// </summary>
     public class {{classname}}
     {        
-        private readonly string basePath;
+        private readonly string apiBaseUrl;
         private readonly ApiInvoker apiInvoker = ApiInvoker.GetInstance();        
 
-        public {{classname}}(string apiKey, string appSid, string basePath)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WordsApi"/> class.
+        /// </summary>
+        /// <param name="apiKey">
+        /// The api Key.
+        /// </param>
+        /// <param name="appSid">
+        /// The app Sid.
+        /// </param>
+        /// <param name="apiBaseUrl">
+        /// Aspose Cloud API base URL.
+        /// </param>
+        public {{classname}}(string apiKey, string appSid, string apiBaseUrl)
         {
             this.apiInvoker.AddAuthInfo(apiKey, appSid);
-            this.basePath = basePath;
+            this.apiBaseUrl = apiBaseUrl;
         }               
         {{#operation}}
 
@@ -52,23 +66,24 @@ namespace {{packageName}}.Api
         /// <returns><see cref="{{#returnType}}{{{returnType}}}{{/returnType}}"/></returns>            
         public {{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}void{{/returnType}} {{nickname}}({{nickname}}Request request)
         {
-            // create path and map variables
+{{#allParams}}{{#required}}            // verify the required parameter '{{paramName}}' is set
+            if (request.{{baseName}} == null) 
+            {
+                throw new ApiException(400, "Missing required parameter '{{paramName}}' when calling {{nickname}}");
+            }
+
+{{/required}}{{/allParams}}            // create path and map variables
             var resourcePath = "{{path}}?appSid={appSid}{{#queryParams}}&amp;{{paramName}}=[{{paramName}}]{{/queryParams}}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            {{#allParams}}{{#required}}
-            // verify the required parameter '{{paramName}}' is set
-            if (request.{{baseName}} == null) 
-            {
-                throw new ApiException(400, "Missing required parameter '{{paramName}}' when calling {{nickname}}");
-            }
-            {{/required}}{{/allParams}}
+            {{#headerParams}}
+            {{#-first}}var headerParams = new Dictionary<string, string>();{{/-first}}
+            {{/headerParams}}
+            {{#formParams}}            
+            {{#-first}}var formParams = new Dictionary<string, object>();{{/-first}}
+            {{/formParams}}
             {{#pathParams}}
             resourcePath = this.AddPathParameter(resourcePath, "{{paramName}}", request.{{baseName}});
             {{/pathParams}}
@@ -81,27 +96,35 @@ namespace {{packageName}}.Api
                 headerParams.Add("{{paramName}}", this.apiInvoker.ToPathValue(request.{{baseName}})); // header parameter
             }
             {{/headerParams}}
-            {{#bodyParam}}postBody = request.{{baseName}}; // http body (model) parameter{{/bodyParam}}
+            {{#hasBodyParam}}var postBody = request.{{bodyParam.baseName}}; // http body (model) parameter{{/hasBodyParam}}
             {{#formParams}}
             if (request.{{baseName}} != null) 
             {
                 {{#isFile}}formParams.Add("{{paramName}}", this.apiInvoker.ToFileInfo(request.{{baseName}}, "{{baseName}}"));{{/isFile}}{{^isFile}}formParams.Add("{{baseName}}", request.{{baseName}}); // form parameter{{/isFile}}
             }
+            
             {{/formParams}}
             try 
-            {                
-                if (typeof({{returnType}}) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "{{httpMethod}}", null, headerParams, formParams) as {{returnType}};
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "{{httpMethod}}", postBody, headerParams, formParams);
+            {                               
+{{#vendorExtensions}}{{#x-binary-result}}                    return this.apiInvoker.InvokeBinaryApi(
+                        this.apiBaseUrl, 
+                        resourcePath, 
+                        "{{httpMethod}}", 
+                        {{#hasBodyParam}}postBody{{/hasBodyParam}}{{^hasBodyParam}}null{{/hasBodyParam}}, 
+                        {{#hasHeaderParams}}headerParams{{/hasHeaderParams}}{{^hasHeaderParams}}null{{/hasHeaderParams}}, 
+                        {{#hasFormParams}}formParams{{/hasFormParams}}{{^hasFormParams}}null{{/hasFormParams}}) as {{returnType}};{{/x-binary-result}}{{/vendorExtensions}}{{#vendorExtensions}}{{^x-binary-result}}                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "{{httpMethod}}", 
+                    {{#hasBodyParam}}postBody{{/hasBodyParam}}{{^hasBodyParam}}null{{/hasBodyParam}}, 
+                    {{#hasHeaderParams}}headerParams{{/hasHeaderParams}}{{^hasHeaderParams}}null{{/hasHeaderParams}}, 
+                    {{#hasFormParams}}formParams{{/hasFormParams}}{{^hasFormParams}}null{{/hasFormParams}});
                 if (response != null)
                 {
                     return ({{returnType}})SerializationHelper.Deserialize(response, typeof({{returnType}}));
                 }
                     
-                return null;
+                return null;{{/x-binary-result}}{{/vendorExtensions}}
             } 
             catch (ApiException ex) 
             {

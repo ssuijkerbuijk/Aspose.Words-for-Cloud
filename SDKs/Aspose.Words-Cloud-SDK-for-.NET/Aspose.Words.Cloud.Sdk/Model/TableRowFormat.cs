@@ -44,8 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the rule for determining the height of the table row.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HeightRuleEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum AtLeast for "AtLeast"
             /// </summary>            
@@ -59,13 +58,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Auto for "Auto"
             /// </summary>            
-            Auto
+            Auto            
         }
 
         /// <summary>
         /// Gets or sets the rule for determining the height of the table row.
         /// </summary>
-        /// <value>Gets or sets the rule for determining the height of the table row.</value>
         public HeightRuleEnum? HeightRule { get; set; }
 
         /// <summary>

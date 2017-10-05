@@ -44,8 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets a value that specifies how composited images are drawn to this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CompositingModeEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum SourceOver for "SourceOver"
             /// </summary>            
@@ -54,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum SourceCopy for "SourceCopy"
             /// </summary>            
-            SourceCopy
+            SourceCopy            
         }
 
         /// <summary>
@@ -63,8 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the rendering quality of composited images drawn to this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CompositingQualityEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Invalid for "Invalid"
             /// </summary>            
@@ -93,7 +91,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum AssumeLinear for "AssumeLinear"
             /// </summary>            
-            AssumeLinear
+            AssumeLinear            
         }
 
         /// <summary>
@@ -102,8 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the interpolation mode associated with this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum InterpolationModeEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Invalid for "Invalid"
             /// </summary>            
@@ -147,7 +144,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum HighQualityBicubic for "HighQualityBicubic"
             /// </summary>            
-            HighQualityBicubic
+            HighQualityBicubic            
         }
 
         /// <summary>
@@ -156,8 +153,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the rendering quality for this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SmoothingModeEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Invalid for "Invalid"
             /// </summary>            
@@ -186,7 +182,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum AntiAlias for "AntiAlias"
             /// </summary>            
-            AntiAlias
+            AntiAlias            
         }
 
         /// <summary>
@@ -195,8 +191,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the rendering mode for text associated with this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextRenderingHintEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum SystemDefault for "SystemDefault"
             /// </summary>            
@@ -225,37 +220,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum ClearTypeGridFit for "ClearTypeGridFit"
             /// </summary>            
-            ClearTypeGridFit
+            ClearTypeGridFit            
         }
 
         /// <summary>
         /// Gets or sets a value that specifies how composited images are drawn to this Graphics.
         /// </summary>
-        /// <value>Gets or sets a value that specifies how composited images are drawn to this Graphics.</value>
         public CompositingModeEnum? CompositingMode { get; set; }
 
         /// <summary>
         /// Gets or sets the rendering quality of composited images drawn to this Graphics.
         /// </summary>
-        /// <value>Gets or sets the rendering quality of composited images drawn to this Graphics.</value>
         public CompositingQualityEnum? CompositingQuality { get; set; }
 
         /// <summary>
         /// Gets or sets the interpolation mode associated with this Graphics.
         /// </summary>
-        /// <value>Gets or sets the interpolation mode associated with this Graphics.</value>
         public InterpolationModeEnum? InterpolationMode { get; set; }
 
         /// <summary>
         /// Gets or sets the rendering quality for this Graphics.
         /// </summary>
-        /// <value>Gets or sets the rendering quality for this Graphics.</value>
         public SmoothingModeEnum? SmoothingMode { get; set; }
 
         /// <summary>
         /// Gets or sets the rendering mode for text associated with this Graphics.
         /// </summary>
-        /// <value>Gets or sets the rendering mode for text associated with this Graphics.</value>
         public TextRenderingHintEnum? TextRenderingHint { get; set; }
 
         /// <summary>

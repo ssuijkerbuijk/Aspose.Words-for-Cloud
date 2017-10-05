@@ -27,20 +27,34 @@ namespace Aspose.Words.Cloud.Sdk.Api
 {
     using System;    
     using System.Collections.Generic;
-    using System.IO;
     using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Requests;
 
+    /// <summary>
+    /// Aspose.Words for Cloud API.
+    /// </summary>
     public class WordsApi
     {        
-        private readonly string basePath;
+        private readonly string apiBaseUrl;
         private readonly ApiInvoker apiInvoker = ApiInvoker.GetInstance();        
 
-        public WordsApi(string apiKey, string appSid, string basePath)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WordsApi"/> class.
+        /// </summary>
+        /// <param name="apiKey">
+        /// The api Key.
+        /// </param>
+        /// <param name="appSid">
+        /// The app Sid.
+        /// </param>
+        /// <param name="apiBaseUrl">
+        /// Aspose Cloud API base URL.
+        /// </param>
+        public WordsApi(string apiKey, string appSid, string apiBaseUrl)
         {
             this.apiInvoker.AddAuthInfo(apiKey, appSid);
-            this.basePath = basePath;
+            this.apiBaseUrl = apiBaseUrl;
         }               
 
         /// <summary>
@@ -50,23 +64,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="RevisionsModificationResponse"/></returns>            
         public RevisionsModificationResponse AcceptAllRevisions(AcceptAllRevisionsRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling AcceptAllRevisions");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/revisions/acceptAll?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling AcceptAllRevisions");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -75,13 +84,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(RevisionsModificationResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as RevisionsModificationResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (RevisionsModificationResponse)SerializationHelper.Deserialize(response, typeof(RevisionsModificationResponse));
@@ -107,35 +117,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="DocumentPropertyResponse"/></returns>            
         public DocumentPropertyResponse CreateOrUpdateDocumentProperty(CreateOrUpdateDocumentPropertyRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling CreateOrUpdateDocumentProperty");
+            }
+
+            // verify the required parameter 'propertyName' is set
+            if (request.PropertyName == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'propertyName' when calling CreateOrUpdateDocumentProperty");
+            }
+
+            // verify the required parameter 'property' is set
+            if (request.Property == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'property' when calling CreateOrUpdateDocumentProperty");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/documentProperties/{propertyName}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling CreateOrUpdateDocumentProperty");
-            }
-            
-            // verify the required parameter 'propertyName' is set
-            if (request.PropertyName == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'propertyName' when calling CreateOrUpdateDocumentProperty");
-            }
-            
-            // verify the required parameter 'property' is set
-            if (request.Property == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'property' when calling CreateOrUpdateDocumentProperty");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "propertyName", request.PropertyName);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
@@ -145,15 +150,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.Property; // http body (model) parameter
+            var postBody = request.Property; // http body (model) parameter
             try 
-            {                
-                if (typeof(DocumentPropertyResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as DocumentPropertyResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (DocumentPropertyResponse)SerializationHelper.Deserialize(response, typeof(DocumentPropertyResponse));
@@ -179,35 +185,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="BorderResponse"/></returns>            
         public BorderResponse DeleteBorder(DeleteBorderRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteBorder");
+            }
+
+            // verify the required parameter 'nodePath' is set
+            if (request.NodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteBorder");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteBorder");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/borders/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteBorder");
-            }
-            
-            // verify the required parameter 'nodePath' is set
-            if (request.NodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteBorder");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteBorder");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
@@ -220,13 +221,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(BorderResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as BorderResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (BorderResponse)SerializationHelper.Deserialize(response, typeof(BorderResponse));
@@ -252,29 +254,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="BordersResponse"/></returns>            
         public BordersResponse DeleteBorders(DeleteBordersRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteBorders");
+            }
+
+            // verify the required parameter 'nodePath' is set
+            if (request.NodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteBorders");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/borders?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteBorders");
-            }
-            
-            // verify the required parameter 'nodePath' is set
-            if (request.NodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling DeleteBorders");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
@@ -286,13 +283,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(BordersResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as BordersResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (BordersResponse)SerializationHelper.Deserialize(response, typeof(BordersResponse));
@@ -318,29 +316,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteComment(DeleteCommentRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteComment");
+            }
+
+            // verify the required parameter 'commentIndex' is set
+            if (request.CommentIndex == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'commentIndex' when calling DeleteComment");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/comments/{commentIndex}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteComment");
-            }
-            
-            // verify the required parameter 'commentIndex' is set
-            if (request.CommentIndex == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'commentIndex' when calling DeleteComment");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "commentIndex", request.CommentIndex);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
@@ -352,13 +345,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SaaSposeResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as SaaSposeResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaaSposeResponse)SerializationHelper.Deserialize(response, typeof(SaaSposeResponse));
@@ -384,23 +378,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteDocumentMacros(DeleteDocumentMacrosRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteDocumentMacros");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/macros?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteDocumentMacros");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -411,13 +400,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SaaSposeResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as SaaSposeResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaaSposeResponse)SerializationHelper.Deserialize(response, typeof(SaaSposeResponse));
@@ -443,29 +433,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteDocumentProperty(DeleteDocumentPropertyRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteDocumentProperty");
+            }
+
+            // verify the required parameter 'propertyName' is set
+            if (request.PropertyName == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'propertyName' when calling DeleteDocumentProperty");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/documentProperties/{propertyName}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteDocumentProperty");
-            }
-            
-            // verify the required parameter 'propertyName' is set
-            if (request.PropertyName == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'propertyName' when calling DeleteDocumentProperty");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "propertyName", request.PropertyName);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
@@ -477,13 +462,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SaaSposeResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as SaaSposeResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaaSposeResponse)SerializationHelper.Deserialize(response, typeof(SaaSposeResponse));
@@ -509,23 +495,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse DeleteDocumentWatermark(DeleteDocumentWatermarkRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteDocumentWatermark");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/watermark?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteDocumentWatermark");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -536,13 +517,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(DocumentResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as DocumentResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
@@ -568,29 +550,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteDrawingObject(DeleteDrawingObjectRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteDrawingObject");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteDrawingObject");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteDrawingObject");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteDrawingObject");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -603,13 +580,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SaaSposeResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as SaaSposeResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaaSposeResponse)SerializationHelper.Deserialize(response, typeof(SaaSposeResponse));
@@ -635,29 +613,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteField(DeleteFieldRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteField");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteField");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteField");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteField");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -670,13 +643,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SaaSposeResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as SaaSposeResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaaSposeResponse)SerializationHelper.Deserialize(response, typeof(SaaSposeResponse));
@@ -702,23 +676,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteFields(DeleteFieldsRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteFields");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/fields?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteFields");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
@@ -730,13 +699,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SaaSposeResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as SaaSposeResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaaSposeResponse)SerializationHelper.Deserialize(response, typeof(SaaSposeResponse));
@@ -762,29 +732,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteFootnote(DeleteFootnoteRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteFootnote");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteFootnote");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteFootnote");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteFootnote");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -797,13 +762,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SaaSposeResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as SaaSposeResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaaSposeResponse)SerializationHelper.Deserialize(response, typeof(SaaSposeResponse));
@@ -829,29 +795,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteFormField(DeleteFormFieldRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteFormField");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteFormField");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteFormField");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteFormField");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -864,13 +825,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SaaSposeResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as SaaSposeResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaaSposeResponse)SerializationHelper.Deserialize(response, typeof(SaaSposeResponse));
@@ -896,29 +858,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteHeaderFooter(DeleteHeaderFooterRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteHeaderFooter");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteHeaderFooter");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{sectionPath}/headersfooters/{index}?appSid={appSid}&amp;sectionPath=[sectionPath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteHeaderFooter");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteHeaderFooter");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "sectionPath", request.SectionPath);
@@ -931,13 +888,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SaaSposeResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as SaaSposeResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaaSposeResponse)SerializationHelper.Deserialize(response, typeof(SaaSposeResponse));
@@ -963,23 +921,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteHeadersFooters(DeleteHeadersFootersRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteHeadersFooters");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;sectionPath=[sectionPath]&amp;headersFootersTypes=[headersFootersTypes]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteHeadersFooters");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "sectionPath", request.SectionPath);
             resourcePath = this.AddQueryParameter(resourcePath, "headersFootersTypes", request.HeadersFootersTypes);
@@ -992,13 +945,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SaaSposeResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as SaaSposeResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaaSposeResponse)SerializationHelper.Deserialize(response, typeof(SaaSposeResponse));
@@ -1024,29 +978,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteOfficeMathObject(DeleteOfficeMathObjectRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteOfficeMathObject");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteOfficeMathObject");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/OfficeMathObjects/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteOfficeMathObject");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteOfficeMathObject");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -1059,13 +1008,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SaaSposeResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as SaaSposeResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaaSposeResponse)SerializationHelper.Deserialize(response, typeof(SaaSposeResponse));
@@ -1091,29 +1041,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteParagraph(DeleteParagraphRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteParagraph");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteParagraph");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/paragraphs/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteParagraph");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteParagraph");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -1126,13 +1071,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SaaSposeResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as SaaSposeResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaaSposeResponse)SerializationHelper.Deserialize(response, typeof(SaaSposeResponse));
@@ -1158,35 +1104,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteRun(DeleteRunRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteRun");
+            }
+
+            // verify the required parameter 'paragraphPath' is set
+            if (request.ParagraphPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling DeleteRun");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteRun");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{paragraphPath}/runs/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteRun");
-            }
-            
-            // verify the required parameter 'paragraphPath' is set
-            if (request.ParagraphPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling DeleteRun");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteRun");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
@@ -1199,13 +1140,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SaaSposeResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as SaaSposeResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaaSposeResponse)SerializationHelper.Deserialize(response, typeof(SaaSposeResponse));
@@ -1231,29 +1173,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteTable(DeleteTableRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteTable");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteTable");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/tables/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteTable");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteTable");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -1266,13 +1203,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SaaSposeResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as SaaSposeResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaaSposeResponse)SerializationHelper.Deserialize(response, typeof(SaaSposeResponse));
@@ -1298,35 +1236,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteTableCell(DeleteTableCellRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteTableCell");
+            }
+
+            // verify the required parameter 'tableRowPath' is set
+            if (request.TableRowPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling DeleteTableCell");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteTableCell");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{tableRowPath}/cells/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteTableCell");
-            }
-            
-            // verify the required parameter 'tableRowPath' is set
-            if (request.TableRowPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling DeleteTableCell");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteTableCell");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "tableRowPath", request.TableRowPath);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
@@ -1339,13 +1272,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SaaSposeResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as SaaSposeResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaaSposeResponse)SerializationHelper.Deserialize(response, typeof(SaaSposeResponse));
@@ -1371,35 +1305,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaaSposeResponse"/></returns>            
         public SaaSposeResponse DeleteTableRow(DeleteTableRowRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteTableRow");
+            }
+
+            // verify the required parameter 'tablePath' is set
+            if (request.TablePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'tablePath' when calling DeleteTableRow");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteTableRow");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{tablePath}/rows/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteTableRow");
-            }
-            
-            // verify the required parameter 'tablePath' is set
-            if (request.TablePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'tablePath' when calling DeleteTableRow");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteTableRow");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "tablePath", request.TablePath);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
@@ -1412,13 +1341,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SaaSposeResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as SaaSposeResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaaSposeResponse)SerializationHelper.Deserialize(response, typeof(SaaSposeResponse));
@@ -1444,44 +1374,40 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="ProtectionDataResponse"/></returns>            
         public ProtectionDataResponse DeleteUnprotectDocument(DeleteUnprotectDocumentRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteUnprotectDocument");
+            }
+
+            // verify the required parameter 'protectionRequest' is set
+            if (request.ProtectionRequest == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling DeleteUnprotectDocument");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/protection?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteUnprotectDocument");
-            }
-            
-            // verify the required parameter 'protectionRequest' is set
-            if (request.ProtectionRequest == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling DeleteUnprotectDocument");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.ProtectionRequest; // http body (model) parameter
+            var postBody = request.ProtectionRequest; // http body (model) parameter
             try 
-            {                
-                if (typeof(ProtectionDataResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as ProtectionDataResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
@@ -1507,35 +1433,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="BorderResponse"/></returns>            
         public BorderResponse GetBorder(GetBorderRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetBorder");
+            }
+
+            // verify the required parameter 'nodePath' is set
+            if (request.NodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetBorder");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetBorder");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/borders/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetBorder");
-            }
-            
-            // verify the required parameter 'nodePath' is set
-            if (request.NodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetBorder");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetBorder");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
@@ -1545,13 +1466,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(BorderResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as BorderResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (BorderResponse)SerializationHelper.Deserialize(response, typeof(BorderResponse));
@@ -1577,29 +1499,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="BordersResponse"/></returns>            
         public BordersResponse GetBorders(GetBordersRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetBorders");
+            }
+
+            // verify the required parameter 'nodePath' is set
+            if (request.NodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetBorders");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/borders?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetBorders");
-            }
-            
-            // verify the required parameter 'nodePath' is set
-            if (request.NodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling GetBorders");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -1608,13 +1525,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(BordersResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as BordersResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (BordersResponse)SerializationHelper.Deserialize(response, typeof(BordersResponse));
@@ -1640,29 +1558,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="CommentResponse"/></returns>            
         public CommentResponse GetComment(GetCommentRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetComment");
+            }
+
+            // verify the required parameter 'commentIndex' is set
+            if (request.CommentIndex == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'commentIndex' when calling GetComment");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/comments/{commentIndex}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetComment");
-            }
-            
-            // verify the required parameter 'commentIndex' is set
-            if (request.CommentIndex == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'commentIndex' when calling GetComment");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "commentIndex", request.CommentIndex);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -1671,13 +1584,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(CommentResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as CommentResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (CommentResponse)SerializationHelper.Deserialize(response, typeof(CommentResponse));
@@ -1703,23 +1617,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="CommentsResponse"/></returns>            
         public CommentsResponse GetComments(GetCommentsRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetComments");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/comments?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetComments");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
@@ -1727,13 +1636,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(CommentsResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as CommentsResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (CommentsResponse)SerializationHelper.Deserialize(response, typeof(CommentsResponse));
@@ -1759,23 +1669,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse GetDocument(GetDocumentRequest request)
         {
+            // verify the required parameter 'documentName' is set
+            if (request.DocumentName == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'documentName' when calling GetDocument");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{documentName}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'documentName' is set
-            if (request.DocumentName == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'documentName' when calling GetDocument");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "documentName", request.DocumentName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
@@ -1783,13 +1688,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(DocumentResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as DocumentResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
@@ -1815,29 +1721,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="BookmarkResponse"/></returns>            
         public BookmarkResponse GetDocumentBookmarkByName(GetDocumentBookmarkByNameRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentBookmarkByName");
+            }
+
+            // verify the required parameter 'bookmarkName' is set
+            if (request.BookmarkName == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'bookmarkName' when calling GetDocumentBookmarkByName");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/bookmarks/{bookmarkName}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentBookmarkByName");
-            }
-            
-            // verify the required parameter 'bookmarkName' is set
-            if (request.BookmarkName == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'bookmarkName' when calling GetDocumentBookmarkByName");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "bookmarkName", request.BookmarkName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -1846,13 +1747,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(BookmarkResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as BookmarkResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (BookmarkResponse)SerializationHelper.Deserialize(response, typeof(BookmarkResponse));
@@ -1878,23 +1780,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="BookmarksResponse"/></returns>            
         public BookmarksResponse GetDocumentBookmarks(GetDocumentBookmarksRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentBookmarks");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/bookmarks?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentBookmarks");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
@@ -1902,13 +1799,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(BookmarksResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as BookmarksResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (BookmarksResponse)SerializationHelper.Deserialize(response, typeof(BookmarksResponse));
@@ -1934,29 +1832,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="DrawingObjectResponse"/></returns>            
         public DrawingObjectResponse GetDocumentDrawingObjectByIndex(GetDocumentDrawingObjectByIndexRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentDrawingObjectByIndex");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectByIndex");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentDrawingObjectByIndex");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectByIndex");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -1966,13 +1859,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(DrawingObjectResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as DrawingObjectResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (DrawingObjectResponse)SerializationHelper.Deserialize(response, typeof(DrawingObjectResponse));
@@ -1998,29 +1892,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream GetDocumentDrawingObjectImageData(GetDocumentDrawingObjectImageDataRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentDrawingObjectImageData");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectImageData");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}/imageData?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentDrawingObjectImageData");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectImageData");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -2030,19 +1919,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(System.IO.Stream) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as System.IO.Stream;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
-                if (response != null)
-                {
-                    return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
-                }
-                    
-                return null;
+            {                               
+                    return this.apiInvoker.InvokeBinaryApi(
+                        this.apiBaseUrl, 
+                        resourcePath, 
+                        "GET", 
+                        null, 
+                        null, 
+                        null) as System.IO.Stream;
             } 
             catch (ApiException ex) 
             {
@@ -2062,29 +1946,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream GetDocumentDrawingObjectOleData(GetDocumentDrawingObjectOleDataRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentDrawingObjectOleData");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectOleData");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}/oleData?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentDrawingObjectOleData");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentDrawingObjectOleData");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -2094,19 +1973,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(System.IO.Stream) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as System.IO.Stream;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
-                if (response != null)
-                {
-                    return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
-                }
-                    
-                return null;
+            {                               
+                    return this.apiInvoker.InvokeBinaryApi(
+                        this.apiBaseUrl, 
+                        resourcePath, 
+                        "GET", 
+                        null, 
+                        null, 
+                        null) as System.IO.Stream;
             } 
             catch (ApiException ex) 
             {
@@ -2126,23 +2000,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="DrawingObjectsResponse"/></returns>            
         public DrawingObjectsResponse GetDocumentDrawingObjects(GetDocumentDrawingObjectsRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentDrawingObjects");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/drawingObjects?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentDrawingObjects");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -2151,13 +2020,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(DrawingObjectsResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as DrawingObjectsResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (DrawingObjectsResponse)SerializationHelper.Deserialize(response, typeof(DrawingObjectsResponse));
@@ -2183,23 +2053,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="FieldNamesResponse"/></returns>            
         public FieldNamesResponse GetDocumentFieldNames(GetDocumentFieldNamesRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentFieldNames");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/mailMergeFieldNames?appSid={appSid}&amp;useNonMergeFields=[useNonMergeFields]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentFieldNames");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "useNonMergeFields", request.UseNonMergeFields);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -2208,13 +2073,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(FieldNamesResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as FieldNamesResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (FieldNamesResponse)SerializationHelper.Deserialize(response, typeof(FieldNamesResponse));
@@ -2240,29 +2106,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="HyperlinkResponse"/></returns>            
         public HyperlinkResponse GetDocumentHyperlinkByIndex(GetDocumentHyperlinkByIndexRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentHyperlinkByIndex");
+            }
+
+            // verify the required parameter 'hyperlinkIndex' is set
+            if (request.HyperlinkIndex == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'hyperlinkIndex' when calling GetDocumentHyperlinkByIndex");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/hyperlinks/{hyperlinkIndex}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentHyperlinkByIndex");
-            }
-            
-            // verify the required parameter 'hyperlinkIndex' is set
-            if (request.HyperlinkIndex == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'hyperlinkIndex' when calling GetDocumentHyperlinkByIndex");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "hyperlinkIndex", request.HyperlinkIndex);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -2271,13 +2132,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(HyperlinkResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as HyperlinkResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (HyperlinkResponse)SerializationHelper.Deserialize(response, typeof(HyperlinkResponse));
@@ -2303,23 +2165,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="HyperlinksResponse"/></returns>            
         public HyperlinksResponse GetDocumentHyperlinks(GetDocumentHyperlinksRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentHyperlinks");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/hyperlinks?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentHyperlinks");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
@@ -2327,13 +2184,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(HyperlinksResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as HyperlinksResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (HyperlinksResponse)SerializationHelper.Deserialize(response, typeof(HyperlinksResponse));
@@ -2359,29 +2217,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="ParagraphResponse"/></returns>            
         public ParagraphResponse GetDocumentParagraph(GetDocumentParagraphRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraph");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraph");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/paragraphs/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraph");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraph");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -2391,13 +2244,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(ParagraphResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as ParagraphResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (ParagraphResponse)SerializationHelper.Deserialize(response, typeof(ParagraphResponse));
@@ -2423,35 +2277,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="RunResponse"/></returns>            
         public RunResponse GetDocumentParagraphRun(GetDocumentParagraphRunRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphRun");
+            }
+
+            // verify the required parameter 'paragraphPath' is set
+            if (request.ParagraphPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling GetDocumentParagraphRun");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraphRun");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{paragraphPath}/runs/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphRun");
-            }
-            
-            // verify the required parameter 'paragraphPath' is set
-            if (request.ParagraphPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling GetDocumentParagraphRun");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraphRun");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
@@ -2461,13 +2310,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(RunResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as RunResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (RunResponse)SerializationHelper.Deserialize(response, typeof(RunResponse));
@@ -2493,35 +2343,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="FontResponse"/></returns>            
         public FontResponse GetDocumentParagraphRunFont(GetDocumentParagraphRunFontRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphRunFont");
+            }
+
+            // verify the required parameter 'paragraphPath' is set
+            if (request.ParagraphPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling GetDocumentParagraphRunFont");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraphRunFont");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{paragraphPath}/runs/{index}/font?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphRunFont");
-            }
-            
-            // verify the required parameter 'paragraphPath' is set
-            if (request.ParagraphPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling GetDocumentParagraphRunFont");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraphRunFont");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
@@ -2531,13 +2376,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(FontResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as FontResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (FontResponse)SerializationHelper.Deserialize(response, typeof(FontResponse));
@@ -2563,29 +2409,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="RunsResponse"/></returns>            
         public RunsResponse GetDocumentParagraphRuns(GetDocumentParagraphRunsRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphRuns");
+            }
+
+            // verify the required parameter 'paragraphPath' is set
+            if (request.ParagraphPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling GetDocumentParagraphRuns");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{paragraphPath}/runs?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphRuns");
-            }
-            
-            // verify the required parameter 'paragraphPath' is set
-            if (request.ParagraphPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling GetDocumentParagraphRuns");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -2594,13 +2435,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(RunsResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as RunsResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (RunsResponse)SerializationHelper.Deserialize(response, typeof(RunsResponse));
@@ -2626,23 +2468,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="ParagraphLinkCollectionResponse"/></returns>            
         public ParagraphLinkCollectionResponse GetDocumentParagraphs(GetDocumentParagraphsRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphs");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/paragraphs?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphs");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -2651,13 +2488,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(ParagraphLinkCollectionResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as ParagraphLinkCollectionResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (ParagraphLinkCollectionResponse)SerializationHelper.Deserialize(response, typeof(ParagraphLinkCollectionResponse));
@@ -2683,23 +2521,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="DocumentPropertiesResponse"/></returns>            
         public DocumentPropertiesResponse GetDocumentProperties(GetDocumentPropertiesRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentProperties");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/documentProperties?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentProperties");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
@@ -2707,13 +2540,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(DocumentPropertiesResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as DocumentPropertiesResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (DocumentPropertiesResponse)SerializationHelper.Deserialize(response, typeof(DocumentPropertiesResponse));
@@ -2739,29 +2573,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="DocumentPropertyResponse"/></returns>            
         public DocumentPropertyResponse GetDocumentProperty(GetDocumentPropertyRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentProperty");
+            }
+
+            // verify the required parameter 'propertyName' is set
+            if (request.PropertyName == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'propertyName' when calling GetDocumentProperty");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/documentProperties/{propertyName}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentProperty");
-            }
-            
-            // verify the required parameter 'propertyName' is set
-            if (request.PropertyName == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'propertyName' when calling GetDocumentProperty");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "propertyName", request.PropertyName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -2770,13 +2599,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(DocumentPropertyResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as DocumentPropertyResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (DocumentPropertyResponse)SerializationHelper.Deserialize(response, typeof(DocumentPropertyResponse));
@@ -2802,23 +2632,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="ProtectionDataResponse"/></returns>            
         public ProtectionDataResponse GetDocumentProtection(GetDocumentProtectionRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentProtection");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/protection?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentProtection");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
@@ -2826,13 +2651,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(ProtectionDataResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as ProtectionDataResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
@@ -2858,23 +2684,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="StatDataResponse"/></returns>            
         public StatDataResponse GetDocumentStatistics(GetDocumentStatisticsRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentStatistics");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/statistics?appSid={appSid}&amp;includeComments=[includeComments]&amp;includeFootnotes=[includeFootnotes]&amp;includeTextInShapes=[includeTextInShapes]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentStatistics");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "includeComments", request.IncludeComments);
             resourcePath = this.AddQueryParameter(resourcePath, "includeFootnotes", request.IncludeFootnotes);
@@ -2885,13 +2706,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(StatDataResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as StatDataResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (StatDataResponse)SerializationHelper.Deserialize(response, typeof(StatDataResponse));
@@ -2917,23 +2739,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="TextItemsResponse"/></returns>            
         public TextItemsResponse GetDocumentTextItems(GetDocumentTextItemsRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentTextItems");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/textItems?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentTextItems");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
@@ -2941,13 +2758,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(TextItemsResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as TextItemsResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (TextItemsResponse)SerializationHelper.Deserialize(response, typeof(TextItemsResponse));
@@ -2973,29 +2791,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream GetDocumentWithFormat(GetDocumentWithFormatRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentWithFormat");
+            }
+
+            // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling GetDocumentWithFormat");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}?appSid={appSid}&amp;format=[format]&amp;outPath=[outPath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentWithFormat");
-            }
-            
-            // verify the required parameter 'format' is set
-            if (request.Format == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'format' when calling GetDocumentWithFormat");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "format", request.Format);
             resourcePath = this.AddQueryParameter(resourcePath, "outPath", request.OutPath);
@@ -3006,19 +2819,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
             
             try 
-            {                
-                if (typeof(System.IO.Stream) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as System.IO.Stream;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
-                if (response != null)
-                {
-                    return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
-                }
-                    
-                return null;
+            {                               
+                    return this.apiInvoker.InvokeBinaryApi(
+                        this.apiBaseUrl, 
+                        resourcePath, 
+                        "GET", 
+                        null, 
+                        null, 
+                        null) as System.IO.Stream;
             } 
             catch (ApiException ex) 
             {
@@ -3038,29 +2846,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="FieldResponse"/></returns>            
         public FieldResponse GetField(GetFieldRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetField");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetField");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetField");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetField");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -3070,13 +2873,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(FieldResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as FieldResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (FieldResponse)SerializationHelper.Deserialize(response, typeof(FieldResponse));
@@ -3102,23 +2906,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="FieldsResponse"/></returns>            
         public FieldsResponse GetFields(GetFieldsRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetFields");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/fields?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetFields");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -3127,13 +2926,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(FieldsResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as FieldsResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (FieldsResponse)SerializationHelper.Deserialize(response, typeof(FieldsResponse));
@@ -3159,29 +2959,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="FootnoteResponse"/></returns>            
         public FootnoteResponse GetFootnote(GetFootnoteRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetFootnote");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetFootnote");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetFootnote");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetFootnote");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -3191,13 +2986,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(FootnoteResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as FootnoteResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (FootnoteResponse)SerializationHelper.Deserialize(response, typeof(FootnoteResponse));
@@ -3223,23 +3019,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="FootnotesResponse"/></returns>            
         public FootnotesResponse GetFootnotes(GetFootnotesRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetFootnotes");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/footnotes?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetFootnotes");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -3248,13 +3039,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(FootnotesResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as FootnotesResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (FootnotesResponse)SerializationHelper.Deserialize(response, typeof(FootnotesResponse));
@@ -3280,29 +3072,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="FormFieldResponse"/></returns>            
         public FormFieldResponse GetFormField(GetFormFieldRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetFormField");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetFormField");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetFormField");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetFormField");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -3312,13 +3099,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(FormFieldResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as FormFieldResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (FormFieldResponse)SerializationHelper.Deserialize(response, typeof(FormFieldResponse));
@@ -3344,23 +3132,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="FormFieldsResponse"/></returns>            
         public FormFieldsResponse GetFormFields(GetFormFieldsRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetFormFields");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/formfields?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetFormFields");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -3369,13 +3152,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(FormFieldsResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as FormFieldsResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (FormFieldsResponse)SerializationHelper.Deserialize(response, typeof(FormFieldsResponse));
@@ -3401,29 +3185,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="HeaderFooterResponse"/></returns>            
         public HeaderFooterResponse GetHeaderFooter(GetHeaderFooterRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetHeaderFooter");
+            }
+
+            // verify the required parameter 'headerFooterIndex' is set
+            if (request.HeaderFooterIndex == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'headerFooterIndex' when calling GetHeaderFooter");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetHeaderFooter");
-            }
-            
-            // verify the required parameter 'headerFooterIndex' is set
-            if (request.HeaderFooterIndex == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'headerFooterIndex' when calling GetHeaderFooter");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "headerFooterIndex", request.HeaderFooterIndex);
             resourcePath = this.AddQueryParameter(resourcePath, "filterByType", request.FilterByType);
@@ -3433,13 +3212,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(HeaderFooterResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as HeaderFooterResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (HeaderFooterResponse)SerializationHelper.Deserialize(response, typeof(HeaderFooterResponse));
@@ -3465,35 +3245,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="HeaderFooterResponse"/></returns>            
         public HeaderFooterResponse GetHeaderFooterOfSection(GetHeaderFooterOfSectionRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetHeaderFooterOfSection");
+            }
+
+            // verify the required parameter 'headerFooterIndex' is set
+            if (request.HeaderFooterIndex == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'headerFooterIndex' when calling GetHeaderFooterOfSection");
+            }
+
+            // verify the required parameter 'sectionIndex' is set
+            if (request.SectionIndex == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetHeaderFooterOfSection");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}?appSid={appSid}&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetHeaderFooterOfSection");
-            }
-            
-            // verify the required parameter 'headerFooterIndex' is set
-            if (request.HeaderFooterIndex == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'headerFooterIndex' when calling GetHeaderFooterOfSection");
-            }
-            
-            // verify the required parameter 'sectionIndex' is set
-            if (request.SectionIndex == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetHeaderFooterOfSection");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "headerFooterIndex", request.HeaderFooterIndex);
             resourcePath = this.AddPathParameter(resourcePath, "sectionIndex", request.SectionIndex);
@@ -3504,13 +3279,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(HeaderFooterResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as HeaderFooterResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (HeaderFooterResponse)SerializationHelper.Deserialize(response, typeof(HeaderFooterResponse));
@@ -3536,23 +3312,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="HeaderFootersResponse"/></returns>            
         public HeaderFootersResponse GetHeaderFooters(GetHeaderFootersRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetHeaderFooters");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;sectionPath=[sectionPath]&amp;filterByType=[filterByType]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetHeaderFooters");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "sectionPath", request.SectionPath);
             resourcePath = this.AddQueryParameter(resourcePath, "filterByType", request.FilterByType);
@@ -3562,13 +3333,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(HeaderFootersResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as HeaderFootersResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (HeaderFootersResponse)SerializationHelper.Deserialize(response, typeof(HeaderFootersResponse));
@@ -3594,29 +3366,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="OfficeMathObjectResponse"/></returns>            
         public OfficeMathObjectResponse GetOfficeMathObject(GetOfficeMathObjectRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetOfficeMathObject");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetOfficeMathObject");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/OfficeMathObjects/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetOfficeMathObject");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetOfficeMathObject");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -3626,13 +3393,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(OfficeMathObjectResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as OfficeMathObjectResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (OfficeMathObjectResponse)SerializationHelper.Deserialize(response, typeof(OfficeMathObjectResponse));
@@ -3658,23 +3426,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="OfficeMathObjectsResponse"/></returns>            
         public OfficeMathObjectsResponse GetOfficeMathObjects(GetOfficeMathObjectsRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetOfficeMathObjects");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/OfficeMathObjects?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetOfficeMathObjects");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -3683,13 +3446,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(OfficeMathObjectsResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as OfficeMathObjectsResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (OfficeMathObjectsResponse)SerializationHelper.Deserialize(response, typeof(OfficeMathObjectsResponse));
@@ -3715,29 +3479,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SectionResponse"/></returns>            
         public SectionResponse GetSection(GetSectionRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetSection");
+            }
+
+            // verify the required parameter 'sectionIndex' is set
+            if (request.SectionIndex == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetSection");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/sections/{sectionIndex}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetSection");
-            }
-            
-            // verify the required parameter 'sectionIndex' is set
-            if (request.SectionIndex == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetSection");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "sectionIndex", request.SectionIndex);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -3746,13 +3505,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SectionResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as SectionResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SectionResponse)SerializationHelper.Deserialize(response, typeof(SectionResponse));
@@ -3778,29 +3538,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SectionPageSetupResponse"/></returns>            
         public SectionPageSetupResponse GetSectionPageSetup(GetSectionPageSetupRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetSectionPageSetup");
+            }
+
+            // verify the required parameter 'sectionIndex' is set
+            if (request.SectionIndex == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetSectionPageSetup");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/sections/{sectionIndex}/pageSetup?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetSectionPageSetup");
-            }
-            
-            // verify the required parameter 'sectionIndex' is set
-            if (request.SectionIndex == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling GetSectionPageSetup");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "sectionIndex", request.SectionIndex);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -3809,13 +3564,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SectionPageSetupResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as SectionPageSetupResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SectionPageSetupResponse)SerializationHelper.Deserialize(response, typeof(SectionPageSetupResponse));
@@ -3841,23 +3597,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SectionLinkCollectionResponse"/></returns>            
         public SectionLinkCollectionResponse GetSections(GetSectionsRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetSections");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/sections?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetSections");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
@@ -3865,13 +3616,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SectionLinkCollectionResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as SectionLinkCollectionResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SectionLinkCollectionResponse)SerializationHelper.Deserialize(response, typeof(SectionLinkCollectionResponse));
@@ -3897,29 +3649,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="TableResponse"/></returns>            
         public TableResponse GetTable(GetTableRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetTable");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetTable");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/tables/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetTable");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetTable");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -3929,13 +3676,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(TableResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as TableResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (TableResponse)SerializationHelper.Deserialize(response, typeof(TableResponse));
@@ -3961,35 +3709,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="TableCellResponse"/></returns>            
         public TableCellResponse GetTableCell(GetTableCellRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetTableCell");
+            }
+
+            // verify the required parameter 'tableRowPath' is set
+            if (request.TableRowPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling GetTableCell");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetTableCell");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{tableRowPath}/cells/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetTableCell");
-            }
-            
-            // verify the required parameter 'tableRowPath' is set
-            if (request.TableRowPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling GetTableCell");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetTableCell");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "tableRowPath", request.TableRowPath);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
@@ -3999,13 +3742,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(TableCellResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as TableCellResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (TableCellResponse)SerializationHelper.Deserialize(response, typeof(TableCellResponse));
@@ -4031,35 +3775,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="TableCellFormatResponse"/></returns>            
         public TableCellFormatResponse GetTableCellFormat(GetTableCellFormatRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetTableCellFormat");
+            }
+
+            // verify the required parameter 'tableRowPath' is set
+            if (request.TableRowPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling GetTableCellFormat");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetTableCellFormat");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{tableRowPath}/cells/{index}/cellformat?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetTableCellFormat");
-            }
-            
-            // verify the required parameter 'tableRowPath' is set
-            if (request.TableRowPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling GetTableCellFormat");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetTableCellFormat");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "tableRowPath", request.TableRowPath);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
@@ -4069,13 +3808,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(TableCellFormatResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as TableCellFormatResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (TableCellFormatResponse)SerializationHelper.Deserialize(response, typeof(TableCellFormatResponse));
@@ -4101,29 +3841,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="TablePropertiesResponse"/></returns>            
         public TablePropertiesResponse GetTableProperties(GetTablePropertiesRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetTableProperties");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetTableProperties");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/tables/{index}/properties?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetTableProperties");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetTableProperties");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -4133,13 +3868,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(TablePropertiesResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as TablePropertiesResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (TablePropertiesResponse)SerializationHelper.Deserialize(response, typeof(TablePropertiesResponse));
@@ -4165,35 +3901,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="TableRowResponse"/></returns>            
         public TableRowResponse GetTableRow(GetTableRowRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetTableRow");
+            }
+
+            // verify the required parameter 'tablePath' is set
+            if (request.TablePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'tablePath' when calling GetTableRow");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetTableRow");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{tablePath}/rows/{index}?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetTableRow");
-            }
-            
-            // verify the required parameter 'tablePath' is set
-            if (request.TablePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'tablePath' when calling GetTableRow");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetTableRow");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "tablePath", request.TablePath);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
@@ -4203,13 +3934,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(TableRowResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as TableRowResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (TableRowResponse)SerializationHelper.Deserialize(response, typeof(TableRowResponse));
@@ -4235,35 +3967,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="TableRowFormatResponse"/></returns>            
         public TableRowFormatResponse GetTableRowFormat(GetTableRowFormatRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetTableRowFormat");
+            }
+
+            // verify the required parameter 'tablePath' is set
+            if (request.TablePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'tablePath' when calling GetTableRowFormat");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetTableRowFormat");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{tablePath}/rows/{index}/rowformat?appSid={appSid}&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetTableRowFormat");
-            }
-            
-            // verify the required parameter 'tablePath' is set
-            if (request.TablePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'tablePath' when calling GetTableRowFormat");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetTableRowFormat");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "tablePath", request.TablePath);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
@@ -4273,13 +4000,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(TableRowFormatResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as TableRowFormatResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (TableRowFormatResponse)SerializationHelper.Deserialize(response, typeof(TableRowFormatResponse));
@@ -4305,23 +4033,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="TableLinkCollectionResponse"/></returns>            
         public TableLinkCollectionResponse GetTables(GetTablesRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetTables");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/tables?appSid={appSid}&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetTables");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -4330,13 +4053,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(TableLinkCollectionResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as TableLinkCollectionResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (TableLinkCollectionResponse)SerializationHelper.Deserialize(response, typeof(TableLinkCollectionResponse));
@@ -4362,29 +4086,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="TableResponse"/></returns>            
         public TableResponse InsertTable(InsertTableRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertTable");
+            }
+
+            // verify the required parameter 'table' is set
+            if (request.Table == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'table' when calling InsertTable");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/tables?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling InsertTable");
-            }
-            
-            // verify the required parameter 'table' is set
-            if (request.Table == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'table' when calling InsertTable");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
@@ -4394,15 +4113,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.Table; // http body (model) parameter
+            var postBody = request.Table; // http body (model) parameter
             try 
-            {                
-                if (typeof(TableResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as TableResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "PUT", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (TableResponse)SerializationHelper.Deserialize(response, typeof(TableResponse));
@@ -4428,35 +4148,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="TableCellResponse"/></returns>            
         public TableCellResponse InsertTableCell(InsertTableCellRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertTableCell");
+            }
+
+            // verify the required parameter 'cell' is set
+            if (request.Cell == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'cell' when calling InsertTableCell");
+            }
+
+            // verify the required parameter 'tableRowPath' is set
+            if (request.TableRowPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling InsertTableCell");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{tableRowPath}/cells?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling InsertTableCell");
-            }
-            
-            // verify the required parameter 'cell' is set
-            if (request.Cell == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'cell' when calling InsertTableCell");
-            }
-            
-            // verify the required parameter 'tableRowPath' is set
-            if (request.TableRowPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling InsertTableCell");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "tableRowPath", request.TableRowPath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
@@ -4466,15 +4181,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.Cell; // http body (model) parameter
+            var postBody = request.Cell; // http body (model) parameter
             try 
-            {                
-                if (typeof(TableCellResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as TableCellResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "PUT", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (TableCellResponse)SerializationHelper.Deserialize(response, typeof(TableCellResponse));
@@ -4500,35 +4216,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="TableRowResponse"/></returns>            
         public TableRowResponse InsertTableRow(InsertTableRowRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertTableRow");
+            }
+
+            // verify the required parameter 'row' is set
+            if (request.Row == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'row' when calling InsertTableRow");
+            }
+
+            // verify the required parameter 'tablePath' is set
+            if (request.TablePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'tablePath' when calling InsertTableRow");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{tablePath}/rows?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling InsertTableRow");
-            }
-            
-            // verify the required parameter 'row' is set
-            if (request.Row == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'row' when calling InsertTableRow");
-            }
-            
-            // verify the required parameter 'tablePath' is set
-            if (request.TablePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'tablePath' when calling InsertTableRow");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "tablePath", request.TablePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
@@ -4538,15 +4249,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.Row; // http body (model) parameter
+            var postBody = request.Row; // http body (model) parameter
             try 
-            {                
-                if (typeof(TableRowResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as TableRowResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "PUT", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (TableRowResponse)SerializationHelper.Deserialize(response, typeof(TableRowResponse));
@@ -4572,29 +4284,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse PostAppendDocument(PostAppendDocumentRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostAppendDocument");
+            }
+
+            // verify the required parameter 'documentList' is set
+            if (request.DocumentList == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'documentList' when calling PostAppendDocument");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/appendDocument?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostAppendDocument");
-            }
-            
-            // verify the required parameter 'documentList' is set
-            if (request.DocumentList == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'documentList' when calling PostAppendDocument");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -4603,15 +4310,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.DocumentList; // http body (model) parameter
+            var postBody = request.DocumentList; // http body (model) parameter
             try 
-            {                
-                if (typeof(DocumentResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as DocumentResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
@@ -4637,44 +4345,40 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="ProtectionDataResponse"/></returns>            
         public ProtectionDataResponse PostChangeDocumentProtection(PostChangeDocumentProtectionRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostChangeDocumentProtection");
+            }
+
+            // verify the required parameter 'protectionRequest' is set
+            if (request.ProtectionRequest == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling PostChangeDocumentProtection");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/protection?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostChangeDocumentProtection");
-            }
-            
-            // verify the required parameter 'protectionRequest' is set
-            if (request.ProtectionRequest == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling PostChangeDocumentProtection");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.ProtectionRequest; // http body (model) parameter
+            var postBody = request.ProtectionRequest; // http body (model) parameter
             try 
-            {                
-                if (typeof(ProtectionDataResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as ProtectionDataResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
@@ -4700,35 +4404,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="CommentResponse"/></returns>            
         public CommentResponse PostComment(PostCommentRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostComment");
+            }
+
+            // verify the required parameter 'commentIndex' is set
+            if (request.CommentIndex == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'commentIndex' when calling PostComment");
+            }
+
+            // verify the required parameter 'comment' is set
+            if (request.Comment == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'comment' when calling PostComment");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/comments/{commentIndex}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostComment");
-            }
-            
-            // verify the required parameter 'commentIndex' is set
-            if (request.CommentIndex == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'commentIndex' when calling PostComment");
-            }
-            
-            // verify the required parameter 'comment' is set
-            if (request.Comment == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'comment' when calling PostComment");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "commentIndex", request.CommentIndex);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
@@ -4738,15 +4437,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.Comment; // http body (model) parameter
+            var postBody = request.Comment; // http body (model) parameter
             try 
-            {                
-                if (typeof(CommentResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as CommentResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (CommentResponse)SerializationHelper.Deserialize(response, typeof(CommentResponse));
@@ -4772,44 +4472,40 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse PostCompareDocument(PostCompareDocumentRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostCompareDocument");
+            }
+
+            // verify the required parameter 'compareData' is set
+            if (request.CompareData == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'compareData' when calling PostCompareDocument");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/compareDocument?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostCompareDocument");
-            }
-            
-            // verify the required parameter 'compareData' is set
-            if (request.CompareData == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'compareData' when calling PostCompareDocument");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.CompareData; // http body (model) parameter
+            var postBody = request.CompareData; // http body (model) parameter
             try 
-            {                
-                if (typeof(DocumentResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as DocumentResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
@@ -4835,29 +4531,25 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse PostDocumentExecuteMailMerge(PostDocumentExecuteMailMergeRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostDocumentExecuteMailMerge");
+            }
+
+            // verify the required parameter 'withRegions' is set
+            if (request.WithRegions == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'withRegions' when calling PostDocumentExecuteMailMerge");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/executeMailMerge/{withRegions}?appSid={appSid}&amp;mailMergeDataFile=[mailMergeDataFile]&amp;cleanup=[cleanup]&amp;useWholeParagraphAsRegion=[useWholeParagraphAsRegion]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
             var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostDocumentExecuteMailMerge");
-            }
-            
-            // verify the required parameter 'withRegions' is set
-            if (request.WithRegions == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'withRegions' when calling PostDocumentExecuteMailMerge");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "withRegions", request.WithRegions);
             resourcePath = this.AddQueryParameter(resourcePath, "mailMergeDataFile", request.MailMergeDataFile);
@@ -4873,14 +4565,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             {
                 formParams.Add("Data", request.Data); // form parameter
             }
+            
             try 
-            {                
-                if (typeof(DocumentResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as DocumentResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    null, 
+                    null, 
+                    formParams);
                 if (response != null)
                 {
                     return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
@@ -4906,41 +4600,36 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="FontResponse"/></returns>            
         public FontResponse PostDocumentParagraphRunFont(PostDocumentParagraphRunFontRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostDocumentParagraphRunFont");
+            }
+
+            // verify the required parameter 'fontDto' is set
+            if (request.FontDto == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'fontDto' when calling PostDocumentParagraphRunFont");
+            }
+
+            // verify the required parameter 'paragraphPath' is set
+            if (request.ParagraphPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling PostDocumentParagraphRunFont");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling PostDocumentParagraphRunFont");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{paragraphPath}/runs/{index}/font?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostDocumentParagraphRunFont");
-            }
-            
-            // verify the required parameter 'fontDto' is set
-            if (request.FontDto == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'fontDto' when calling PostDocumentParagraphRunFont");
-            }
-            
-            // verify the required parameter 'paragraphPath' is set
-            if (request.ParagraphPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling PostDocumentParagraphRunFont");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling PostDocumentParagraphRunFont");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
@@ -4951,15 +4640,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.FontDto; // http body (model) parameter
+            var postBody = request.FontDto; // http body (model) parameter
             try 
-            {                
-                if (typeof(FontResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as FontResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (FontResponse)SerializationHelper.Deserialize(response, typeof(FontResponse));
@@ -4985,29 +4675,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaveResponse"/></returns>            
         public SaveResponse PostDocumentSaveAs(PostDocumentSaveAsRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostDocumentSaveAs");
+            }
+
+            // verify the required parameter 'saveOptionsData' is set
+            if (request.SaveOptionsData == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'saveOptionsData' when calling PostDocumentSaveAs");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/saveAs?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostDocumentSaveAs");
-            }
-            
-            // verify the required parameter 'saveOptionsData' is set
-            if (request.SaveOptionsData == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'saveOptionsData' when calling PostDocumentSaveAs");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -5015,15 +4700,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
-            postBody = request.SaveOptionsData; // http body (model) parameter
+            var postBody = request.SaveOptionsData; // http body (model) parameter
             try 
-            {                
-                if (typeof(SaveResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as SaveResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaveResponse)SerializationHelper.Deserialize(response, typeof(SaveResponse));
@@ -5049,40 +4735,37 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="DrawingObjectResponse"/></returns>            
         public DrawingObjectResponse PostDrawingObject(PostDrawingObjectRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostDrawingObject");
+            }
+
+            // verify the required parameter 'drawingObject' is set
+            if (request.DrawingObject == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'drawingObject' when calling PostDrawingObject");
+            }
+
+            // verify the required parameter 'imageFile' is set
+            if (request.ImageFile == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'imageFile' when calling PostDrawingObject");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling PostDrawingObject");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
             var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostDrawingObject");
-            }
-            
-            // verify the required parameter 'drawingObject' is set
-            if (request.DrawingObject == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'drawingObject' when calling PostDrawingObject");
-            }
-            
-            // verify the required parameter 'imageFile' is set
-            if (request.ImageFile == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'imageFile' when calling PostDrawingObject");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling PostDrawingObject");
-            }
             
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
@@ -5099,18 +4782,21 @@ namespace Aspose.Words.Cloud.Sdk.Api
             {
                 formParams.Add("DrawingObject", request.DrawingObject); // form parameter
             }
+            
             if (request.ImageFile != null) 
             {
                 formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
             }
+            
             try 
-            {                
-                if (typeof(DrawingObjectResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as DrawingObjectResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    null, 
+                    null, 
+                    formParams);
                 if (response != null)
                 {
                     return (DrawingObjectResponse)SerializationHelper.Deserialize(response, typeof(DrawingObjectResponse));
@@ -5136,29 +4822,25 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse PostExecuteTemplate(PostExecuteTemplateRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostExecuteTemplate");
+            }
+
+            // verify the required parameter 'data' is set
+            if (request.Data == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'data' when calling PostExecuteTemplate");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/executeTemplate?appSid={appSid}&amp;cleanup=[cleanup]&amp;useWholeParagraphAsRegion=[useWholeParagraphAsRegion]&amp;withRegions=[withRegions]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
             var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostExecuteTemplate");
-            }
-            
-            // verify the required parameter 'data' is set
-            if (request.Data == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'data' when calling PostExecuteTemplate");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "cleanup", request.Cleanup);
             resourcePath = this.AddQueryParameter(resourcePath, "useWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
@@ -5173,14 +4855,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             {
                 formParams.Add("Data", request.Data); // form parameter
             }
+            
             try 
-            {                
-                if (typeof(DocumentResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as DocumentResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    null, 
+                    null, 
+                    formParams);
                 if (response != null)
                 {
                     return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
@@ -5206,35 +4890,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="FieldResponse"/></returns>            
         public FieldResponse PostField(PostFieldRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostField");
+            }
+
+            // verify the required parameter 'field' is set
+            if (request.Field == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'field' when calling PostField");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling PostField");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/fields/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostField");
-            }
-            
-            // verify the required parameter 'field' is set
-            if (request.Field == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'field' when calling PostField");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling PostField");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -5245,15 +4924,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.Field; // http body (model) parameter
+            var postBody = request.Field; // http body (model) parameter
             try 
-            {                
-                if (typeof(FieldResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as FieldResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (FieldResponse)SerializationHelper.Deserialize(response, typeof(FieldResponse));
@@ -5279,35 +4959,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="FootnoteResponse"/></returns>            
         public FootnoteResponse PostFootnote(PostFootnoteRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostFootnote");
+            }
+
+            // verify the required parameter 'footnoteDto' is set
+            if (request.FootnoteDto == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'footnoteDto' when calling PostFootnote");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling PostFootnote");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/footnotes/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostFootnote");
-            }
-            
-            // verify the required parameter 'footnoteDto' is set
-            if (request.FootnoteDto == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'footnoteDto' when calling PostFootnote");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling PostFootnote");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -5318,15 +4993,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.FootnoteDto; // http body (model) parameter
+            var postBody = request.FootnoteDto; // http body (model) parameter
             try 
-            {                
-                if (typeof(FootnoteResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as FootnoteResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (FootnoteResponse)SerializationHelper.Deserialize(response, typeof(FootnoteResponse));
@@ -5352,35 +5028,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="FormFieldResponse"/></returns>            
         public FormFieldResponse PostFormField(PostFormFieldRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostFormField");
+            }
+
+            // verify the required parameter 'formField' is set
+            if (request.FormField == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'formField' when calling PostFormField");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling PostFormField");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/formfields/{index}?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostFormField");
-            }
-            
-            // verify the required parameter 'formField' is set
-            if (request.FormField == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'formField' when calling PostFormField");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling PostFormField");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -5391,15 +5062,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.FormField; // http body (model) parameter
+            var postBody = request.FormField; // http body (model) parameter
             try 
-            {                
-                if (typeof(FormFieldResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as FormFieldResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (FormFieldResponse)SerializationHelper.Deserialize(response, typeof(FormFieldResponse));
@@ -5425,23 +5097,19 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse PostInsertDocumentWatermarkImage(PostInsertDocumentWatermarkImageRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostInsertDocumentWatermarkImage");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/watermark/insertImage?appSid={appSid}&amp;rotationAngle=[rotationAngle]&amp;image=[image]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
             var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostInsertDocumentWatermarkImage");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "rotationAngle", request.RotationAngle);
             resourcePath = this.AddQueryParameter(resourcePath, "image", request.Image);
@@ -5457,14 +5125,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             {
                 formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
             }
+            
             try 
-            {                
-                if (typeof(DocumentResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as DocumentResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    null, 
+                    null, 
+                    formParams);
                 if (response != null)
                 {
                     return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
@@ -5490,29 +5160,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse PostInsertDocumentWatermarkText(PostInsertDocumentWatermarkTextRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostInsertDocumentWatermarkText");
+            }
+
+            // verify the required parameter 'watermarkText' is set
+            if (request.WatermarkText == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'watermarkText' when calling PostInsertDocumentWatermarkText");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/watermark/insertText?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostInsertDocumentWatermarkText");
-            }
-            
-            // verify the required parameter 'watermarkText' is set
-            if (request.WatermarkText == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'watermarkText' when calling PostInsertDocumentWatermarkText");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -5521,15 +5186,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.WatermarkText; // http body (model) parameter
+            var postBody = request.WatermarkText; // http body (model) parameter
             try 
-            {                
-                if (typeof(DocumentResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as DocumentResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
@@ -5555,29 +5221,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse PostInsertPageNumbers(PostInsertPageNumbersRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostInsertPageNumbers");
+            }
+
+            // verify the required parameter 'pageNumber' is set
+            if (request.PageNumber == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'pageNumber' when calling PostInsertPageNumbers");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/insertPageNumbers?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostInsertPageNumbers");
-            }
-            
-            // verify the required parameter 'pageNumber' is set
-            if (request.PageNumber == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'pageNumber' when calling PostInsertPageNumbers");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -5586,15 +5247,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.PageNumber; // http body (model) parameter
+            var postBody = request.PageNumber; // http body (model) parameter
             try 
-            {                
-                if (typeof(DocumentResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as DocumentResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
@@ -5620,33 +5282,29 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaveResponse"/></returns>            
         public SaveResponse PostLoadWebDocument(PostLoadWebDocumentRequest request)
         {
+            // verify the required parameter 'data' is set
+            if (request.Data == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'data' when calling PostLoadWebDocument");
+            }
+
             // create path and map variables
             var resourcePath = "/words/loadWebDocument?appSid={appSid}&amp;storage=[storage]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'data' is set
-            if (request.Data == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'data' when calling PostLoadWebDocument");
-            }
-            
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
-            postBody = request.Data; // http body (model) parameter
+            var postBody = request.Data; // http body (model) parameter
             try 
-            {                
-                if (typeof(SaveResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as SaveResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaveResponse)SerializationHelper.Deserialize(response, typeof(SaveResponse));
@@ -5672,29 +5330,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="ReplaceTextResponse"/></returns>            
         public ReplaceTextResponse PostReplaceText(PostReplaceTextRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostReplaceText");
+            }
+
+            // verify the required parameter 'replaceText' is set
+            if (request.ReplaceText == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'replaceText' when calling PostReplaceText");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/replaceText?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostReplaceText");
-            }
-            
-            // verify the required parameter 'replaceText' is set
-            if (request.ReplaceText == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'replaceText' when calling PostReplaceText");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -5703,15 +5356,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.ReplaceText; // http body (model) parameter
+            var postBody = request.ReplaceText; // http body (model) parameter
             try 
-            {                
-                if (typeof(ReplaceTextResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as ReplaceTextResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (ReplaceTextResponse)SerializationHelper.Deserialize(response, typeof(ReplaceTextResponse));
@@ -5737,41 +5391,36 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="RunResponse"/></returns>            
         public RunResponse PostRun(PostRunRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostRun");
+            }
+
+            // verify the required parameter 'run' is set
+            if (request.Run == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'run' when calling PostRun");
+            }
+
+            // verify the required parameter 'paragraphPath' is set
+            if (request.ParagraphPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling PostRun");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling PostRun");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{paragraphPath}/runs/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostRun");
-            }
-            
-            // verify the required parameter 'run' is set
-            if (request.Run == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'run' when calling PostRun");
-            }
-            
-            // verify the required parameter 'paragraphPath' is set
-            if (request.ParagraphPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling PostRun");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling PostRun");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
@@ -5782,15 +5431,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.Run; // http body (model) parameter
+            var postBody = request.Run; // http body (model) parameter
             try 
-            {                
-                if (typeof(RunResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as RunResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (RunResponse)SerializationHelper.Deserialize(response, typeof(RunResponse));
@@ -5822,20 +5472,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
             
             try 
-            {                
-                if (typeof(Object) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as Object;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (Object)SerializationHelper.Deserialize(response, typeof(Object));
@@ -5861,23 +5507,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SplitDocumentResponse"/></returns>            
         public SplitDocumentResponse PostSplitDocument(PostSplitDocumentRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostSplitDocument");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/split?appSid={appSid}&amp;format=[format]&amp;from=[from]&amp;to=[to]&amp;zipOutput=[zipOutput]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostSplitDocument");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "format", request.Format);
             resourcePath = this.AddQueryParameter(resourcePath, "from", request.From);
@@ -5891,13 +5532,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
             
             try 
-            {                
-                if (typeof(SplitDocumentResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as SplitDocumentResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SplitDocumentResponse)SerializationHelper.Deserialize(response, typeof(SplitDocumentResponse));
@@ -5923,35 +5565,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="BookmarkResponse"/></returns>            
         public BookmarkResponse PostUpdateDocumentBookmark(PostUpdateDocumentBookmarkRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostUpdateDocumentBookmark");
+            }
+
+            // verify the required parameter 'bookmarkData' is set
+            if (request.BookmarkData == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'bookmarkData' when calling PostUpdateDocumentBookmark");
+            }
+
+            // verify the required parameter 'bookmarkName' is set
+            if (request.BookmarkName == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'bookmarkName' when calling PostUpdateDocumentBookmark");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/bookmarks/{bookmarkName}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostUpdateDocumentBookmark");
-            }
-            
-            // verify the required parameter 'bookmarkData' is set
-            if (request.BookmarkData == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'bookmarkData' when calling PostUpdateDocumentBookmark");
-            }
-            
-            // verify the required parameter 'bookmarkName' is set
-            if (request.BookmarkName == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'bookmarkName' when calling PostUpdateDocumentBookmark");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "bookmarkName", request.BookmarkName);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
@@ -5961,15 +5598,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.BookmarkData; // http body (model) parameter
+            var postBody = request.BookmarkData; // http body (model) parameter
             try 
-            {                
-                if (typeof(BookmarkResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as BookmarkResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (BookmarkResponse)SerializationHelper.Deserialize(response, typeof(BookmarkResponse));
@@ -5995,23 +5633,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="DocumentResponse"/></returns>            
         public DocumentResponse PostUpdateDocumentFields(PostUpdateDocumentFieldsRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostUpdateDocumentFields");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/updateFields?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostUpdateDocumentFields");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -6020,13 +5653,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(DocumentResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as DocumentResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
@@ -6052,29 +5686,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="CommentResponse"/></returns>            
         public CommentResponse PutComment(PutCommentRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PutComment");
+            }
+
+            // verify the required parameter 'comment' is set
+            if (request.Comment == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'comment' when calling PutComment");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/comments?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutComment");
-            }
-            
-            // verify the required parameter 'comment' is set
-            if (request.Comment == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'comment' when calling PutComment");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -6083,15 +5712,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.Comment; // http body (model) parameter
+            var postBody = request.Comment; // http body (model) parameter
             try 
-            {                
-                if (typeof(CommentResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as CommentResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "PUT", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (CommentResponse)SerializationHelper.Deserialize(response, typeof(CommentResponse));
@@ -6117,29 +5747,25 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream PutConvertDocument(PutConvertDocumentRequest request)
         {
+            // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling PutConvertDocument");
+            }
+
+            // verify the required parameter 'document' is set
+            if (request.Document == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'document' when calling PutConvertDocument");
+            }
+
             // create path and map variables
             var resourcePath = "/words/convert?appSid={appSid}&amp;format=[format]&amp;outPath=[outPath]&amp;storage=[storage]&amp;fontsLocation=[fontsLocation]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
             var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'format' is set
-            if (request.Format == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'format' when calling PutConvertDocument");
-            }
-            
-            // verify the required parameter 'document' is set
-            if (request.Document == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'document' when calling PutConvertDocument");
-            }
-            
             resourcePath = this.AddQueryParameter(resourcePath, "format", request.Format);
             resourcePath = this.AddQueryParameter(resourcePath, "outPath", request.OutPath);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -6149,20 +5775,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             {
                 formParams.Add("document", this.apiInvoker.ToFileInfo(request.Document, "Document"));
             }
+            
             try 
-            {                
-                if (typeof(System.IO.Stream) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as System.IO.Stream;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
-                if (response != null)
-                {
-                    return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
-                }
-                    
-                return null;
+            {                               
+                    return this.apiInvoker.InvokeBinaryApi(
+                        this.apiBaseUrl, 
+                        resourcePath, 
+                        "PUT", 
+                        null, 
+                        null, 
+                        formParams) as System.IO.Stream;
             } 
             catch (ApiException ex) 
             {
@@ -6188,22 +5810,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
             resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
             
             try 
-            {                
-                if (typeof(DocumentResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as DocumentResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "PUT", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
@@ -6229,37 +5847,35 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="FieldNamesResponse"/></returns>            
         public FieldNamesResponse PutDocumentFieldNames(PutDocumentFieldNamesRequest request)
         {
+            // verify the required parameter 'template' is set
+            if (request.Template == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'template' when calling PutDocumentFieldNames");
+            }
+
             // create path and map variables
             var resourcePath = "/words/mailMergeFieldNames?appSid={appSid}&amp;useNonMergeFields=[useNonMergeFields]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
             var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'template' is set
-            if (request.Template == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'template' when calling PutDocumentFieldNames");
-            }
-            
             resourcePath = this.AddQueryParameter(resourcePath, "useNonMergeFields", request.UseNonMergeFields);
             
             if (request.Template != null) 
             {
                 formParams.Add("template", this.apiInvoker.ToFileInfo(request.Template, "Template"));
             }
+            
             try 
-            {                
-                if (typeof(FieldNamesResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as FieldNamesResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "PUT", 
+                    null, 
+                    null, 
+                    formParams);
                 if (response != null)
                 {
                     return (FieldNamesResponse)SerializationHelper.Deserialize(response, typeof(FieldNamesResponse));
@@ -6285,29 +5901,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SaveResponse"/></returns>            
         public SaveResponse PutDocumentSaveAsTiff(PutDocumentSaveAsTiffRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PutDocumentSaveAsTiff");
+            }
+
+            // verify the required parameter 'saveOptions' is set
+            if (request.SaveOptions == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'saveOptions' when calling PutDocumentSaveAsTiff");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/saveAs/tiff?appSid={appSid}&amp;resultFile=[resultFile]&amp;useAntiAliasing=[useAntiAliasing]&amp;useHighQualityRendering=[useHighQualityRendering]&amp;imageBrightness=[imageBrightness]&amp;imageColorMode=[imageColorMode]&amp;imageContrast=[imageContrast]&amp;numeralFormat=[numeralFormat]&amp;pageCount=[pageCount]&amp;pageIndex=[pageIndex]&amp;paperColor=[paperColor]&amp;pixelFormat=[pixelFormat]&amp;resolution=[resolution]&amp;scale=[scale]&amp;tiffCompression=[tiffCompression]&amp;dmlRenderingMode=[dmlRenderingMode]&amp;dmlEffectsRenderingMode=[dmlEffectsRenderingMode]&amp;tiffBinarizationMethod=[tiffBinarizationMethod]&amp;zipOutput=[zipOutput]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutDocumentSaveAsTiff");
-            }
-            
-            // verify the required parameter 'saveOptions' is set
-            if (request.SaveOptions == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'saveOptions' when calling PutDocumentSaveAsTiff");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "resultFile", request.ResultFile);
             resourcePath = this.AddQueryParameter(resourcePath, "useAntiAliasing", request.UseAntiAliasing);
@@ -6333,15 +5944,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
-            postBody = request.SaveOptions; // http body (model) parameter
+            var postBody = request.SaveOptions; // http body (model) parameter
             try 
-            {                
-                if (typeof(SaveResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as SaveResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "PUT", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaveResponse)SerializationHelper.Deserialize(response, typeof(SaveResponse));
@@ -6367,34 +5979,31 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="DrawingObjectResponse"/></returns>            
         public DrawingObjectResponse PutDrawingObject(PutDrawingObjectRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PutDrawingObject");
+            }
+
+            // verify the required parameter 'drawingObject' is set
+            if (request.DrawingObject == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'drawingObject' when calling PutDrawingObject");
+            }
+
+            // verify the required parameter 'imageFile' is set
+            if (request.ImageFile == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'imageFile' when calling PutDrawingObject");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/drawingObjects?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
             var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutDrawingObject");
-            }
-            
-            // verify the required parameter 'drawingObject' is set
-            if (request.DrawingObject == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'drawingObject' when calling PutDrawingObject");
-            }
-            
-            // verify the required parameter 'imageFile' is set
-            if (request.ImageFile == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'imageFile' when calling PutDrawingObject");
-            }
             
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -6410,18 +6019,21 @@ namespace Aspose.Words.Cloud.Sdk.Api
             {
                 formParams.Add("DrawingObject", request.DrawingObject); // form parameter
             }
+            
             if (request.ImageFile != null) 
             {
                 formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
             }
+            
             try 
-            {                
-                if (typeof(DrawingObjectResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as DrawingObjectResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "PUT", 
+                    null, 
+                    null, 
+                    formParams);
                 if (response != null)
                 {
                     return (DrawingObjectResponse)SerializationHelper.Deserialize(response, typeof(DrawingObjectResponse));
@@ -6447,28 +6059,25 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream PutExecuteMailMergeOnline(PutExecuteMailMergeOnlineRequest request)
         {
+            // verify the required parameter 'template' is set
+            if (request.Template == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'template' when calling PutExecuteMailMergeOnline");
+            }
+
+            // verify the required parameter 'data' is set
+            if (request.Data == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'data' when calling PutExecuteMailMergeOnline");
+            }
+
             // create path and map variables
             var resourcePath = "/words/executeMailMerge?appSid={appSid}&amp;withRegions=[withRegions]&amp;cleanup=[cleanup]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
             var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'template' is set
-            if (request.Template == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'template' when calling PutExecuteMailMergeOnline");
-            }
-            
-            // verify the required parameter 'data' is set
-            if (request.Data == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'data' when calling PutExecuteMailMergeOnline");
-            }
             
             resourcePath = this.AddQueryParameter(resourcePath, "withRegions", request.WithRegions);
             resourcePath = this.AddQueryParameter(resourcePath, "cleanup", request.Cleanup);
@@ -6477,24 +6086,21 @@ namespace Aspose.Words.Cloud.Sdk.Api
             {
                 formParams.Add("template", this.apiInvoker.ToFileInfo(request.Template, "Template"));
             }
+            
             if (request.Data != null) 
             {
                 formParams.Add("data", this.apiInvoker.ToFileInfo(request.Data, "Data"));
             }
+            
             try 
-            {                
-                if (typeof(System.IO.Stream) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as System.IO.Stream;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
-                if (response != null)
-                {
-                    return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
-                }
-                    
-                return null;
+            {                               
+                    return this.apiInvoker.InvokeBinaryApi(
+                        this.apiBaseUrl, 
+                        resourcePath, 
+                        "PUT", 
+                        null, 
+                        null, 
+                        formParams) as System.IO.Stream;
             } 
             catch (ApiException ex) 
             {
@@ -6514,28 +6120,25 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream PutExecuteTemplateOnline(PutExecuteTemplateOnlineRequest request)
         {
+            // verify the required parameter 'template' is set
+            if (request.Template == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'template' when calling PutExecuteTemplateOnline");
+            }
+
+            // verify the required parameter 'data' is set
+            if (request.Data == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'data' when calling PutExecuteTemplateOnline");
+            }
+
             // create path and map variables
             var resourcePath = "/words/executeTemplate?appSid={appSid}&amp;cleanup=[cleanup]&amp;useWholeParagraphAsRegion=[useWholeParagraphAsRegion]&amp;withRegions=[withRegions]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
             var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'template' is set
-            if (request.Template == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'template' when calling PutExecuteTemplateOnline");
-            }
-            
-            // verify the required parameter 'data' is set
-            if (request.Data == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'data' when calling PutExecuteTemplateOnline");
-            }
             
             resourcePath = this.AddQueryParameter(resourcePath, "cleanup", request.Cleanup);
             resourcePath = this.AddQueryParameter(resourcePath, "useWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
@@ -6545,24 +6148,21 @@ namespace Aspose.Words.Cloud.Sdk.Api
             {
                 formParams.Add("template", this.apiInvoker.ToFileInfo(request.Template, "Template"));
             }
+            
             if (request.Data != null) 
             {
                 formParams.Add("data", this.apiInvoker.ToFileInfo(request.Data, "Data"));
             }
+            
             try 
-            {                
-                if (typeof(System.IO.Stream) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as System.IO.Stream;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
-                if (response != null)
-                {
-                    return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
-                }
-                    
-                return null;
+            {                               
+                    return this.apiInvoker.InvokeBinaryApi(
+                        this.apiBaseUrl, 
+                        resourcePath, 
+                        "PUT", 
+                        null, 
+                        null, 
+                        formParams) as System.IO.Stream;
             } 
             catch (ApiException ex) 
             {
@@ -6582,29 +6182,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="FieldResponse"/></returns>            
         public FieldResponse PutField(PutFieldRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PutField");
+            }
+
+            // verify the required parameter 'field' is set
+            if (request.Field == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'field' when calling PutField");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/fields?appSid={appSid}&amp;nodePath=[nodePath]&amp;insertBeforeNode=[insertBeforeNode]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutField");
-            }
-            
-            // verify the required parameter 'field' is set
-            if (request.Field == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'field' when calling PutField");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
@@ -6615,15 +6210,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.Field; // http body (model) parameter
+            var postBody = request.Field; // http body (model) parameter
             try 
-            {                
-                if (typeof(FieldResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as FieldResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "PUT", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (FieldResponse)SerializationHelper.Deserialize(response, typeof(FieldResponse));
@@ -6649,29 +6245,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="FootnoteResponse"/></returns>            
         public FootnoteResponse PutFootnote(PutFootnoteRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PutFootnote");
+            }
+
+            // verify the required parameter 'footnoteDto' is set
+            if (request.FootnoteDto == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'footnoteDto' when calling PutFootnote");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/footnotes?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutFootnote");
-            }
-            
-            // verify the required parameter 'footnoteDto' is set
-            if (request.FootnoteDto == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'footnoteDto' when calling PutFootnote");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
@@ -6681,15 +6272,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.FootnoteDto; // http body (model) parameter
+            var postBody = request.FootnoteDto; // http body (model) parameter
             try 
-            {                
-                if (typeof(FootnoteResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as FootnoteResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "PUT", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (FootnoteResponse)SerializationHelper.Deserialize(response, typeof(FootnoteResponse));
@@ -6715,29 +6307,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="FormFieldResponse"/></returns>            
         public FormFieldResponse PutFormField(PutFormFieldRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PutFormField");
+            }
+
+            // verify the required parameter 'formField' is set
+            if (request.FormField == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'formField' when calling PutFormField");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/formfields?appSid={appSid}&amp;nodePath=[nodePath]&amp;insertBeforeNode=[insertBeforeNode]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutFormField");
-            }
-            
-            // verify the required parameter 'formField' is set
-            if (request.FormField == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'formField' when calling PutFormField");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
@@ -6748,15 +6335,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.FormField; // http body (model) parameter
+            var postBody = request.FormField; // http body (model) parameter
             try 
-            {                
-                if (typeof(FormFieldResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as FormFieldResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "PUT", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (FormFieldResponse)SerializationHelper.Deserialize(response, typeof(FormFieldResponse));
@@ -6782,29 +6370,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="HeaderFooterResponse"/></returns>            
         public HeaderFooterResponse PutHeaderFooter(PutHeaderFooterRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PutHeaderFooter");
+            }
+
+            // verify the required parameter 'headerFooterType' is set
+            if (request.HeaderFooterType == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'headerFooterType' when calling PutHeaderFooter");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{sectionPath}/headersfooters?appSid={appSid}&amp;sectionPath=[sectionPath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutHeaderFooter");
-            }
-            
-            // verify the required parameter 'headerFooterType' is set
-            if (request.HeaderFooterType == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'headerFooterType' when calling PutHeaderFooter");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "sectionPath", request.SectionPath);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
@@ -6814,15 +6397,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.HeaderFooterType; // http body (model) parameter
+            var postBody = request.HeaderFooterType; // http body (model) parameter
             try 
-            {                
-                if (typeof(HeaderFooterResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as HeaderFooterResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "PUT", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (HeaderFooterResponse)SerializationHelper.Deserialize(response, typeof(HeaderFooterResponse));
@@ -6848,29 +6432,24 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="ParagraphResponse"/></returns>            
         public ParagraphResponse PutParagraph(PutParagraphRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PutParagraph");
+            }
+
+            // verify the required parameter 'paragraph' is set
+            if (request.Paragraph == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'paragraph' when calling PutParagraph");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/paragraphs?appSid={appSid}&amp;nodePath=[nodePath]&amp;insertBeforeNode=[insertBeforeNode]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutParagraph");
-            }
-            
-            // verify the required parameter 'paragraph' is set
-            if (request.Paragraph == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'paragraph' when calling PutParagraph");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddQueryParameter(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
@@ -6881,15 +6460,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.Paragraph; // http body (model) parameter
+            var postBody = request.Paragraph; // http body (model) parameter
             try 
-            {                
-                if (typeof(ParagraphResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as ParagraphResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "PUT", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (ParagraphResponse)SerializationHelper.Deserialize(response, typeof(ParagraphResponse));
@@ -6915,44 +6495,40 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="ProtectionDataResponse"/></returns>            
         public ProtectionDataResponse PutProtectDocument(PutProtectDocumentRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PutProtectDocument");
+            }
+
+            // verify the required parameter 'protectionRequest' is set
+            if (request.ProtectionRequest == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling PutProtectDocument");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/protection?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutProtectDocument");
-            }
-            
-            // verify the required parameter 'protectionRequest' is set
-            if (request.ProtectionRequest == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling PutProtectDocument");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
             resourcePath = this.AddQueryParameter(resourcePath, "folder", request.Folder);
             resourcePath = this.AddQueryParameter(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.ProtectionRequest; // http body (model) parameter
+            var postBody = request.ProtectionRequest; // http body (model) parameter
             try 
-            {                
-                if (typeof(ProtectionDataResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as ProtectionDataResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "PUT", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
@@ -6978,35 +6554,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="RunResponse"/></returns>            
         public RunResponse PutRun(PutRunRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PutRun");
+            }
+
+            // verify the required parameter 'paragraphPath' is set
+            if (request.ParagraphPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling PutRun");
+            }
+
+            // verify the required parameter 'run' is set
+            if (request.Run == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'run' when calling PutRun");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{paragraphPath}/runs?appSid={appSid}&amp;insertBeforeNode=[insertBeforeNode]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutRun");
-            }
-            
-            // verify the required parameter 'paragraphPath' is set
-            if (request.ParagraphPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling PutRun");
-            }
-            
-            // verify the required parameter 'run' is set
-            if (request.Run == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'run' when calling PutRun");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
             resourcePath = this.AddQueryParameter(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
@@ -7017,15 +6588,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.Run; // http body (model) parameter
+            var postBody = request.Run; // http body (model) parameter
             try 
-            {                
-                if (typeof(RunResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "PUT", null, headerParams, formParams) as RunResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "PUT", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "PUT", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (RunResponse)SerializationHelper.Deserialize(response, typeof(RunResponse));
@@ -7051,23 +6623,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="RevisionsModificationResponse"/></returns>            
         public RevisionsModificationResponse RejectAllRevisions(RejectAllRevisionsRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling RejectAllRevisions");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/revisions/rejectAll?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling RejectAllRevisions");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -7076,13 +6643,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(RevisionsModificationResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as RevisionsModificationResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (RevisionsModificationResponse)SerializationHelper.Deserialize(response, typeof(RevisionsModificationResponse));
@@ -7108,35 +6676,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream RenderDrawingObject(RenderDrawingObjectRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling RenderDrawingObject");
+            }
+
+            // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling RenderDrawingObject");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling RenderDrawingObject");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/drawingObjects/{index}/render?appSid={appSid}&amp;format=[format]&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling RenderDrawingObject");
-            }
-            
-            // verify the required parameter 'format' is set
-            if (request.Format == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'format' when calling RenderDrawingObject");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling RenderDrawingObject");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "format", request.Format);
@@ -7148,19 +6711,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
             
             try 
-            {                
-                if (typeof(System.IO.Stream) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as System.IO.Stream;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
-                if (response != null)
-                {
-                    return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
-                }
-                    
-                return null;
+            {                               
+                    return this.apiInvoker.InvokeBinaryApi(
+                        this.apiBaseUrl, 
+                        resourcePath, 
+                        "GET", 
+                        null, 
+                        null, 
+                        null) as System.IO.Stream;
             } 
             catch (ApiException ex) 
             {
@@ -7180,35 +6738,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream RenderMathObject(RenderMathObjectRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling RenderMathObject");
+            }
+
+            // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling RenderMathObject");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling RenderMathObject");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/OfficeMathObjects/{index}/render?appSid={appSid}&amp;format=[format]&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling RenderMathObject");
-            }
-            
-            // verify the required parameter 'format' is set
-            if (request.Format == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'format' when calling RenderMathObject");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling RenderMathObject");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "format", request.Format);
@@ -7220,19 +6773,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
             
             try 
-            {                
-                if (typeof(System.IO.Stream) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as System.IO.Stream;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
-                if (response != null)
-                {
-                    return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
-                }
-                    
-                return null;
+            {                               
+                    return this.apiInvoker.InvokeBinaryApi(
+                        this.apiBaseUrl, 
+                        resourcePath, 
+                        "GET", 
+                        null, 
+                        null, 
+                        null) as System.IO.Stream;
             } 
             catch (ApiException ex) 
             {
@@ -7252,35 +6800,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream RenderPage(RenderPageRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling RenderPage");
+            }
+
+            // verify the required parameter 'pageIndex' is set
+            if (request.PageIndex == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'pageIndex' when calling RenderPage");
+            }
+
+            // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling RenderPage");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/pages/{pageIndex}/render?appSid={appSid}&amp;format=[format]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling RenderPage");
-            }
-            
-            // verify the required parameter 'pageIndex' is set
-            if (request.PageIndex == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'pageIndex' when calling RenderPage");
-            }
-            
-            // verify the required parameter 'format' is set
-            if (request.Format == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'format' when calling RenderPage");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "pageIndex", request.PageIndex);
             resourcePath = this.AddQueryParameter(resourcePath, "format", request.Format);
@@ -7291,19 +6834,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
             
             try 
-            {                
-                if (typeof(System.IO.Stream) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as System.IO.Stream;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
-                if (response != null)
-                {
-                    return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
-                }
-                    
-                return null;
+            {                               
+                    return this.apiInvoker.InvokeBinaryApi(
+                        this.apiBaseUrl, 
+                        resourcePath, 
+                        "GET", 
+                        null, 
+                        null, 
+                        null) as System.IO.Stream;
             } 
             catch (ApiException ex) 
             {
@@ -7323,35 +6861,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream RenderParagraph(RenderParagraphRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling RenderParagraph");
+            }
+
+            // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling RenderParagraph");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling RenderParagraph");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/paragraphs/{index}/render?appSid={appSid}&amp;format=[format]&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling RenderParagraph");
-            }
-            
-            // verify the required parameter 'format' is set
-            if (request.Format == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'format' when calling RenderParagraph");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling RenderParagraph");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "format", request.Format);
@@ -7363,19 +6896,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
             
             try 
-            {                
-                if (typeof(System.IO.Stream) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as System.IO.Stream;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
-                if (response != null)
-                {
-                    return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
-                }
-                    
-                return null;
+            {                               
+                    return this.apiInvoker.InvokeBinaryApi(
+                        this.apiBaseUrl, 
+                        resourcePath, 
+                        "GET", 
+                        null, 
+                        null, 
+                        null) as System.IO.Stream;
             } 
             catch (ApiException ex) 
             {
@@ -7395,35 +6923,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="System.IO.Stream"/></returns>            
         public System.IO.Stream RenderTable(RenderTableRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling RenderTable");
+            }
+
+            // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling RenderTable");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling RenderTable");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/tables/{index}/render?appSid={appSid}&amp;format=[format]&amp;nodePath=[nodePath]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]&amp;fontsLocation=[fontsLocation]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling RenderTable");
-            }
-            
-            // verify the required parameter 'format' is set
-            if (request.Format == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'format' when calling RenderTable");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling RenderTable");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "format", request.Format);
@@ -7435,19 +6958,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "fontsLocation", request.FontsLocation);
             
             try 
-            {                
-                if (typeof(System.IO.Stream) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as System.IO.Stream;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
-                if (response != null)
-                {
-                    return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
-                }
-                    
-                return null;
+            {                               
+                    return this.apiInvoker.InvokeBinaryApi(
+                        this.apiBaseUrl, 
+                        resourcePath, 
+                        "GET", 
+                        null, 
+                        null, 
+                        null) as System.IO.Stream;
             } 
             catch (ApiException ex) 
             {
@@ -7473,20 +6991,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
             
             try 
-            {                
-                if (typeof(SaaSposeResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "DELETE", null, headerParams, formParams) as SaaSposeResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "DELETE", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "DELETE", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SaaSposeResponse)SerializationHelper.Deserialize(response, typeof(SaaSposeResponse));
@@ -7512,23 +7026,18 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SearchResponse"/></returns>            
         public SearchResponse Search(SearchRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling Search");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/search?appSid={appSid}&amp;pattern=[pattern]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling Search");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddQueryParameter(resourcePath, "pattern", request.Pattern);
             resourcePath = this.AddQueryParameter(resourcePath, "storage", request.Storage);
@@ -7537,13 +7046,14 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
             
             try 
-            {                
-                if (typeof(SearchResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "GET", null, headerParams, formParams) as SearchResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "GET", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SearchResponse)SerializationHelper.Deserialize(response, typeof(SearchResponse));
@@ -7569,41 +7079,36 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="BorderResponse"/></returns>            
         public BorderResponse UpdateBorder(UpdateBorderRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateBorder");
+            }
+
+            // verify the required parameter 'borderProperties' is set
+            if (request.BorderProperties == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'borderProperties' when calling UpdateBorder");
+            }
+
+            // verify the required parameter 'nodePath' is set
+            if (request.NodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling UpdateBorder");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateBorder");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/borders/{index}?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateBorder");
-            }
-            
-            // verify the required parameter 'borderProperties' is set
-            if (request.BorderProperties == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'borderProperties' when calling UpdateBorder");
-            }
-            
-            // verify the required parameter 'nodePath' is set
-            if (request.NodePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'nodePath' when calling UpdateBorder");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateBorder");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
@@ -7614,15 +7119,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.BorderProperties; // http body (model) parameter
+            var postBody = request.BorderProperties; // http body (model) parameter
             try 
-            {                
-                if (typeof(BorderResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as BorderResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (BorderResponse)SerializationHelper.Deserialize(response, typeof(BorderResponse));
@@ -7648,35 +7154,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="SectionPageSetupResponse"/></returns>            
         public SectionPageSetupResponse UpdateSectionPageSetup(UpdateSectionPageSetupRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateSectionPageSetup");
+            }
+
+            // verify the required parameter 'sectionIndex' is set
+            if (request.SectionIndex == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling UpdateSectionPageSetup");
+            }
+
+            // verify the required parameter 'pageSetup' is set
+            if (request.PageSetup == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'pageSetup' when calling UpdateSectionPageSetup");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/sections/{sectionIndex}/pageSetup?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateSectionPageSetup");
-            }
-            
-            // verify the required parameter 'sectionIndex' is set
-            if (request.SectionIndex == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling UpdateSectionPageSetup");
-            }
-            
-            // verify the required parameter 'pageSetup' is set
-            if (request.PageSetup == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'pageSetup' when calling UpdateSectionPageSetup");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "sectionIndex", request.SectionIndex);
             resourcePath = this.AddQueryParameter(resourcePath, "destFileName", request.DestFileName);
@@ -7686,15 +7187,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.PageSetup; // http body (model) parameter
+            var postBody = request.PageSetup; // http body (model) parameter
             try 
-            {                
-                if (typeof(SectionPageSetupResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as SectionPageSetupResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (SectionPageSetupResponse)SerializationHelper.Deserialize(response, typeof(SectionPageSetupResponse));
@@ -7720,41 +7222,36 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="TableCellFormatResponse"/></returns>            
         public TableCellFormatResponse UpdateTableCellFormat(UpdateTableCellFormatRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateTableCellFormat");
+            }
+
+            // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling UpdateTableCellFormat");
+            }
+
+            // verify the required parameter 'tableRowPath' is set
+            if (request.TableRowPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling UpdateTableCellFormat");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateTableCellFormat");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{tableRowPath}/cells/{index}/cellformat?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateTableCellFormat");
-            }
-            
-            // verify the required parameter 'format' is set
-            if (request.Format == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'format' when calling UpdateTableCellFormat");
-            }
-            
-            // verify the required parameter 'tableRowPath' is set
-            if (request.TableRowPath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling UpdateTableCellFormat");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateTableCellFormat");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "tableRowPath", request.TableRowPath);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
@@ -7765,15 +7262,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.Format; // http body (model) parameter
+            var postBody = request.Format; // http body (model) parameter
             try 
-            {                
-                if (typeof(TableCellFormatResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as TableCellFormatResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (TableCellFormatResponse)SerializationHelper.Deserialize(response, typeof(TableCellFormatResponse));
@@ -7799,35 +7297,30 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="TablePropertiesResponse"/></returns>            
         public TablePropertiesResponse UpdateTableProperties(UpdateTablePropertiesRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateTableProperties");
+            }
+
+            // verify the required parameter 'properties' is set
+            if (request.Properties == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'properties' when calling UpdateTableProperties");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateTableProperties");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{nodePath}/tables/{index}/properties?appSid={appSid}&amp;nodePath=[nodePath]&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateTableProperties");
-            }
-            
-            // verify the required parameter 'properties' is set
-            if (request.Properties == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'properties' when calling UpdateTableProperties");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateTableProperties");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = this.AddQueryParameter(resourcePath, "nodePath", request.NodePath);
@@ -7838,15 +7331,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.Properties; // http body (model) parameter
+            var postBody = request.Properties; // http body (model) parameter
             try 
-            {                
-                if (typeof(TablePropertiesResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as TablePropertiesResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (TablePropertiesResponse)SerializationHelper.Deserialize(response, typeof(TablePropertiesResponse));
@@ -7872,41 +7366,36 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <returns><see cref="TableRowFormatResponse"/></returns>            
         public TableRowFormatResponse UpdateTableRowFormat(UpdateTableRowFormatRequest request)
         {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateTableRowFormat");
+            }
+
+            // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling UpdateTableRowFormat");
+            }
+
+            // verify the required parameter 'tablePath' is set
+            if (request.TablePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'tablePath' when calling UpdateTableRowFormat");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateTableRowFormat");
+            }
+
             // create path and map variables
             var resourcePath = "/words/{name}/{tablePath}/rows/{index}/rowformat?appSid={appSid}&amp;destFileName=[destFileName]&amp;storage=[storage]&amp;folder=[folder]&amp;loadEncoding=[loadEncoding]&amp;revisionAuthor=[revisionAuthor]&amp;revisionDateTime=[revisionDateTime]&amp;password=[password]";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-
-            var headerParams = new Dictionary<string, string>();
-            var formParams = new Dictionary<string, object>();
-            object postBody = null;            
-            
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateTableRowFormat");
-            }
-            
-            // verify the required parameter 'format' is set
-            if (request.Format == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'format' when calling UpdateTableRowFormat");
-            }
-            
-            // verify the required parameter 'tablePath' is set
-            if (request.TablePath == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'tablePath' when calling UpdateTableRowFormat");
-            }
-            
-            // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateTableRowFormat");
-            }
-            
             resourcePath = this.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = this.AddPathParameter(resourcePath, "tablePath", request.TablePath);
             resourcePath = this.AddPathParameter(resourcePath, "index", request.Index);
@@ -7917,15 +7406,16 @@ namespace Aspose.Words.Cloud.Sdk.Api
             resourcePath = this.AddQueryParameter(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = this.AddQueryParameter(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = this.AddQueryParameter(resourcePath, "password", request.Password);
-            postBody = request.Format; // http body (model) parameter
+            var postBody = request.Format; // http body (model) parameter
             try 
-            {                
-                if (typeof(TableRowFormatResponse) == typeof(Stream)) 
-                {
-                    return this.apiInvoker.InvokeBinaryApi(this.basePath, resourcePath, "POST", null, headerParams, formParams) as TableRowFormatResponse;
-                }
-               
-                var response = this.apiInvoker.InvokeApi(this.basePath, resourcePath, "POST", postBody, headerParams, formParams);
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    this.apiBaseUrl, 
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
                 if (response != null)
                 {
                     return (TableRowFormatResponse)SerializationHelper.Deserialize(response, typeof(TableRowFormatResponse));

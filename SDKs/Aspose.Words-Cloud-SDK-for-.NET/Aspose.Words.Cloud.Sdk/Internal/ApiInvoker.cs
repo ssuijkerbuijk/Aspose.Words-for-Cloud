@@ -92,7 +92,7 @@ namespace Aspose.Words.Cloud.Sdk
         public FileInfo ToFileInfo(Stream stream, string paramName)
         {
             // TODO: add contenttype
-            return new FileInfo { Name = paramName, file = StreamHelper.ReadAsBytes(stream) };
+            return new FileInfo { Name = paramName, FileContent = StreamHelper.ReadAsBytes(stream) };
         }
 
         private static string Sign(string url, string appKey)
@@ -151,7 +151,7 @@ namespace Aspose.Words.Cloud.Sdk
                         formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
 
                         // Write the file data directly to the Stream, rather than serializing it to a string.
-                        formDataStream.Write(fileInfo.file, 0, fileInfo.file.Length);
+                        formDataStream.Write(fileInfo.FileContent, 0, fileInfo.FileContent.Length);
                     }
                     else
                     {
@@ -179,7 +179,7 @@ namespace Aspose.Words.Cloud.Sdk
                         var fileInfo = (FileInfo)param.Value;
 
                         // Write the file data directly to the Stream, rather than serializing it to a string.
-                        formDataStream.Write(fileInfo.file, 0, fileInfo.file.Length);
+                        formDataStream.Write(fileInfo.FileContent, 0, fileInfo.FileContent.Length);
                     }
                     else
                     {

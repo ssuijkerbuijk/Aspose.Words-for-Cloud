@@ -55,8 +55,7 @@ namespace {{packageName}}.Model
         /// <summary>
         /// {{^description}}Gets or sets {{{name}}}{{/description}}{{#description}}{{description}}{{/description}}
         /// </summary>
-        {{#description}}
-        /// <value>{{description}}</value>
+        {{#description}}      
         {{/description}}        
         public {{{datatypeWithEnum}}}{{#isEnum}}{{^isContainer}}?{{/isContainer}}{{/isEnum}} {{name}} { get; set; }
 

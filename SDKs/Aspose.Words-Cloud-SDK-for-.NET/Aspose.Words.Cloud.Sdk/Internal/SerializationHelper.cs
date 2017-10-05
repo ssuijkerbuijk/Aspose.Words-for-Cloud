@@ -80,17 +80,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         internal abstract class JsonCreationConverter<T> : JsonConverter
-        {
-            /// <summary>
-            /// Create an instance of objectType, based properties in the JSON object
-            /// </summary>
-            /// <param name="objectType">type of object expected</param>
-            /// <param name="jObject">
-            /// contents of JSON object that will be deserialized
-            /// </param>
-            /// <returns></returns>
-            protected abstract T Create(Type objectType, JObject jObject);
-
+        {            
             public override bool CanConvert(Type objectType)
             {
                 return typeof(T).IsAssignableFrom(objectType);
@@ -102,9 +92,9 @@ namespace Aspose.Words.Cloud.Sdk
                 object existingValue,
                 JsonSerializer serializer)
             {
-                JObject jObject = JObject.Load(reader);
-                T target = this.Create(objectType, jObject);
-                serializer.Populate(jObject.CreateReader(), target);
+                var jsonObject = JObject.Load(reader);
+                T target = this.Create(objectType, jsonObject);
+                serializer.Populate(jsonObject.CreateReader(), target);
                 return target;
             }
 
@@ -112,6 +102,16 @@ namespace Aspose.Words.Cloud.Sdk
             {
                 serializer.Serialize(writer, value);
             }
+
+            /// <summary>
+            /// Create an instance of objectType, based properties in the JSON object.
+            /// </summary>
+            /// <param name="objectType">type of object expected.</param>
+            /// <param name="jsonObject">
+            /// Contents of JSON object that will be deserialized.
+            /// </param>
+            /// <returns>An instance of objectType.</returns>
+            protected abstract T Create(Type objectType, JObject jsonObject);
         }       
 
         internal class FormFieldJsonConverter : JsonCreationConverter<FormField>

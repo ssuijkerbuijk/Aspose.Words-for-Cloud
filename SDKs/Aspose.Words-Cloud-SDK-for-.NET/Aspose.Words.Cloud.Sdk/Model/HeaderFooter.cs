@@ -44,8 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Paragraph&#39;s text</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum HeaderEven for "HeaderEven"
             /// </summary>            
@@ -74,13 +73,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum FooterFirst for "FooterFirst"
             /// </summary>            
-            FooterFirst
+            FooterFirst            
         }
 
         /// <summary>
         /// Paragraph&#39;s text
         /// </summary>
-        /// <value>Paragraph&#39;s text</value>
         public TypeEnum? Type { get; set; }
 
         /// <summary>

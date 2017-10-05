@@ -44,8 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Returns a value that specifies whether this is a footnote or endnote.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum FootnoteTypeEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Footnote for "Footnote"
             /// </summary>            
@@ -54,13 +53,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Endnote for "Endnote"
             /// </summary>            
-            Endnote
+            Endnote            
         }
 
         /// <summary>
         /// Returns a value that specifies whether this is a footnote or endnote.
         /// </summary>
-        /// <value>Returns a value that specifies whether this is a footnote or endnote.</value>
         public FootnoteTypeEnum? FootnoteType { get; set; }
 
         /// <summary>

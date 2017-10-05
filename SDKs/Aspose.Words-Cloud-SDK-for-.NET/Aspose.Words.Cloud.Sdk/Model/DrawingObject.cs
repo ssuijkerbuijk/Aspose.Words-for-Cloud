@@ -44,8 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Specifies where the distance to the image is measured from.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RelativeHorizontalPositionEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Margin for "Margin"
             /// </summary>            
@@ -89,7 +88,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Default for "Default"
             /// </summary>            
-            Default
+            Default            
         }
 
         /// <summary>
@@ -98,8 +97,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Specifies where the distance to the image measured from.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RelativeVerticalPositionEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Margin for "Margin"
             /// </summary>            
@@ -148,7 +146,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum TextFrameDefault for "TextFrameDefault"
             /// </summary>            
-            TextFrameDefault
+            TextFrameDefault            
         }
 
         /// <summary>
@@ -157,8 +155,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Specifies how to wrap text around the image.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum WrapTypeEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum None for "None"
             /// </summary>            
@@ -187,25 +184,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Through for "Through"
             /// </summary>            
-            Through
+            Through            
         }
 
         /// <summary>
         /// Specifies where the distance to the image is measured from.
         /// </summary>
-        /// <value>Specifies where the distance to the image is measured from.</value>
         public RelativeHorizontalPositionEnum? RelativeHorizontalPosition { get; set; }
 
         /// <summary>
         /// Specifies where the distance to the image measured from.
         /// </summary>
-        /// <value>Specifies where the distance to the image measured from.</value>
         public RelativeVerticalPositionEnum? RelativeVerticalPosition { get; set; }
 
         /// <summary>
         /// Specifies how to wrap text around the image.
         /// </summary>
-        /// <value>Specifies how to wrap text around the image.</value>
         public WrapTypeEnum? WrapType { get; set; }
 
         /// <summary>

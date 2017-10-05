@@ -44,8 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Specifies version of HTML standard that should be used when saving the document to HTML or MHTML.    Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HtmlVersionEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Xhtml for "Xhtml"
             /// </summary>            
@@ -54,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Html5 for "Html5"
             /// </summary>            
-            Html5
+            Html5            
         }
 
         /// <summary>
@@ -63,8 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OfficeMathOutputModeEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Image for "Image"
             /// </summary>            
@@ -78,19 +76,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Text for "Text"
             /// </summary>            
-            Text
+            Text            
         }
 
         /// <summary>
         /// Specifies version of HTML standard that should be used when saving the document to HTML or MHTML.    Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
         /// </summary>
-        /// <value>Specifies version of HTML standard that should be used when saving the document to HTML or MHTML.    Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.</value>
         public HtmlVersionEnum? HtmlVersion { get; set; }
 
         /// <summary>
         /// Controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.
         /// </summary>
-        /// <value>Controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.</value>
         public OfficeMathOutputModeEnum? OfficeMathOutputMode { get; set; }
 
         /// <summary>

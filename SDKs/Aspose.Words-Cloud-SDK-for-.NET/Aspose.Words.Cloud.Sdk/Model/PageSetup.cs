@@ -44,8 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Specifies which pages the page border is printed on.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BorderAppliesToEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum AllPages for "AllPages"
             /// </summary>            
@@ -59,7 +58,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum OtherPages for "OtherPages"
             /// </summary>            
-            OtherPages
+            OtherPages            
         }
 
         /// <summary>
@@ -68,8 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from  the text it surrounds.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BorderDistanceFromEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Text for "Text"
             /// </summary>            
@@ -78,7 +76,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum PageEdge for "PageEdge"
             /// </summary>            
-            PageEdge
+            PageEdge            
         }
 
         /// <summary>
@@ -87,8 +85,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new  page or section or runs continuously.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LineNumberRestartModeEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum RestartPage for "RestartPage"
             /// </summary>            
@@ -102,7 +99,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Continuous for "Continuous"
             /// </summary>            
-            Continuous
+            Continuous            
         }
 
         /// <summary>
@@ -111,8 +108,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Returns or sets the orientation of the page.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OrientationEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Portrait for "Portrait"
             /// </summary>            
@@ -121,7 +117,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Landscape for "Landscape"
             /// </summary>            
-            Landscape
+            Landscape            
         }
 
         /// <summary>
@@ -130,8 +126,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the page number format.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PageNumberStyleEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Arabic for "Arabic"
             /// </summary>            
@@ -445,7 +440,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Custom for "Custom"
             /// </summary>            
-            Custom
+            Custom            
         }
 
         /// <summary>
@@ -454,8 +449,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Returns or sets the paper size.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PaperSizeEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum A3 for "A3"
             /// </summary>            
@@ -539,7 +533,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Custom for "Custom"
             /// </summary>            
-            Custom
+            Custom            
         }
 
         /// <summary>
@@ -548,8 +542,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Returns or sets the type of section break for the specified object.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SectionStartEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Continuous for "Continuous"
             /// </summary>            
@@ -573,7 +566,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum OddPage for "OddPage"
             /// </summary>            
-            OddPage
+            OddPage            
         }
 
         /// <summary>
@@ -582,8 +575,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Returns or sets the vertical alignment of text on each page in a document or section.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VerticalAlignmentEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Bottom for "Bottom"
             /// </summary>            
@@ -602,55 +594,47 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Top for "Top"
             /// </summary>            
-            Top
+            Top            
         }
 
         /// <summary>
         /// Specifies which pages the page border is printed on.
         /// </summary>
-        /// <value>Specifies which pages the page border is printed on.</value>
         public BorderAppliesToEnum? BorderAppliesTo { get; set; }
 
         /// <summary>
         /// Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from  the text it surrounds.
         /// </summary>
-        /// <value>Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from  the text it surrounds.</value>
         public BorderDistanceFromEnum? BorderDistanceFrom { get; set; }
 
         /// <summary>
         /// Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new  page or section or runs continuously.
         /// </summary>
-        /// <value>Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new  page or section or runs continuously.</value>
         public LineNumberRestartModeEnum? LineNumberRestartMode { get; set; }
 
         /// <summary>
         /// Returns or sets the orientation of the page.
         /// </summary>
-        /// <value>Returns or sets the orientation of the page.</value>
         public OrientationEnum? Orientation { get; set; }
 
         /// <summary>
         /// Gets or sets the page number format.
         /// </summary>
-        /// <value>Gets or sets the page number format.</value>
         public PageNumberStyleEnum? PageNumberStyle { get; set; }
 
         /// <summary>
         /// Returns or sets the paper size.
         /// </summary>
-        /// <value>Returns or sets the paper size.</value>
         public PaperSizeEnum? PaperSize { get; set; }
 
         /// <summary>
         /// Returns or sets the type of section break for the specified object.
         /// </summary>
-        /// <value>Returns or sets the type of section break for the specified object.</value>
         public SectionStartEnum? SectionStart { get; set; }
 
         /// <summary>
         /// Returns or sets the vertical alignment of text on each page in a document or section.
         /// </summary>
-        /// <value>Returns or sets the vertical alignment of text on each page in a document or section.</value>
         public VerticalAlignmentEnum? VerticalAlignment { get; set; }
 
         /// <summary>

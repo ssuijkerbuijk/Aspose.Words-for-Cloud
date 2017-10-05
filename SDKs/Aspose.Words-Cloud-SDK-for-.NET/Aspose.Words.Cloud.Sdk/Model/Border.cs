@@ -44,8 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the border type.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BorderTypeEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum None for "None"
             /// </summary>            
@@ -89,7 +88,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum DiagonalUp for "DiagonalUp"
             /// </summary>            
-            DiagonalUp
+            DiagonalUp            
         }
 
         /// <summary>
@@ -98,8 +97,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the border style.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LineStyleEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum None for "None"
             /// </summary>            
@@ -233,19 +231,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Inset for "Inset"
             /// </summary>            
-            Inset
+            Inset            
         }
 
         /// <summary>
         /// Gets or sets the border type.
         /// </summary>
-        /// <value>Gets or sets the border type.</value>
         public BorderTypeEnum? BorderType { get; set; }
 
         /// <summary>
         /// Gets or sets the border style.
         /// </summary>
-        /// <value>Gets or sets the border style.</value>
         public LineStyleEnum? LineStyle { get; set; }
 
         /// <summary>

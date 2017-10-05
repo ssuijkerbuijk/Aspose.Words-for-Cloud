@@ -31,6 +31,6 @@ namespace Aspose.Words.Cloud.Sdk
 
         public string MimeType { get; set; }
 
-        public byte[] file { get; set; }
+        public byte[] FileContent { get; set; }
     }
 }

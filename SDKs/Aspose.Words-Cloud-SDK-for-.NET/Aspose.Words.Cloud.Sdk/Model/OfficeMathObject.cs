@@ -44,8 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text  or displayed on its own line.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DisplayTypeEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Display for "Display"
             /// </summary>            
@@ -54,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Inline for "Inline"
             /// </summary>            
-            Inline
+            Inline            
         }
 
         /// <summary>
@@ -63,8 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets/sets Office Math justification.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum JustificationEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum CenterGroup for "CenterGroup"
             /// </summary>            
@@ -93,7 +91,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Default for "Default"
             /// </summary>            
-            Default
+            Default            
         }
 
         /// <summary>
@@ -102,8 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum MathObjectTypeEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum OMath for "OMath"
             /// </summary>            
@@ -252,25 +249,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Supercript for "Supercript"
             /// </summary>            
-            Supercript
+            Supercript            
         }
 
         /// <summary>
         /// Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text  or displayed on its own line.
         /// </summary>
-        /// <value>Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text  or displayed on its own line.</value>
         public DisplayTypeEnum? DisplayType { get; set; }
 
         /// <summary>
         /// Gets/sets Office Math justification.
         /// </summary>
-        /// <value>Gets/sets Office Math justification.</value>
         public JustificationEnum? Justification { get; set; }
 
         /// <summary>
         /// Gets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.
         /// </summary>
-        /// <value>Gets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.</value>
         public MathObjectTypeEnum? MathObjectType { get; set; }
 
         /// <summary>

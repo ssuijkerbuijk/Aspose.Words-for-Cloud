@@ -44,8 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the locale independent style identifier of the character style applied to this formatting.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StyleIdentifierEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum BookTitle for "BookTitle"
             /// </summary>            
@@ -1909,7 +1908,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Nil for "Nil"
             /// </summary>            
-            Nil
+            Nil            
         }
 
         /// <summary>
@@ -1918,8 +1917,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the font animation effect.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextEffectEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum None for "None"
             /// </summary>            
@@ -1953,7 +1951,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Shimmer for "Shimmer"
             /// </summary>            
-            Shimmer
+            Shimmer            
         }
 
         /// <summary>
@@ -1962,8 +1960,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the type of underline applied to the font.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum UnderlineEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum None for "None"
             /// </summary>            
@@ -2052,25 +2049,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum WavyDouble for "WavyDouble"
             /// </summary>            
-            WavyDouble
+            WavyDouble            
         }
 
         /// <summary>
         /// Gets or sets the locale independent style identifier of the character style applied to this formatting.
         /// </summary>
-        /// <value>Gets or sets the locale independent style identifier of the character style applied to this formatting.</value>
         public StyleIdentifierEnum? StyleIdentifier { get; set; }
 
         /// <summary>
         /// Gets or sets the font animation effect.
         /// </summary>
-        /// <value>Gets or sets the font animation effect.</value>
         public TextEffectEnum? TextEffect { get; set; }
 
         /// <summary>
         /// Gets or sets the type of underline applied to the font.
         /// </summary>
-        /// <value>Gets or sets the type of underline applied to the font.</value>
         public UnderlineEnum? Underline { get; set; }
 
         /// <summary>

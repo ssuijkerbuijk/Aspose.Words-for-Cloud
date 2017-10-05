@@ -27,15 +27,30 @@ namespace Aspose.Words.Cloud.Sdk
 {
     using System;
 
+    /// <summary>
+    /// API exception.
+    /// </summary>
     public class ApiException : Exception
     {
         private readonly int errorCode;
-        
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiException"/> class.
+        /// </summary>
+        /// <param name="errorCode">
+        /// The error code.
+        /// </param>
+        /// <param name="message">
+        /// The message.
+        /// </param>
         public ApiException(int errorCode, string message) : base(message)
         {
             this.errorCode = errorCode;
         }
 
+        /// <summary>
+        /// Error code.
+        /// </summary>
         public int ErrorCode
         {
             get

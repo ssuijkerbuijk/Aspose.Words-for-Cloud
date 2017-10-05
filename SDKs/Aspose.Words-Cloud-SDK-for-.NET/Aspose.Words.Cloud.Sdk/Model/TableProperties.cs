@@ -44,8 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Specifies how an inline table is aligned in the document.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AlignmentEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Left for "Left"
             /// </summary>            
@@ -59,7 +58,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Right for "Right"
             /// </summary>            
-            Right
+            Right            
         }
 
         /// <summary>
@@ -68,8 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the locale independent style identifier of the table style applied to this table.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StyleIdentifierEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum BookTitle for "BookTitle"
             /// </summary>            
@@ -1933,7 +1931,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Nil for "Nil"
             /// </summary>            
-            Nil
+            Nil            
         }
 
         /// <summary>
@@ -1942,8 +1940,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets bit flags that specify how a table style is applied to this table.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StyleOptionsEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum None for "None"
             /// </summary>            
@@ -1987,7 +1984,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Default for "Default"
             /// </summary>            
-            Default
+            Default            
         }
 
         /// <summary>
@@ -1996,8 +1993,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Get or sets TextWrapping {Aspose.Words.Cloud.DTO.DocumentElements.Tables.TablePropertiesDto.TextWrapping} for table.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextWrappingEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum None for "None"
             /// </summary>            
@@ -2011,31 +2007,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Default for "Default"
             /// </summary>            
-            Default
+            Default            
         }
 
         /// <summary>
         /// Specifies how an inline table is aligned in the document.
         /// </summary>
-        /// <value>Specifies how an inline table is aligned in the document.</value>
         public AlignmentEnum? Alignment { get; set; }
 
         /// <summary>
         /// Gets or sets the locale independent style identifier of the table style applied to this table.
         /// </summary>
-        /// <value>Gets or sets the locale independent style identifier of the table style applied to this table.</value>
         public StyleIdentifierEnum? StyleIdentifier { get; set; }
 
         /// <summary>
         /// Gets or sets bit flags that specify how a table style is applied to this table.
         /// </summary>
-        /// <value>Gets or sets bit flags that specify how a table style is applied to this table.</value>
         public StyleOptionsEnum? StyleOptions { get; set; }
 
         /// <summary>
         /// Get or sets TextWrapping {Aspose.Words.Cloud.DTO.DocumentElements.Tables.TablePropertiesDto.TextWrapping} for table.
         /// </summary>
-        /// <value>Get or sets TextWrapping {Aspose.Words.Cloud.DTO.DocumentElements.Tables.TablePropertiesDto.TextWrapping} for table.</value>
         public TextWrappingEnum? TextWrapping { get; set; }
 
         /// <summary>

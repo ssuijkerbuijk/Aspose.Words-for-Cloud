@@ -44,8 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the type of a text form field.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextInputTypeEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Regular for "Regular"
             /// </summary>            
@@ -74,13 +73,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Calculated for "Calculated"
             /// </summary>            
-            Calculated
+            Calculated            
         }
 
         /// <summary>
         /// Gets or sets the type of a text form field.
         /// </summary>
-        /// <value>Gets or sets the type of a text form field.</value>
         public TextInputTypeEnum? TextInputType { get; set; }
 
         /// <summary>

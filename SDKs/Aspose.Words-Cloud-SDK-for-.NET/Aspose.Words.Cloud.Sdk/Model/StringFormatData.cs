@@ -44,8 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets horizontal alignment of the string.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AlignmentEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Near for "Near"
             /// </summary>            
@@ -59,7 +58,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Far for "Far"
             /// </summary>            
-            Far
+            Far            
         }
 
         /// <summary>
@@ -68,8 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets a System.Drawing.StringFormatFlags enumeration that contains formatting information.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum FormatFlagsEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum DirectionRightToLeft for "DirectionRightToLeft"
             /// </summary>            
@@ -113,7 +111,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum NoClip for "NoClip"
             /// </summary>            
-            NoClip
+            NoClip            
         }
 
         /// <summary>
@@ -122,8 +120,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the System.Drawing.Text.HotkeyPrefix object for this System.Drawing.StringFormat object.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HotkeyPrefixEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum None for "None"
             /// </summary>            
@@ -137,7 +134,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Hide for "Hide"
             /// </summary>            
-            Hide
+            Hide            
         }
 
         /// <summary>
@@ -146,8 +143,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the vertical alignment of the string.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LineAlignmentEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Near for "Near"
             /// </summary>            
@@ -161,7 +157,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Far for "Far"
             /// </summary>            
-            Far
+            Far            
         }
 
         /// <summary>
@@ -170,8 +166,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the System.Drawing.StringTrimming enumeration for this System.Drawing.StringFormat object.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TrimmingEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum None for "None"
             /// </summary>            
@@ -200,37 +195,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum EllipsisPath for "EllipsisPath"
             /// </summary>            
-            EllipsisPath
+            EllipsisPath            
         }
 
         /// <summary>
         /// Gets or sets horizontal alignment of the string.
         /// </summary>
-        /// <value>Gets or sets horizontal alignment of the string.</value>
         public AlignmentEnum? Alignment { get; set; }
 
         /// <summary>
         /// Gets or sets a System.Drawing.StringFormatFlags enumeration that contains formatting information.
         /// </summary>
-        /// <value>Gets or sets a System.Drawing.StringFormatFlags enumeration that contains formatting information.</value>
         public FormatFlagsEnum? FormatFlags { get; set; }
 
         /// <summary>
         /// Gets or sets the System.Drawing.Text.HotkeyPrefix object for this System.Drawing.StringFormat object.
         /// </summary>
-        /// <value>Gets or sets the System.Drawing.Text.HotkeyPrefix object for this System.Drawing.StringFormat object.</value>
         public HotkeyPrefixEnum? HotkeyPrefix { get; set; }
 
         /// <summary>
         /// Gets or sets the vertical alignment of the string.
         /// </summary>
-        /// <value>Gets or sets the vertical alignment of the string.</value>
         public LineAlignmentEnum? LineAlignment { get; set; }
 
         /// <summary>
         /// Gets or sets the System.Drawing.StringTrimming enumeration for this System.Drawing.StringFormat object.
         /// </summary>
-        /// <value>Gets or sets the System.Drawing.StringTrimming enumeration for this System.Drawing.StringFormat object.</value>
         public TrimmingEnum? Trimming { get; set; }
 
         /// <summary>

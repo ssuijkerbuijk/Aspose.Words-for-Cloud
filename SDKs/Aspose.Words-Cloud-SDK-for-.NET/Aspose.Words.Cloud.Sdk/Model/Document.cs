@@ -44,8 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets the original format of the document.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SourceFormatEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Unknown for "Unknown"
             /// </summary>            
@@ -154,13 +153,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Svg for "Svg"
             /// </summary>            
-            Svg
+            Svg            
         }
 
         /// <summary>
         /// Gets the original format of the document.
         /// </summary>
-        /// <value>Gets the original format of the document.</value>
         public SourceFormatEnum? SourceFormat { get; set; }
 
         /// <summary>
