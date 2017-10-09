@@ -216,12 +216,19 @@ namespace Aspose.Words.Cloud.Sdk
             Dictionary<string, string> headerParams,
             Dictionary<string, object> formParams)
         {
+            if (formParams == null)
+            {
+                formParams = new Dictionary<string, object>();
+            }
+
+            if (headerParams == null)
+            {
+                headerParams = new Dictionary<string, string>();
+            }
+
             path = path.Replace("{appSid}", this.defaultHeaderMap[this.appSid]);
-
             path = Regex.Replace(path, @"{.+?}", string.Empty);
-
             host = host.EndsWith("/") ? host.Substring(0, host.Length - 1) : host;
-
             path = Sign(host + path, this.defaultHeaderMap[this.apiKey]);
 
             var client = WebRequest.Create(path);
