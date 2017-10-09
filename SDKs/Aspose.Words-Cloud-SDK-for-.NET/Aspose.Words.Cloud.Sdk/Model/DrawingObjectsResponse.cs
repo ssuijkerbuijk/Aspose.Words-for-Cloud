@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// This resonse should be returned by the service when handling:  GET /drawingObjects.
   /// </summary>  
   public class DrawingObjectsResponse : SaaSposeResponse 
   {                       
         /// <summary>
-        /// Gets or sets DrawingObjects
+        /// Collection of drawing objects.
         /// </summary>  
         public DrawingObjectCollection DrawingObjects { get; set; }
 

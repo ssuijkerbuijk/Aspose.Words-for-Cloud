@@ -5460,47 +5460,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
         }
 
         /// <summary>
-        /// Run tasks 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostRunTaskRequest" /></param> 
-        /// <returns><see cref="Object"/></returns>            
-        public Object PostRunTask(PostRunTaskRequest request)
-        {
-            // create path and map variables
-            var resourcePath = "/words/tasks?appSid={appSid}";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
-                    resourcePath, 
-                    "POST", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (Object)SerializationHelper.Deserialize(response, typeof(Object));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
-        }
-
-        /// <summary>
         /// Split document. 
         /// </summary>
         /// <param name="request">Request. <see cref="PostSplitDocumentRequest" /></param> 
@@ -12607,7 +12566,7 @@ namespace Aspose.Words.Cloud.Sdk.Requests
         /// Initializes a new instance of the <see cref="PostAppendDocumentRequest"/> class.
         /// </summary>
         /// <param name="name">Original document name.</param>
-        /// <param name="documentList">{Aspose.Words.Cloud.DTO.DocumentEntryList} with a list of documents to append.</param>
+        /// <param name="documentList">{Aspose.Words.Cloud.DTO.Append.DocumentEntryList} with a list of documents to append.</param>
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="folder">Original document folder.</param>
@@ -12634,7 +12593,7 @@ namespace Aspose.Words.Cloud.Sdk.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// {Aspose.Words.Cloud.DTO.DocumentEntryList} with a list of documents to append.
+        /// {Aspose.Words.Cloud.DTO.Append.DocumentEntryList} with a list of documents to append.
         /// </summary>  
         public DocumentEntryList DocumentList { get; set; }
 
@@ -14132,13 +14091,6 @@ namespace Aspose.Words.Cloud.Sdk.Requests
         /// Password for opening an encrypted document.
         /// </summary>  
         public string Password { get; set; }
-  }
-
-  /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostRunTask" /> operation.
-  /// </summary>  
-  public class PostRunTaskRequest  
-  {
   }
 
   /// <summary>

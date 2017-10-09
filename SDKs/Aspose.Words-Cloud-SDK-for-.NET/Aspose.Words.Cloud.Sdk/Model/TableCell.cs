@@ -41,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Child nodes.
         /// </summary>  
-        public List<Object> ChildNodes { get; set; }
+        public List<NodeLink> ChildNodes { get; set; }
 
         /// <summary>
         /// Node id
