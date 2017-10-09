@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="IWordDocumentRequest.cs">
+// <copyright company="Aspose" file="GetSectionsRequest.cs">
 //   Copyright (c) 2016 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -22,37 +22,62 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
-namespace Aspose.Words.Cloud.Sdk.Requests
+namespace Aspose.Words.Cloud.Sdk.Model.Requests 
 {
-    /// <summary>
-    /// Request for operation with word document.
-    /// </summary>
-    public interface IWordDocumentRequest
-    {
+  using Aspose.Words.Cloud.Sdk.Model; 
+
+  /// <summary>
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetSections" /> operation.
+  /// </summary>  
+  public class GetSectionsRequest : IWordDocumentRequest   
+  {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetSectionsRequest"/> class.
+        /// </summary>        
+        public GetSectionsRequest()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetSectionsRequest"/> class.
+        /// </summary>
+        /// <param name="name">The document name.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetSectionsRequest(string name, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        {
+            this.Name = name;
+            this.Storage = storage;
+            this.Folder = folder;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+        }
+
         /// <summary>
         /// The document name.
         /// </summary>  
-        string Name { get; set; }
-        
+        public string Name { get; set; }
+
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
-        string Storage { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        string Folder { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        string LoadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        string Password { get; set; }
-    }
+        public string Password { get; set; }
+  }
 }

@@ -1,7 +1,5 @@
-{{#operations}}
-{{#operation}}
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="{{nickname}}Request.cs">
+// <copyright company="Aspose" file="PutExecuteMailMergeOnlineRequest.cs">
 //   Copyright (c) 2016 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -24,47 +22,55 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace {{packageName}}.Model.Requests 
+namespace Aspose.Words.Cloud.Sdk.Model.Requests 
 {
-  using {{packageName}}.Model; 
+  using Aspose.Words.Cloud.Sdk.Model; 
 
   /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.{{nickname}}" /> operation.
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutExecuteMailMergeOnline" /> operation.
   /// </summary>  
-  public class {{nickname}}Request{{#vendorExtensions}}{{#x-csharp-implements}} : {{x-csharp-implements}} {{/x-csharp-implements}}  {{/vendorExtensions}}
+  public class PutExecuteMailMergeOnlineRequest  
   {
-        {{#hasParams}}
         /// <summary>
-        /// Initializes a new instance of the <see cref="{{nickname}}Request"/> class.
+        /// Initializes a new instance of the <see cref="PutExecuteMailMergeOnlineRequest"/> class.
         /// </summary>        
-        public {{nickname}}Request()
+        public PutExecuteMailMergeOnlineRequest()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="{{nickname}}Request"/> class.
+        /// Initializes a new instance of the <see cref="PutExecuteMailMergeOnlineRequest"/> class.
         /// </summary>
-        {{#allParams}}
-        /// <param name="{{paramName}}">{{description}}</param>
-        {{/allParams}}
-        public {{nickname}}Request({{#allParams}}{{{dataType}}} {{paramName}}{{^required}} = null{{/required}}{{#hasMore}}, {{/hasMore}}{{/allParams}})             
+        /// <param name="template">File with template</param>
+        /// <param name="data">File with mailmerge data</param>
+        /// <param name="withRegions">With regions flag.</param>
+        /// <param name="cleanup">Clean up options.</param>
+        public PutExecuteMailMergeOnlineRequest(System.IO.Stream template, System.IO.Stream data, bool? withRegions = null, string cleanup = null)             
         {
-            {{#allParams}}
-            this.{{baseName}} = {{paramName}};
-            {{/allParams}}   
+            this.Template = template;
+            this.Data = data;
+            this.WithRegions = withRegions;
+            this.Cleanup = cleanup;
         }
 
-        {{#allParams}}                
         /// <summary>
-        /// {{^description}}Gets or sets {{baseName}}{{/description}}{{#description}}{{{description}}}{{/description}}
+        /// File with template
         /// </summary>  
-        public {{{dataType}}} {{baseName}} { get; set; }
-        {{#hasMore}}
+        public System.IO.Stream Template { get; set; }
 
-        {{/hasMore}}
-        {{/allParams}}
-        {{/hasParams}}
+        /// <summary>
+        /// File with mailmerge data
+        /// </summary>  
+        public System.IO.Stream Data { get; set; }
+
+        /// <summary>
+        /// With regions flag.
+        /// </summary>  
+        public bool? WithRegions { get; set; }
+
+        /// <summary>
+        /// Clean up options.
+        /// </summary>  
+        public string Cleanup { get; set; }
   }
 }
-{{/operation}}
-{{/operations}}

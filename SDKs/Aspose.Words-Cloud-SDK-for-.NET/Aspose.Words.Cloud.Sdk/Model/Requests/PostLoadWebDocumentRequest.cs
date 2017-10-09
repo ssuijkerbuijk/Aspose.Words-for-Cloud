@@ -1,7 +1,5 @@
-{{#operations}}
-{{#operation}}
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="{{nickname}}Request.cs">
+// <copyright company="Aspose" file="PostLoadWebDocumentRequest.cs">
 //   Copyright (c) 2016 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -24,47 +22,41 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace {{packageName}}.Model.Requests 
+namespace Aspose.Words.Cloud.Sdk.Model.Requests 
 {
-  using {{packageName}}.Model; 
+  using Aspose.Words.Cloud.Sdk.Model; 
 
   /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.{{nickname}}" /> operation.
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostLoadWebDocument" /> operation.
   /// </summary>  
-  public class {{nickname}}Request{{#vendorExtensions}}{{#x-csharp-implements}} : {{x-csharp-implements}} {{/x-csharp-implements}}  {{/vendorExtensions}}
+  public class PostLoadWebDocumentRequest  
   {
-        {{#hasParams}}
         /// <summary>
-        /// Initializes a new instance of the <see cref="{{nickname}}Request"/> class.
+        /// Initializes a new instance of the <see cref="PostLoadWebDocumentRequest"/> class.
         /// </summary>        
-        public {{nickname}}Request()
+        public PostLoadWebDocumentRequest()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="{{nickname}}Request"/> class.
+        /// Initializes a new instance of the <see cref="PostLoadWebDocumentRequest"/> class.
         /// </summary>
-        {{#allParams}}
-        /// <param name="{{paramName}}">{{description}}</param>
-        {{/allParams}}
-        public {{nickname}}Request({{#allParams}}{{{dataType}}} {{paramName}}{{^required}} = null{{/required}}{{#hasMore}}, {{/hasMore}}{{/allParams}})             
+        /// <param name="data">Parameters of loading.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        public PostLoadWebDocumentRequest(LoadWebDocumentData data, string storage = null)             
         {
-            {{#allParams}}
-            this.{{baseName}} = {{paramName}};
-            {{/allParams}}   
+            this.Data = data;
+            this.Storage = storage;
         }
 
-        {{#allParams}}                
         /// <summary>
-        /// {{^description}}Gets or sets {{baseName}}{{/description}}{{#description}}{{{description}}}{{/description}}
+        /// Parameters of loading.
         /// </summary>  
-        public {{{dataType}}} {{baseName}} { get; set; }
-        {{#hasMore}}
+        public LoadWebDocumentData Data { get; set; }
 
-        {{/hasMore}}
-        {{/allParams}}
-        {{/hasParams}}
+        /// <summary>
+        /// File storage, which have to be used.
+        /// </summary>  
+        public string Storage { get; set; }
   }
 }
-{{/operation}}
-{{/operations}}

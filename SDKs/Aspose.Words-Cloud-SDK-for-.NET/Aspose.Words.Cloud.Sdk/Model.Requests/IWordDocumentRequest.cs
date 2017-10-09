@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ICanModifyDocumentRequest.cs">
+// <copyright company="Aspose" file="IWordDocumentRequest.cs">
 //   Copyright (c) 2016 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -23,16 +23,36 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Requests
+namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
     /// <summary>
-    /// Request which can modify document.
+    /// Request for operation with word document.
     /// </summary>
-    public interface ICanModifyDocumentRequest
+    public interface IWordDocumentRequest
     {
         /// <summary>
-        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        /// The document name.
         /// </summary>  
-        string DestFileName { get; set; }
+        string Name { get; set; }
+        
+        /// <summary>
+        /// File storage, which have to be used.
+        /// </summary>  
+        string Storage { get; set; }
+
+        /// <summary>
+        /// Original document folder.
+        /// </summary>  
+        string Folder { get; set; }
+
+        /// <summary>
+        /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        /// </summary>  
+        string LoadEncoding { get; set; }
+
+        /// <summary>
+        /// Password for opening an encrypted document.
+        /// </summary>  
+        string Password { get; set; }
     }
 }

@@ -25,11 +25,10 @@
 
 namespace {{packageName}}.Api
 {
-    using System;    
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
     using {{packageName}}.Model;
-    using {{packageName}}.Requests;
+    using {{packageName}}.Model.Requests;
 
     {{#operations}}
     /// <summary>
@@ -175,5 +174,4 @@ namespace {{packageName}}.Api
     }
     {{/operations}}
 }
-
 {{>requestModel}}

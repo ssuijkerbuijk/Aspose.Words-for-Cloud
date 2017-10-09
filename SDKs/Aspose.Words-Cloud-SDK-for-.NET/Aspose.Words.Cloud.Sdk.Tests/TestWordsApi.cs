@@ -28,7 +28,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
     using Aspose.Words.Cloud.Sdk;
     using Aspose.Words.Cloud.Sdk.Api;
     using Aspose.Words.Cloud.Sdk.Model;
-    using Aspose.Words.Cloud.Sdk.Requests;
+    using Aspose.Words.Cloud.Sdk.Model.Requests;
 
     using Com.Aspose.Storage.Api;
 

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ICanSaveRevisionRequest.cs">
+// <copyright company="Aspose" file="PutDocumentFieldNamesRequest.cs">
 //   Copyright (c) 2016 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -22,22 +22,41 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
-namespace Aspose.Words.Cloud.Sdk.Requests
+namespace Aspose.Words.Cloud.Sdk.Model.Requests 
 {
-    /// <summary>
-    /// Request which can save revisions in document.
-    /// </summary>
-    public interface ICanSaveRevisionRequest
-    {
+  using Aspose.Words.Cloud.Sdk.Model; 
+
+  /// <summary>
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutDocumentFieldNames" /> operation.
+  /// </summary>  
+  public class PutDocumentFieldNamesRequest  
+  {
         /// <summary>
-        /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        /// </summary>  
-        string RevisionAuthor { get; set; }
+        /// Initializes a new instance of the <see cref="PutDocumentFieldNamesRequest"/> class.
+        /// </summary>        
+        public PutDocumentFieldNamesRequest()
+        {
+        }
 
         /// <summary>
-        /// The date and time to use for revisions.
+        /// Initializes a new instance of the <see cref="PutDocumentFieldNamesRequest"/> class.
+        /// </summary>
+        /// <param name="template">File with template</param>
+        /// <param name="useNonMergeFields">Use non merge fields or not.</param>
+        public PutDocumentFieldNamesRequest(System.IO.Stream template, bool? useNonMergeFields = null)             
+        {
+            this.Template = template;
+            this.UseNonMergeFields = useNonMergeFields;
+        }
+
+        /// <summary>
+        /// File with template
         /// </summary>  
-        string RevisionDateTime { get; set; }
-    }
+        public System.IO.Stream Template { get; set; }
+
+        /// <summary>
+        /// Use non merge fields or not.
+        /// </summary>  
+        public bool? UseNonMergeFields { get; set; }
+  }
 }
