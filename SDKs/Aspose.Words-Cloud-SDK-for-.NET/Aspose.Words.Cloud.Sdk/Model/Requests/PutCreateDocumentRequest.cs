@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ICanUseCustomFontsRequest.cs">
+// <copyright company="Aspose" file="PutCreateDocumentRequest.cs">
 //   Copyright (c) 2016 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -22,17 +22,41 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
-namespace Aspose.Words.Cloud.Sdk.Requests
+namespace Aspose.Words.Cloud.Sdk.Model.Requests 
 {
-    /// <summary>
-    /// Request which can use custom fonts.
-    /// </summary>
-    public interface ICanUseCustomFontsRequest
-    {
+  using Aspose.Words.Cloud.Sdk.Model; 
+
+  /// <summary>
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutCreateDocument" /> operation.
+  /// </summary>  
+  public class PutCreateDocumentRequest  
+  {
         /// <summary>
-        /// Folder in filestorage with custom fonts.
+        /// Initializes a new instance of the <see cref="PutCreateDocumentRequest"/> class.
+        /// </summary>        
+        public PutCreateDocumentRequest()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PutCreateDocumentRequest"/> class.
+        /// </summary>
+        /// <param name="folder">The document folder.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        public PutCreateDocumentRequest(string folder = null, string storage = null)             
+        {
+            this.Folder = folder;
+            this.Storage = storage;
+        }
+
+        /// <summary>
+        /// The document folder.
         /// </summary>  
-        string FontsLocation { get; set; }
-    }
+        public string Folder { get; set; }
+
+        /// <summary>
+        /// File storage, which have to be used.
+        /// </summary>  
+        public string Storage { get; set; }
+  }
 }

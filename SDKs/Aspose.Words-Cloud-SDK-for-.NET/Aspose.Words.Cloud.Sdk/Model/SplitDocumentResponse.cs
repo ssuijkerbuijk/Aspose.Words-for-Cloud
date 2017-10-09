@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// This resonse should be returned by the service when handling:  POST /{name}/split .
   /// </summary>  
   public class SplitDocumentResponse : SaaSposeResponse 
   {                       
         /// <summary>
-        /// Gets or sets SplitResult
+        /// Resylt of splitting document.
         /// </summary>  
         public SplitDocumentResult SplitResult { get; set; }
 

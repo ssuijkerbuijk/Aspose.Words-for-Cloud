@@ -7135,7 +7135,7 @@
           {
             "name": "DocumentList",
             "in": "body",
-            "description": "{Aspose.Words.Cloud.DTO.DocumentEntryList} with a list of documents to append.",
+            "description": "{Aspose.Words.Cloud.DTO.Append.DocumentEntryList} with a list of documents to append.",
             "required": true,
             "schema": {
               "$ref": "#/definitions/DocumentEntryList"
@@ -8001,30 +8001,6 @@
           }
         },
         "x-csharp-implements": "ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest"
-      }
-    },
-    "/words/tasks": {
-      "post": {
-        "tags": [
-          "words"
-        ],
-        "summary": "Run tasks",
-        "operationId": "PostRunTask",
-        "consumes": [
-          "application/xml"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "object"
-            }
-          }
-        }
       }
     },
     "/words/{name}/bookmarks": {
@@ -11575,6 +11551,7 @@
       }
     },
     "DrawingObjectsResponse": {
+      "description": "This resonse should be returned by the service when handling:  GET /drawingObjects.",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -11583,7 +11560,8 @@
           "type": "object",
           "properties": {
             "DrawingObjects": {
-              "$ref": "#/definitions/DrawingObjectCollection"
+              "$ref": "#/definitions/DrawingObjectCollection",
+              "description": "Collection of drawing objects."
             }
           }
         }
@@ -12677,6 +12655,7 @@
       }
     },
     "HyperlinkResponse": {
+      "description": "This resonse should be returned by the service when handling:  GET /{name}/hyperlinks/{hyperlinkIndex} .",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -12685,7 +12664,8 @@
           "type": "object",
           "properties": {
             "Hyperlink": {
-              "$ref": "#/definitions/Hyperlink"
+              "$ref": "#/definitions/Hyperlink",
+              "description": "Hyperlink."
             }
           }
         }
@@ -12710,6 +12690,7 @@
       }
     },
     "HyperlinksResponse": {
+      "description": "This resonse should be returned by the service when handling:  GET /{name}/hyperlinks .",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -12718,16 +12699,19 @@
           "type": "object",
           "properties": {
             "Hyperlinks": {
-              "$ref": "#/definitions/Hyperlinks"
+              "$ref": "#/definitions/Hyperlinks",
+              "description": "Collection of hyperlinks."
             }
           }
         }
       ]
     },
     "Hyperlinks": {
+      "description": "Collection of {Aspose.Words.Cloud.DTO.DocumentElements.Hyperlinks.Hyperlink}.",
       "type": "object",
       "properties": {
         "HyperlinkList": {
+          "description": "Array of {Aspose.Words.Cloud.DTO.DocumentElements.Hyperlinks.Hyperlink}.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Hyperlink"
@@ -12941,7 +12925,7 @@
           "description": "Child nodes",
           "type": "array",
           "items": {
-            "type": "object"
+            "$ref": "#/definitions/NodeLink"
           }
         },
         "NodeId": {
@@ -13312,7 +13296,7 @@
           "description": "Child nodes.",
           "type": "array",
           "items": {
-            "type": "object"
+            "$ref": "#/definitions/NodeLink"
           }
         },
         "link": {
@@ -13469,7 +13453,7 @@
           "description": "Child nodes.",
           "type": "array",
           "items": {
-            "type": "object"
+            "$ref": "#/definitions/NodeLink"
           }
         },
         "NodeId": {
@@ -14149,6 +14133,7 @@
       ]
     },
     "DocumentPropertiesResponse": {
+      "description": "This resonse should be returned by the service when handling:  GET /documentProperties.",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -14157,7 +14142,8 @@
           "type": "object",
           "properties": {
             "DocumentProperties": {
-              "$ref": "#/definitions/DocumentProperties"
+              "$ref": "#/definitions/DocumentProperties",
+              "description": "Collection of document properties."
             }
           }
         }
@@ -14202,6 +14188,7 @@
       }
     },
     "DocumentPropertyResponse": {
+      "description": "This resonse should be returned by the service when handling:  GET documentProperties/{propertyName}.",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -14210,13 +14197,15 @@
           "type": "object",
           "properties": {
             "DocumentProperty": {
-              "$ref": "#/definitions/DocumentProperty"
+              "$ref": "#/definitions/DocumentProperty",
+              "description": "Document property."
             }
           }
         }
       ]
     },
     "DocumentResponse": {
+      "description": "Represents the response with document description.",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -14225,7 +14214,8 @@
           "type": "object",
           "properties": {
             "Document": {
-              "$ref": "#/definitions/Document"
+              "$ref": "#/definitions/Document",
+              "description": "Document description."
             }
           }
         }
@@ -14311,6 +14301,7 @@
       }
     },
     "FieldNamesResponse": {
+      "description": "This resonse should be returned by the service when handling:  GET /{name}/mailMergeFieldNames.",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -14319,7 +14310,8 @@
           "type": "object",
           "properties": {
             "FieldNames": {
-              "$ref": "#/definitions/FieldNames"
+              "$ref": "#/definitions/FieldNames",
+              "description": "Collection of mail merge fields."
             }
           }
         }
@@ -14499,6 +14491,7 @@
       }
     },
     "SplitDocumentResponse": {
+      "description": "This resonse should be returned by the service when handling:  POST /{name}/split .",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -14507,26 +14500,31 @@
           "type": "object",
           "properties": {
             "SplitResult": {
-              "$ref": "#/definitions/SplitDocumentResult"
+              "$ref": "#/definitions/SplitDocumentResult",
+              "description": "Resylt of splitting document."
             }
           }
         }
       ]
     },
     "SplitDocumentResult": {
+      "description": "Result of splitting document.",
       "type": "object",
       "properties": {
         "SourceDocument": {
-          "$ref": "#/definitions/FileLink"
+          "$ref": "#/definitions/FileLink",
+          "description": "Linkt to the source document."
         },
         "Pages": {
+          "description": "Array of pages.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/FileLink"
           }
         },
         "ZippedPages": {
-          "$ref": "#/definitions/FileLink"
+          "$ref": "#/definitions/FileLink",
+          "description": "Link to the file archive with pages."
         }
       }
     },
@@ -14625,6 +14623,7 @@
       }
     },
     "TextItemsResponse": {
+      "description": "This resonse should be returned by the service when handling:  GET /{name}/textItems .",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -14633,7 +14632,8 @@
           "type": "object",
           "properties": {
             "TextItems": {
-              "$ref": "#/definitions/TextItems"
+              "$ref": "#/definitions/TextItems",
+              "description": "Collection of text items."
             }
           }
         }
@@ -14824,9 +14824,11 @@
       }
     },
     "DocumentEntryList": {
+      "description": "Represents a list of documents which will be appended to the original resource document.",
       "type": "object",
       "properties": {
         "DocumentEntries": {
+          "description": "List of documents.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/DocumentEntry"
@@ -14835,12 +14837,15 @@
       }
     },
     "DocumentEntry": {
+      "description": "Represents a document which will be appended to the original resource document.",
       "type": "object",
       "properties": {
         "Href": {
+          "description": "Path to document to append at the server.",
           "type": "string"
         },
         "ImportFormatMode": {
+          "description": "Defines which formatting will be used: appended or destination document.Can be KeepSourceFormatting or UseDestinationStyles.",
           "type": "string"
         }
       }
