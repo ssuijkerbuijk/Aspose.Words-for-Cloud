@@ -35,8 +35,7 @@ namespace Aspose.Words.Cloud.Sdk.Api
     /// </summary>
     public class WordsApi
     {        
-        private readonly string apiBaseUrl;
-        private readonly ApiInvoker apiInvoker = ApiInvoker.GetInstance();        
+        private readonly ApiInvoker apiInvoker;        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WordsApi"/> class.
@@ -50,11 +49,13 @@ namespace Aspose.Words.Cloud.Sdk.Api
         /// <param name="apiBaseUrl">
         /// Aspose Cloud API base URL.
         /// </param>
-        public WordsApi(string apiKey, string appSid, string apiBaseUrl)
+        /// <param name="debug">
+        /// Allows to see the SDK debugging messages.
+        /// </param>
+        public WordsApi(string apiKey, string appSid, string apiBaseUrl, bool debug = false)
         {
-            this.apiInvoker.AddAuthInfo(apiKey, appSid);
-            this.apiBaseUrl = apiBaseUrl;
-        }               
+            this.apiInvoker = new ApiInvoker(apiKey, appSid, apiBaseUrl, debug);
+        }                     
 
         /// <summary>
         /// Accept all revisions in document 
@@ -85,7 +86,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     null, 
@@ -153,7 +153,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -222,7 +221,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -284,7 +282,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -346,7 +343,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -401,7 +397,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -463,7 +458,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -518,7 +512,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -581,7 +574,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -644,7 +636,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -700,7 +691,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -763,7 +753,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -826,7 +815,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -889,7 +877,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -946,7 +933,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -1009,7 +995,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -1072,7 +1057,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -1141,7 +1125,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -1204,7 +1187,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -1273,7 +1255,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -1342,7 +1323,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -1401,7 +1381,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     postBody, 
@@ -1467,7 +1446,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -1526,7 +1504,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -1585,7 +1562,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -1637,7 +1613,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -1689,7 +1664,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -1748,7 +1722,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -1800,7 +1773,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -1860,7 +1832,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -1920,7 +1891,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        this.apiBaseUrl, 
                         resourcePath, 
                         "GET", 
                         null, 
@@ -1974,7 +1944,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        this.apiBaseUrl, 
                         resourcePath, 
                         "GET", 
                         null, 
@@ -2021,7 +1990,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -2074,7 +2042,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -2133,7 +2100,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -2185,7 +2151,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -2245,7 +2210,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -2311,7 +2275,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -2377,7 +2340,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -2436,7 +2398,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -2489,7 +2450,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -2541,7 +2501,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -2600,7 +2559,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -2652,7 +2610,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -2707,7 +2664,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -2759,7 +2715,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -2820,7 +2775,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        this.apiBaseUrl, 
                         resourcePath, 
                         "GET", 
                         null, 
@@ -2874,7 +2828,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -2927,7 +2880,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -2987,7 +2939,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -3040,7 +2991,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -3100,7 +3050,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -3153,7 +3102,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -3213,7 +3161,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -3280,7 +3227,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -3334,7 +3280,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -3394,7 +3339,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -3447,7 +3391,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -3506,7 +3449,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -3565,7 +3507,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -3617,7 +3558,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -3677,7 +3617,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -3743,7 +3682,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -3809,7 +3747,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -3869,7 +3806,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -3935,7 +3871,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -4001,7 +3936,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -4054,7 +3988,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -4116,7 +4049,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "PUT", 
                     postBody, 
@@ -4184,7 +4116,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "PUT", 
                     postBody, 
@@ -4252,7 +4183,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "PUT", 
                     postBody, 
@@ -4313,7 +4243,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -4372,7 +4301,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -4440,7 +4368,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -4499,7 +4426,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -4568,7 +4494,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     null, 
@@ -4643,7 +4568,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -4703,7 +4627,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -4790,7 +4713,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     null, 
@@ -4858,7 +4780,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     null, 
@@ -4927,7 +4848,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -4996,7 +4916,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -5065,7 +4984,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -5128,7 +5046,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     null, 
@@ -5189,7 +5106,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -5250,7 +5166,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -5298,7 +5213,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -5359,7 +5273,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -5434,7 +5347,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -5492,7 +5404,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     null, 
@@ -5560,7 +5471,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -5613,7 +5523,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     null, 
@@ -5674,7 +5583,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "PUT", 
                     postBody, 
@@ -5737,7 +5645,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        this.apiBaseUrl, 
                         resourcePath, 
                         "PUT", 
                         null, 
@@ -5774,7 +5681,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "PUT", 
                     null, 
@@ -5828,7 +5734,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "PUT", 
                     null, 
@@ -5906,7 +5811,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "PUT", 
                     postBody, 
@@ -5986,7 +5890,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "PUT", 
                     null, 
@@ -6053,7 +5956,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        this.apiBaseUrl, 
                         resourcePath, 
                         "PUT", 
                         null, 
@@ -6115,7 +6017,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        this.apiBaseUrl, 
                         resourcePath, 
                         "PUT", 
                         null, 
@@ -6172,7 +6073,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "PUT", 
                     postBody, 
@@ -6234,7 +6134,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "PUT", 
                     postBody, 
@@ -6297,7 +6196,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "PUT", 
                     postBody, 
@@ -6359,7 +6257,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "PUT", 
                     postBody, 
@@ -6422,7 +6319,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "PUT", 
                     postBody, 
@@ -6481,7 +6377,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "PUT", 
                     postBody, 
@@ -6550,7 +6445,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "PUT", 
                     postBody, 
@@ -6603,7 +6497,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     null, 
@@ -6671,7 +6564,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        this.apiBaseUrl, 
                         resourcePath, 
                         "GET", 
                         null, 
@@ -6733,7 +6625,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        this.apiBaseUrl, 
                         resourcePath, 
                         "GET", 
                         null, 
@@ -6794,7 +6685,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        this.apiBaseUrl, 
                         resourcePath, 
                         "GET", 
                         null, 
@@ -6856,7 +6746,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        this.apiBaseUrl, 
                         resourcePath, 
                         "GET", 
                         null, 
@@ -6918,7 +6807,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        this.apiBaseUrl, 
                         resourcePath, 
                         "GET", 
                         null, 
@@ -6953,7 +6841,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "DELETE", 
                     null, 
@@ -7006,7 +6893,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "GET", 
                     null, 
@@ -7081,7 +6967,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -7149,7 +7034,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -7224,7 +7108,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -7293,7 +7176,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 
@@ -7368,7 +7250,6 @@ namespace Aspose.Words.Cloud.Sdk.Api
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "POST", 
                     postBody, 

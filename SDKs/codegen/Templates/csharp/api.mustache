@@ -36,8 +36,7 @@ namespace {{packageName}}.Api
     /// </summary>
     public class {{classname}}
     {        
-        private readonly string apiBaseUrl;
-        private readonly ApiInvoker apiInvoker = ApiInvoker.GetInstance();        
+        private readonly ApiInvoker apiInvoker;        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WordsApi"/> class.
@@ -51,11 +50,13 @@ namespace {{packageName}}.Api
         /// <param name="apiBaseUrl">
         /// Aspose Cloud API base URL.
         /// </param>
-        public {{classname}}(string apiKey, string appSid, string apiBaseUrl)
+        /// <param name="debug">
+        /// Allows to see the SDK debugging messages.
+        /// </param>
+        public WordsApi(string apiKey, string appSid, string apiBaseUrl, bool debug = false)
         {
-            this.apiInvoker.AddAuthInfo(apiKey, appSid);
-            this.apiBaseUrl = apiBaseUrl;
-        }               
+            this.apiInvoker = new ApiInvoker(apiKey, appSid, apiBaseUrl, debug);
+        }                     
         {{#operation}}
 
         /// <summary>
@@ -106,13 +107,11 @@ namespace {{packageName}}.Api
             try 
             {                               
 {{#vendorExtensions}}{{#x-binary-result}}                    return this.apiInvoker.InvokeBinaryApi(
-                        this.apiBaseUrl, 
                         resourcePath, 
                         "{{httpMethod}}", 
                         {{#hasBodyParam}}postBody{{/hasBodyParam}}{{^hasBodyParam}}null{{/hasBodyParam}}, 
                         {{#hasHeaderParams}}headerParams{{/hasHeaderParams}}{{^hasHeaderParams}}null{{/hasHeaderParams}}, 
                         {{#hasFormParams}}formParams{{/hasFormParams}}{{^hasFormParams}}null{{/hasFormParams}}) as {{returnType}};{{/x-binary-result}}{{/vendorExtensions}}{{#vendorExtensions}}{{^x-binary-result}}                var response = this.apiInvoker.InvokeApi(
-                    this.apiBaseUrl, 
                     resourcePath, 
                     "{{httpMethod}}", 
                     {{#hasBodyParam}}postBody{{/hasBodyParam}}{{^hasBodyParam}}null{{/hasBodyParam}}, 

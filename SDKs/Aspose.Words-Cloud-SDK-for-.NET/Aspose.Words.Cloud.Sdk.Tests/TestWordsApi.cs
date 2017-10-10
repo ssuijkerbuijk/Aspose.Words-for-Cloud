@@ -25,6 +25,8 @@
 
 namespace Aspose.Words.Cloud.Sdk.Tests
 {
+    using System.Diagnostics;
+
     using Aspose.Words.Cloud.Sdk;
     using Aspose.Words.Cloud.Sdk.Api;
     using Aspose.Words.Cloud.Sdk.Model;
@@ -34,6 +36,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+    using NMock;
+
     /// <summary>
     /// This is a test class for TestWordsApi and is intended
     /// to contain all TestWordsApi Unit Tests
@@ -42,6 +46,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests
     [DeploymentItem("Data", "Data")]
     public class TestWordsApi
     {
+        private const string ApiKey = "0fbf678c5ecabdb5caca48452a736dd0";
+        private const string ApiSid = "91a2fd07-bba1-4b32-9112-abfb1fe8aebd";
+        private const string AppUrl = "http://api.aspose.cloud/v1.1";
+
         private readonly WordsApi wordsApi;
         private readonly StorageApi storageApi;
 
@@ -50,8 +58,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         /// </summary>
         public TestWordsApi()
         {
-            this.wordsApi = new WordsApi("0fbf678c5ecabdb5caca48452a736dd0", "91a2fd07-bba1-4b32-9112-abfb1fe8aebd", "http://api.aspose.cloud/v1.1");
-            this.storageApi = new StorageApi("0fbf678c5ecabdb5caca48452a736dd0", "91a2fd07-bba1-4b32-9112-abfb1fe8aebd", "http://api.aspose.cloud/v1.1");
+            this.wordsApi = new WordsApi(ApiKey, ApiSid, AppUrl);
+            this.storageApi = new StorageApi(ApiKey, ApiSid, AppUrl);
         }
 
         /// <summary>
@@ -1513,7 +1521,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         public void TestHandleErrors()
         {
             string name = "noFileWithThisName.docx";
-
+            
             try
             {
                 var request = new GetSectionsRequest(name);
@@ -1526,6 +1534,35 @@ namespace Aspose.Words.Cloud.Sdk.Tests
                 Assert.AreEqual(400, apiException.ErrorCode);
                 Assert.IsTrue(apiException.Message.StartsWith("Error while loading file 'noFileWithThisName.docx' from storage:"), "Current message: " + apiException.Message);
             }
+        }
+
+        /// <summary>
+        /// If user set the "Debug" option, request and response should be writed to trace
+        /// </summary>
+        [TestMethod]
+        public void IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace()
+        {
+            // Arrange
+            string name = "test_multi_pages.docx";
+            this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
+            var request = new DeleteFieldsRequest(name);
+            var api = new WordsApi(ApiKey, ApiSid, AppUrl, true);
+
+            var mockFactory = new MockFactory();
+            var traceListenerMock = mockFactory.CreateMock<TraceListener>();
+            Trace.Listeners.Add(traceListenerMock.MockObject);
+
+            traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(Is.StringContaining("DELETE: http://api.aspose.cloud/v1.1/words/test_multi_pages.docx/fields"));
+            traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(Is.StringContaining("Response 200: OK"));
+            traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(Is.StringContaining("{\"Code\":200,\"Status\":\"OK\"}"));
+
+            traceListenerMock.Expects.AtLeastOne.Method(p => p.WriteLine(string.Empty)).With(Is.Anything);
+
+            // Act
+            api.DeleteFields(request);
+            
+            // Assert                    
+            mockFactory.VerifyAllExpectationsHaveBeenMet();
         }
     }
 }

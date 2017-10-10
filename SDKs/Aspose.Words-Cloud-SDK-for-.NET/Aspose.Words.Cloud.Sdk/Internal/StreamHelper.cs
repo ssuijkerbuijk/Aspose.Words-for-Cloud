@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk
 
     internal class StreamHelper
     {
-        public static void CopyTo(Stream source, Stream destination, int bufferSize)
+        public static void CopyTo(Stream source, Stream destination, int bufferSize = 81920)
         {
             byte[] array = new byte[bufferSize];
             int count;

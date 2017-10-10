@@ -39,7 +39,6 @@ namespace Aspose.Words.Cloud.Sdk
         {
             try
             {
-                System.Diagnostics.Debug.WriteLine("Serialize:" + JsonConvert.SerializeObject(obj));
                 return obj != null
                            ? JsonConvert.SerializeObject(
                                obj,
