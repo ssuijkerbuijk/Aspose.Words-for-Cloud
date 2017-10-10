@@ -26,7 +26,7 @@
         {
             get
             {             
-                return this.context.Request as IWordDocumentRequest;
+                return ScenarioContext.Current["Request"] as IWordDocumentRequest;
             }
         }
 
@@ -35,7 +35,7 @@
         /// </summary>
         /// <param name="fileName">document name</param>
         [Given(@"I have specified document name (.*) in URL")]
-        public void GivenIHaveSpecifiedDocumentNameInGetUrl(string fileName)
+        public void GivenIHaveSpecifiedDocumentNameInUrl(string fileName)
         {
             this.Request.Name = fileName;
         }

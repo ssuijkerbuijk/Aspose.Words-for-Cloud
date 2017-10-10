@@ -41,6 +41,9 @@
       <HintPath>..\packages\Aspose.Storage-Cloud.1.0.7\lib\Aspose.Storage-Cloud.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Aspose.Words, Version=17.9.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Words.17.9\lib\net40\Aspose.Words.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -49,6 +52,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Xml" />
     <Reference Include="TechTalk.SpecFlow, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
       <Private>True</Private>
@@ -69,6 +73,7 @@
   <ItemGroup>
     <Compile Include="Base\Context\BaseContext.cs" />
     <Compile Include="Base\Steps\FileResultSteps.cs" />
+    <Compile Include="Base\Steps\SpecifyFormatRequestSteps.cs" />
     <Compile Include="Base\Steps\StorageSteps.cs" />
     <Compile Include="Base\Steps\WordDocumentRequestSteps.cs" />
     <Compile Include="Features\Conversion\GetAlternateDocument\GetAlternateDocument.feature.cs">
@@ -87,9 +92,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PutConvert.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Conversion\SaveAs\SaveAsSteps.cs" />
+    <Compile Include="Features\MailMerge\ExecuteTemplate\PostExecute\PostExecuteTemplate.feature.cs">
+      <DependentUpon>PostExecuteTemplate.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\MailMerge\ExecuteTemplate\PostExecute\Steps\PostExecuteTemplateExecuteTemplateWithSavingToStorageSteps.cs" />
+    <Compile Include="Features\MailMerge\ExecuteTemplate\PutExecute\PutExecuteTemplate.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PutExecuteTemplate.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\MailMerge\ExecuteTemplate\PutExecute\Steps\PutExecuteTemplateWithoutSavingSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Features\Conversion\PutConvert\Steps\PutConvertSteps.cs" />
-    <Compile Include="Features\Conversion\GetAlternateDocument\Steps\ConversionOfStoredDocumentSteps.cs" />
+    <Compile Include="Features\Conversion\GetAlternateDocument\Steps\GetAlternateDocumentSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -104,6 +122,14 @@
     <None Include="Features\Conversion\SaveAs\SaveAs.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SaveAs.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\MailMerge\ExecuteTemplate\PostExecute\PostExecuteTemplate.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostExecuteTemplate.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\MailMerge\ExecuteTemplate\PutExecute\PutExecuteTemplate.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PutExecuteTemplate.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>

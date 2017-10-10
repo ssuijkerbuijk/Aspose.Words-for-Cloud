@@ -10088,12 +10088,9 @@ namespace Aspose.Words.Cloud.Sdk.Requests
   /// </summary>  
   public class GetDocumentRequest  
   {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GetDocumentRequest"/> class.
-        /// </summary>        
-        public GetDocumentRequest()
-        {
-        }
+      public GetDocumentRequest()
+      {
+      }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentRequest"/> class.
@@ -11340,8 +11337,8 @@ namespace Aspose.Words.Cloud.Sdk.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentWithFormat" /> operation.
   /// </summary>  
-  public class GetDocumentWithFormatRequest : IWordDocumentRequest, ICanUseCustomFontsRequest   
-  {
+  public class GetDocumentWithFormatRequest : IWordDocumentRequest, ICanUseCustomFontsRequest, ICanSpecifyFormatRequest
+    {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentWithFormatRequest"/> class.
         /// </summary>        
@@ -14961,18 +14958,11 @@ namespace Aspose.Words.Cloud.Sdk.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutConvertDocument" /> operation.
   /// </summary>  
-  public class PutConvertDocumentRequest : ICanUseCustomFontsRequest   
+  public class PutConvertDocumentRequest : ICanUseCustomFontsRequest, ICanSpecifyFormatRequest   
   {
       public PutConvertDocumentRequest()
       {
-          
       }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PutConvertDocumentRequest"/> class.
-        /// </summary>        
-        public PutConvertDocumentRequest()
-        {
-        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PutConvertDocumentRequest"/> class.

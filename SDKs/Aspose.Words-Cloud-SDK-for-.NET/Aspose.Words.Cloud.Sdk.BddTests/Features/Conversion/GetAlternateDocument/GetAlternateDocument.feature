@@ -6,10 +6,10 @@
 Scenario Outline: Conversion of stored document
 	Given I have uploaded document with name <DocName> to storage
 	And I have specified format <DestFormat> document to be converted
-	And I have specified document name <DocName> in GET URL
+	And I have specified document name <DocName> in URL
 	When I execute conversion from storage
-	Then document has to be returned as an attachment
-	And its format <DestFormat>
+	Then document is returned as an attachment
+	And attachment's format is <DestFormat>
 
 	Examples: 
 	| DocName           | DestFormat |

@@ -197,11 +197,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 27
  testRunner.And(string.Format("I have specified output path {0}", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
- testRunner.And(string.Format("There is no file {0} in storage", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("There is no file {0} on storage", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
  testRunner.When("I execute conversion", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
- testRunner.Then(string.Format("document {0} is existed in storage with format {1}", outPath, destFormat), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("document {0} is existed on storage", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -213,10 +213,10 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "TableDocument.doc")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "pdf")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/putconvert/TableDocumentPdf")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/putconvert/TableDocumentPdf.pdf")]
         public virtual void ConversionWithStorage_Variant0()
         {
-            this.ConversionWithStorage("TableDocument.doc", "pdf", "out/putconvert/TableDocumentPdf", ((string[])(null)));
+            this.ConversionWithStorage("TableDocument.doc", "pdf", "out/putconvert/TableDocumentPdf.pdf", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -226,10 +226,10 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "test_doc.docx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "pdf")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/putconvert/test_docPdf")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/putconvert/test_docPdf.pdf")]
         public virtual void ConversionWithStorage_Variant1()
         {
-            this.ConversionWithStorage("test_doc.docx", "pdf", "out/putconvert/test_docPdf", ((string[])(null)));
+            this.ConversionWithStorage("test_doc.docx", "pdf", "out/putconvert/test_docPdf.pdf", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -239,10 +239,10 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "test_doc.docx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "png")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/putconvert/test_docPng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/putconvert/test_docPng.png")]
         public virtual void ConversionWithStorage_Variant2()
         {
-            this.ConversionWithStorage("test_doc.docx", "png", "out/putconvert/test_docPng", ((string[])(null)));
+            this.ConversionWithStorage("test_doc.docx", "png", "out/putconvert/test_docPng.png", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -252,10 +252,10 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "test_doc.docx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "html")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/putconvert/test_docHtml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/putconvert/test_docHtml.html")]
         public virtual void ConversionWithStorage_Variant3()
         {
-            this.ConversionWithStorage("test_doc.docx", "html", "out/putconvert/test_docHtml", ((string[])(null)));
+            this.ConversionWithStorage("test_doc.docx", "html", "out/putconvert/test_docHtml.html", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -265,10 +265,10 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 4")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "TableDocument.doc")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "html")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/putconvert/TableDocumentHtml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/putconvert/TableDocumentHtml.html")]
         public virtual void ConversionWithStorage_Variant4()
         {
-            this.ConversionWithStorage("TableDocument.doc", "html", "out/putconvert/TableDocumentHtml", ((string[])(null)));
+            this.ConversionWithStorage("TableDocument.doc", "html", "out/putconvert/TableDocumentHtml.html", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -278,10 +278,10 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 5")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "TableDocument.doc")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "txt")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/putconvert/TableDocumentTxt")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/putconvert/TableDocumentTxt.txt")]
         public virtual void ConversionWithStorage_Variant5()
         {
-            this.ConversionWithStorage("TableDocument.doc", "txt", "out/putconvert/TableDocumentTxt", ((string[])(null)));
+            this.ConversionWithStorage("TableDocument.doc", "txt", "out/putconvert/TableDocumentTxt.txt", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -291,13 +291,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 6")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "TableDocument.doc")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "htmlfixed")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/putconvert/TableDocumentHtmlfixed")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/putconvert/TableDocumentHtmlfixed.htmlfixed")]
         public virtual void ConversionWithStorage_Variant6()
         {
-            this.ConversionWithStorage("TableDocument.doc", "htmlfixed", "out/putconvert/TableDocumentHtmlfixed", ((string[])(null)));
+            this.ConversionWithStorage("TableDocument.doc", "htmlfixed", "out/putconvert/TableDocumentHtmlfixed.htmlfixed", ((string[])(null)));
         }
         
-        public virtual void ConvertDocumentUsingSpecifiedEncoding(string docName, string destFormat, string loadEncoding, string[] exampleTags)
+        public virtual void ConvertDocumentUsingSpecifiedEncoding(string docName, string destFormat, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "PutConvert"};
@@ -313,15 +313,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 45
  testRunner.And(string.Format("I have specified format {0} document to be converted", destFormat), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
- testRunner.And(string.Format("I have specified encoding {0}", loadEncoding), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 47
  testRunner.When("I execute conversion", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 48
+#line 47
  testRunner.Then("document is returned as an attachment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 49
+#line 48
  testRunner.And(string.Format("attachment\'s format is {0}", destFormat), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 50
- testRunner.And("symbols are encoded properly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -333,10 +329,9 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "TableDocument.doc")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "pdf")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LoadEncoding", "UTF-8")]
         public virtual void ConvertDocumentUsingSpecifiedEncoding_Variant0()
         {
-            this.ConvertDocumentUsingSpecifiedEncoding("TableDocument.doc", "pdf", "UTF-8", ((string[])(null)));
+            this.ConvertDocumentUsingSpecifiedEncoding("TableDocument.doc", "pdf", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -346,10 +341,9 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "test_doc.docx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "pdf")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LoadEncoding", "UTF-8")]
         public virtual void ConvertDocumentUsingSpecifiedEncoding_Variant1()
         {
-            this.ConvertDocumentUsingSpecifiedEncoding("test_doc.docx", "pdf", "UTF-8", ((string[])(null)));
+            this.ConvertDocumentUsingSpecifiedEncoding("test_doc.docx", "pdf", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -359,10 +353,9 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "test_doc.docx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "png")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LoadEncoding", "UTF-8")]
         public virtual void ConvertDocumentUsingSpecifiedEncoding_Variant2()
         {
-            this.ConvertDocumentUsingSpecifiedEncoding("test_doc.docx", "png", "UTF-8", ((string[])(null)));
+            this.ConvertDocumentUsingSpecifiedEncoding("test_doc.docx", "png", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -372,10 +365,9 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "test_doc.docx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "html")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LoadEncoding", "UTF-8")]
         public virtual void ConvertDocumentUsingSpecifiedEncoding_Variant3()
         {
-            this.ConvertDocumentUsingSpecifiedEncoding("test_doc.docx", "html", "UTF-8", ((string[])(null)));
+            this.ConvertDocumentUsingSpecifiedEncoding("test_doc.docx", "html", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -385,10 +377,9 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 4")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "TableDocument.doc")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "html")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LoadEncoding", "UTF-8")]
         public virtual void ConvertDocumentUsingSpecifiedEncoding_Variant4()
         {
-            this.ConvertDocumentUsingSpecifiedEncoding("TableDocument.doc", "html", "UTF-8", ((string[])(null)));
+            this.ConvertDocumentUsingSpecifiedEncoding("TableDocument.doc", "html", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -398,10 +389,9 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 5")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "TableDocument.doc")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "txt")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LoadEncoding", "UTF-8")]
         public virtual void ConvertDocumentUsingSpecifiedEncoding_Variant5()
         {
-            this.ConvertDocumentUsingSpecifiedEncoding("TableDocument.doc", "txt", "UTF-8", ((string[])(null)));
+            this.ConvertDocumentUsingSpecifiedEncoding("TableDocument.doc", "txt", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -411,10 +401,9 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 6")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "TableDocument.doc")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "htmlfixed")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LoadEncoding", "UTF-8")]
         public virtual void ConvertDocumentUsingSpecifiedEncoding_Variant6()
         {
-            this.ConvertDocumentUsingSpecifiedEncoding("TableDocument.doc", "htmlfixed", "UTF-8", ((string[])(null)));
+            this.ConvertDocumentUsingSpecifiedEncoding("TableDocument.doc", "htmlfixed", ((string[])(null)));
         }
     }
 }

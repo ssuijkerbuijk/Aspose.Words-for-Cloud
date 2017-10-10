@@ -35,11 +35,6 @@
         public WordsApi WordsApi { get; set; }
 
         /// <summary>
-        /// Request.
-        /// </summary>
-        public object Request { get; set; }
-
-        /// <summary>
         /// Response.
         /// </summary>
         public object Response { get; set; }        
@@ -64,6 +59,22 @@
             {
                 return "TempSDKTests/";
             }
+        }
+
+        /// <summary>
+        /// Is document with this name exist
+        /// </summary>
+        /// <param name="name">document name</param>
+        /// <returns>is exist</returns>
+        public bool FileWithNameExists(string name)
+        {
+            var isExists = this.StorageApi.GetIsExist(this.TestFolderInStorage + name, null, null);
+            if (isExists != null && isExists.FileExist != null)
+            {
+                return isExists.FileExist.IsExist;
+            }
+
+            return false;
         }
     }
 }

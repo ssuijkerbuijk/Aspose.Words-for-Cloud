@@ -54,11 +54,16 @@
                 attachment.Position = 0;
                 attachment.Read(pdfHeader, 0, pdfHeader.Length);
 
-                // TODO: join them to 1 assert with message
-                Assert.AreEqual('%', Convert.ToChar(pdfHeader[0]));
-                Assert.AreEqual('P', Convert.ToChar(pdfHeader[1]));
-                Assert.AreEqual('D', Convert.ToChar(pdfHeader[2]));
-                Assert.AreEqual('F', Convert.ToChar(pdfHeader[3]));
+                char[] exptectedArray = { '%', 'P', 'D', 'F' };
+                char[] actualArray =
+                    {
+                        Convert.ToChar(pdfHeader[0]),
+                        Convert.ToChar(pdfHeader[1]),
+                        Convert.ToChar(pdfHeader[2]),
+                        Convert.ToChar(pdfHeader[3])
+                    };
+
+                CollectionAssert.AreEqual(exptectedArray, actualArray, "Expected format is \"pdf\"");
             }
 
             Assert.AreNotEqual(0, attachment.Length);

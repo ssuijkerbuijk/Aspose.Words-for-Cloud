@@ -70,7 +70,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Features.Conversion.SaveAs
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void ConvertDocumentFormStorageAndSaveToStorage(string docName, string destFormat, string outPath, string[] exampleTags)
+        public virtual void ConvertDocumentFormStorageAndSaveToStorage(string docName, string destFormat, string outPath, string loadEncoding, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "StoredDocConversionWithStorage"};
@@ -86,13 +86,19 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.And(string.Format("I have specified format {0} document to be converted", destFormat), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
- testRunner.And(string.Format("I have specified document name {0} in GET URL", docName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have specified document name {0} in URL", docName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
  testRunner.And(string.Format("I have specified output path {0}", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.When("I execute conversion from storage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("I have specified encoding {0}", loadEncoding), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.Then(string.Format("document {0} is existed in storage with format {1}", outPath, destFormat), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I execute conversion from storage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 13
+ testRunner.Then(string.Format("document {0} is existed on storage", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 14
+ testRunner.And("document from storage is downloadble", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+ testRunner.And("symbols are encoded properly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -104,10 +110,11 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "TableDocument.doc")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "pdf")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "TableDocumentPdf")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/saveus/TableDocumentPdf.pdf")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LoadEncoding", "utf-8")]
         public virtual void ConvertDocumentFormStorageAndSaveToStorage_Variant0()
         {
-            this.ConvertDocumentFormStorageAndSaveToStorage("TableDocument.doc", "pdf", "TableDocumentPdf", ((string[])(null)));
+            this.ConvertDocumentFormStorageAndSaveToStorage("TableDocument.doc", "pdf", "out/saveus/TableDocumentPdf.pdf", "utf-8", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -117,10 +124,11 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "test_doc.docx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "pdf")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "test_docPdf")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/saveus/test_docPdf.pdf")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LoadEncoding", "utf-8")]
         public virtual void ConvertDocumentFormStorageAndSaveToStorage_Variant1()
         {
-            this.ConvertDocumentFormStorageAndSaveToStorage("test_doc.docx", "pdf", "test_docPdf", ((string[])(null)));
+            this.ConvertDocumentFormStorageAndSaveToStorage("test_doc.docx", "pdf", "out/saveus/test_docPdf.pdf", "utf-8", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -130,10 +138,11 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "test_doc.docx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "png")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "test_docPng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/saveus/test_docPng.pdf")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LoadEncoding", "utf-8")]
         public virtual void ConvertDocumentFormStorageAndSaveToStorage_Variant2()
         {
-            this.ConvertDocumentFormStorageAndSaveToStorage("test_doc.docx", "png", "test_docPng", ((string[])(null)));
+            this.ConvertDocumentFormStorageAndSaveToStorage("test_doc.docx", "png", "out/saveus/test_docPng.pdf", "utf-8", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -143,10 +152,11 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "test_doc.docx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "html")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "test_docHtml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/saveus/test_docHtml.html")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LoadEncoding", "utf-8")]
         public virtual void ConvertDocumentFormStorageAndSaveToStorage_Variant3()
         {
-            this.ConvertDocumentFormStorageAndSaveToStorage("test_doc.docx", "html", "test_docHtml", ((string[])(null)));
+            this.ConvertDocumentFormStorageAndSaveToStorage("test_doc.docx", "html", "out/saveus/test_docHtml.html", "utf-8", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -156,10 +166,11 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 4")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "TableDocument.doc")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "html")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "TableDocumentHtml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/saveus/TableDocumentHtml.html")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LoadEncoding", "utf-8")]
         public virtual void ConvertDocumentFormStorageAndSaveToStorage_Variant4()
         {
-            this.ConvertDocumentFormStorageAndSaveToStorage("TableDocument.doc", "html", "TableDocumentHtml", ((string[])(null)));
+            this.ConvertDocumentFormStorageAndSaveToStorage("TableDocument.doc", "html", "out/saveus/TableDocumentHtml.html", "utf-8", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -169,10 +180,11 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 5")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "TableDocument.doc")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "txt")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "TableDocumentTxt")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/saveus/TableDocumentTxt.txt")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LoadEncoding", "utf-8")]
         public virtual void ConvertDocumentFormStorageAndSaveToStorage_Variant5()
         {
-            this.ConvertDocumentFormStorageAndSaveToStorage("TableDocument.doc", "txt", "TableDocumentTxt", ((string[])(null)));
+            this.ConvertDocumentFormStorageAndSaveToStorage("TableDocument.doc", "txt", "out/saveus/TableDocumentTxt.txt", "utf-8", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -182,10 +194,11 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 6")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "TableDocument.doc")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "htmlfixed")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "TableDocumentHtmlfixed")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/saveus/TableDocumentHtmlfixed.htmlfixed")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LoadEncoding", "utf-8")]
         public virtual void ConvertDocumentFormStorageAndSaveToStorage_Variant6()
         {
-            this.ConvertDocumentFormStorageAndSaveToStorage("TableDocument.doc", "htmlfixed", "TableDocumentHtmlfixed", ((string[])(null)));
+            this.ConvertDocumentFormStorageAndSaveToStorage("TableDocument.doc", "htmlfixed", "out/saveus/TableDocumentHtmlfixed.htmlfixed", "utf-8", ((string[])(null)));
         }
         
         public virtual void ConvertPdfDocumentToWordAndSaveToStorage(string docName, string destFormat, string outPath, string[] exampleTags)
@@ -197,20 +210,20 @@ this.ScenarioSetup(scenarioInfo);
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Convert pdf document to word and save to storage", @__tags);
-#line 26
-this.ScenarioSetup(scenarioInfo);
-#line 27
- testRunner.Given(string.Format("I have uploaded document with name {0} to storage", docName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 28
- testRunner.And(string.Format("I have specified format {0} document to be converted", destFormat), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
- testRunner.And(string.Format("I have specified document name {0} in GET URL", docName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 30
- testRunner.And(string.Format("I have specified output path {0}", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("I have uploaded document with name {0} to storage", docName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 31
- testRunner.When("I execute conversion from storage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("I have specified format {0} document to be converted", destFormat), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
- testRunner.Then(string.Format("document {0} is existed in storage with format {1}", outPath, destFormat), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And(string.Format("I have specified document name {0} in URL", docName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
+ testRunner.And(string.Format("I have specified output path {0}", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+ testRunner.When("I execute conversion from storage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 35
+ testRunner.Then(string.Format("document {0} is existed on storage", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -222,10 +235,10 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "awesome_table_in_pdf.pdf")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "awesome_table_in_pdf.pdf")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "docx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "awesome_table_in_pdfDocx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/saveus/awesome_table_in_pdfDocx.docx")]
         public virtual void ConvertPdfDocumentToWordAndSaveToStorage_Awesome_Table_In_Pdf_Pdf()
         {
-            this.ConvertPdfDocumentToWordAndSaveToStorage("awesome_table_in_pdf.pdf", "docx", "awesome_table_in_pdfDocx", ((string[])(null)));
+            this.ConvertPdfDocumentToWordAndSaveToStorage("awesome_table_in_pdf.pdf", "docx", "out/saveus/awesome_table_in_pdfDocx.docx", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -235,10 +248,10 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Delivery.pdf")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "Delivery.pdf")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "docx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "DeliveryDocx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/saveus/DeliveryDocx.docx")]
         public virtual void ConvertPdfDocumentToWordAndSaveToStorage_Delivery_Pdf()
         {
-            this.ConvertPdfDocumentToWordAndSaveToStorage("Delivery.pdf", "docx", "DeliveryDocx", ((string[])(null)));
+            this.ConvertPdfDocumentToWordAndSaveToStorage("Delivery.pdf", "docx", "out/saveus/DeliveryDocx.docx", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -248,10 +261,10 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "45.pdf")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DocName", "45.pdf")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DestFormat", "docx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "45Docx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OutPath", "out/saveus/45Docx.docx")]
         public virtual void ConvertPdfDocumentToWordAndSaveToStorage_45_Pdf()
         {
-            this.ConvertPdfDocumentToWordAndSaveToStorage("45.pdf", "docx", "45Docx", ((string[])(null)));
+            this.ConvertPdfDocumentToWordAndSaveToStorage("45.pdf", "docx", "out/saveus/45Docx.docx", ((string[])(null)));
         }
     }
 }

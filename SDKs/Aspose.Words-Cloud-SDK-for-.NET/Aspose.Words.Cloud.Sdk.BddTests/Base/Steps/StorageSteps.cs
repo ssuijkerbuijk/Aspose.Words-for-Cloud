@@ -4,6 +4,7 @@
     using System.IO;
 
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
+    using Aspose.Words.Cloud.Sdk.Requests;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -26,6 +27,11 @@
             this.context = context;
         }
 
+        private ICanSpecifyFormatRequest Request
+        {
+            get { return ScenarioContext.Current["Request"] as ICanSpecifyFormatRequest; }
+        }
+
         /// <summary>
         /// Uploads specified document to storage
         /// </summary>
@@ -44,40 +50,31 @@
         /// Check if file with the name exists in storage and delete it if true.
         /// </summary>
         /// <param name="fileName">File name.</param>
-        [Given(@"There is no file (.*) in storage")]
-
+        [Given(@"There is no file (.*) on storage")]
         public void GivenThereIsNoFileInStorage(string fileName)
         {
             this.context.StorageApi.DeleteFile(this.context.TestFolderInStorage + fileName, null, null);
         }
 
         /// <summary>
-        /// Saves converted document to storage.
+        /// Checks converted document exists on storage.
         /// </summary>
         /// <param name="fileName">File name.</param>
-        /// <param name="format">Expected format.</param>
-        [Then(@"document (.*) is existed in storage with format (.*)")]
-        public void ThenDocumentIsExistedInStorageWithFormat(string fileName, string format)
+        [Then(@"document (.*) is existed on storage")]
+        public void ThenDocumentIsExistedInStorageWithFormat(string fileName)
         {
-            Assert.IsTrue(this.FileWithNameExists(fileName));
-            // TODO: add format check
-            throw new NotImplementedException();
+            Assert.IsTrue(this.context.FileWithNameExists(fileName));
         }
-      
-        /// <summary>
-        /// Is document with this name exist
-        /// </summary>
-        /// <param name="name">document name</param>
-        /// <returns>is exist</returns>
-        private bool FileWithNameExists(string name)
-        {
-            var isExists = this.context.StorageApi.GetIsExist(this.context.TestFolderInStorage + name, null, null);
-            if (isExists != null && isExists.FileExist != null)
-            {
-                return isExists.FileExist.IsExist;
-            }
 
-            return false;
-        }             
+        /// <summary>
+        /// Downloads saved to storage document
+        /// </summary>
+        [Then(@"document from storage is downloadble")]
+        public void ThenDocumentFromStorageIsDownloadble()
+        {
+            var resp = this.context.StorageApi
+                .GetDownload(this.Request.OutPath, null, null);
+            this.context.Response = new MemoryStream(resp.ResponseStream);
+        }
     }
 }
