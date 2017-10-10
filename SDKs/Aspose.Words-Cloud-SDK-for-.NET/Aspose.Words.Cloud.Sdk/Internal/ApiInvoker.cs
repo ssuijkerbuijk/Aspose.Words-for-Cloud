@@ -42,6 +42,7 @@ namespace Aspose.Words.Cloud.Sdk
         private readonly Dictionary<string, string> defaultHeaderMap = new Dictionary<string, string>();
         private string appSid = "appSid";
         private string apiKey = "apiKey";
+        private string asposeClientHeaderName = "x-aspose-client";
 
         public static ApiInvoker GetInstance()
         {
@@ -52,6 +53,7 @@ namespace Aspose.Words.Cloud.Sdk
         {
             this.AddDefaultHeader(this.apiKey, apiKey);
             this.AddDefaultHeader(this.appSid, appSid);
+            this.AddDefaultHeader(this.asposeClientHeaderName, ".net sdk");
         }
 
         public void AddDefaultHeader(string key, string value)
