@@ -39,22 +39,24 @@ namespace Aspose.Words.Cloud.Sdk
   
     internal class ApiInvoker
     {
-        private const string AppSidParamName = "appSid";
-        private const string ApiKeyParamName = "apiKey";
+        private const string AppSidParamTemplate = "{appSid}";        
         private const string AsposeClientHeaderName = "x-aspose-client";
 
         private readonly string apiBaseUrl;
+        private readonly string apiKey;
+        private readonly string appSid;
+
         private readonly bool debug;
 
         private readonly Dictionary<string, string> defaultHeaderMap = new Dictionary<string, string>();      
     
         public ApiInvoker(string apiKey, string appSid, string apiBaseUrl, bool debug)
         {
-            this.AddDefaultHeader(ApiKeyParamName, apiKey);
-            this.AddDefaultHeader(AppSidParamName, appSid);
             this.AddDefaultHeader(AsposeClientHeaderName, ".net sdk");
             
             this.apiBaseUrl = apiBaseUrl.EndsWith("/") ? apiBaseUrl.Substring(0, apiBaseUrl.Length - 1) : apiBaseUrl;
+            this.apiKey = apiKey;
+            this.appSid = appSid;
             this.debug = debug;
         }                         
         
@@ -227,9 +229,9 @@ namespace Aspose.Words.Cloud.Sdk
                 headerParams = new Dictionary<string, string>();
             }
 
-            path = path.Replace("{appSid}", this.defaultHeaderMap[AppSidParamName]);
+            path = path.Replace(AppSidParamTemplate, this.appSid);
             path = Regex.Replace(path, @"{.+?}", string.Empty);            
-            path = Sign(this.apiBaseUrl + path, this.defaultHeaderMap[ApiKeyParamName]);
+            path = Sign(this.apiBaseUrl + path, this.apiKey);
 
             var client = this.PrepareRequest(path, method, formParams, headerParams, body);
             return this.ReadResponse(client, binaryResponse);
