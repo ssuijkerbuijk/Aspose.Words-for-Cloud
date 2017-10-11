@@ -42,7 +42,7 @@
         /// <summary>
         /// Executes conversion from storage
         /// </summary>
-        [When(@"I execute conversion from storage")]
+        [When(@"I execute conversion from storage \(GET document with format\)")]
         public void WhenIExecuteConversionFromStorage()
         {
             this.Request.Folder = this.context.TestFolderInStorage;

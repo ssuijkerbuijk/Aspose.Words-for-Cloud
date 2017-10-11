@@ -7,7 +7,7 @@ Scenario Outline: Conversion of stored document
 	Given I have uploaded document with name <DocName> to storage
 	And I have specified format <DestFormat> document to be converted
 	And I have specified document name <DocName> in URL
-	When I execute conversion from storage
+	When I execute conversion from storage (GET document with format)
 	Then document is returned as an attachment
 	And attachment's format is <DestFormat>
 
@@ -19,4 +19,6 @@ Scenario Outline: Conversion of stored document
 	| test_doc.docx     | html       | 
 	| TableDocument.doc | html       | 
 	| TableDocument.doc | txt        | 
-	| TableDocument.doc | htmlfixed  |
+	| TableDocument.doc | htmlfixed  |	
+
+# TODO: add scenario with outPath parameter
