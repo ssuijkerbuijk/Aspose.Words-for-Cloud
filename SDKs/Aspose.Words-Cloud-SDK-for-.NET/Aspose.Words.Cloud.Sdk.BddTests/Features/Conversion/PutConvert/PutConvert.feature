@@ -6,7 +6,7 @@
 Scenario Outline: Conversion on fly
 	Given I have specified document <DocName> to send it in request body
 	And I have specified format <DestFormat> document to be converted
-	When I execute conversion
+	When I execute conversion (PUT convert)
 	Then document is returned as an attachment
 	And attachment's format is <DestFormat>
 
@@ -26,7 +26,7 @@ Scenario Outline: Conversion with storage
 	And I have specified format <DestFormat> document to be converted
 	And I have specified output path <OutPath>
 	And There is no file <OutPath> on storage
-	When I execute conversion
+	When I execute conversion (PUT convert)
 	Then document <OutPath> is existed on storage
 	
 	Examples: 
@@ -43,7 +43,7 @@ Scenario Outline: Conversion with storage
 Scenario Outline: Convert document using specified encoding
 	Given I have specified document <DocName> to send it in request body
 	And I have specified format <DestFormat> document to be converted
-	When I execute conversion
+	When I execute conversion (PUT convert)
 	Then document is returned as an attachment
 	And attachment's format is <DestFormat>
 

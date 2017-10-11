@@ -86,7 +86,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.And(string.Format("I have specified format {0} document to be converted", destFormat), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
- testRunner.When("I execute conversion", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I execute conversion (PUT convert)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
  testRunner.Then("document is returned as an attachment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 11
@@ -199,7 +199,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 28
  testRunner.And(string.Format("There is no file {0} on storage", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
- testRunner.When("I execute conversion", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I execute conversion (PUT convert)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
  testRunner.Then(string.Format("document {0} is existed on storage", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -313,7 +313,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 45
  testRunner.And(string.Format("I have specified format {0} document to be converted", destFormat), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
- testRunner.When("I execute conversion", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I execute conversion (PUT convert)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 47
  testRunner.Then("document is returned as an attachment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 48

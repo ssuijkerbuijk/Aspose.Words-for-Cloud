@@ -1,6 +1,5 @@
 ﻿namespace Aspose.Words.Cloud.Sdk.BddTests.Features.Conversion.PutConvert.Steps
 {
-    using System;
     using System.IO;
    
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
@@ -29,7 +28,7 @@
         {
             get
             {
-                return ScenarioContext.Current["Request"] as PutConvertDocumentRequest;
+                return (PutConvertDocumentRequest)ScenarioContext.Current["Request"];
             }
         }
 
@@ -59,7 +58,7 @@
         /// <summary>
         /// Executes conversion
         /// </summary>
-        [When(@"I execute conversion")]
+        [When(@"I execute conversion \(PUT convert\)")]
         public void WhenIExecuteConversion()
         {
             this.context.Response = this.context.WordsApi.PutConvertDocument(this.Request);
