@@ -39,5 +39,15 @@
         {
             this.Request.Name = fileName;
         }
+
+        /// <summary>
+        /// Sets encoding for conversion
+        /// </summary>
+        /// <param name="encoding">encoding</param>
+        [Given(@"I have specified encoding (.*)")]
+        public void GivenIHaveSpecifiedEncoding(string encoding)
+        {
+            this.Request.LoadEncoding = encoding;
+        }
     }
 }

@@ -33,11 +33,11 @@
             get { return this.context.Response as MemoryStream; }
         }
 
-        private GetDocumentWithFormatRequest Request
+        private PostDocumentSaveAsRequest Request
         {
             get
             {
-                return ScenarioContext.Current["Request"] as GetDocumentWithFormatRequest;
+                return (PostDocumentSaveAsRequest)ScenarioContext.Current["Request"];
             }
         }
 
@@ -48,8 +48,17 @@
         [BeforeScenario("StoredDocConversionWithStorage", "ConversionPdfToWord")]
         public static void BeforeScenario()
         {
-            ScenarioContext.Current["Request"] = new GetDocumentWithFormatRequest();
+            ScenarioContext.Current["Request"] = new PostDocumentSaveAsRequest();
         }
+
+        /// <summary>
+        /// Executes conversion
+        /// </summary>
+        [When(@"I execute conversion from storage \(POST SaveAs\)")]
+        public void WhenIExecuteConversion()
+        {
+            this.context.Response = this.context.WordsApi.PostDocumentSaveAs(this.Request);
+        }        
 
         /// <summary>
         /// Checks that document converted properly
@@ -63,17 +72,6 @@
             {
                 Assert.IsTrue(formatInfo.Encoding.BodyName == this.Request.LoadEncoding);
             }
-        }
-
-
-        /// <summary>
-        /// Sets encoding for conversion
-        /// </summary>
-        /// <param name="encoding">encoding</param>
-        [Given(@"I have specified encoding (.*)")]
-        public void GivenIHaveSpecifiedEncoding(string encoding)
-        {
-            this.Request.LoadEncoding = encoding;
-        }
+        }        
     }
 }

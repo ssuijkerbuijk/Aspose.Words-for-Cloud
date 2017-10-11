@@ -92,7 +92,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 11
  testRunner.And(string.Format("I have specified encoding {0}", loadEncoding), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.When("I execute conversion from storage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I execute conversion from storage (POST SaveAs)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
  testRunner.Then(string.Format("document {0} is existed on storage", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14
@@ -221,7 +221,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 33
  testRunner.And(string.Format("I have specified output path {0}", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34
- testRunner.When("I execute conversion from storage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I execute conversion from storage (POST SaveAs)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 35
  testRunner.Then(string.Format("document {0} is existed on storage", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

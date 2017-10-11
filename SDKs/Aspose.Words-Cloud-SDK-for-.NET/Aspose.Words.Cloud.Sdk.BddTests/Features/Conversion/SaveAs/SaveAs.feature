@@ -9,7 +9,7 @@ Scenario Outline: Convert document form storage and save to storage
 	And I have specified document name <DocName> in URL
 	And I have specified output path <OutPath>
 	And I have specified encoding <LoadEncoding>
-	When I execute conversion from storage
+	When I execute conversion from storage (POST SaveAs)
 	Then document <OutPath> is existed on storage
 	And document from storage is downloadble
 	And symbols are encoded properly
@@ -31,7 +31,7 @@ Scenario Outline: Convert pdf document to word and save to storage
 	And I have specified format <DestFormat> document to be converted
 	And I have specified document name <DocName> in URL
 	And I have specified output path <OutPath>
-	When I execute conversion from storage
+	When I execute conversion from storage (POST SaveAs)
 	Then document <OutPath> is existed on storage
 
 	Examples: 
