@@ -23,7 +23,7 @@ Scenario Outline: Execute Template With Images
 
 	Examples: 
 	| TemplateName                | Body                               |
-	| TestMailMergeWithImages.doc | TestDataWithRemoteScaledImages.xml |
+	| TestExecuteTemplateWithImages.doc | TestDataWithRemoteScaledImages.xml |
 
 @PutExecuteTemplate
 Scenario Outline: Execute Template With Cleanup Options
