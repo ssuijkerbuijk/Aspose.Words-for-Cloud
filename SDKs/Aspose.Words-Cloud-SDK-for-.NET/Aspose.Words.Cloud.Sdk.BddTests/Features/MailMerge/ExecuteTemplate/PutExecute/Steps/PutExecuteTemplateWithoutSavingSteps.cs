@@ -66,6 +66,7 @@
         [Scope(Feature = "PutExecuteTemplate execute template without saving")]
         public void GivenIHaveSpecifiedABodyFile(string bodyFile)
         {
+            // TODO: I think, we should rename this step to "I have specified a data file (.*)"
             this.Request.Data =
                 new MemoryStream(
                     File.ReadAllBytes(
@@ -79,6 +80,7 @@
         [Given(@"I have specified a cleanup option (.*)")]
         public void GivenIHaveSpecifiedACleanupOption(string cleanup)
         {
+            // TODO: Add interface "ICanSpecifyMailMergeParametersRequest" and move steps
             this.Request.Cleanup = cleanup;
         }
 
@@ -97,6 +99,7 @@
         [Then(@"document with merged values should be created")]
         public void ThenDocumentWithMergedValuesShouldBeCreated()
         {
+            // TODO: use "document is returned as an attachment" step
             Assert.IsNotNull(this.context.Response as MemoryStream);
         }
         
@@ -111,6 +114,7 @@
         [Then(@"unused option is cleaned up")]
         public void ThenUnusedOptionIsCleanedUp()
         {
+            // TODO: what are checked here?
             Assert.IsTrue(true);
         }
     }
