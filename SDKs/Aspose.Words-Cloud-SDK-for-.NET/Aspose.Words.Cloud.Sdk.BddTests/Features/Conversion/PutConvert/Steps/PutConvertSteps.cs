@@ -4,7 +4,7 @@
     using System.IO;
    
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
-    using Aspose.Words.Cloud.Sdk.Requests;   
+    using Aspose.Words.Cloud.Sdk.Model.Requests;
 
     using TechTalk.SpecFlow;
 
