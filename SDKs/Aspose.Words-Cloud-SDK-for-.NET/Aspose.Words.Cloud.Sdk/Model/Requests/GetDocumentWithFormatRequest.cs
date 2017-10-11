@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentWithFormat" /> operation.
   /// </summary>  
-    public class GetDocumentWithFormatRequest : IWordDocumentRequest, ICanUseCustomFontsRequest, ICanSpecifyFormatRequest  
+    public class GetDocumentWithFormatRequest : IWordDocumentRequest, ICanUseCustomFontsRequest, ICanSpecifyOutputFormatRequest  
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentWithFormatRequest"/> class.

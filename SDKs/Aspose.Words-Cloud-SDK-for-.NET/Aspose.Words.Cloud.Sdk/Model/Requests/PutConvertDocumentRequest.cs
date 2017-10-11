@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutConvertDocument" /> operation.
   /// </summary>  
-    public class PutConvertDocumentRequest : ICanUseCustomFontsRequest, ICanSpecifyFormatRequest
+    public class PutConvertDocumentRequest : ICanUseCustomFontsRequest, ICanSpecifyOutputFormatRequest
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="PutConvertDocumentRequest"/> class.

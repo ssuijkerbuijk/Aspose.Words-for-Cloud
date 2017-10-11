@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ICanSpecifyFormatRequest.cs">
+// <copyright company="Aspose" file="ICanSpecifyOutputFormatRequest.cs">
 //   Copyright (c) 2016 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -28,7 +28,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request with format of output document
     /// </summary>
-    public interface ICanSpecifyFormatRequest
+    public interface ICanSpecifyOutputFormatRequest
     {
         /// <summary>
         /// Sets the output format for convert and split operations

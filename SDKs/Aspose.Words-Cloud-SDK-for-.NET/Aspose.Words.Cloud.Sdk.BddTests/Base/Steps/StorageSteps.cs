@@ -27,9 +27,9 @@
             this.context = context;
         }
 
-        private ICanSpecifyFormatRequest Request
+        private ICanSpecifyOutputFormatRequest Request
         {
-            get { return ScenarioContext.Current["Request"] as ICanSpecifyFormatRequest; }
+            get { return ScenarioContext.Current["Request"] as ICanSpecifyOutputFormatRequest; }
         }
 
         /// <summary>

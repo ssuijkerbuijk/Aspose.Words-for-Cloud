@@ -9,26 +9,26 @@
     /// Steps to specify output format of document
     /// </summary>
     [Binding]
-    public class SpecifyFormatRequestSteps
+    public class SpecifyOutputFormatRequestSteps
     {
         private readonly BaseContext context;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SpecifyFormatRequestSteps"/> class.
+        /// Initializes a new instance of the <see cref="SpecifyOutputFormatRequestSteps"/> class.
         /// </summary>
         /// <param name="context">
         /// The context.
         /// </param>
-        public SpecifyFormatRequestSteps(BaseContext context)
+        public SpecifyOutputFormatRequestSteps(BaseContext context)
         {
             this.context = context;
         }
 
-        private ICanSpecifyFormatRequest Request
+        private ICanSpecifyOutputFormatRequest Request
         {
             get
             {
-                return (ICanSpecifyFormatRequest)ScenarioContext.Current["Request"];
+                return (ICanSpecifyOutputFormatRequest)ScenarioContext.Current["Request"];
             }
         }
 

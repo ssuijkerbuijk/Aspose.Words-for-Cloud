@@ -371,7 +371,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model.Requests\ICanSaveRevisionRequest.cs" />
     <Compile Include="Model.Requests\ICanModifyDocumentRequest.cs" />
-    <Compile Include="Model.Requests\ICanSpecifyFormatRequest.cs" />
+    <Compile Include="Model.Requests\ICanSpecifyOutputFormatRequest.cs" />
     <Compile Include="Model.Requests\ICanUseCustomFontsRequest.cs" />
     <Compile Include="Model.Requests\IWordDocumentRequest.cs" />
     <Compile Include="TestFriends.cs" />
