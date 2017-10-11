@@ -28,7 +28,7 @@
         {
             get
             {
-                return ScenarioContext.Current["Request"] as ICanSpecifyFormatRequest;
+                return (ICanSpecifyFormatRequest)ScenarioContext.Current["Request"];
             }
         }
 
