@@ -1,3 +1,28 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="Aspose" file="Font.cs">
+//   Copyright (c) 2016 Aspose.Words for Cloud
+// </copyright>
+// <summary>
+//   Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+// 
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+// 
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Aspose.Words.Cloud.Sdk.Model 
 {
   using System;  
@@ -19,8 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the locale independent style identifier of the character style applied to this formatting.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StyleIdentifierEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum BookTitle for "BookTitle"
             /// </summary>            
@@ -1884,7 +1908,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Nil for "Nil"
             /// </summary>            
-            Nil
+            Nil            
         }
 
         /// <summary>
@@ -1893,8 +1917,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the font animation effect.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextEffectEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum None for "None"
             /// </summary>            
@@ -1928,7 +1951,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Shimmer for "Shimmer"
             /// </summary>            
-            Shimmer
+            Shimmer            
         }
 
         /// <summary>
@@ -1937,8 +1960,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Gets or sets the type of underline applied to the font.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum UnderlineEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum None for "None"
             /// </summary>            
@@ -2027,25 +2049,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum WavyDouble for "WavyDouble"
             /// </summary>            
-            WavyDouble
+            WavyDouble            
         }
 
         /// <summary>
         /// Gets or sets the locale independent style identifier of the character style applied to this formatting.
         /// </summary>
-        /// <value>Gets or sets the locale independent style identifier of the character style applied to this formatting.</value>
         public StyleIdentifierEnum? StyleIdentifier { get; set; }
 
         /// <summary>
         /// Gets or sets the font animation effect.
         /// </summary>
-        /// <value>Gets or sets the font animation effect.</value>
         public TextEffectEnum? TextEffect { get; set; }
 
         /// <summary>
         /// Gets or sets the type of underline applied to the font.
         /// </summary>
-        /// <value>Gets or sets the type of underline applied to the font.</value>
         public UnderlineEnum? Underline { get; set; }
 
         /// <summary>

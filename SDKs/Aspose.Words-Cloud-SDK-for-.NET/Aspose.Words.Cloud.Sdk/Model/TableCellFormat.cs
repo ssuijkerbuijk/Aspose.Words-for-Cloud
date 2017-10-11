@@ -1,3 +1,28 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="Aspose" file="TableCellFormat.cs">
+//   Copyright (c) 2016 Aspose.Words for Cloud
+// </copyright>
+// <summary>
+//   Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+// 
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+// 
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Aspose.Words.Cloud.Sdk.Model 
 {
   using System;  
@@ -19,8 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Specifies how the cell is merged horizontally with other cells in the row.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HorizontalMergeEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum None for "None"
             /// </summary>            
@@ -34,7 +58,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Previous for "Previous"
             /// </summary>            
-            Previous
+            Previous            
         }
 
         /// <summary>
@@ -43,8 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Returns or sets the orientation of text in a table cell.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OrientationEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Horizontal for "Horizontal"
             /// </summary>            
@@ -73,7 +96,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum VerticalRotatedFarEast for "VerticalRotatedFarEast"
             /// </summary>            
-            VerticalRotatedFarEast
+            VerticalRotatedFarEast            
         }
 
         /// <summary>
@@ -82,8 +105,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Returns or sets the vertical alignment of text in the cell.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VerticalAlignmentEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum Top for "Top"
             /// </summary>            
@@ -97,7 +119,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Bottom for "Bottom"
             /// </summary>            
-            Bottom
+            Bottom            
         }
 
         /// <summary>
@@ -106,8 +128,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <value>Specifies how the cell is merged with other cells vertically.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VerticalMergeEnum
-        {
-            
+        { 
             /// <summary>
             /// Enum None for "None"
             /// </summary>            
@@ -121,31 +142,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Previous for "Previous"
             /// </summary>            
-            Previous
+            Previous            
         }
 
         /// <summary>
         /// Specifies how the cell is merged horizontally with other cells in the row.
         /// </summary>
-        /// <value>Specifies how the cell is merged horizontally with other cells in the row.</value>
         public HorizontalMergeEnum? HorizontalMerge { get; set; }
 
         /// <summary>
         /// Returns or sets the orientation of text in a table cell.
         /// </summary>
-        /// <value>Returns or sets the orientation of text in a table cell.</value>
         public OrientationEnum? Orientation { get; set; }
 
         /// <summary>
         /// Returns or sets the vertical alignment of text in the cell.
         /// </summary>
-        /// <value>Returns or sets the vertical alignment of text in the cell.</value>
         public VerticalAlignmentEnum? VerticalAlignment { get; set; }
 
         /// <summary>
         /// Specifies how the cell is merged with other cells vertically.
         /// </summary>
-        /// <value>Specifies how the cell is merged with other cells vertically.</value>
         public VerticalMergeEnum? VerticalMerge { get; set; }
 
         /// <summary>

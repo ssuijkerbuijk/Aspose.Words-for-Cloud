@@ -1,7 +1,33 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="Aspose" file="ApiInvoker.cs">
+//   Copyright (c) 2016 Aspose.Words for Cloud
+// </copyright>
+// <summary>
+//   Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+// 
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+// 
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Aspose.Words.Cloud.Sdk
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.IO;
     using System.Net;
     using System.Security.Cryptography;
@@ -13,50 +39,45 @@ namespace Aspose.Words.Cloud.Sdk
   
     internal class ApiInvoker
     {
-        private static readonly ApiInvoker Instance = new ApiInvoker();
-        private readonly Dictionary<string, string> defaultHeaderMap = new Dictionary<string, string>();
-        private string appSid = "appSid";
-        private string apiKey = "apiKey";
+        private const string AppSidParamTemplate = "{appSid}";        
+        private const string AsposeClientHeaderName = "x-aspose-client";
 
-        public static ApiInvoker GetInstance()
-        {
-            return Instance;
-        }
+        private readonly string apiBaseUrl;
+        private readonly string apiKey;
+        private readonly string appSid;
 
-        public void AddAuthInfo(string apiKey, string appSid)
-        {
-            this.AddDefaultHeader(this.apiKey, apiKey);
-            this.AddDefaultHeader(this.appSid, appSid);
-        }
+        private readonly bool debug;
 
-        public void AddDefaultHeader(string key, string value)
+        private readonly Dictionary<string, string> defaultHeaderMap = new Dictionary<string, string>();      
+    
+        public ApiInvoker(string apiKey, string appSid, string apiBaseUrl, bool debug)
         {
-            if (!this.defaultHeaderMap.ContainsKey(key))
-            {
-                this.defaultHeaderMap.Add(key, value);
-            }
-        }            
+            this.AddDefaultHeader(AsposeClientHeaderName, ".net sdk");
+            
+            this.apiBaseUrl = apiBaseUrl.EndsWith("/") ? apiBaseUrl.Substring(0, apiBaseUrl.Length - 1) : apiBaseUrl;
+            this.apiKey = apiKey;
+            this.appSid = appSid;
+            this.debug = debug;
+        }                         
         
         public string InvokeApi(
-            string host,
             string path,
             string method,
             object body,
             Dictionary<string, string> headerParams,
             Dictionary<string, object> formParams)
         {
-            return this.InvokeInternal(host, path, method, false, body, headerParams, formParams) as string;
+            return this.InvokeInternal(path, method, false, body, headerParams, formParams) as string;
         }
 
         public object InvokeBinaryApi(
-            string host,
             string path,
             string method,
             object body,
             Dictionary<string, string> headerParams,
             Dictionary<string, object> formParams)
         {
-            return this.InvokeInternal(host, path, method, true, body, headerParams, formParams);
+            return this.InvokeInternal(path, method, true, body, headerParams, formParams);
         }             
 
         public string ToPathValue(object value)
@@ -67,8 +88,8 @@ namespace Aspose.Words.Cloud.Sdk
         public FileInfo ToFileInfo(Stream stream, string paramName)
         {
             // TODO: add contenttype
-            return new FileInfo { Name = paramName, file = StreamHelper.ReadAsBytes(stream) };
-        }
+            return new FileInfo { Name = paramName, FileContent = StreamHelper.ReadAsBytes(stream) };
+        }          
 
         private static string Sign(string url, string appKey)
         {
@@ -126,7 +147,7 @@ namespace Aspose.Words.Cloud.Sdk
                         formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
 
                         // Write the file data directly to the Stream, rather than serializing it to a string.
-                        formDataStream.Write(fileInfo.file, 0, fileInfo.file.Length);
+                        formDataStream.Write(fileInfo.FileContent, 0, fileInfo.FileContent.Length);
                     }
                     else
                     {
@@ -154,7 +175,7 @@ namespace Aspose.Words.Cloud.Sdk
                         var fileInfo = (FileInfo)param.Value;
 
                         // Write the file data directly to the Stream, rather than serializing it to a string.
-                        formDataStream.Write(fileInfo.file, 0, fileInfo.file.Length);
+                        formDataStream.Write(fileInfo.FileContent, 0, fileInfo.FileContent.Length);
                     }
                     else
                     {
@@ -182,8 +203,15 @@ namespace Aspose.Words.Cloud.Sdk
             return formData;
         }
 
+        private void AddDefaultHeader(string key, string value)
+        {
+            if (!this.defaultHeaderMap.ContainsKey(key))
+            {
+                this.defaultHeaderMap.Add(key, value);
+            }
+        }    
+
         private object InvokeInternal(
-            string host,
             string path,
             string method,
             bool binaryResponse,
@@ -191,14 +219,26 @@ namespace Aspose.Words.Cloud.Sdk
             Dictionary<string, string> headerParams,
             Dictionary<string, object> formParams)
         {
-            path = path.Replace("{appSid}", this.defaultHeaderMap[this.appSid]);
+            if (formParams == null)
+            {
+                formParams = new Dictionary<string, object>();
+            }
 
-            path = Regex.Replace(path, @"{.+?}", string.Empty);
+            if (headerParams == null)
+            {
+                headerParams = new Dictionary<string, string>();
+            }
 
-            host = host.EndsWith("/") ? host.Substring(0, host.Length - 1) : host;
+            path = path.Replace(AppSidParamTemplate, this.appSid);
+            path = Regex.Replace(path, @"{.+?}", string.Empty);            
+            path = Sign(this.apiBaseUrl + path, this.apiKey);
 
-            path = Sign(host + path, this.defaultHeaderMap[this.apiKey]);
+            var client = this.PrepareRequest(path, method, formParams, headerParams, body);
+            return this.ReadResponse(client, binaryResponse);
+        }
 
+        private WebRequest PrepareRequest(string path, string method, Dictionary<string, object> formParams, Dictionary<string, string> headerParams, object body)
+        {
             var client = WebRequest.Create(path);
             client.Method = method;
 
@@ -237,54 +277,86 @@ namespace Aspose.Words.Cloud.Sdk
                 }
             }
 
-            switch (method)
+            MemoryStream streamToSend = null;
+            try
             {
-                case "GET":
-                    break;
-                case "POST":
-                case "PUT":
-                case "DELETE":
-                    using (Stream requestStream = client.GetRequestStream())
-                    {
+                switch (method)
+                {
+                    case "GET":
+                        break;
+                    case "POST":
+                    case "PUT":
+                    case "DELETE":
+                        streamToSend = new MemoryStream();
+
                         if (formData != null)
                         {
-                            requestStream.Write(formData, 0, formData.Length);
+                            streamToSend.Write(formData, 0, formData.Length);
                         }
 
                         if (body != null)
                         {
-                            var requestWriter = new StreamWriter(requestStream);
+                            var requestWriter = new StreamWriter(streamToSend);
                             requestWriter.Write(SerializationHelper.Serialize(body));
-                            requestWriter.Close();
+                            requestWriter.Flush();
                         }
-                        else
-                        {
-                            System.Diagnostics.Debug.WriteLine("body is null");
-                        }
-                    }
 
-                    break;
-                default:
-                    throw new ApiException(500, "unknown method type " + method);
+                        streamToSend.Position = 0;
+
+                        break;
+                    default:
+                        throw new ApiException(500, "unknown method type " + method);
+                }
+
+                if (streamToSend != null)
+                {
+                    using (Stream requestStream = client.GetRequestStream())
+                    {
+                        StreamHelper.CopyTo(streamToSend, requestStream);
+                    }
+                }
+
+                if (this.debug)
+                {
+                    this.LogRequest(client, streamToSend);
+                }
+            }
+            finally
+            {
+                if (streamToSend != null)
+                {
+                    streamToSend.Dispose();
+                }
             }
 
+            return client;
+        }
+
+        private object ReadResponse(WebRequest client, bool binaryResponse)
+        {
             try
             {
                 var webResponse = (HttpWebResponse)client.GetResponse();
+                var resultStream = new MemoryStream();
+                StreamHelper.CopyTo(webResponse.GetResponseStream(), resultStream);
+                resultStream.Position = 0;
+
+                if (this.debug)
+                {
+                    this.LogResponse(webResponse, resultStream);
+                }
+
                 if (webResponse.StatusCode != HttpStatusCode.OK)
                 {
                     this.ThrowApiException(webResponse);
                 }
 
                 if (binaryResponse)
-                {
-                    var memoryStream = new MemoryStream();
-
-                    StreamHelper.CopyTo(webResponse.GetResponseStream(), memoryStream, 81920);
-                    return memoryStream;
+                {                    
+                    return resultStream;
                 }
 
-                using (var responseReader = new StreamReader(webResponse.GetResponseStream()))
+                using (var responseReader = new StreamReader(resultStream))
                 {
                     var responseData = responseReader.ReadToEnd();
                     return responseData;
@@ -317,6 +389,73 @@ namespace Aspose.Words.Cloud.Sdk
             {
                 throw new ApiException((int)webResponse.StatusCode, webResponse.StatusDescription);
             }
-        }               
+        }
+
+        private void LogRequest(WebRequest request, Stream streamToSend)
+        {            
+            var header = string.Format("{0}: {1}", request.Method, request.RequestUri);
+            var sb = new StringBuilder();
+
+            this.FormatHeaders(sb, request.Headers);
+            this.CopyStreamToStringBuilder(sb, streamToSend);
+
+            this.Log(header, sb);
+        }
+
+        private void LogResponse(HttpWebResponse response, Stream resultStream)
+        {            
+            var header = string.Format("\r\nResponse {0}: {1}", (int)response.StatusCode, response.StatusCode);
+            var sb = new StringBuilder();
+
+            this.FormatHeaders(sb, response.Headers);
+            this.CopyStreamToStringBuilder(sb, resultStream);            
+            this.Log(header, sb);
+        }
+
+        private void FormatHeaders(StringBuilder sb, WebHeaderCollection headerDictionary)
+        {
+            foreach (var key in headerDictionary.AllKeys)
+            {
+                sb.Append(key);
+                sb.Append(": ");
+                sb.AppendLine(headerDictionary[key]);
+            }
+        }
+
+        private void Log(string header, StringBuilder sb)
+        {
+            Trace.WriteLine(header);
+            Trace.WriteLine(sb.ToString());
+        }
+
+        private void CopyStreamToStringBuilder(StringBuilder sb, Stream stream)
+        {
+            if ((stream == null) || !stream.CanRead)
+            {
+                return;
+            }
+
+            Stream streamToRead;
+            if (!stream.CanSeek)
+            {
+                streamToRead = new MemoryStream(1024);
+                StreamHelper.CopyTo(stream, streamToRead);
+            }
+            else
+            {
+                streamToRead = stream;
+            }
+
+            streamToRead.Seek(0, SeekOrigin.Begin);
+            var bodyReader = new StreamReader(streamToRead);
+            if (bodyReader.Peek() != -1)
+            {
+                var content = bodyReader.ReadToEnd();
+                streamToRead.Seek(0, SeekOrigin.Begin);
+
+                sb.AppendLine("Body:");                
+                sb.AppendLine(content);                
+            }            
+        }       
     }
 }

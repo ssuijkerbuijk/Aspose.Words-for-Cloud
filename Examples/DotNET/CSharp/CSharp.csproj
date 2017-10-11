@@ -33,11 +33,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aspose.Storage-Cloud, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.Storage-Cloud.1.0.7\lib\Aspose.Storage-Cloud.dll</HintPath>
+      <HintPath>..\packages\Aspose.Storage-Cloud.1.0.9\lib\Aspose.Storage-Cloud.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Aspose.Words-Cloud, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.Words-Cloud.1.0.6\lib\Aspose.Words-Cloud.dll</HintPath>
+      <HintPath>..\packages\Aspose.Words-Cloud.1.0.9\lib\Aspose.Words-Cloud.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -124,6 +124,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
