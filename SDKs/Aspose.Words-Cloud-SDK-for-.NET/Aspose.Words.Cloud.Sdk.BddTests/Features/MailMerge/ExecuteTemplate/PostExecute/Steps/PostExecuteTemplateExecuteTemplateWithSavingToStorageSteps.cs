@@ -62,6 +62,7 @@
         [Given(@"I have specified a body (.*)")]
         public void GivenIHaveSpecifiedABody(string bodyDocumentName)
         {
+            // TODO: use "I have specified document <DocName> to send it in request body" step insted
             this.Request.Data = File.ReadAllText(Path.Combine(this.context.TestDataPath, bodyDocumentName));
         }
 
@@ -72,6 +73,7 @@
         [Given(@"I have specified a destFileName (.*)")]
         public void GivenIHaveSpecifiedADestFileName(string destFileName)
         {
+            // TODO: move to common steps (it is ICanModifyDocumentRequest)
             this.Request.DestFileName = destFileName;
         }
 
@@ -82,6 +84,7 @@
         [Given(@"I have specified withRegions (.*)")]
         public void GivenIHaveSpecifiedWithRegions(bool withRegions)
         {
+            // TODO: Add interface "ICanSpecifyMailMergeParametersRequest" and move steps
             this.Request.WithRegions = withRegions;
         }
 
@@ -92,6 +95,7 @@
         [Given(@"I have specified useWholeParagraphAsRegion (.*)")]
         public void GivenIHaveSpecifiedUseWholeParagraphAsRegion(bool useWholeParagraphAsRegion)
         {
+            // TODO: Add interface "ICanSpecifyMailMergeParametersRequest" and move steps
             this.Request.UseWholeParagraphAsRegion = useWholeParagraphAsRegion;
         }
         
@@ -111,6 +115,8 @@
         [Then(@"document with merged values should be created on storage")]
         public void ThenDocumentWithMergedValuesShouldBeCreated()
         {
+            // TODO: move to storage steps (+rename - we don't check here anything, which is related which "merged values"
+            // or check "merged values"
             Assert.IsTrue(this.context.FileWithNameExists(this.Request.DestFileName), "Error while saving file to storage");
         }
     }
