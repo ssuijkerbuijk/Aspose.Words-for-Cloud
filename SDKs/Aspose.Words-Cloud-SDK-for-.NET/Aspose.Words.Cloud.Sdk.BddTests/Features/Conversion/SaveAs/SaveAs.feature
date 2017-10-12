@@ -5,9 +5,9 @@
 @StoredDocConversionWithStorage
 Scenario Outline: Convert document form storage and save to storage
 	Given I have uploaded document with name <DocName> to storage
-	And I have specified format <DestFormat> document to be converted
+	And I have specified save format <DestFormat> document to be converted
 	And I have specified document name <DocName> in URL
-	And I have specified output path <OutPath>
+	And I have specified destFileName <OutPath>
 	And I have specified encoding <LoadEncoding>
 	When I execute conversion from storage (POST SaveAs)
 	Then document <OutPath> is existed on storage
@@ -28,9 +28,9 @@ Scenario Outline: Convert document form storage and save to storage
 @ConversionPdfToWord
 Scenario Outline: Convert pdf document to word and save to storage
 	Given I have uploaded document with name <DocName> to storage
-	And I have specified format <DestFormat> document to be converted
+	And I have specified save format <DestFormat> document to be converted
 	And I have specified document name <DocName> in URL
-	And I have specified output path <OutPath>
+	And I have specified destFileName <OutPath>
 	When I execute conversion from storage (POST SaveAs)
 	Then document <OutPath> is existed on storage
 

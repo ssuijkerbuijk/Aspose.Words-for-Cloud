@@ -84,6 +84,7 @@
     <Compile Include="Internal\FileInfo.cs" />
     <Compile Include="Internal\SerializationHelper.cs" />
     <Compile Include="Internal\StreamHelper.cs" />
+    <Compile Include="Model.Requests\IPutExecuteRequest.cs" />
     <Compile Include="Model\BmpSaveOptionsData.cs" />
     <Compile Include="Model\Bookmark.cs" />
     <Compile Include="Model\BookmarkData.cs" />

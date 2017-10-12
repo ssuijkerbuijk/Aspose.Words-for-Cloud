@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostDocumentSaveAs" /> operation.
   /// </summary>  
-  public class PostDocumentSaveAsRequest : ICanModifyDocumentRequest, IWordDocumentRequest, ICanUseCustomFontsRequest 
+  public class PostDocumentSaveAsRequest : ICanModifyDocumentRequest, IWordDocumentRequest, ICanUseCustomFontsRequest   
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="PostDocumentSaveAsRequest"/> class.
