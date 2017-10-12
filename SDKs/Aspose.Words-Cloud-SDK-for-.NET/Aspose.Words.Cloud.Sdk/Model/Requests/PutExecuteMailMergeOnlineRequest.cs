@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutExecuteMailMergeOnline" /> operation.
   /// </summary>  
-  public class PutExecuteMailMergeOnlineRequest  
+  public class PutExecuteMailMergeOnlineRequest : IPutExecuteRequest   
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="PutExecuteMailMergeOnlineRequest"/> class.

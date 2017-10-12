@@ -133,12 +133,12 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Execute Template With Images")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "PutExecuteTemplate execute template without saving")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PutExecuteTemplate")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "TestMailMergeWithImages.doc")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TemplateName", "TestMailMergeWithImages.doc")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Body", "TestDataWithRemoteScaledImages.xml")]
-        public virtual void ExecuteTemplateWithImages_TestMailMergeWithImages_Doc()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "TestExecuteTemplateWithImages.doc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TemplateName", "TestExecuteTemplateWithImages.doc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Body", "TestDataWithLocalImages.xml")]
+        public virtual void ExecuteTemplateWithImages_TestExecuteTemplateWithImages_Doc()
         {
-            this.ExecuteTemplateWithImages("TestMailMergeWithImages.doc", "TestDataWithRemoteScaledImages.xml", ((string[])(null)));
+            this.ExecuteTemplateWithImages("TestExecuteTemplateWithImages.doc", "TestDataWithLocalImages.xml", ((string[])(null)));
         }
         
         public virtual void ExecuteTemplateWithCleanupOptions(string templateName, string body, string cleanup, string[] exampleTags)

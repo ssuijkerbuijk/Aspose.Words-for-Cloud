@@ -46,33 +46,6 @@
         }
 
         /// <summary>
-        /// Initialize template stream 
-        /// </summary>
-        /// <param name="templateFile">template file</param>
-        [Given(@"I have specified a template file (.*) with mustache syntax")]
-        public void GivenIHaveSpecifiedATemplateFileWithMustacheSyntax(string templateFile)
-        {
-            this.Request.Template = 
-                new MemoryStream(
-                    File.ReadAllBytes(
-                        Path.Combine(this.context.TestDataPath, templateFile)));
-        }
-
-        /// <summary>
-        /// Initialize body stream
-        /// </summary>
-        /// <param name="bodyFile">body file</param>
-        [Given(@"I have specified a body file (.*)")]
-        [Scope(Feature = "PutExecuteTemplate execute template without saving")]
-        public void GivenIHaveSpecifiedABodyFile(string bodyFile)
-        {
-            this.Request.Data =
-                new MemoryStream(
-                    File.ReadAllBytes(
-                        Path.Combine(this.context.TestDataPath, bodyFile)));
-        }
-
-        /// <summary>
         /// Initialize cleanup option
         /// </summary>
         /// <param name="cleanup">cleanup option</param>

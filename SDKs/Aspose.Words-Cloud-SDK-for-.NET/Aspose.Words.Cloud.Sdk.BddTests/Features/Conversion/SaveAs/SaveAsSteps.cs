@@ -3,6 +3,7 @@
     using System.IO;
 
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
+    using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -48,8 +49,30 @@
         [BeforeScenario("StoredDocConversionWithStorage", "ConversionPdfToWord")]
         public static void BeforeScenario()
         {
-            ScenarioContext.Current["Request"] = new PostDocumentSaveAsRequest();
+            ScenarioContext.Current["Request"] = new PostDocumentSaveAsRequest() { SaveOptionsData = new SaveOptionsData() };
         }
+
+        /// <summary>
+        /// Sets saveFormat to SaveOptionsData
+        /// </summary>
+        /// <param name="saveFormat">format in which document will be converted</param>
+        [Given(@"I have specified save format (.*) document to be converted")]
+        public void GivenIHaveSpecifiedSaveFormatDocumentToBeConverted(string saveFormat)
+        {
+            this.Request.SaveOptionsData.SaveFormat = saveFormat;
+        }
+
+        /// <summary>
+        /// Sets destination file name
+        /// </summary>
+        /// <param name="destFileName">destionation file name</param>
+        [Given(@"I have specified destFileName (.*)")]
+        public void GivenIHaveSpecifiedDestFileName(string destFileName)
+        {
+            this.Request.SaveOptionsData.FileName = destFileName;
+        }
+
+
 
         /// <summary>
         /// Executes conversion
@@ -57,8 +80,9 @@
         [When(@"I execute conversion from storage \(POST SaveAs\)")]
         public void WhenIExecuteConversion()
         {
+            this.Request.Folder = this.context.TestFolderInStorage;
             this.context.Response = this.context.WordsApi.PostDocumentSaveAs(this.Request);
-        }        
+        }
 
         /// <summary>
         /// Checks that document converted properly

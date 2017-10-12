@@ -87,7 +87,7 @@
             }
           }
         },
-        "x-csharp-implements": "IWordDocumentRequest, ICanUseCustomFontsRequest",
+        "x-csharp-implements": "IWordDocumentRequest, ICanUseCustomFontsRequest, ICanSpecifyOutputFormatRequest",
         "x-binary-result": "true"
       }
     },
@@ -149,7 +149,7 @@
             }
           }
         },
-        "x-csharp-implements": "ICanUseCustomFontsRequest",
+        "x-csharp-implements": "ICanUseCustomFontsRequest, ICanSpecifyOutputFormatRequest",
         "x-binary-result": "true"
       }
     },
@@ -5302,6 +5302,7 @@
             }
           }
         },
+        "x-csharp-implements": "IPutExecuteRequest",
         "x-binary-result": "true"
       }
     },
@@ -5358,6 +5359,7 @@
             }
           }
         },
+        "x-csharp-implements": "IPutExecuteRequest",
         "x-binary-result": "true"
       }
     },
@@ -9896,6 +9898,126 @@
         }
       ]
     },
+    "EpubSaveOptionsData": {
+      "description": "Container class for epub save options.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/HtmlSaveOptionsData"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "EpubNavigationMapLevel": {
+              "format": "int32",
+              "description": "Specifies the maximum level of headings populated to the navigation map when exporting",
+              "type": "integer"
+            }
+          }
+        }
+      ]
+    },
+    "FixedPageSaveOptionsData": {
+      "description": "Contains common options that can be specified when saving a document into fixed page formats (PDF, XPS, SWF, images etc).",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaveOptionsData"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "JpegQuality": {
+              "format": "int32",
+              "description": "Determines the quality of the JPEG images inside PDF document.",
+              "type": "integer"
+            },
+            "MetafileRenderingOptions": {
+              "$ref": "#/definitions/MetafileRenderingOptionsData",
+              "description": "Allows to specify metafile rendering options."
+            },
+            "NumeralFormat": {
+              "description": "Indicates the symbol set that is used to represent numbers while rendering to fixed page formats",
+              "type": "string"
+            },
+            "OptimizeOutput": {
+              "description": "Flag indicates whether it is required to optimize output of XPS. \r\nIf this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. \r\nNote: The accuracy of the content display may be affected if this property is set to true.  Default is false.",
+              "type": "boolean"
+            },
+            "PageCount": {
+              "format": "int32",
+              "description": "Determines number of pages to render",
+              "type": "integer"
+            },
+            "PageIndex": {
+              "format": "int32",
+              "description": "Determines 0-based index of the first page to render",
+              "type": "integer"
+            }
+          }
+        }
+      ]
+    },
+    "HtmlFixedSaveOptionsData": {
+      "description": "container class for fixed html save options",
+      "allOf": [
+        {
+          "$ref": "#/definitions/FixedPageSaveOptionsData"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "CssClassNamesPrefix": {
+              "description": "Specifies prefix which is added to all class names in style.css file.\r\nDefault value is \"aw\".",
+              "type": "string"
+            },
+            "ExportEmbeddedCss": {
+              "description": "Specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document.",
+              "type": "boolean"
+            },
+            "ExportEmbeddedFonts": {
+              "description": "Specifies whether fonts should be embedded into Html document in Base64 format.",
+              "type": "boolean"
+            },
+            "ExportEmbeddedImages": {
+              "description": "Specifies whether images should be embedded into Html document in Base64 format.",
+              "type": "boolean"
+            },
+            "ExportFormFields": {
+              "description": "Gets or sets indication of whether form fields are exported as interactive items (as 'input' tag) rather than converted to text or graphics.",
+              "type": "boolean"
+            },
+            "Encoding": {
+              "description": "Encoding.",
+              "type": "string"
+            },
+            "FontFormat": {
+              "description": "Specifies export format of fonts",
+              "type": "string"
+            },
+            "ResourcesFolder": {
+              "description": "Specifies the physical folder where resources are saved when exporting a document",
+              "type": "string"
+            },
+            "ResourcesFolderAlias": {
+              "description": "Specifies the name of the folder used to construct resource URIs",
+              "type": "string"
+            },
+            "ShowPageBorder": {
+              "description": "Specifies whether border around pages should be shown.",
+              "type": "boolean"
+            },
+            "PageHorizontalAlignment": {
+              "description": "Specifies the horizontal alignment of pages in an HTML document.\r\nDefault value is HtmlFixedHorizontalPageAlignment.Center.",
+              "type": "string"
+            },
+            "PageMargins": {
+              "format": "double",
+              "description": "Specifies the margins around pages in an HTML document.\r\nThe margins value is measured in points and should be equal to or greater than 0.\r\nDefault value is 10 points.",
+              "type": "number"
+            }
+          }
+        }
+      ]
+    },
     "HtmlSaveOptionsData": {
       "description": "container class for html save options",
       "allOf": [
@@ -10066,257 +10188,6 @@
               "type": "boolean"
             }
           }
-        }
-      ]
-    },
-    "EpubSaveOptionsData": {
-      "description": "Container class for epub save options.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/HtmlSaveOptionsData"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "EpubNavigationMapLevel": {
-              "format": "int32",
-              "description": "Specifies the maximum level of headings populated to the navigation map when exporting",
-              "type": "integer"
-            }
-          }
-        }
-      ]
-    },
-    "FixedPageSaveOptionsData": {
-      "description": "Contains common options that can be specified when saving a document into fixed page formats (PDF, XPS, SWF, images etc).",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaveOptionsData"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "JpegQuality": {
-              "format": "int32",
-              "description": "Determines the quality of the JPEG images inside PDF document.",
-              "type": "integer"
-            },
-            "MetafileRenderingOptions": {
-              "$ref": "#/definitions/MetafileRenderingOptionsData",
-              "description": "Allows to specify metafile rendering options."
-            },
-            "NumeralFormat": {
-              "description": "Indicates the symbol set that is used to represent numbers while rendering to fixed page formats",
-              "type": "string"
-            },
-            "OptimizeOutput": {
-              "description": "Flag indicates whether it is required to optimize output of XPS. \r\nIf this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. \r\nNote: The accuracy of the content display may be affected if this property is set to true.  Default is false.",
-              "type": "boolean"
-            },
-            "PageCount": {
-              "format": "int32",
-              "description": "Determines number of pages to render",
-              "type": "integer"
-            },
-            "PageIndex": {
-              "format": "int32",
-              "description": "Determines 0-based index of the first page to render",
-              "type": "integer"
-            }
-          }
-        }
-      ]
-    },
-    "HtmlFixedSaveOptionsData": {
-      "description": "container class for fixed html save options",
-      "allOf": [
-        {
-          "$ref": "#/definitions/FixedPageSaveOptionsData"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "CssClassNamesPrefix": {
-              "description": "Specifies prefix which is added to all class names in style.css file.\r\nDefault value is \"aw\".",
-              "type": "string"
-            },
-            "ExportEmbeddedCss": {
-              "description": "Specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document.",
-              "type": "boolean"
-            },
-            "ExportEmbeddedFonts": {
-              "description": "Specifies whether fonts should be embedded into Html document in Base64 format.",
-              "type": "boolean"
-            },
-            "ExportEmbeddedImages": {
-              "description": "Specifies whether images should be embedded into Html document in Base64 format.",
-              "type": "boolean"
-            },
-            "ExportFormFields": {
-              "description": "Gets or sets indication of whether form fields are exported as interactive items (as 'input' tag) rather than converted to text or graphics.",
-              "type": "boolean"
-            },
-            "Encoding": {
-              "description": "Encoding.",
-              "type": "string"
-            },
-            "FontFormat": {
-              "description": "Specifies export format of fonts",
-              "type": "string"
-            },
-            "ResourcesFolder": {
-              "description": "Specifies the physical folder where resources are saved when exporting a document",
-              "type": "string"
-            },
-            "ResourcesFolderAlias": {
-              "description": "Specifies the name of the folder used to construct resource URIs",
-              "type": "string"
-            },
-            "ShowPageBorder": {
-              "description": "Specifies whether border around pages should be shown.",
-              "type": "boolean"
-            },
-            "PageHorizontalAlignment": {
-              "description": "Specifies the horizontal alignment of pages in an HTML document.\r\nDefault value is HtmlFixedHorizontalPageAlignment.Center.",
-              "type": "string"
-            },
-            "PageMargins": {
-              "format": "double",
-              "description": "Specifies the margins around pages in an HTML document.\r\nThe margins value is measured in points and should be equal to or greater than 0.\r\nDefault value is 10 points.",
-              "type": "number"
-            }
-          }
-        }
-      ]
-    },
-    "ImageSaveOptionsData": {
-      "description": "Container abstract class for image save options",
-      "allOf": [
-        {
-          "$ref": "#/definitions/FixedPageSaveOptionsData"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "ImageBrightness": {
-              "format": "float",
-              "description": "Brightness of image",
-              "type": "number"
-            },
-            "ImageColorMode": {
-              "description": "Color mode of image",
-              "type": "string"
-            },
-            "ImageContrast": {
-              "format": "float",
-              "description": "Contrast of image",
-              "type": "number"
-            },
-            "GraphicsQualityOptions": {
-              "$ref": "#/definitions/GraphicsQualityOptionsData",
-              "description": "Allows to specify additional System.Drawing.Graphics quality options."
-            },
-            "PixelFormat": {
-              "description": "Pixel format of image",
-              "type": "string"
-            },
-            "PaperColor": {
-              "description": "Background (paper) color of image",
-              "type": "string"
-            },
-            "Resolution": {
-              "format": "float",
-              "description": "Sets both horizontal and vertical resolution for the generated images, in dots per inch.\r\n<remarks>\r\nThis property has effect only when saving to raster image formats.\r\nThe default value is 96.\r\n</remarks>",
-              "type": "number"
-            },
-            "HorizontalResolution": {
-              "format": "float",
-              "description": "Gets or sets the horizontal resolution for the generated images, in dots per inch.\r\n<remarks>\r\nThis property has effect only when saving to raster image formats.\r\nThe default value is 96.\r\n</remarks>",
-              "type": "number"
-            },
-            "VerticalResolution": {
-              "format": "float",
-              "description": "Gets or sets the vertical resolution for the generated images, in dots per inch.\r\n<remarks>\r\nThis property has effect only when saving to raster image formats.\r\nThe default value is 96.\r\n</remarks>",
-              "type": "number"
-            },
-            "Scale": {
-              "format": "float",
-              "description": "Zoom factor of image",
-              "type": "number"
-            },
-            "UseHighQualityRendering": {
-              "description": "Determine whether or not to use high quality (i.e. slow) rendering algorithms",
-              "type": "boolean"
-            },
-            "UseAntiAliasing": {
-              "description": "Determine whether or not to use anti-aliasing for rendering",
-              "type": "boolean"
-            },
-            "UseGdiEmfRenderer": {
-              "description": "Gets or sets a value determining whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.",
-              "type": "boolean"
-            }
-          }
-        }
-      ]
-    },
-    "BmpSaveOptionsData": {
-      "description": "Container class for bmp save options.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ImageSaveOptionsData"
-        },
-        {
-          "type": "object",
-          "properties": {}
-        }
-      ]
-    },
-    "EmfSaveOptionsData": {
-      "description": "Container class for emf save options.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ImageSaveOptionsData"
-        },
-        {
-          "type": "object",
-          "properties": {}
-        }
-      ]
-    },
-    "GifSaveOptionsData": {
-      "description": "Container class for gif save options.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ImageSaveOptionsData"
-        },
-        {
-          "type": "object",
-          "properties": {}
-        }
-      ]
-    },
-    "JpegSaveOptionsData": {
-      "description": "container class for jpeg save options.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ImageSaveOptionsData"
-        },
-        {
-          "type": "object",
-          "properties": {}
-        }
-      ]
-    },
-    "PngSaveOptionsData": {
-      "description": "container class for png save options.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ImageSaveOptionsData"
-        },
-        {
-          "type": "object",
-          "properties": {}
         }
       ]
     },
@@ -10951,6 +10822,137 @@
         }
       ]
     },
+    "BmpSaveOptionsData": {
+      "description": "Container class for bmp save options.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ImageSaveOptionsData"
+        },
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "EmfSaveOptionsData": {
+      "description": "Container class for emf save options.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ImageSaveOptionsData"
+        },
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "GifSaveOptionsData": {
+      "description": "Container class for gif save options.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ImageSaveOptionsData"
+        },
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "ImageSaveOptionsData": {
+      "description": "Container abstract class for image save options",
+      "allOf": [
+        {
+          "$ref": "#/definitions/FixedPageSaveOptionsData"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ImageBrightness": {
+              "format": "float",
+              "description": "Brightness of image",
+              "type": "number"
+            },
+            "ImageColorMode": {
+              "description": "Color mode of image",
+              "type": "string"
+            },
+            "ImageContrast": {
+              "format": "float",
+              "description": "Contrast of image",
+              "type": "number"
+            },
+            "GraphicsQualityOptions": {
+              "$ref": "#/definitions/GraphicsQualityOptionsData",
+              "description": "Allows to specify additional System.Drawing.Graphics quality options."
+            },
+            "PixelFormat": {
+              "description": "Pixel format of image",
+              "type": "string"
+            },
+            "PaperColor": {
+              "description": "Background (paper) color of image",
+              "type": "string"
+            },
+            "Resolution": {
+              "format": "float",
+              "description": "Sets both horizontal and vertical resolution for the generated images, in dots per inch.\r\n<remarks>\r\nThis property has effect only when saving to raster image formats.\r\nThe default value is 96.\r\n</remarks>",
+              "type": "number"
+            },
+            "HorizontalResolution": {
+              "format": "float",
+              "description": "Gets or sets the horizontal resolution for the generated images, in dots per inch.\r\n<remarks>\r\nThis property has effect only when saving to raster image formats.\r\nThe default value is 96.\r\n</remarks>",
+              "type": "number"
+            },
+            "VerticalResolution": {
+              "format": "float",
+              "description": "Gets or sets the vertical resolution for the generated images, in dots per inch.\r\n<remarks>\r\nThis property has effect only when saving to raster image formats.\r\nThe default value is 96.\r\n</remarks>",
+              "type": "number"
+            },
+            "Scale": {
+              "format": "float",
+              "description": "Zoom factor of image",
+              "type": "number"
+            },
+            "UseHighQualityRendering": {
+              "description": "Determine whether or not to use high quality (i.e. slow) rendering algorithms",
+              "type": "boolean"
+            },
+            "UseAntiAliasing": {
+              "description": "Determine whether or not to use anti-aliasing for rendering",
+              "type": "boolean"
+            },
+            "UseGdiEmfRenderer": {
+              "description": "Gets or sets a value determining whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.",
+              "type": "boolean"
+            }
+          }
+        }
+      ]
+    },
+    "JpegSaveOptionsData": {
+      "description": "container class for jpeg save options.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ImageSaveOptionsData"
+        },
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
+    "PngSaveOptionsData": {
+      "description": "container class for png save options.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ImageSaveOptionsData"
+        },
+        {
+          "type": "object",
+          "properties": {}
+        }
+      ]
+    },
     "SaveOptionsData": {
       "description": "base container class for save options data",
       "type": "object",
@@ -11081,8 +11083,8 @@
         }
       ]
     },
-    "WordsApiErrorResponse": {
-      "description": "Response for Api error",
+    "DocumentPropertiesResponse": {
+      "description": "This resonse should be returned by the service when handling:  GET /documentProperties.",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -11090,42 +11092,45 @@
         {
           "type": "object",
           "properties": {
-            "Message": {
-              "description": "Error message.",
-              "type": "string"
+            "DocumentProperties": {
+              "$ref": "#/definitions/DocumentProperties",
+              "description": "Collection of document properties."
             }
           }
         }
       ]
     },
-    "BookmarkResponse": {
-      "description": "This resonse should be returned by the service when handling:  GET bookmarks/{bookmarkName}.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
+    "DocumentProperties": {
+      "description": "Collection of document properties.",
+      "type": "object",
+      "properties": {
+        "List": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DocumentProperty"
+          }
         },
-        {
-          "type": "object",
-          "properties": {
-            "Bookmark": {
-              "$ref": "#/definitions/Bookmark",
-              "description": "Bookmark."
-            }
-          }
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
         }
-      ]
+      }
     },
-    "Bookmark": {
-      "description": "Represents a single bookmark.",
+    "DocumentProperty": {
+      "description": "Words document property DTO.",
       "type": "object",
       "properties": {
         "Name": {
-          "description": "Gets or sets the name of the bookmark.",
+          "description": "Name of the document property.",
           "type": "string"
         },
-        "Text": {
-          "description": "Gets or sets the text enclosed in the bookmark.",
+        "Value": {
+          "description": "String value of the document property.",
           "type": "string"
+        },
+        "BuiltIn": {
+          "description": "Flag indicates whether the property is built-in or not.\r\nIf true the property is built-in, if false the property is custom.",
+          "type": "boolean"
         },
         "link": {
           "$ref": "#/definitions/WordsApiLink",
@@ -11133,8 +11138,8 @@
         }
       }
     },
-    "BookmarksResponse": {
-      "description": "This resonse should be returned by the service when handling:  GET bookmarks.",
+    "DocumentPropertyResponse": {
+      "description": "This resonse should be returned by the service when handling:  GET documentProperties/{propertyName}.",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -11142,23 +11147,135 @@
         {
           "type": "object",
           "properties": {
-            "Bookmarks": {
-              "$ref": "#/definitions/Bookmarks",
-              "description": "Bookmarks which are contained in document."
+            "DocumentProperty": {
+              "$ref": "#/definitions/DocumentProperty",
+              "description": "Document property."
             }
           }
         }
       ]
     },
-    "Bookmarks": {
-      "description": "Represents an array of bookmarks.",
+    "DocumentResponse": {
+      "description": "Represents the response with document description.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Document": {
+              "$ref": "#/definitions/Document",
+              "description": "Document description."
+            }
+          }
+        }
+      ]
+    },
+    "Document": {
+      "description": "Represents Words document DTO.",
       "type": "object",
       "properties": {
-        "BookmarkList": {
-          "description": "Array of bookmarks.",
+        "Links": {
+          "description": "A list of links that originate from this document.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Bookmark"
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "FileName": {
+          "description": "Gets the name of the file.",
+          "type": "string"
+        },
+        "SourceFormat": {
+          "description": "Gets the original format of the document.",
+          "enum": [
+            "Unknown",
+            "Doc",
+            "Dot",
+            "DocPreWord60",
+            "Docx",
+            "Docm",
+            "Dotx",
+            "Dotm",
+            "FlatOpc",
+            "Rtf",
+            "WordML",
+            "Html",
+            "Mhtml",
+            "Epub",
+            "Text",
+            "Odt",
+            "Ott",
+            "Pdf",
+            "Xps",
+            "Swf",
+            "Tiff",
+            "Svg"
+          ],
+          "type": "string"
+        },
+        "IsEncrypted": {
+          "description": "Returns true if the document is encrypted and requires a password to open.",
+          "type": "boolean"
+        },
+        "IsSigned": {
+          "description": "Returns true if the document contains a digital signature. This property merely informs that a \r\ndigital signature is present on a document, but it does not specify whether the signature is valid or not.",
+          "type": "boolean"
+        },
+        "DocumentProperties": {
+          "$ref": "#/definitions/DocumentProperties",
+          "description": "Returns document properties."
+        }
+      }
+    },
+    "Link": {
+      "description": "Provides information for the object link.\r\nThis is supposed to be an atom:link, therefore it should have all attributes specified here http://tools.ietf.org/html/rfc4287#section-4.2.7",
+      "type": "object",
+      "properties": {
+        "Href": {
+          "description": "The \"href\" attribute contains the link's IRI. atom:link elements MUST\r\nhave an href attribute, whose value MUST be a IRI reference",
+          "type": "string"
+        },
+        "Rel": {
+          "description": "atom:link elements MAY have a \"rel\" attribute that indicates the link\r\nrelation type.  If the \"rel\" attribute is not present, the link\r\nelement MUST be interpreted as if the link relation type is \"alternate\".",
+          "type": "string"
+        },
+        "Type": {
+          "description": "On the link element, the \"type\" attribute's value is an advisory\r\nmedia type: it is a hint about the type of the representation that is\r\nexpected to be returned when the value of the href attribute is\r\ndereferenced.  Note that the type attribute does not override the\r\nactual media type returned with the representation.",
+          "type": "string"
+        },
+        "Title": {
+          "description": "The \"title\" attribute conveys human-readable information about the\r\nlink.  The content of the \"title\" attribute is Language-Sensitive.",
+          "type": "string"
+        }
+      }
+    },
+    "FieldNamesResponse": {
+      "description": "This resonse should be returned by the service when handling:  GET /{name}/mailMergeFieldNames.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "FieldNames": {
+              "$ref": "#/definitions/FieldNames",
+              "description": "Collection of mail merge fields."
+            }
+          }
+        }
+      ]
+    },
+    "FieldNames": {
+      "description": "Represents a collection of merge fields within a document.",
+      "type": "object",
+      "properties": {
+        "Names": {
+          "type": "array",
+          "items": {
+            "type": "string"
           }
         },
         "link": {
@@ -11167,8 +11284,8 @@
         }
       }
     },
-    "CommentResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/comments/0",
+    "ProtectionDataResponse": {
+      "description": "Response for the request of data about protection",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -11176,50 +11293,307 @@
         {
           "type": "object",
           "properties": {
-            "Comment": {
-              "$ref": "#/definitions/Comment",
-              "description": "Comment information"
+            "ProtectionData": {
+              "$ref": "#/definitions/ProtectionData",
+              "description": "Protection's data of the document"
+            },
+            "DocumentLink": {
+              "$ref": "#/definitions/FileLink",
+              "description": "Link to the document"
             }
           }
         }
       ]
     },
-    "Comment": {
-      "description": "Comment.",
+    "ProtectionData": {
+      "description": "Container for the data about protection of the document",
+      "type": "object",
+      "properties": {
+        "ProtectionType": {
+          "description": "Type of the protection",
+          "type": "string"
+        }
+      }
+    },
+    "ProtectionResponse": {
+      "description": "Response for the request on changing protection of the document",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ProtectionResult": {
+              "description": "Result of the changing of protection",
+              "type": "boolean"
+            },
+            "DocumentLink": {
+              "$ref": "#/definitions/FileLink",
+              "description": "Link to the document"
+            }
+          }
+        }
+      ]
+    },
+    "RevisionsModificationResponse": {
+      "description": "response of the modification operations for the revisions collection (now these are acceptAll and rejectAll)",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Result": {
+              "$ref": "#/definitions/ModificationOperationResult",
+              "description": "result of the modification operations for the revisions collection"
+            }
+          }
+        }
+      ]
+    },
+    "ModificationOperationResult": {
+      "description": "result of the operation which modifies the original document and saves the result",
+      "type": "object",
+      "properties": {
+        "Source": {
+          "$ref": "#/definitions/FileLink",
+          "description": "Link to the source document (source for the modification operation)"
+        },
+        "Dest": {
+          "$ref": "#/definitions/FileLink",
+          "description": "Link to the dest document (result of the modification operation)"
+        }
+      }
+    },
+    "SplitDocumentResponse": {
+      "description": "This resonse should be returned by the service when handling:  POST /{name}/split .",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "SplitResult": {
+              "$ref": "#/definitions/SplitDocumentResult",
+              "description": "Resylt of splitting document."
+            }
+          }
+        }
+      ]
+    },
+    "SplitDocumentResult": {
+      "description": "Result of splitting document.",
+      "type": "object",
+      "properties": {
+        "SourceDocument": {
+          "$ref": "#/definitions/FileLink",
+          "description": "Linkt to the source document."
+        },
+        "Pages": {
+          "description": "Array of pages.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FileLink"
+          }
+        },
+        "ZippedPages": {
+          "$ref": "#/definitions/FileLink",
+          "description": "Link to the file archive with pages."
+        }
+      }
+    },
+    "StatDataResponse": {
+      "description": "Response for the request of the document's statistical data",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "StatData": {
+              "$ref": "#/definitions/DocumentStatData",
+              "description": "Statistical data of the document"
+            },
+            "DocumentLink": {
+              "$ref": "#/definitions/FileLink",
+              "description": "Link to the document"
+            }
+          }
+        }
+      ]
+    },
+    "DocumentStatData": {
+      "description": "Container for the document's statistical data",
+      "type": "object",
+      "properties": {
+        "WordCount": {
+          "format": "int32",
+          "description": "Total count of words in the document",
+          "type": "integer"
+        },
+        "ParagraphCount": {
+          "format": "int32",
+          "description": "Total count of paragraphs in the document",
+          "type": "integer"
+        },
+        "PageCount": {
+          "format": "int32",
+          "description": "Total count of pages in the document",
+          "type": "integer"
+        },
+        "FootnotesStatData": {
+          "$ref": "#/definitions/FootnotesStatData",
+          "description": "Detailed statistics of footnotes"
+        },
+        "PageStatData": {
+          "description": "Detailed statistics of all pages",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PageStatData"
+          }
+        }
+      }
+    },
+    "FootnotesStatData": {
+      "description": "Container for the footnotes statistical data",
+      "type": "object",
+      "properties": {
+        "WordCount": {
+          "format": "int32",
+          "description": "Total count of words in footnotes",
+          "type": "integer"
+        },
+        "ParagraphCount": {
+          "format": "int32",
+          "description": "Total count of paragraphs in footnotes",
+          "type": "integer"
+        }
+      }
+    },
+    "PageStatData": {
+      "description": "Container for the page's statistical data",
+      "type": "object",
+      "properties": {
+        "PageNumber": {
+          "format": "int32",
+          "description": "Page number",
+          "type": "integer"
+        },
+        "WordCount": {
+          "format": "int32",
+          "description": "Total count of words in the page",
+          "type": "integer"
+        },
+        "ParagraphCount": {
+          "format": "int32",
+          "description": "Total count of paragraphs in the page",
+          "type": "integer"
+        },
+        "FootnotesStatData": {
+          "$ref": "#/definitions/FootnotesStatData",
+          "description": "Detailed statistics of footnotes"
+        }
+      }
+    },
+    "TextItemsResponse": {
+      "description": "This resonse should be returned by the service when handling:  GET /{name}/textItems .",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "TextItems": {
+              "$ref": "#/definitions/TextItems",
+              "description": "Collection of text items."
+            }
+          }
+        }
+      ]
+    },
+    "TextItems": {
+      "description": "Represents text items DTO.",
+      "type": "object",
+      "properties": {
+        "List": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TextItem"
+          }
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "TextItem": {
+      "description": "Represents text DTO.",
+      "type": "object",
+      "properties": {
+        "Text": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "SearchResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/search",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "SearchingPattern": {
+              "description": "A regular expression pattern used to find matches.",
+              "type": "string"
+            },
+            "SearchResults": {
+              "$ref": "#/definitions/SearchResultsCollection",
+              "description": "Collection of search results."
+            }
+          }
+        }
+      ]
+    },
+    "SearchResultsCollection": {
+      "description": "Collection of search results.",
+      "type": "object",
+      "properties": {
+        "ResultsList": {
+          "description": "Collection of comments",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SearchResult"
+          }
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "SearchResult": {
+      "description": "Result of search operation.",
       "type": "object",
       "properties": {
         "RangeStart": {
           "$ref": "#/definitions/DocumentPosition",
-          "description": "Link to comment range start node."
+          "description": "Link to result range start node."
         },
         "RangeEnd": {
           "$ref": "#/definitions/DocumentPosition",
-          "description": "Link to comment range end node."
-        },
-        "Author": {
-          "description": "Returns or sets the author name for a comment.",
-          "type": "string"
-        },
-        "Initial": {
-          "description": "Returns or sets the initials of the user associated with a specific comment.",
-          "type": "string"
-        },
-        "DateTime": {
-          "format": "date-time",
-          "description": "Gets the date and time that the comment was made.",
-          "type": "string"
-        },
-        "Text": {
-          "description": "This is a convenience property that allows to easily get or set text of the comment.",
-          "type": "string"
-        },
-        "Content": {
-          "$ref": "#/definitions/StoryChildNodes",
-          "description": "Content of comment"
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
+          "description": "Link to result range end node."
         }
       }
     },
@@ -11238,19 +11612,6 @@
         }
       }
     },
-    "StoryChildNodes": {
-      "description": "Child nodes of {Aspose.Words.Story} or {Aspose.Words.InlineStory}",
-      "type": "object",
-      "properties": {
-        "ChildNodes": {
-          "description": "Child nodes.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/NodeLink"
-          }
-        }
-      }
-    },
     "NodeLink": {
       "description": "Reference to node",
       "type": "object",
@@ -11265,8 +11626,8 @@
         }
       }
     },
-    "CommentsResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/comments",
+    "ReplaceTextResponse": {
+      "description": "Response for \"Replace text\" action.",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -11274,2036 +11635,18 @@
         {
           "type": "object",
           "properties": {
-            "Comments": {
-              "$ref": "#/definitions/CommentsCollection",
-              "description": "Collection of comments."
-            }
-          }
-        }
-      ]
-    },
-    "CommentsCollection": {
-      "description": "Collection of comments.",
-      "type": "object",
-      "properties": {
-        "CommentList": {
-          "description": "Collection of comments",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Comment"
-          }
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "BorderResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET {nodeWithBorders}/borders.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "Border": {
-              "$ref": "#/definitions/Border",
-              "description": "Table."
-            }
-          }
-        }
-      ]
-    },
-    "Border": {
-      "description": "Represents a border of an object.",
-      "type": "object",
-      "properties": {
-        "BorderType": {
-          "description": "Gets or sets the border type.",
-          "enum": [
-            "None",
-            "Bottom",
-            "Left",
-            "Right",
-            "Top",
-            "Horizontal",
-            "Vertical",
-            "DiagonalDown",
-            "DiagonalUp"
-          ],
-          "type": "string"
-        },
-        "Color": {
-          "$ref": "#/definitions/XmlColor",
-          "description": "Gets or sets the border color."
-        },
-        "DistanceFromText": {
-          "format": "double",
-          "description": "Gets or sets distance of the border from text or from the page edge in points.",
-          "type": "number"
-        },
-        "LineStyle": {
-          "description": "Gets or sets the border style.",
-          "enum": [
-            "None",
-            "Single",
-            "Thick",
-            "Double",
-            "Hairline",
-            "Dot",
-            "DashLargeGap",
-            "DotDash",
-            "DotDotDash",
-            "Triple",
-            "ThinThickSmallGap",
-            "ThickThinSmallGap",
-            "ThinThickThinSmallGap",
-            "ThinThickMediumGap",
-            "ThickThinMediumGap",
-            "ThinThickThinMediumGap",
-            "ThinThickLargeGap",
-            "ThickThinLargeGap",
-            "ThinThickThinLargeGap",
-            "Wave",
-            "DoubleWave",
-            "DashSmallGap",
-            "DashDotStroker",
-            "Emboss3D",
-            "Engrave3D",
-            "Outset",
-            "Inset"
-          ],
-          "type": "string"
-        },
-        "LineWidth": {
-          "format": "double",
-          "description": "Gets or sets the border width in points.",
-          "type": "number"
-        },
-        "Shadow": {
-          "description": "Gets or sets a value indicating whether the border has a shadow.",
-          "type": "boolean"
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "XmlColor": {
-      "description": "Utility class for {System.Drawing.Color} serialization",
-      "type": "object",
-      "properties": {
-        "Web": {
-          "description": "HTML string color representation",
-          "type": "string"
-        },
-        "Alpha": {
-          "format": "int32",
-          "description": "Alpha component of color structure",
-          "type": "integer"
-        }
-      }
-    },
-    "BordersResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET {nodeWithBorders}/borders.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "Borders": {
-              "$ref": "#/definitions/BordersCollection",
-              "description": "Table."
-            }
-          }
-        }
-      ]
-    },
-    "BordersCollection": {
-      "description": "Collection of borders.",
-      "type": "object",
-      "properties": {
-        "List": {
-          "description": "Collection of comments",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Border"
-          }
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "DrawingObjectResponse": {
-      "description": "Response for \"drawingObjects/n\" resource.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "DrawingObject": {
-              "$ref": "#/definitions/DrawingObject",
-              "description": "Drawing object."
-            }
-          }
-        }
-      ]
-    },
-    "DrawingObject": {
-      "description": "Represents Drawing Object DTO.",
-      "type": "object",
-      "properties": {
-        "RenderLinks": {
-          "description": "A list of links that originate from this {Aspose.Words.Cloud.DTO.DocumentElements.DrawingObjects.DrawingObjectDto}.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/WordsApiLink"
-          }
-        },
-        "Width": {
-          "format": "double",
-          "description": "Width of the drawing objects in points.",
-          "type": "number"
-        },
-        "Height": {
-          "format": "double",
-          "description": "Height of the drawing object in points.",
-          "type": "number"
-        },
-        "OleDataLink": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to ole object. Can be null if shape does not have ole data."
-        },
-        "ImageDataLink": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to image data. Can be null if shape does not have an image."
-        },
-        "RelativeHorizontalPosition": {
-          "description": "Specifies where the distance to the image is measured from.",
-          "enum": [
-            "Margin",
-            "Page",
-            "Column",
-            "Character",
-            "LeftMargin",
-            "RightMargin",
-            "InsideMargin",
-            "OutsideMargin",
-            "Default"
-          ],
-          "type": "string"
-        },
-        "Left": {
-          "format": "double",
-          "description": "Distance in points from the origin to the left side of the image.",
-          "type": "number"
-        },
-        "RelativeVerticalPosition": {
-          "description": "Specifies where the distance to the image measured from.",
-          "enum": [
-            "Margin",
-            "Page",
-            "Paragraph",
-            "Line",
-            "TopMargin",
-            "BottomMargin",
-            "InsideMargin",
-            "OutsideMargin",
-            "TableDefault",
-            "TextFrameDefault"
-          ],
-          "type": "string"
-        },
-        "Top": {
-          "format": "double",
-          "description": "Distance in points from the origin to the top side of the image.",
-          "type": "number"
-        },
-        "WrapType": {
-          "description": "Specifies how to wrap text around the image.",
-          "enum": [
-            "None",
-            "Inline",
-            "TopBottom",
-            "Square",
-            "Tight",
-            "Through"
-          ],
-          "type": "string"
-        },
-        "NodeId": {
-          "description": "Node id",
-          "type": "string"
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "DrawingObjectsResponse": {
-      "description": "This resonse should be returned by the service when handling:  GET /drawingObjects.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "DrawingObjects": {
-              "$ref": "#/definitions/DrawingObjectCollection",
-              "description": "Collection of drawing objects."
-            }
-          }
-        }
-      ]
-    },
-    "DrawingObjectCollection": {
-      "description": "Represents drawing objects collection DTO.",
-      "type": "object",
-      "properties": {
-        "List": {
-          "description": "Collection of DrawingObjects links",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/LinkElement"
-          }
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "LinkElement": {
-      "description": "Reference to document.",
-      "type": "object",
-      "properties": {
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "FieldResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/paragraphs/{0}/fields/{1}",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "Field": {
-              "$ref": "#/definitions/Field",
-              "description": "Field information"
-            }
-          }
-        }
-      ]
-    },
-    "Field": {
-      "description": "Field",
-      "type": "object",
-      "properties": {
-        "Result": {
-          "description": "Field result",
-          "type": "string"
-        },
-        "LocaleId": {
-          "description": "Gets or sets LCID of the field.",
-          "type": "string"
-        },
-        "FieldCode": {
-          "description": "Field code",
-          "type": "string"
-        },
-        "NodeId": {
-          "description": "Node id",
-          "type": "string"
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "FieldsResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/{nodePath}/fields",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "Fields": {
-              "$ref": "#/definitions/FieldCollection",
-              "description": "Collection of fields."
-            }
-          }
-        }
-      ]
-    },
-    "FieldCollection": {
-      "description": "Represents DTO for collection of fields.",
-      "type": "object",
-      "properties": {
-        "List": {
-          "description": "Collection of fields",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Field"
-          }
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "FontResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/paragraphs/{0}/runs/{1}/font",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "Font": {
-              "$ref": "#/definitions/Font",
-              "description": "Font"
-            }
-          }
-        }
-      ]
-    },
-    "Font": {
-      "description": "Font element",
-      "type": "object",
-      "properties": {
-        "AllCaps": {
-          "description": "True if the font is formatted as all capital letters.",
-          "type": "boolean"
-        },
-        "Bidi": {
-          "description": "Specifies whether the contents of this run shall have right-to-left characteristics.",
-          "type": "boolean"
-        },
-        "Bold": {
-          "description": "True if the font is formatted as bold.",
-          "type": "boolean"
-        },
-        "BoldBi": {
-          "description": "True if the right-to-left text is formatted as bold.",
-          "type": "boolean"
-        },
-        "Border": {
-          "$ref": "#/definitions/Border",
-          "description": "Border object that specifies border for the font."
-        },
-        "Color": {
-          "$ref": "#/definitions/XmlColor",
-          "description": "Gets or sets the color of the font."
-        },
-        "ComplexScript": {
-          "description": "Specifies whether the contents of this run shall be treated as complex script text regardless\r\nof their Unicode character values when determining the formatting for this run.",
-          "type": "boolean"
-        },
-        "DoubleStrikeThrough": {
-          "description": "True if the font is formatted as double strikethrough text.",
-          "type": "boolean"
-        },
-        "Emboss": {
-          "description": "True if the font is formatted as embossed.",
-          "type": "boolean"
-        },
-        "Engrave": {
-          "description": "True if the font is formatted as engraved.",
-          "type": "boolean"
-        },
-        "Hidden": {
-          "description": "True if the font is formatted as hidden text.",
-          "type": "boolean"
-        },
-        "HighlightColor": {
-          "$ref": "#/definitions/XmlColor",
-          "description": "Gets or sets the highlight (marker) color."
-        },
-        "Italic": {
-          "description": "True if the font is formatted as italic.",
-          "type": "boolean"
-        },
-        "ItalicBi": {
-          "description": "True if the right-to-left text is formatted as italic.",
-          "type": "boolean"
-        },
-        "Kerning": {
-          "format": "double",
-          "description": "Gets or sets the font size at which kerning starts.",
-          "type": "number"
-        },
-        "LocaleId": {
-          "format": "int32",
-          "description": "Gets or sets the locale identifier (language) of the formatted characters.",
-          "type": "integer"
-        },
-        "LocaleIdBi": {
-          "format": "int32",
-          "description": "Gets or sets the locale identifier (language) of the formatted right-to-left characters.",
-          "type": "integer"
-        },
-        "LocaleIdFarEast": {
-          "format": "int32",
-          "description": "Gets or sets the locale identifier (language) of the formatted Asian characters.",
-          "type": "integer"
-        },
-        "Name": {
-          "description": "Gets or sets the name of the font",
-          "type": "string"
-        },
-        "NameAscii": {
-          "description": "Returns or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).",
-          "type": "string"
-        },
-        "NameBi": {
-          "description": "Returns or sets the name of the font in a right-to-left language document.",
-          "type": "string"
-        },
-        "NameFarEast": {
-          "description": "Returns or sets an East Asian font name.",
-          "type": "string"
-        },
-        "NameOther": {
-          "description": "Returns or sets the font used for characters with character codes from 128 through 255.",
-          "type": "string"
-        },
-        "NoProofing": {
-          "description": "True when the formatted characters are not to be spell checked.",
-          "type": "boolean"
-        },
-        "Outline": {
-          "description": "True if the font is formatted as outline.",
-          "type": "boolean"
-        },
-        "Position": {
-          "format": "double",
-          "description": "Gets or sets the position of text (in points) relative to the base line.\r\nA positive number raises the text, and a negative number lowers it.",
-          "type": "number"
-        },
-        "Scaling": {
-          "format": "int32",
-          "description": "Gets or sets character width scaling in percent.",
-          "type": "integer"
-        },
-        "Shadow": {
-          "description": "True if the font is formatted as shadowed.",
-          "type": "boolean"
-        },
-        "Size": {
-          "format": "double",
-          "description": "Gets or sets the font size in points.",
-          "type": "number"
-        },
-        "SizeBi": {
-          "format": "double",
-          "description": "Gets or sets the font size in points used in a right-to-left document.",
-          "type": "number"
-        },
-        "SmallCaps": {
-          "description": "True if the font is formatted as small capital letters.",
-          "type": "boolean"
-        },
-        "Spacing": {
-          "format": "double",
-          "description": "Returns or sets the spacing (in points) between characters.",
-          "type": "number"
-        },
-        "StrikeThrough": {
-          "description": "True if the font is formatted as strikethrough text.",
-          "type": "boolean"
-        },
-        "StyleIdentifier": {
-          "description": "Gets or sets the locale independent style identifier of the character style applied to this formatting.",
-          "enum": [
-            "BookTitle",
-            "CommentReference",
-            "DefaultParagraphFont",
-            "Emphasis",
-            "EndnoteReference",
-            "FollowedHyperlink",
-            "FootnoteReference",
-            "HtmlAcronym",
-            "HtmlCite",
-            "HtmlCode",
-            "HtmlDefinition",
-            "HtmlKeyboard",
-            "HtmlSample",
-            "HtmlTypewriter",
-            "HtmlVariable",
-            "Hyperlink",
-            "IntenseEmphasis",
-            "IntenseReference",
-            "LineNumber",
-            "PageNumber",
-            "PlaceholderText",
-            "Strong",
-            "SubtleEmphasis",
-            "SubtleReference",
-            "BalloonText",
-            "BodyText",
-            "BodyText2",
-            "BodyText3",
-            "BodyText1I",
-            "BodyText1I2",
-            "BodyTextInd",
-            "BodyTextInd2",
-            "BodyTextInd3",
-            "Closing",
-            "CommentSubject",
-            "CommentText",
-            "Date",
-            "DocumentMap",
-            "EmailSignature",
-            "EndnoteText",
-            "Footer",
-            "FootnoteText",
-            "Header",
-            "Heading1",
-            "Heading2",
-            "Heading3",
-            "Heading4",
-            "Heading5",
-            "Heading6",
-            "Heading7",
-            "Heading8",
-            "Heading9",
-            "HtmlAddress",
-            "HtmlTopOfForm",
-            "HtmlBottomOfForm",
-            "HtmlPreformatted",
-            "IntenseQuote",
-            "Macro",
-            "MessageHeader",
-            "NoteHeading",
-            "PlainText",
-            "Quote",
-            "Salutation",
-            "Signature",
-            "Subtitle",
-            "Title",
-            "Bibliography",
-            "BlockText",
-            "Caption",
-            "EnvelopeAddress",
-            "EnvelopeReturn",
-            "Index1",
-            "Index2",
-            "Index3",
-            "Index4",
-            "Index5",
-            "Index6",
-            "Index7",
-            "Index8",
-            "Index9",
-            "IndexHeading",
-            "List",
-            "List2",
-            "List3",
-            "List4",
-            "List5",
-            "ListBullet",
-            "ListBullet2",
-            "ListBullet3",
-            "ListBullet4",
-            "ListBullet5",
-            "ListContinue",
-            "ListContinue2",
-            "ListContinue3",
-            "ListContinue4",
-            "ListContinue5",
-            "ListNumber",
-            "ListNumber2",
-            "ListNumber3",
-            "ListNumber4",
-            "ListNumber5",
-            "ListParagraph",
-            "NoSpacing",
-            "Normal",
-            "NormalWeb",
-            "NormalIndent",
-            "TableOfAuthorities",
-            "TableOfFigures",
-            "ToaHeading",
-            "Toc1",
-            "Toc2",
-            "Toc3",
-            "Toc4",
-            "Toc5",
-            "Toc6",
-            "Toc7",
-            "Toc8",
-            "Toc9",
-            "TocHeading",
-            "Revision",
-            "OutlineList1",
-            "OutlineList2",
-            "OutlineList3",
-            "NoList",
-            "ColorfulGrid",
-            "ColorfulGridAccent1",
-            "ColorfulGridAccent2",
-            "ColorfulGridAccent3",
-            "ColorfulGridAccent4",
-            "ColorfulGridAccent5",
-            "ColorfulGridAccent6",
-            "ColorfulList",
-            "ColorfulListAccent1",
-            "ColorfulListAccent2",
-            "ColorfulListAccent3",
-            "ColorfulListAccent4",
-            "ColorfulListAccent5",
-            "ColorfulListAccent6",
-            "ColorfulShading",
-            "ColorfulShadingAccent1",
-            "ColorfulShadingAccent2",
-            "ColorfulShadingAccent3",
-            "ColorfulShadingAccent4",
-            "ColorfulShadingAccent5",
-            "ColorfulShadingAccent6",
-            "DarkList",
-            "DarkListAccent1",
-            "DarkListAccent2",
-            "DarkListAccent3",
-            "DarkListAccent4",
-            "DarkListAccent5",
-            "DarkListAccent6",
-            "LightGrid",
-            "LightGridAccent1",
-            "LightGridAccent2",
-            "LightGridAccent3",
-            "LightGridAccent4",
-            "LightGridAccent5",
-            "LightGridAccent6",
-            "LightList",
-            "LightListAccent1",
-            "LightListAccent2",
-            "LightListAccent3",
-            "LightListAccent4",
-            "LightListAccent5",
-            "LightListAccent6",
-            "LightShading",
-            "LightShadingAccent1",
-            "LightShadingAccent2",
-            "LightShadingAccent3",
-            "LightShadingAccent4",
-            "LightShadingAccent5",
-            "LightShadingAccent6",
-            "MediumGrid1",
-            "MediumGrid1Accent1",
-            "MediumGrid1Accent2",
-            "MediumGrid1Accent3",
-            "MediumGrid1Accent4",
-            "MediumGrid1Accent5",
-            "MediumGrid1Accent6",
-            "MediumGrid2",
-            "MediumGrid2Accent1",
-            "MediumGrid2Accent2",
-            "MediumGrid2Accent3",
-            "MediumGrid2Accent4",
-            "MediumGrid2Accent5",
-            "MediumGrid2Accent6",
-            "MediumGrid3",
-            "MediumGrid3Accent1",
-            "MediumGrid3Accent2",
-            "MediumGrid3Accent3",
-            "MediumGrid3Accent4",
-            "MediumGrid3Accent5",
-            "MediumGrid3Accent6",
-            "MediumList1",
-            "MediumList1Accent1",
-            "MediumList1Accent2",
-            "MediumList1Accent3",
-            "MediumList1Accent4",
-            "MediumList1Accent5",
-            "MediumList1Accent6",
-            "MediumList2",
-            "MediumList2Accent1",
-            "MediumList2Accent2",
-            "MediumList2Accent3",
-            "MediumList2Accent4",
-            "MediumList2Accent5",
-            "MediumList2Accent6",
-            "MediumShading1",
-            "MediumShading1Accent1",
-            "MediumShading1Accent2",
-            "MediumShading1Accent3",
-            "MediumShading1Accent4",
-            "MediumShading1Accent5",
-            "MediumShading1Accent6",
-            "MediumShading2",
-            "MediumShading2Accent1",
-            "MediumShading2Accent2",
-            "MediumShading2Accent3",
-            "MediumShading2Accent4",
-            "MediumShading2Accent5",
-            "MediumShading2Accent6",
-            "Table3DEffects1",
-            "Table3DEffects2",
-            "Table3DEffects3",
-            "TableClassic1",
-            "TableClassic2",
-            "TableClassic3",
-            "TableClassic4",
-            "TableColorful1",
-            "TableColorful2",
-            "TableColorful3",
-            "TableColumns1",
-            "TableColumns2",
-            "TableColumns3",
-            "TableColumns4",
-            "TableColumns5",
-            "TableContemporary",
-            "TableElegant",
-            "TableGrid",
-            "TableGrid1",
-            "TableGrid2",
-            "TableGrid3",
-            "TableGrid4",
-            "TableGrid5",
-            "TableGrid6",
-            "TableGrid7",
-            "TableGrid8",
-            "TableList1",
-            "TableList2",
-            "TableList3",
-            "TableList4",
-            "TableList5",
-            "TableList6",
-            "TableList7",
-            "TableList8",
-            "TableNormal",
-            "TableProfessional",
-            "TableSimple1",
-            "TableSimple2",
-            "TableSimple3",
-            "TableSubtle1",
-            "TableSubtle2",
-            "TableTheme",
-            "TableWeb1",
-            "TableWeb2",
-            "TableWeb3",
-            "PlainTable1",
-            "PlainTable2",
-            "PlainTable3",
-            "PlainTable4",
-            "PlainTable5",
-            "TableGridLight",
-            "GridTable1Light",
-            "GridTable2",
-            "GridTable3",
-            "GridTable4",
-            "GridTable5Dark",
-            "GridTable6Colorful",
-            "GridTable7Colorful",
-            "GridTable1LightAccent1",
-            "GridTable2Accent1",
-            "GridTable3Accent1",
-            "GridTable4Accent1",
-            "GridTable5DarkAccent1",
-            "GridTable6ColorfulAccent1",
-            "GridTable7ColorfulAccent1",
-            "GridTable1LightAccent2",
-            "GridTable2Accent2",
-            "GridTable3Accent2",
-            "GridTable4Accent2",
-            "GridTable5DarkAccent2",
-            "GridTable6ColorfulAccent2",
-            "GridTable7ColorfulAccent2",
-            "GridTable1LightAccent3",
-            "GridTable2Accent3",
-            "GridTable3Accent3",
-            "GridTable4Accent3",
-            "GridTable5DarkAccent3",
-            "GridTable6ColorfulAccent3",
-            "GridTable7ColorfulAccent3",
-            "GridTable1LightAccent4",
-            "GridTable2Accent4",
-            "GridTable3Accent4",
-            "GridTable4Accent4",
-            "GridTable5DarkAccent4",
-            "GridTable6ColorfulAccent4",
-            "GridTable7ColorfulAccent4",
-            "GridTable1LightAccent5",
-            "GridTable2Accent5",
-            "GridTable3Accent5",
-            "GridTable4Accent5",
-            "GridTable5DarkAccent5",
-            "GridTable6ColorfulAccent5",
-            "GridTable7ColorfulAccent5",
-            "GridTable1LightAccent6",
-            "GridTable2Accent6",
-            "GridTable3Accent6",
-            "GridTable4Accent6",
-            "GridTable5DarkAccent6",
-            "GridTable6ColorfulAccent6",
-            "GridTable7ColorfulAccent6",
-            "ListTable1Light",
-            "ListTable2",
-            "ListTable3",
-            "ListTable4",
-            "ListTable5Dark",
-            "ListTable6Colorful",
-            "ListTable7Colorful",
-            "ListTable1LightAccent1",
-            "ListTable2Accent1",
-            "ListTable3Accent1",
-            "ListTable4Accent1",
-            "ListTable5DarkAccent1",
-            "ListTable6ColorfulAccent1",
-            "ListTable7ColorfulAccent1",
-            "ListTable1LightAccent2",
-            "ListTable2Accent2",
-            "ListTable3Accent2",
-            "ListTable4Accent2",
-            "ListTable5DarkAccent2",
-            "ListTable6ColorfulAccent2",
-            "ListTable7ColorfulAccent2",
-            "ListTable1LightAccent3",
-            "ListTable2Accent3",
-            "ListTable3Accent3",
-            "ListTable4Accent3",
-            "ListTable5DarkAccent3",
-            "ListTable6ColorfulAccent3",
-            "ListTable7ColorfulAccent3",
-            "ListTable1LightAccent4",
-            "ListTable2Accent4",
-            "ListTable3Accent4",
-            "ListTable4Accent4",
-            "ListTable5DarkAccent4",
-            "ListTable6ColorfulAccent4",
-            "ListTable7ColorfulAccent4",
-            "ListTable1LightAccent5",
-            "ListTable2Accent5",
-            "ListTable3Accent5",
-            "ListTable4Accent5",
-            "ListTable5DarkAccent5",
-            "ListTable6ColorfulAccent5",
-            "ListTable7ColorfulAccent5",
-            "ListTable1LightAccent6",
-            "ListTable2Accent6",
-            "ListTable3Accent6",
-            "ListTable4Accent6",
-            "ListTable5DarkAccent6",
-            "ListTable6ColorfulAccent6",
-            "ListTable7ColorfulAccent6",
-            "User",
-            "Nil"
-          ],
-          "type": "string"
-        },
-        "StyleName": {
-          "description": "Gets or sets the name of the character style applied to this formatting.",
-          "type": "string"
-        },
-        "Subscript": {
-          "description": "True if the font is formatted as subscript.",
-          "type": "boolean"
-        },
-        "Superscript": {
-          "description": "True if the font is formatted as superscript.",
-          "type": "boolean"
-        },
-        "TextEffect": {
-          "description": "Gets or sets the font animation effect.",
-          "enum": [
-            "None",
-            "LasVegasLights",
-            "BlinkingBackground",
-            "SparkleText",
-            "MarchingBlackAnts",
-            "MarchingRedAnts",
-            "Shimmer"
-          ],
-          "type": "string"
-        },
-        "Underline": {
-          "description": "Gets or sets the type of underline applied to the font.",
-          "enum": [
-            "None",
-            "Single",
-            "Words",
-            "Double",
-            "Dotted",
-            "Thick",
-            "Dash",
-            "DashLong",
-            "DotDash",
-            "DotDotDash",
-            "Wavy",
-            "DottedHeavy",
-            "DashHeavy",
-            "DashLongHeavy",
-            "DotDashHeavy",
-            "DotDotDashHeavy",
-            "WavyHeavy",
-            "WavyDouble"
-          ],
-          "type": "string"
-        },
-        "UnderlineColor": {
-          "$ref": "#/definitions/XmlColor",
-          "description": "Gets or sets the color of the underline applied to the font."
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "FootnoteResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/footnote/0",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "Footnote": {
-              "$ref": "#/definitions/Footnote",
-              "description": "Footnote information"
-            }
-          }
-        }
-      ]
-    },
-    "Footnote": {
-      "description": "Footnote.",
-      "type": "object",
-      "properties": {
-        "Position": {
-          "$ref": "#/definitions/DocumentPosition",
-          "description": "Link to comment range start node."
-        },
-        "FootnoteType": {
-          "description": "Returns a value that specifies whether this is a footnote or endnote.",
-          "enum": [
-            "Footnote",
-            "Endnote"
-          ],
-          "type": "string"
-        },
-        "ReferenceMark": {
-          "description": "Gets/sets custom reference mark to be used for this footnote.\r\nDefault value is {System.String.Empty}, meaning auto-numbered footnotes are used.",
-          "type": "string"
-        },
-        "Text": {
-          "description": "This is a convenience property that allows to easily get or set text of the footnote.",
-          "type": "string"
-        },
-        "Content": {
-          "$ref": "#/definitions/StoryChildNodes",
-          "description": "Content of footnote."
-        },
-        "NodeId": {
-          "description": "Node id",
-          "type": "string"
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "FootnotesResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/footnotes",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "Footnotes": {
-              "$ref": "#/definitions/FootnoteCollection",
-              "description": "Collection of footnotes."
-            }
-          }
-        }
-      ]
-    },
-    "FootnoteCollection": {
-      "description": "Collection of footnotes.",
-      "type": "object",
-      "properties": {
-        "List": {
-          "description": "Collection of foonotes links",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Footnote"
-          }
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "FormFieldsResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/{nodePath}/formfields",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "FormFields": {
-              "$ref": "#/definitions/FormFieldCollection",
-              "description": "Collection of form fields."
-            }
-          }
-        }
-      ]
-    },
-    "FormFieldCollection": {
-      "description": "Represents DTO for collection of formfields.",
-      "type": "object",
-      "properties": {
-        "List": {
-          "description": "Collection of formfields",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/FormField"
-          }
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "FormFieldCheckbox": {
-      "description": "FormField checkbox element",
-      "allOf": [
-        {
-          "$ref": "#/definitions/FormField"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "IsCheckBoxExactSize": {
-              "description": "Gets or sets the boolean value that indicates whether the size of the textbox is automatic or specified explicitly.",
-              "type": "boolean"
-            },
-            "CheckBoxSize": {
-              "format": "double",
-              "description": "Gets or sets the size of the checkbox in points. Has effect only when {Aspose.Words.Cloud.DTO.DocumentElements.FormFields.FormFieldCheckbox.IsCheckBoxExactSize} is true.",
-              "type": "number"
-            },
-            "Checked": {
-              "description": "Gets or sets the checked status of the check box form field.",
-              "type": "boolean"
-            }
-          }
-        }
-      ]
-    },
-    "FormFieldDropDown": {
-      "description": "FormField dropdownlist element",
-      "allOf": [
-        {
-          "$ref": "#/definitions/FormField"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "DropDownSelectedIndex": {
+            "Matches": {
               "format": "int32",
-              "description": "Gets or sets the index specifying the currently selected item in a dropdown form field.",
+              "description": "Number of occurrences of the captured text in the document.",
               "type": "integer"
             },
-            "DropDownItems": {
-              "description": "Provides access to the items of a dropdown form field.",
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
+            "DocumentLink": {
+              "$ref": "#/definitions/FileLink",
+              "description": "Link to the document."
             }
           }
         }
       ]
-    },
-    "FormFieldTextInput": {
-      "description": "FormField text input element",
-      "allOf": [
-        {
-          "$ref": "#/definitions/FormField"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "TextInputFormat": {
-              "description": "Returns or sets the text formatting for a text form field.",
-              "type": "string"
-            },
-            "TextInputType": {
-              "description": "Gets or sets the type of a text form field.",
-              "enum": [
-                "Regular",
-                "Number",
-                "Date",
-                "CurrentDate",
-                "CurrentTime",
-                "Calculated"
-              ],
-              "type": "string"
-            },
-            "TextInputDefault": {
-              "description": "Gets or sets the default string or a calculation expression of a text form field.",
-              "type": "string"
-            },
-            "MaxLength": {
-              "format": "int32",
-              "description": "Maximum length for the text field. Zero when the length is not limited.",
-              "type": "integer"
-            }
-          }
-        }
-      ]
-    },
-    "FormField": {
-      "description": "FromField",
-      "type": "object",
-      "properties": {
-        "NodeId": {
-          "description": "Node id",
-          "type": "string"
-        },
-        "Name": {
-          "description": "Gets or sets the form field name.",
-          "type": "string"
-        },
-        "Enabled": {
-          "description": "True if a form field is enabled.",
-          "type": "boolean"
-        },
-        "StatusText": {
-          "description": "Returns or sets the text that's displayed in the status bar when a form field has the focus.",
-          "type": "string"
-        },
-        "OwnStatus": {
-          "description": "Specifies the source of the text that's displayed in the status bar when a form field has the focus.",
-          "type": "boolean"
-        },
-        "HelpText": {
-          "description": "Returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.",
-          "type": "string"
-        },
-        "OwnHelp": {
-          "description": "Specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.",
-          "type": "boolean"
-        },
-        "CalculateOnExit": {
-          "description": "True if references to the specified form field are automatically updated whenever the field is exited.",
-          "type": "boolean"
-        },
-        "EntryMacro": {
-          "description": "Returns or sets an entry macro name for the form field.",
-          "type": "string"
-        },
-        "ExitMacro": {
-          "description": "Returns or sets an exit macro name for the form field.",
-          "type": "string"
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      },
-      "discriminator": "FormFieldType"
-    },
-    "FormFieldResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/paragraphs/{0}/formfields/{1}",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "FormField": {
-              "$ref": "#/definitions/FormField",
-              "description": "Field information"
-            }
-          }
-        }
-      ]
-    },
-    "HeaderFooterResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/headersfooters/{0}",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "HeaderFooter": {
-              "$ref": "#/definitions/HeaderFooter",
-              "description": "HeaderFooter"
-            }
-          }
-        }
-      ]
-    },
-    "HeaderFooter": {
-      "description": "Section element",
-      "type": "object",
-      "properties": {
-        "Paragraphs": {
-          "$ref": "#/definitions/LinkElement",
-          "description": "Link to Paragraphs resource"
-        },
-        "DrawingObjects": {
-          "$ref": "#/definitions/LinkElement",
-          "description": "Link to DrawingObjects resource"
-        },
-        "Type": {
-          "description": "Paragraph's text",
-          "enum": [
-            "HeaderEven",
-            "HeaderPrimary",
-            "FooterEven",
-            "FooterPrimary",
-            "HeaderFirst",
-            "FooterFirst"
-          ],
-          "type": "string"
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "HeaderFootersResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/headersfooters",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "HeaderFooters": {
-              "$ref": "#/definitions/HeaderFooterLinkCollection",
-              "description": "Collection of headers/footers"
-            }
-          }
-        }
-      ]
-    },
-    "HeaderFooterLinkCollection": {
-      "description": "Collection of links to header/footers",
-      "type": "object",
-      "properties": {
-        "List": {
-          "description": "Collection of section's links",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/HeaderFooterLink"
-          }
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "HeaderFooterLink": {
-      "description": "HeaderFooter link element",
-      "type": "object",
-      "properties": {
-        "Type": {
-          "description": "Paragraph's text",
-          "enum": [
-            "HeaderEven",
-            "HeaderPrimary",
-            "FooterEven",
-            "FooterPrimary",
-            "HeaderFirst",
-            "FooterFirst"
-          ],
-          "type": "string"
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "HyperlinkResponse": {
-      "description": "This resonse should be returned by the service when handling:  GET /{name}/hyperlinks/{hyperlinkIndex} .",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "Hyperlink": {
-              "$ref": "#/definitions/Hyperlink",
-              "description": "Hyperlink."
-            }
-          }
-        }
-      ]
-    },
-    "Hyperlink": {
-      "description": "Hyperlink element.",
-      "type": "object",
-      "properties": {
-        "DisplayText": {
-          "description": "Hypelink's display text",
-          "type": "string"
-        },
-        "Value": {
-          "description": "Value",
-          "type": "string"
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "HyperlinksResponse": {
-      "description": "This resonse should be returned by the service when handling:  GET /{name}/hyperlinks .",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "Hyperlinks": {
-              "$ref": "#/definitions/Hyperlinks",
-              "description": "Collection of hyperlinks."
-            }
-          }
-        }
-      ]
-    },
-    "Hyperlinks": {
-      "description": "Collection of {Aspose.Words.Cloud.DTO.DocumentElements.Hyperlinks.Hyperlink}.",
-      "type": "object",
-      "properties": {
-        "HyperlinkList": {
-          "description": "Array of {Aspose.Words.Cloud.DTO.DocumentElements.Hyperlinks.Hyperlink}.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Hyperlink"
-          }
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "OfficeMathObjectResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/officeMathObjects/0",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "OfficeMathObject": {
-              "$ref": "#/definitions/OfficeMathObject",
-              "description": "OfficeMathObject information"
-            }
-          }
-        }
-      ]
-    },
-    "OfficeMathObject": {
-      "description": "OfficeMath object.",
-      "type": "object",
-      "properties": {
-        "Content": {
-          "$ref": "#/definitions/StoryChildNodes",
-          "description": "Content of footnote."
-        },
-        "DisplayType": {
-          "description": "Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text\r\nor displayed on its own line.",
-          "enum": [
-            "Display",
-            "Inline"
-          ],
-          "type": "string"
-        },
-        "Justification": {
-          "description": "Gets/sets Office Math justification.",
-          "enum": [
-            "CenterGroup",
-            "Center",
-            "Left",
-            "Right",
-            "Inline",
-            "Default"
-          ],
-          "type": "string"
-        },
-        "MathObjectType": {
-          "description": "Gets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.",
-          "enum": [
-            "OMath",
-            "OMathPara",
-            "Accent",
-            "Bar",
-            "BorderBox",
-            "Box",
-            "Delimiter",
-            "Degree",
-            "Argument",
-            "Array",
-            "Fraction",
-            "Denominator",
-            "Numerator",
-            "Function",
-            "FunctionName",
-            "GroupCharacter",
-            "Limit",
-            "LowerLimit",
-            "UpperLimit",
-            "Matrix",
-            "MatrixRow",
-            "NAry",
-            "Phantom",
-            "Radical",
-            "SubscriptPart",
-            "SuperscriptPart",
-            "PreSubSuperscript",
-            "Subscript",
-            "SubSuperscript",
-            "Supercript"
-          ],
-          "type": "string"
-        },
-        "NodeId": {
-          "description": "Node id",
-          "type": "string"
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "OfficeMathObjectsResponse": {
-      "description": "This response should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/OfficeMathObjects",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "OfficeMathObjects": {
-              "$ref": "#/definitions/OfficeMathObjectsCollection",
-              "description": "Collection of OfficeMath objects."
-            }
-          }
-        }
-      ]
-    },
-    "OfficeMathObjectsCollection": {
-      "description": "Collection of OfficeMath objects.",
-      "type": "object",
-      "properties": {
-        "List": {
-          "description": "Collection of OfficeMath objects.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/OfficeMathObject"
-          }
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "ParagraphLinkCollectionResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/paragraphs",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "Paragraphs": {
-              "$ref": "#/definitions/ParagraphLinkCollection",
-              "description": "Collection of paragraphs"
-            }
-          }
-        }
-      ]
-    },
-    "ParagraphLinkCollection": {
-      "description": "Collection of links to paragraphs",
-      "type": "object",
-      "properties": {
-        "ParagraphLinkList": {
-          "description": "Collection of paragraph's links",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ParagraphLink"
-          }
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "ParagraphLink": {
-      "description": "Paragraph link element",
-      "type": "object",
-      "properties": {
-        "Text": {
-          "description": "Paragraph's text",
-          "type": "string"
-        },
-        "NodeId": {
-          "description": "Node id",
-          "type": "string"
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "ParagraphResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/paragraphs/{0}",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "Paragraph": {
-              "$ref": "#/definitions/Paragraph",
-              "description": "Paragraph"
-            }
-          }
-        }
-      ]
-    },
-    "Paragraph": {
-      "description": "Paragraph element",
-      "type": "object",
-      "properties": {
-        "ChildNodes": {
-          "description": "Child nodes",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/NodeLink"
-          }
-        },
-        "NodeId": {
-          "description": "Node id",
-          "type": "string"
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "SectionLinkCollectionResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/sections",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "Sections": {
-              "$ref": "#/definitions/SectionLinkCollection",
-              "description": "Collection of sections"
-            }
-          }
-        }
-      ]
-    },
-    "SectionLinkCollection": {
-      "description": "Collection of links to sections",
-      "type": "object",
-      "properties": {
-        "SectionLinkList": {
-          "description": "Collection of section's links",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SectionLink"
-          }
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "SectionLink": {
-      "description": "Section link element",
-      "type": "object",
-      "properties": {
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "SectionPageSetupResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/sections/{0}/PageSetup",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "PageSetup": {
-              "$ref": "#/definitions/PageSetup",
-              "description": "Section"
-            }
-          }
-        }
-      ]
-    },
-    "PageSetup": {
-      "description": "Represents the page setup properties of a section.",
-      "type": "object",
-      "properties": {
-        "Bidi": {
-          "description": "Specifies that this section contains bidirectional (complex scripts) text.",
-          "type": "boolean"
-        },
-        "BorderAlwaysInFront": {
-          "description": "Specifies where the page border is positioned relative to intersecting texts and objects.",
-          "type": "boolean"
-        },
-        "BorderAppliesTo": {
-          "description": "Specifies which pages the page border is printed on.",
-          "enum": [
-            "AllPages",
-            "FirstPage",
-            "OtherPages"
-          ],
-          "type": "string"
-        },
-        "BorderDistanceFrom": {
-          "description": "Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from\r\nthe text it surrounds.",
-          "enum": [
-            "Text",
-            "PageEdge"
-          ],
-          "type": "string"
-        },
-        "BottomMargin": {
-          "format": "double",
-          "description": "Returns or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body\r\ntext.",
-          "type": "number"
-        },
-        "DifferentFirstPageHeaderFooter": {
-          "description": "<b>True</b> if a different header or footer is used on the first page.",
-          "type": "boolean"
-        },
-        "FirstPageTray": {
-          "format": "int32",
-          "description": "Gets or sets the paper tray (bin) to use for the first page of a section.\r\nThe value is implementation (printer) specific.",
-          "type": "integer"
-        },
-        "FooterDistance": {
-          "format": "double",
-          "description": "Returns or sets the distance (in points) between the footer and the bottom of the page.",
-          "type": "number"
-        },
-        "Gutter": {
-          "format": "double",
-          "description": "Gets or sets the amount of extra space added to the margin for document binding.",
-          "type": "number"
-        },
-        "HeaderDistance": {
-          "format": "double",
-          "description": "Returns or sets the distance (in points) between the header and the top of the page.",
-          "type": "number"
-        },
-        "LeftMargin": {
-          "format": "double",
-          "description": "Returns or sets the distance (in points) between the left edge of the page and the left boundary of the body text.",
-          "type": "number"
-        },
-        "LineNumberCountBy": {
-          "format": "int32",
-          "description": "Returns or sets the numeric increment for line numbers.",
-          "type": "integer"
-        },
-        "LineNumberDistanceFromText": {
-          "format": "double",
-          "description": "Gets or sets distance between the right edge of line numbers and the left edge of the document.",
-          "type": "number"
-        },
-        "LineNumberRestartMode": {
-          "description": "Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new\r\npage or section or runs continuously.",
-          "enum": [
-            "RestartPage",
-            "RestartSection",
-            "Continuous"
-          ],
-          "type": "string"
-        },
-        "LineStartingNumber": {
-          "format": "int32",
-          "description": "Gets or sets the starting line number.",
-          "type": "integer"
-        },
-        "Orientation": {
-          "description": "Returns or sets the orientation of the page.",
-          "enum": [
-            "Portrait",
-            "Landscape"
-          ],
-          "type": "string"
-        },
-        "OtherPagesTray": {
-          "format": "int32",
-          "description": "Gets or sets the paper tray (bin) to be used for all but the first page of a section.\r\nThe value is implementation (printer) specific.",
-          "type": "integer"
-        },
-        "PageHeight": {
-          "format": "double",
-          "description": "Returns or sets the height of the page in points.",
-          "type": "number"
-        },
-        "PageNumberStyle": {
-          "description": "Gets or sets the page number format.",
-          "enum": [
-            "Arabic",
-            "UppercaseRoman",
-            "LowercaseRoman",
-            "UppercaseLetter",
-            "LowercaseLetter",
-            "Ordinal",
-            "Number",
-            "OrdinalText",
-            "Hex",
-            "ChicagoManual",
-            "Kanji",
-            "KanjiDigit",
-            "AiueoHalfWidth",
-            "IrohaHalfWidth",
-            "ArabicFullWidth",
-            "ArabicHalfWidth",
-            "KanjiTraditional",
-            "KanjiTraditional2",
-            "NumberInCircle",
-            "DecimalFullWidth",
-            "Aiueo",
-            "Iroha",
-            "LeadingZero",
-            "Bullet",
-            "Ganada",
-            "Chosung",
-            "GB1",
-            "GB2",
-            "GB3",
-            "GB4",
-            "Zodiac1",
-            "Zodiac2",
-            "Zodiac3",
-            "TradChinNum1",
-            "TradChinNum2",
-            "TradChinNum3",
-            "TradChinNum4",
-            "SimpChinNum1",
-            "SimpChinNum2",
-            "SimpChinNum3",
-            "SimpChinNum4",
-            "HanjaRead",
-            "HanjaReadDigit",
-            "Hangul",
-            "Hanja",
-            "Hebrew1",
-            "Arabic1",
-            "Hebrew2",
-            "Arabic2",
-            "HindiLetter1",
-            "HindiLetter2",
-            "HindiArabic",
-            "HindiCardinalText",
-            "ThaiLetter",
-            "ThaiArabic",
-            "ThaiCardinalText",
-            "VietCardinalText",
-            "NumberInDash",
-            "NumInDash",
-            "LowercaseRussian",
-            "UppercaseRussian",
-            "None",
-            "Custom"
-          ],
-          "type": "string"
-        },
-        "PageStartingNumber": {
-          "format": "int32",
-          "description": "Gets or sets the starting page number of the section.",
-          "type": "integer"
-        },
-        "PageWidth": {
-          "format": "double",
-          "description": "Returns or sets the width of the page in points.",
-          "type": "number"
-        },
-        "PaperSize": {
-          "description": "Returns or sets the paper size.",
-          "enum": [
-            "A3",
-            "A4",
-            "A5",
-            "B4",
-            "B5",
-            "Executive",
-            "Folio",
-            "Ledger",
-            "Legal",
-            "Letter",
-            "EnvelopeDL",
-            "Quarto",
-            "Statement",
-            "Tabloid",
-            "Paper10x14",
-            "Paper11x17",
-            "Custom"
-          ],
-          "type": "string"
-        },
-        "RestartPageNumbering": {
-          "description": "<b>True</b> if page numbering restarts at the beginning of the section.",
-          "type": "boolean"
-        },
-        "RightMargin": {
-          "format": "double",
-          "description": "Returns or sets the distance (in points) between the right edge of the page and the right boundary of the body\r\ntext.",
-          "type": "number"
-        },
-        "RtlGutter": {
-          "description": "Gets or sets whether Microsoft Word uses gutters for the section based on a right-to-left language or a\r\nleft-to-right language.",
-          "type": "boolean"
-        },
-        "SectionStart": {
-          "description": "Returns or sets the type of section break for the specified object.",
-          "enum": [
-            "Continuous",
-            "NewColumn",
-            "NewPage",
-            "EvenPage",
-            "OddPage"
-          ],
-          "type": "string"
-        },
-        "SuppressEndnotes": {
-          "description": "<b>True</b> if endnotes are printed at the end of the next section that doesn't suppress endnotes.\r\n                Suppressed endnotes are printed before the endnotes in that section.",
-          "type": "boolean"
-        },
-        "TopMargin": {
-          "format": "double",
-          "description": "Returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.",
-          "type": "number"
-        },
-        "VerticalAlignment": {
-          "description": "Returns or sets the vertical alignment of text on each page in a document or section.",
-          "enum": [
-            "Bottom",
-            "Center",
-            "Justify",
-            "Top"
-          ],
-          "type": "string"
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "SectionResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/sections/{0}",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "Section": {
-              "$ref": "#/definitions/Section",
-              "description": "Section"
-            }
-          }
-        }
-      ]
-    },
-    "Section": {
-      "description": "Section element",
-      "type": "object",
-      "properties": {
-        "Paragraphs": {
-          "$ref": "#/definitions/LinkElement",
-          "description": "Link to Paragraphs resource"
-        },
-        "PageSetup": {
-          "$ref": "#/definitions/LinkElement",
-          "description": "Link to PageSetup resource"
-        },
-        "HeaderFooters": {
-          "$ref": "#/definitions/LinkElement",
-          "description": "Link to HeaderFooters resource"
-        },
-        "Tables": {
-          "$ref": "#/definitions/LinkElement",
-          "description": "Link to Tables resource"
-        },
-        "ChildNodes": {
-          "description": "Child nodes.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/NodeLink"
-          }
-        },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
     },
     "TableCellFormatResponse": {
       "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/tables/{0}/rows/{1}/cells/{2}/cellformat",
@@ -14132,8 +12475,8 @@
         }
       ]
     },
-    "DocumentPropertiesResponse": {
-      "description": "This resonse should be returned by the service when handling:  GET /documentProperties.",
+    "SectionLinkCollectionResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/sections",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -14141,22 +12484,23 @@
         {
           "type": "object",
           "properties": {
-            "DocumentProperties": {
-              "$ref": "#/definitions/DocumentProperties",
-              "description": "Collection of document properties."
+            "Sections": {
+              "$ref": "#/definitions/SectionLinkCollection",
+              "description": "Collection of sections"
             }
           }
         }
       ]
     },
-    "DocumentProperties": {
-      "description": "Collection of document properties.",
+    "SectionLinkCollection": {
+      "description": "Collection of links to sections",
       "type": "object",
       "properties": {
-        "List": {
+        "SectionLinkList": {
+          "description": "Collection of section's links",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/DocumentProperty"
+            "$ref": "#/definitions/SectionLink"
           }
         },
         "link": {
@@ -14165,143 +12509,291 @@
         }
       }
     },
-    "DocumentProperty": {
-      "description": "Words document property DTO.",
+    "SectionLink": {
+      "description": "Section link element",
       "type": "object",
       "properties": {
-        "Name": {
-          "description": "Name of the document property.",
-          "type": "string"
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "SectionPageSetupResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/sections/{0}/PageSetup",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
         },
-        "Value": {
-          "description": "String value of the document property.",
-          "type": "string"
-        },
-        "BuiltIn": {
-          "description": "Flag indicates whether the property is built-in or not.\r\nIf true the property is built-in, if false the property is custom.",
+        {
+          "type": "object",
+          "properties": {
+            "PageSetup": {
+              "$ref": "#/definitions/PageSetup",
+              "description": "Section"
+            }
+          }
+        }
+      ]
+    },
+    "PageSetup": {
+      "description": "Represents the page setup properties of a section.",
+      "type": "object",
+      "properties": {
+        "Bidi": {
+          "description": "Specifies that this section contains bidirectional (complex scripts) text.",
           "type": "boolean"
         },
-        "link": {
-          "$ref": "#/definitions/WordsApiLink",
-          "description": "Link to the document."
-        }
-      }
-    },
-    "DocumentPropertyResponse": {
-      "description": "This resonse should be returned by the service when handling:  GET documentProperties/{propertyName}.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
+        "BorderAlwaysInFront": {
+          "description": "Specifies where the page border is positioned relative to intersecting texts and objects.",
+          "type": "boolean"
         },
-        {
-          "type": "object",
-          "properties": {
-            "DocumentProperty": {
-              "$ref": "#/definitions/DocumentProperty",
-              "description": "Document property."
-            }
-          }
-        }
-      ]
-    },
-    "DocumentResponse": {
-      "description": "Represents the response with document description.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "Document": {
-              "$ref": "#/definitions/Document",
-              "description": "Document description."
-            }
-          }
-        }
-      ]
-    },
-    "Document": {
-      "description": "Represents Words document DTO.",
-      "type": "object",
-      "properties": {
-        "Links": {
-          "description": "A list of links that originate from this document.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Link"
-          }
-        },
-        "FileName": {
-          "description": "Gets the name of the file.",
-          "type": "string"
-        },
-        "SourceFormat": {
-          "description": "Gets the original format of the document.",
+        "BorderAppliesTo": {
+          "description": "Specifies which pages the page border is printed on.",
           "enum": [
-            "Unknown",
-            "Doc",
-            "Dot",
-            "DocPreWord60",
-            "Docx",
-            "Docm",
-            "Dotx",
-            "Dotm",
-            "FlatOpc",
-            "Rtf",
-            "WordML",
-            "Html",
-            "Mhtml",
-            "Epub",
-            "Text",
-            "Odt",
-            "Ott",
-            "Pdf",
-            "Xps",
-            "Swf",
-            "Tiff",
-            "Svg"
+            "AllPages",
+            "FirstPage",
+            "OtherPages"
           ],
           "type": "string"
         },
-        "IsEncrypted": {
-          "description": "Returns true if the document is encrypted and requires a password to open.",
+        "BorderDistanceFrom": {
+          "description": "Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from\r\nthe text it surrounds.",
+          "enum": [
+            "Text",
+            "PageEdge"
+          ],
+          "type": "string"
+        },
+        "BottomMargin": {
+          "format": "double",
+          "description": "Returns or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body\r\ntext.",
+          "type": "number"
+        },
+        "DifferentFirstPageHeaderFooter": {
+          "description": "<b>True</b> if a different header or footer is used on the first page.",
           "type": "boolean"
         },
-        "IsSigned": {
-          "description": "Returns true if the document contains a digital signature. This property merely informs that a \r\ndigital signature is present on a document, but it does not specify whether the signature is valid or not.",
+        "FirstPageTray": {
+          "format": "int32",
+          "description": "Gets or sets the paper tray (bin) to use for the first page of a section.\r\nThe value is implementation (printer) specific.",
+          "type": "integer"
+        },
+        "FooterDistance": {
+          "format": "double",
+          "description": "Returns or sets the distance (in points) between the footer and the bottom of the page.",
+          "type": "number"
+        },
+        "Gutter": {
+          "format": "double",
+          "description": "Gets or sets the amount of extra space added to the margin for document binding.",
+          "type": "number"
+        },
+        "HeaderDistance": {
+          "format": "double",
+          "description": "Returns or sets the distance (in points) between the header and the top of the page.",
+          "type": "number"
+        },
+        "LeftMargin": {
+          "format": "double",
+          "description": "Returns or sets the distance (in points) between the left edge of the page and the left boundary of the body text.",
+          "type": "number"
+        },
+        "LineNumberCountBy": {
+          "format": "int32",
+          "description": "Returns or sets the numeric increment for line numbers.",
+          "type": "integer"
+        },
+        "LineNumberDistanceFromText": {
+          "format": "double",
+          "description": "Gets or sets distance between the right edge of line numbers and the left edge of the document.",
+          "type": "number"
+        },
+        "LineNumberRestartMode": {
+          "description": "Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new\r\npage or section or runs continuously.",
+          "enum": [
+            "RestartPage",
+            "RestartSection",
+            "Continuous"
+          ],
+          "type": "string"
+        },
+        "LineStartingNumber": {
+          "format": "int32",
+          "description": "Gets or sets the starting line number.",
+          "type": "integer"
+        },
+        "Orientation": {
+          "description": "Returns or sets the orientation of the page.",
+          "enum": [
+            "Portrait",
+            "Landscape"
+          ],
+          "type": "string"
+        },
+        "OtherPagesTray": {
+          "format": "int32",
+          "description": "Gets or sets the paper tray (bin) to be used for all but the first page of a section.\r\nThe value is implementation (printer) specific.",
+          "type": "integer"
+        },
+        "PageHeight": {
+          "format": "double",
+          "description": "Returns or sets the height of the page in points.",
+          "type": "number"
+        },
+        "PageNumberStyle": {
+          "description": "Gets or sets the page number format.",
+          "enum": [
+            "Arabic",
+            "UppercaseRoman",
+            "LowercaseRoman",
+            "UppercaseLetter",
+            "LowercaseLetter",
+            "Ordinal",
+            "Number",
+            "OrdinalText",
+            "Hex",
+            "ChicagoManual",
+            "Kanji",
+            "KanjiDigit",
+            "AiueoHalfWidth",
+            "IrohaHalfWidth",
+            "ArabicFullWidth",
+            "ArabicHalfWidth",
+            "KanjiTraditional",
+            "KanjiTraditional2",
+            "NumberInCircle",
+            "DecimalFullWidth",
+            "Aiueo",
+            "Iroha",
+            "LeadingZero",
+            "Bullet",
+            "Ganada",
+            "Chosung",
+            "GB1",
+            "GB2",
+            "GB3",
+            "GB4",
+            "Zodiac1",
+            "Zodiac2",
+            "Zodiac3",
+            "TradChinNum1",
+            "TradChinNum2",
+            "TradChinNum3",
+            "TradChinNum4",
+            "SimpChinNum1",
+            "SimpChinNum2",
+            "SimpChinNum3",
+            "SimpChinNum4",
+            "HanjaRead",
+            "HanjaReadDigit",
+            "Hangul",
+            "Hanja",
+            "Hebrew1",
+            "Arabic1",
+            "Hebrew2",
+            "Arabic2",
+            "HindiLetter1",
+            "HindiLetter2",
+            "HindiArabic",
+            "HindiCardinalText",
+            "ThaiLetter",
+            "ThaiArabic",
+            "ThaiCardinalText",
+            "VietCardinalText",
+            "NumberInDash",
+            "NumInDash",
+            "LowercaseRussian",
+            "UppercaseRussian",
+            "None",
+            "Custom"
+          ],
+          "type": "string"
+        },
+        "PageStartingNumber": {
+          "format": "int32",
+          "description": "Gets or sets the starting page number of the section.",
+          "type": "integer"
+        },
+        "PageWidth": {
+          "format": "double",
+          "description": "Returns or sets the width of the page in points.",
+          "type": "number"
+        },
+        "PaperSize": {
+          "description": "Returns or sets the paper size.",
+          "enum": [
+            "A3",
+            "A4",
+            "A5",
+            "B4",
+            "B5",
+            "Executive",
+            "Folio",
+            "Ledger",
+            "Legal",
+            "Letter",
+            "EnvelopeDL",
+            "Quarto",
+            "Statement",
+            "Tabloid",
+            "Paper10x14",
+            "Paper11x17",
+            "Custom"
+          ],
+          "type": "string"
+        },
+        "RestartPageNumbering": {
+          "description": "<b>True</b> if page numbering restarts at the beginning of the section.",
           "type": "boolean"
         },
-        "DocumentProperties": {
-          "$ref": "#/definitions/DocumentProperties",
-          "description": "Returns document properties."
+        "RightMargin": {
+          "format": "double",
+          "description": "Returns or sets the distance (in points) between the right edge of the page and the right boundary of the body\r\ntext.",
+          "type": "number"
+        },
+        "RtlGutter": {
+          "description": "Gets or sets whether Microsoft Word uses gutters for the section based on a right-to-left language or a\r\nleft-to-right language.",
+          "type": "boolean"
+        },
+        "SectionStart": {
+          "description": "Returns or sets the type of section break for the specified object.",
+          "enum": [
+            "Continuous",
+            "NewColumn",
+            "NewPage",
+            "EvenPage",
+            "OddPage"
+          ],
+          "type": "string"
+        },
+        "SuppressEndnotes": {
+          "description": "<b>True</b> if endnotes are printed at the end of the next section that doesn't suppress endnotes.\r\n                Suppressed endnotes are printed before the endnotes in that section.",
+          "type": "boolean"
+        },
+        "TopMargin": {
+          "format": "double",
+          "description": "Returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.",
+          "type": "number"
+        },
+        "VerticalAlignment": {
+          "description": "Returns or sets the vertical alignment of text on each page in a document or section.",
+          "enum": [
+            "Bottom",
+            "Center",
+            "Justify",
+            "Top"
+          ],
+          "type": "string"
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
         }
       }
     },
-    "Link": {
-      "description": "Provides information for the object link.\r\nThis is supposed to be an atom:link, therefore it should have all attributes specified here http://tools.ietf.org/html/rfc4287#section-4.2.7",
-      "type": "object",
-      "properties": {
-        "Href": {
-          "description": "The \"href\" attribute contains the link's IRI. atom:link elements MUST\r\nhave an href attribute, whose value MUST be a IRI reference",
-          "type": "string"
-        },
-        "Rel": {
-          "description": "atom:link elements MAY have a \"rel\" attribute that indicates the link\r\nrelation type.  If the \"rel\" attribute is not present, the link\r\nelement MUST be interpreted as if the link relation type is \"alternate\".",
-          "type": "string"
-        },
-        "Type": {
-          "description": "On the link element, the \"type\" attribute's value is an advisory\r\nmedia type: it is a hint about the type of the representation that is\r\nexpected to be returned when the value of the href attribute is\r\ndereferenced.  Note that the type attribute does not override the\r\nactual media type returned with the representation.",
-          "type": "string"
-        },
-        "Title": {
-          "description": "The \"title\" attribute conveys human-readable information about the\r\nlink.  The content of the \"title\" attribute is Language-Sensitive.",
-          "type": "string"
-        }
-      }
-    },
-    "FieldNamesResponse": {
-      "description": "This resonse should be returned by the service when handling:  GET /{name}/mailMergeFieldNames.",
+    "SectionResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/sections/{0}",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -14309,22 +12801,39 @@
         {
           "type": "object",
           "properties": {
-            "FieldNames": {
-              "$ref": "#/definitions/FieldNames",
-              "description": "Collection of mail merge fields."
+            "Section": {
+              "$ref": "#/definitions/Section",
+              "description": "Section"
             }
           }
         }
       ]
     },
-    "FieldNames": {
-      "description": "Represents a collection of merge fields within a document.",
+    "Section": {
+      "description": "Section element",
       "type": "object",
       "properties": {
-        "Names": {
+        "Paragraphs": {
+          "$ref": "#/definitions/LinkElement",
+          "description": "Link to Paragraphs resource"
+        },
+        "PageSetup": {
+          "$ref": "#/definitions/LinkElement",
+          "description": "Link to PageSetup resource"
+        },
+        "HeaderFooters": {
+          "$ref": "#/definitions/LinkElement",
+          "description": "Link to HeaderFooters resource"
+        },
+        "Tables": {
+          "$ref": "#/definitions/LinkElement",
+          "description": "Link to Tables resource"
+        },
+        "ChildNodes": {
+          "description": "Child nodes.",
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/NodeLink"
           }
         },
         "link": {
@@ -14333,8 +12842,18 @@
         }
       }
     },
-    "ProtectionDataResponse": {
-      "description": "Response for the request of data about protection",
+    "LinkElement": {
+      "description": "Reference to document.",
+      "type": "object",
+      "properties": {
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "ParagraphLinkCollectionResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/paragraphs",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -14342,30 +12861,51 @@
         {
           "type": "object",
           "properties": {
-            "ProtectionData": {
-              "$ref": "#/definitions/ProtectionData",
-              "description": "Protection's data of the document"
-            },
-            "DocumentLink": {
-              "$ref": "#/definitions/FileLink",
-              "description": "Link to the document"
+            "Paragraphs": {
+              "$ref": "#/definitions/ParagraphLinkCollection",
+              "description": "Collection of paragraphs"
             }
           }
         }
       ]
     },
-    "ProtectionData": {
-      "description": "Container for the data about protection of the document",
+    "ParagraphLinkCollection": {
+      "description": "Collection of links to paragraphs",
       "type": "object",
       "properties": {
-        "ProtectionType": {
-          "description": "Type of the protection",
-          "type": "string"
+        "ParagraphLinkList": {
+          "description": "Collection of paragraph's links",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ParagraphLink"
+          }
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
         }
       }
     },
-    "ProtectionResponse": {
-      "description": "Response for the request on changing protection of the document",
+    "ParagraphLink": {
+      "description": "Paragraph link element",
+      "type": "object",
+      "properties": {
+        "Text": {
+          "description": "Paragraph's text",
+          "type": "string"
+        },
+        "NodeId": {
+          "description": "Node id",
+          "type": "string"
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "ParagraphResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/paragraphs/{0}",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -14373,42 +12913,521 @@
         {
           "type": "object",
           "properties": {
-            "ProtectionResult": {
-              "description": "Result of the changing of protection",
+            "Paragraph": {
+              "$ref": "#/definitions/Paragraph",
+              "description": "Paragraph"
+            }
+          }
+        }
+      ]
+    },
+    "Paragraph": {
+      "description": "Paragraph element",
+      "type": "object",
+      "properties": {
+        "ChildNodes": {
+          "description": "Child nodes",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NodeLink"
+          }
+        },
+        "NodeId": {
+          "description": "Node id",
+          "type": "string"
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "OfficeMathObjectResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/officeMathObjects/0",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "OfficeMathObject": {
+              "$ref": "#/definitions/OfficeMathObject",
+              "description": "OfficeMathObject information"
+            }
+          }
+        }
+      ]
+    },
+    "OfficeMathObject": {
+      "description": "OfficeMath object.",
+      "type": "object",
+      "properties": {
+        "Content": {
+          "$ref": "#/definitions/StoryChildNodes",
+          "description": "Content of footnote."
+        },
+        "DisplayType": {
+          "description": "Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text\r\nor displayed on its own line.",
+          "enum": [
+            "Display",
+            "Inline"
+          ],
+          "type": "string"
+        },
+        "Justification": {
+          "description": "Gets/sets Office Math justification.",
+          "enum": [
+            "CenterGroup",
+            "Center",
+            "Left",
+            "Right",
+            "Inline",
+            "Default"
+          ],
+          "type": "string"
+        },
+        "MathObjectType": {
+          "description": "Gets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.",
+          "enum": [
+            "OMath",
+            "OMathPara",
+            "Accent",
+            "Bar",
+            "BorderBox",
+            "Box",
+            "Delimiter",
+            "Degree",
+            "Argument",
+            "Array",
+            "Fraction",
+            "Denominator",
+            "Numerator",
+            "Function",
+            "FunctionName",
+            "GroupCharacter",
+            "Limit",
+            "LowerLimit",
+            "UpperLimit",
+            "Matrix",
+            "MatrixRow",
+            "NAry",
+            "Phantom",
+            "Radical",
+            "SubscriptPart",
+            "SuperscriptPart",
+            "PreSubSuperscript",
+            "Subscript",
+            "SubSuperscript",
+            "Supercript"
+          ],
+          "type": "string"
+        },
+        "NodeId": {
+          "description": "Node id",
+          "type": "string"
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "StoryChildNodes": {
+      "description": "Child nodes of {Aspose.Words.Story} or {Aspose.Words.InlineStory}",
+      "type": "object",
+      "properties": {
+        "ChildNodes": {
+          "description": "Child nodes.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NodeLink"
+          }
+        }
+      }
+    },
+    "OfficeMathObjectsResponse": {
+      "description": "This response should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/OfficeMathObjects",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "OfficeMathObjects": {
+              "$ref": "#/definitions/OfficeMathObjectsCollection",
+              "description": "Collection of OfficeMath objects."
+            }
+          }
+        }
+      ]
+    },
+    "OfficeMathObjectsCollection": {
+      "description": "Collection of OfficeMath objects.",
+      "type": "object",
+      "properties": {
+        "List": {
+          "description": "Collection of OfficeMath objects.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OfficeMathObject"
+          }
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "HyperlinkResponse": {
+      "description": "This resonse should be returned by the service when handling:  GET /{name}/hyperlinks/{hyperlinkIndex} .",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Hyperlink": {
+              "$ref": "#/definitions/Hyperlink",
+              "description": "Hyperlink."
+            }
+          }
+        }
+      ]
+    },
+    "Hyperlink": {
+      "description": "Hyperlink element.",
+      "type": "object",
+      "properties": {
+        "DisplayText": {
+          "description": "Hypelink's display text",
+          "type": "string"
+        },
+        "Value": {
+          "description": "Value",
+          "type": "string"
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "HyperlinksResponse": {
+      "description": "This resonse should be returned by the service when handling:  GET /{name}/hyperlinks .",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Hyperlinks": {
+              "$ref": "#/definitions/Hyperlinks",
+              "description": "Collection of hyperlinks."
+            }
+          }
+        }
+      ]
+    },
+    "Hyperlinks": {
+      "description": "Collection of {Aspose.Words.Cloud.DTO.DocumentElements.Hyperlinks.Hyperlink}.",
+      "type": "object",
+      "properties": {
+        "HyperlinkList": {
+          "description": "Array of {Aspose.Words.Cloud.DTO.DocumentElements.Hyperlinks.Hyperlink}.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Hyperlink"
+          }
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "HeaderFooterResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/headersfooters/{0}",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "HeaderFooter": {
+              "$ref": "#/definitions/HeaderFooter",
+              "description": "HeaderFooter"
+            }
+          }
+        }
+      ]
+    },
+    "HeaderFooter": {
+      "description": "Section element",
+      "type": "object",
+      "properties": {
+        "Paragraphs": {
+          "$ref": "#/definitions/LinkElement",
+          "description": "Link to Paragraphs resource"
+        },
+        "DrawingObjects": {
+          "$ref": "#/definitions/LinkElement",
+          "description": "Link to DrawingObjects resource"
+        },
+        "Type": {
+          "description": "Paragraph's text",
+          "enum": [
+            "HeaderEven",
+            "HeaderPrimary",
+            "FooterEven",
+            "FooterPrimary",
+            "HeaderFirst",
+            "FooterFirst"
+          ],
+          "type": "string"
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "HeaderFootersResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/headersfooters",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "HeaderFooters": {
+              "$ref": "#/definitions/HeaderFooterLinkCollection",
+              "description": "Collection of headers/footers"
+            }
+          }
+        }
+      ]
+    },
+    "HeaderFooterLinkCollection": {
+      "description": "Collection of links to header/footers",
+      "type": "object",
+      "properties": {
+        "List": {
+          "description": "Collection of section's links",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/HeaderFooterLink"
+          }
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "HeaderFooterLink": {
+      "description": "HeaderFooter link element",
+      "type": "object",
+      "properties": {
+        "Type": {
+          "description": "Paragraph's text",
+          "enum": [
+            "HeaderEven",
+            "HeaderPrimary",
+            "FooterEven",
+            "FooterPrimary",
+            "HeaderFirst",
+            "FooterFirst"
+          ],
+          "type": "string"
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "FormFieldsResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/{nodePath}/formfields",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "FormFields": {
+              "$ref": "#/definitions/FormFieldCollection",
+              "description": "Collection of form fields."
+            }
+          }
+        }
+      ]
+    },
+    "FormFieldCollection": {
+      "description": "Represents DTO for collection of formfields.",
+      "type": "object",
+      "properties": {
+        "List": {
+          "description": "Collection of formfields",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FormField"
+          }
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "FormFieldCheckbox": {
+      "description": "FormField checkbox element",
+      "allOf": [
+        {
+          "$ref": "#/definitions/FormField"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IsCheckBoxExactSize": {
+              "description": "Gets or sets the boolean value that indicates whether the size of the textbox is automatic or specified explicitly.",
               "type": "boolean"
             },
-            "DocumentLink": {
-              "$ref": "#/definitions/FileLink",
-              "description": "Link to the document"
+            "CheckBoxSize": {
+              "format": "double",
+              "description": "Gets or sets the size of the checkbox in points. Has effect only when {Aspose.Words.Cloud.DTO.DocumentElements.FormFields.FormFieldCheckbox.IsCheckBoxExactSize} is true.",
+              "type": "number"
+            },
+            "Checked": {
+              "description": "Gets or sets the checked status of the check box form field.",
+              "type": "boolean"
             }
           }
         }
       ]
     },
-    "ReplaceTextResponse": {
-      "description": "Response for \"Replace text\" action.",
+    "FormFieldDropDown": {
+      "description": "FormField dropdownlist element",
       "allOf": [
         {
-          "$ref": "#/definitions/SaaSposeResponse"
+          "$ref": "#/definitions/FormField"
         },
         {
           "type": "object",
           "properties": {
-            "Matches": {
+            "DropDownSelectedIndex": {
               "format": "int32",
-              "description": "Number of occurrences of the captured text in the document.",
+              "description": "Gets or sets the index specifying the currently selected item in a dropdown form field.",
               "type": "integer"
             },
-            "DocumentLink": {
-              "$ref": "#/definitions/FileLink",
-              "description": "Link to the document."
+            "DropDownItems": {
+              "description": "Provides access to the items of a dropdown form field.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             }
           }
         }
       ]
     },
-    "RevisionsModificationResponse": {
-      "description": "response of the modification operations for the revisions collection (now these are acceptAll and rejectAll)",
+    "FormFieldTextInput": {
+      "description": "FormField text input element",
+      "allOf": [
+        {
+          "$ref": "#/definitions/FormField"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "TextInputFormat": {
+              "description": "Returns or sets the text formatting for a text form field.",
+              "type": "string"
+            },
+            "TextInputType": {
+              "description": "Gets or sets the type of a text form field.",
+              "enum": [
+                "Regular",
+                "Number",
+                "Date",
+                "CurrentDate",
+                "CurrentTime",
+                "Calculated"
+              ],
+              "type": "string"
+            },
+            "TextInputDefault": {
+              "description": "Gets or sets the default string or a calculation expression of a text form field.",
+              "type": "string"
+            },
+            "MaxLength": {
+              "format": "int32",
+              "description": "Maximum length for the text field. Zero when the length is not limited.",
+              "type": "integer"
+            }
+          }
+        }
+      ]
+    },
+    "FormField": {
+      "description": "FromField",
+      "type": "object",
+      "properties": {
+        "NodeId": {
+          "description": "Node id",
+          "type": "string"
+        },
+        "Name": {
+          "description": "Gets or sets the form field name.",
+          "type": "string"
+        },
+        "Enabled": {
+          "description": "True if a form field is enabled.",
+          "type": "boolean"
+        },
+        "StatusText": {
+          "description": "Returns or sets the text that's displayed in the status bar when a form field has the focus.",
+          "type": "string"
+        },
+        "OwnStatus": {
+          "description": "Specifies the source of the text that's displayed in the status bar when a form field has the focus.",
+          "type": "boolean"
+        },
+        "HelpText": {
+          "description": "Returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.",
+          "type": "string"
+        },
+        "OwnHelp": {
+          "description": "Specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.",
+          "type": "boolean"
+        },
+        "CalculateOnExit": {
+          "description": "True if references to the specified form field are automatically updated whenever the field is exited.",
+          "type": "boolean"
+        },
+        "EntryMacro": {
+          "description": "Returns or sets an entry macro name for the form field.",
+          "type": "string"
+        },
+        "ExitMacro": {
+          "description": "Returns or sets an exit macro name for the form field.",
+          "type": "string"
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      },
+      "discriminator": "FormFieldType"
+    },
+    "FormFieldResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/paragraphs/{0}/formfields/{1}",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -14416,30 +13435,71 @@
         {
           "type": "object",
           "properties": {
-            "Result": {
-              "$ref": "#/definitions/ModificationOperationResult",
-              "description": "result of the modification operations for the revisions collection"
+            "FormField": {
+              "$ref": "#/definitions/FormField",
+              "description": "Field information"
             }
           }
         }
       ]
     },
-    "ModificationOperationResult": {
-      "description": "result of the operation which modifies the original document and saves the result",
+    "FootnoteResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/footnote/0",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Footnote": {
+              "$ref": "#/definitions/Footnote",
+              "description": "Footnote information"
+            }
+          }
+        }
+      ]
+    },
+    "Footnote": {
+      "description": "Footnote.",
       "type": "object",
       "properties": {
-        "Source": {
-          "$ref": "#/definitions/FileLink",
-          "description": "Link to the source document (source for the modification operation)"
+        "Position": {
+          "$ref": "#/definitions/DocumentPosition",
+          "description": "Link to comment range start node."
         },
-        "Dest": {
-          "$ref": "#/definitions/FileLink",
-          "description": "Link to the dest document (result of the modification operation)"
+        "FootnoteType": {
+          "description": "Returns a value that specifies whether this is a footnote or endnote.",
+          "enum": [
+            "Footnote",
+            "Endnote"
+          ],
+          "type": "string"
+        },
+        "ReferenceMark": {
+          "description": "Gets/sets custom reference mark to be used for this footnote.\r\nDefault value is {System.String.Empty}, meaning auto-numbered footnotes are used.",
+          "type": "string"
+        },
+        "Text": {
+          "description": "This is a convenience property that allows to easily get or set text of the footnote.",
+          "type": "string"
+        },
+        "Content": {
+          "$ref": "#/definitions/StoryChildNodes",
+          "description": "Content of footnote."
+        },
+        "NodeId": {
+          "description": "Node id",
+          "type": "string"
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
         }
       }
     },
-    "SearchResponse": {
-      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/search",
+    "FootnotesResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/footnotes",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -14447,27 +13507,985 @@
         {
           "type": "object",
           "properties": {
-            "SearchingPattern": {
-              "description": "A regular expression pattern used to find matches.",
-              "type": "string"
-            },
-            "SearchResults": {
-              "$ref": "#/definitions/SearchResultsCollection",
-              "description": "Collection of search results."
+            "Footnotes": {
+              "$ref": "#/definitions/FootnoteCollection",
+              "description": "Collection of footnotes."
             }
           }
         }
       ]
     },
-    "SearchResultsCollection": {
-      "description": "Collection of search results.",
+    "FootnoteCollection": {
+      "description": "Collection of footnotes.",
       "type": "object",
       "properties": {
-        "ResultsList": {
+        "List": {
+          "description": "Collection of foonotes links",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Footnote"
+          }
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "FontResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/paragraphs/{0}/runs/{1}/font",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Font": {
+              "$ref": "#/definitions/Font",
+              "description": "Font"
+            }
+          }
+        }
+      ]
+    },
+    "Font": {
+      "description": "Font element",
+      "type": "object",
+      "properties": {
+        "AllCaps": {
+          "description": "True if the font is formatted as all capital letters.",
+          "type": "boolean"
+        },
+        "Bidi": {
+          "description": "Specifies whether the contents of this run shall have right-to-left characteristics.",
+          "type": "boolean"
+        },
+        "Bold": {
+          "description": "True if the font is formatted as bold.",
+          "type": "boolean"
+        },
+        "BoldBi": {
+          "description": "True if the right-to-left text is formatted as bold.",
+          "type": "boolean"
+        },
+        "Border": {
+          "$ref": "#/definitions/Border",
+          "description": "Border object that specifies border for the font."
+        },
+        "Color": {
+          "$ref": "#/definitions/XmlColor",
+          "description": "Gets or sets the color of the font."
+        },
+        "ComplexScript": {
+          "description": "Specifies whether the contents of this run shall be treated as complex script text regardless\r\nof their Unicode character values when determining the formatting for this run.",
+          "type": "boolean"
+        },
+        "DoubleStrikeThrough": {
+          "description": "True if the font is formatted as double strikethrough text.",
+          "type": "boolean"
+        },
+        "Emboss": {
+          "description": "True if the font is formatted as embossed.",
+          "type": "boolean"
+        },
+        "Engrave": {
+          "description": "True if the font is formatted as engraved.",
+          "type": "boolean"
+        },
+        "Hidden": {
+          "description": "True if the font is formatted as hidden text.",
+          "type": "boolean"
+        },
+        "HighlightColor": {
+          "$ref": "#/definitions/XmlColor",
+          "description": "Gets or sets the highlight (marker) color."
+        },
+        "Italic": {
+          "description": "True if the font is formatted as italic.",
+          "type": "boolean"
+        },
+        "ItalicBi": {
+          "description": "True if the right-to-left text is formatted as italic.",
+          "type": "boolean"
+        },
+        "Kerning": {
+          "format": "double",
+          "description": "Gets or sets the font size at which kerning starts.",
+          "type": "number"
+        },
+        "LocaleId": {
+          "format": "int32",
+          "description": "Gets or sets the locale identifier (language) of the formatted characters.",
+          "type": "integer"
+        },
+        "LocaleIdBi": {
+          "format": "int32",
+          "description": "Gets or sets the locale identifier (language) of the formatted right-to-left characters.",
+          "type": "integer"
+        },
+        "LocaleIdFarEast": {
+          "format": "int32",
+          "description": "Gets or sets the locale identifier (language) of the formatted Asian characters.",
+          "type": "integer"
+        },
+        "Name": {
+          "description": "Gets or sets the name of the font",
+          "type": "string"
+        },
+        "NameAscii": {
+          "description": "Returns or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).",
+          "type": "string"
+        },
+        "NameBi": {
+          "description": "Returns or sets the name of the font in a right-to-left language document.",
+          "type": "string"
+        },
+        "NameFarEast": {
+          "description": "Returns or sets an East Asian font name.",
+          "type": "string"
+        },
+        "NameOther": {
+          "description": "Returns or sets the font used for characters with character codes from 128 through 255.",
+          "type": "string"
+        },
+        "NoProofing": {
+          "description": "True when the formatted characters are not to be spell checked.",
+          "type": "boolean"
+        },
+        "Outline": {
+          "description": "True if the font is formatted as outline.",
+          "type": "boolean"
+        },
+        "Position": {
+          "format": "double",
+          "description": "Gets or sets the position of text (in points) relative to the base line.\r\nA positive number raises the text, and a negative number lowers it.",
+          "type": "number"
+        },
+        "Scaling": {
+          "format": "int32",
+          "description": "Gets or sets character width scaling in percent.",
+          "type": "integer"
+        },
+        "Shadow": {
+          "description": "True if the font is formatted as shadowed.",
+          "type": "boolean"
+        },
+        "Size": {
+          "format": "double",
+          "description": "Gets or sets the font size in points.",
+          "type": "number"
+        },
+        "SizeBi": {
+          "format": "double",
+          "description": "Gets or sets the font size in points used in a right-to-left document.",
+          "type": "number"
+        },
+        "SmallCaps": {
+          "description": "True if the font is formatted as small capital letters.",
+          "type": "boolean"
+        },
+        "Spacing": {
+          "format": "double",
+          "description": "Returns or sets the spacing (in points) between characters.",
+          "type": "number"
+        },
+        "StrikeThrough": {
+          "description": "True if the font is formatted as strikethrough text.",
+          "type": "boolean"
+        },
+        "StyleIdentifier": {
+          "description": "Gets or sets the locale independent style identifier of the character style applied to this formatting.",
+          "enum": [
+            "BookTitle",
+            "CommentReference",
+            "DefaultParagraphFont",
+            "Emphasis",
+            "EndnoteReference",
+            "FollowedHyperlink",
+            "FootnoteReference",
+            "HtmlAcronym",
+            "HtmlCite",
+            "HtmlCode",
+            "HtmlDefinition",
+            "HtmlKeyboard",
+            "HtmlSample",
+            "HtmlTypewriter",
+            "HtmlVariable",
+            "Hyperlink",
+            "IntenseEmphasis",
+            "IntenseReference",
+            "LineNumber",
+            "PageNumber",
+            "PlaceholderText",
+            "Strong",
+            "SubtleEmphasis",
+            "SubtleReference",
+            "BalloonText",
+            "BodyText",
+            "BodyText2",
+            "BodyText3",
+            "BodyText1I",
+            "BodyText1I2",
+            "BodyTextInd",
+            "BodyTextInd2",
+            "BodyTextInd3",
+            "Closing",
+            "CommentSubject",
+            "CommentText",
+            "Date",
+            "DocumentMap",
+            "EmailSignature",
+            "EndnoteText",
+            "Footer",
+            "FootnoteText",
+            "Header",
+            "Heading1",
+            "Heading2",
+            "Heading3",
+            "Heading4",
+            "Heading5",
+            "Heading6",
+            "Heading7",
+            "Heading8",
+            "Heading9",
+            "HtmlAddress",
+            "HtmlTopOfForm",
+            "HtmlBottomOfForm",
+            "HtmlPreformatted",
+            "IntenseQuote",
+            "Macro",
+            "MessageHeader",
+            "NoteHeading",
+            "PlainText",
+            "Quote",
+            "Salutation",
+            "Signature",
+            "Subtitle",
+            "Title",
+            "Bibliography",
+            "BlockText",
+            "Caption",
+            "EnvelopeAddress",
+            "EnvelopeReturn",
+            "Index1",
+            "Index2",
+            "Index3",
+            "Index4",
+            "Index5",
+            "Index6",
+            "Index7",
+            "Index8",
+            "Index9",
+            "IndexHeading",
+            "List",
+            "List2",
+            "List3",
+            "List4",
+            "List5",
+            "ListBullet",
+            "ListBullet2",
+            "ListBullet3",
+            "ListBullet4",
+            "ListBullet5",
+            "ListContinue",
+            "ListContinue2",
+            "ListContinue3",
+            "ListContinue4",
+            "ListContinue5",
+            "ListNumber",
+            "ListNumber2",
+            "ListNumber3",
+            "ListNumber4",
+            "ListNumber5",
+            "ListParagraph",
+            "NoSpacing",
+            "Normal",
+            "NormalWeb",
+            "NormalIndent",
+            "TableOfAuthorities",
+            "TableOfFigures",
+            "ToaHeading",
+            "Toc1",
+            "Toc2",
+            "Toc3",
+            "Toc4",
+            "Toc5",
+            "Toc6",
+            "Toc7",
+            "Toc8",
+            "Toc9",
+            "TocHeading",
+            "Revision",
+            "OutlineList1",
+            "OutlineList2",
+            "OutlineList3",
+            "NoList",
+            "ColorfulGrid",
+            "ColorfulGridAccent1",
+            "ColorfulGridAccent2",
+            "ColorfulGridAccent3",
+            "ColorfulGridAccent4",
+            "ColorfulGridAccent5",
+            "ColorfulGridAccent6",
+            "ColorfulList",
+            "ColorfulListAccent1",
+            "ColorfulListAccent2",
+            "ColorfulListAccent3",
+            "ColorfulListAccent4",
+            "ColorfulListAccent5",
+            "ColorfulListAccent6",
+            "ColorfulShading",
+            "ColorfulShadingAccent1",
+            "ColorfulShadingAccent2",
+            "ColorfulShadingAccent3",
+            "ColorfulShadingAccent4",
+            "ColorfulShadingAccent5",
+            "ColorfulShadingAccent6",
+            "DarkList",
+            "DarkListAccent1",
+            "DarkListAccent2",
+            "DarkListAccent3",
+            "DarkListAccent4",
+            "DarkListAccent5",
+            "DarkListAccent6",
+            "LightGrid",
+            "LightGridAccent1",
+            "LightGridAccent2",
+            "LightGridAccent3",
+            "LightGridAccent4",
+            "LightGridAccent5",
+            "LightGridAccent6",
+            "LightList",
+            "LightListAccent1",
+            "LightListAccent2",
+            "LightListAccent3",
+            "LightListAccent4",
+            "LightListAccent5",
+            "LightListAccent6",
+            "LightShading",
+            "LightShadingAccent1",
+            "LightShadingAccent2",
+            "LightShadingAccent3",
+            "LightShadingAccent4",
+            "LightShadingAccent5",
+            "LightShadingAccent6",
+            "MediumGrid1",
+            "MediumGrid1Accent1",
+            "MediumGrid1Accent2",
+            "MediumGrid1Accent3",
+            "MediumGrid1Accent4",
+            "MediumGrid1Accent5",
+            "MediumGrid1Accent6",
+            "MediumGrid2",
+            "MediumGrid2Accent1",
+            "MediumGrid2Accent2",
+            "MediumGrid2Accent3",
+            "MediumGrid2Accent4",
+            "MediumGrid2Accent5",
+            "MediumGrid2Accent6",
+            "MediumGrid3",
+            "MediumGrid3Accent1",
+            "MediumGrid3Accent2",
+            "MediumGrid3Accent3",
+            "MediumGrid3Accent4",
+            "MediumGrid3Accent5",
+            "MediumGrid3Accent6",
+            "MediumList1",
+            "MediumList1Accent1",
+            "MediumList1Accent2",
+            "MediumList1Accent3",
+            "MediumList1Accent4",
+            "MediumList1Accent5",
+            "MediumList1Accent6",
+            "MediumList2",
+            "MediumList2Accent1",
+            "MediumList2Accent2",
+            "MediumList2Accent3",
+            "MediumList2Accent4",
+            "MediumList2Accent5",
+            "MediumList2Accent6",
+            "MediumShading1",
+            "MediumShading1Accent1",
+            "MediumShading1Accent2",
+            "MediumShading1Accent3",
+            "MediumShading1Accent4",
+            "MediumShading1Accent5",
+            "MediumShading1Accent6",
+            "MediumShading2",
+            "MediumShading2Accent1",
+            "MediumShading2Accent2",
+            "MediumShading2Accent3",
+            "MediumShading2Accent4",
+            "MediumShading2Accent5",
+            "MediumShading2Accent6",
+            "Table3DEffects1",
+            "Table3DEffects2",
+            "Table3DEffects3",
+            "TableClassic1",
+            "TableClassic2",
+            "TableClassic3",
+            "TableClassic4",
+            "TableColorful1",
+            "TableColorful2",
+            "TableColorful3",
+            "TableColumns1",
+            "TableColumns2",
+            "TableColumns3",
+            "TableColumns4",
+            "TableColumns5",
+            "TableContemporary",
+            "TableElegant",
+            "TableGrid",
+            "TableGrid1",
+            "TableGrid2",
+            "TableGrid3",
+            "TableGrid4",
+            "TableGrid5",
+            "TableGrid6",
+            "TableGrid7",
+            "TableGrid8",
+            "TableList1",
+            "TableList2",
+            "TableList3",
+            "TableList4",
+            "TableList5",
+            "TableList6",
+            "TableList7",
+            "TableList8",
+            "TableNormal",
+            "TableProfessional",
+            "TableSimple1",
+            "TableSimple2",
+            "TableSimple3",
+            "TableSubtle1",
+            "TableSubtle2",
+            "TableTheme",
+            "TableWeb1",
+            "TableWeb2",
+            "TableWeb3",
+            "PlainTable1",
+            "PlainTable2",
+            "PlainTable3",
+            "PlainTable4",
+            "PlainTable5",
+            "TableGridLight",
+            "GridTable1Light",
+            "GridTable2",
+            "GridTable3",
+            "GridTable4",
+            "GridTable5Dark",
+            "GridTable6Colorful",
+            "GridTable7Colorful",
+            "GridTable1LightAccent1",
+            "GridTable2Accent1",
+            "GridTable3Accent1",
+            "GridTable4Accent1",
+            "GridTable5DarkAccent1",
+            "GridTable6ColorfulAccent1",
+            "GridTable7ColorfulAccent1",
+            "GridTable1LightAccent2",
+            "GridTable2Accent2",
+            "GridTable3Accent2",
+            "GridTable4Accent2",
+            "GridTable5DarkAccent2",
+            "GridTable6ColorfulAccent2",
+            "GridTable7ColorfulAccent2",
+            "GridTable1LightAccent3",
+            "GridTable2Accent3",
+            "GridTable3Accent3",
+            "GridTable4Accent3",
+            "GridTable5DarkAccent3",
+            "GridTable6ColorfulAccent3",
+            "GridTable7ColorfulAccent3",
+            "GridTable1LightAccent4",
+            "GridTable2Accent4",
+            "GridTable3Accent4",
+            "GridTable4Accent4",
+            "GridTable5DarkAccent4",
+            "GridTable6ColorfulAccent4",
+            "GridTable7ColorfulAccent4",
+            "GridTable1LightAccent5",
+            "GridTable2Accent5",
+            "GridTable3Accent5",
+            "GridTable4Accent5",
+            "GridTable5DarkAccent5",
+            "GridTable6ColorfulAccent5",
+            "GridTable7ColorfulAccent5",
+            "GridTable1LightAccent6",
+            "GridTable2Accent6",
+            "GridTable3Accent6",
+            "GridTable4Accent6",
+            "GridTable5DarkAccent6",
+            "GridTable6ColorfulAccent6",
+            "GridTable7ColorfulAccent6",
+            "ListTable1Light",
+            "ListTable2",
+            "ListTable3",
+            "ListTable4",
+            "ListTable5Dark",
+            "ListTable6Colorful",
+            "ListTable7Colorful",
+            "ListTable1LightAccent1",
+            "ListTable2Accent1",
+            "ListTable3Accent1",
+            "ListTable4Accent1",
+            "ListTable5DarkAccent1",
+            "ListTable6ColorfulAccent1",
+            "ListTable7ColorfulAccent1",
+            "ListTable1LightAccent2",
+            "ListTable2Accent2",
+            "ListTable3Accent2",
+            "ListTable4Accent2",
+            "ListTable5DarkAccent2",
+            "ListTable6ColorfulAccent2",
+            "ListTable7ColorfulAccent2",
+            "ListTable1LightAccent3",
+            "ListTable2Accent3",
+            "ListTable3Accent3",
+            "ListTable4Accent3",
+            "ListTable5DarkAccent3",
+            "ListTable6ColorfulAccent3",
+            "ListTable7ColorfulAccent3",
+            "ListTable1LightAccent4",
+            "ListTable2Accent4",
+            "ListTable3Accent4",
+            "ListTable4Accent4",
+            "ListTable5DarkAccent4",
+            "ListTable6ColorfulAccent4",
+            "ListTable7ColorfulAccent4",
+            "ListTable1LightAccent5",
+            "ListTable2Accent5",
+            "ListTable3Accent5",
+            "ListTable4Accent5",
+            "ListTable5DarkAccent5",
+            "ListTable6ColorfulAccent5",
+            "ListTable7ColorfulAccent5",
+            "ListTable1LightAccent6",
+            "ListTable2Accent6",
+            "ListTable3Accent6",
+            "ListTable4Accent6",
+            "ListTable5DarkAccent6",
+            "ListTable6ColorfulAccent6",
+            "ListTable7ColorfulAccent6",
+            "User",
+            "Nil"
+          ],
+          "type": "string"
+        },
+        "StyleName": {
+          "description": "Gets or sets the name of the character style applied to this formatting.",
+          "type": "string"
+        },
+        "Subscript": {
+          "description": "True if the font is formatted as subscript.",
+          "type": "boolean"
+        },
+        "Superscript": {
+          "description": "True if the font is formatted as superscript.",
+          "type": "boolean"
+        },
+        "TextEffect": {
+          "description": "Gets or sets the font animation effect.",
+          "enum": [
+            "None",
+            "LasVegasLights",
+            "BlinkingBackground",
+            "SparkleText",
+            "MarchingBlackAnts",
+            "MarchingRedAnts",
+            "Shimmer"
+          ],
+          "type": "string"
+        },
+        "Underline": {
+          "description": "Gets or sets the type of underline applied to the font.",
+          "enum": [
+            "None",
+            "Single",
+            "Words",
+            "Double",
+            "Dotted",
+            "Thick",
+            "Dash",
+            "DashLong",
+            "DotDash",
+            "DotDotDash",
+            "Wavy",
+            "DottedHeavy",
+            "DashHeavy",
+            "DashLongHeavy",
+            "DotDashHeavy",
+            "DotDotDashHeavy",
+            "WavyHeavy",
+            "WavyDouble"
+          ],
+          "type": "string"
+        },
+        "UnderlineColor": {
+          "$ref": "#/definitions/XmlColor",
+          "description": "Gets or sets the color of the underline applied to the font."
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "Border": {
+      "description": "Represents a border of an object.",
+      "type": "object",
+      "properties": {
+        "BorderType": {
+          "description": "Gets or sets the border type.",
+          "enum": [
+            "None",
+            "Bottom",
+            "Left",
+            "Right",
+            "Top",
+            "Horizontal",
+            "Vertical",
+            "DiagonalDown",
+            "DiagonalUp"
+          ],
+          "type": "string"
+        },
+        "Color": {
+          "$ref": "#/definitions/XmlColor",
+          "description": "Gets or sets the border color."
+        },
+        "DistanceFromText": {
+          "format": "double",
+          "description": "Gets or sets distance of the border from text or from the page edge in points.",
+          "type": "number"
+        },
+        "LineStyle": {
+          "description": "Gets or sets the border style.",
+          "enum": [
+            "None",
+            "Single",
+            "Thick",
+            "Double",
+            "Hairline",
+            "Dot",
+            "DashLargeGap",
+            "DotDash",
+            "DotDotDash",
+            "Triple",
+            "ThinThickSmallGap",
+            "ThickThinSmallGap",
+            "ThinThickThinSmallGap",
+            "ThinThickMediumGap",
+            "ThickThinMediumGap",
+            "ThinThickThinMediumGap",
+            "ThinThickLargeGap",
+            "ThickThinLargeGap",
+            "ThinThickThinLargeGap",
+            "Wave",
+            "DoubleWave",
+            "DashSmallGap",
+            "DashDotStroker",
+            "Emboss3D",
+            "Engrave3D",
+            "Outset",
+            "Inset"
+          ],
+          "type": "string"
+        },
+        "LineWidth": {
+          "format": "double",
+          "description": "Gets or sets the border width in points.",
+          "type": "number"
+        },
+        "Shadow": {
+          "description": "Gets or sets a value indicating whether the border has a shadow.",
+          "type": "boolean"
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "XmlColor": {
+      "description": "Utility class for {System.Drawing.Color} serialization",
+      "type": "object",
+      "properties": {
+        "Web": {
+          "description": "HTML string color representation",
+          "type": "string"
+        },
+        "Alpha": {
+          "format": "int32",
+          "description": "Alpha component of color structure",
+          "type": "integer"
+        }
+      }
+    },
+    "FieldResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/paragraphs/{0}/fields/{1}",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Field": {
+              "$ref": "#/definitions/Field",
+              "description": "Field information"
+            }
+          }
+        }
+      ]
+    },
+    "Field": {
+      "description": "Field",
+      "type": "object",
+      "properties": {
+        "Result": {
+          "description": "Field result",
+          "type": "string"
+        },
+        "LocaleId": {
+          "description": "Gets or sets LCID of the field.",
+          "type": "string"
+        },
+        "FieldCode": {
+          "description": "Field code",
+          "type": "string"
+        },
+        "NodeId": {
+          "description": "Node id",
+          "type": "string"
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "FieldsResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/{nodePath}/fields",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Fields": {
+              "$ref": "#/definitions/FieldCollection",
+              "description": "Collection of fields."
+            }
+          }
+        }
+      ]
+    },
+    "FieldCollection": {
+      "description": "Represents DTO for collection of fields.",
+      "type": "object",
+      "properties": {
+        "List": {
+          "description": "Collection of fields",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Field"
+          }
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "DrawingObjectResponse": {
+      "description": "Response for \"drawingObjects/n\" resource.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "DrawingObject": {
+              "$ref": "#/definitions/DrawingObject",
+              "description": "Drawing object."
+            }
+          }
+        }
+      ]
+    },
+    "DrawingObject": {
+      "description": "Represents Drawing Object DTO.",
+      "type": "object",
+      "properties": {
+        "RenderLinks": {
+          "description": "A list of links that originate from this {Aspose.Words.Cloud.DTO.DocumentElements.DrawingObjects.DrawingObjectDto}.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WordsApiLink"
+          }
+        },
+        "Width": {
+          "format": "double",
+          "description": "Width of the drawing objects in points.",
+          "type": "number"
+        },
+        "Height": {
+          "format": "double",
+          "description": "Height of the drawing object in points.",
+          "type": "number"
+        },
+        "OleDataLink": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to ole object. Can be null if shape does not have ole data."
+        },
+        "ImageDataLink": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to image data. Can be null if shape does not have an image."
+        },
+        "RelativeHorizontalPosition": {
+          "description": "Specifies where the distance to the image is measured from.",
+          "enum": [
+            "Margin",
+            "Page",
+            "Column",
+            "Character",
+            "LeftMargin",
+            "RightMargin",
+            "InsideMargin",
+            "OutsideMargin",
+            "Default"
+          ],
+          "type": "string"
+        },
+        "Left": {
+          "format": "double",
+          "description": "Distance in points from the origin to the left side of the image.",
+          "type": "number"
+        },
+        "RelativeVerticalPosition": {
+          "description": "Specifies where the distance to the image measured from.",
+          "enum": [
+            "Margin",
+            "Page",
+            "Paragraph",
+            "Line",
+            "TopMargin",
+            "BottomMargin",
+            "InsideMargin",
+            "OutsideMargin",
+            "TableDefault",
+            "TextFrameDefault"
+          ],
+          "type": "string"
+        },
+        "Top": {
+          "format": "double",
+          "description": "Distance in points from the origin to the top side of the image.",
+          "type": "number"
+        },
+        "WrapType": {
+          "description": "Specifies how to wrap text around the image.",
+          "enum": [
+            "None",
+            "Inline",
+            "TopBottom",
+            "Square",
+            "Tight",
+            "Through"
+          ],
+          "type": "string"
+        },
+        "NodeId": {
+          "description": "Node id",
+          "type": "string"
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "DrawingObjectsResponse": {
+      "description": "This resonse should be returned by the service when handling:  GET /drawingObjects.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "DrawingObjects": {
+              "$ref": "#/definitions/DrawingObjectCollection",
+              "description": "Collection of drawing objects."
+            }
+          }
+        }
+      ]
+    },
+    "DrawingObjectCollection": {
+      "description": "Represents drawing objects collection DTO.",
+      "type": "object",
+      "properties": {
+        "List": {
+          "description": "Collection of DrawingObjects links",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LinkElement"
+          }
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "BorderResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET {nodeWithBorders}/borders.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Border": {
+              "$ref": "#/definitions/Border",
+              "description": "Table."
+            }
+          }
+        }
+      ]
+    },
+    "BordersResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET {nodeWithBorders}/borders.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Borders": {
+              "$ref": "#/definitions/BordersCollection",
+              "description": "Table."
+            }
+          }
+        }
+      ]
+    },
+    "BordersCollection": {
+      "description": "Collection of borders.",
+      "type": "object",
+      "properties": {
+        "List": {
           "description": "Collection of comments",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/SearchResult"
+            "$ref": "#/definitions/Border"
           }
         },
         "link": {
@@ -14476,22 +14494,64 @@
         }
       }
     },
-    "SearchResult": {
-      "description": "Result of search operation.",
+    "CommentResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/comments/0",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Comment": {
+              "$ref": "#/definitions/Comment",
+              "description": "Comment information"
+            }
+          }
+        }
+      ]
+    },
+    "Comment": {
+      "description": "Comment.",
       "type": "object",
       "properties": {
         "RangeStart": {
           "$ref": "#/definitions/DocumentPosition",
-          "description": "Link to result range start node."
+          "description": "Link to comment range start node."
         },
         "RangeEnd": {
           "$ref": "#/definitions/DocumentPosition",
-          "description": "Link to result range end node."
+          "description": "Link to comment range end node."
+        },
+        "Author": {
+          "description": "Returns or sets the author name for a comment.",
+          "type": "string"
+        },
+        "Initial": {
+          "description": "Returns or sets the initials of the user associated with a specific comment.",
+          "type": "string"
+        },
+        "DateTime": {
+          "format": "date-time",
+          "description": "Gets the date and time that the comment was made.",
+          "type": "string"
+        },
+        "Text": {
+          "description": "This is a convenience property that allows to easily get or set text of the comment.",
+          "type": "string"
+        },
+        "Content": {
+          "$ref": "#/definitions/StoryChildNodes",
+          "description": "Content of comment"
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
         }
       }
     },
-    "SplitDocumentResponse": {
-      "description": "This resonse should be returned by the service when handling:  POST /{name}/split .",
+    "CommentsResponse": {
+      "description": "This resonse should be returned by the service when handling:\r\nGET http://api.aspose.com/v1.1/words/Test.doc/comments",
       "allOf": [
         {
           "$ref": "#/definitions/SaaSposeResponse"
@@ -14499,154 +14559,23 @@
         {
           "type": "object",
           "properties": {
-            "SplitResult": {
-              "$ref": "#/definitions/SplitDocumentResult",
-              "description": "Resylt of splitting document."
+            "Comments": {
+              "$ref": "#/definitions/CommentsCollection",
+              "description": "Collection of comments."
             }
           }
         }
       ]
     },
-    "SplitDocumentResult": {
-      "description": "Result of splitting document.",
+    "CommentsCollection": {
+      "description": "Collection of comments.",
       "type": "object",
       "properties": {
-        "SourceDocument": {
-          "$ref": "#/definitions/FileLink",
-          "description": "Linkt to the source document."
-        },
-        "Pages": {
-          "description": "Array of pages.",
+        "CommentList": {
+          "description": "Collection of comments",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/FileLink"
-          }
-        },
-        "ZippedPages": {
-          "$ref": "#/definitions/FileLink",
-          "description": "Link to the file archive with pages."
-        }
-      }
-    },
-    "StatDataResponse": {
-      "description": "Response for the request of the document's statistical data",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "StatData": {
-              "$ref": "#/definitions/DocumentStatData",
-              "description": "Statistical data of the document"
-            },
-            "DocumentLink": {
-              "$ref": "#/definitions/FileLink",
-              "description": "Link to the document"
-            }
-          }
-        }
-      ]
-    },
-    "DocumentStatData": {
-      "description": "Container for the document's statistical data",
-      "type": "object",
-      "properties": {
-        "WordCount": {
-          "format": "int32",
-          "description": "Total count of words in the document",
-          "type": "integer"
-        },
-        "ParagraphCount": {
-          "format": "int32",
-          "description": "Total count of paragraphs in the document",
-          "type": "integer"
-        },
-        "PageCount": {
-          "format": "int32",
-          "description": "Total count of pages in the document",
-          "type": "integer"
-        },
-        "FootnotesStatData": {
-          "$ref": "#/definitions/FootnotesStatData",
-          "description": "Detailed statistics of footnotes"
-        },
-        "PageStatData": {
-          "description": "Detailed statistics of all pages",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PageStatData"
-          }
-        }
-      }
-    },
-    "FootnotesStatData": {
-      "description": "Container for the footnotes statistical data",
-      "type": "object",
-      "properties": {
-        "WordCount": {
-          "format": "int32",
-          "description": "Total count of words in footnotes",
-          "type": "integer"
-        },
-        "ParagraphCount": {
-          "format": "int32",
-          "description": "Total count of paragraphs in footnotes",
-          "type": "integer"
-        }
-      }
-    },
-    "PageStatData": {
-      "description": "Container for the page's statistical data",
-      "type": "object",
-      "properties": {
-        "PageNumber": {
-          "format": "int32",
-          "description": "Page number",
-          "type": "integer"
-        },
-        "WordCount": {
-          "format": "int32",
-          "description": "Total count of words in the page",
-          "type": "integer"
-        },
-        "ParagraphCount": {
-          "format": "int32",
-          "description": "Total count of paragraphs in the page",
-          "type": "integer"
-        },
-        "FootnotesStatData": {
-          "$ref": "#/definitions/FootnotesStatData",
-          "description": "Detailed statistics of footnotes"
-        }
-      }
-    },
-    "TextItemsResponse": {
-      "description": "This resonse should be returned by the service when handling:  GET /{name}/textItems .",
-      "allOf": [
-        {
-          "$ref": "#/definitions/SaaSposeResponse"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "TextItems": {
-              "$ref": "#/definitions/TextItems",
-              "description": "Collection of text items."
-            }
-          }
-        }
-      ]
-    },
-    "TextItems": {
-      "description": "Represents text items DTO.",
-      "type": "object",
-      "properties": {
-        "List": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/TextItem"
+            "$ref": "#/definitions/Comment"
           }
         },
         "link": {
@@ -14655,11 +14584,33 @@
         }
       }
     },
-    "TextItem": {
-      "description": "Represents text DTO.",
+    "BookmarkResponse": {
+      "description": "This resonse should be returned by the service when handling:  GET bookmarks/{bookmarkName}.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Bookmark": {
+              "$ref": "#/definitions/Bookmark",
+              "description": "Bookmark."
+            }
+          }
+        }
+      ]
+    },
+    "Bookmark": {
+      "description": "Represents a single bookmark.",
       "type": "object",
       "properties": {
+        "Name": {
+          "description": "Gets or sets the name of the bookmark.",
+          "type": "string"
+        },
         "Text": {
+          "description": "Gets or sets the text enclosed in the bookmark.",
           "type": "string"
         },
         "link": {
@@ -14667,6 +14618,57 @@
           "description": "Link to the document."
         }
       }
+    },
+    "BookmarksResponse": {
+      "description": "This resonse should be returned by the service when handling:  GET bookmarks.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Bookmarks": {
+              "$ref": "#/definitions/Bookmarks",
+              "description": "Bookmarks which are contained in document."
+            }
+          }
+        }
+      ]
+    },
+    "Bookmarks": {
+      "description": "Represents an array of bookmarks.",
+      "type": "object",
+      "properties": {
+        "BookmarkList": {
+          "description": "Array of bookmarks.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Bookmark"
+          }
+        },
+        "link": {
+          "$ref": "#/definitions/WordsApiLink",
+          "description": "Link to the document."
+        }
+      }
+    },
+    "WordsApiErrorResponse": {
+      "description": "Response for Api error",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SaaSposeResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Message": {
+              "description": "Error message.",
+              "type": "string"
+            }
+          }
+        }
+      ]
     },
     "SaaSposeResponse": {
       "description": "Base class for all responses.",

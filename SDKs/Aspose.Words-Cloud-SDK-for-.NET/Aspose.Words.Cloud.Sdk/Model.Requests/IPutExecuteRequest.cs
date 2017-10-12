@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="WordDocumentRequestSteps.cs">
+// <copyright company="Aspose" file="IPutExecuteRequest.cs">
 //   Copyright (c) 2016 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -23,56 +23,23 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Steps
+namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
-    using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
-    using Aspose.Words.Cloud.Sdk.Model.Requests;
-
-    using TechTalk.SpecFlow;
+    using System.IO;
 
     /// <summary>
-    /// Steps for working with <see cref="IWordDocumentRequest"/>.
+    /// Interface to specify template and body for putexecute operations
     /// </summary>
-    [Binding]
-    public class WordDocumentRequestSteps
+    public interface IPutExecuteRequest
     {
-        private readonly BaseContext context;
+        /// <summary>
+        /// Sets template content
+        /// </summary>
+        Stream Template { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WordDocumentRequestSteps"/> class.
+        /// Sets body content
         /// </summary>
-        /// <param name="context">Conversion context</param>
-        protected WordDocumentRequestSteps(BaseContext context)
-        {
-            this.context = context;
-        }
-
-        private IWordDocumentRequest Request
-        {
-            get
-            {             
-                return ScenarioContext.Current["Request"] as IWordDocumentRequest;
-            }
-        }
-
-        /// <summary>
-        /// Sets document name we would like to use.
-        /// </summary>
-        /// <param name="fileName">document name</param>
-        [Given(@"I have specified document name (.*) in URL")]
-        public void GivenIHaveSpecifiedDocumentNameInUrl(string fileName)
-        {
-            this.Request.Name = fileName;
-        }
-
-        /// <summary>
-        /// Sets encoding for conversion
-        /// </summary>
-        /// <param name="encoding">encoding</param>
-        [Given(@"I have specified encoding (.*)")]
-        public void GivenIHaveSpecifiedEncoding(string encoding)
-        {
-            this.Request.LoadEncoding = encoding;
-        }
+        Stream Data { get; set; }
     }
 }

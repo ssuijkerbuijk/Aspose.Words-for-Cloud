@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="Base\Context\BaseContext.cs" />
     <Compile Include="Base\Steps\FileResultSteps.cs" />
+    <Compile Include="Base\Steps\PutExecuteSteps.cs" />
     <Compile Include="Base\Steps\SpecifyOutputFormatRequestSteps.cs" />
     <Compile Include="Base\Steps\StorageSteps.cs" />
     <Compile Include="Base\Steps\WordDocumentRequestSteps.cs" />
