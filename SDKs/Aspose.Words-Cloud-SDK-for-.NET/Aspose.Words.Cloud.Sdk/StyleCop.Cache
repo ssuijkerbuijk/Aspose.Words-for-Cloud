@@ -299,9 +299,6 @@
     </timestamps>
     <violations />
   </sourcecode>
-  <project key="-512542906">
-    <configuration>DEBUG;TRACE</configuration>
-  </project>
   <sourcecode name="WordsApi.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2017.07.29 10:43:06.000</styleCop>
@@ -7018,4 +7015,7 @@
     </timestamps>
     <violations />
   </sourcecode>
+  <project key="-512542906">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
 </stylecopresultscache>
