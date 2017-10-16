@@ -8,6 +8,28 @@ Scenario Outline: Convert document form storage and save to storage
 	And I have specified save format <DestFormat> document to be converted
 	And I have specified document name <DocName> in URL
 	And I have specified destFileName <OutPath>
+	When I execute conversion from storage (POST SaveAs)
+	Then document <OutPath> is existed on storage
+	And document from storage is downloadble
+	
+	Examples: 
+	| DocName                  | DestFormat | OutPath                                     |
+	| TableDocument.doc        | pdf        | out/saveus/TableDocumentPdf.pdf             |
+	| test_doc.docx            | pdf        | out/saveus/test_docPdf.pdf                  |
+	| test_doc.docx            | png        | out/saveus/test_docPng.pdf                  |
+	| test_doc.docx            | html       | out/saveus/test_docHtml.html                |
+	| TableDocument.doc        | html       | out/saveus/TableDocumentHtml.html           |
+	| TableDocument.doc        | txt        | out/saveus/TableDocumentTxt.txt             |
+	| TableDocument.doc        | htmlfixed  | out/saveus/TableDocumentHtmlfixed.htmlfixed |
+	| TestEncodingDocument.txt | doc        | out/saveus/TableDocumentDoc.doc             |
+
+
+@StoredDocConversionWithStorage
+Scenario Outline: Convert document with specified encoding form storage and save to storage
+	Given I have uploaded document with name <DocName> to storage
+	And I have specified save format <DestFormat> document to be converted
+	And I have specified document name <DocName> in URL
+	And I have specified destFileName <OutPath>
 	And I have specified encoding <LoadEncoding>
 	When I execute conversion from storage (POST SaveAs)
 	Then document <OutPath> is existed on storage
@@ -15,15 +37,8 @@ Scenario Outline: Convert document form storage and save to storage
 	And symbols are encoded properly
 	
 	Examples: 
-	| DocName           | DestFormat | OutPath                                     | LoadEncoding |
-	| TableDocument.doc | pdf        | out/saveus/TableDocumentPdf.pdf             | utf-8        |
-	| test_doc.docx     | pdf        | out/saveus/test_docPdf.pdf                  | utf-8        |
-	| test_doc.docx     | png        | out/saveus/test_docPng.pdf                  | utf-8        |
-	| test_doc.docx     | html       | out/saveus/test_docHtml.html                | utf-8        |
-	| TableDocument.doc | html       | out/saveus/TableDocumentHtml.html           | utf-8        |
-	| TableDocument.doc | txt        | out/saveus/TableDocumentTxt.txt             | utf-8        |
-	| TableDocument.doc | htmlfixed  | out/saveus/TableDocumentHtmlfixed.htmlfixed | utf-8        |
-
+	| DocName                  | DestFormat | OutPath                         | LoadEncoding |
+	| TestEncodingDocument.txt | doc        | out/saveus/TableDocumentDoc.doc | utf-16       |
 
 @ConversionPdfToWord
 Scenario Outline: Convert pdf document to word and save to storage

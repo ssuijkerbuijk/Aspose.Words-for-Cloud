@@ -38,21 +38,3 @@ Scenario Outline: Conversion with storage
 		| TableDocument.doc | html       | out/putconvert/TableDocumentHtml.html           |
 		| TableDocument.doc | txt        | out/putconvert/TableDocumentTxt.txt             |
 		| TableDocument.doc | htmlfixed  | out/putconvert/TableDocumentHtmlfixed.htmlfixed |
-
-@PutConvert
-Scenario Outline: Convert document using specified encoding
-	Given I have specified document <DocName> to send it in request body
-	And I have specified format <DestFormat> document to be converted
-	When I execute conversion (PUT convert)
-	Then document is returned as an attachment
-	And attachment's format is <DestFormat>
-
-	Examples: 
-		| DocName           | DestFormat |
-		| TableDocument.doc | pdf        |
-		| test_doc.docx     | pdf        |
-		| test_doc.docx     | png        |
-		| test_doc.docx     | html       |
-		| TableDocument.doc | html       |
-		| TableDocument.doc | txt        |
-		| TableDocument.doc | htmlfixed  |

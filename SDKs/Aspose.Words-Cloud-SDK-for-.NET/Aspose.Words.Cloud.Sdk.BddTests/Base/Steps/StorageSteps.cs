@@ -50,6 +50,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Steps
         protected StorageSteps(BaseContext context)
         {
             this.context = context;
+            this.context.TestSubFolderInStorage = "Conversion/";
         }
 
         private PostDocumentSaveAsRequest Request

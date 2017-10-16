@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="GetAlternateDocumentSteps.cs">
+// <copyright company="Aspose" file="PutExecuteMailMergeSteps.cs">
 //   Copyright (c) 2016 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -23,73 +23,59 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.BddTests.Features.Conversion.GetAlternateDocument.Steps
+namespace Aspose.Words.Cloud.Sdk.BddTests.Features.MailMerge.MailMerge.PutExecute.Steps
 {
-    using System.IO;
-    using System.Runtime.CompilerServices;
+    using System;
 
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-
     using TechTalk.SpecFlow;
 
     /// <summary>
-    /// Class contains steps related to document conversion of stored document
+    /// Steps for put execute mailmerge
     /// </summary>
     [Binding]
-    public class GetAlternateDocumentSteps
+    public class PutExecuteMailMergeSteps
     {
-        private readonly BaseContext context;
+        private BaseContext context;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetAlternateDocumentSteps"/> class.
+        /// Initializes a new instance of the <see cref="PutExecuteMailMergeSteps"/> class.
         /// </summary>
-        /// <param name="context">Conversion context</param>
-        public GetAlternateDocumentSteps(BaseContext context)
+        /// <param name="context">
+        /// The context.
+        /// </param>
+        public PutExecuteMailMergeSteps(BaseContext context)
         {
             this.context = context;
-            this.context.TestSubFolderInStorage = "Conversion/";
+            this.context.TestSubFolderInStorage = "MailMerge/";
         }
 
-        private GetDocumentWithFormatRequest Request
+        private PutExecuteMailMergeOnlineRequest Request
         {
             get
             {
-                return ScenarioContext.Current["Request"] as GetDocumentWithFormatRequest;
+                return ScenarioContext.Current["Request"] as PutExecuteMailMergeOnlineRequest;
             }
         }
 
         /// <summary>
-        /// Initialize context before each scenario.
+        /// Initialize context before each scenario
         /// </summary>
-        [BeforeScenario("ConversionOfStoredDoc")]
+        [BeforeScenario("PutExecuteMailMerge")]
         public static void BeforeScenario()
         {
-            ScenarioContext.Current["Request"] = new GetDocumentWithFormatRequest();
+            ScenarioContext.Current["Request"] = new PutExecuteMailMergeOnlineRequest();
         }
 
         /// <summary>
-        /// Executes conversion from storage
+        /// Executes mail merge online
         /// </summary>
-        [When(@"I execute conversion from storage \(GET document with format\)")]
-        public void WhenIExecuteConversionFromStorage()
+        [When(@"I execute mail merge online")]
+        public void WhenIExecuteMailMergeOnline()
         {
-            this.Request.Folder = this.context.TestFolderInStorage;
-            this.context.Response = this.context.WordsApi.GetDocumentWithFormat(this.Request);
-        }
-
-        /// <summary>
-        /// Checks document is downloadble from storage
-        /// </summary>
-        [Then(@"converted document downloads from storage")]
-        public void ThenConvertedDocumentDownloadsFromStorage()
-        {
-            var resp = this.context.StorageApi
-                .GetDownload(this.Request.OutPath, null, null);
-            this.context.Response = new MemoryStream(resp.ResponseStream);
-            Assert.AreNotEqual(0, ((MemoryStream)this.context.Response).Length);
+            this.context.Response = this.context.WordsApi.PutExecuteMailMergeOnline(this.Request);
         }
     }
 }
