@@ -79,7 +79,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
          
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new AcceptAllRevisionsRequest(name, filename);
+            var request = new AcceptAllRevisionsRequest(name, destFileName: filename);
             var actual = this.wordsApi.AcceptAllRevisions(request);
 
             Assert.AreEqual(200, actual.Code);
@@ -95,8 +95,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             int commentIndex = 0;           
             string fileName = "test_multi_pages.docx";
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
-            
-            var request = new DeleteCommentRequest(name, commentIndex, fileName);
+
+            var request = new DeleteCommentRequest(name, commentIndex, destFileName: fileName);
             var actual = this.wordsApi.DeleteComment(request);
             Assert.AreEqual(200, actual.Code);
         }
@@ -151,10 +151,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
             // setting a property
-            var updateRequest = new CreateOrUpdateDocumentPropertyRequest(name, propertyName, body, filename);
+            var updateRequest = new CreateOrUpdateDocumentPropertyRequest(name, propertyName, body, destFileName: filename);
             this.wordsApi.CreateOrUpdateDocumentProperty(updateRequest);
 
-            var deleteRequest = new DeleteDocumentPropertyRequest(name, propertyName, filename);
+            var deleteRequest = new DeleteDocumentPropertyRequest(name, propertyName, destFileName: filename);
             var actual = this.wordsApi.DeleteDocumentProperty(deleteRequest);
 
             Assert.AreEqual(200, actual.Code);
@@ -171,7 +171,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
          
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new DeleteDocumentWatermarkRequest(name, filename);
+            var request = new DeleteDocumentWatermarkRequest(name, destFileName: filename);
             var actual = this.wordsApi.DeleteDocumentWatermark(request);
 
             Assert.AreEqual(200, actual.Code);
@@ -189,7 +189,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new DeleteFormFieldRequest(name, formfieldIndex, "sections/0", destFileName);
+            var request = new DeleteFormFieldRequest(name, formfieldIndex, nodePath: "sections/0", destFileName: destFileName);
             SaaSposeResponse actual = this.wordsApi.DeleteFormField(request);
 
             Assert.AreEqual(200, actual.Code);                        
@@ -206,7 +206,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new DeleteFieldRequest(name, fieldIndex, "sections/0/paragraphs/0");
+            var request = new DeleteFieldRequest(name, fieldIndex, nodePath: "sections/0/paragraphs/0");
             var actual = this.wordsApi.DeleteField(request);
 
             Assert.AreEqual(200, actual.Code);
@@ -223,7 +223,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
 
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new DeleteHeadersFootersRequest(name, "sections/0", destFileName: filename);
+            var request = new DeleteHeadersFootersRequest(name, sectionPath: "sections/0", destFileName: filename);
             SaaSposeResponse actual = this.wordsApi.DeleteHeadersFooters(request);
 
             Assert.AreEqual(200, actual.Code);
@@ -239,7 +239,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new DeleteFieldsRequest(name, "paragraphs/0");
+            var request = new DeleteFieldsRequest(name, nodePath: "paragraphs/0");
             var actual = this.wordsApi.DeleteFields(request);
 
             Assert.AreEqual(200, actual.Code);
@@ -254,7 +254,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             string name = "test_multi_pages.docx";            
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new DeleteFieldsRequest(name, "sections/0");
+            var request = new DeleteFieldsRequest(name, nodePath: "sections/0");
             var actual = this.wordsApi.DeleteFields(request);
 
             Assert.AreEqual(200, actual.Code);            
@@ -288,7 +288,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
          
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new DeleteFieldsRequest(name, "sections/0/paragraphs/0");
+            var request = new DeleteFieldsRequest(name, nodePath: "sections/0/paragraphs/0");
             var actual = this.wordsApi.DeleteFields(request);
 
             Assert.AreEqual(200, actual.Code);
@@ -402,7 +402,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
           
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new GetDocumentDrawingObjectByIndexRequest(name, objectIndex, "sections/0");
+            var request = new GetDocumentDrawingObjectByIndexRequest(name, objectIndex, nodePath: "sections/0");
             DrawingObjectResponse actual = this.wordsApi.GetDocumentDrawingObjectByIndex(request);
 
             Assert.AreEqual(200, actual.Code);                        
@@ -420,7 +420,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
            
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new RenderDrawingObjectRequest(name, format, objectIndex, "sections/0");
+            var request = new RenderDrawingObjectRequest(name, format, objectIndex, nodePath: "sections/0");
             this.wordsApi.RenderDrawingObject(request);                        
         }
 
@@ -434,7 +434,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             int objectIndex = 0;            
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new GetDocumentDrawingObjectImageDataRequest(name, objectIndex, "sections/0");
+            var request = new GetDocumentDrawingObjectImageDataRequest(name, objectIndex, nodePath: "sections/0");
             this.wordsApi.GetDocumentDrawingObjectImageData(request);            
         }
 
@@ -448,7 +448,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             int objectIndex = 0;             
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new GetDocumentDrawingObjectOleDataRequest(name, objectIndex, "sections/0");
+            var request = new GetDocumentDrawingObjectOleDataRequest(name, objectIndex, nodePath: "sections/0");
             this.wordsApi.GetDocumentDrawingObjectOleData(request);            
         }
 
@@ -462,7 +462,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
          
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new GetDocumentDrawingObjectsRequest(name, "sections/0");
+            var request = new GetDocumentDrawingObjectsRequest(name, nodePath: "sections/0");
             var actual = this.wordsApi.GetDocumentDrawingObjects(request);
 
             Assert.AreEqual(200, actual.Code);
@@ -526,7 +526,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
 
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new GetDocumentParagraphRequest(name, index, "sections/0");
+            var request = new GetDocumentParagraphRequest(name, index, nodePath: "sections/0");
             var actual = this.wordsApi.GetDocumentParagraph(request);
 
             Assert.AreEqual(200, actual.Code);
@@ -593,7 +593,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
          
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new GetDocumentParagraphsRequest(name, "sections/0");
+            var request = new GetDocumentParagraphsRequest(name, nodePath: "sections/0");
             var actual = this.wordsApi.GetDocumentParagraphs(request);
 
             Assert.AreEqual(200, actual.Code);            
@@ -705,7 +705,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
 
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new GetFieldRequest(name, fieldIndex, "sections/0/paragraphs/0");
+            var request = new GetFieldRequest(name, fieldIndex, nodePath: "sections/0/paragraphs/0");
             var actual = this.wordsApi.GetField(request);
 
             Assert.AreEqual(200, actual.Code);
@@ -721,7 +721,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
            
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new GetFieldsRequest(name, "sections/0");
+            var request = new GetFieldsRequest(name, nodePath: "sections/0");
             FieldsResponse actual = this.wordsApi.GetFields(request);
 
            Assert.AreEqual(200, actual.Code);           
@@ -753,7 +753,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
           
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new GetFormFieldsRequest(name, "sections/0");
+            var request = new GetFormFieldsRequest(name, nodePath: "sections/0");
             FormFieldsResponse actual = this.wordsApi.GetFormFields(request);
 
            Assert.AreEqual(200, actual.Code);            
@@ -770,7 +770,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
 
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new GetFormFieldRequest(name, formfieldIndex, "sections/0");
+            var request = new GetFormFieldRequest(name, formfieldIndex, nodePath: "sections/0");
             FormFieldResponse actual = this.wordsApi.GetFormField(request);
 
             Assert.AreEqual(200, actual.Code);
@@ -846,7 +846,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
 
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new PostAppendDocumentRequest(name, body, filename);
+            var request = new PostAppendDocumentRequest(name, body, destFileName: filename);
             var actual = this.wordsApi.PostAppendDocument(request);
 
             Assert.AreEqual(200, actual.Code);
@@ -938,7 +938,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new PostDocumentParagraphRunFontRequest(name, body, "paragraphs/0", runIndex, filename);
+            var request = new PostDocumentParagraphRunFontRequest(name, body, "paragraphs/0", runIndex, destFileName: filename);
             var actual = this.wordsApi.PostDocumentParagraphRunFont(request);
             Assert.AreEqual(200, actual.Code);
         }
@@ -1002,7 +1002,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
                         
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new PostFieldRequest(name, body, fieldIndex, "sections/0/paragraphs/0", destFileName);
+            var request = new PostFieldRequest(name, body, fieldIndex, nodePath: "sections/0/paragraphs/0", destFileName: destFileName);
             var actual = this.wordsApi.PostField(request);
             
             Assert.AreEqual(200, actual.Code);            
@@ -1031,7 +1031,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
 
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new PostFormFieldRequest(name, body, formfieldIndex, "sections/0", destFileName);
+            var request = new PostFormFieldRequest(name, body, formfieldIndex, nodePath: "sections/0", destFileName: destFileName);
 
             // Act
             FormFieldResponse actual = this.wordsApi.PostFormField(request);
@@ -1063,7 +1063,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
 
                 var request = new PostInsertDocumentWatermarkImageRequest(name,
                     file,
-                    rotationAngle,
+                    rotationAngle: rotationAngle,
                     destFileName: filename);
 
                 var actual = this.wordsApi.PostInsertDocumentWatermarkImage(request);
@@ -1086,7 +1086,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
 
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new PostInsertDocumentWatermarkTextRequest(name, body, filename);
+            var request = new PostInsertDocumentWatermarkTextRequest(name, body, destFileName: filename);
             var actual = this.wordsApi.PostInsertDocumentWatermarkText(request);
             
             Assert.AreEqual(200, actual.Code);
@@ -1107,7 +1107,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new PostInsertPageNumbersRequest(name, body, filename);
+            var request = new PostInsertPageNumbersRequest(name, body, destFileName: filename);
             var actual = this.wordsApi.PostInsertPageNumbers(request);
             
             Assert.AreEqual(200, actual.Code);
@@ -1149,7 +1149,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new PostInsertDocumentWatermarkTextRequest(name, body, filename);
+            var request = new PostInsertDocumentWatermarkTextRequest(name, body, destFileName: filename);
             var actual = this.wordsApi.PostInsertDocumentWatermarkText(request);
             
             Assert.AreEqual(200, actual.Code);
@@ -1194,7 +1194,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
 
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new PostReplaceTextRequest(name, body, filename);
+            var request = new PostReplaceTextRequest(name, body, destFileName: filename);
             var actual = this.wordsApi.PostReplaceText(request);
             
             Assert.AreEqual(200, actual.Code);
@@ -1234,7 +1234,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
 
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new PostUpdateDocumentBookmarkRequest(name, body, bookmarkName, filename);
+            var request = new PostUpdateDocumentBookmarkRequest(name, body, bookmarkName, destFileName: filename);
             var actual = this.wordsApi.PostUpdateDocumentBookmark(request);
 
             Assert.AreEqual(200, actual.Code);
@@ -1296,7 +1296,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             string format = "pdf";            
             using (var fileStream = System.IO.File.OpenRead(Common.GetDataDir() + "test_uploadfile.docx"))
             {
-                var request = new PutConvertDocumentRequest(format, fileStream);
+                var request = new PutConvertDocumentRequest(fileStream, format);
                 this.wordsApi.PutConvertDocument(request);             
             }
         }
@@ -1332,7 +1332,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
             var request = new PutDocumentSaveAsTiffRequest(name,
                 body,
-                resultFile);
+                destFileName: resultFile);
             SaveResponse actual = this.wordsApi.PutDocumentSaveAsTiff(request);
 
             Assert.AreEqual(200, actual.Code);
@@ -1386,7 +1386,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new PutFieldRequest(name, body, "sections/0/paragraphs/0");
+            var request = new PutFieldRequest(name, body, nodePath: "sections/0/paragraphs/0");
             var actual = this.wordsApi.PutField(request);
             
             Assert.AreEqual(200, actual.Code);
@@ -1413,7 +1413,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
 
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new PutFormFieldRequest(name, body, "sections/0/paragraphs/0", destFileName: destFileName);
+            var request = new PutFormFieldRequest(name, body, nodePath: "sections/0/paragraphs/0", destFileName: destFileName);
             var actual = this.wordsApi.PutFormField(request);
 
             Assert.AreEqual(200, actual.Code);
@@ -1431,7 +1431,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
 
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new PutProtectDocumentRequest(name, body, filename);
+            var request = new PutProtectDocumentRequest(name, body, destFileName: filename);
             var actual = this.wordsApi.PutProtectDocument(request);
             
             Assert.AreEqual(200, actual.Code);
@@ -1452,7 +1452,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
 
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new CreateOrUpdateDocumentPropertyRequest(name, propertyName, body, filename);
+            var request = new CreateOrUpdateDocumentPropertyRequest(name, propertyName, body, destFileName: filename);
             var actual = this.wordsApi.CreateOrUpdateDocumentProperty(request);
             Assert.AreEqual(200, actual.Code);
         }
@@ -1468,7 +1468,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
            
             this.storageApi.PutCreate(name, null, null, System.IO.File.ReadAllBytes(Common.GetDataDir() + name));
 
-            var request = new RejectAllRevisionsRequest(name, filename);
+            var request = new RejectAllRevisionsRequest(name, destFileName: filename);
             var actual = this.wordsApi.RejectAllRevisions(request);
 
             Assert.AreEqual(200, actual.Code);

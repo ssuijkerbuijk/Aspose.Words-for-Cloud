@@ -36,17 +36,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Reference to node
   /// </summary>  
-  public class NodeLink 
+  public class NodeLink : LinkElement 
   {                       
         /// <summary>
         /// Node id
         /// </summary>  
         public string NodeId { get; set; }
-
-        /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -57,7 +52,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class NodeLink {\n");
           sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

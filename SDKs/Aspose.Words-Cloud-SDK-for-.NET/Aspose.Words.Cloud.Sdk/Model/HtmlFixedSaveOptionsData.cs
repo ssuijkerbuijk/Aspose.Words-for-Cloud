@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class HtmlFixedSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Specifies prefix which is added to all class names in style.css file.  Default value is \"aw\".
+        /// Specifies prefix which is added to all class names in style.css file. Default value is \"aw\".
         /// </summary>  
         public string CssClassNamesPrefix { get; set; }
 
@@ -89,12 +89,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? ShowPageBorder { get; set; }
 
         /// <summary>
-        /// Specifies the horizontal alignment of pages in an HTML document.  Default value is HtmlFixedHorizontalPageAlignment.Center.
+        /// Specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center.
         /// </summary>  
         public string PageHorizontalAlignment { get; set; }
 
         /// <summary>
-        /// Specifies the margins around pages in an HTML document.  The margins value is measured in points and should be equal to or greater than 0.  Default value is 10 points.
+        /// Specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.
         /// </summary>  
         public double? PageMargins { get; set; }
 

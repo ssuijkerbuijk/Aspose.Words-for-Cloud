@@ -36,12 +36,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Represents Drawing Object DTO.
   /// </summary>  
-  public class DrawingObject 
+  public class DrawingObject : DrawingObjectLink 
   {                       
         /// <summary>
-        /// Specifies where the distance to the image is measured from.
+        /// Specifies where the distance to the image is measured from.             
         /// </summary>
-        /// <value>Specifies where the distance to the image is measured from.</value>
+        /// <value>Specifies where the distance to the image is measured from.             </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RelativeHorizontalPositionEnum
         { 
@@ -59,6 +59,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum Column for "Column"
             /// </summary>            
             Column,
+            
+            /// <summary>
+            /// Enum Default for "Default"
+            /// </summary>            
+            Default,
             
             /// <summary>
             /// Enum Character for "Character"
@@ -83,12 +88,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum OutsideMargin for "OutsideMargin"
             /// </summary>            
-            OutsideMargin,
-            
-            /// <summary>
-            /// Enum Default for "Default"
-            /// </summary>            
-            Default            
+            OutsideMargin            
         }
 
         /// <summary>
@@ -104,6 +104,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
             Margin,
             
             /// <summary>
+            /// Enum TableDefault for "TableDefault"
+            /// </summary>            
+            TableDefault,
+            
+            /// <summary>
             /// Enum Page for "Page"
             /// </summary>            
             Page,
@@ -112,6 +117,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum Paragraph for "Paragraph"
             /// </summary>            
             Paragraph,
+            
+            /// <summary>
+            /// Enum TextFrameDefault for "TextFrameDefault"
+            /// </summary>            
+            TextFrameDefault,
             
             /// <summary>
             /// Enum Line for "Line"
@@ -136,17 +146,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum OutsideMargin for "OutsideMargin"
             /// </summary>            
-            OutsideMargin,
-            
-            /// <summary>
-            /// Enum TableDefault for "TableDefault"
-            /// </summary>            
-            TableDefault,
-            
-            /// <summary>
-            /// Enum TextFrameDefault for "TextFrameDefault"
-            /// </summary>            
-            TextFrameDefault            
+            OutsideMargin            
         }
 
         /// <summary>
@@ -156,11 +156,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         [JsonConverter(typeof(StringEnumConverter))]
         public enum WrapTypeEnum
         { 
-            /// <summary>
-            /// Enum None for "None"
-            /// </summary>            
-            None,
-            
             /// <summary>
             /// Enum Inline for "Inline"
             /// </summary>            
@@ -177,6 +172,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
             Square,
             
             /// <summary>
+            /// Enum None for "None"
+            /// </summary>            
+            None,
+            
+            /// <summary>
             /// Enum Tight for "Tight"
             /// </summary>            
             Tight,
@@ -188,7 +188,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Specifies where the distance to the image is measured from.
+        /// Specifies where the distance to the image is measured from.             
         /// </summary>
         public RelativeHorizontalPositionEnum? RelativeHorizontalPosition { get; set; }
 
@@ -203,7 +203,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public WrapTypeEnum? WrapType { get; set; }
 
         /// <summary>
-        /// A list of links that originate from this {Aspose.Words.Cloud.DTO.DocumentElements.DrawingObjects.DrawingObjectDto}.
+        /// A list of links that originate from this .
         /// </summary>  
         public List<WordsApiLink> RenderLinks { get; set; }
 
@@ -228,7 +228,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public WordsApiLink ImageDataLink { get; set; }
 
         /// <summary>
-        /// Distance in points from the origin to the left side of the image.
+        /// Distance in points from the origin to the left side of the image.             
         /// </summary>  
         public double? Left { get; set; }
 
@@ -236,16 +236,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Distance in points from the origin to the top side of the image.
         /// </summary>  
         public double? Top { get; set; }
-
-        /// <summary>
-        /// Node id
-        /// </summary>  
-        public string NodeId { get; set; }
-
-        /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -265,8 +255,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  RelativeVerticalPosition: ").Append(this.RelativeVerticalPosition).Append("\n");
           sb.Append("  Top: ").Append(this.Top).Append("\n");
           sb.Append("  WrapType: ").Append(this.WrapType).Append("\n");
-          sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? BookmarksOutlineLevel { get; set; }
 
         /// <summary>
-        /// Specifies whether to convert footnote/endnote references in main text story into active hyperlinks.  When clicked the hyperlink will lead to the corresponding footnote/endnote.  Default is false.
+        /// Specifies whether to convert footnote/endnote references in main text story into active hyperlinks. When clicked the hyperlink will lead to the corresponding footnote/endnote. Default is false.
         /// </summary>  
         public bool? CreateNoteHyperlinks { get; set; }
 
@@ -174,7 +174,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? ZoomFactor { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining the way {Aspose.Words.Properties.CustomDocumentProperties} are exported to PDF file.  Default value is {Aspose.Words.Saving.PdfCustomPropertiesExport.None}.
+        /// Gets or sets a value determining the way  are exported to PDF file. Default value is .
         /// </summary>  
         public string CustomPropertiesExport { get; set; }
 

@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Author { get; set; }
 
         /// <summary>
-        /// The date and time to use for revisions.
+        /// The date and time to use for revisions.             
         /// </summary>  
         public DateTime? DateTime { get; set; }
 

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Footnote.
   /// </summary>  
-  public class Footnote 
+  public class Footnote : FootnoteLink 
   {                       
         /// <summary>
         /// Returns a value that specifies whether this is a footnote or endnote.
@@ -67,7 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public DocumentPosition Position { get; set; }
 
         /// <summary>
-        /// Gets/sets custom reference mark to be used for this footnote.  Default value is {System.String.Empty}, meaning auto-numbered footnotes are used.
+        /// Gets/sets custom reference mark to be used for this footnote. Default value is , meaning auto-numbered footnotes are used.
         /// </summary>  
         public string ReferenceMark { get; set; }
 
@@ -82,16 +82,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public StoryChildNodes Content { get; set; }
 
         /// <summary>
-        /// Node id
-        /// </summary>  
-        public string NodeId { get; set; }
-
-        /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -104,8 +94,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  ReferenceMark: ").Append(this.ReferenceMark).Append("\n");
           sb.Append("  Text: ").Append(this.Text).Append("\n");
           sb.Append("  Content: ").Append(this.Content).Append("\n");
-          sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

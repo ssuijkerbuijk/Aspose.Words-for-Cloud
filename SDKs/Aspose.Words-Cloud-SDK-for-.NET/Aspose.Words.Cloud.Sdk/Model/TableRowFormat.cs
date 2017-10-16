@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Represents all formatting for a table row.
   /// </summary>  
-  public class TableRowFormat 
+  public class TableRowFormat : LinkElement 
   {                       
         /// <summary>
         /// Gets or sets the rule for determining the height of the table row.
@@ -82,11 +82,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? HeadingFormat { get; set; }
 
         /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -98,7 +93,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  HeightRule: ").Append(this.HeightRule).Append("\n");
           sb.Append("  AllowBreakAcrossPages: ").Append(this.AllowBreakAcrossPages).Append("\n");
           sb.Append("  HeadingFormat: ").Append(this.HeadingFormat).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

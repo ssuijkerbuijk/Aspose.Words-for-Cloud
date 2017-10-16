@@ -39,9 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class HtmlSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
-        /// Specifies version of HTML standard that should be used when saving the document to HTML or MHTML.    Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
+        /// Specifies version of HTML standard that should be used when saving the document to HTML or MHTML.   Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
         /// </summary>
-        /// <value>Specifies version of HTML standard that should be used when saving the document to HTML or MHTML.    Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.</value>
+        /// <value>Specifies version of HTML standard that should be used when saving the document to HTML or MHTML.   Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HtmlVersionEnum
         { 
@@ -80,7 +80,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Specifies version of HTML standard that should be used when saving the document to HTML or MHTML.    Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
+        /// Specifies version of HTML standard that should be used when saving the document to HTML or MHTML.   Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
         /// </summary>
         public HtmlVersionEnum? HtmlVersion { get; set; }
 
@@ -165,12 +165,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? ExportMetafileAsRaster { get; set; }
 
         /// <summary>
-        /// Specifies whether original URL should be used as the URL of the linked images.  Default value is false.
+        /// Specifies whether original URL should be used as the URL of the linked images. Default value is false.
         /// </summary>  
         public bool? ExportOriginalUrlForLinkedImages { get; set; }
 
         /// <summary>
-        /// Specifies whether page margins is exported to HTML, MHTML or EPUB.  Default is false.
+        /// Specifies whether page margins is exported to HTML, MHTML or EPUB. Default is false.
         /// </summary>  
         public bool? ExportPageMargins { get; set; }
 
@@ -185,12 +185,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? ExportRelativeFontSize { get; set; }
 
         /// <summary>
-        /// Specifies whether to write the roundtrip information when saving to HTML  Default value is true.
+        /// Specifies whether to write the roundtrip information when saving to HTML Default value is true.
         /// </summary>  
         public bool? ExportRoundtripInformation { get; set; }
 
         /// <summary>
-        /// Controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. Default value is false.  <remarks>    When set to true, exports textboxes as inline \"svg\" elements. When false, exports as \"image\" elements.  </remarks>
+        /// Controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. Default value is false.    When set to true, exports textboxes as inline \"svg\" elements. When false, exports as \"image\" elements.
         /// </summary>  
         public bool? ExportTextBoxAsSvg { get; set; }
 
@@ -260,7 +260,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string TableWidthOutputMode { get; set; }
 
         /// <summary>
-        /// Controls how drop-down form fields are saved to HTML.  Default value is false.
+        /// Controls how drop-down form fields are saved to HTML. Default value is false.
         /// </summary>  
         public bool? ExportDropDownFormFieldAsText { get; set; }
 

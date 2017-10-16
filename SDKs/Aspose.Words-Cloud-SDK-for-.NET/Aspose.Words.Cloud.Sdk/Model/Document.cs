@@ -172,12 +172,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string FileName { get; set; }
 
         /// <summary>
-        /// Returns true if the document is encrypted and requires a password to open.
+        /// Returns true if the document is encrypted and requires a password to open. 
         /// </summary>  
         public bool? IsEncrypted { get; set; }
 
         /// <summary>
-        /// Returns true if the document contains a digital signature. This property merely informs that a   digital signature is present on a document, but it does not specify whether the signature is valid or not.
+        /// Returns true if the document contains a digital signature. This property merely informs that a  digital signature is present on a document, but it does not specify whether the signature is valid or not. 
         /// </summary>  
         public bool? IsSigned { get; set; }
 

@@ -36,17 +36,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Collection of links to tables
   /// </summary>  
-  public class TableLinkCollection 
+  public class TableLinkCollection : LinkElement 
   {                       
         /// <summary>
         /// Collection of table's links
         /// </summary>  
         public List<TableLink> TableLinkList { get; set; }
-
-        /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -57,7 +52,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class TableLinkCollection {\n");
           sb.Append("  TableLinkList: ").Append(this.TableLinkList).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

@@ -87,7 +87,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string TextInputFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets the default string or a calculation expression of a text form field.
+        /// Gets or sets the default string or a calculation expression of a text form field. 
         /// </summary>  
         public string TextInputDefault { get; set; }
 

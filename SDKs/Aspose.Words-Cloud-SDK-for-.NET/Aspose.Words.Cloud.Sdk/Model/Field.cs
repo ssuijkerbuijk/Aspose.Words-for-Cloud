@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Field
   /// </summary>  
-  public class Field 
+  public class Field : FieldLink 
   {                       
         /// <summary>
         /// Field result
@@ -49,21 +49,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string LocaleId { get; set; }
 
         /// <summary>
-        /// Field code
-        /// </summary>  
-        public string FieldCode { get; set; }
-
-        /// <summary>
-        /// Node id
-        /// </summary>  
-        public string NodeId { get; set; }
-
-        /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -73,9 +58,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("class Field {\n");
           sb.Append("  Result: ").Append(this.Result).Append("\n");
           sb.Append("  LocaleId: ").Append(this.LocaleId).Append("\n");
-          sb.Append("  FieldCode: ").Append(this.FieldCode).Append("\n");
-          sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

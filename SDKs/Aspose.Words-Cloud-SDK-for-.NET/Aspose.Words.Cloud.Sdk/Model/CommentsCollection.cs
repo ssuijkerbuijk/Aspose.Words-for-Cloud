@@ -36,17 +36,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Collection of comments.
   /// </summary>  
-  public class CommentsCollection 
+  public class CommentsCollection : LinkElement 
   {                       
         /// <summary>
         /// Collection of comments
         /// </summary>  
         public List<Comment> CommentList { get; set; }
-
-        /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -57,7 +52,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class CommentsCollection {\n");
           sb.Append("  CommentList: ").Append(this.CommentList).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

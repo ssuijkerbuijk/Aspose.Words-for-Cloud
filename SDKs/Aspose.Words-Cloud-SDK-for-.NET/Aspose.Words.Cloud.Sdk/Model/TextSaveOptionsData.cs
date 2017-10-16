@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? ExportHeadersFooters { get; set; }
 
         /// <summary>
-        /// Allows to specify whether the page breaks should be preserved during export.  The default value is false.
+        /// Allows to specify whether the page breaks should be preserved during export. The default value is false.
         /// </summary>  
         public bool? ForcePageBreaks { get; set; }
 

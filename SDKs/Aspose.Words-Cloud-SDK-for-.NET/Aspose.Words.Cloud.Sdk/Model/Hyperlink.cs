@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Hyperlink element.
   /// </summary>  
-  public class Hyperlink 
+  public class Hyperlink : LinkElement 
   {                       
         /// <summary>
         /// Hypelink's display text
@@ -49,11 +49,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Value { get; set; }
 
         /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -63,7 +58,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("class Hyperlink {\n");
           sb.Append("  DisplayText: ").Append(this.DisplayText).Append("\n");
           sb.Append("  Value: ").Append(this.Value).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

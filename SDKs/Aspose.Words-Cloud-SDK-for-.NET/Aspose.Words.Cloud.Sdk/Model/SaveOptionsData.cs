@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class SaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets a value determining how colors are rendered.  { Normal | Grayscale}
+        /// Gets or sets a value determining how colors are rendered. { Normal | Grayscale}
         /// </summary>  
         public string ColorMode { get; set; }
 
@@ -54,27 +54,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string FileName { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining how DrawingML shapes are rendered.  { Fallback | DrawingML }
+        /// Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }
         /// </summary>  
         public string DmlRenderingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining how DrawingML effects are rendered.  { Simplified | None | Fine }
+        /// Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }
         /// </summary>  
         public string DmlEffectsRenderingMode { get; set; }
 
         /// <summary>
-        /// Controls zip output or not.  Default value is false.
+        /// Controls zip output or not. Default value is false.
         /// </summary>  
         public bool? ZipOutput { get; set; }
 
         /// <summary>
-        /// Gets or sets value determining whether content of {Aspose.Words.Markup.StructuredDocumentTag} is updated before saving.
+        /// Gets or sets value determining whether content of  is updated before saving.
         /// </summary>  
         public bool? UpdateSdtContent { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining if fields should be updated before saving the document to a fixed page format.  Default value for this property is <b>true</b>
+        /// Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true
         /// </summary>  
         public bool? UpdateFields { get; set; }
 
