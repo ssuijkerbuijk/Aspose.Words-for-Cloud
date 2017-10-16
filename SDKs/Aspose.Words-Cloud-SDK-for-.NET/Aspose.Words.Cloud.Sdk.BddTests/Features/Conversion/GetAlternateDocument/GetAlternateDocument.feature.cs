@@ -82,7 +82,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Features.Conversion.GetAlternateDocume
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
- testRunner.Given(string.Format("I have uploaded document with name {0} to storage", docName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("I have uploaded document with name {0} and subfoler is Conversion to storage", docName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
  testRunner.And(string.Format("I have specified format {0} document to be converted", destFormat), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
@@ -193,7 +193,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 26
 this.ScenarioSetup(scenarioInfo);
 #line 27
- testRunner.Given(string.Format("I have uploaded document with name {0} to storage", docName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("I have uploaded document with name {0} and subfoler is Conversion to storage", docName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 28
  testRunner.And(string.Format("I have specified format {0} document to be converted", destFormat), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29

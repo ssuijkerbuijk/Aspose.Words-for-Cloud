@@ -4,7 +4,7 @@
 
 @ConversionOfStoredDoc
 Scenario Outline: Conversion of stored document
-	Given I have uploaded document with name <DocName> to storage
+	Given I have uploaded document with name <DocName> and subfoler is Conversion to storage
 	And I have specified format <DestFormat> document to be converted
 	And I have specified document name <DocName> in URL
 	When I execute conversion from storage (GET document with format)
@@ -24,7 +24,7 @@ Scenario Outline: Conversion of stored document
 
 @ConversionOfStoredDoc
 Scenario Outline: Conversion of stored document and save to storage
-	Given I have uploaded document with name <DocName> to storage
+	Given I have uploaded document with name <DocName> and subfoler is Conversion to storage
 	And I have specified format <DestFormat> document to be converted
 	And I have specified output path <OutPath>
 	And I have specified document name <DocName> in URL

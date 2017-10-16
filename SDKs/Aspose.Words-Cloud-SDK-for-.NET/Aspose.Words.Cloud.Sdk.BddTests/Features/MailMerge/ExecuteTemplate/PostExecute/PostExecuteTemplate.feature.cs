@@ -89,7 +89,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
  testRunner.When("I execute template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Then("document with merged values should be created on storage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("document {0} is existed on storage in subfolder MailMerge", destinationFileName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -129,7 +129,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 23
  testRunner.When("I execute template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
- testRunner.Then("document with merged values should be created on storage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("document {0} is existed on storage in subfolder MailMerge", destinationFileName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -172,7 +172,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 38
  testRunner.When("I execute template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 39
- testRunner.Then("document with merged values should be created on storage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("document {0} is existed on storage in subfolder MailMerge", destinationFileName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

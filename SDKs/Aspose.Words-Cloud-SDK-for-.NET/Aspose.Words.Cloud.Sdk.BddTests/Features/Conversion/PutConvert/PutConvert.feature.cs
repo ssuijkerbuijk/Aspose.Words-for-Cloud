@@ -201,7 +201,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 29
  testRunner.When("I execute conversion (PUT convert)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
- testRunner.Then(string.Format("document {0} is existed on storage", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("document {0} is existed on storage in subfolder Conversion", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -7503,7 +7503,7 @@
             "x-nullable": true
           }
         },
-        "x-csharp-implements": "ICanModifyDocumentRequest, IWordDocumentRequest"
+        "x-csharp-implements": "ICanModifyDocumentRequest, IWordDocumentRequest, ICanSpecifyMailMergeParametersRequest"
       }
     },
     "/words/{name}/executeMailMerge": {
@@ -7602,7 +7602,7 @@
             "x-nullable": true
           }
         },
-        "x-csharp-implements": "ICanModifyDocumentRequest, IWordDocumentRequest"
+        "x-csharp-implements": "ICanModifyDocumentRequest, IWordDocumentRequest, ICanSpecifyMailMergeParametersRequest"
       }
     },
     "/words/executeTemplate": {

@@ -5,7 +5,7 @@
 @PutExecuteTemplate
 Scenario Outline: Execute Template
 	Given I have specified a template file <TemplateName> with mustache syntax
-	And I have specified a body file <Body>
+	And I have specified a data file <Body>
 	When I execute template online
 	Then document with merged values should be created
 
@@ -17,7 +17,7 @@ Scenario Outline: Execute Template
 @PutExecuteTemplate
 Scenario Outline: Execute Template With Images
 	Given I have specified a template file <TemplateName> with mustache syntax
-	And I have specified a body file <Body>
+	And I have specified a data file <Body>
 	When I execute template online
 	Then document with merged values should be created
 	And image should be rendered
@@ -29,7 +29,7 @@ Scenario Outline: Execute Template With Images
 @PutExecuteTemplate
 Scenario Outline: Execute Template With Cleanup Options
 	Given I have specified a template file <TemplateName> with mustache syntax
-	And I have specified a body file <Body>
+	And I have specified a data file <Body>
 	And I have specified a cleanup option <Cleanup>
 	When I execute template online
 	Then document with merged values should be created

@@ -73,6 +73,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Base\Context\BaseContext.cs" />
+    <Compile Include="Base\Steps\ModifyDocumentRequestSteps.cs" />
+    <Compile Include="Base\Steps\SpecifyMailMergeParametersRequestSteps.cs" />
     <Compile Include="Base\Steps\FileResultSteps.cs" />
     <Compile Include="Base\Steps\PutExecuteSteps.cs" />
     <Compile Include="Base\Steps\SpecifyOutputFormatRequestSteps.cs" />

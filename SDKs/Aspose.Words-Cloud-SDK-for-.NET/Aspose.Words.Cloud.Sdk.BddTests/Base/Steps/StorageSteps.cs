@@ -50,7 +50,6 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Steps
         protected StorageSteps(BaseContext context)
         {
             this.context = context;
-            this.context.TestSubFolderInStorage = "Conversion/";
         }
 
         private PostDocumentSaveAsRequest Request
@@ -62,9 +61,11 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Steps
         /// Uploads specified document to storage
         /// </summary>
         /// <param name="fileName">document name</param>
-        [Given(@"I have uploaded document with name (.*) to storage")]
-        public void GivenIHaveUploadedDocumentWithNameToStorage(string fileName)
+        /// <param name="subfolder">subfolder to upload</param>
+        [Given(@"I have uploaded document with name (.*) and subfoler is (.*) to storage")]
+        public void GivenIHaveUploadedDocumentWithNameToStorage(string fileName, string subfolder)
         {
+            this.context.TestSubFolderInStorage = subfolder;
             this.context.StorageApi.PutCreate(
                this.context.TestFolderInStorage + fileName,
                null,
@@ -86,10 +87,12 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Steps
         /// Checks converted document exists on storage.
         /// </summary>
         /// <param name="fileName">File name.</param>
-        [Then(@"document (.*) is existed on storage")]
-        public void ThenDocumentIsExistedInStorageWithFormat(string fileName)
+        /// <param name="subfolder">specific subfolder</param>
+        [Then(@"document (.*) is existed on storage in subfolder (.*)")]
+        public void ThenDocumentIsExistedInStorage(string fileName, string subfolder)
         {
-            Assert.IsTrue(this.context.FileWithNameExists(fileName));
+            this.context.TestSubFolderInStorage = subfolder;
+            Assert.IsTrue(this.context.FileWithNameExists(fileName), "Error while saving file to storage");
         }
 
         /// <summary>
@@ -99,7 +102,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Steps
         public void ThenDocumentFromStorageIsDownloadble()
         {
             var resp = this.context.StorageApi
-                .GetDownload(this.context.TestFolderInStorage + this.Request.SaveOptionsData.FileName, null, null);
+                .GetDownload(Path.Combine(this.context.TestFolderInStorage, this.Request.SaveOptionsData.FileName), null, null);
             this.context.Response = new MemoryStream(resp.ResponseStream);
         }
     }

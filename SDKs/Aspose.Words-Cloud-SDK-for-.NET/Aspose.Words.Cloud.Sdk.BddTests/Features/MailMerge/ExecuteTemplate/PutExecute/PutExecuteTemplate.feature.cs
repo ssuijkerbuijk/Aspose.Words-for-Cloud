@@ -83,7 +83,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.Given(string.Format("I have specified a template file {0} with mustache syntax", templateName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.And(string.Format("I have specified a body file {0}", body), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have specified a data file {0}", body), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
  testRunner.When("I execute template online", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
@@ -130,7 +130,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 19
  testRunner.Given(string.Format("I have specified a template file {0} with mustache syntax", templateName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 20
- testRunner.And(string.Format("I have specified a body file {0}", body), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have specified a data file {0}", body), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
  testRunner.When("I execute template online", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
@@ -167,7 +167,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 31
  testRunner.Given(string.Format("I have specified a template file {0} with mustache syntax", templateName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 32
- testRunner.And(string.Format("I have specified a body file {0}", body), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have specified a data file {0}", body), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
  testRunner.And(string.Format("I have specified a cleanup option {0}", cleanup), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34

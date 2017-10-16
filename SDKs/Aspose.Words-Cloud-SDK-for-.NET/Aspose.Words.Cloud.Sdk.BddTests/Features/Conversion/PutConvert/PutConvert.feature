@@ -27,7 +27,7 @@ Scenario Outline: Conversion with storage
 	And I have specified output path <OutPath>
 	And There is no file <OutPath> on storage
 	When I execute conversion (PUT convert)
-	Then document <OutPath> is existed on storage
+	Then document <OutPath> is existed on storage in subfolder Conversion
 	
 	Examples: 
 		| DocName           | DestFormat | OutPath                                         |

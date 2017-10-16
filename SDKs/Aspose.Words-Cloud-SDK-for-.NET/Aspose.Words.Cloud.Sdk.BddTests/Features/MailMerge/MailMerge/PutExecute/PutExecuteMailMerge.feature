@@ -5,7 +5,7 @@
 @PutExecuteMailMerge
 Scenario Outline: Execute Mail Merge With Data File
 	Given I have specified a template file <TemplateName> with mustache syntax
-	And I have specified a body file <Body>
+	And I have specified a data file <Body>
 	When I execute mail merge online
 	Then document with merged values should be created
 

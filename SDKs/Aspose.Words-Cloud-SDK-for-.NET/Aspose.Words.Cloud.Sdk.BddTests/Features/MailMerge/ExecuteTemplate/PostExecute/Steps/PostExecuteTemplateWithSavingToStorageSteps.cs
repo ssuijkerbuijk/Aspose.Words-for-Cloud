@@ -91,39 +91,6 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Features.MailMerge.ExecuteTemplate.Pos
             // TODO: use "I have specified document <DocName> to send it in request body" step insted
             this.Request.Data = File.ReadAllText(Path.Combine(this.context.TestDataPath, bodyDocumentName));
         }
-
-        /// <summary>
-        /// Initialize destination file name
-        /// </summary>
-        /// <param name="destFileName">destination file name</param>
-        [Given(@"I have specified a destFileName (.*)")]
-        public void GivenIHaveSpecifiedADestFileName(string destFileName)
-        {
-            // TODO: move to common steps (it is ICanModifyDocumentRequest)
-            this.Request.DestFileName = destFileName;
-        }
-
-        /// <summary>
-        /// Initialize property "WithRegions"
-        /// </summary>
-        /// <param name="withRegions">WithRegions</param>
-        [Given(@"I have specified withRegions (.*)")]
-        public void GivenIHaveSpecifiedWithRegions(bool withRegions)
-        {
-            // TODO: Add interface "ICanSpecifyMailMergeParametersRequest" and move steps
-            this.Request.WithRegions = withRegions;
-        }
-
-        /// <summary>
-        /// Initialize property "UseWholeParagraphAsRegion"
-        /// </summary>
-        /// <param name="useWholeParagraphAsRegion">UseWholeParagraphAsRegion</param>
-        [Given(@"I have specified useWholeParagraphAsRegion (.*)")]
-        public void GivenIHaveSpecifiedUseWholeParagraphAsRegion(bool useWholeParagraphAsRegion)
-        {
-            // TODO: Add interface "ICanSpecifyMailMergeParametersRequest" and move steps
-            this.Request.UseWholeParagraphAsRegion = useWholeParagraphAsRegion;
-        }
         
         /// <summary>
         /// Executes template from storage
@@ -133,17 +100,6 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Features.MailMerge.ExecuteTemplate.Pos
         {
             this.Request.Folder = this.context.TestFolderInStorage;
             this.context.Response = this.context.WordsApi.PostExecuteTemplate(this.Request);
-        }
-        
-        /// <summary>
-        /// Checks document was successfully created on storage
-        /// </summary>
-        [Then(@"document with merged values should be created on storage")]
-        public void ThenDocumentWithMergedValuesShouldBeCreated()
-        {
-            // TODO: move to storage steps (+rename - we don't check here anything, which is related which "merged values"
-            // or check "merged values"
-            Assert.IsTrue(this.context.FileWithNameExists(this.Request.DestFileName), "Error while saving file to storage");
         }
     }
 }

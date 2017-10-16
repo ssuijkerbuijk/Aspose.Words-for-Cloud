@@ -82,7 +82,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Features.Conversion.SaveAs
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
- testRunner.Given(string.Format("I have uploaded document with name {0} to storage", docName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("I have uploaded document with name {0} and subfoler is Conversion to storage", docName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
  testRunner.And(string.Format("I have specified save format {0} document to be converted", destFormat), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
@@ -92,7 +92,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 11
  testRunner.When("I execute conversion from storage (POST SaveAs)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 12
- testRunner.Then(string.Format("document {0} is existed on storage", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("document {0} is existed on storage in subfolder Conversion", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 13
  testRunner.And("document from storage is downloadble", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -215,7 +215,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 28
 this.ScenarioSetup(scenarioInfo);
 #line 29
- testRunner.Given(string.Format("I have uploaded document with name {0} to storage", docName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("I have uploaded document with name {0} and subfoler is Conversion to storage", docName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 30
  testRunner.And(string.Format("I have specified save format {0} document to be converted", destFormat), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
@@ -227,7 +227,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 34
  testRunner.When("I execute conversion from storage (POST SaveAs)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 35
- testRunner.Then(string.Format("document {0} is existed on storage", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("document {0} is existed on storage in subfolder Conversion", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 36
  testRunner.And("document from storage is downloadble", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
@@ -262,7 +262,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 44
 this.ScenarioSetup(scenarioInfo);
 #line 45
- testRunner.Given(string.Format("I have uploaded document with name {0} to storage", docName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("I have uploaded document with name {0} and subfoler is Conversion to storage", docName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 46
  testRunner.And(string.Format("I have specified save format {0} document to be converted", destFormat), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
@@ -272,7 +272,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 49
  testRunner.When("I execute conversion from storage (POST SaveAs)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 50
- testRunner.Then(string.Format("document {0} is existed on storage", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("document {0} is existed on storage in subfolder Conversion", outPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
