@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Comment.
   /// </summary>  
-  public class Comment 
+  public class Comment : CommentLink 
   {                       
         /// <summary>
         /// Link to comment range start node.
@@ -74,11 +74,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public StoryChildNodes Content { get; set; }
 
         /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -93,7 +88,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
           sb.Append("  Text: ").Append(this.Text).Append("\n");
           sb.Append("  Content: ").Append(this.Content).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

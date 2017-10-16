@@ -36,17 +36,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Represents an array of bookmarks.
   /// </summary>  
-  public class Bookmarks 
+  public class Bookmarks : LinkElement 
   {                       
         /// <summary>
         /// Array of bookmarks.
         /// </summary>  
         public List<Bookmark> BookmarkList { get; set; }
-
-        /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -57,7 +52,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class Bookmarks {\n");
           sb.Append("  BookmarkList: ").Append(this.BookmarkList).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

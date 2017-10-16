@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="template">File with template</param>
         /// <param name="data">File with mailmerge data</param>
         /// <param name="cleanup">Clean up options.</param>
-        /// <param name="useWholeParagraphAsRegion">Gets or sets a value indicating whether paragraph with TableStart or               TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.               The default value is true.</param>
+        /// <param name="useWholeParagraphAsRegion">Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.</param>
         /// <param name="withRegions">Merge with regions or not. True by default</param>
         public PutExecuteTemplateOnlineRequest(System.IO.Stream template, System.IO.Stream data, string cleanup = null, bool? useWholeParagraphAsRegion = null, bool? withRegions = null)             
         {
@@ -71,7 +71,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Cleanup { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether paragraph with TableStart or               TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.               The default value is true.
+        /// Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
         /// </summary>  
         public bool? UseWholeParagraphAsRegion { get; set; }
 

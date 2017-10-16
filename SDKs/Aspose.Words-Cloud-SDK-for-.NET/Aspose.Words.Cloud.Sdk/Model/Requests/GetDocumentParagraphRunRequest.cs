@@ -43,18 +43,18 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="paragraphPath">Path to parent paragraph.</param>
-        /// <param name="index">Object index</param>
-        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="index">Object&#39;s index</param>
         /// <param name="folder">Original document folder.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        public GetDocumentParagraphRunRequest(string name, string paragraphPath, int? index, string storage = null, string folder = null, string loadEncoding = null, string password = null)             
+        public GetDocumentParagraphRunRequest(string name, string paragraphPath, int? index, string folder = null, string storage = null, string loadEncoding = null, string password = null)             
         {
             this.Name = name;
             this.ParagraphPath = paragraphPath;
             this.Index = index;
-            this.Storage = storage;
             this.Folder = folder;
+            this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
         }
@@ -70,19 +70,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string ParagraphPath { get; set; }
 
         /// <summary>
-        /// Object index
+        /// Object's index
         /// </summary>  
         public int? Index { get; set; }
-
-        /// <summary>
-        /// File storage, which have to be used.
-        /// </summary>  
-        public string Storage { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
         public string Folder { get; set; }
+
+        /// <summary>
+        /// File storage, which have to be used.
+        /// </summary>  
+        public string Storage { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

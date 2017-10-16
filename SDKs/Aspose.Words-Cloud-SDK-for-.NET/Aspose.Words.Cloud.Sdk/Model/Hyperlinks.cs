@@ -34,19 +34,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Collection of {Aspose.Words.Cloud.DTO.DocumentElements.Hyperlinks.Hyperlink}.
+  /// Collection of .
   /// </summary>  
-  public class Hyperlinks 
+  public class Hyperlinks : LinkElement 
   {                       
         /// <summary>
-        /// Array of {Aspose.Words.Cloud.DTO.DocumentElements.Hyperlinks.Hyperlink}.
+        /// Array of .
         /// </summary>  
         public List<Hyperlink> HyperlinkList { get; set; }
-
-        /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -57,7 +52,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class Hyperlinks {\n");
           sb.Append("  HyperlinkList: ").Append(this.HyperlinkList).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

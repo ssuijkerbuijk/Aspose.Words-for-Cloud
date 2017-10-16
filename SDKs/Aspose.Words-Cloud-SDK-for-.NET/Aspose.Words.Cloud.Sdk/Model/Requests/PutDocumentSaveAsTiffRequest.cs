@@ -43,6 +43,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="saveOptions">Tiff save options.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="resultFile">The resulting file name.</param>
         /// <param name="useAntiAliasing">Use antialiasing flag.</param>
         /// <param name="useHighQualityRendering">Use high quality flag.</param>
@@ -61,16 +66,16 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="dmlEffectsRenderingMode">Optional, default is Simplified.</param>
         /// <param name="tiffBinarizationMethod">Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.</param>
         /// <param name="zipOutput">Optional. A value determining zip output or not.</param>
-        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
-        /// <param name="folder">Original document folder.</param>
-        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
-        /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public PutDocumentSaveAsTiffRequest(string name, TiffSaveOptionsData saveOptions, string resultFile = null, bool? useAntiAliasing = null, bool? useHighQualityRendering = null, float? imageBrightness = null, string imageColorMode = null, float? imageContrast = null, string numeralFormat = null, int? pageCount = null, int? pageIndex = null, string paperColor = null, string pixelFormat = null, float? resolution = null, float? scale = null, string tiffCompression = null, string dmlRenderingMode = null, string dmlEffectsRenderingMode = null, string tiffBinarizationMethod = null, bool? zipOutput = null, string destFileName = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)             
+        public PutDocumentSaveAsTiffRequest(string name, TiffSaveOptionsData saveOptions, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string resultFile = null, bool? useAntiAliasing = null, bool? useHighQualityRendering = null, double? imageBrightness = null, string imageColorMode = null, double? imageContrast = null, string numeralFormat = null, int? pageCount = null, int? pageIndex = null, string paperColor = null, string pixelFormat = null, double? resolution = null, double? scale = null, string tiffCompression = null, string dmlRenderingMode = null, string dmlEffectsRenderingMode = null, string tiffBinarizationMethod = null, bool? zipOutput = null, string fontsLocation = null)             
         {
             this.Name = name;
             this.SaveOptions = saveOptions;
+            this.Folder = folder;
+            this.Storage = storage;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+            this.DestFileName = destFileName;
             this.ResultFile = resultFile;
             this.UseAntiAliasing = useAntiAliasing;
             this.UseHighQualityRendering = useHighQualityRendering;
@@ -89,11 +94,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             this.DmlEffectsRenderingMode = dmlEffectsRenderingMode;
             this.TiffBinarizationMethod = tiffBinarizationMethod;
             this.ZipOutput = zipOutput;
-            this.DestFileName = destFileName;
-            this.Storage = storage;
-            this.Folder = folder;
-            this.LoadEncoding = loadEncoding;
-            this.Password = password;
             this.FontsLocation = fontsLocation;
         }
 
@@ -106,6 +106,31 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Tiff save options.
         /// </summary>  
         public TiffSaveOptionsData SaveOptions { get; set; }
+
+        /// <summary>
+        /// Original document folder.
+        /// </summary>  
+        public string Folder { get; set; }
+
+        /// <summary>
+        /// File storage, which have to be used.
+        /// </summary>  
+        public string Storage { get; set; }
+
+        /// <summary>
+        /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        /// </summary>  
+        public string LoadEncoding { get; set; }
+
+        /// <summary>
+        /// Password for opening an encrypted document.
+        /// </summary>  
+        public string Password { get; set; }
+
+        /// <summary>
+        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        /// </summary>  
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// The resulting file name.
@@ -125,7 +150,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Brightness for the generated images.
         /// </summary>  
-        public float? ImageBrightness { get; set; }
+        public double? ImageBrightness { get; set; }
 
         /// <summary>
         /// Color mode for the generated images.
@@ -135,7 +160,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// The contrast for the generated images.
         /// </summary>  
-        public float? ImageContrast { get; set; }
+        public double? ImageContrast { get; set; }
 
         /// <summary>
         /// The images numeral format.
@@ -165,12 +190,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// The resolution of generated images.
         /// </summary>  
-        public float? Resolution { get; set; }
+        public double? Resolution { get; set; }
 
         /// <summary>
         /// Zoom factor for generated images.
         /// </summary>  
-        public float? Scale { get; set; }
+        public double? Scale { get; set; }
 
         /// <summary>
         /// The compression tipe.
@@ -196,31 +221,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Optional. A value determining zip output or not.
         /// </summary>  
         public bool? ZipOutput { get; set; }
-
-        /// <summary>
-        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        /// </summary>  
-        public string DestFileName { get; set; }
-
-        /// <summary>
-        /// File storage, which have to be used.
-        /// </summary>  
-        public string Storage { get; set; }
-
-        /// <summary>
-        /// Original document folder.
-        /// </summary>  
-        public string Folder { get; set; }
-
-        /// <summary>
-        /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        /// </summary>  
-        public string LoadEncoding { get; set; }
-
-        /// <summary>
-        /// Password for opening an encrypted document.
-        /// </summary>  
-        public string Password { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.

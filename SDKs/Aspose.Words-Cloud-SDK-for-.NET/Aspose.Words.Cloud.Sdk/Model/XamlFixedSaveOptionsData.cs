@@ -39,12 +39,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class XamlFixedSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Specifies the physical folder where resources (images and fonts) are saved when exporting a document to fixed page Xaml format.  Default is null.
+        /// Specifies the physical folder where resources (images and fonts) are saved when exporting a document to fixed page Xaml format. Default is null.
         /// </summary>  
         public string ResourcesFolder { get; set; }
 
         /// <summary>
-        /// Specifies the name of the folder used to construct image URIs written into an fixed page Xaml document.  Default is null.
+        /// Specifies the name of the folder used to construct image URIs written into an fixed page Xaml document. Default is null.
         /// </summary>  
         public string ResourcesFolderAlias { get; set; }
 

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Words document property DTO.
   /// </summary>  
-  public class DocumentProperty 
+  public class DocumentProperty : LinkElement 
   {                       
         /// <summary>
         /// Name of the document property.
@@ -44,19 +44,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// String value of the document property.
+        /// String value of the document property. 
         /// </summary>  
         public string Value { get; set; }
 
         /// <summary>
-        /// Flag indicates whether the property is built-in or not.  If true the property is built-in, if false the property is custom.
+        /// Flag indicates whether the property is built-in or not. If true the property is built-in, if false the property is custom.
         /// </summary>  
         public bool? BuiltIn { get; set; }
-
-        /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -69,7 +64,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  Name: ").Append(this.Name).Append("\n");
           sb.Append("  Value: ").Append(this.Value).Append("\n");
           sb.Append("  BuiltIn: ").Append(this.BuiltIn).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

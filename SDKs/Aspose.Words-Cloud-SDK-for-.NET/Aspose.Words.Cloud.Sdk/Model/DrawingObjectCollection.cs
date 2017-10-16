@@ -36,17 +36,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Represents drawing objects collection DTO.
   /// </summary>  
-  public class DrawingObjectCollection 
+  public class DrawingObjectCollection : LinkElement 
   {                       
         /// <summary>
-        /// Collection of DrawingObjects links
+        /// Collection of DrawingObjects links 
         /// </summary>  
         public List<LinkElement> List { get; set; }
-
-        /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -57,7 +52,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class DrawingObjectCollection {\n");
           sb.Append("  List: ").Append(this.List).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

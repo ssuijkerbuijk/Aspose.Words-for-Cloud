@@ -36,13 +36,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// FromField
   /// </summary>  
-  public class FormField 
+  public class FormField : NodeLink 
   {                       
-        /// <summary>
-        /// Node id
-        /// </summary>  
-        public string NodeId { get; set; }
-
         /// <summary>
         /// Gets or sets the form field name.
         /// </summary>  
@@ -89,11 +84,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string ExitMacro { get; set; }
 
         /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -101,7 +91,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class FormField {\n");
-          sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
           sb.Append("  Name: ").Append(this.Name).Append("\n");
           sb.Append("  Enabled: ").Append(this.Enabled).Append("\n");
           sb.Append("  StatusText: ").Append(this.StatusText).Append("\n");
@@ -111,7 +100,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  CalculateOnExit: ").Append(this.CalculateOnExit).Append("\n");
           sb.Append("  EntryMacro: ").Append(this.EntryMacro).Append("\n");
           sb.Append("  ExitMacro: ").Append(this.ExitMacro).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

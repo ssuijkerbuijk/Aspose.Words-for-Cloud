@@ -36,20 +36,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Represents a border of an object.
   /// </summary>  
-  public class Border 
+  public class Border : LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets the border type.
+        /// Gets or sets the border type.             
         /// </summary>
-        /// <value>Gets or sets the border type.</value>
+        /// <value>Gets or sets the border type.             </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BorderTypeEnum
         { 
-            /// <summary>
-            /// Enum None for "None"
-            /// </summary>            
-            None,
-            
             /// <summary>
             /// Enum Bottom for "Bottom"
             /// </summary>            
@@ -88,7 +83,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum DiagonalUp for "DiagonalUp"
             /// </summary>            
-            DiagonalUp            
+            DiagonalUp,
+            
+            /// <summary>
+            /// Enum None for "None"
+            /// </summary>            
+            None            
         }
 
         /// <summary>
@@ -235,7 +235,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets the border type.
+        /// Gets or sets the border type.             
         /// </summary>
         public BorderTypeEnum? BorderType { get; set; }
 
@@ -245,7 +245,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public LineStyleEnum? LineStyle { get; set; }
 
         /// <summary>
-        /// Gets or sets the border color.
+        /// Gets or sets the border color.             
         /// </summary>  
         public XmlColor Color { get; set; }
 
@@ -265,11 +265,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? Shadow { get; set; }
 
         /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -283,7 +278,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  LineStyle: ").Append(this.LineStyle).Append("\n");
           sb.Append("  LineWidth: ").Append(this.LineWidth).Append("\n");
           sb.Append("  Shadow: ").Append(this.Shadow).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

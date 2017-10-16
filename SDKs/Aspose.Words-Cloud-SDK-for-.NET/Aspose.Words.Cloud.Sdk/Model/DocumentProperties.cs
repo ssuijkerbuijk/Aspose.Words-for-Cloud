@@ -36,17 +36,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Collection of document properties.
   /// </summary>  
-  public class DocumentProperties 
+  public class DocumentProperties : LinkElement 
   {                       
         /// <summary>
         /// Gets or sets List
         /// </summary>  
         public List<DocumentProperty> List { get; set; }
-
-        /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -57,7 +52,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class DocumentProperties {\n");
           sb.Append("  List: ").Append(this.List).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

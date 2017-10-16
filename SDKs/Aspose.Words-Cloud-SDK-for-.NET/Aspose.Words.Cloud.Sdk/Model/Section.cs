@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Section element
   /// </summary>  
-  public class Section 
+  public class Section : LinkElement 
   {                       
         /// <summary>
         /// Link to Paragraphs resource
@@ -64,11 +64,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public List<NodeLink> ChildNodes { get; set; }
 
         /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -81,7 +76,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  HeaderFooters: ").Append(this.HeaderFooters).Append("\n");
           sb.Append("  Tables: ").Append(this.Tables).Append("\n");
           sb.Append("  ChildNodes: ").Append(this.ChildNodes).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

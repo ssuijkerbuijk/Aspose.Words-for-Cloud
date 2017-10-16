@@ -41,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Brightness of image
         /// </summary>  
-        public float? ImageBrightness { get; set; }
+        public double? ImageBrightness { get; set; }
 
         /// <summary>
         /// Color mode of image
@@ -51,7 +51,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Contrast of image
         /// </summary>  
-        public float? ImageContrast { get; set; }
+        public double? ImageContrast { get; set; }
 
         /// <summary>
         /// Allows to specify additional System.Drawing.Graphics quality options.
@@ -69,24 +69,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string PaperColor { get; set; }
 
         /// <summary>
-        /// Sets both horizontal and vertical resolution for the generated images, in dots per inch.  <remarks>  This property has effect only when saving to raster image formats.  The default value is 96.  </remarks>
+        /// Sets both horizontal and vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
         /// </summary>  
-        public float? Resolution { get; set; }
+        public double? Resolution { get; set; }
 
         /// <summary>
-        /// Gets or sets the horizontal resolution for the generated images, in dots per inch.  <remarks>  This property has effect only when saving to raster image formats.  The default value is 96.  </remarks>
+        /// Gets or sets the horizontal resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
         /// </summary>  
-        public float? HorizontalResolution { get; set; }
+        public double? HorizontalResolution { get; set; }
 
         /// <summary>
-        /// Gets or sets the vertical resolution for the generated images, in dots per inch.  <remarks>  This property has effect only when saving to raster image formats.  The default value is 96.  </remarks>
+        /// Gets or sets the vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
         /// </summary>  
-        public float? VerticalResolution { get; set; }
+        public double? VerticalResolution { get; set; }
 
         /// <summary>
         /// Zoom factor of image
         /// </summary>  
-        public float? Scale { get; set; }
+        public double? Scale { get; set; }
 
         /// <summary>
         /// Determine whether or not to use high quality (i.e. slow) rendering algorithms

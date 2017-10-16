@@ -36,22 +36,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Table cell element.
   /// </summary>  
-  public class TableCell 
+  public class TableCell : NodeLink 
   {                       
         /// <summary>
         /// Child nodes.
         /// </summary>  
         public List<NodeLink> ChildNodes { get; set; }
-
-        /// <summary>
-        /// Node id
-        /// </summary>  
-        public string NodeId { get; set; }
-
-        /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -62,8 +52,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class TableCell {\n");
           sb.Append("  ChildNodes: ").Append(this.ChildNodes).Append("\n");
-          sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

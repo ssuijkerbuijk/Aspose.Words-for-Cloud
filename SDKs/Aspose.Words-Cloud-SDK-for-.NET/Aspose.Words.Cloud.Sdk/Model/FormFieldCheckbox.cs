@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? IsCheckBoxExactSize { get; set; }
 
         /// <summary>
-        /// Gets or sets the size of the checkbox in points. Has effect only when {Aspose.Words.Cloud.DTO.DocumentElements.FormFields.FormFieldCheckbox.IsCheckBoxExactSize} is true.
+        /// Gets or sets the size of the checkbox in points. Has effect only when  is true.
         /// </summary>  
         public double? CheckBoxSize { get; set; }
 

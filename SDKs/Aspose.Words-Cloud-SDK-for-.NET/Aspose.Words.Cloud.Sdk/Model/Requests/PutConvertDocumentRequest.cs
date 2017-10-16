@@ -41,24 +41,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="PutConvertDocumentRequest"/> class.
         /// </summary>
-        /// <param name="format">Format to convert.</param>
         /// <param name="document">Converting document</param>
-        /// <param name="outPath">Path for saving operation result to the local storage.</param>
+        /// <param name="format">Format to convert.</param>
         /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="outPath">Path for saving operation result to the local storage.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public PutConvertDocumentRequest(string format, System.IO.Stream document, string outPath = null, string storage = null, string fontsLocation = null)             
+        public PutConvertDocumentRequest(System.IO.Stream document, string format, string storage = null, string outPath = null, string fontsLocation = null)             
         {
-            this.Format = format;
             this.Document = document;
-            this.OutPath = outPath;
+            this.Format = format;
             this.Storage = storage;
+            this.OutPath = outPath;
             this.FontsLocation = fontsLocation;
         }
-
-        /// <summary>
-        /// Format to convert.
-        /// </summary>  
-        public string Format { get; set; }
 
         /// <summary>
         /// Converting document
@@ -66,14 +61,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Document { get; set; }
 
         /// <summary>
-        /// Path for saving operation result to the local storage.
+        /// Format to convert.
         /// </summary>  
-        public string OutPath { get; set; }
+        public string Format { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
         public string Storage { get; set; }
+
+        /// <summary>
+        /// Path for saving operation result to the local storage.
+        /// </summary>  
+        public string OutPath { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.

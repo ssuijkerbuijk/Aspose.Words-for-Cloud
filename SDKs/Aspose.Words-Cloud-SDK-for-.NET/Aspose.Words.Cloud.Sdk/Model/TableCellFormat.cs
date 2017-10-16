@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Represents all formatting for a table row.
   /// </summary>  
-  public class TableCellFormat 
+  public class TableCellFormat : LinkElement 
   {                       
         /// <summary>
         /// Specifies how the cell is merged horizontally with other cells in the row.
@@ -206,11 +206,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? WrapText { get; set; }
 
         /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -230,7 +225,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  VerticalMerge: ").Append(this.VerticalMerge).Append("\n");
           sb.Append("  Width: ").Append(this.Width).Append("\n");
           sb.Append("  WrapText: ").Append(this.WrapText).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

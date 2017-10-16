@@ -44,18 +44,18 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="name">The file name.</param>
         /// <param name="pageIndex">Comment index</param>
         /// <param name="format">The destination format.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="folder">Original document folder.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public RenderPageRequest(string name, int? pageIndex, string format, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)             
+        public RenderPageRequest(string name, int? pageIndex, string format, string folder = null, string storage = null, string loadEncoding = null, string password = null, string fontsLocation = null)             
         {
             this.Name = name;
             this.PageIndex = pageIndex;
             this.Format = format;
-            this.Storage = storage;
             this.Folder = folder;
+            this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
             this.FontsLocation = fontsLocation;
@@ -77,14 +77,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Format { get; set; }
 
         /// <summary>
-        /// File storage, which have to be used.
-        /// </summary>  
-        public string Storage { get; set; }
-
-        /// <summary>
         /// Original document folder.
         /// </summary>  
         public string Folder { get; set; }
+
+        /// <summary>
+        /// File storage, which have to be used.
+        /// </summary>  
+        public string Storage { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

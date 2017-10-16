@@ -43,21 +43,21 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="name">The file name.</param>
         /// <param name="format">The destination format.</param>
-        /// <param name="outPath">Path to save result</param>
-        /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="folder">Original document folder.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="outPath">Path to save result</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public GetDocumentWithFormatRequest(string name, string format, string outPath = null, string storage = null, string folder = null, string loadEncoding = null, string password = null, string fontsLocation = null)             
+        public GetDocumentWithFormatRequest(string name, string format, string folder = null, string storage = null, string loadEncoding = null, string password = null, string outPath = null, string fontsLocation = null)             
         {
             this.Name = name;
             this.Format = format;
-            this.OutPath = outPath;
-            this.Storage = storage;
             this.Folder = folder;
+            this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
+            this.OutPath = outPath;
             this.FontsLocation = fontsLocation;
         }
 
@@ -72,19 +72,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Format { get; set; }
 
         /// <summary>
-        /// Path to save result
+        /// Original document folder.
         /// </summary>  
-        public string OutPath { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  
         public string Storage { get; set; }
-
-        /// <summary>
-        /// Original document folder.
-        /// </summary>  
-        public string Folder { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -95,6 +90,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Password for opening an encrypted document.
         /// </summary>  
         public string Password { get; set; }
+
+        /// <summary>
+        /// Path to save result
+        /// </summary>  
+        public string OutPath { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.

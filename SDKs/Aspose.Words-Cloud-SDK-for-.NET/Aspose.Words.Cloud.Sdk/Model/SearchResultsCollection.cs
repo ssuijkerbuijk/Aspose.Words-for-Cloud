@@ -36,17 +36,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Collection of search results.
   /// </summary>  
-  public class SearchResultsCollection 
+  public class SearchResultsCollection : LinkElement 
   {                       
         /// <summary>
         /// Collection of comments
         /// </summary>  
         public List<SearchResult> ResultsList { get; set; }
-
-        /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -57,7 +52,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class SearchResultsCollection {\n");
           sb.Append("  ResultsList: ").Append(this.ResultsList).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

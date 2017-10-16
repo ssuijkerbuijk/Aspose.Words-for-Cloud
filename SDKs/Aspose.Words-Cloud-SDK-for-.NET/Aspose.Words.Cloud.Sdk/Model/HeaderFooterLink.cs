@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// HeaderFooter link element
   /// </summary>  
-  public class HeaderFooterLink 
+  public class HeaderFooterLink : LinkElement 
   {                       
         /// <summary>
         /// Paragraph&#39;s text
@@ -82,11 +82,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public TypeEnum? Type { get; set; }
 
         /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -95,7 +90,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class HeaderFooterLink {\n");
           sb.Append("  Type: ").Append(this.Type).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

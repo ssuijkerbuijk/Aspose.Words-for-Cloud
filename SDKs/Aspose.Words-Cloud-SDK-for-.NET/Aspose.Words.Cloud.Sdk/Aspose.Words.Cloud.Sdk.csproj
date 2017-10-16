@@ -96,6 +96,7 @@
     <Compile Include="Model\BordersCollection.cs" />
     <Compile Include="Model\BordersResponse.cs" />
     <Compile Include="Model\Comment.cs" />
+    <Compile Include="Model\CommentLink.cs" />
     <Compile Include="Model\CommentResponse.cs" />
     <Compile Include="Model\CommentsCollection.cs" />
     <Compile Include="Model\CommentsResponse.cs" />
@@ -114,12 +115,14 @@
     <Compile Include="Model\DownsampleOptionsData.cs" />
     <Compile Include="Model\DrawingObject.cs" />
     <Compile Include="Model\DrawingObjectCollection.cs" />
+    <Compile Include="Model\DrawingObjectLink.cs" />
     <Compile Include="Model\DrawingObjectResponse.cs" />
     <Compile Include="Model\DrawingObjectsResponse.cs" />
     <Compile Include="Model\EmfSaveOptionsData.cs" />
     <Compile Include="Model\EpubSaveOptionsData.cs" />
     <Compile Include="Model\Field.cs" />
     <Compile Include="Model\FieldCollection.cs" />
+    <Compile Include="Model\FieldLink.cs" />
     <Compile Include="Model\FieldNames.cs" />
     <Compile Include="Model\FieldNamesResponse.cs" />
     <Compile Include="Model\FieldResponse.cs" />
@@ -130,6 +133,7 @@
     <Compile Include="Model\FontResponse.cs" />
     <Compile Include="Model\Footnote.cs" />
     <Compile Include="Model\FootnoteCollection.cs" />
+    <Compile Include="Model\FootnoteLink.cs" />
     <Compile Include="Model\FootnoteResponse.cs" />
     <Compile Include="Model\FootnotesResponse.cs" />
     <Compile Include="Model\FootnotesStatData.cs" />
@@ -163,6 +167,7 @@
     <Compile Include="Model\ModificationOperationResult.cs" />
     <Compile Include="Model\NodeLink.cs" />
     <Compile Include="Model\OdtSaveOptionsData.cs" />
+    <Compile Include="Model\OfficeMathLink.cs" />
     <Compile Include="Model\OfficeMathObject.cs" />
     <Compile Include="Model\OfficeMathObjectResponse.cs" />
     <Compile Include="Model\OfficeMathObjectsCollection.cs" />
@@ -314,6 +319,7 @@
     <Compile Include="Model\RevisionsModificationResponse.cs" />
     <Compile Include="Model\RtfSaveOptionsData.cs" />
     <Compile Include="Model\Run.cs" />
+    <Compile Include="Model\RunLink.cs" />
     <Compile Include="Model\RunResponse.cs" />
     <Compile Include="Model\Runs.cs" />
     <Compile Include="Model\RunsResponse.cs" />

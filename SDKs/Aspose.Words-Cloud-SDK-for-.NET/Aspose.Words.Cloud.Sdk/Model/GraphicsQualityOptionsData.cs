@@ -64,11 +64,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum CompositingQualityEnum
         { 
             /// <summary>
-            /// Enum Invalid for "Invalid"
-            /// </summary>            
-            Invalid,
-            
-            /// <summary>
             /// Enum Default for "Default"
             /// </summary>            
             Default,
@@ -91,7 +86,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum AssumeLinear for "AssumeLinear"
             /// </summary>            
-            AssumeLinear            
+            AssumeLinear,
+            
+            /// <summary>
+            /// Enum Invalid for "Invalid"
+            /// </summary>            
+            Invalid            
         }
 
         /// <summary>
@@ -101,11 +101,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         [JsonConverter(typeof(StringEnumConverter))]
         public enum InterpolationModeEnum
         { 
-            /// <summary>
-            /// Enum Invalid for "Invalid"
-            /// </summary>            
-            Invalid,
-            
             /// <summary>
             /// Enum Default for "Default"
             /// </summary>            
@@ -144,7 +139,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum HighQualityBicubic for "HighQualityBicubic"
             /// </summary>            
-            HighQualityBicubic            
+            HighQualityBicubic,
+            
+            /// <summary>
+            /// Enum Invalid for "Invalid"
+            /// </summary>            
+            Invalid            
         }
 
         /// <summary>
@@ -154,11 +154,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SmoothingModeEnum
         { 
-            /// <summary>
-            /// Enum Invalid for "Invalid"
-            /// </summary>            
-            Invalid,
-            
             /// <summary>
             /// Enum Default for "Default"
             /// </summary>            
@@ -182,7 +177,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum AntiAlias for "AntiAlias"
             /// </summary>            
-            AntiAlias            
+            AntiAlias,
+            
+            /// <summary>
+            /// Enum Invalid for "Invalid"
+            /// </summary>            
+            Invalid            
         }
 
         /// <summary>

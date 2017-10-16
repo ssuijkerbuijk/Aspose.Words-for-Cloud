@@ -36,12 +36,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// OfficeMath object.
   /// </summary>  
-  public class OfficeMathObject 
+  public class OfficeMathObject : OfficeMathLink 
   {                       
         /// <summary>
-        /// Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text  or displayed on its own line.
+        /// Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text or displayed on its own line.
         /// </summary>
-        /// <value>Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text  or displayed on its own line.</value>
+        /// <value>Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text or displayed on its own line.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DisplayTypeEnum
         { 
@@ -69,6 +69,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
             CenterGroup,
             
             /// <summary>
+            /// Enum Default for "Default"
+            /// </summary>            
+            Default,
+            
+            /// <summary>
             /// Enum Center for "Center"
             /// </summary>            
             Center,
@@ -86,12 +91,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum Inline for "Inline"
             /// </summary>            
-            Inline,
-            
-            /// <summary>
-            /// Enum Default for "Default"
-            /// </summary>            
-            Default            
+            Inline            
         }
 
         /// <summary>
@@ -253,7 +253,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text  or displayed on its own line.
+        /// Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text or displayed on its own line.
         /// </summary>
         public DisplayTypeEnum? DisplayType { get; set; }
 
@@ -273,16 +273,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public StoryChildNodes Content { get; set; }
 
         /// <summary>
-        /// Node id
-        /// </summary>  
-        public string NodeId { get; set; }
-
-        /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -294,8 +284,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  DisplayType: ").Append(this.DisplayType).Append("\n");
           sb.Append("  Justification: ").Append(this.Justification).Append("\n");
           sb.Append("  MathObjectType: ").Append(this.MathObjectType).Append("\n");
-          sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

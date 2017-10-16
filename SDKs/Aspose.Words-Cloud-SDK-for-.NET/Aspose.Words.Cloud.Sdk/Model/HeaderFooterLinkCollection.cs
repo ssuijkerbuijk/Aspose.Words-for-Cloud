@@ -36,17 +36,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Collection of links to header/footers
   /// </summary>  
-  public class HeaderFooterLinkCollection 
+  public class HeaderFooterLinkCollection : LinkElement 
   {                       
         /// <summary>
         /// Collection of section's links
         /// </summary>  
         public List<HeaderFooterLink> List { get; set; }
-
-        /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -57,7 +52,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class HeaderFooterLinkCollection {\n");
           sb.Append("  List: ").Append(this.List).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

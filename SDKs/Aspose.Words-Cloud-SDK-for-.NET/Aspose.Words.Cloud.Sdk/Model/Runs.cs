@@ -36,17 +36,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Represents DTO for collection of runs.
   /// </summary>  
-  public class Runs 
+  public class Runs : LinkElement 
   {                       
         /// <summary>
         /// Collection of fields
         /// </summary>  
         public List<Run> List { get; set; }
-
-        /// <summary>
-        /// Link to the document.
-        /// </summary>  
-        public WordsApiLink Link { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -57,7 +52,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class Runs {\n");
           sb.Append("  List: ").Append(this.List).Append("\n");
-          sb.Append("  Link: ").Append(this.Link).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }
