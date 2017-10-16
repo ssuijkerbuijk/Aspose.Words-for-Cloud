@@ -104,6 +104,18 @@ this.ScenarioSetup(scenarioInfo);
             this.ExecuteTemplate("TestExecuteTemplate.doc", "TestExecuteTemplateData.txt", ((string[])(null)));
         }
         
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Execute Template")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "PutExecuteTemplate execute template without saving")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PutExecuteTemplate")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "TestExecuteTemplateTextFormat.doc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TemplateName", "TestExecuteTemplateTextFormat.doc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Body", "TestDataWithTextInHtmlFormat.xml")]
+        public virtual void ExecuteTemplate_TestExecuteTemplateTextFormat_Doc()
+        {
+            this.ExecuteTemplate("TestExecuteTemplateTextFormat.doc", "TestDataWithTextInHtmlFormat.xml", ((string[])(null)));
+        }
+        
         public virtual void ExecuteTemplateWithImages(string templateName, string body, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -113,17 +125,17 @@ this.ScenarioSetup(scenarioInfo);
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Execute Template With Images", @__tags);
-#line 17
-this.ScenarioSetup(scenarioInfo);
 #line 18
- testRunner.Given(string.Format("I have specified a template file {0} with mustache syntax", templateName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 19
- testRunner.And(string.Format("I have specified a body file {0}", body), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("I have specified a template file {0} with mustache syntax", templateName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 20
- testRunner.When("I execute template online", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("I have specified a body file {0}", body), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
- testRunner.Then("document with merged values should be created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I execute template online", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
+ testRunner.Then("document with merged values should be created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 23
  testRunner.And("image should be rendered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -135,10 +147,10 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PutExecuteTemplate")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "TestExecuteTemplateWithImages.doc")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TemplateName", "TestExecuteTemplateWithImages.doc")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Body", "TestDataWithRemoteScaledImages.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Body", "TestDataWithRemoteImages.xml")]
         public virtual void ExecuteTemplateWithImages_TestExecuteTemplateWithImages_Doc()
         {
-            this.ExecuteTemplateWithImages("TestExecuteTemplateWithImages.doc", "TestDataWithRemoteScaledImages.xml", ((string[])(null)));
+            this.ExecuteTemplateWithImages("TestExecuteTemplateWithImages.doc", "TestDataWithRemoteImages.xml", ((string[])(null)));
         }
         
         public virtual void ExecuteTemplateWithCleanupOptions(string templateName, string body, string cleanup, string[] exampleTags)
@@ -150,19 +162,19 @@ this.ScenarioSetup(scenarioInfo);
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Execute Template With Cleanup Options", @__tags);
-#line 29
-this.ScenarioSetup(scenarioInfo);
 #line 30
- testRunner.Given(string.Format("I have specified a template file {0} with mustache syntax", templateName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 31
- testRunner.And(string.Format("I have specified a body file {0}", body), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("I have specified a template file {0} with mustache syntax", templateName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 32
- testRunner.And(string.Format("I have specified a cleanup option {0}", cleanup), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have specified a body file {0}", body), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
- testRunner.When("I execute template online", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("I have specified a cleanup option {0}", cleanup), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34
- testRunner.Then("document with merged values should be created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I execute template online", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 35
+ testRunner.Then("document with merged values should be created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 36
  testRunner.And("unused option is cleaned up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

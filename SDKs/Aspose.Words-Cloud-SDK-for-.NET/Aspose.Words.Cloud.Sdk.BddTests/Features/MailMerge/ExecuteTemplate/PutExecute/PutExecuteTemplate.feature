@@ -10,8 +10,9 @@ Scenario Outline: Execute Template
 	Then document with merged values should be created
 
 	Examples: 
-	| TemplateName            | Body                        |
-	| TestExecuteTemplate.doc | TestExecuteTemplateData.txt |
+	| TemplateName                      | Body                             |
+	| TestExecuteTemplate.doc           | TestExecuteTemplateData.txt      |
+	| TestExecuteTemplateTextFormat.doc | TestDataWithTextInHtmlFormat.xml |
 
 @PutExecuteTemplate
 Scenario Outline: Execute Template With Images
@@ -22,8 +23,8 @@ Scenario Outline: Execute Template With Images
 	And image should be rendered
 
 	Examples: 
-	| TemplateName                | Body                               |
-	| TestExecuteTemplateWithImages.doc | TestDataWithRemoteScaledImages.xml |
+	| TemplateName                      | Body                         |
+	| TestExecuteTemplateWithImages.doc | TestDataWithRemoteImages.xml |
 
 @PutExecuteTemplate
 Scenario Outline: Execute Template With Cleanup Options
