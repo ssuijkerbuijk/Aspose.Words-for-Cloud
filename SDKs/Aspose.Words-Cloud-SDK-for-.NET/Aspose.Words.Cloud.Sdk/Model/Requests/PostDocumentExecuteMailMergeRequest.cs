@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PostDocumentExecuteMailMerge" /> operation.
   /// </summary>  
-  public class PostDocumentExecuteMailMergeRequest : ICanModifyDocumentRequest, IWordDocumentRequest   
+  public class PostDocumentExecuteMailMergeRequest : ICanModifyDocumentRequest, IWordDocumentRequest, ICanSpecifyMailMergeParametersRequest   
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="PostDocumentExecuteMailMergeRequest"/> class.

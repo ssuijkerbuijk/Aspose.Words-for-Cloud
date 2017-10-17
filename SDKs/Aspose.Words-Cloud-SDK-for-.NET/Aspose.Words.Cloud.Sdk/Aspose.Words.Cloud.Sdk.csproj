@@ -84,6 +84,8 @@
     <Compile Include="Internal\FileInfo.cs" />
     <Compile Include="Internal\SerializationHelper.cs" />
     <Compile Include="Internal\StreamHelper.cs" />
+    <Compile Include="Model.Requests\ICanSpecifyMailMergeParametersRequest.cs" />
+    <Compile Include="Model.Requests\IPutExecuteRequest.cs" />
     <Compile Include="Model\BmpSaveOptionsData.cs" />
     <Compile Include="Model\Bookmark.cs" />
     <Compile Include="Model\BookmarkData.cs" />
@@ -377,6 +379,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model.Requests\ICanSaveRevisionRequest.cs" />
     <Compile Include="Model.Requests\ICanModifyDocumentRequest.cs" />
+    <Compile Include="Model.Requests\ICanSpecifyOutputFormatRequest.cs" />
     <Compile Include="Model.Requests\ICanUseCustomFontsRequest.cs" />
     <Compile Include="Model.Requests\IWordDocumentRequest.cs" />
     <Compile Include="TestFriends.cs" />

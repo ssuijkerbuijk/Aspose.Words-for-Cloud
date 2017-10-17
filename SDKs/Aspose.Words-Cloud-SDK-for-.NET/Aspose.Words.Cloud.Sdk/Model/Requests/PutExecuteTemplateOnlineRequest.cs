@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.PutExecuteTemplateOnline" /> operation.
   /// </summary>  
-  public class PutExecuteTemplateOnlineRequest  
+  public class PutExecuteTemplateOnlineRequest : IPutExecuteRequest   
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="PutExecuteTemplateOnlineRequest"/> class.

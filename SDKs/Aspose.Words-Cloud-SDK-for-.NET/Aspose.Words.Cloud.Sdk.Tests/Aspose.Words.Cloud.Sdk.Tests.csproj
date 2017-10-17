@@ -208,16 +208,8 @@
       <Link>Data\sample_EmbeddedOLE.docx</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\Data\TableDocument.doc">
-      <Link>Data\TableDocument.doc</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="..\..\..\Data\TestExecuteResult.doc">
       <Link>Data\TestExecuteResult.doc</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\..\..\Data\TestExecuteTemplate.doc">
-      <Link>Data\TestExecuteTemplate.doc</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\..\..\Data\testfile.doc">
@@ -226,10 +218,6 @@
     </None>
     <None Include="..\..\..\Data\test_convertlocal.docx">
       <Link>Data\test_convertlocal.docx</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\..\..\Data\test_doc.docx">
-      <Link>Data\test_doc.docx</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\..\..\Data\test_multi_pages.docx">
@@ -246,6 +234,15 @@
     </None>
     <None Include="..\..\..\Data\WordFormatConverterExampleTest.doc">
       <Link>Data\WordFormatConverterExampleTest.doc</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\TableDocument.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\TestExecuteTemplate.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\test_doc.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
@@ -303,16 +300,15 @@
       <Link>Data\SampleMailMergeTemplateImageData.txt</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\..\..\Data\TestExecuteTemplateData.txt">
-      <Link>Data\TestExecuteTemplateData.txt</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="..\..\..\Data\testfile1.txt">
       <Link>Data\testfile1.txt</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\..\..\Data\WithRegions.xml">
       <Link>Data\WithRegions.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\TestExecuteTemplateData.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
