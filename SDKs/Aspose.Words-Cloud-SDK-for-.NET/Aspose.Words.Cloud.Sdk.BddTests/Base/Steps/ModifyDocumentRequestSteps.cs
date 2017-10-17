@@ -35,19 +35,6 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Steps
     [Binding]
     public class ModifyDocumentRequestSteps
     {
-        private BaseContext context;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ModifyDocumentRequestSteps"/> class.
-        /// </summary>
-        /// <param name="context">
-        /// The context.
-        /// </param>
-        public ModifyDocumentRequestSteps(BaseContext context)
-        {
-            this.context = context;
-        }
-
         private ICanModifyDocumentRequest Request
         {
             get { return ScenarioContext.Current["Request"] as ICanModifyDocumentRequest; }

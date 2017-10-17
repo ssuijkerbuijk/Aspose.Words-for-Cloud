@@ -78,16 +78,16 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Steps
         /// <summary>
         /// Initialize body stream
         /// </summary>
-        /// <param name="bodyFile">body file</param>
+        /// <param name="dataFile">body file</param>
         [Given(@"I have specified a data file (.*)")]
         [Scope(Tag = "PutExecuteTemplate")]
         [Scope(Tag = "PutExecuteMailMerge")]
-        public void GivenIHaveSpecifiedADataFile(string bodyFile)
+        public void GivenIHaveSpecifiedADataFile(string dataFile)
         {
             this.Request.Data =
                 new MemoryStream(
                     File.ReadAllBytes(
-                        Path.Combine(this.context.TestDataPath, bodyFile)));
+                        Path.Combine(this.context.TestDataPath, dataFile)));
         }
     }
 }

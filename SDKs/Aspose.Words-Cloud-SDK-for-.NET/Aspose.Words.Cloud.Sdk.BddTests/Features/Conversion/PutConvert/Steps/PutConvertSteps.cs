@@ -74,7 +74,6 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Features.Conversion.PutConvert.Steps
         [Given(@"I have specified document (.*) to send it in request body")]
         public void GivenIHaveSpecifiedDocumentToSendItInRequestBody(string documentName)
         {
-            // TODO: move to common steps
             using (var fileStream = File.OpenRead(Path.Combine(this.context.TestDataPath, documentName)))
             {
                 this.Request.Document = new MemoryStream();

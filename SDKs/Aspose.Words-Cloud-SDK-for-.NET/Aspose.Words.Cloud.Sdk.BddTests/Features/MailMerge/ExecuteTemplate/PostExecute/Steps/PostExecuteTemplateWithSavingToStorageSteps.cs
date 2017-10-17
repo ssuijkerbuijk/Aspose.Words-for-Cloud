@@ -30,8 +30,6 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Features.MailMerge.ExecuteTemplate.Pos
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-
     using TechTalk.SpecFlow;
 
     /// <summary>
@@ -88,7 +86,6 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Features.MailMerge.ExecuteTemplate.Pos
         [Given(@"I have specified a body (.*)")]
         public void GivenIHaveSpecifiedABody(string bodyDocumentName)
         {
-            // TODO: use "I have specified document <DocName> to send it in request body" step insted
             this.Request.Data = File.ReadAllText(Path.Combine(this.context.TestDataPath, bodyDocumentName));
         }
         
