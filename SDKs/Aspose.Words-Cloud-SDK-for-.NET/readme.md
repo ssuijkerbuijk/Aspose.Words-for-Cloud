@@ -1,3 +1,5 @@
+# THIS SDK IS UNMAINTAINED. Please use [this maintained SDK](https://github.com/asposecloud/Aspose.Words-Cloud/tree/master/SDKs/NET).
+
 # Aspose.Words Cloud SDK for .NET
 This repository contains Aspose.Words Cloud SDK for .NET source code. This SDK allows you to work with Aspose.Words Cloud REST APIs in your .NET applications quickly and easily.
 
