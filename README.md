@@ -1,8 +1,8 @@
 Aspose.Words for Cloud
 
-[Aspose.Words for Cloud](https://www.aspose.com/products/words/cloud) is a REST API to create, manipulate, convert and render Word documents in the cloud by performing a wide variety of document operations you can wish to perform on a document in the cloud.
+[Aspose.Words for Cloud](https://products.aspose.cloud/words) is a REST API to create, manipulate, convert and render Word documents in the cloud by performing a wide variety of document operations you can wish to perform on a document in the cloud.
 
-This repository contains [Examples](Examples), [Plugins](Plugins) and [SDKs](SDKs) for [Aspose.Words for Cloud](https://www.aspose.com/products/words/cloud) to help you learn and write your own applications.
+This repository contains [Examples](Examples), [Plugins](Plugins) and [SDKs](SDKs) for [Aspose.Words for Cloud](https://products.aspose.cloud/words) to help you learn and write your own applications.
 
 
 <p align="center">
@@ -19,9 +19,9 @@ Directory | Description
 
 ## Resources
 + **Website:** [www.aspose.com](https://www.aspose.com)
-+ **Product Home:** [Aspose.Words for Cloud](https://www.aspose.com/products/words/cloud)
-+ **Download:** [Download Aspose.Words for Cloud](https://downloads.aspose.com/words/cloud)
-+ **Documentation:** [Aspose.Words for Cloud Documentation](https://docs.aspose.com//display/wordscloud/Home)
++ **Product Home:** [Aspose.Words for Cloud](https://products.aspose.cloud/words)
++ **GitHub:** [Download GitHub Repository](https://github.com/aspose-words/Aspose.Words-for-Cloud)
++ **Documentation:** [Aspose.Words for Cloud Documentation](https://docs.aspose.cloud/display/wordscloud/Home)
 + **Free Support Forum:** [Aspose.Words for .NET Free Support Forum](https://forum.aspose.com/c/words)
 + **Paid Support Helpdesk:** [Aspose.Words for .NET Paid Support Helpdesk](https://helpdesk.aspose.com/)
 + **Blog:** [Aspose.Words for Cloud Blog](https://blog.aspose.com/category/aspose-products/aspose-words-product-family/)
