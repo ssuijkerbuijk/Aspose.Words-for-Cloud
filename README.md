@@ -18,10 +18,9 @@ Directory | Description
 [SDKs](SDKs)  | A collection of SDKs that help you call and use Aspose Cloud API features in your applications
 
 ## Resources
-+ **Website:** [www.aspose.com](https://www.aspose.com)
++ **Website:** [https://www.aspose.cloud/](https://www.aspose.cloud)
 + **Product Home:** [Aspose.Words for Cloud](https://products.aspose.cloud/words)
-+ **GitHub:** [Download GitHub Repository](https://github.com/aspose-words/Aspose.Words-for-Cloud)
++ **GitHub:** [Download GitHub Repository](https://github.com/asposecloud/Aspose.Words-Cloud)
 + **Documentation:** [Aspose.Words for Cloud Documentation](https://docs.aspose.cloud/display/wordscloud/Home)
-+ **Free Support Forum:** [Aspose.Words for .NET Free Support Forum](https://forum.aspose.com/c/words)
-+ **Paid Support Helpdesk:** [Aspose.Words for .NET Paid Support Helpdesk](https://helpdesk.aspose.com/)
-+ **Blog:** [Aspose.Words for Cloud Blog](https://blog.aspose.com/category/aspose-products/aspose-words-product-family/)
++ **Free Support Forum:** [Aspose.Words for Cloud Free Support Forum](https://forum.aspose.cloud/)
++ **Blog:** [Aspose.Words for Cloud Blog](https://blog.aspose.cloud/category/aspose-products/aspose-words-product-family/)
