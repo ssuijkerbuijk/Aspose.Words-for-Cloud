@@ -1,5 +1,15 @@
 {
-	"require": {
-    	"aspose/words-sdk-php": "dev-master"
-    }
+	"autoload" : {
+		"psr-4" : {
+			"Sample\\Examples\\" : "src"
+		}
+	},
+	"name" : "Sample/Examples",
+	"require" : {
+		"php" : ">=7.1",
+		"aspose/words-sdk-php" : "17.12"
+	},
+	"config" : {
+		"notify-on-install" : false
+	}
 }
