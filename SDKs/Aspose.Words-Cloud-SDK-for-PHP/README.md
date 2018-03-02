@@ -1,4 +1,4 @@
-# This SDK is deprecated. Please use [this maintained SDK](https://github.com/aspose-words-cloud/aspose-words-cloud-php/tree/4d6a8992c3fbd56cb57bb2fc463a1110a14bf9f0).
+# This SDK is deprecated. Please use [this maintained SDK](https://github.com/aspose-words-cloud/aspose-words-cloud-php).
 
 # Aspose.Words Cloud SDK for PHP
 This repository contains Aspose.Words Cloud SDK for PHP source code. This SDK allows you to work with Aspose.Words Cloud REST APIs in your PHP applications quickly and easily.
