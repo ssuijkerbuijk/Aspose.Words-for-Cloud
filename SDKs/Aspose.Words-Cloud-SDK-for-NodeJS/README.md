@@ -1,3 +1,5 @@
+# This SDK is deprecated. Please use [this maintained SDK](https://github.com/aspose-words-cloud/aspose-words-cloud-node).
+
 # Aspose.Words Cloud SDK for Node.js
 
 This repository contains Aspose.Words Cloud SDK for Node.js source code. This SDK allows you to work with Aspose.Words Cloud REST APIs in your Node.js applications quickly and easily. 
