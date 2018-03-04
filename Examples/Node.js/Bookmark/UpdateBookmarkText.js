@@ -1,14 +1,8 @@
-// ExStart:1
-var fs = require('fs');
-var assert = require('assert');
 var StorageApi = require('asposestoragecloud');
-var WordsApi = require('asposewordscloud');
-var configProps = require('../Config/config.json');
-var data_path = '../../../Data/';
+const { WordsApi, PostDocumentSaveAsRequest, SaveOptionsData,PostUpdateDocumentBookmarkRequest,BookmarkData } = require("asposewordscloud");
 
-var AppSID = configProps.app_sid;
-var AppKey = configProps.api_key;
-var config = {'appSid':AppSID,'apiKey':AppKey , 'debug' : true};
+
+var config = {'appSid':'78946fb4-3bd4-4d3e-b309-f9e2ff9ac6f9','apiKey':'b125f13bf6b76ed81ee990142d841195' , 'debug' : true};
 
 // Instantiate Aspose Storage API SDK
 var storageApi = new StorageApi(config);
@@ -18,27 +12,20 @@ var wordsApi = new WordsApi(config);
 // Set input file name
 var name = 'SampleWordDocument.docx';
 	
-var bookmarkData =  {
-			'Name' : 'aspose',
-			'Text' : 'Bookmark is very good.'	
-		};	
+const request = new PostUpdateDocumentBookmarkRequest();
+request.name = name;
+request.folder = null;
+request.bookmarkName = "aspose";
+request.bookmarkData = new BookmarkData({
+         text: "new text"
+});
 
-try {	
-	storageApi.PutCreate(name, versionId=null, storage=null, file= data_path + name , function(responseMessage) {
+wordsApi.postUpdateDocumentBookmark(request).then((result) => {
+		console.log(result);  
+       	}).catch(function(err) {
+		console.log(err);
+});
+	
 
-		assert.equal(responseMessage.status, 'OK', '');
-			
-		wordsApi.PostUpdateDocumentBookmark(name, 'aspose', null, null, null, bookmarkData, function(responseMessage) {
-				if(config.debug){console.log('status:', responseMessage.status);}
-				if(config.debug){console.log('body:', responseMessage.body);}
-				assert.equal(responseMessage.status, 'OK', '');
-				assert.ok(responseMessage.body !== null && typeof responseMessage.body.Bookmark !== 'undefined', "response body assertion should pass");
-				
-			});
-		});
 
-}catch (e) {
-  console.log("exception in example");
-  console.log(e);
-}
-//ExEnd:1
+		
