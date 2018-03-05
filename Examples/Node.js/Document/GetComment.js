@@ -1,35 +1,15 @@
-// ExStart:1
-var fs = require('fs');
-var assert = require('assert');
-var StorageApi = require('asposestoragecloud');
-var WordsApi = require('asposewordscloud');
-var configProps = require('../Config/config.json');
-var data_path = '../../../Data/';
-
-var AppSID = configProps.app_sid;
-var AppKey = configProps.api_key;
-var config = {'appSid':AppSID,'apiKey':AppKey , 'debug' : true};
-
-// Instantiate Aspose Storage API SDK
-var storageApi = new StorageApi(config);
-// Instantiate Aspose Words API SDK
-var wordsApi = new WordsApi(config);
-
-var name =  'test_multi_pages.docx';
+const { WordsApi, PostDocumentSaveAsRequest, SaveOptionsData,GetCommentRequest } = require("asposewordscloud");
+wordsApi = new WordsApi('78946fb4-3bd4-4d3e-b309-f9e2ff9ac6f9', 'b125f13bf6b76ed81ee990142d841195');
 
 
-try {
-	storageApi.PutCreate(name, versionId=null, storage=null, file= data_path + name , function(responseMessage) {
+var fileName =  'test_multi_pages.docx';
 
-		assert.equal(responseMessage.status, 'OK', '');
-		
-		wordsApi.GetComments(name, null, null, function(responseMessage) {
-				console.log('status:', responseMessage.status);
-			});
-		});
+const request = new GetCommentRequest();
+request.name = fileName;
+request.commentIndex = 0;
 
-}catch (e) {
-  console.log("exception in example");
-  console.log(e);
-}
-//ExEnd:1
+wordsApi.getComment(request).then((result) => {
+	console.log(result);
+}).catch(function(err) {
+    	console.log(err);
+});

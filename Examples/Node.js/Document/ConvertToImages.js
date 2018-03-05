@@ -1,44 +1,19 @@
-// ExStart:1
-var fs = require('fs');
-var assert = require('assert');
-var StorageApi = require('asposestoragecloud');
-var WordsApi = require('asposewordscloud');
-var configProps = require('../Config/config.json');
-var data_path = '../../../Data/';
+const { WordsApi, GetDocumentWithFormatRequest, SaveOptionsData } = require("asposewordscloud");
+wordsApi = new WordsApi('78946fb4-3bd4-4d3e-b309-f9e2ff9ac6f9', 'b125f13bf6b76ed81ee990142d841195');
 
-var AppSID = configProps.app_sid;
-var AppKey = configProps.api_key;
-var config = {'appSid':AppSID,'apiKey':AppKey , 'debug' : true};
-
-// Instantiate Aspose Storage API SDK
-var storageApi = new StorageApi(config);
-// Instantiate Aspose Words API SDK
-var wordsApi = new WordsApi(config);
 
 // Set input file name
-var filename = "SampleWordDocument";
-var name = filename + ".docx";
-var format = "pdf";
+var filename = "SampleWordDocument.docx";
+var format = "jpeg";
 
-try {
-// Upload file to aspose cloud storage
-storageApi.PutCreate(name, null, null, file= data_path + name , function(responseMessage) {
+const request = new GetDocumentWithFormatRequest();
+request.name = filename;
+request.format = "jpg";
 
-	assert.equal(responseMessage.status, 'OK');
+wordsApi.getDocumentWithFormat(request).then((result) => {
+            console.log(result);
+       }).catch(function(err) {
+    	    console.log(err);
+});
 
-	// Invoke Aspose.Words Cloud SDK API to convert words document to required format
-	wordsApi.GetDocumentWithFormat(name, format, null, null, null, function(responseMessage) {
-			assert.equal(responseMessage.status, 'OK');
-			
-			// Download output document from response
-			var outfilename = filename + '.' + format;
-			var writeStream = fs.createWriteStream(data_path + outfilename);
-			writeStream.write(responseMessage.body);
-			});
-	});
 
-}catch (e) {
-  console.log("exception in example");
-  console.log(e);
-}
-//ExEnd:1

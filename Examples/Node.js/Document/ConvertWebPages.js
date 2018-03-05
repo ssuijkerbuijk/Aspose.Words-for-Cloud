@@ -1,19 +1,5 @@
-// ExStart:1
-var fs = require('fs');
-var assert = require('assert');
-var StorageApi = require('asposestoragecloud');
-var WordsApi = require('asposewordscloud');
-var configProps = require('../Config/config.json');
-var data_path = '../../../Data/';
-
-var AppSID = configProps.app_sid;
-var AppKey = configProps.api_key;
-var config = {'appSid':AppSID,'apiKey':AppKey , 'debug' : true};
-
-// Instantiate Aspose Storage API SDK
-var storageApi = new StorageApi(config);
-// Instantiate Aspose Words API SDK
-var wordsApi = new WordsApi(config);
+const { WordsApi, GetDocumentWithFormatRequest, SaveOptionsData,LoadWebDocumentData,PostLoadWebDocumentRequest } = require("asposewordscloud");
+wordsApi = new WordsApi('78946fb4-3bd4-4d3e-b309-f9e2ff9ac6f9', 'b125f13bf6b76ed81ee990142d841195');
 
 // Set input file name
 var filename ="WebPageConverterExample.doc";
@@ -26,23 +12,24 @@ var loadWebDocumentDataBody =  {
 		}
 };
 
-try {
-	// Invoke Aspose.Words Cloud SDK API to convert live web page into words document
-	wordsApi.PostLoadWebDocument(loadWebDocumentDataBody, function(responseMessage) {
-			assert.equal(responseMessage.status, 'OK');
-			console.log("Document has been generated successfully");
+const body = new LoadWebDocumentData();
+const saveOptions = new SaveOptionsData(
+      {
+                fileName: "Temp/google.doc",                
+                saveFormat: "doc",
+                colorMode: "Normal",
+                dmlEffectsRenderingMode: "Simplified",
+                dmlRenderingMode: "Fallback",
+                updateSdtContent: false,
+                zipOutput: false,
+      });
 
-			// Download output document from storage server
-			var outfilename = filename;
-			storageApi.GetDownload(outfilename, null, null, function(responseMessage) {
-				assert.equal(responseMessage.status, 'OK');
-				var writeStream = fs.createWriteStream(data_path + outfilename);
-				writeStream.write(responseMessage.body);
-				});
-		});
+body.loadingDocumentUrl = "http://google.com";
+body.saveOptions = saveOptions;
 
-}catch (e) {
-  console.log("exception in example");
-  console.log(e);
-}
-//ExEnd:1
+const request = new PostLoadWebDocumentRequest({data: body});
+wordsApi.postLoadWebDocument(request)
+            .then((result) => {
+               console.log(result);
+            });
+
