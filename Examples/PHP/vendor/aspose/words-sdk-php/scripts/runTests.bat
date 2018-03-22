@@ -1,1 +1,0 @@
-docker run -v %cd%/:/Work/Aspose.Words-CloudSDK-PHP -v %cd%/TestData:/Work/Aspose.Words-CloudSDK-PHP/TestData -w="/Work/Aspose.Words-CloudSDK-PHP" --rm php vendor/bin/phpunit -c phpunit.xml --filter testGetDocumentBookmarkByName
